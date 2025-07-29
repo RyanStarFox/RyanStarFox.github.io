@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>RyanStarFox&#39;s Blog</title>
-  <icon>https://ryanstarfox.github.io/metadata/avatar.png</icon>
+  <icon>https://ryanstarfox.github.io/images/metadata/avatar.png</icon>
   <subtitle>分享生活、想法与技术</subtitle>
   <link href="https://ryanstarfox.github.io/atom.xml" rel="self"/>
   
