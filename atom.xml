@@ -34,12 +34,14 @@
     
     
     
-    <category term="生活" scheme="https://ryanstarfox.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活/Life" scheme="https://ryanstarfox.github.io/categories/%E7%94%9F%E6%B4%BB-Life/"/>
     
     
-    <category term="生活" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园，微信" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD%EF%BC%8C%E5%BE%AE%E4%BF%A1/"/>
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
   </entry>
   
@@ -61,14 +63,14 @@
     
     
     
-    <category term="生活" scheme="https://ryanstarfox.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活/Life" scheme="https://ryanstarfox.github.io/categories/%E7%94%9F%E6%B4%BB-Life/"/>
     
     
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
     
-    <category term="微信" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="生活" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -91,7 +93,7 @@
     
     
     
-    <category term="技术" scheme="https://ryanstarfox.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术/Tech" scheme="https://ryanstarfox.github.io/categories/%E6%8A%80%E6%9C%AF-Tech/"/>
     
     
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
