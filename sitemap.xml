@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ryanstarfox.github.io/google123456789.html</loc>
-    
-    <lastmod>2025-07-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ryanstarfox.github.io/about/index.html</loc>
     
     <lastmod>2025-07-29</lastmod>
@@ -303,14 +294,14 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/</loc>
+    <loc>https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/</loc>
+    <loc>https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
