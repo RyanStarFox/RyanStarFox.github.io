@@ -895,7 +895,7 @@ html.is-animating .trm-swup-animation {
   pointer-events: none;
   background-color: var(--theme-bg-color, #fcfcfe);
   opacity: 0;
-  transform: translateY(20px) translateX(-50%);
+  transform: translateY(-10px) translateX(-50%) scaleY(0.8);
   height: auto;
   top: 80px;
   left: 50%;
@@ -905,7 +905,8 @@ html.is-animating .trm-swup-animation {
   z-index: 9;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: top center;
 }
 .trm-menu nav ul li ul li {
   height: 50px;
@@ -922,7 +923,7 @@ html.is-animating .trm-swup-animation {
 .trm-menu nav ul li:hover ul {
   pointer-events: all;
   opacity: 1;
-  transform: translateY(0) translateX(-50%);
+  transform: translateY(0) translateX(-50%) scaleY(1);
 }
 .trm-menu nav ul li.current-item:after,
 .trm-menu nav ul li.current-menu-item:after {
