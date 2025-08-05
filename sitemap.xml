@@ -20,6 +20,15 @@
   </url>
   
   <url>
+    <loc>https://ryanstarfox.github.io/2025/08/05/test11/</loc>
+    
+    <lastmod>2025-08-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ryanstarfox.github.io/2025/08/03/20250803%20%E5%8D%97%E4%BA%AC%E7%85%A7%E7%9B%B8%E9%A6%86/</loc>
     
     <lastmod>2025-08-02</lastmod>
@@ -300,6 +309,13 @@
   </url>
   
   <url>
+    <loc>https://ryanstarfox.github.io/tags/%E8%B1%86%E7%93%A3-Douban/</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ryanstarfox.github.io/tags/Apple/</loc>
     <lastmod>2025-08-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -308,13 +324,6 @@
   
   <url>
     <loc>https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1/</loc>
-    <lastmod>2025-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ryanstarfox.github.io/tags/%E8%B1%86%E7%93%A3-Douban/</loc>
     <lastmod>2025-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
