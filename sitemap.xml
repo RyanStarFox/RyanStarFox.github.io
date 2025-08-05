@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ryanstarfox.github.io/useful_links/index.html</loc>
+    <loc>https://ryanstarfox.github.io/metadata/log.html</loc>
     
     <lastmod>2025-08-05</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/metadata/log.html</loc>
+    <loc>https://ryanstarfox.github.io/useful_links/index.html</loc>
     
-    <lastmod>2025-08-04</lastmod>
+    <lastmod>2025-08-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -300,6 +300,13 @@
   </url>
   
   <url>
+    <loc>https://ryanstarfox.github.io/tags/%E8%B1%86%E7%93%A3-Douban/</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ryanstarfox.github.io/tags/Apple/</loc>
     <lastmod>2025-08-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -314,7 +321,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/tags/%E8%B1%86%E7%93%A3-Douban/</loc>
+    <loc>https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/</loc>
     <lastmod>2025-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -322,13 +329,6 @@
   
   <url>
     <loc>https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/</loc>
-    <lastmod>2025-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/</loc>
     <lastmod>2025-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
