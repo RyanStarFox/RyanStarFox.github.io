@@ -6,7 +6,7 @@
   <link href="https://ryanstarfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://ryanstarfox.github.io/"/>
-  <updated>2025-08-04T18:19:05.000Z</updated>
+  <updated>2025-08-02T18:19:05.000Z</updated>
   <id>https://ryanstarfox.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://ryanstarfox.github.io/2025/08/05/test11/"/>
-    <id>https://ryanstarfox.github.io/2025/08/05/test11/</id>
-    <published>2025-08-04T18:19:05.000Z</published>
-    <updated>2025-08-04T18:19:05.000Z</updated>
-    
-    
-    
-    
-    <category term="书影音/Books and Movies" scheme="https://ryanstarfox.github.io/categories/%E4%B9%A6%E5%BD%B1%E9%9F%B3-Books-and-Movies/"/>
-    
-    
-    <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
-    
-    <category term="书影音/Books and Movies" scheme="https://ryanstarfox.github.io/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3-Books-and-Movies/"/>
-    
-    <category term="豆瓣/Douban" scheme="https://ryanstarfox.github.io/tags/%E8%B1%86%E7%93%A3-Douban/"/>
-    
-  </entry>
   
   <entry>
     <title>影评：《南京照相馆》</title>
@@ -175,9 +154,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="大学/University" scheme="https://ryanstarfox.github.io/tags/%E5%A4%A7%E5%AD%A6-University/"/>
     
@@ -348,9 +327,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="高中/High School" scheme="https://ryanstarfox.github.io/tags/%E9%AB%98%E4%B8%AD-High-School/"/>
     
@@ -378,9 +357,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="高中/High School" scheme="https://ryanstarfox.github.io/tags/%E9%AB%98%E4%B8%AD-High-School/"/>
     
@@ -553,9 +532,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="高中/High School" scheme="https://ryanstarfox.github.io/tags/%E9%AB%98%E4%B8%AD-High-School/"/>
     
@@ -698,9 +677,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
-    
     <category term="书影音/Books and Movies" scheme="https://ryanstarfox.github.io/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3-Books-and-Movies/"/>
+    
+    <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
     
     <category term="知乎/Zhihu" scheme="https://ryanstarfox.github.io/tags/%E7%9F%A5%E4%B9%8E-Zhihu/"/>
     
