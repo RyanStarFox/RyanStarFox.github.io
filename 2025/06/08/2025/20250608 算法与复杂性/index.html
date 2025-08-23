@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="01 引论N&#x2F;A 02 数学归纳法 欧拉公式 找到循环不变量  03 算法分析符号符号$O$：$f(n)&#x3D;O(g(n))$，复杂性$f(n)\leq g(n)$，$\exists c,N, \forall n\geq N,g(n)\leq cf(n)\Rightarrow g(n)&#x3D;O(f(n))$ 符号$\Omega$：$f(n)&#x3D;\Omega(g(n))">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法与复杂性整理">
+<meta property="og:url" content="https://ryanstarfox.github.io/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="01 引论N&#x2F;A 02 数学归纳法 欧拉公式 找到循环不变量  03 算法分析符号符号$O$：$f(n)&#x3D;O(g(n))$，复杂性$f(n)\leq g(n)$，$\exists c,N, \forall n\geq N,g(n)\leq cf(n)\Rightarrow g(n)&#x3D;O(f(n))$ 符号$\Omega$：$f(n)&#x3D;\Omega(g(n))">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-06-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-07T16:00:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="技术&#x2F;Tech">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >算法与复杂性整理</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-06-08 00:00:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            算法与复杂性整理
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            06/08
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            00:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="01-引论"><a href="#01-引论" class="headerlink" title="01 引论"></a>01 引论</h1><p>N&#x2F;A</p>
+<h1 id="02-数学归纳法"><a href="#02-数学归纳法" class="headerlink" title="02 数学归纳法"></a>02 数学归纳法</h1><ol>
+<li>欧拉公式</li>
+<li>找到循环不变量</li>
+</ol>
+<h1 id="03-算法分析"><a href="#03-算法分析" class="headerlink" title="03 算法分析"></a>03 算法分析</h1><h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p>符号$O$：$f(n)&#x3D;O(g(n))$，复杂性$f(n)\leq g(n)$，$\exists c,N, \forall n\geq N,g(n)\leq cf(n)\Rightarrow g(n)&#x3D;O(f(n))$</p>
+<p>符号$\Omega$：$f(n)&#x3D;\Omega(g(n))$，复杂性$f(n)\geq g(n)$，$g(n)&#x3D;O(f(n))\Rightarrow f(n)&#x3D;\Omega(g(n))$</p>
+<p>符号$\Theta$：$f(n)&#x3D;\Theta(g(n))$，复杂性$f(n)&#x3D;g(n)$，$f(n)&#x3D;O(g(n))\wedge g(n)&#x3D;O(f(n))\Rightarrow f(n)&#x3D;\Theta(g(n))$</p>
+<p>符号$o$：$f(n)&#x3D;o(g(n))$，复杂性$f(n)&lt; g(n)$，$\forall c,\exists N&gt;0,s.t\ \forall n \geq N,f(n)\leq cg(n)\Rightarrow f(n)&#x3D;o(g(n))$</p>
+<h2 id="常用式子"><a href="#常用式子" class="headerlink" title="常用式子"></a>常用式子</h2><p>$\sum\limits_{i&#x3D;1}^n \lfloor\log i\rfloor&#x3D;(n+1)\lfloor(\log n)\rfloor-2^{\lfloor\log n\rfloor+1}+2&#x3D;\Theta(n\log n)$</p>
+<p>$e&#x3D;\lim\limits_{n\to\infty}(1+\dfrac 1n)^n&#x3D;1+\dfrac 1{1!}+\dfrac1{2!}+\dfrac1{3!}+\cdots$</p>
+<p>$\log{(n!)}&#x3D;\Theta(n\log n)$</p>
+<p>$\sum\limits_{j&#x3D;1}^n \dfrac 1j&#x3D;\ln n+\gamma+O(\dfrac1n),\gamma\approx0.577215$</p>
+<p>$\sum\limits_{j&#x3D;1}^n jc^j&#x3D;\Theta(nc^n)$</p>
+<h2 id="递推式"><a href="#递推式" class="headerlink" title="递推式"></a>递推式</h2><h3 id="线性齐次递推式"><a href="#线性齐次递推式" class="headerlink" title="线性齐次递推式"></a>线性齐次递推式</h3><p>特征方程</p>
+<h3 id="分治问题"><a href="#分治问题" class="headerlink" title="分治问题"></a>分治问题</h3><p>假设$a$个子问题，每个问题的规模是原始问题的$1&#x2F;b$，组合各子问题的运行时间是$cn^k$，即</p>
+<p>$T(n)&#x3D;aT(n&#x2F;b)+cn^k$</p>
+<p>$T(n)&#x3D;\begin{cases}O(n^{\log_ba})&amp;a&gt;b^k\O(n^k\log n)&amp;a&#x3D;b^k\O(n^k)&amp;a&lt;b^k\end{cases}$</p>
+<h3 id="Master-Theorem"><a href="#Master-Theorem" class="headerlink" title="Master Theorem"></a>Master Theorem</h3><p>$T(n)&#x3D;aT(n&#x2F;c)+f(n)$</p>
+<ol>
+<li>if $f(n)&#x3D;O(n^{\log_ca-\epsilon})$ for some $\epsilon&gt;0$, then $T(n)&#x3D;\Theta(n^{\log_ca})$</li>
+<li>if $f(n) &#x3D; \Theta( n^{\log_ca} \cdot (\log n)^k ) $ for some$ k&gt;&#x3D;0$, then $T(n) &#x3D; \Theta(n^{\log_ca} \cdot (\log n)^k )$</li>
+<li>If $f(n)&#x3D;W(n^{\log_ca+\epsilon}) $ for some $e&gt;0$  and if $a\cdot f(n&#x2F;c)\leq kf(n) $ for some constant $ k&lt;1$ and all sufficiently large $n$, then $T(n)&#x3D;\Theta(f(n))$</li>
+</ol>
+<p>注：以上三种情况不是完整覆盖所有情况</p>
+<h3 id="涉及全部历史的递推关系"><a href="#涉及全部历史的递推关系" class="headerlink" title="涉及全部历史的递推关系"></a>涉及全部历史的递推关系</h3><p>历史消除法</p>
+<h1 id="05-基于归纳的算法设计"><a href="#05-基于归纳的算法设计" class="headerlink" title="05 基于归纳的算法设计"></a>05 基于归纳的算法设计</h1><ol>
+<li><p>多项式求值</p>
+<p>$p_n(x)&#x3D;xp_{n-1}(x)+a_0$</p>
+</li>
+<li><p>寻找每个点的度都大于k的最大导出子图</p>
+<p>只要度数小于k的点都删掉，更新度数，无所谓删除顺序</p>
+</li>
+<li><p>寻找一对一映射的子集</p>
+<p>删掉没有被映射的点</p>
+</li>
+<li><p>社会名流问题</p>
+<p>不要从人的角度，从问题的角度。一个问题至少可以确定一个人不是社会名流，最后剩下的那一个人再验证一下是不是社会名流。</p>
+</li>
+<li><p>轮廓问题</p>
+<p>分治法</p>
+</li>
+<li><p>寻找最大连续子序列</p>
+<p>归纳假设：已知如何找到规模小于n的最大子序列，以及作为后缀的最大子序列。</p>
+</li>
+<li><p>背包问题</p>
+<p>动态规划</p>
+</li>
+</ol>
+<h1 id="06-序列和集合的算法"><a href="#06-序列和集合的算法" class="headerlink" title="06 序列和集合的算法"></a>06 序列和集合的算法</h1><h2 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h2><ol>
+<li><p>基础二分搜索 O(log n)</p>
+</li>
+<li><p>循环序列的二分搜索</p>
+<p>找到循环递增序列的最小元素</p>
+<p>若考虑$x_p,x_q$，若$x_p&lt;x_q$，则最小元素就不可能在$x_p,x_q$之间</p>
+</li>
+<li><p>二分搜索$a_i&#x3D;i$</p>
+<p>考察$a_{\frac n2}$的值，考虑在前面还是在后面找</p>
+</li>
+<li><p>重叠子序列问题</p>
+<p>若有上界，则二分搜索</p>
+<p>若无上界，则对i加倍直至找到合适的范围</p>
+</li>
+<li><p>方程求解</p>
+<p>连续性，不断减少解存在的范围</p>
+</li>
+<li><p>内插搜索 O(log log n)，但未必比二分搜索高效</p>
+</li>
+</ol>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><table>
+<thead>
+<tr>
+<th align="center">排序算法</th>
+<th align="center">最差</th>
+<th align="center">平均</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">插入排序^1^</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n^2)$</td>
+</tr>
+<tr>
+<td align="center">选择排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n^2)$</td>
+</tr>
+<tr>
+<td align="center">归并排序^2^</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td align="center">$O(n^2)$</td>
+<td align="center">$O(n\log n)$</td>
+</tr>
+<tr>
+<td align="center">堆排序</td>
+<td align="center">$O(n\log n)$</td>
+<td align="center">$O(n\log n)$</td>
+</tr>
+<tr>
+<td align="center">计数排序^3^</td>
+<td align="center">$O(n+k)$</td>
+<td align="center">$O(n+k)$</td>
+</tr>
+<tr>
+<td align="center">桶排序^4^</td>
+<td align="center">$O(m+n)$</td>
+<td align="center">$O(m+n)$</td>
+</tr>
+<tr>
+<td align="center">基数排序^5^</td>
+<td align="center">$O(nk)$</td>
+<td align="center">$O(nk)$</td>
+</tr>
+</tbody></table>
+<p>备注：</p>
+<ol>
+<li>插入部分可用二分搜索，那一部分复杂度可以降为$O(n\log n)$</li>
+<li>缺点：不是原地排序，复制所有的数很花时间</li>
+<li>非比较排序，k为不同数字的种类数</li>
+<li>非比较排序，m为桶数</li>
+<li>非比较排序，k为待排序的数字的位数</li>
+</ol>
+<h2 id="序列的秩"><a href="#序列的秩" class="headerlink" title="序列的秩"></a>序列的秩</h2><ol>
+<li><p>查找最大&#x2F;最小数</p>
+<p>可以通过分治法降低计算量，但无法减少计算量的数量级$O(n)$</p>
+</li>
+<li><p>第k小的数</p>
+<p>使用类似快速排序的方法，平均$O(n)$，最坏$O(n\log n)$</p>
+</li>
+</ol>
+<h2 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h2><ol>
+<li>哈夫曼编码</li>
+</ol>
+<h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><ol>
+<li><p>KMP算法</p>
+<p>对于查找的序列要构建next数组</p>
+</li>
+<li><p>BM算法</p>
+<ol>
+<li><p>坏字符规则</p>
+<p>移动的位数&#x3D;模式串出错的位置-坏字符在模式串中最后出现的位置</p>
+<p>要用一个表bc存储模式串中的字符和下标</p>
+</li>
+<li><p>好后缀规则</p>
+<p>类似KMP，前后颠倒，也可以预先计算</p>
+</li>
+</ol>
+<p>执行两条规则中较大的那一个移动</p>
+</li>
+</ol>
+<h3 id="序列比较"><a href="#序列比较" class="headerlink" title="序列比较"></a>序列比较</h3><h3 id="查找众数"><a href="#查找众数" class="headerlink" title="查找众数"></a>查找众数</h3><p>此处众数指的是：出现次数超过一半</p>
+<ol>
+<li><p>蛮力查找</p>
+</li>
+<li><p>排序算法</p>
+</li>
+<li><p>找到中位数之后再验证</p>
+</li>
+<li><p>高级算法</p>
+<table>
+<thead>
+<tr>
+<th><strong>i</strong></th>
+<th><strong>X[i]</strong></th>
+<th><strong>C（候选人）</strong></th>
+<th><strong>M（计数器）</strong></th>
+<th><strong>操作说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1 → 2</td>
+<td>X[i] &#x3D;&#x3D; C，M++</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>2 → 1</td>
+<td>X[i] ≠ C，M–</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1 → 0</td>
+<td>X[i] ≠ C，M–</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+<td>0 → 1</td>
+<td>M 为 0，换候选人为 X[i]&#x3D;1，M&#x3D;1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>1</td>
+<td>1 → 0</td>
+<td>X[i] ≠ C，M–</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2</td>
+<td>2</td>
+<td>0 → 1</td>
+<td>M 为 0，换候选人为 X[i]&#x3D;2，M&#x3D;1</td>
+</tr>
+</tbody></table>
+<p>找到候选人之后验证</p>
+</li>
+<li><p>频繁元素</p>
+<p>找到出现最频繁的t个元素</p>
+<p>只有近似算法：规定k个计数器</p>
+<ol>
+<li>有对应的计数器，则相应的计数器加1</li>
+<li>没有相应的计数器，并且已有的计数器数量小于k，则为该数据分配一个新的计数器，其值设为1。</li>
+<li>没有相应的计数器，并且已经有了k个计数器，则将所有的计数器数值减1，并删除值为0的计数器，新数据也被丢弃。</li>
+</ol>
+</li>
+<li><p>最长递增序列</p>
+<ol>
+<li>动态规划</li>
+<li>维护一个tail数组（BIS）</li>
+</ol>
+</li>
+</ol>
+<h1 id="07-图算法"><a href="#07-图算法" class="headerlink" title="07 图算法"></a>07 图算法</h1><h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>DFS中的四种边：</p>
+<ol>
+<li>树边，第一次访问新节点，加入DFS树的边</li>
+<li>后退边，访问到了一个没有访问结束，仍在递归中的祖先节点</li>
+<li>前向边，访问到了一个已经访问结束的子孙节点</li>
+<li>交叉边，访问到了一个已经访问结束，但是既非祖先也非子孙的节点</li>
+</ol>
+<p>有向图有有向闭链$\Leftrightarrow$G有一个后退边</p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>找到入度为0的点，标为已访问，并更新邻接表</p>
+<h2 id="单源最短路径"><a href="#单源最短路径" class="headerlink" title="单源最短路径"></a>单源最短路径</h2><p>非循环有向图中，从v出发到达G中其他各顶点的最短路径</p>
+<h3 id="使用拓扑排序（只有能拓扑排序的图能用这个方式）"><a href="#使用拓扑排序（只有能拓扑排序的图能用这个方式）" class="headerlink" title="使用拓扑排序（只有能拓扑排序的图能用这个方式）"></a>使用拓扑排序（只有能拓扑排序的图能用这个方式）</h3><p>设v的标记是k，则标记小于k的不用考虑，都没有路径；大于k的用归纳法，$min(l_i)+1\ for\ i\ in\ curr.parents$</p>
+<h3 id="一般做法：Djikstra算法"><a href="#一般做法：Djikstra算法" class="headerlink" title="一般做法：Djikstra算法"></a>一般做法：Djikstra算法</h3><p>要用一个Priority Queue来决定下一个顶点更新哪一个</p>
+<h3 id="全部最短路径：Floyd算法"><a href="#全部最短路径：Floyd算法" class="headerlink" title="全部最短路径：Floyd算法"></a>全部最短路径：Floyd算法</h3><p>边权可以是负值，但是不能有负权回路</p>
+<p>使用三重循环</p>
+<p>初始化把有连线的两顶点的距离设为连线的长度，没有的设为+inf</p>
+<p>检查每一个顶点能不能作为另外两个顶点的中间节点，如果可以，更新最短路径</p>
+<p>可以检测负环（如果运行两次之后有变化，则有负环）</p>
+<h3 id="传递闭包：Floyd-Warshell算法"><a href="#传递闭包：Floyd-Warshell算法" class="headerlink" title="传递闭包：Floyd-Warshell算法"></a>传递闭包：Floyd-Warshell算法</h3><h2 id="最小代价生成树"><a href="#最小代价生成树" class="headerlink" title="最小代价生成树"></a>最小代价生成树</h2><p>Kruscal&#x2F;Prim算法</p>
+<p>前者边拓展+并查集，后者点拓展+贪心法</p>
+<h2 id="划分双联通分支：Tarjan法"><a href="#划分双联通分支：Tarjan法" class="headerlink" title="划分双联通分支：Tarjan法"></a>划分双联通分支：Tarjan法</h2><p>关节点（割点）：删除后可以分离图的节点</p>
+<p>双联通分支是没有关节点的分支，一个顶点可以在不同双联通分支内，但是一条边不行</p>
+<p>寻找所有的割点：</p>
+<p>使用一次DFS，更新时间戳和low值</p>
+<h2 id="划分强连通分支：Tarjan法"><a href="#划分强连通分支：Tarjan法" class="headerlink" title="划分强连通分支：Tarjan法"></a>划分强连通分支：Tarjan法</h2><p>也可以用划分双联通分支类似的方法，判据有dfn的≥变成了&#x3D;&#x3D;</p>
+<h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><p>匹配是边的一个集合，任意两条边没有公共的顶点</p>
+<ul>
+<li>完美匹配：所有顶点都有匹配的匹配。</li>
+<li>最大匹配：具有最大边数的匹配。</li>
+<li>极大匹配：不可能再增加边数的匹配。</li>
+</ul>
+<p>极大匹配未必是最大匹配。</p>
+<ol>
+<li>非常稠密图中的完美匹配</li>
+<li>偶图匹配</li>
+</ol>
+<p>两者都是要通过交换来实现</p>
+<h2 id="在非常稠密的图中寻找哈密顿回路"><a href="#在非常稠密的图中寻找哈密顿回路" class="headerlink" title="在非常稠密的图中寻找哈密顿回路"></a>在非常稠密的图中寻找哈密顿回路</h2><p>任意两个顶点的度数只和≥n</p>
+<h1 id="08-几何算法"><a href="#08-几何算法" class="headerlink" title="08 几何算法"></a>08 几何算法</h1><h2 id="判断点是否在多边形内部"><a href="#判断点是否在多边形内部" class="headerlink" title="判断点是否在多边形内部"></a>判断点是否在多边形内部</h2><p>外部任意一点到此点连线与多边形又奇数个交点</p>
+<p>有特殊情况</p>
+<h2 id="构造简单多边形"><a href="#构造简单多边形" class="headerlink" title="构造简单多边形"></a>构造简单多边形</h2><ol>
+<li>考察包含所有点的大圆C，从圆形开始旋转扫描（有特例）</li>
+<li>从x坐标最大，y坐标最小的点开始扫描（也有特例）</li>
+</ol>
+<h2 id="求凸包"><a href="#求凸包" class="headerlink" title="求凸包"></a>求凸包</h2><h3 id="直接方法：延拓-递推-O-n-2"><a href="#直接方法：延拓-递推-O-n-2" class="headerlink" title="直接方法：延拓+递推 O(n^2^)"></a>直接方法：延拓+递推 O(n^2^)</h3><p>知道&lt;n个点的凸包怎么求，然后尝试寻找包含第n个点的凸包</p>
+<p>改进：加入新的点时，删去旧凸包内的点，把新点与旧凸包上的点连起来寻找支撑线，进而找到两个点与新点连起来，行程新的凸包</p>
+<h3 id="Gift-Wrapping-O-n-2"><a href="#Gift-Wrapping-O-n-2" class="headerlink" title="Gift Wrapping O(n^2^)"></a>Gift Wrapping O(n^2^)</h3><p>从极端点开始找支撑线，不是从小到大构造凸包，而是直接找到凸包的一部分</p>
+<h3 id="Graham扫描算法-O-n-log-n"><a href="#Graham扫描算法-O-n-log-n" class="headerlink" title="Graham扫描算法 O(n log n)"></a>Graham扫描算法 O(n log n)</h3><p>与gift wrapping有点像，但是并非直接找凸包的一部分，先固定x轴上的极端点$p_1$，然后计算$p_ip_1$与x轴的夹角，从小到大排序，然后再一个个加入凸包</p>
+<h2 id="最近点对"><a href="#最近点对" class="headerlink" title="最近点对"></a>最近点对</h2><h3 id="直接法-O-n-2"><a href="#直接法-O-n-2" class="headerlink" title="直接法 O(n^2^)"></a>直接法 O(n^2^)</h3><p>直接计算两点之间的距离，然后求最小值</p>
+<h3 id="分治法-O-n-log-2-n-O-n-log-n"><a href="#分治法-O-n-log-2-n-O-n-log-n" class="headerlink" title="分治法 O(n log^2^ n)-&gt;O(n log n)"></a>分治法 O(n log^2^ n)-&gt;O(n log n)</h3><p>如果只有两个点，可以直接取它们之间的距离</p>
+<p>否则分为2组，分别取最小，并求交叉项的最小</p>
+<p>交叉项也只要取部分的条带（宽度为2倍最小值）</p>
+<p>如果在每次归并的时候也保留y坐标的大小关系，则可以降低为$O(n\log n)$</p>
+<h2 id="找交点"><a href="#找交点" class="headerlink" title="找交点"></a>找交点</h2><h3 id="水平线段和垂直线段的交点"><a href="#水平线段和垂直线段的交点" class="headerlink" title="水平线段和垂直线段的交点"></a>水平线段和垂直线段的交点</h3><p>直接法$O(mn)$</p>
+<p>扫描线技术$O((m+n)log(m+n)+R)$</p>
+<h3 id="线段交点"><a href="#线段交点" class="headerlink" title="线段交点"></a>线段交点</h3><p>扫描线技术$O((2n+m)log(2n+m))$</p>
+<p>扫描状态集合是动态几何，描述当前扫描线状态，在以下情况会发生改变：</p>
+<ol>
+<li>遇到新的线段</li>
+<li>现有线段结束</li>
+<li>两段线段交点</li>
+</ol>
+<h2 id="美术馆问题"><a href="#美术馆问题" class="headerlink" title="美术馆问题"></a>美术馆问题</h2><h2 id="多边形三角划分问题"><a href="#多边形三角划分问题" class="headerlink" title="多边形三角划分问题"></a>多边形三角划分问题</h2><h3 id="若为单调多边形"><a href="#若为单调多边形" class="headerlink" title="若为单调多边形"></a>若为单调多边形</h3><p>扫描线算法三角划分</p>
+<h3 id="若为一般多边形"><a href="#若为一般多边形" class="headerlink" title="若为一般多边形"></a>若为一般多边形</h3><p>添加对角线除去转向点</p>
+<p>对于split，merge和start有不同的处理方式</p>
+<h2 id="相交半平面问题"><a href="#相交半平面问题" class="headerlink" title="相交半平面问题"></a>相交半平面问题</h2><p>分治法$O(n\log n)$</p>
+<h2 id="两个凸多边形的交点"><a href="#两个凸多边形的交点" class="headerlink" title="两个凸多边形的交点"></a>两个凸多边形的交点</h2><p>扫描线算法，扫描线只需记得4条边$O(n)$</p>
+<h2 id="Voronoi图"><a href="#Voronoi图" class="headerlink" title="Voronoi图"></a>Voronoi图</h2><p>使用Fortune算法，一种扫描线算法。既规定了扫描线，又规定了海岸线（一系列抛物线，在海岸线之上不会再变了）</p>
+<ol>
+<li><p>基点事件</p>
+<p>扫描线经过一个基点时会产生一个基点事件</p>
+<p>插入一根新的抛物线</p>
+</li>
+<li><p>左右两根抛物线相遇，中间那一根抛物线消失，形成新的Voronoi顶点</p>
+</li>
+</ol>
+<h1 id="09-代数和数值算法"><a href="#09-代数和数值算法" class="headerlink" title="09 代数和数值算法"></a>09 代数和数值算法</h1><h2 id="误差来源"><a href="#误差来源" class="headerlink" title="误差来源"></a>误差来源</h2><ol>
+<li>截断误差：泰勒展开截去部分</li>
+<li>大数吃小数：2^100^+1-2^100^&#x3D;0</li>
+<li>稳定性：递推算法误差不断积累</li>
+</ol>
+<h2 id="求幂运算"><a href="#求幂运算" class="headerlink" title="求幂运算"></a>求幂运算</h2><ol>
+<li>直接归纳法：$n^k&#x3D;nn^{k-1},O(k)$</li>
+<li>二分归纳法：$n^k&#x3D;(n^{\frac k2})^2,O(\log k)$</li>
+</ol>
+<h2 id="求最大公约数"><a href="#求最大公约数" class="headerlink" title="求最大公约数"></a>求最大公约数</h2><p>辗转相除法</p>
+<p>最大公倍数可由最大公约数得到</p>
+<h2 id="多项式乘法"><a href="#多项式乘法" class="headerlink" title="多项式乘法"></a>多项式乘法</h2><p>分治法，同时可以把4优化为3，因为B+C&#x3D;E-A-D</p>
+<h2 id="正整数乘法"><a href="#正整数乘法" class="headerlink" title="正整数乘法"></a>正整数乘法</h2><p>n位数，$O(n^2)$</p>
+<p>采用类似多项式乘法的分治法</p>
+<h2 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h2><p>也是类似前面的分治法$O(n^3)$，也可以用stassen算法作类似前面的优化$O(n^2.81)$</p>
+<h2 id="布尔矩阵乘法"><a href="#布尔矩阵乘法" class="headerlink" title="布尔矩阵乘法"></a>布尔矩阵乘法</h2><p>不能用strassen算法优化，因为布尔运算没有定义减法</p>
+<h3 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h3><p>预先构建所有可能的k维布尔内积，然后查表$O(n^3&#x2F;\log n)$</p>
+<h3 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h3><p>分解为A的列和B的行的乘积之和+查表$O(n^3&#x2F;\log n)$</p>
+<h3 id="法三"><a href="#法三" class="headerlink" title="法三"></a>法三</h3><p>n维向量加法表，然后分组$O(n^3&#x2F;\log^2 n)$</p>
+<h2 id="矩阵链相乘"><a href="#矩阵链相乘" class="headerlink" title="矩阵链相乘"></a>矩阵链相乘</h2><p>线性规划</p>
+<p>一个m*n和一个n*k的矩阵相乘默认时间复杂度为$O(m<em>n</em>k)$</p>
+<h2 id="多项式乘法2"><a href="#多项式乘法2" class="headerlink" title="多项式乘法2"></a>多项式乘法2</h2><p>用函数上的点来表示多项式函数，先正向傅立叶变换，再逆向傅立叶变换</p>
+<h3 id="正向傅立叶变换"><a href="#正向傅立叶变换" class="headerlink" title="正向傅立叶变换"></a>正向傅立叶变换</h3><p>取的点中有相反数关系，减少一半计算量，然后再归纳计算（要引入复数）</p>
+<h3 id="逆向傅立叶变换"><a href="#逆向傅立叶变换" class="headerlink" title="逆向傅立叶变换"></a>逆向傅立叶变换</h3><p>求矩阵的逆，为$[V(\omega)]^{-1}&#x3D;\dfrac 1n V(\dfrac 1\omega)$</p>
+<h1 id="非线性方法求解"><a href="#非线性方法求解" class="headerlink" title="非线性方法求解"></a>非线性方法求解</h1><h2 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h2><p>缺点是不能保证x的精度，可能y相差很少但是x相差很多</p>
+<h2 id="迭代法求根"><a href="#迭代法求根" class="headerlink" title="迭代法求根"></a>迭代法求根</h2><p>就是董说的蛛网法，问题是能不能收敛</p>
+<h2 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h2><p>根据切线求下一个，性能依赖于x的选取</p>
+<h1 id="11-计算机不是万能的"><a href="#11-计算机不是万能的" class="headerlink" title="11 计算机不是万能的"></a>11 计算机不是万能的</h1><h2 id="课内的NPC问题"><a href="#课内的NPC问题" class="headerlink" title="课内的NPC问题"></a>课内的NPC问题</h2><ul>
+<li><p>顶点覆盖问题</p>
+<p>设G&#x3D;(V,E)是一个无向图，G的顶点覆盖是一个顶点集合，满足G中所有的边都至少和该</p>
+<p>集合中的一个顶点相关联。</p>
+<p>问题：给定无向图G&#x3D;(V,E)和一个整数k，判定G是否有包含k个顶点的顶点覆盖。</p>
+</li>
+<li><p>支配集问题</p>
+<p>设G&#x3D;(V,E) 是一个无向图，如果顶点集合D 满足，G 中的所有顶点要么在D 中要么与D</p>
+<p>中至少一个顶点相邻，则称D为支配集。</p>
+<p>问题：给定无向图G&#x3D;(V,E)和整数k，判定G中是否有一个包含≤k个顶点的支配集。</p>
+</li>
+<li><p>3SAT问题</p>
+<p>3SAT问题是一般SAT问题的简化，3SAT的实例是指每个子句中恰好含有3个变量的布尔</p>
+<p>表达式。</p>
+<p>问题：给定以CNF 形式出现并且每个子句恰好含有3 个变量的布尔表达式，判定其是否可满足。</p>
+</li>
+<li><p>团问题</p>
+<p>给定无向图G&#x3D;(V,E)，G中的一个团C是G的一个子图，满足C中的任何两个顶点均相</p>
+<p>邻，换句话说，团即完全子图。</p>
+<p>问题：给定无向图G&#x3D;(V,E)和整数k，判定G是否包含一个大小≥k的团。</p>
+</li>
+<li><p>3着色问题</p>
+<p>设G&#x3D;(V,E)是无向图，G的有效着色是指对所有顶点的颜色指派，使得每个顶点被指派一</p>
+<p>种颜色并且相邻顶点不被指派成相同颜色。</p>
+<p>问题：给定无向图G&#x3D;(V,E)，判定G是否可以被3种颜色着色。</p>
+</li>
+</ul>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-anima-link">
+                    马克思主义基本原理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/06/08</li>
+                <li>00:00</li>
+                
+                    <li>13.4k</li>
+                
+                
+                    <li>45</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/05/06/2025/20250506%E5%9C%B0%E9%A2%91%E7%BA%BF/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/2025/%E5%9C%B0%E9%A2%91%E7%BA%BF_hd.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%94%9F%E6%B4%BB-Life/">
+                    生活/Life
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/05/06/2025/20250506%E5%9C%B0%E9%A2%91%E7%BA%BF/" class="trm-anima-link">
+                    地频线——或许是我最疯狂的事吧
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/05/06</li>
+                <li>01:43</li>
+                
+                    <li>1.1k</li>
+                
+                
+                    <li>3</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="01 引论"><a rel="nofollow" class="trm-toc-link" href="#01-引论"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">01 引论</span></a></li><li class="trm-toc-item trm-toc-level-1" title="02 数学归纳法"><a rel="nofollow" class="trm-toc-link" href="#02-数学归纳法"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">02 数学归纳法</span></a></li><li class="trm-toc-item trm-toc-level-1" title="03 算法分析"><a rel="nofollow" class="trm-toc-link" href="#03-算法分析"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">03 算法分析</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="符号"><a rel="nofollow" class="trm-toc-link" href="#符号"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">符号</span></a></li><li class="trm-toc-item trm-toc-level-2" title="常用式子"><a rel="nofollow" class="trm-toc-link" href="#常用式子"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">常用式子</span></a></li><li class="trm-toc-item trm-toc-level-2" title="递推式"><a rel="nofollow" class="trm-toc-link" href="#递推式"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">递推式</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="线性齐次递推式"><a rel="nofollow" class="trm-toc-link" href="#线性齐次递推式"><span class="trm-toc-number">3.3.1.</span> <span class="trm-toc-text">线性齐次递推式</span></a></li><li class="trm-toc-item trm-toc-level-3" title="分治问题"><a rel="nofollow" class="trm-toc-link" href="#分治问题"><span class="trm-toc-number">3.3.2.</span> <span class="trm-toc-text">分治问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Master Theorem"><a rel="nofollow" class="trm-toc-link" href="#Master-Theorem"><span class="trm-toc-number">3.3.3.</span> <span class="trm-toc-text">Master Theorem</span></a></li><li class="trm-toc-item trm-toc-level-3" title="涉及全部历史的递推关系"><a rel="nofollow" class="trm-toc-link" href="#涉及全部历史的递推关系"><span class="trm-toc-number">3.3.4.</span> <span class="trm-toc-text">涉及全部历史的递推关系</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="05 基于归纳的算法设计"><a rel="nofollow" class="trm-toc-link" href="#05-基于归纳的算法设计"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">05 基于归纳的算法设计</span></a></li><li class="trm-toc-item trm-toc-level-1" title="06 序列和集合的算法"><a rel="nofollow" class="trm-toc-link" href="#06-序列和集合的算法"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">06 序列和集合的算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="二分搜索"><a rel="nofollow" class="trm-toc-link" href="#二分搜索"><span class="trm-toc-number">5.1.</span> <span class="trm-toc-text">二分搜索</span></a></li><li class="trm-toc-item trm-toc-level-2" title="排序"><a rel="nofollow" class="trm-toc-link" href="#排序"><span class="trm-toc-number">5.2.</span> <span class="trm-toc-text">排序</span></a></li><li class="trm-toc-item trm-toc-level-2" title="序列的秩"><a rel="nofollow" class="trm-toc-link" href="#序列的秩"><span class="trm-toc-number">5.3.</span> <span class="trm-toc-text">序列的秩</span></a></li><li class="trm-toc-item trm-toc-level-2" title="数据压缩"><a rel="nofollow" class="trm-toc-link" href="#数据压缩"><span class="trm-toc-number">5.4.</span> <span class="trm-toc-text">数据压缩</span></a></li><li class="trm-toc-item trm-toc-level-2" title="字符串匹配"><a rel="nofollow" class="trm-toc-link" href="#字符串匹配"><span class="trm-toc-number">5.5.</span> <span class="trm-toc-text">字符串匹配</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="序列比较"><a rel="nofollow" class="trm-toc-link" href="#序列比较"><span class="trm-toc-number">5.5.1.</span> <span class="trm-toc-text">序列比较</span></a></li><li class="trm-toc-item trm-toc-level-3" title="查找众数"><a rel="nofollow" class="trm-toc-link" href="#查找众数"><span class="trm-toc-number">5.5.2.</span> <span class="trm-toc-text">查找众数</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="07 图算法"><a rel="nofollow" class="trm-toc-link" href="#07-图算法"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">07 图算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="DFS"><a rel="nofollow" class="trm-toc-link" href="#DFS"><span class="trm-toc-number">6.1.</span> <span class="trm-toc-text">DFS</span></a></li><li class="trm-toc-item trm-toc-level-2" title="拓扑排序"><a rel="nofollow" class="trm-toc-link" href="#拓扑排序"><span class="trm-toc-number">6.2.</span> <span class="trm-toc-text">拓扑排序</span></a></li><li class="trm-toc-item trm-toc-level-2" title="单源最短路径"><a rel="nofollow" class="trm-toc-link" href="#单源最短路径"><span class="trm-toc-number">6.3.</span> <span class="trm-toc-text">单源最短路径</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="使用拓扑排序（只有能拓扑排序的图能用这个方式）"><a rel="nofollow" class="trm-toc-link" href="#使用拓扑排序（只有能拓扑排序的图能用这个方式）"><span class="trm-toc-number">6.3.1.</span> <span class="trm-toc-text">使用拓扑排序（只有能拓扑排序的图能用这个方式）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="一般做法：Djikstra算法"><a rel="nofollow" class="trm-toc-link" href="#一般做法：Djikstra算法"><span class="trm-toc-number">6.3.2.</span> <span class="trm-toc-text">一般做法：Djikstra算法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="全部最短路径：Floyd算法"><a rel="nofollow" class="trm-toc-link" href="#全部最短路径：Floyd算法"><span class="trm-toc-number">6.3.3.</span> <span class="trm-toc-text">全部最短路径：Floyd算法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="传递闭包：Floyd-Warshell算法"><a rel="nofollow" class="trm-toc-link" href="#传递闭包：Floyd-Warshell算法"><span class="trm-toc-number">6.3.4.</span> <span class="trm-toc-text">传递闭包：Floyd-Warshell算法</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="最小代价生成树"><a rel="nofollow" class="trm-toc-link" href="#最小代价生成树"><span class="trm-toc-number">6.4.</span> <span class="trm-toc-text">最小代价生成树</span></a></li><li class="trm-toc-item trm-toc-level-2" title="划分双联通分支：Tarjan法"><a rel="nofollow" class="trm-toc-link" href="#划分双联通分支：Tarjan法"><span class="trm-toc-number">6.5.</span> <span class="trm-toc-text">划分双联通分支：Tarjan法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="划分强连通分支：Tarjan法"><a rel="nofollow" class="trm-toc-link" href="#划分强连通分支：Tarjan法"><span class="trm-toc-number">6.6.</span> <span class="trm-toc-text">划分强连通分支：Tarjan法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="匹配"><a rel="nofollow" class="trm-toc-link" href="#匹配"><span class="trm-toc-number">6.7.</span> <span class="trm-toc-text">匹配</span></a></li><li class="trm-toc-item trm-toc-level-2" title="在非常稠密的图中寻找哈密顿回路"><a rel="nofollow" class="trm-toc-link" href="#在非常稠密的图中寻找哈密顿回路"><span class="trm-toc-number">6.8.</span> <span class="trm-toc-text">在非常稠密的图中寻找哈密顿回路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="08 几何算法"><a rel="nofollow" class="trm-toc-link" href="#08-几何算法"><span class="trm-toc-number">7.</span> <span class="trm-toc-text">08 几何算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="判断点是否在多边形内部"><a rel="nofollow" class="trm-toc-link" href="#判断点是否在多边形内部"><span class="trm-toc-number">7.1.</span> <span class="trm-toc-text">判断点是否在多边形内部</span></a></li><li class="trm-toc-item trm-toc-level-2" title="构造简单多边形"><a rel="nofollow" class="trm-toc-link" href="#构造简单多边形"><span class="trm-toc-number">7.2.</span> <span class="trm-toc-text">构造简单多边形</span></a></li><li class="trm-toc-item trm-toc-level-2" title="求凸包"><a rel="nofollow" class="trm-toc-link" href="#求凸包"><span class="trm-toc-number">7.3.</span> <span class="trm-toc-text">求凸包</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="直接方法：延拓+递推 O(n^2^)"><a rel="nofollow" class="trm-toc-link" href="#直接方法：延拓-递推-O-n-2"><span class="trm-toc-number">7.3.1.</span> <span class="trm-toc-text">直接方法：延拓+递推 O(n^2^)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Gift Wrapping O(n^2^)"><a rel="nofollow" class="trm-toc-link" href="#Gift-Wrapping-O-n-2"><span class="trm-toc-number">7.3.2.</span> <span class="trm-toc-text">Gift Wrapping O(n^2^)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Graham扫描算法 O(n log n)"><a rel="nofollow" class="trm-toc-link" href="#Graham扫描算法-O-n-log-n"><span class="trm-toc-number">7.3.3.</span> <span class="trm-toc-text">Graham扫描算法 O(n log n)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="最近点对"><a rel="nofollow" class="trm-toc-link" href="#最近点对"><span class="trm-toc-number">7.4.</span> <span class="trm-toc-text">最近点对</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="直接法 O(n^2^)"><a rel="nofollow" class="trm-toc-link" href="#直接法-O-n-2"><span class="trm-toc-number">7.4.1.</span> <span class="trm-toc-text">直接法 O(n^2^)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="分治法 O(n log^2^ n)-&gt;O(n log n)"><a rel="nofollow" class="trm-toc-link" href="#分治法-O-n-log-2-n-O-n-log-n"><span class="trm-toc-number">7.4.2.</span> <span class="trm-toc-text">分治法 O(n log^2^ n)-&gt;O(n log n)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="找交点"><a rel="nofollow" class="trm-toc-link" href="#找交点"><span class="trm-toc-number">7.5.</span> <span class="trm-toc-text">找交点</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="水平线段和垂直线段的交点"><a rel="nofollow" class="trm-toc-link" href="#水平线段和垂直线段的交点"><span class="trm-toc-number">7.5.1.</span> <span class="trm-toc-text">水平线段和垂直线段的交点</span></a></li><li class="trm-toc-item trm-toc-level-3" title="线段交点"><a rel="nofollow" class="trm-toc-link" href="#线段交点"><span class="trm-toc-number">7.5.2.</span> <span class="trm-toc-text">线段交点</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="美术馆问题"><a rel="nofollow" class="trm-toc-link" href="#美术馆问题"><span class="trm-toc-number">7.6.</span> <span class="trm-toc-text">美术馆问题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="多边形三角划分问题"><a rel="nofollow" class="trm-toc-link" href="#多边形三角划分问题"><span class="trm-toc-number">7.7.</span> <span class="trm-toc-text">多边形三角划分问题</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="若为单调多边形"><a rel="nofollow" class="trm-toc-link" href="#若为单调多边形"><span class="trm-toc-number">7.7.1.</span> <span class="trm-toc-text">若为单调多边形</span></a></li><li class="trm-toc-item trm-toc-level-3" title="若为一般多边形"><a rel="nofollow" class="trm-toc-link" href="#若为一般多边形"><span class="trm-toc-number">7.7.2.</span> <span class="trm-toc-text">若为一般多边形</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="相交半平面问题"><a rel="nofollow" class="trm-toc-link" href="#相交半平面问题"><span class="trm-toc-number">7.8.</span> <span class="trm-toc-text">相交半平面问题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="两个凸多边形的交点"><a rel="nofollow" class="trm-toc-link" href="#两个凸多边形的交点"><span class="trm-toc-number">7.9.</span> <span class="trm-toc-text">两个凸多边形的交点</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Voronoi图"><a rel="nofollow" class="trm-toc-link" href="#Voronoi图"><span class="trm-toc-number">7.10.</span> <span class="trm-toc-text">Voronoi图</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="09 代数和数值算法"><a rel="nofollow" class="trm-toc-link" href="#09-代数和数值算法"><span class="trm-toc-number">8.</span> <span class="trm-toc-text">09 代数和数值算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="误差来源"><a rel="nofollow" class="trm-toc-link" href="#误差来源"><span class="trm-toc-number">8.1.</span> <span class="trm-toc-text">误差来源</span></a></li><li class="trm-toc-item trm-toc-level-2" title="求幂运算"><a rel="nofollow" class="trm-toc-link" href="#求幂运算"><span class="trm-toc-number">8.2.</span> <span class="trm-toc-text">求幂运算</span></a></li><li class="trm-toc-item trm-toc-level-2" title="求最大公约数"><a rel="nofollow" class="trm-toc-link" href="#求最大公约数"><span class="trm-toc-number">8.3.</span> <span class="trm-toc-text">求最大公约数</span></a></li><li class="trm-toc-item trm-toc-level-2" title="多项式乘法"><a rel="nofollow" class="trm-toc-link" href="#多项式乘法"><span class="trm-toc-number">8.4.</span> <span class="trm-toc-text">多项式乘法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="正整数乘法"><a rel="nofollow" class="trm-toc-link" href="#正整数乘法"><span class="trm-toc-number">8.5.</span> <span class="trm-toc-text">正整数乘法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="矩阵乘法"><a rel="nofollow" class="trm-toc-link" href="#矩阵乘法"><span class="trm-toc-number">8.6.</span> <span class="trm-toc-text">矩阵乘法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="布尔矩阵乘法"><a rel="nofollow" class="trm-toc-link" href="#布尔矩阵乘法"><span class="trm-toc-number">8.7.</span> <span class="trm-toc-text">布尔矩阵乘法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="法一"><a rel="nofollow" class="trm-toc-link" href="#法一"><span class="trm-toc-number">8.7.1.</span> <span class="trm-toc-text">法一</span></a></li><li class="trm-toc-item trm-toc-level-3" title="法二"><a rel="nofollow" class="trm-toc-link" href="#法二"><span class="trm-toc-number">8.7.2.</span> <span class="trm-toc-text">法二</span></a></li><li class="trm-toc-item trm-toc-level-3" title="法三"><a rel="nofollow" class="trm-toc-link" href="#法三"><span class="trm-toc-number">8.7.3.</span> <span class="trm-toc-text">法三</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="矩阵链相乘"><a rel="nofollow" class="trm-toc-link" href="#矩阵链相乘"><span class="trm-toc-number">8.8.</span> <span class="trm-toc-text">矩阵链相乘</span></a></li><li class="trm-toc-item trm-toc-level-2" title="多项式乘法2"><a rel="nofollow" class="trm-toc-link" href="#多项式乘法2"><span class="trm-toc-number">8.9.</span> <span class="trm-toc-text">多项式乘法2</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="正向傅立叶变换"><a rel="nofollow" class="trm-toc-link" href="#正向傅立叶变换"><span class="trm-toc-number">8.9.1.</span> <span class="trm-toc-text">正向傅立叶变换</span></a></li><li class="trm-toc-item trm-toc-level-3" title="逆向傅立叶变换"><a rel="nofollow" class="trm-toc-link" href="#逆向傅立叶变换"><span class="trm-toc-number">8.9.2.</span> <span class="trm-toc-text">逆向傅立叶变换</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="非线性方法求解"><a rel="nofollow" class="trm-toc-link" href="#非线性方法求解"><span class="trm-toc-number">9.</span> <span class="trm-toc-text">非线性方法求解</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="二分法"><a rel="nofollow" class="trm-toc-link" href="#二分法"><span class="trm-toc-number">9.1.</span> <span class="trm-toc-text">二分法</span></a></li><li class="trm-toc-item trm-toc-level-2" title="迭代法求根"><a rel="nofollow" class="trm-toc-link" href="#迭代法求根"><span class="trm-toc-number">9.2.</span> <span class="trm-toc-text">迭代法求根</span></a></li><li class="trm-toc-item trm-toc-level-2" title="牛顿法"><a rel="nofollow" class="trm-toc-link" href="#牛顿法"><span class="trm-toc-number">9.3.</span> <span class="trm-toc-text">牛顿法</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="11 计算机不是万能的"><a rel="nofollow" class="trm-toc-link" href="#11-计算机不是万能的"><span class="trm-toc-number">10.</span> <span class="trm-toc-text">11 计算机不是万能的</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="课内的NPC问题"><a rel="nofollow" class="trm-toc-link" href="#课内的NPC问题"><span class="trm-toc-number">10.1.</span> <span class="trm-toc-text">课内的NPC问题</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

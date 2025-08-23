@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="CNN发展总结正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 1 LeNetLeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  2 AlexNet与LeNet思路类似，在imageNet比赛中取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CNN发展总结">
+<meta property="og:url" content="https://ryanstarfox.github.io/2025/08/18/2025/20250819%20CNN%E5%8F%91%E5%B1%95%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="CNN发展总结正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 1 LeNetLeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  2 AlexNet与LeNet思路类似，在imageNet比赛中取">
+<meta property="og:locale">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="article:published_time" content="2025-08-17T18:19:05.000Z">
+<meta property="article:modified_time" content="2025-08-17T18:19:05.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="技术&#x2F;Tech">
+<meta property="article:tag" content="学习笔记&#x2F;Notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ryanstarfox.github.io/img/404.jpg">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >CNN发展总结</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-08-18 02:19:05"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/notes.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            CNN发展总结
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            08/18
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            02:19
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="CNN发展总结"><a href="#CNN发展总结" class="headerlink" title="CNN发展总结"></a>CNN发展总结</h1><p>正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。</p>
+<h2 id="1-LeNet"><a href="#1-LeNet" class="headerlink" title="1 LeNet"></a>1 LeNet</h2><p>LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：</p>
+<p><img src="/images/2025/LeNet.drawio.svg" alt="LeNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。</p>
+<p><img src="/images/2025/AlexNet.drawio.svg" alt="AlexNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="2-AlexNet"><a href="#2-AlexNet" class="headerlink" title="2 AlexNet"></a>2 AlexNet</h2><p>与LeNet思路类似，在imageNet比赛中取得了不错的成绩，证明了更深更大的模型可以有非常好的效果</p>
+<ol>
+<li>更深的模型层数</li>
+<li>卷积通道数目巨大，卷积窗口更大</li>
+<li>激活函数从Sigmoid&#x2F;Tanh改成ReLU</li>
+<li>通过Dropout全连接层控制模型复杂度</li>
+<li>使用大量增强数据：翻转、裁切、变色</li>
+</ol>
+<p>其架构如下：</p>
+<h2 id="3-使用块的网络（VGG）"><a href="#3-使用块的网络（VGG）" class="headerlink" title="3 使用块的网络（VGG）"></a>3 使用块的网络（VGG）</h2><p>在AlexNet的实现中，我们可以意识到两件事：</p>
+<ol>
+<li>更深更大的神经网络确实可以有更好的效果</li>
+<li>有很多层的组合（例如卷积层+池化层）反复出现</li>
+</ol>
+<p>因此为了方便构建模块化地构建更大的网络，我们可以将一系列“层”定义一个“块”，以“块”为基本单位之一构建网络。</p>
+<p><img src="/images/2025/VGG.drawio.svg" alt="VGG.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="4-网络中的网络（NiN）"><a href="#4-网络中的网络（NiN）" class="headerlink" title="4 网络中的网络（NiN）"></a>4 网络中的网络（NiN）</h2><p>VGG把神经网络的规模做得非常巨大，但是此时又暴露出了内存&#x2F;显存占用巨大的问题——尤其是卷积层之后的第一个全连接层，因输入输出的维度都巨大，参数的数量也巨大。</p>
+<p>为了改善存储占用的问题，NiN网络中使用了使用NiN块与GAP层。</p>
+<ul>
+<li>NiN块中使用了1$\times$1的卷积层，相当于通道维度的全连接层，不仅可以减少参数量，而且可以减少过拟合</li>
+<li>Global Average Pooling （GAP）层被用来代替全连接层，减少了存储的参数的数量</li>
+</ul>
+<p><img src="/images/2025/NiN.drawio.svg" alt="NiN.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="4-含并⾏连结的⽹络（GoogLeNet）"><a href="#4-含并⾏连结的⽹络（GoogLeNet）" class="headerlink" title="4 含并⾏连结的⽹络（GoogLeNet）"></a>4 含并⾏连结的⽹络（GoogLeNet）</h2><p>有了NiN之后，我们有了控制网络总参数量的工具。由此，我们可以构建更深、更复杂的网络。</p>
+<p>GoogLeNet的想法很自然：</p>
+<ul>
+<li>在我们构建了足够强大的线形网络之后，我们也可以构建一些并行的有分支的网络</li>
+<li>在纠结要用哪一种卷积参数的时候，我们可以选择全都要</li>
+</ul>
+<p>GoogLeNet也借鉴了NiN网络：</p>
+<ul>
+<li>使用了1$\times$1的卷积网络降维通道</li>
+<li>使用GAP层，代替全连接层</li>
+<li>在深度的维度上拼接，实现了并行输出的整合</li>
+</ul>
+<p>首先定义了一个Inception块</p>
+<p><img src="/images/2025/Inception.drawio.svg" alt="Inception.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>其中白底的仅仅是用于调整深度，深紫底的才是实际提取特征的层。</p>
+<p>由此可以构建出GoogLeNet</p>
+<p>#<img src="/images/2025/GoogLeNet.drawio.svg" alt="GoogLeNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="5-残差网络（ResNet）"><a href="#5-残差网络（ResNet）" class="headerlink" title="5 残差网络（ResNet）"></a>5 残差网络（ResNet）</h2><ul>
+<li>超深神经网络存在两大挑战：<ol>
+<li>参数量庞大，计算和存储开销大。</li>
+<li>深度增加导致梯度消失&#x2F;梯度爆炸，训练困难。</li>
+</ol>
+</li>
+</ul>
+<p>前者在前面的模型中已经解决，后者ResNet可以解决。</p>
+<p>ResNet的核心思想如下：</p>
+<ol>
+<li>更复杂的网络应包含原有的更简单网络，保证性能至少不劣于浅层网络。</li>
+<li>引入残差函数 $F(x) &#x3D; f(x) - x$，将学习目标改写为：$f(x) &#x3D; F(x) + x$</li>
+</ol>
+<p>残差函数的作用主要想概括为以下两点：</p>
+<ol>
+<li><p>保证“性能不劣于浅层网络”</p>
+<ul>
+<li>当 $F(x) &#x3D; 0$ 时，网络输出即退化为恒等映射 $y &#x3D; x$</li>
+<li>网络可以在恒等映射附近开始学习，使训练更容易</li>
+<li>如果$F(x)$对于结果不好，那$F(x)$拿不到梯度，还是在0附近</li>
+</ul>
+</li>
+<li><p>梯度传递优势</p>
+<ul>
+<li>前向传播时，恒等映射提供了直接捷径</li>
+<li>反向传播时，梯度可以沿 $+x$ 这条捷径无衰减地传回，缓解梯度消失问题</li>
+</ul>
+</li>
+</ol>
+<p>ResNet最大的挑战是：相加的时候捷径的形状不同。</p>
+<ol>
+<li><p>通道数量不同</p>
+<p>通过增加$1\times1$卷积层来控制通道数</p>
+</li>
+<li><p>维度不同</p>
+<p>通过卷积核为1，有stride的卷积层来控制维度</p>
+</li>
+</ol>
+<p>ResNet基本结构的图示如下：</p>
+<p><img src="/images/2025/ResNet.drawio.svg" alt="ResNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="6-稠密连接网络（DenseNet）"><a href="#6-稠密连接网络（DenseNet）" class="headerlink" title="6 稠密连接网络（DenseNet）"></a>6 稠密连接网络（DenseNet）</h2><p>DenseNet 继承了ResNet的思想，将其进一步发展。</p>
+<p>如果说ResNet是泰勒展开的一阶近似，那DenseNet就是高阶近似。DenseNet讲更多的过往的层传到现在的结果。</p>
+<p>DenseNet主要由两种块构成：</p>
+<ul>
+<li><p>稠密块</p>
+<p>大量旁路，为了将这么多结果整合在一起，DenseNet像GoogLeNet一样，在通道维度把结果拼接起来。</p>
+</li>
+<li><p>过渡块</p>
+<p>经过稠密块后通道数巨大，因此使用$1\times1$卷积层减小通道数，使用平均汇聚层减小维数。</p>
+</li>
+</ul>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/08/03/2025/20250803%20%E5%8D%97%E4%BA%AC%E7%85%A7%E7%9B%B8%E9%A6%86/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/2025/%E5%8D%97%E4%BA%AC%E7%85%A7%E7%9B%B8%E9%A6%86.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E4%B9%A6%E5%BD%B1%E9%9F%B3-Books-and-Movies/">
+                    书影音/Books and Movies
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/08/03/2025/20250803%20%E5%8D%97%E4%BA%AC%E7%85%A7%E7%9B%B8%E9%A6%86/" class="trm-anima-link">
+                    影评：《南京照相馆》
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/08/03</li>
+                <li>02:19</li>
+                
+                    <li>1.3k</li>
+                
+                
+                    <li>4</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="CNN发展总结"><a rel="nofollow" class="trm-toc-link" href="#CNN发展总结"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">CNN发展总结</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 LeNet"><a rel="nofollow" class="trm-toc-link" href="#1-LeNet"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 LeNet</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2 AlexNet"><a rel="nofollow" class="trm-toc-link" href="#2-AlexNet"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 AlexNet</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3 使用块的网络（VGG）"><a rel="nofollow" class="trm-toc-link" href="#3-使用块的网络（VGG）"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 使用块的网络（VGG）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4 网络中的网络（NiN）"><a rel="nofollow" class="trm-toc-link" href="#4-网络中的网络（NiN）"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 网络中的网络（NiN）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4 含并⾏连结的⽹络（GoogLeNet）"><a rel="nofollow" class="trm-toc-link" href="#4-含并⾏连结的⽹络（GoogLeNet）"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">4 含并⾏连结的⽹络（GoogLeNet）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5 残差网络（ResNet）"><a rel="nofollow" class="trm-toc-link" href="#5-残差网络（ResNet）"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">5 残差网络（ResNet）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6 稠密连接网络（DenseNet）"><a rel="nofollow" class="trm-toc-link" href="#6-稠密连接网络（DenseNet）"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">6 稠密连接网络（DenseNet）</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

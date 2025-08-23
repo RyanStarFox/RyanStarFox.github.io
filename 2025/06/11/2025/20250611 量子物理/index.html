@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="第一章 量子物理基础1.1 光量子、玻尔原子1.1.1 黑体辐射与普朗克的量子假设基尔霍夫辐射定律单色辐出度$M(\lambda,T)&#x3D;\dfrac{dE_\lambda}{d\lambda}(w&#x2F;m^3)$：单位时间物体表面单位面积内发射的波长在$\lambda$附近单位波长间隔内的辐射能 总辐出度$M(T)&#x3D;\int_0^{+\infty}M(\lambda,T)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="量子物理">
+<meta property="og:url" content="https://ryanstarfox.github.io/2025/06/11/2025/20250611%20%E9%87%8F%E5%AD%90%E7%89%A9%E7%90%86/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="第一章 量子物理基础1.1 光量子、玻尔原子1.1.1 黑体辐射与普朗克的量子假设基尔霍夫辐射定律单色辐出度$M(\lambda,T)&#x3D;\dfrac{dE_\lambda}{d\lambda}(w&#x2F;m^3)$：单位时间物体表面单位面积内发射的波长在$\lambda$附近单位波长间隔内的辐射能 总辐出度$M(T)&#x3D;\int_0^{+\infty}M(\lambda,T)">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-06-10T17:49:00.000Z">
+<meta property="article:modified_time" content="2025-06-10T17:49:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="技术&#x2F;Tech">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >量子物理</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-06-11 01:49:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/%E9%87%8F%E5%AD%90%E7%89%A9%E7%90%86.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            量子物理
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            06/11
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            01:49
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="第一章-量子物理基础"><a href="#第一章-量子物理基础" class="headerlink" title="第一章 量子物理基础"></a>第一章 量子物理基础</h1><h2 id="1-1-光量子、玻尔原子"><a href="#1-1-光量子、玻尔原子" class="headerlink" title="1.1 光量子、玻尔原子"></a>1.1 光量子、玻尔原子</h2><h3 id="1-1-1-黑体辐射与普朗克的量子假设"><a href="#1-1-1-黑体辐射与普朗克的量子假设" class="headerlink" title="1.1.1 黑体辐射与普朗克的量子假设"></a>1.1.1 黑体辐射与普朗克的量子假设</h3><h4 id="基尔霍夫辐射定律"><a href="#基尔霍夫辐射定律" class="headerlink" title="基尔霍夫辐射定律"></a>基尔霍夫辐射定律</h4><p>单色辐出度$M(\lambda,T)&#x3D;\dfrac{dE_\lambda}{d\lambda}(w&#x2F;m^3)$：单位时间物体表面单位面积内发射的波长在$\lambda$附近单位波长间隔内的辐射能</p>
+<p>总辐出度$M(T)&#x3D;\int_0^{+\infty}M(\lambda,T)d\lambda$</p>
+<p>物体向周围发射辐射能的同时，也吸收周围物体的辐射能。辐射从外界入射到不透明物体时，一部分吸收，一部分反射（一部分透射）</p>
+<p>单色吸收比$\alpha(\lambda,T)$在波长为$\lambda\sim\lambda+d\lambda$范围内的吸收比</p>
+<p>任何温度下吸收比&#x3D;1称为（绝对）黑体</p>
+<p>$\dfrac{M_1(\lambda,T)}{\alpha_1(\lambda,T)}&#x3D;\dfrac{M_2(\lambda,T)}{\alpha_2(\lambda,T)}&#x3D;\cdots&#x3D;M_0(\lambda,T),M_0(\lambda,T)是黑体单色辐出度$</p>
+<p>带小孔孔腔视为绝对黑体的模型</p>
+<p>黑体辐射基本规律：</p>
+<ol>
+<li>斯特藩-玻尔兹曼定律：&#x3D;&#x3D;$M_0(T)&#x3D;\sigma T^4$&#x3D;&#x3D;，总辐出度$M_0(T)$</li>
+<li>维恩位移定律：&#x3D;&#x3D;$\lambda_mT&#x3D;b$&#x3D;&#x3D;，单色辐出度的峰值波长$\lambda_m$</li>
+</ol>
+<h4 id="普朗克能量子假说"><a href="#普朗克能量子假说" class="headerlink" title="普朗克能量子假说"></a>普朗克能量子假说</h4><p>普朗克公式：&#x3D;&#x3D;$M_0(\lambda,T)&#x3D;2\pi hc^2\lambda^{-5}\dfrac1{e^{hc&#x2F;k_BT\lambda}-1}$&#x3D;&#x3D;</p>
+<ul>
+<li><p>波长短&#x2F;温度低的近似：</p>
+<p>维恩公式：$M_0(\lambda,T)&#x3D;2\pi hc^2\lambda^{-5}e^{-hc&#x2F;k_BT\lambda}$</p>
+</li>
+<li><p>波长高&#x2F;温度高的近似：</p>
+<p>瑞利-金斯公式：$M_0(\lambda,T)&#x3D;2\pi k_Bc\lambda^{-4}T$</p>
+</li>
+</ul>
+<p>普朗克假定：$谐振子能量值只取某个最小能量的整数倍\epsilon &#x3D; h\nu$</p>
+<h3 id="1-1-2-光的波粒二象性"><a href="#1-1-2-光的波粒二象性" class="headerlink" title="1.1.2 光的波粒二象性"></a>1.1.2 光的波粒二象性</h3><ol>
+<li><p>光电效应</p>
+<ol>
+<li><p>电势差足够大时，光电流饱和，饱和电流大小与入射光强成正比</p>
+</li>
+<li><p>遏制电压$U_0$，$U&#x3D;-U_0$，光电流为0。光电子从表面逸出最大初速度$v_m$满足：$\dfrac12mv_m^2&#x3D;eU_0$。最大初动能于入射光强度无关</p>
+</li>
+<li><p>红限频率</p>
+<p>遏制电势差与入射光频率有线性关系，斜率与金属种类无关</p>
+</li>
+<li><p>弛豫时间</p>
+<p>几乎瞬时</p>
+</li>
+</ol>
+</li>
+<li><p>爱因斯坦光电效应方程</p>
+<ol>
+<li>光强：$nh\nu$</li>
+<li>遏制电压：$\dfrac12mv^2&#x3D;h\nu-A&#x3D;eU_c,\ A:逸出功$</li>
+<li>红限频率：$v_0&#x3D;\dfrac Ah$</li>
+</ol>
+</li>
+<li><p>康普顿散射</p>
+<p>&#x3D;&#x3D;$\Delta\lambda&#x3D;\lambda-\lambda_0&#x3D;\dfrac h{m_ec}(1-\cos\theta)$&#x3D;&#x3D;</p>
+</li>
+</ol>
+<h3 id="1-1-3-玻尔原子理论"><a href="#1-1-3-玻尔原子理论" class="headerlink" title="1.1.3 玻尔原子理论"></a>1.1.3 玻尔原子理论</h3><p>氢原子光谱来自电子跃迁，因此不是连续谱</p>
+<p>里德伯公式：$\tilde{\nu}&#x3D;\dfrac1\lambda&#x3D;R_H(\dfrac1{m^2}-\dfrac1{n^2})$, $R_H&#x3D;1.0967758\times10^7 m^{-1}$，单位是$1&#x2F;m$</p>
+<p>玻尔假设：</p>
+<ol>
+<li>定态条件：电子绕核圆周运动，不辐射能量，处于稳定状态称为<strong>定态</strong>，相应的能量称为<strong>能级</strong></li>
+<li>频率条件：跃迁能量$h\nu&#x3D;E_n-E_m$</li>
+<li>角动量量子化条件：&#x3D;&#x3D;$mv_nr_n&#x3D;n\hbar&#x3D;n\dfrac h{2\pi}$;$\dfrac {e^2}{4\pi\varepsilon_0 r^2}&#x3D;m\dfrac{v^2}r$&#x3D;&#x3D;</li>
+</ol>
+<p>&#x3D;&#x3D;$E_1&#x3D;-13.6eV$&#x3D;&#x3D;单位是eV</p>
+<h2 id="1-2-物质波"><a href="#1-2-物质波" class="headerlink" title="1.2 物质波"></a>1.2 物质波</h2><h3 id="1-2-1-物质波"><a href="#1-2-1-物质波" class="headerlink" title="1.2.1 物质波"></a>1.2.1 物质波</h3><p>实物粒子具有波动性</p>
+<p>$E&#x3D;h\nu&#x3D;\hbar\omega$</p>
+<p>$\vec p&#x3D;\dfrac h\lambda\vec n&#x3D;\hbar k\vec n$</p>
+<h2 id="1-3-1-4-波函数和态叠加原理-薛定谔方程"><a href="#1-3-1-4-波函数和态叠加原理-薛定谔方程" class="headerlink" title="1.3&amp;1.4 波函数和态叠加原理&amp;薛定谔方程"></a>1.3&amp;1.4 波函数和态叠加原理&amp;薛定谔方程</h2><h3 id="1-4-1-波函数"><a href="#1-4-1-波函数" class="headerlink" title="1.4.1 波函数"></a>1.4.1 波函数</h3><p>波函数用平面波描述：</p>
+<ol>
+<li>&#x3D;&#x3D;自由粒子：$\Psi(x,t)&#x3D;Ae^{i(kx-\omega t)}&#x3D;Ae^{\frac i\hbar(px-Et)}$&#x3D;&#x3D;</li>
+<li>势场中的粒子：$\Phi(\vec r,t)$</li>
+</ol>
+<p>纹间距$\Delta\propto\lambda,\lambda&#x3D;\dfrac h{mv}$</p>
+<p>性质：单值、有限（全空间中模长积分为0）、连续</p>
+<p>$\int_{-\infty}^{\infty} x^n e^{-\alpha x^2} dx &#x3D; 0 \quad \text{（n 为奇数）}$</p>
+<p>$\int_{-\infty}^{\infty} x^{2k} e^{-\alpha x^2} dx &#x3D; \frac{(2k - 1)!!}{(2\alpha)^k} \sqrt{\frac{\pi}{\alpha}}$</p>
+<p>&#x3D;&#x3D;特别一些，$\int_{-\infty}^\infty x^{2k}e^{-x^2}dx&#x3D;(2k-1)!!\sqrt{\pi}$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;再特别一些，$\int_{-\infty}^\infty e^{-x^2}dx&#x3D;\sqrt{\pi}$&#x3D;&#x3D;</p>
+<h3 id="1-4-2波函数的应用"><a href="#1-4-2波函数的应用" class="headerlink" title="1.4.2波函数的应用"></a>1.4.2波函数的应用</h3><ol>
+<li>电子绕核转动形成环形驻波：$2\pi r&#x3D;n\lambda;\lambda&#x3D;\dfrac h{mv}\Rightarrow L&#x3D;mvr&#x3D;n\hbar$</li>
+<li>一维无限深势阱驻波：$L&#x3D;n\dfrac \lambda 2\Rightarrow p &#x3D; \dfrac h\lambda&#x3D;n\dfrac h{2L};E_n&#x3D;\dfrac{p^2}{2m}&#x3D;n^2\dfrac{h^2}{8mL^2}$</li>
+</ol>
+<h3 id="1-4-3波函数的统计解释"><a href="#1-4-3波函数的统计解释" class="headerlink" title="1.4.3波函数的统计解释"></a>1.4.3波函数的统计解释</h3><ol>
+<li><p>亮度：德布罗意波强度的大小$\left |\Psi\right |^2&#x3D;\Psi\Psi^*&#x3D;\begin{cases}极大值	，&amp;亮条纹\0，极小值，&amp;暗条纹\end{cases}$</p>
+<p>亮度的物理意义为概率密度</p>
+</li>
+<li><p>波函数满足条件</p>
+<ol>
+<li><p>单值，任何地方不可能有多个波函数（概率密度）</p>
+</li>
+<li><p>有限：$\int\limits_\Omega\left | \Psi(\vec r,t)\right |^2dV&#x3D;1（\Omega为全空间）$</p>
+<p>（但不排除有些孤立奇点趋于无穷</p>
+</li>
+<li><p>连续：二阶导存在</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-3-1-薛定谔方程"><a href="#1-3-1-薛定谔方程" class="headerlink" title="1.3.1 薛定谔方程"></a>1.3.1 薛定谔方程</h3><ol>
+<li><p>自由粒子的薛定谔方程</p>
+<p>&#x3D;&#x3D;$i\hbar \dfrac{\partial}{\partial t}\Psi(x,t)&#x3D;-\dfrac{\hbar^2}{2m}\dfrac{\partial}{\partial x    ^2}\Psi(x,t)$&#x3D;&#x3D;</p>
+<ol>
+<li><p>推广到势场$U(x,t)$</p>
+<pre><code>==$i\hbar \dfrac&#123;\partial&#125;&#123;\partial t&#125;\Psi(x,t)=\left[-\dfrac&#123;\hbar^2&#125;&#123;2m&#125;\dfrac&#123;\partial&#125;&#123;\partial x    ^2&#125;+U(x,t)\right]\Psi(x,t)$==
+</code></pre>
+</li>
+<li><p>推广到三维情况</p>
+<p>$\nabla^2&#x3D;\dfrac{\partial^2}{\partial x^2}+\dfrac{\partial^2}{\partial y^2}+\dfrac{\partial^2}{\partial z^2}$</p>
+<p>&#x3D;&#x3D;$\hat H&#x3D;-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r,t)$&#x3D;&#x3D;</p>
+<p>$i\hbar\dfrac{\partial}{\partial t}\Psi(\vec r,t)&#x3D;\hat H\Psi(\vec r, t)$</p>
+</li>
+</ol>
+</li>
+<li><p>定态薛定谔方程(粒子在空间中出现的概率是稳定不变的)</p>
+<p>若$\dfrac{\partial\hat H}{\partial t}&#x3D;0$或者$U$与时间无关，则薛定谔方程可以分离变量</p>
+<ol>
+<li><p>分离变量</p>
+<ol>
+<li>&#x3D;&#x3D;$i\hbar\dfrac{dT(t)}{dt}&#x3D;ET(t)$&#x3D;&#x3D;</li>
+<li>&#x3D;&#x3D;$\hat H\Phi(\vec r)&#x3D;E\Phi(\vec r)$&#x3D;&#x3D;</li>
+</ol>
+</li>
+<li><p>振动因子</p>
+<p>分离变量方程1的解为$T(t)&#x3D;Ce^{-\frac ihEt}$</p>
+</li>
+<li><p>定态薛定谔方程（能量本征方程）就是方程2</p>
+<p>&#x3D;&#x3D;$\left(-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r)\right)\Phi(\vec r)&#x3D;E\Phi(\vec r)$&#x3D;&#x3D;</p>
+<p>通解：$\Psi(x,t)&#x3D;\sum\limits_{n&#x3D;1}^{\infty}c_ne^{-\frac{iE_nt}\hbar}\Phi_n(x)$</p>
+</li>
+</ol>
+<p>定态：能量取特定值的状态，薛定谔方程的特解</p>
+<p>&#x3D;&#x3D;判断是否是定态：$\left | \Psi(x,t)\right |^2&#x3D;\Psi(x,t)^*\cdot\Psi(x,t)$是否与$t$相关，不相关则定态&#x3D;&#x3D;</p>
+</li>
+</ol>
+<h3 id="1-3-2-不确定度关系"><a href="#1-3-2-不确定度关系" class="headerlink" title="1.3.2 不确定度关系"></a>1.3.2 不确定度关系</h3><p>$\Delta x\cdot\Delta p_x\geq\dfrac{\hbar}2$</p>
+<p>$\Delta y\cdot\Delta p_y\geq\dfrac{\hbar}2$</p>
+<p>$\Delta z\cdot\Delta p_z\geq\dfrac{\hbar}2$</p>
+<p>$\Delta E\cdot \Delta t\geq \dfrac \hbar 2$</p>
+<h3 id="1-3-3-几率流密度矢量"><a href="#1-3-3-几率流密度矢量" class="headerlink" title="1.3.3 几率流密度矢量"></a>1.3.3 几率流密度矢量</h3><p>&#x3D;&#x3D;$i\hbar(\Psi^<em>\Psi)&#x3D;\dfrac{\hbar^2}{2m}\nabla\cdot[\Psi\nabla\Psi^</em>-\Psi^*\nabla\Psi]$&#x3D;&#x3D;</p>
+<p>几率密度：$\rho&#x3D;\Psi^*\Psi$</p>
+<p>几率流密度矢量：&#x3D;&#x3D;$\vec J&#x3D;\dfrac{i\hbar}{2m}[\Psi\nabla\Psi^<em>-\Psi^</em>\nabla\Psi]$&#x3D;&#x3D;</p>
+<p>几率守恒方程：</p>
+<pre><code>微分形式：$\dfrac \partial&#123;\partial t&#125;\rho+\nabla\cdot\vec J=0$
+
+积分形式：$\frac&#123;d&#125;&#123;dt&#125;\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\vec S$
+</code></pre>
+<p>左边：闭区域$\tau$内找到粒子的总几率（或粒子数）在单位时间内的增量</p>
+<p>右边：单位时间内通过$\tau$的封闭表面 $S$流入（面积分前面的负号）$\tau$内的几率（或粒子数）</p>
+<h3 id="1-3-3-叠加态"><a href="#1-3-3-叠加态" class="headerlink" title="1.3.3 叠加态"></a>1.3.3 叠加态</h3><ol>
+<li><p>若$\Psi_1,\Psi_2,\cdots,\Psi_n$是粒子的可能状态，则粒子也可处在它们的线性叠加态$\Psi&#x3D;\sum\limits_{i&#x3D;1}^nc_i\Psi_i$</p>
+</li>
+<li><p>处于$\Psi态时，部分地处于每种态，处于\Psi_k态的几率是\left|c_k\right|^2$，且$\sum\limits_{k&#x3D;1}^n\left|c_k\right|^2&#x3D;1$</p>
+<p>条件：</p>
+<ol>
+<li>$\Psi_1,\cdots,\Psi_n$正交归一</li>
+<li>$\Psi$满足归一化条件$\int\Psi^*\Psi_ldx&#x3D;\delta_{kl}&#x3D;\begin{cases}1&amp;k&#x3D;l\0&amp;k\neq l\end{cases}$</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-4-4-无限深阱势中的粒子"><a href="#1-4-4-无限深阱势中的粒子" class="headerlink" title="1.4.4 无限深阱势中的粒子"></a>1.4.4 无限深阱势中的粒子</h3><p>&#x3D;&#x3D;$\Phi(x)&#x3D;\begin{cases}\sqrt{\dfrac{2}{a}}\sin\dfrac{n\pi}ax &amp;0&lt;x&lt;a&amp;阱内\0&amp;x\leq0,x\geq a&amp;阱外\end{cases}$&#x3D;&#x3D;</p>
+<p>性质：</p>
+<ol>
+<li>正交性：$\int\limits_{-\infty}^{+\infty}\Phi^*<em>m(x)\Phi_n(x)dx&#x3D;\delta</em>{mn}&#x3D;\begin{cases}1&amp;m&#x3D;n\0&amp;m\ne n\end{cases}$</li>
+<li>通过初始状态确定每一个本征波函数的系数</li>
+<li>基态是$E_1$，第n激发态是$E_{n+1}$，&#x3D;&#x3D;$E_n&#x3D;\dfrac{n^2\pi^2\hbar^2}{2ma^2}$&#x3D;&#x3D;</li>
+<li>边界条件：函数连续且一阶导连续</li>
+</ol>
+<h2 id="1-5-物理量与算符"><a href="#1-5-物理量与算符" class="headerlink" title="1.5 物理量与算符"></a>1.5 物理量与算符</h2><ol>
+<li><p>位置算符：$\hat x\rightleftharpoons x$</p>
+</li>
+<li><p>动量算符：$\hat p \rightleftharpoons -i\hbar\nabla$</p>
+</li>
+<li><p>总能量算符：$\hat H\rightleftharpoons-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r)$</p>
+</li>
+<li><p>设算符为$\hat A$，则以下物理量的&#x3D;&#x3D;平均值为$\int_{-\infty}^\infty \Psi^*\hat A\Psi dx$&#x3D;&#x3D;</p>
+<table>
+<thead>
+<tr>
+<th>物理量</th>
+<th>坐标空间表示（$x$ 表象）</th>
+<th>动量空间表示（$p$ 表象）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>位置算符$\hat{x}$</td>
+<td>$\hat{x} &#x3D; x$</td>
+<td>$\hat{x} &#x3D; i\hbar \frac{d}{dp}$</td>
+<td>乘法&#x2F;导数互为傅里叶对</td>
+</tr>
+<tr>
+<td>动量算符$\hat{p}$</td>
+<td>&#x3D;&#x3D;$\hat{p} &#x3D; -i\hbar \frac{d}{dx}$&#x3D;&#x3D;</td>
+<td>$\hat{p} &#x3D; p$</td>
+<td></td>
+</tr>
+<tr>
+<td>动能算符$\hat{T}$</td>
+<td>&#x3D;&#x3D;$\hat{T} &#x3D; -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}$&#x3D;&#x3D;</td>
+<td>$\hat{T} &#x3D; \frac{p^2}{2m}$</td>
+<td></td>
+</tr>
+<tr>
+<td>势能算符$\hat{U}(x)$</td>
+<td>&#x3D;&#x3D;$\hat{U}(x) &#x3D; U(x)$&#x3D;&#x3D;</td>
+<td>$\hat{U}(x) &#x3D; U(i\hbar \frac{d}{dp})$</td>
+<td>非平移不变势变成微分算符</td>
+</tr>
+<tr>
+<td>哈密顿量$\hat{H}$</td>
+<td>&#x3D;&#x3D;$\hat{H} &#x3D; -\frac{\hbar^2}{2m} \nabla^2 + U(x)$&#x3D;&#x3D;</td>
+<td>$\hat{H} &#x3D; \frac{p^2}{2m} + U(i\hbar \frac{d}{dp})$</td>
+<td>总能量</td>
+</tr>
+<tr>
+<td>力矩$\hat{L}_z$</td>
+<td>$\hat{L}_z &#x3D; -i\hbar \left( x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x} \right)$</td>
+<td>$\hat{L}_z &#x3D; -i\hbar \left( p_x \frac{\partial}{\partial p_y} - p_y \frac{\partial}{\partial p_x} \right)$</td>
+<td>平面角动量（z分量）</td>
+</tr>
+<tr>
+<td>总角动量$\hat{\vec{L}}$</td>
+<td>$\hat{\vec{L}} &#x3D; -i\hbar \vec{r} \times \nabla$</td>
+<td>$\hat{\vec{L}} &#x3D; -i\hbar \vec{p} \times \nabla_p$</td>
+<td>三维角动量向量</td>
+</tr>
+<tr>
+<td>角动量平方$\hat{L}^2$</td>
+<td>$\hat{L}^2 &#x3D; -\hbar^2 \left( \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \phi^2} \right)$</td>
+<td>同左（在$p$ 空间极坐标中结构相同）</td>
+<td>球坐标形式，常见于中心势问题</td>
+</tr>
+<tr>
+<td>$\hat{L}_x$</td>
+<td>$-i\hbar (y \dfrac \partial{\partial z} - z \dfrac{\partial}{\partial y})$</td>
+<td>同形式</td>
+<td>角动量 x 分量</td>
+</tr>
+<tr>
+<td>$\hat{L}_y$</td>
+<td>$-i\hbar (z \dfrac\partial{\partial x} - x \dfrac\partial{\partial z})$</td>
+<td>同形式</td>
+<td>角动量 y 分量</td>
+</tr>
+<tr>
+<td>$\hat{L}_z$</td>
+<td>$-i\hbar (x \dfrac\partial{\partial y} - y \dfrac\partial{\partial x})$</td>
+<td>同形式</td>
+<td>角动量 z 分量</td>
+</tr>
+<tr>
+<td>自旋$\hat{S}_x$</td>
+<td>$\hat{S}_x &#x3D; \frac{\hbar}{2} \begin{pmatrix} 0 &amp; 1 \ 1 &amp; 0 \end{pmatrix}$</td>
+<td>同左</td>
+<td>Pauli 矩阵$\sigma_x$</td>
+</tr>
+<tr>
+<td>自旋$\hat{S}_y$</td>
+<td>$\hat{S}_y &#x3D; \frac{\hbar}{2} \begin{pmatrix} 0 &amp; -i \ i &amp; 0 \end{pmatrix}$</td>
+<td>同左</td>
+<td>Pauli 矩阵$\sigma_y$</td>
+</tr>
+<tr>
+<td>自旋$\hat{S}_z$</td>
+<td>$\hat{S}_z &#x3D; \frac{\hbar}{2} \begin{pmatrix} 1 &amp; 0 \ 0 &amp; -1 \end{pmatrix}$</td>
+<td>同左</td>
+<td>Pauli 矩阵$\sigma_z$</td>
+</tr>
+<tr>
+<td>粒子数算符$\hat{N}$</td>
+<td>$\hat{N} &#x3D; \hat{a}^\dagger \hat{a}$</td>
+<td>同左</td>
+<td>通常用于谐振子&#x2F;量子场理论</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>算符的运算规则</p>
+<ol>
+<li><p>线性算符</p>
+</li>
+<li><p>算符之和：$(\hat A+\hat B)\psi&#x3D;\hat A\psi+\hat B\psi$</p>
+</li>
+<li><p>算符之积：$(\hat A\hat B)\phi&#x3D;\hat A(\hat B\phi)$</p>
+</li>
+<li><p>$\left[\hat A\hat B-\hat B\hat A\right ]&#x3D;\hat A\hat B-\hat B\hat A为方程\hat A和\hat B的对易式，若为0，则两者对易$</p>
+</li>
+<li><p>算符的本征方程（类似矩阵的特征值）$\hat A\varphi&#x3D;\lambda\phi$</p>
+</li>
+<li><p>算符的复共轭：所有复量换成共轭复量</p>
+</li>
+<li><p>厄密算符（厄密算符的共轭转置等于本身）</p>
+<p>若两个任意的波函数$\psi$和$\varphi$，满足$\int\psi^<em>\hat F\varphi d\tau&#x3D;\int(\hat F\psi)^</em>\varphi d\tau,d\tau\equiv dxdydz$</p>
+<p>常见厄密算符：位置算符、动量算符、能量算符</p>
+<p>量子力学中的力学量算符都是厄密的</p>
+</li>
+</ol>
+</li>
+<li><p>厄密算符</p>
+<ol>
+<li><p>实数性：本征值为实数</p>
+</li>
+<li><p>正交性：任意两个本征函数总是正交的</p>
+<p>函数的正交：$\int\psi^*_1(\vec r)\psi_2(\vec r)d\tau&#x3D;0$</p>
+</li>
+<li><p>完备性：</p>
+</li>
+<li><p>即对任一模平方可积函数$\psi$，可表示为$\psi(\vec r)&#x3D;\sum\limits_nc_n\psi_n(\vec r)$，这也可称为广义傅立展开</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="1-6-力学的测量值-测量与量子态的坍缩"><a href="#1-6-力学的测量值-测量与量子态的坍缩" class="headerlink" title="1.6 力学的测量值 测量与量子态的坍缩"></a>1.6 力学的测量值 测量与量子态的坍缩</h2><ol>
+<li>粒子处于本征态$\psi _n$时，测量值是确定的，为本征值$\lambda_n$</li>
+<li>如果体系 $\psi(\vec{r})&#x3D;\sum\limits_n c_n \psi_{n}(\vec{r})$ 不处于 F 的本征态，它的力学量的测量值不是确定的：测量值可能为任意一个本征态 $\psi_{n}$ 对应的本征值 $\lambda_{n}(n&#x3D;1,2,…)$，对应的概率分布为 $|c_n|^2$。<br>$c_{n}&#x3D;\int \psi_{n}^{*}(\vec{r}) \psi(\vec{r}) d\tau$<br>$c_{n}$ 代表了两个态的“相似程度”→ 测量坍缩到本征态 $\psi_{n}$ 的概率</li>
+<li>第一次测量之后，量子态会坍缩为一个$\psi_n$，第二次测量时，体系的态就是$\psi_n$了</li>
+<li>物理量的偏差为方均根偏差，即$\Delta x &#x3D; &lt;x^2&gt;-<x>^2$</li>
+</ol>
+<h2 id="1-7-不同力学量能同时确定的条件"><a href="#1-7-不同力学量能同时确定的条件" class="headerlink" title="1.7 不同力学量能同时确定的条件"></a>1.7 不同力学量能同时确定的条件</h2><p>&#x3D;&#x3D;两个力学量能同时确定（即具有共同本征态）的充分必要条件是它们的算符对易。&#x3D;&#x3D;</p>
+<p>角动量算符互相不对易</p>
+<p>角动量平方算符与其分量对应</p>
+<p>角动量算符与坐标算符对应</p>
+<p>&#x3D;&#x3D;角动量算符本征值：$l&#x3D;0,1,2,\cdots,m&#x3D;l,l-1,\cdots,-l+1,-l$，对应的本征函数（波函数）是$\Psi_m(\varphi)&#x3D;\dfrac1{\sqrt{2\pi}}e^{im\varphi}$&#x3D;&#x3D;</p>
+<p>球谐函数$Y_{lm}$是$\hat L^2$和$\hat L_z$共同的本征函数</p>
+<p>$\hat L^2 Y_{lm}(\theta,\varphi)&#x3D;l(l+1)\hbar^2Y_{lm}(\theta,\varphi)$</p>
+<p>$\hat L_zY_{lm}(\theta,\varphi)&#x3D;m\hbar Y_{lm}(\theta,\varphi)$</p>
+<p>角动量大小：&#x3D;&#x3D;$\sqrt{l(l+1)}\hbar$&#x3D;&#x3D;</p>
+<p>$l&#x3D;0,1,\cdots,n-1;m&#x3D;-l,-l+1,\cdots,l-1,l$</p>
+<p>谐振子能量是量子化的&#x3D;&#x3D;$E_n&#x3D;(n+\dfrac12)\hbar\omega$&#x3D;&#x3D;</p>
+<p>波函数$\Psi_n(x)&#x3D;\left(\dfrac{\alpha}{2^n\sqrt\pi n!}\right)^{1&#x2F;2}H_n(\alpha x)e^{-\dfrac12\alpha^2x^2},\alpha&#x3D;\sqrt{\dfrac{m\omega}{\hbar}}$</p>
+<p>$H_n(\xi)&#x3D;(-1)^ne^{\xi}\dfrac{d^n}{d\xi^n}(e^{-\xi^2})$</p>
+<p>$H_0(\xi)&#x3D;1,H_1(\xi)&#x3D;2\xi,H_2(\xi)&#x3D;4\xi^2-2,H_3(\xi)&#x3D;8\xi^3-12\xi$</p>
+<p>n偶：偶宇称，n奇：奇宇称</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>取值范围</th>
+<th>描述</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主量子数 (n)</td>
+<td>$n &#x3D; 1, 2, 3, …$</td>
+<td>能量大小</td>
+<td>$E_n &#x3D; -13.6 \dfrac1{ n^2} eV$</td>
+</tr>
+<tr>
+<td>轨道角量子数 (l)</td>
+<td>$l &#x3D; 0, 1, 2, …, (n-1)$</td>
+<td>角动量的大小</td>
+<td>$L &#x3D; \sqrt{l(l+1)} ħ$</td>
+</tr>
+<tr>
+<td>轨道磁量子数 (ml)</td>
+<td>$m_l &#x3D; 0, ±1, ±2, …, ±l$</td>
+<td>L 的 z 分量</td>
+<td>$L_z &#x3D; m_l ħ$</td>
+</tr>
+<tr>
+<td>自旋磁量子数 (ms)</td>
+<td>$m_s &#x3D; ±1&#x2F;2$</td>
+<td>S 的 z 分量</td>
+<td>$S_z &#x3D; m_s ħ&#x3D;\pm\dfrac12\hbar$</td>
+</tr>
+</tbody></table>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h2 id="2-1-有限深势阱"><a href="#2-1-有限深势阱" class="headerlink" title="2.1 有限深势阱"></a>2.1 有限深势阱</h2><h2 id="2-2-方势垒"><a href="#2-2-方势垒" class="headerlink" title="2.2 方势垒"></a>2.2 方势垒</h2><p>$\begin{cases}\varPsi_1&#x3D;Ae^{ikx}+A’e^{-ikx}&amp;k&lt;0\\varPsi_2&#x3D;Be^{k’x}+B’e^{-k’x}&amp;0&lt;x&lt;a\\varPsi_3&#x3D;Ce^{ikx}&amp;x&gt;a\end{cases}$</p>
+<p>反射系数：$R&#x3D;\dfrac{\left |A’\right |^2}{\left | A \right |^2}$</p>
+<p>透射系数：$T&#x3D;\dfrac{\left |C\right |^2}{\left | A \right |^2}$</p>
+<p>R+T&#x3D;1</p>
+<h2 id="2-3-氢原子"><a href="#2-3-氢原子" class="headerlink" title="2.3 氢原子"></a>2.3 氢原子</h2><p>类氢原子：$E_n&#x3D;-\dfrac{m_eZ^2e^4}{2(4\pi\epsilon_0)^2\hbar^2n^2}$</p>
+<p>$\varPsi(r,\theta,\varphi)&#x3D;R_{nl}(\theta,\varphi)Y_{lm}(\theta,\varphi)$，前者径向，后者角向（球谐函数）</p>
+<h2 id="2-4-双态系统"><a href="#2-4-双态系统" class="headerlink" title="2.4 双态系统"></a>2.4 双态系统</h2><p>态空间是二维的，于是哈密顿算符变成哈密顿矩阵，薛定谔方程的矩阵形式变为：</p>
+<p>$i\hbar\dfrac{\partial}{\partial t}\begin{pmatrix}C_1\C_2\end{pmatrix}&#x3D;\begin{pmatrix}H_{11}&amp;H_{12}\H_{21}&amp;H_{22}\end{pmatrix}\begin{pmatrix}C_1\C_2\end{pmatrix}$</p>
+<p>取基矢，使$\hat H$为本征态，则有</p>
+<p>$\begin{pmatrix}H_{11}&amp;H_{12}\H_{21}&amp;H_{22}\end{pmatrix}&#x3D;\begin{pmatrix}E_I&amp;0\0&amp;E_{II}\end{pmatrix}$，进一步得到$i\hbar\dfrac{\partial}{\partial t}\begin{pmatrix}C_I\C_{II}\end{pmatrix}&#x3D;\begin{pmatrix}E_I&amp;0\0&amp;E_{II}\end{pmatrix}\begin{pmatrix}C_I\C_{II}\end{pmatrix}$</p>
+<h1 id="常用互易关系"><a href="#常用互易关系" class="headerlink" title="常用互易关系"></a>常用互易关系</h1><p>$[\hat{A} \hat{B}, \hat{C}] &#x3D; \hat{A} [\hat{B}, \hat{C}] + [\hat{A}, \hat{C}] \hat{B}$</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat y]&#x3D;0$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat p_x,\hat p_y]&#x3D;0$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat p_x]&#x3D;i\hbar$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat L_y]&#x3D;i\hbar z$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat L_z]&#x3D;-i\hbar y$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[x,\hat p_y]&#x3D;[x,\hat p_z]&#x3D;0$&#x3D;&#x3D;</p>
+<p>$\left[\hat{L_x},\hat{L_y}\right]&#x3D;i\hbar\hat{L_z}$</p>
+<p>$\left[\hat{L}^2,\hat{L_x}\right]&#x3D;0$</p>
+<p>$[\hat H,\hat L_z]&#x3D;0$</p>
+<p>$[\hat H,\hat p]&#x3D;0$</p>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/06/13/2025/20250622%20WWDC2025/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/2025/f882568ce4_wwdc-2025-apple.webp">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%8A%80%E6%9C%AF-Tech/">
+                    技术/Tech
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/06/13/2025/20250622%20WWDC2025/" class="trm-anima-link">
+                    2025 WWDC 小谈
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/06/13</li>
+                <li>15:15</li>
+                
+                    <li>2.9k</li>
+                
+                
+                    <li>10</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-anima-link">
+                    马克思主义基本原理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/06/08</li>
+                <li>00:00</li>
+                
+                    <li>13.4k</li>
+                
+                
+                    <li>45</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="第一章 量子物理基础"><a rel="nofollow" class="trm-toc-link" href="#第一章-量子物理基础"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">第一章 量子物理基础</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1.1 光量子、玻尔原子"><a rel="nofollow" class="trm-toc-link" href="#1-1-光量子、玻尔原子"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1.1 光量子、玻尔原子</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1.1 黑体辐射与普朗克的量子假设"><a rel="nofollow" class="trm-toc-link" href="#1-1-1-黑体辐射与普朗克的量子假设"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1.1 黑体辐射与普朗克的量子假设</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="基尔霍夫辐射定律"><a rel="nofollow" class="trm-toc-link" href="#基尔霍夫辐射定律"><span class="trm-toc-number">1.1.1.1.</span> <span class="trm-toc-text">基尔霍夫辐射定律</span></a></li><li class="trm-toc-item trm-toc-level-4" title="普朗克能量子假说"><a rel="nofollow" class="trm-toc-link" href="#普朗克能量子假说"><span class="trm-toc-number">1.1.1.2.</span> <span class="trm-toc-text">普朗克能量子假说</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.1.2 光的波粒二象性"><a rel="nofollow" class="trm-toc-link" href="#1-1-2-光的波粒二象性"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.1.2 光的波粒二象性</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.1.3 玻尔原子理论"><a rel="nofollow" class="trm-toc-link" href="#1-1-3-玻尔原子理论"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.1.3 玻尔原子理论</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="1.2 物质波"><a rel="nofollow" class="trm-toc-link" href="#1-2-物质波"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">1.2 物质波</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.2.1 物质波"><a rel="nofollow" class="trm-toc-link" href="#1-2-1-物质波"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">1.2.1 物质波</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="1.3&amp;1.4 波函数和态叠加原理&amp;薛定谔方程"><a rel="nofollow" class="trm-toc-link" href="#1-3-1-4-波函数和态叠加原理-薛定谔方程"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">1.3&amp;1.4 波函数和态叠加原理&amp;薛定谔方程</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.4.1 波函数"><a rel="nofollow" class="trm-toc-link" href="#1-4-1-波函数"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">1.4.1 波函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4.2波函数的应用"><a rel="nofollow" class="trm-toc-link" href="#1-4-2波函数的应用"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">1.4.2波函数的应用</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4.3波函数的统计解释"><a rel="nofollow" class="trm-toc-link" href="#1-4-3波函数的统计解释"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">1.4.3波函数的统计解释</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3.1 薛定谔方程"><a rel="nofollow" class="trm-toc-link" href="#1-3-1-薛定谔方程"><span class="trm-toc-number">1.3.4.</span> <span class="trm-toc-text">1.3.1 薛定谔方程</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3.2 不确定度关系"><a rel="nofollow" class="trm-toc-link" href="#1-3-2-不确定度关系"><span class="trm-toc-number">1.3.5.</span> <span class="trm-toc-text">1.3.2 不确定度关系</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3.3 几率流密度矢量"><a rel="nofollow" class="trm-toc-link" href="#1-3-3-几率流密度矢量"><span class="trm-toc-number">1.3.6.</span> <span class="trm-toc-text">1.3.3 几率流密度矢量</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3.3 叠加态"><a rel="nofollow" class="trm-toc-link" href="#1-3-3-叠加态"><span class="trm-toc-number">1.3.7.</span> <span class="trm-toc-text">1.3.3 叠加态</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4.4 无限深阱势中的粒子"><a rel="nofollow" class="trm-toc-link" href="#1-4-4-无限深阱势中的粒子"><span class="trm-toc-number">1.3.8.</span> <span class="trm-toc-text">1.4.4 无限深阱势中的粒子</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="1.5 物理量与算符"><a rel="nofollow" class="trm-toc-link" href="#1-5-物理量与算符"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">1.5 物理量与算符</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.6 力学的测量值 测量与量子态的坍缩"><a rel="nofollow" class="trm-toc-link" href="#1-6-力学的测量值-测量与量子态的坍缩"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">1.6 力学的测量值 测量与量子态的坍缩</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.7 不同力学量能同时确定的条件"><a rel="nofollow" class="trm-toc-link" href="#1-7-不同力学量能同时确定的条件"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">1.7 不同力学量能同时确定的条件</span></a></li><li class="trm-toc-item trm-toc-level-2" title="第二章"><a rel="nofollow" class="trm-toc-link" href="#第二章"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">第二章</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2.1 有限深势阱"><a rel="nofollow" class="trm-toc-link" href="#2-1-有限深势阱"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">2.1 有限深势阱</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2.2 方势垒"><a rel="nofollow" class="trm-toc-link" href="#2-2-方势垒"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">2.2 方势垒</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2.3 氢原子"><a rel="nofollow" class="trm-toc-link" href="#2-3-氢原子"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">2.3 氢原子</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2.4 双态系统"><a rel="nofollow" class="trm-toc-link" href="#2-4-双态系统"><span class="trm-toc-number">1.11.</span> <span class="trm-toc-text">2.4 双态系统</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="常用互易关系"><a rel="nofollow" class="trm-toc-link" href="#常用互易关系"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">常用互易关系</span></a></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
