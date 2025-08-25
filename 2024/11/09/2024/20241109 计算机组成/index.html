@@ -1,0 +1,2930 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="Computer OrganizationLecture 01: Introduction to Computer Organization Von Neumann Architecture  I&#x2F;O device Central Processing Unit (Control Unit &amp; Arithmetic&#x2F;Logic Unit) Memory Unit  In">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成整理">
+<meta property="og:url" content="https://ryanstarfox.github.io/2024/11/09/2024/20241109%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="Computer OrganizationLecture 01: Introduction to Computer Organization Von Neumann Architecture  I&#x2F;O device Central Processing Unit (Control Unit &amp; Arithmetic&#x2F;Logic Unit) Memory Unit  In">
+<meta property="og:locale">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="article:published_time" content="2024-11-09T05:35:00.000Z">
+<meta property="article:modified_time" content="2024-11-09T05:35:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="技术&#x2F;Tech">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ryanstarfox.github.io/img/404.jpg">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >计算机组成整理</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-11-09 13:35:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            计算机组成整理
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            11/09
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            13:35
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="Computer-Organization"><a href="#Computer-Organization" class="headerlink" title="Computer Organization"></a>Computer Organization</h1><h2 id="Lecture-01-Introduction-to-Computer-Organization"><a href="#Lecture-01-Introduction-to-Computer-Organization" class="headerlink" title="Lecture 01: Introduction to Computer Organization"></a>Lecture 01: Introduction to Computer Organization</h2><ol>
+<li><p>Von Neumann Architecture</p>
+<ul>
+<li>I&#x2F;O device</li>
+<li>Central Processing Unit (Control Unit &amp; Arithmetic&#x2F;Logic Unit)</li>
+<li>Memory Unit</li>
+</ul>
+<p>In Von Neumann (Princeton) architecture, data memory and program memory are stored together, while in Harward architecture, they are stored separately</p>
+<p>three key concepts of VN architecture</p>
+<ul>
+<li>instructions and data stored in a single read-write memory</li>
+<li>Contents of memory are addressable by location, without regard to the type of data</li>
+<li>execution occurs in a sequential fashion</li>
+</ul>
+</li>
+<li><p>CPU</p>
+<ul>
+<li><p>Core: including ALU, CU, register</p>
+</li>
+<li><p>Clock: 1-5GHz</p>
+</li>
+<li><p>Instruction Set Architecture&#x2F;ISA 指令集(eg. x86, ARM, PowerPC, MIPS, RISCV)</p>
+</li>
+<li><p>ALU:</p>
+<ul>
+<li>Arithmetic functions：$+, -, \times, \div$</li>
+<li>Logic：$\or, \and, \neg$</li>
+<li>Two inputs, one control signal, results calculation can be temporarily stored in one of the registers</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20240929210712246.png" alt="image-20240929210712246"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>CU</p>
+<ul>
+<li>works under instructions</li>
+<li>CU contains<ul>
+<li>an instructor decoder (which decodes instructions and generates control signals)</li>
+<li>a program counter (which points to the address of the next instruction to be executed)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20240929211937065.png" alt="image-20240929211937065"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>instruction set</p>
+<ul>
+<li>CISC (Complex Instruction Set Computers)<ul>
+<li>Variable instruction length (1 words- n words)</li>
+<li>variable execution time of different format instructions</li>
+<li>more instrucction formats</li>
+<li>upwardly compatible (new instruction set contains earlier generation’s instructions)</li>
+<li>Eg. X86</li>
+</ul>
+</li>
+<li>RISC (Reduced Instruction Set Computers)<ul>
+<li>Fixed size (1 word)</li>
+<li>Fixed time for all instructions</li>
+<li>Easy to pipeline the RISC instructions (fast)</li>
+<li>Fewer formats</li>
+<li>eg. PowerPC, MIPS, ARM, PIC’s MCU</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Memory</p>
+<ul>
+<li>单位换算：<ul>
+<li>Bit(b): 0 or 1</li>
+<li>Byte(B): 8 bits</li>
+<li>Nibble: 0.5 B</li>
+<li>Word: depends on the computer, the number of bits a CPU can process at one time<ul>
+<li>depends on the width of the CPU’s registers’ and data bus’s band width</li>
+</ul>
+</li>
+<li>Double Word</li>
+<li>K, M, G, T, P,</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bus</p>
+<ul>
+<li><p>System bus: connects major computer components</p>
+</li>
+<li><p>Arbitration:</p>
+<ul>
+<li>Distribution: each module has access to logic controlling and collaboration<ul>
+<li>protocols: CSMA&#x2F;CD</li>
+</ul>
+</li>
+<li>Centralized: bus controller responsible for allocating time on a bus<ul>
+<li>Master activates a bus</li>
+<li>Slave passively waits for a command</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Type:</p>
+<ul>
+<li>dedicated（专用总线）</li>
+<li>Multiplexed（复用总线）</li>
+</ul>
+</li>
+<li><p>Timing</p>
+<ul>
+<li>Synchronous: global clock</li>
+<li>Asynchronous: devices have their own clocks</li>
+</ul>
+</li>
+<li><p>Structure：</p>
+<ul>
+<li><p>Single-bus structure</p>
+<ul>
+<li><p>pro: simple</p>
+</li>
+<li><p>Con: poor performance</p>
+<p><img src="/./.Photo.asset/image-20240930131524453.png" alt="image-20240930131524453"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+</ul>
+</li>
+<li><p>CPU-Central Dual-Bus Structure</p>
+<ul>
+<li>Pro: efficient in terms of data transfer</li>
+<li>Con: info between memory and I&#x2F;O devices has to go through CPU-&gt;Poor CPU</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20240930131852788.png" alt="image-20240930131852788"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>Memory-Central Dual-Bus structure</p>
+<ul>
+<li>Both high CPU performance and data transfer throught</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20240930132359826.png" alt="image-20240930132359826"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>Type:</p>
+<ul>
+<li><p>Data Bus</p>
+<ul>
+<li>moving data</li>
+<li>bidirectional: both read and write</li>
+<li>width: as wide as CPU’s register, determines how much data the processor can read in  cycle, which in turn determines a word of this computer</li>
+</ul>
+</li>
+<li><p>Address Bus</p>
+<ul>
+<li>Designate the source or destination of the data</li>
+<li>unidirectional: CPU-&gt;memory&#x2F;I&#x2F;O device</li>
+<li>Width of the address bus: n, determines the max size of memory</li>
+</ul>
+</li>
+<li><p>Control Bus</p>
+<ul>
+<li>control modules and use of data bus and address buses</li>
+<li>2 sets of unidirectional control signals<ul>
+<li>Command signal: CPU0-&gt;memory (I&#x2F;O device)</li>
+<li>State signal: Memory (I&#x2F;O device)-&gt;CPU</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>I&#x2F;O</p>
+<ul>
+<li><p>Memory-mapped I&#x2F;O</p>
+<ul>
+<li>memory and I&#x2F;O share 1 single address space</li>
+<li>Status and data registers of I&#x2F;O modules are treated as memory locations</li>
+<li>same machine instructions to access both</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20240930142323633.png" alt="image-20240930142323633"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>Isolated I&#x2F;O</p>
+<ul>
+<li>Two separate address space for memory and I&#x2F;O modules</li>
+<li>Using different seets of accessing indtructions</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20240930142340730.png" alt="image-20240930142340730"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Lecture-02-Digital-logic"><a href="#Lecture-02-Digital-logic" class="headerlink" title="Lecture 02: Digital logic"></a>Lecture 02: Digital logic</h2><ol>
+<li><p>Transistor:</p>
+<ul>
+<li>N-type MOS transistor：<ul>
+<li>positive voltage: switch closed, gate &#x3D; 1</li>
+<li>zero voltage: switch open, gate &#x3D; 0</li>
+</ul>
+</li>
+<li>P-type MOS transistor:<ul>
+<li>positive voltage: switch open, gate &#x3D; 0</li>
+<li>zero voltage: switch closed, gate &#x3D; 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Digital symbols: classified by voltage range</p>
+<p><img src="/./.Photo.asset/image-20240930143310181.png" alt="image-20240930143310181"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>CMOS circuit: use both n-type and p-type MOS transistors</p>
+<p>Not:</p>
+<p><img src="/./.Photo.asset/image-20240930143533014.png" alt="image-20240930143533014"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>Nor:</p>
+<p><img src="/./.Photo.asset/image-20240930143555206.png" alt="image-20240930143555206"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>or就是nor加了一个inverter</p>
+<p>nand：</p>
+<p><img src="/./.Photo.asset/image-20240930143650890.png" alt="image-20240930143650890"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>Combintional circuit: give same output for a series of inputs</p>
+<p>Sequential circuit: store info&#x2F; state machine</p>
+</li>
+<li><p>R-S latch</p>
+<p><img src="/./.Photo.asset/image-20240930145125704.png" alt="image-20240930145125704"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<table>
+<thead>
+<tr>
+<th align="center">R-S latch</th>
+<th align="center">R&#x3D;0</th>
+<th align="center">R&#x3D;1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">S&#x3D;0</td>
+<td align="center">Illegal</td>
+<td align="center">set to 1</td>
+</tr>
+<tr>
+<td align="center">S&#x3D;1</td>
+<td align="center">set to 0</td>
+<td align="center">Hold</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>gated D-latch</p>
+<img src="./.Photo.asset/image-20240930145226236.png" alt="image-20240930145226236" style="zoom:50%;"   data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'/>
+
+<p>WE &#x3D; 1, Latch set to value of D</p>
+<p>WE &#x3D; 0, hold</p>
+</li>
+<li><p>Register: a collection of D-latches with common we</p>
+<p><img src="/./.Photo.asset/image-20240930145414665.png" alt="image-20240930145414665"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>to represent multi-bit values use brackets</p>
+<p>eg. A&#x3D;0101001101010101</p>
+<p>A[14:9] &#x3D; 101001, A[2:0] &#x3D; 101</p>
+</li>
+<li><p>memory structure:</p>
+<p><img src="/./.Photo.asset/image-20240930145750775.png" alt="image-20240930145750775"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20240930145817623.png"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+</ol>
+<h2 id="Lecture-03-IO-and-memoryMemory-taxonomy-characterisitc"><a href="#Lecture-03-IO-and-memoryMemory-taxonomy-characterisitc" class="headerlink" title="Lecture 03: IO and memoryMemory taxonomy &amp; characterisitc"></a>Lecture 03: IO and memoryMemory taxonomy &amp; characterisitc</h2><h3 id="memory-taxomony-characteristic"><a href="#memory-taxomony-characteristic" class="headerlink" title="memory taxomony &amp; characteristic"></a>memory taxomony &amp; characteristic</h3><ol>
+<li><p>Memory taxonomy &amp; characterisitc</p>
+<ul>
+<li>Physical types of memory: Semiconductor (RAM &amp; ROM)</li>
+<li>Magnetic (Disk &amp; Tape)</li>
+<li>Optical (CD &amp; DVD)</li>
+</ul>
+</li>
+<li><p>Location:</p>
+<ul>
+<li>CPU: register</li>
+<li>Internal: cache, main memory</li>
+<li>External: Disk, tape, DVD</li>
+</ul>
+<p>the internal unit of transfer is usually a word (restricted by data bus width)</p>
+<p>the external unit of transfer is a block (to keep the CPU busy)</p>
+</li>
+<li><p>Access methods:</p>
+<ul>
+<li>sequential:<ul>
+<li>tape</li>
+<li>read through order</li>
+<li>access time depending on location and previous location</li>
+</ul>
+</li>
+<li>Direct:<ul>
+<li>disk</li>
+<li>Individual block has unique address</li>
+<li>access is by jumping to vicnity and sequential search</li>
+<li>access time depending on location and previous location</li>
+</ul>
+</li>
+<li>Random:<ul>
+<li>RAM, ROM</li>
+<li>Individual address identify locations exactly</li>
+<li>Access time is independent of location or previous access</li>
+</ul>
+</li>
+<li>Associative<ul>
+<li>cache</li>
+<li>Data located based on a portion of its contents</li>
+<li>Access time is independent of location or previous access</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Performance:</p>
+<ul>
+<li>Access time: time between presenting address and get valid data</li>
+<li>Memory cycle time: access time + recovery time</li>
+<li>Transfer rate (GT&#x2F;s): data moved rate</li>
+<li>Transfer bandwidth (GB&#x2F;s): Transfer rate * Transfer Unit size</li>
+</ul>
+</li>
+<li><p>Semiconductor Memory</p>
+<ol>
+<li>volatile vs non-volatile<ul>
+<li>RAM is volatile, loses data when power off</li>
+<li>ROM is non-volatile, stores data when power off</li>
+</ul>
+</li>
+<li>Static vs Dynamic<ul>
+<li>SRAM is static, holds power as long as power applied</li>
+<li>DRAM is dynamic, loses data unless periodically refreshed</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>SRAM</p>
+<ol>
+<li><p>Flip-flop (bits stores as on&#x2F;off gates)</p>
+<p><img src="/./.Photo.asset/image-20241008092435128.png" alt="image-20241008092435128"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>comlex, large, expensive, fast</p>
+</li>
+<li><p>no refresh needed when power on, no charges to leak</p>
+</li>
+<li><p>Register, cache</p>
+</li>
+</ol>
+</li>
+<li><p>DRAM</p>
+<ol>
+<li>bits stored as charge in capacitors</li>
+<li>charges leak, refresh needed</li>
+<li>Simple, small, cheap, slow</li>
+<li>main memory</li>
+</ol>
+</li>
+</ol>
+<h3 id="Memory-hierarchy"><a href="#Memory-hierarchy" class="headerlink" title="Memory hierarchy"></a>Memory hierarchy</h3><p>Register -&gt; L1 Cache -&gt; L2 cache -&gt; Main memory -&gt; Disk cache -&gt; Disk -&gt; Optical -&gt; Tape</p>
+<h3 id="RAM-organization"><a href="#RAM-organization" class="headerlink" title="RAM organization"></a>RAM organization</h3><ol>
+<li><p>memory interface with CPU</p>
+<ul>
+<li><p>address bus carries memory addresses</p>
+</li>
+<li><p>data bus carries actual data</p>
+</li>
+<li><p>Control bus carries signal</p>
+<p>内存传指令给CU，CU传指令去存储器找数据，找到数据给ALU，ALU把结果存进内存</p>
+</li>
+</ul>
+</li>
+<li><p>Memory chip</p>
+<ul>
+<li><p>N x n memory chip</p>
+<ul>
+<li>n &#x3D; chip word width (not CPU word)</li>
+<li>N number of n-bit words</li>
+</ul>
+</li>
+<li><p>Chip I&#x2F;O</p>
+<ul>
+<li>Data input: $D_{n-1}-D_0$</li>
+<li>Address: $A_{m-1}-A_0$</li>
+<li>Control:<ul>
+<li>WE &#x3D; write enable (assert low)<ul>
+<li>WE &#x3D; 1: read;</li>
+<li>WE &#x3D; 0: write;</li>
+</ul>
+</li>
+<li>EN block enable (assert low)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241008100354419.png" alt="image-20241008100354419"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<ul>
+<li>in physical view</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241008100806188.png" alt="image-20241008100806188"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>CPU: $N_{CPU}\times n_{CPU}$</p>
+<p>Memory: $N_{mem}\times n_{mem}$</p>
+<p>Word extension: $N_{CPU}&gt;N_{mem}$</p>
+<p>Bit extension: $n_{CPU}&gt;n_{mem}$</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="ROM"><a href="#ROM" class="headerlink" title="ROM"></a>ROM</h3><p>   Permanent storage, nonvolatile</p>
+<p>   application:</p>
+<p>   library subroutines, bios, function tables</p>
+<p>   Types:</p>
+<ul>
+<li>Written during manufacture</li>
+<li>programmable (once)<ul>
+<li>PROM</li>
+<li>need special equipment to program</li>
+</ul>
+</li>
+<li>Read mostly<ul>
+<li>Erasable programmable (EPROM)</li>
+<li>ELectrically erasable (EEPROM)</li>
+<li>Flash memory</li>
+</ul>
+</li>
+</ul>
+<h3 id="Input-Output-problems"><a href="#Input-Output-problems" class="headerlink" title="Input&#x2F;Output problems"></a>Input&#x2F;Output problems</h3><ol>
+<li><p>I&#x2F;O Steps</p>
+<ul>
+<li>CPU checks I&#x2F;O module for device status</li>
+<li>I&#x2F;O device retuerns status</li>
+<li>if ready, CPU request data transfer by a command to I&#x2F;O module</li>
+<li>I&#x2F;O gets a unit of data from device</li>
+<li>I&#x2F;O transfrer data to CPU</li>
+<li>output</li>
+</ul>
+</li>
+<li><p>Programmed I&#x2F;O</p>
+<ul>
+<li><p>CPU executes a program directly giving control of I&#x2F;O</p>
+<ul>
+<li>Sense device status</li>
+<li>r&#x2F;w commands to I&#x2F;O</li>
+<li>transfer data</li>
+</ul>
+</li>
+<li><p>CPU wait for I&#x2F;O to complete operation</p>
+</li>
+<li><p>Typical details:</p>
+<ol>
+<li>CPU requests I&#x2F;O operation</li>
+<li>I&#x2F;O perform operation</li>
+<li>I&#x2F;O sets status bits</li>
+<li>CPU checks status bits periodically</li>
+<li>I&#x2F;O not inform CPU</li>
+<li>I&#x2F;O not interrupt CPU</li>
+<li>CPU wait&#x2F; come back later</li>
+</ol>
+</li>
+<li><p>I&#x2F;O commands includes:</p>
+<ul>
+<li><p>CPU issues address</p>
+<ul>
+<li><p>identifies module, like memory access</p>
+</li>
+<li><p>two types:</p>
+<ol>
+<li><p>Memory mapped I&#x2F;O:</p>
+<ol>
+<li>device and memory share address place</li>
+<li>I&#x2F;O are treated like memory</li>
+<li>no special comand</li>
+</ol>
+</li>
+<li><p>Isolated I&#x2F;O</p>
+<ol>
+<li>Separated address spaces</li>
+<li>Need I&#x2F;O or memory select line</li>
+<li>Special commands for I&#x2F;O</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>CPU issues command</p>
+<ul>
+<li>Control: tell module what to do</li>
+<li>Test: check status</li>
+<li>R&#x2F;W</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>to conclude: simple, but waste CPU time is CPU is fast.</p>
+<h3 id="Interrupted-Driven-I-O"><a href="#Interrupted-Driven-I-O" class="headerlink" title="Interrupted Driven I&#x2F;O"></a>Interrupted Driven I&#x2F;O</h3><ol>
+<li><p>Typical details:</p>
+<ul>
+<li><p>CPU requests I&#x2F;O operaiton</p>
+</li>
+<li><p>I&#x2F;O module performs operation while CPU does other work</p>
+</li>
+<li><p>I&#x2F;O module informs CPU when someting comes up by interrupting CPU</p>
+</li>
+<li><p>CPU deals with this event</p>
+</li>
+<li><p>Protocol perspective:</p>
+<p><img src="/./.Photo.asset/image-20241009113715452.png" alt="image-20241009113715452"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p>CPU perspective:</p>
+<ul>
+<li>issue read command</li>
+<li>do other work</li>
+<li>check for interrupt at the end of each cycle</li>
+<li>If interrupted:<ul>
+<li>save context (register)</li>
+<li>process interrupt<ul>
+<li>fetch data &amp; store</li>
+</ul>
+</li>
+<li>recover from saved context</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>some probs</p>
+<ul>
+<li><p>Identify interrupting module</p>
+<ol>
+<li><p>Connect a dedicated line for each module (limits the number of devices)</p>
+</li>
+<li><p>software poll</p>
+<ul>
+<li>common Interrupt Request</li>
+<li>get an interrupt -&gt; CPU ask each module in turn</li>
+<li>Clear interrupt request status</li>
+</ul>
+</li>
+<li><p>daisy chain or hardware poll</p>
+<ul>
+<li>share common interrupt request line</li>
+<li>Interrupt acknowledge signal is sent down a chain</li>
+</ul>
+</li>
+<li><p>bus master</p>
+</li>
+</ol>
+<p>module have to claim the bus before raising interrupt</p>
+<p>Eg. PCI &amp; SCSI</p>
+<ol start="5">
+<li><p>Interrupt controller</p>
+<p>8259</p>
+</li>
+</ol>
+</li>
+<li><p>locating handler programs</p>
+<ul>
+<li>Using a general handler program<ul>
+<li>CPU enters it each time interrupted</li>
+<li>look for module responsible and get address</li>
+</ul>
+</li>
+<li>Using interrupt vectors<ul>
+<li>handler program can be stored anywhere in the memory</li>
+<li>pointer used to link handlker program</li>
+<li>address of pointer fixed and known to the CPU</li>
+<li>such pointers are interrupt vectors</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Dealing with multiple interrupts</p>
+<ul>
+<li>set different priority for interrupts</li>
+<li>Nesting of interrupts (high-priority interrupts can interrupt low-priority interrupts)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Direct-memory-access"><a href="#Direct-memory-access" class="headerlink" title="Direct memory access"></a>Direct memory access</h3><p>not need CPU involved</p>
+<p>Additional module (hardware) on bus</p>
+<p>DMA controller takes over from CPU for I&#x2F;O</p>
+<ul>
+<li><p>operation</p>
+<ol>
+<li>CPU tell DMA controller: r&#x2F;w, device address, data address, data amount</li>
+<li>CPU continues other work</li>
+<li>DMA controller deals with transfer</li>
+<li>DMA controller sends interrupt when finished</li>
+</ol>
+<p>since DMA will take control of bus for a cycle, it will slow down the CPU not as much as CPU dong transfer</p>
+<p>some configurations:</p>
+<p><img src="/./.Photo.asset/image-20241010120533029.png" alt="image-20241010120533029"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20241010120619723.png" alt="image-20241010120619723"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20241010120554645.png" alt="image-20241010120554645"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+</ul>
+<h2 id="Lecture04-80X86-Microprocessor"><a href="#Lecture04-80X86-Microprocessor" class="headerlink" title="Lecture04: 80X86 Microprocessor"></a>Lecture04: 80X86 Microprocessor</h2><h3 id="internal-organization-of-8086"><a href="#internal-organization-of-8086" class="headerlink" title="internal organization of 8086"></a>internal organization of 8086</h3><p>16-bit microprocessor, 20-bit address data bus (1MB memory),</p>
+<ul>
+<li><p>Two sections :</p>
+<ul>
+<li><p>Bus interface unit (BIU): access memory and peripherals</p>
+</li>
+<li><p>Execution unit (EU):</p>
+<p>execute instructions previously fetched</p>
+</li>
+</ul>
+</li>
+<li><p>internal structure:</p>
+<p><img src="/./.Photo.asset/image-20241010210153160.png" alt="image-20241010210153160"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+</ul>
+<h4 id="Bus-Interface-Unit"><a href="#Bus-Interface-Unit" class="headerlink" title="Bus Interface Unit"></a>Bus Interface Unit</h4><ul>
+<li><p>take in charge of data transfer between CPU and memory and I&#x2F;O devices</p>
+<p>including:</p>
+<ul>
+<li>instruciton fetch</li>
+<li>instruction queueing</li>
+<li>operand fetch and storage</li>
+<li>Address relocation</li>
+<li>bus control</li>
+</ul>
+</li>
+<li><p>consists of:</p>
+<ul>
+<li>4 16-bit segment registers (段寄存器): CS, DS, ES, SS</li>
+<li>1 16-bit instruction pointer: IP</li>
+<li>1 20-bit address adder: eg. CS*16+IP</li>
+<li>1 6-byte instruction queue</li>
+</ul>
+</li>
+<li><p>when EU executing, BIU will fetch the nect one or several instructions from the memory and put in the queue</p>
+</li>
+</ul>
+<h4 id="Execution-Unit"><a href="#Execution-Unit" class="headerlink" title="Execution Unit"></a>Execution Unit</h4><ul>
+<li>take in charge of instruction execution</li>
+<li>Consists of:<ul>
+<li>4 16-bit general registers:<ul>
+<li>Accumulator (AX)</li>
+<li>Base (BX)</li>
+<li>Count (CX)</li>
+<li>Data (DX)</li>
+</ul>
+</li>
+<li>2 16-bit pointer registers:<ul>
+<li>Stack pointer (SP)</li>
+<li>Base pointer (BP)</li>
+</ul>
+</li>
+<li>2 16-bit index registers:<ul>
+<li>Source Index (SI)</li>
+<li>Destination Index (DI)</li>
+</ul>
+</li>
+<li>1 16-bit flag register (9 of 16 bits are used)</li>
+<li>ALU</li>
+</ul>
+</li>
+</ul>
+<h4 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a>Registers</h4><p>On-chip storage: super fast but expensive</p>
+<p>Temp storage</p>
+<table>
+<thead>
+<tr>
+<th>category</th>
+<th>bits</th>
+<th>register name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>general</td>
+<td>16</td>
+<td>AX, BX, CX, DX</td>
+</tr>
+<tr>
+<td></td>
+<td>8</td>
+<td>AH, AL, BH, BL, CH, CL, DH, DL</td>
+</tr>
+<tr>
+<td>pointer</td>
+<td>16</td>
+<td>SP (stack pointer), BP (base pointer)</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>16</td>
+<td>SI (source index), DI (destination index)</td>
+</tr>
+<tr>
+<td>Segment</td>
+<td>16</td>
+<td>CS (code segment), DS (data segment), SS (stack segment), ES (extra segment)</td>
+</tr>
+<tr>
+<td>Instruction</td>
+<td>16</td>
+<td>IP (instruciton pointer)</td>
+</tr>
+<tr>
+<td>Flag</td>
+<td>16</td>
+<td>FR (flag register)</td>
+</tr>
+</tbody></table>
+<p>Note: general registers can be accessed as 1️⃣full 16 bits (AX) 2️⃣high byte only (AH) or low byte only (AL)</p>
+<h4 id="Pipeling-in-8086"><a href="#Pipeling-in-8086" class="headerlink" title="Pipeling in 8086"></a>Pipeling in 8086</h4><ul>
+<li>BIU fetches and stores instructions once queue has &gt; 2 empty bytes</li>
+<li>EU consumes instructions pre-fetched and stored in the queue</li>
+<li>to increase effiency of CPU</li>
+<li>works during sequential instruction execution</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241013131307719.png" alt="image-20241013131307719"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h4 id="Flag-register"><a href="#Flag-register" class="headerlink" title="Flag register"></a>Flag register</h4><table>
+<thead>
+<tr>
+<th align="center">15</th>
+<th align="center">14</th>
+<th align="center">13</th>
+<th align="center">12</th>
+<th align="center">11</th>
+<th>10</th>
+<th>9</th>
+<th>8</th>
+<th>7</th>
+<th>6</th>
+<th>5</th>
+<th>4</th>
+<th>3</th>
+<th>2</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">R</td>
+<td align="center">R</td>
+<td align="center">R</td>
+<td align="center">R</td>
+<td align="center">OF</td>
+<td>DF</td>
+<td>IF</td>
+<td>TF</td>
+<td>SF</td>
+<td>ZF</td>
+<td>U</td>
+<td>AF</td>
+<td>U</td>
+<td>PF</td>
+<td>U</td>
+<td>CF</td>
+</tr>
+</tbody></table>
+<p>R &#x3D; reserved, U &#x3D; undefined</p>
+<h5 id="Conditional-flags"><a href="#Conditional-flags" class="headerlink" title="Conditional flags:"></a>Conditional flags:</h5><ol>
+<li>CF (carry flag): set whenever carry out (D7 or D15); detect errors in unsigned arithmetic operations</li>
+<li>PF (parity flag): if the low byte has even 1s, then set</li>
+<li>AF (auxiliary carry flag): set if there’s a carry from d3 to d4, used in BCD related arithmetic</li>
+<li>ZF (zero flag): set when result is 0</li>
+<li>SF (sign flag): copied from the sign bit after op</li>
+<li>OF: set when result of a signed number operation overflows; detect errors in signed arithmetic operations</li>
+</ol>
+<h5 id="Control-flags"><a href="#Control-flags" class="headerlink" title="Control flags:"></a>Control flags:</h5><ol>
+<li>DF (direction flag): indicate direction of string operations (from low to high or high to low)</li>
+<li>IF (interrupt flag): set&#x2F;cleared to enable&#x2F;disable external maskable interrupt requests</li>
+<li>TF (trap flag): set to allow the program to run single-step, useful for debugging</li>
+</ol>
+<h3 id="Chip-interface-of-8086"><a href="#Chip-interface-of-8086" class="headerlink" title="Chip interface of 8086"></a>Chip interface of 8086</h3><p><img src="/./.Photo.asset/image-20241013135448042.png" alt="image-20241013135448042"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="control-signals"><a href="#control-signals" class="headerlink" title="control signals"></a>control signals</h3><ul>
+<li><p>$MN&#x2F;\overline{MX}$</p>
+<ul>
+<li><p>Minimum mode: $MN&#x2F;\overline{MX}&#x3D;1$</p>
+<ul>
+<li>single CPU</li>
+<li>control signals from the CPU</li>
+</ul>
+</li>
+<li><p>Maximun mode: $MN&#x2F;\overline{MX}&#x3D;0$</p>
+<ul>
+<li>multiple CPUs<ul>
+<li>8288 control chip supports</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>$\overline{RD}$: Output, CPU is reading from memory or I&#x2F;O</p>
+</li>
+<li><p>$\overline{WR}$: Outpit, CPU is writing to memory or I&#x2F;O</p>
+</li>
+<li><p>$M&#x2F;\overline{IO}$: output, CPU is accessing memory (high level) or IO (low level)</p>
+</li>
+<li><p>$READY$: input, memory&#x2F;IO is ready for data transfer</p>
+</li>
+<li><p>$\overline{DEN}$: output, used to enable data transceivers</p>
+</li>
+<li><p>$DT&#x2F;\overline{R}$: output, used to inform the data transceivers the direction of data transfer (send: high; receive: low)</p>
+</li>
+<li><p>$\overline{BHE}$: output, $\overline{BHE}&#x3D;0$, AD8~15 are used, 1, not used</p>
+</li>
+<li><p>$ALE$: outputm latch enable signal of the address latch</p>
+</li>
+<li><p>$HOLD$: input signal, hold the bus request</p>
+</li>
+<li><p>$HLDA$: output signal, hold request acknowledge</p>
+</li>
+<li><p>$INTR$: input, interrupt request from 8259 interrupt controller, maskable by clearing the IF in the flag register</p>
+</li>
+<li><p>$INTA$: output, interrupt ack</p>
+</li>
+<li><p>$NMI$: input, non-maskable interrupt, CPU is interrupted after finishing the current instruction; cannot be masked by software</p>
+</li>
+<li><p>$RESET$: input signal, reset the CPU</p>
+<ul>
+<li><p>IP, DS, SS, ES and the instruction queue are cleared</p>
+</li>
+<li><p>CS &#x3D; FFFFH, IP &#x3D; 0000H</p>
+</li>
+<li><p>the address of the first address of the first instruction that the CPU will execute after reset is FFFF0H (CSx16+IP)</p>
+<p><img src="/./.Photo.asset/image-20241013143304364-8801189-8801189.png" alt="image-20241013143304364"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20241013143339246.png" alt="image-20241013143339246"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20241013143500778.png" alt="image-20241013143500778"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>bus cycle for data transfers: at least 4 clock cycles</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8086-Programming"><a href="#8086-Programming" class="headerlink" title="8086 Programming"></a>8086 Programming</h3><ul>
+<li>typical program consists of at least 3 segments<ul>
+<li>code segment: contain instructions</li>
+<li>data segment: store info</li>
+<li>stack segment: store info temporarily</li>
+</ul>
+</li>
+</ul>
+<h4 id="logical-and-physical-address"><a href="#logical-and-physical-address" class="headerlink" title="logical and physical address"></a>logical and physical address</h4><ul>
+<li>physical address:<ul>
+<li>the 20-bit actual address put on the address bus</li>
+<li>1 MB (00000H to FFFFFH)</li>
+<li>actual physical location in memory</li>
+</ul>
+</li>
+<li>Logical address:<ul>
+<li>a segment value and an offset address</li>
+</ul>
+</li>
+<li>Convert: PA &#x3D; LA.segment_value</li>
+<li>*16 + LA.offset address (wrap around if overflows)</li>
+<li>1 physical address can be derived from different logical addresses, but one logical address only represents 1 physical address</li>
+<li>2 segments can overlap, as a result,<ul>
+<li>dynamic behavior of segment and offset concept</li>
+<li>desirable in some circumstances</li>
+</ul>
+</li>
+<li>code segment: 8086 fetches instructions from the code segment<ul>
+<li>logical address of an instruction:  <strong>CS:IP</strong></li>
+<li>Physical address generated to retrieve this instruction from memory</li>
+</ul>
+</li>
+<li>Data segment: information to be processed is stored in the data segment<ul>
+<li>Logical address of a piece of data: <strong>DS:offset</strong><ul>
+<li>offset registers for data segement: <strong>BX, SI</strong> and <strong>DI</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data representation in memory<ul>
+<li>Memory: a consecutive block of bytes</li>
+<li>if data is larger than a byte<ul>
+<li>little endian: the low byte of the data goes to the low memory location</li>
+<li>big endian: the high byte of the data goes to the low mwmory location</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stack segment:<ul>
+<li>temporarily store information</li>
+<li>address: <strong>SS:SP</strong> (sometimes with <strong>BP</strong>)</li>
+<li>Registers except segment and SP insude the CPU can be stored in the stack and brought back into the CPU from the stack using push and pop</li>
+<li><strong>grow downward</strong> from upper addresses to lower addresses in the memory,<ul>
+<li>to protect other programs from destruction</li>
+<li>ensure code section and stack section would not write over each other</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Extra segment<ul>
+<li>extra data segment essential for string operations<ul>
+<li>logical address: ES:offset</li>
+<li>offset registers: <strong>BX, SI, DI</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>segment register</th>
+<th>CS</th>
+<th>DS</th>
+<th>ES</th>
+<th>SS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>offset register(s)</td>
+<td>IP</td>
+<td>SI, DI, BX</td>
+<td>SI, DI, BX</td>
+<td>SP, BP</td>
+</tr>
+</tbody></table>
+<ul>
+<li>BIOS Function (Basic input-output system)<ul>
+<li>test all devices, report errors</li>
+<li>Load DOS from disk into RAM</li>
+<li>Hand over control of PS to DOS</li>
+</ul>
+</li>
+</ul>
+<h3 id="Addressing-mode-in-8086"><a href="#Addressing-mode-in-8086" class="headerlink" title="Addressing mode in 8086"></a>Addressing mode in 8086</h3><p>take MOV as example</p>
+<h4 id="Register-Addressing-Mode"><a href="#Register-Addressing-Mode" class="headerlink" title="Register Addressing Mode"></a>Register Addressing Mode</h4><ul>
+<li>Data are held within registers</li>
+<li>Eg. MOV BX,DX copy the contents of DX into BX</li>
+<li>data can be moved among all registers except CS(cannot be set) and IP(cannot be accessed by MOV)</li>
+</ul>
+<h4 id="Immediate-Addressing-Mode"><a href="#Immediate-Addressing-Mode" class="headerlink" title="Immediate Addressing Mode"></a>Immediate Addressing Mode</h4><ul>
+<li>Source operand is a constant</li>
+<li>embedded in instructions</li>
+<li>no need to access memory</li>
+</ul>
+<h4 id="Direct-Aaddressing-Mode"><a href="#Direct-Aaddressing-Mode" class="headerlink" title="Direct Aaddressing Mode"></a>Direct Aaddressing Mode</h4><ul>
+<li>Data is stored in memory and the address is given in instructions<ul>
+<li>Segement address in the data segment <strong>(DS)</strong> by default</li>
+<li>Need to access memory to gain the data</li>
+<li>Eg MOV DL,[2400]; MOV[3518],AL</li>
+</ul>
+</li>
+</ul>
+<h4 id="Register-Indirect-Addressing-Mode"><a href="#Register-Indirect-Addressing-Mode" class="headerlink" title="Register Indirect Addressing Mode"></a>Register Indirect Addressing Mode</h4><ul>
+<li>data is stored in memory and address is held by a register<ul>
+<li>Segment address in the data segment <strong>(DS)</strong> by default</li>
+<li>Registers for this purpose are <strong>SI</strong>, <strong>DI</strong> and <strong>BX</strong></li>
+<li>need to access memory to gain the data</li>
+<li>Eg. MOV AL,[BX]</li>
+</ul>
+</li>
+</ul>
+<h4 id="Based-relative-addressing-mode"><a href="#Based-relative-addressing-mode" class="headerlink" title="Based relative addressing mode"></a>Based relative addressing mode</h4><ul>
+<li>data is stored in memory, address can be calculated with base registers <strong>BX</strong> and <strong>BP</strong> as well as a displacement value<ul>
+<li>default segment is <strong>DS</strong> for <strong>BX</strong>, <strong>SS</strong> for <strong>BP</strong></li>
+<li>need to access memory to gain the data</li>
+<li>Eg. MOV CX,[BX]+10</li>
+</ul>
+</li>
+</ul>
+<h4 id="Indexed-Relative-Addressing-Mode"><a href="#Indexed-Relative-Addressing-Mode" class="headerlink" title="Indexed Relative Addressing Mode"></a>Indexed Relative Addressing Mode</h4><p>Data is stored in memory and the address can be calculated with index registers <strong>DI</strong> and <strong>SI</strong> as<br>well as a displacement value</p>
+<ul>
+<li>The default segment is <strong>DS</strong></li>
+<li>Need to access memory to gain the data<br>E.g. MOV DX,[SI]+5</li>
+</ul>
+<h4 id="Based-Indexed-Relative-Addressing-Mode"><a href="#Based-Indexed-Relative-Addressing-Mode" class="headerlink" title="Based-Indexed Relative Addressing Mode"></a>Based-Indexed Relative Addressing Mode</h4><p>Combines based and indexed addressing modes, one base register and one index register are<br>used</p>
+<ul>
+<li>The default segment is (DS) for <strong>BX</strong>, <strong>SS</strong> for <strong>BP</strong></li>
+<li>Need to access memory to gain the data</li>
+<li>E.g MOV CL,[BX][DI]+8</li>
+</ul>
+<p>80x86 allows the program to override the default segment registers</p>
+<h2 id="Lecture-05-Assembly-Language-Programming"><a href="#Lecture-05-Assembly-Language-Programming" class="headerlink" title="Lecture 05: Assembly Language Programming"></a>Lecture 05: Assembly Language Programming</h2><h3 id="Assembly-Language-Programs"><a href="#Assembly-Language-Programs" class="headerlink" title="Assembly Language Programs"></a>Assembly Language Programs</h3><ul>
+<li>a series of statements</li>
+<li>consist of multiple segments</li>
+</ul>
+<h3 id="form-of-an-statement"><a href="#form-of-an-statement" class="headerlink" title="form of an statement"></a>form of an statement</h3><p>[label:] mnemonic [operands] [;comment]</p>
+<ul>
+<li>Label: each label unique; letters, digits, ?.@_$; first character not digit, less than 31 characters</li>
+<li>“:” is needed if itis an instruction otherwise ommited</li>
+<li>“;” leads a comment, the assembler omits anything on this line following a semicolon</li>
+</ul>
+<h3 id="shell-of-a-real-program"><a href="#shell-of-a-real-program" class="headerlink" title="shell of a real program"></a>shell of a real program</h3><p>full segment definition (old fashion)</p>
+<p>Simplified segment definition</p>
+<h3 id="Model-definition"><a href="#Model-definition" class="headerlink" title="Model definition"></a>Model definition</h3><p>SMALL; MEDIUM; COMPACT; LARGE; HUGE; TINY</p>
+<h3 id="Simplified-Segment-Definition"><a href="#Simplified-Segment-Definition" class="headerlink" title="Simplified Segment Definition"></a>Simplified Segment Definition</h3><p>Only 3 segments can be defined: <strong>.Code</strong>; <strong>.DATA</strong>, <strong>.STACK</strong></p>
+<p>Label PROC[FAR|NEAR]</p>
+<p>Label ENDP</p>
+<p>entrance should be FAR, ending should be ENDP</p>
+<h3 id="Full-Segment-Definition"><a href="#Full-Segment-Definition" class="headerlink" title="Full Segment Definition"></a>Full Segment Definition</h3><p>label SEGMENT</p>
+<p>label ENDS</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DaSeg1 segment</span><br><span class="line">	str1 db &#x27;Hello World! $&#x27;</span><br><span class="line">DaSeg1 ends</span><br></pre></td></tr></table></figure>
+
+<h3 id="Control-Transfer-Instructions"><a href="#Control-Transfer-Instructions" class="headerlink" title="Control Transfer Instructions"></a>Control Transfer Instructions</h3><ul>
+<li>Range<ul>
+<li>short, intrasegment,<ul>
+<li>IP changed: 1 byte -128-127</li>
+</ul>
+</li>
+<li>Near, intrasegment,<ul>
+<li>IP changed: 2 bytes -32768-327667</li>
+</ul>
+</li>
+<li>Far, intersegment<ul>
+<li>CS and IP changed</li>
+<li>control is transferred outside the current code segment</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jumps</li>
+<li>CALL statement</li>
+</ul>
+<h3 id="Conditional-Jumps"><a href="#Conditional-Jumps" class="headerlink" title="Conditional Jumps"></a>Conditional Jumps</h3><p>jump according to the value of the flag register</p>
+<p>short jumps (some commands)</p>
+<h3 id="Unconditional-jumps"><a href="#Unconditional-jumps" class="headerlink" title="Unconditional jumps"></a>Unconditional jumps</h3><p>JMP [SHORT|NEAR|FAR PTR] label</p>
+<p>near by default</p>
+<h2 id="subroutine-call-statement"><a href="#subroutine-call-statement" class="headerlink" title="subroutine &amp; call statement"></a>subroutine &amp; call statement</h2><ul>
+<li>range:<ul>
+<li>NEAR: procedure defined within the same code segment with the caller</li>
+<li>FAR: procedure defined outside the current code segment of the caller</li>
+</ul>
+</li>
+<li>PROC &amp; ENDP are used to define a subroutine</li>
+<li>CALL is used to call a subroutine<ul>
+<li>RET is used to call a subroutine</li>
+</ul>
+</li>
+</ul>
+<h3 id="Data-Types-Definition"><a href="#Data-Types-Definition" class="headerlink" title="Data Types &amp; Definition"></a>Data Types &amp; Definition</h3><ul>
+<li>CPU can process 8-bit and 16-bit ops</li>
+<li>Directives:<ul>
+<li><strong>ORG</strong>: indicaate the beginning of the offset address</li>
+</ul>
+</li>
+<li>Define variables:<ul>
+<li><strong>DB</strong>: allocate byte-size chunks</li>
+<li><strong>DW</strong>, <strong>DD</strong>, <strong>DQ</strong></li>
+</ul>
+</li>
+<li><strong>EQU</strong>: define a constant eg. NUM <strong>EQU</strong> 234</li>
+<li><strong>DUP</strong>: duplicate a given number of characters eg. x DB 6 DUP(23H)|y DW 3 DUP (0FF10H)</li>
+<li>to get the segment value of a variable: <strong>SEG</strong></li>
+<li>to get the offset address of a variable: <strong>OFFSET</strong> directive or <strong>LEA</strong> instruction</li>
+</ul>
+<h3 id="Arithmetic-instructions"><a href="#Arithmetic-instructions" class="headerlink" title="Arithmetic instructions"></a>Arithmetic instructions</h3><ul>
+<li><p><strong>ADD</strong> dest src; dest &#x3D; dest + src</p>
+<ul>
+<li>Dest is a register</li>
+<li>Src can be register or immediate</li>
+<li>no mem-to-mem operations in 80x86</li>
+<li>Change ZF, SF, AF, CF, OF, PF</li>
+</ul>
+</li>
+<li><p><strong>ADC</strong> dest, src; dest &#x3D; dest + src + <strong>CF</strong></p>
+<ul>
+<li>For multi-bit numbers</li>
+<li>If there’s a carry from last addtion, add 1 to the result</li>
+</ul>
+</li>
+<li><p><strong>INC</strong> dest; dest &#x3D; dest + 1</p>
+<ul>
+<li>dest can be register or memory</li>
+<li>dest cannot be immediate</li>
+<li>change ZF, SF, AF, OF, PF</li>
+<li><em><strong>does not change CF</strong></em></li>
+</ul>
+</li>
+<li><p><strong>DEC</strong> dest; dest &#x3D; dest - 1</p>
+<ul>
+<li>dest can be a register or memory</li>
+<li>dest cannot be an immediate</li>
+<li>change ZF, SF, AF, OF, PF</li>
+<li><strong>does not change CF</strong></li>
+</ul>
+</li>
+<li><p><strong>LOOP</strong> xxxx</p>
+<p>等价于</p>
+<p><strong>DEC CX</strong></p>
+<p><strong>JNZ xxxx</strong></p>
+</li>
+<li><p><strong>SUB</strong> dest, src; dest &#x3D; dest - src</p>
+<ul>
+<li>Dest can be a register or in memory</li>
+<li>Src can be a register, in memory or an immediate</li>
+<li>No mem-to-mem operations in 80X86</li>
+<li>Change ZF, SF, AF, CF, OF, PF</li>
+</ul>
+</li>
+<li><p><strong>SBB</strong> dest, src ;dest &#x3D; dest - src – CF</p>
+<ul>
+<li>For multi-byte numbers</li>
+<li>If there is a borrow from last subtraction, subtracts 1<br>from the result</li>
+</ul>
+</li>
+<li><p><strong>MUL</strong> operand</p>
+<ul>
+<li><p>byte X byte:</p>
+<ul>
+<li>One implicit operand is AL, the other is the operand,</li>
+<li>result is stored in AX</li>
+</ul>
+</li>
+<li><p>word X word:</p>
+<ul>
+<li>One implicit operand is AX, the other is the operand,</li>
+<li>result is stored in DX &amp; AX</li>
+</ul>
+</li>
+<li><p>word X byte:</p>
+<ul>
+<li>AL hold the byte, AH &#x3D; 0, the word is the operand,</li>
+<li>result is stored in DX &amp; AX;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>DIV</strong> denominator</p>
+<ul>
+<li>Denominator cannot be zero</li>
+<li>Quotient cannot be too large for the assigned register<ul>
+<li>byte &#x2F; byte:<ul>
+<li>Numerator in AL,</li>
+<li>clear AH;</li>
+<li>quotient is in AL,</li>
+<li>remainder in AH</li>
+</ul>
+</li>
+<li>word &#x2F; word:<ul>
+<li>Numerator in AX,</li>
+<li>clear DX ;</li>
+<li>quotient is in AX,</li>
+<li>remainder in DX</li>
+</ul>
+</li>
+<li>word &#x2F; byte:<ul>
+<li>Numerator in AX;</li>
+<li>quotient is in AL (max 0FFH),</li>
+<li>remainder in AH</li>
+</ul>
+</li>
+<li>double-word &#x2F; word:<ul>
+<li>Numerator in DX,AX;</li>
+<li>quotient is in AX (max 0FFFFH),</li>
+<li>remainder in DX</li>
+<li>Denominator can be in a register or in memory</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Logic-Instructions"><a href="#Logic-Instructions" class="headerlink" title="Logic Instructions"></a>Logic Instructions</h3><ul>
+<li><p><strong>AND</strong> dest, src; <strong>OR</strong> dest, src; <strong>XOR</strong> dest, src</p>
+<ul>
+<li>Bit-wise logic</li>
+<li>dest can be a register or in memory; src can be a register, in memory, or immediate</li>
+<li>Update SF, ZF, PF; AF is undetermined</li>
+<li>Clear CF and OF (set CF and OF to zero)</li>
+</ul>
+</li>
+<li><p><strong>NOT</strong> operand</p>
+<ul>
+<li>Bit-wise logic</li>
+<li>Operand can be a register or in memory</li>
+<li><strong>Does not change the flag register</strong></li>
+</ul>
+</li>
+<li><p><strong>SHR</strong> dest, times</p>
+<ul>
+<li>dest can be a register or in memory</li>
+<li>0-&gt;MSB-&gt;…-&gt;LSB-&gt;CF</li>
+<li>Times &#x3D; 1:<ul>
+<li>SHR xx, 1</li>
+</ul>
+</li>
+<li>Times &gt;1:<ul>
+<li>MOV CL, times</li>
+<li>SHR xx, CL</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>SHL</strong> dest, times</p>
+<ul>
+<li>All the same except in reverse direction</li>
+</ul>
+</li>
+<li><p><strong>ROR</strong> dest, times</p>
+<ul>
+<li>dest can be a register, in memory</li>
+<li>Times &#x3D; 1:</li>
+<li><strong>ROR xx, 1</strong></li>
+<li>Times &gt;1:</li>
+<li><strong>MOV CL,</strong> <strong>times</strong></li>
+<li><strong>ROR xx, CL</strong></li>
+</ul>
+<p><strong>ROL</strong> similar</p>
+<p>eg. AX &#x3D; 1011 0011 0101 1100</p>
+<p>ROC AX, 2</p>
+<p>AX &#x3D; 0010 1100 1101 0111</p>
+</li>
+<li><p><strong>RCR</strong> dest, times</p>
+<ul>
+<li>dest can be a register, in memory</li>
+<li>Times &#x3D; 1:</li>
+<li><strong>RCR xx, 1</strong></li>
+<li>Times &gt;1:</li>
+<li><strong>MOV CL,</strong> <strong>times</strong></li>
+<li><strong>RCR xx, CL</strong></li>
+</ul>
+<p><strong>RCL</strong> similar</p>
+<p>eg. AX &#x3D; 1011 0011 0101 1100, CF &#x3D; 0</p>
+<p>RCR AX, 2 &#x3D; 0010 1100 1101 0111 CF &#x3D; 0</p>
+</li>
+<li><p><strong>CMP</strong>  dest, src</p>
+<ul>
+<li>unsigned numbers<table>
+<thead>
+<tr>
+<th>compare operands</th>
+<th align="center">CF</th>
+<th align="center">ZF</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d &gt; s</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>d &#x3D; s</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>d &lt; s</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+</li>
+<li>signed numbers<table>
+<thead>
+<tr>
+<th align="center">compared operands</th>
+<th align="center">situ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">d &gt; s</td>
+<td align="center">OF &#x3D;&#x3D; SF &amp;&amp; ZF &#x3D;&#x3D; 0</td>
+</tr>
+<tr>
+<td align="center">d &#x3D; s</td>
+<td align="center">ZF &#x3D;&#x3D; 1</td>
+</tr>
+<tr>
+<td align="center">d &lt; s</td>
+<td align="center">OF !&#x3D; SF</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lecture-06-Memory-Address-Decoding"><a href="#Lecture-06-Memory-Address-Decoding" class="headerlink" title="Lecture 06: Memory Address Decoding"></a>Lecture 06: Memory Address Decoding</h2><h3 id="Address-decoding"><a href="#Address-decoding" class="headerlink" title="Address decoding"></a>Address decoding</h3><ul>
+<li>absolute address decoding<ul>
+<li>all address lines are decoded</li>
+</ul>
+</li>
+<li>linear select decoding<ul>
+<li>Only selected lines are decoded</li>
+<li>cheap</li>
+<li>support alias: same memoryunit with multiple addresses</li>
+</ul>
+</li>
+</ul>
+<p>Use a 74LS138 chip (3-&gt;8 decoder)</p>
+<p><img src="/./.Photo.asset/image-20241029170656535.png" alt="image-20241029170656535"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="Data-integrity"><a href="#Data-integrity" class="headerlink" title="Data integrity"></a>Data integrity</h3><ol>
+<li>Checksum byte<ol>
+<li>Add all bytes together and drop all carries</li>
+<li>take 2’s complement</li>
+<li>store it with the data</li>
+<li>check integrity by adding data and checksum together (0 means integrate)</li>
+</ol>
+</li>
+<li>parity bit<ol>
+<li>even parity: total number of 1 is even</li>
+<li>odd parity: total number of 1 is odd</li>
+<li>in 8086, use odd parity</li>
+</ol>
+</li>
+</ol>
+<h3 id="Memory-Organization-in-8086"><a href="#Memory-Organization-in-8086" class="headerlink" title="Memory Organization in 8086"></a>Memory Organization in 8086</h3><table>
+<thead>
+<tr>
+<th>$\overline{BHE}$</th>
+<th>$A_0$</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>Even word</td>
+<td>D<del>0</del>-D<del>15</del></td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>Odd byte</td>
+<td>D<del>8</del>-D<del>15</del></td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>Even byte</td>
+<td>D<del>0</del>-D<del>7</del></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>None</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="I-O-in-x86-family"><a href="#I-O-in-x86-family" class="headerlink" title="I&#x2F;O in x86 family"></a>I&#x2F;O in x86 family</h3><ul>
+<li>X86 has an I&#x2F;O space in addition to memory space</li>
+<li>use special I&#x2F;O instructions accessing I&#x2F;O devices at ports</li>
+<li>Memory contain machine codes&#x2F;data, I&#x2F;O ports only contain data</li>
+<li>also referred to as peripheral I&#x2F;O or isolated I&#x2F;O</li>
+</ul>
+<p>I&#x2F;O instructions</p>
+<ul>
+<li>Direct I&#x2F;O instructions: port# range from 00h to 0ffh, 256 ports<ul>
+<li>IN    AL,port#</li>
+<li>OUT    AL,port#</li>
+</ul>
+</li>
+<li>Indirect I&#x2F;O instructions: port# range from 0000h to offffh, 65536 ports<ul>
+<li>MOV    DX,port#</li>
+<li>IN    AL,DX</li>
+<li>MOV    DX,port#</li>
+<li>OUT    DX,AL</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lecture-07-8255-PPI-Chip"><a href="#Lecture-07-8255-PPI-Chip" class="headerlink" title="Lecture 07: 8255 PPI Chip"></a>Lecture 07: 8255 PPI Chip</h2><h3 id="Internal-Structure-and-Pins"><a href="#Internal-Structure-and-Pins" class="headerlink" title="Internal Structure and Pins"></a>Internal Structure and Pins</h3><ul>
+<li><p>3 data ports: A, B and C</p>
+<ul>
+<li>port A: PA<del>0</del>-PA<del>7</del>, can be programmed all as input&#x2F;output</li>
+<li>port B: PB<del>0</del>-PB<del>7</del>, similar to port A</li>
+<li>port C: PC<del>0</del>-PC<del>7</del>, can be splitted into 2 separate parts PCL&amp;PCU, can be programmed individually</li>
+</ul>
+</li>
+<li><p>Control register <strong>CR</strong>: used to setup the chip</p>
+</li>
+<li><p>Group A: PA&amp;PCU</p>
+<p>Group B:PB&amp;PCL</p>
+</li>
+<li><p>logic：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">~CS</th>
+<th align="left">A₁</th>
+<th align="left">A₀</th>
+<th align="left">~RD</th>
+<th align="left">~WR</th>
+<th align="left">Function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">PA-&gt;Data bus</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">PB-&gt;Data bus</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">PC-&gt;Data bus</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">Data bus-&gt;PA</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">Data bus-&gt;PB</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">Data bus-&gt;PC</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">Data bus-&gt;CR</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">×</td>
+<td align="left">×</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">D₀~D₇ in float</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>Control Register</p>
+<ul>
+<li><p>8-bit internal register</p>
+</li>
+<li><p>selected when A<del>1</del>&#x3D;A<del>0</del>&#x3D;1</p>
+</li>
+<li><p>the first bit select mode</p>
+<p>if 1: Input&#x2F;output modes, if 0 BSR mode</p>
+</li>
+<li><p><img src="/./.Photo.asset/image-20241030141737882.png" alt="image-20241030141737882"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+<li><p><img src="/./.Photo.asset/image-20241030141838221.png"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Mode-0"><a href="#Mode-0" class="headerlink" title="Mode 0"></a>Mode 0</h3><ul>
+<li>simple i&#x2F;o</li>
+<li>no handshake needed</li>
+<li>any port can be programed independently</li>
+<li>CPU directly r&#x2F;w a port</li>
+<li>input not latched, output latched</li>
+</ul>
+<h3 id="Mode-1"><a href="#Mode-1" class="headerlink" title="Mode 1"></a>Mode 1</h3><ul>
+<li>PA &amp; PB used as i&#x2F;o ports</li>
+<li>PC<del>3</del>~PC<del>5</del> used as handshake llines for PA</li>
+<li>PC<del>0</del>~PC<del>2</del>used as handshake lines for PB</li>
+<li>both input and output data are latched</li>
+<li>PC<del>6</del> &amp; PC<del>7</del> used as separate I&#x2F;O lines for any purpose</li>
+<li>handshake signals:<ul>
+<li>~STB: strobe input signal</li>
+<li>IBF: Input buffer full output signal</li>
+<li>~OBF: output buffer full output signal</li>
+<li>~ACK: acknowledge input signal</li>
+<li>INTR: interrupt request signal</li>
+</ul>
+</li>
+<li>Control register</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241031150704256.png" alt="image-20241031150704256"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20241031151026044.png" alt="image-20241031151026044"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="Mode-2-Bidirectional-Bus"><a href="#Mode-2-Bidirectional-Bus" class="headerlink" title="Mode 2 (Bidirectional Bus)"></a>Mode 2 (Bidirectional Bus)</h3><ul>
+<li>For bidirectional handshake input&#x2F;output</li>
+<li>Only can be used as both input and output port</li>
+<li>PCU used as handshake lines for PA</li>
+<li>both input and output data are latched</li>
+<li>PC<del>0</del>~PC<del>2</del> can be used as separate I&#x2F;O lines &#x2F; handshake lines for PB</li>
+</ul>
+<h2 id="Lecture-08-8253-4-Timer"><a href="#Lecture-08-8253-4-Timer" class="headerlink" title="Lecture 08: 8253&#x2F;4 Timer"></a>Lecture 08: 8253&#x2F;4 Timer</h2><h3 id="Internal-Structure-pins"><a href="#Internal-Structure-pins" class="headerlink" title="Internal Structure &amp; pins"></a>Internal Structure &amp; pins</h3><ul>
+<li>Data bus buffer</li>
+<li>~CS: tied to a decoded address</li>
+<li>~RD,~WR<ul>
+<li>in isolated I&#x2F;O: ~IOR, ~IOW</li>
+<li>Memory-mapped I&#x2F;O: ~MEMR, MEMW</li>
+</ul>
+</li>
+<li>A<del>1</del>, A<del>0</del></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">A1</th>
+<th align="center">A0</th>
+<th>Selection</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td>Counter 0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td>Counter 1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td>Counter 2</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td>Control word Register</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">&#x2F;CS</th>
+<th align="center">&#x2F;RD</th>
+<th align="center">&#x2F;WR</th>
+<th align="center">A1A0</th>
+<th align="left">FUNCTION</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">00</td>
+<td align="left">Write counter0 (to CR0)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">01</td>
+<td align="left">Write counter1 (to CR1)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">10</td>
+<td align="left">Write counter2 (to CR2)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">11</td>
+<td align="left">Write control port</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">00</td>
+<td align="left">Read counter0 (from OL0)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">01</td>
+<td align="left">Read counter1 (from OL1)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">10</td>
+<td align="left">Read counter2 (from OL2)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">11</td>
+<td align="left">Read control port (for 8254)</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">XX</td>
+<td align="left">Not available</td>
+</tr>
+</tbody></table>
+<h3 id="control-word-register"><a href="#control-word-register" class="headerlink" title="control word register"></a>control word register</h3><ul>
+<li>selected when A<del>1</del>&#x3D;1, A<del>0</del>&#x3D;1</li>
+<li>Used to specify counter, mode r&#x2F;w</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="left">D1</th>
+<th align="left">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">SC1</td>
+<td align="center">SC0</td>
+<td align="center">RW1</td>
+<td align="center">RW0</td>
+<td align="center">M2</td>
+<td align="center">M1</td>
+<td align="left">M0</td>
+<td align="left">BCD</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">SC₁</th>
+<th align="center">SC₀</th>
+<th>SC - Select counter</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td>Select counter 0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td>Select counter 1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td>Select counter 2</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td>Illegal for 8253<code>&lt;br&gt;</code>Read-Back command for 8254 (See Read operations)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">RW₁</th>
+<th align="center">RW₀</th>
+<th>RW - Read &#x2F; Write</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td>Counter latch command (See Read operations)</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td>Read &#x2F; Write least significant byte only</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td>Read &#x2F; Write most significant byte only</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td>Read &#x2F; write least significant byte first, then most significant byte</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">M₂</th>
+<th align="center">M₁</th>
+<th align="center">M₀</th>
+<th align="center">Mode</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">Mode 0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">Mode 1</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">Mode 2</td>
+</tr>
+<tr>
+<td align="center">X</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">Mode 3</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">Mode 4</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">Mode 5</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">BCD:</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="left">Binary counter 16-bits</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="left">Binary coded decimal(BCD) Counter(4 Decades)</td>
+</tr>
+</tbody></table>
+<h3 id="Counters"><a href="#Counters" class="headerlink" title="Counters:"></a>Counters:</h3><ul>
+<li>Each consists a single, 16-bit, presettable, down counter</li>
+<li>can operate in binary&#x2F;BCD</li>
+<li>Input, gate and output are configured by selection of modes</li>
+<li>read from counter not disturb processing count</li>
+</ul>
+<h3 id="W-R-Operations"><a href="#W-R-Operations" class="headerlink" title="W&#x2F;R Operations"></a>W&#x2F;R Operations</h3><ul>
+<li>write:<ul>
+<li>Write a control word into control register</li>
+<li>Load the low-order byte of a count in the counter register</li>
+<li>Load the high-order byte of a count in the counter register</li>
+</ul>
+</li>
+<li>read<ul>
+<li><strong>Simple Read</strong>: two I&#x2F;O read operations, first one for low-order<br>byte and last one for the high order byte</li>
+<li><strong>Counter Latch Command</strong>: one I&#x2F;O write operation used to<br>write a control word to the control register to latch a count in<br>the output latch, then two I&#x2F;O read operations are used to read<br>the latched count as in Simple Read.</li>
+<li><strong>Read-Back Command</strong>: for 8254 only</li>
+</ul>
+</li>
+</ul>
+<h3 id="Modes"><a href="#Modes" class="headerlink" title="Modes"></a>Modes</h3><p>Software trigger<br>	No repeat<br>		Mode 0: Interrupt on terminal count<br>		Mode 4: Software triggered strobe<br>	Repeat<br>		Mode 2: Rate generator<br>		Mode 3: Square wave rate generator<br>Hardware trigger<br>	No repeat (but retriggerable)<br>		Mode 1: Hardware retriggerable one-shot<br>		Mode 5: Hardware triggered strobe</p>
+<h4 id="Mode-0：Interrupt-on-Terminal-Count"><a href="#Mode-0：Interrupt-on-Terminal-Count" class="headerlink" title="Mode 0：Interrupt on Terminal Count"></a>Mode 0：Interrupt on Terminal Count</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[CPU writes count into CR]--&gt;B[Count is conveyed to the CE]</span><br><span class="line">B--&gt;C[Counting down]</span><br><span class="line">C--&gt;D[Output signal when reaches 0]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Gate disable:</p>
+<ul>
+<li>Gate &#x3D; 1 enables counting</li>
+<li>Gate &#x3D; 0 disables counting</li>
+</ul>
+</li>
+<li><p>New count</p>
+<ul>
+<li>If a new count is written to the counter, it will be loaded on the next CLK pulse and counting will continue from the new count</li>
+<li>In case of two byte count:<ul>
+<li>Writing the first byte disables the current counting</li>
+<li>Writing the second byte loads the new count on the next CLK pulse and<br>counting will continue from the new count</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241108141834173.png" alt="image-20241108141834173"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h4 id="Mode-1：Hardware-Retriggerable-One-shot"><a href="#Mode-1：Hardware-Retriggerable-One-shot" class="headerlink" title="Mode 1：Hardware Retriggerable One-shot"></a>Mode 1：Hardware Retriggerable One-shot</h4><ul>
+<li>Normal Operation:<ul>
+<li>The output will be initially high after the mode set operation;</li>
+<li>The output will go low on the CLK pulse following the rising(0-to-1) edge of the gate input;</li>
+<li>The output will go high on the terminal count and remain high until the next rising edge of the gate input.</li>
+<li>Output: one-shot of N clock pulses on every trigger</li>
+<li>does not automatically repeat</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241108141856567.png" alt="image-20241108141856567"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h4 id="Mode-2-Rate-Generator"><a href="#Mode-2-Rate-Generator" class="headerlink" title="Mode 2: Rate Generator"></a>Mode 2: Rate Generator</h4><ul>
+<li>Normal Operation:<ul>
+<li>The output will be initially high;</li>
+<li>The output will go low for one clock pulse before the terminal count;</li>
+<li>The output then goes high, the counter reloads the initial count and the process is repeated</li>
+<li>Output: periodical signal with a period of N-1 clock<br>pulses high and 1 clock pulse low</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241108141912391.png"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h4 id="Mode-3-Square-Wave-Rate-Generator"><a href="#Mode-3-Square-Wave-Rate-Generator" class="headerlink" title="Mode 3: Square Wave Rate Generator"></a>Mode 3: Square Wave Rate Generator</h4><ul>
+<li>Normal Operation:<ul>
+<li>The output will be initially high;</li>
+<li>For even count, counter is decremented by 2 on the falling edge of each clock pulse; when reaches terminal count, the state of the output is changed and the counter is reloaded with the full count and the whole process is repeated</li>
+<li>For odd count, the first clock pulse decrements the count by 1. Subsequent clockpulses decrement the clock by 2. After timeout, the output goes low and the full count is reloaded. The first clock pulse (following the reload) decrements the count by 3 and subsequent clock pulse decrement the count by two. Then the whole process is repeated</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241108150720630.png" alt="image-20241108150720630"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/./.Photo.asset/image-20241108150731058.png" alt="image-20241108150731058"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>if gate goes low while output is low, output is set high immediately.</p>
+<p><img src="/./.Photo.asset/image-20241108151338821.png" alt="image-20241108151338821"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<ul>
+<li>New count:<ul>
+<li>The current counting sequence does not affect when the new count is written.</li>
+<li>If a trigger is received after writing a new count but before the end of the current half-cycle of the square wave, the counter will be loaded with the new count on the next CLK pulse and counting will continue from the new count.</li>
+<li>Otherwise, the new count will be loaded at end of the current half-cycle.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Mode-4-Software-Triggered-Strobe"><a href="#Mode-4-Software-Triggered-Strobe" class="headerlink" title="Mode 4: Software Triggered Strobe"></a>Mode 4: Software Triggered Strobe</h4><ul>
+<li>Normal Operation:<ul>
+<li>The output will be initially high;</li>
+<li>The output will go low for one CLK pulse after the terminal count</li>
+</ul>
+</li>
+<li>Gate disable:<ul>
+<li>If Gate is one, the counting is enabled; otherwise, it is disabled</li>
+</ul>
+</li>
+<li>New count:<ul>
+<li>If a new count is written during counting, it will be loaded on the next CLK pulse and counting will continue from the new count. If the count is two byte then:<ul>
+<li>Writing the first byte has no effect on counting</li>
+<li>Writing the second byte allows the new count to be loaded on the next CLK pulse</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241108152016534.png" alt="image-20241108152016534"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h4 id="Mode-5-Hardware-Triggered-Strobe"><a href="#Mode-5-Hardware-Triggered-Strobe" class="headerlink" title="Mode 5: Hardware Triggered Strobe"></a>Mode 5: Hardware Triggered Strobe</h4><ul>
+<li><p>Normal Operation:</p>
+<ul>
+<li>The output will be initially high;</li>
+<li>The counting is triggered by the rising edge of the Gate</li>
+<li>The output will go low for one CLK pulse after the terminal count</li>
+</ul>
+</li>
+<li><p>Retrotriggering:</p>
+<ul>
+<li>If the triggering occurs during the counting, the initial count is loaded on the next CLK pulse and the counting will be continued until the terminal count is reached</li>
+</ul>
+</li>
+<li><p>New count:</p>
+<ul>
+<li>the current counting sequence will not be affected. If the trigger occurs after the new count but before the terminal count, the counter will be loaded with the new count on the next CLK pulse and counting will continue from there</li>
+</ul>
+</li>
+</ul>
+<p><img src="/./.Photo.asset/image-20241108152305720.png" alt="image-20241108152305720"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="Lecture-9-Interrupts-8259"><a href="#Lecture-9-Interrupts-8259" class="headerlink" title="Lecture 9: Interrupts &amp;8259"></a>Lecture 9: Interrupts &amp;8259</h2><ul>
+<li>256 interrupt types in total: INT 00 ~ INT 0FFh</li>
+<li>Type* 4 &#x3D; PA of interrupt vector (first 1KB store interrupt vectors, called Interrupt Vector Table (IVT))</li>
+<li>Interrupt vector points the entrance address of the corresponding interrupt service routine (ISR)</li>
+</ul>
+<p><img src="/./.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90.photoasset/image-20241108153421166.png" alt="image-20241108153421166"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h4 id="Categories："><a href="#Categories：" class="headerlink" title="Categories："></a>Categories：</h4><ul>
+<li>Hardware (external) interrupts<ul>
+<li>Maskable (from INTR)</li>
+<li>Non-maskable (from NMI)</li>
+</ul>
+</li>
+<li>Software (internal) interrupts<ul>
+<li>Using the INT instruction</li>
+<li>Predefined conditional (exception) interrupts</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hardware-Interrupts"><a href="#Hardware-Interrupts" class="headerlink" title="Hardware Interrupts"></a>Hardware Interrupts</h3><ul>
+<li>Maskable interrupt<ul>
+<li>Trigger: INTR pin, input-signal, high active</li>
+<li>TYPE: No predefined type</li>
+<li>IF &#x3D; 1, enable; IF &#x3D; 0, disable<ul>
+<li>STI sets IF, CLI clears IF</li>
+</ul>
+</li>
+<li>Reasons:<ul>
+<li>Interrupt requests of external I&#x2F;O devices</li>
+</ul>
+</li>
+<li>Procedure<ul>
+<li>CPU responds to INTR interrupt requests<ul>
+<li>External I&#x2F;O devices send interrupt requests to CPU</li>
+<li>CPU will check INTR pin on the last cycle of an instruction: if the INTR is high and IF &#x3D; 1, CPU responds to the interrupt request</li>
+<li>CPU sends two negative pluses on the ~INTA pin to<br>the I&#x2F;O device<br>After receiving the second ~INTA, I&#x2F;O device sends<br>the interrupt type N on the data bus</li>
+</ul>
+</li>
+<li>CPU executes the ISR of INT N<ul>
+<li>CPU reads the N from data bus</li>
+<li>Push the FR in stack</li>
+<li>Clear IF and TF</li>
+<li>Push the CS and IP of the next instruction in stack</li>
+<li>Load the ISR entrance address and moves to the ISR</li>
+<li>At the end of the ISR, IRET will pop IP, CS and FR in turn, CPU returns to previous program and proceeds</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Software Interrupts<ul>
+<li>INT xx instruction<ul>
+<li>An ISR is called upon instruction such as “INT xx”<ul>
+<li>E.g., int 21h ; Dos service</li>
+</ul>
+</li>
+<li>CPU always responds and goes execute the corresponding ISR<ul>
+<li>Not affected by the IF</li>
+</ul>
+</li>
+<li>You can “CALL” any ISR by using the INT instruction</li>
+</ul>
+</li>
+<li>Predefined conditional interrupts<ul>
+<li>“INT 00” (divide error): dividing a number by zero, or quotient is too large</li>
+<li>“INT 01” (single step):If TF &#x3D; 1, CPU will generates an INT 1 interrupt after executing each instruction for debugging</li>
+<li>“INT 03” (breakpoint): When CPU hits the breakpoint set in the program, CPU generates INT 3 interrupt for debugging</li>
+<li>“INT 04” (signed number overflow): INTO instruction; Check the OF after an arithmetic instruction</li>
+<li>“INT 02”: NMI</li>
+</ul>
+</li>
+<li>Procedure：<ul>
+<li>For NMI<ul>
+<li>CPU checks NMI, generates INT 02 interrupt automatically regardless of IF and executes to the ISR</li>
+</ul>
+</li>
+<li>For software (internal) interrupts<ul>
+<li>CPU generates INT N interrupt automatically and executes to the corresponding ISR</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>256 Interrupts<ul>
+<li>0-4 dedicated</li>
+<li>5-31 reserved for system use</li>
+<li>32-255 reserved for users</li>
+</ul>
+</li>
+<li>Interrupt Priority<ul>
+<li>INT &gt; NMI &gt; INTR</li>
+</ul>
+</li>
+<li>Priority of INTR Interrupts<ul>
+<li>Software polling</li>
+<li>Hardware checking</li>
+<li>Vectored interrupt controller: eg. 8259(Programmed Interrupt Controller aka PIC)<ul>
+<li>Manage interrupt requests</li>
+<li>flexible peripheral controller chip<ul>
+<li>deal with 64 interrupt inputs</li>
+<li>can be masked</li>
+<li>various priority schemes can be programmed</li>
+</ul>
+</li>
+<li>orginally available as a separate IC, later in motherboards chipset, and in modern processors built in</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Higher priority interrupts can interrupt lower interrupts</li>
+</ul>
+<h2 id="Lecture-10-BIOS-and-DOS-Programming"><a href="#Lecture-10-BIOS-and-DOS-Programming" class="headerlink" title="Lecture 10: BIOS and DOS Programming"></a>Lecture 10: BIOS and DOS Programming</h2><h3 id="BIOS-INT-10H-Programming"><a href="#BIOS-INT-10H-Programming" class="headerlink" title="BIOS INT 10H Programming"></a>BIOS INT 10H Programming</h3><ul>
+<li><p>INT 10H subroutines are burned into the ROM BIOS (in 80x86-based IBM PCs)</p>
+</li>
+<li><p>Used to communicate with the computer’s screen video</p>
+<ul>
+<li>E.g., changing the color of characters or background color, cleaning the screen, changing the location of the cursor, drawing lines on the screen</li>
+<li>By setting AH with different values, you can “call”<br>those functions</li>
+</ul>
+</li>
+<li><p>Scrolling the windows</p>
+<table>
+<thead>
+<tr>
+<th align="center">Registers</th>
+<th align="center">UP&#x2F;DOWN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">AH</td>
+<td align="center">06h&#x2F;07h</td>
+</tr>
+<tr>
+<td align="center">AL</td>
+<td align="center">number of lines to scroll</td>
+</tr>
+<tr>
+<td align="center">BH</td>
+<td align="center">display attribute</td>
+</tr>
+<tr>
+<td align="center">CH</td>
+<td align="center">y coordinate of top left</td>
+</tr>
+<tr>
+<td align="center">CL</td>
+<td align="center">x coodinate of top left</td>
+</tr>
+<tr>
+<td align="center">DH</td>
+<td align="center">y coodinate of lower right</td>
+</tr>
+<tr>
+<td align="center">DL</td>
+<td align="center">y coodinate of lower right</td>
+</tr>
+</tbody></table>
+<p>if AL &#x3D;&#x3D; 0, the entire windows is blank</p>
+</li>
+<li><p>Set cursor position: AH &#x3D; 02h</p>
+<table>
+<thead>
+<tr>
+<th align="center">Registers</th>
+<th align="center">Functions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BH</td>
+<td align="center">page number</td>
+</tr>
+<tr>
+<td align="center">DH</td>
+<td align="center">row</td>
+</tr>
+<tr>
+<td align="center">DL</td>
+<td align="center">column</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Set Video Mode: AH &#x3D; 00h</p>
+<ul>
+<li>In text mode, the screen is viewed as a matrix of rows and columns of characters<ul>
+<li>E.g., AL &#x3D; 03h: VGA 80x25 chars, 16 colors</li>
+</ul>
+</li>
+<li>In graphics mode, the screen is viewed as a matrix of horizontal and vertical pixels<ul>
+<li>Each pixel can have different color</li>
+<li>The size of video memory decides the number of pixels and colors</li>
+<li>E.g., AL &#x3D; 13H: VGA 320x200 pixels, 256 colors</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DOS-Interrupt-21H"><a href="#DOS-Interrupt-21H" class="headerlink" title="DOS Interrupt 21H"></a>DOS Interrupt 21H</h3><ul>
+<li><p>Provided by MS-DOS</p>
+<ul>
+<li>Based on BIOS-ROM</li>
+<li>After the DOS is loaded into the memory, you can invoke INT 21H to perform some extremely useful functions</li>
+<li>E.g., input from keyboard, display results on screen</li>
+<li>By setting AH with different values, you can invoke<br>those functions</li>
+</ul>
+</li>
+<li><p>AH &#x3D; 09H: Output String on Screen</p>
+<ul>
+<li>Can be used to send a set of ASCII data to the<br>monitor</li>
+<li>DX is set to the offset address of the ASCII string to be displayed (DS is assumed to be the data segment)</li>
+<li>All characters will be displayed until it encounters the dollar sign “$“</li>
+</ul>
+</li>
+<li><p>AH &#x3D;  4CH: Exit to DOS</p>
+<ul>
+<li><p>AH &#x3D; 4CH</p>
+</li>
+<li><p>AL &#x3D; 00H</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,4C00H</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="Lecture-11-Serial-Data-Communication-8251"><a href="#Lecture-11-Serial-Data-Communication-8251" class="headerlink" title="Lecture 11: Serial Data Communication &amp; 8251"></a>Lecture 11: Serial Data Communication &amp; 8251</h2><ul>
+<li>Data transmission: transfer of data from point to point</li>
+<li>Communication channel: the medium used to<br>convey information (copper wires, optical fibbers, wireless communication channels)</li>
+</ul>
+<h3 id="Two-ways-parallel-Serial"><a href="#Two-ways-parallel-Serial" class="headerlink" title="Two ways: parallel &amp; Serial"></a>Two ways: parallel &amp; Serial</h3><ul>
+<li><p>Parallel data transfers:</p>
+<ul>
+<li>Each bit uses a separate line (wire)</li>
+<li>Often 8 or more lines are used</li>
+<li>Control signals in addition</li>
+<li>Fast &amp; expensive &amp; for short-distance communication</li>
+</ul>
+</li>
+<li><p>Serial data transfers:</p>
+<ul>
+<li>One single data line</li>
+<li>Bits are sent over the line one by one</li>
+<li>No dedicated lines for control signals</li>
+<li>Cheap &amp; slow &amp; for long-distance communication</li>
+</ul>
+</li>
+</ul>
+<h3 id="Serial-Communication"><a href="#Serial-Communication" class="headerlink" title="Serial Communication"></a>Serial Communication</h3><h4 id="Data-Transfer-Rate"><a href="#Data-Transfer-Rate" class="headerlink" title="Data Transfer Rate"></a>Data Transfer Rate</h4><ul>
+<li>Symbol rate, a misnomer is baud rate<ul>
+<li>The number of distinct symbol or pulse changes (signaling events) made to the transmission medium per second in a digitally modulated signal or a line code, quantified using the baud unit</li>
+<li>Each symbol can represent one (binary encoded signal) or several bits of data</li>
+</ul>
+</li>
+<li>Bit rate<ul>
+<li>the number of bits that are conveyed or processed per unit of time, quantified using the bits per second (bit&#x2F;s or bps) unit</li>
+</ul>
+</li>
+</ul>
+<h4 id="Synchronization-Methods"><a href="#Synchronization-Methods" class="headerlink" title="Synchronization Methods"></a>Synchronization Methods</h4><ul>
+<li><p>Asynchronous serial communication:</p>
+<ul>
+<li><p>Transfer one byte at a time</p>
+</li>
+<li><p>The starting of each byte is asynchronous, and therefore each byte needs synchronization between the sender and the receiver using start bit.</p>
+</li>
+<li><p>eg. 1 start bit, each character 8 bits, a parity bit, 2 stop bits. 100 characters&#x2F;second</p>
+<p>Baud rate: 100*(1+8+1+2) &#x3D; 1200bps</p>
+</li>
+</ul>
+</li>
+<li><p>Synchronous serial communication:</p>
+<ul>
+<li>Transfer a block of data at a time</li>
+<li>The sender and the receiver are synchronized at the beginning of data transfer using synch characters.<ol>
+<li>Character-Oriented Synchronous Transmission</li>
+<li>Bit-Oriented Synchronous Transmission</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Communication-Modes"><a href="#Communication-Modes" class="headerlink" title="Communication Modes"></a>Communication Modes</h3><ul>
+<li>Simplex:<ul>
+<li>Only one way</li>
+<li>E.g., printer</li>
+</ul>
+</li>
+<li>Half-duplex:<ul>
+<li>Data is transmitted one way at a time</li>
+<li>E.g., walky-talky</li>
+</ul>
+</li>
+<li>Full-duplex<ul>
+<li>Data can go both ways at the same time</li>
+<li>E.g., telephone</li>
+</ul>
+</li>
+</ul>
+<h3 id="Error-Detection"><a href="#Error-Detection" class="headerlink" title="Error Detection"></a>Error Detection</h3><ul>
+<li>Parity bit<ul>
+<li>Used in asynchronous serial communication</li>
+<li>Put an extra parity bit at the end of each character<ul>
+<li>Even-parity: the data and the parity bit has an even number of 1s; odd-parity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CRC Calculation<ul>
+<li>vk-bit data, n-bit CRC:</li>
+</ul>
+</li>
+</ul>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E5%9B%BE%E8%AE%BA.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/" class="trm-anima-link">
+                    图论整理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/12/01</li>
+                <li>21:34</li>
+                
+                    <li>2.3k</li>
+                
+                
+                    <li>9</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/09/17/2024/20240916%20%E6%9A%91%E5%81%87%E6%97%85%E6%B8%B8%E5%B0%8F%E7%BB%93/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/2024/IMG_7449.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%94%9F%E6%B4%BB-Life/">
+                    生活/Life
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/09/17/2024/20240916%20%E6%9A%91%E5%81%87%E6%97%85%E6%B8%B8%E5%B0%8F%E7%BB%93/" class="trm-anima-link">
+                    暑期旅途
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/09/17</li>
+                <li>12:21</li>
+                
+                    <li>3.4k</li>
+                
+                
+                    <li>11</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="Computer Organization"><a rel="nofollow" class="trm-toc-link" href="#Computer-Organization"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">Computer Organization</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="Lecture 01: Introduction to Computer Organization"><a rel="nofollow" class="trm-toc-link" href="#Lecture-01-Introduction-to-Computer-Organization"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">Lecture 01: Introduction to Computer Organization</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 02: Digital logic"><a rel="nofollow" class="trm-toc-link" href="#Lecture-02-Digital-logic"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">Lecture 02: Digital logic</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 03: IO and memoryMemory taxonomy &amp; characterisitc"><a rel="nofollow" class="trm-toc-link" href="#Lecture-03-IO-and-memoryMemory-taxonomy-characterisitc"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">Lecture 03: IO and memoryMemory taxonomy &amp; characterisitc</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="memory taxomony &amp; characteristic"><a rel="nofollow" class="trm-toc-link" href="#memory-taxomony-characteristic"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">memory taxomony &amp; characteristic</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Memory hierarchy"><a rel="nofollow" class="trm-toc-link" href="#Memory-hierarchy"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">Memory hierarchy</span></a></li><li class="trm-toc-item trm-toc-level-3" title="RAM organization"><a rel="nofollow" class="trm-toc-link" href="#RAM-organization"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">RAM organization</span></a></li><li class="trm-toc-item trm-toc-level-3" title="ROM"><a rel="nofollow" class="trm-toc-link" href="#ROM"><span class="trm-toc-number">1.3.4.</span> <span class="trm-toc-text">ROM</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Input&#x2F;Output problems"><a rel="nofollow" class="trm-toc-link" href="#Input-Output-problems"><span class="trm-toc-number">1.3.5.</span> <span class="trm-toc-text">Input&#x2F;Output problems</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Interrupted Driven I&#x2F;O"><a rel="nofollow" class="trm-toc-link" href="#Interrupted-Driven-I-O"><span class="trm-toc-number">1.3.6.</span> <span class="trm-toc-text">Interrupted Driven I&#x2F;O</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Direct memory access"><a rel="nofollow" class="trm-toc-link" href="#Direct-memory-access"><span class="trm-toc-number">1.3.7.</span> <span class="trm-toc-text">Direct memory access</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture04: 80X86 Microprocessor"><a rel="nofollow" class="trm-toc-link" href="#Lecture04-80X86-Microprocessor"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">Lecture04: 80X86 Microprocessor</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="internal organization of 8086"><a rel="nofollow" class="trm-toc-link" href="#internal-organization-of-8086"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">internal organization of 8086</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Bus Interface Unit"><a rel="nofollow" class="trm-toc-link" href="#Bus-Interface-Unit"><span class="trm-toc-number">1.4.1.1.</span> <span class="trm-toc-text">Bus Interface Unit</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Execution Unit"><a rel="nofollow" class="trm-toc-link" href="#Execution-Unit"><span class="trm-toc-number">1.4.1.2.</span> <span class="trm-toc-text">Execution Unit</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Registers"><a rel="nofollow" class="trm-toc-link" href="#Registers"><span class="trm-toc-number">1.4.1.3.</span> <span class="trm-toc-text">Registers</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Pipeling in 8086"><a rel="nofollow" class="trm-toc-link" href="#Pipeling-in-8086"><span class="trm-toc-number">1.4.1.4.</span> <span class="trm-toc-text">Pipeling in 8086</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Flag register"><a rel="nofollow" class="trm-toc-link" href="#Flag-register"><span class="trm-toc-number">1.4.1.5.</span> <span class="trm-toc-text">Flag register</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="Conditional flags:"><a rel="nofollow" class="trm-toc-link" href="#Conditional-flags"><span class="trm-toc-number">1.4.1.5.1.</span> <span class="trm-toc-text">Conditional flags:</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Control flags:"><a rel="nofollow" class="trm-toc-link" href="#Control-flags"><span class="trm-toc-number">1.4.1.5.2.</span> <span class="trm-toc-text">Control flags:</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Chip interface of 8086"><a rel="nofollow" class="trm-toc-link" href="#Chip-interface-of-8086"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">Chip interface of 8086</span></a></li><li class="trm-toc-item trm-toc-level-3" title="control signals"><a rel="nofollow" class="trm-toc-link" href="#control-signals"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">control signals</span></a></li><li class="trm-toc-item trm-toc-level-3" title="8086 Programming"><a rel="nofollow" class="trm-toc-link" href="#8086-Programming"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">8086 Programming</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="logical and physical address"><a rel="nofollow" class="trm-toc-link" href="#logical-and-physical-address"><span class="trm-toc-number">1.4.4.1.</span> <span class="trm-toc-text">logical and physical address</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Addressing mode in 8086"><a rel="nofollow" class="trm-toc-link" href="#Addressing-mode-in-8086"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">Addressing mode in 8086</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Register Addressing Mode"><a rel="nofollow" class="trm-toc-link" href="#Register-Addressing-Mode"><span class="trm-toc-number">1.4.5.1.</span> <span class="trm-toc-text">Register Addressing Mode</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Immediate Addressing Mode"><a rel="nofollow" class="trm-toc-link" href="#Immediate-Addressing-Mode"><span class="trm-toc-number">1.4.5.2.</span> <span class="trm-toc-text">Immediate Addressing Mode</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Direct Aaddressing Mode"><a rel="nofollow" class="trm-toc-link" href="#Direct-Aaddressing-Mode"><span class="trm-toc-number">1.4.5.3.</span> <span class="trm-toc-text">Direct Aaddressing Mode</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Register Indirect Addressing Mode"><a rel="nofollow" class="trm-toc-link" href="#Register-Indirect-Addressing-Mode"><span class="trm-toc-number">1.4.5.4.</span> <span class="trm-toc-text">Register Indirect Addressing Mode</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Based relative addressing mode"><a rel="nofollow" class="trm-toc-link" href="#Based-relative-addressing-mode"><span class="trm-toc-number">1.4.5.5.</span> <span class="trm-toc-text">Based relative addressing mode</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Indexed Relative Addressing Mode"><a rel="nofollow" class="trm-toc-link" href="#Indexed-Relative-Addressing-Mode"><span class="trm-toc-number">1.4.5.6.</span> <span class="trm-toc-text">Indexed Relative Addressing Mode</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Based-Indexed Relative Addressing Mode"><a rel="nofollow" class="trm-toc-link" href="#Based-Indexed-Relative-Addressing-Mode"><span class="trm-toc-number">1.4.5.7.</span> <span class="trm-toc-text">Based-Indexed Relative Addressing Mode</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 05: Assembly Language Programming"><a rel="nofollow" class="trm-toc-link" href="#Lecture-05-Assembly-Language-Programming"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">Lecture 05: Assembly Language Programming</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Assembly Language Programs"><a rel="nofollow" class="trm-toc-link" href="#Assembly-Language-Programs"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">Assembly Language Programs</span></a></li><li class="trm-toc-item trm-toc-level-3" title="form of an statement"><a rel="nofollow" class="trm-toc-link" href="#form-of-an-statement"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">form of an statement</span></a></li><li class="trm-toc-item trm-toc-level-3" title="shell of a real program"><a rel="nofollow" class="trm-toc-link" href="#shell-of-a-real-program"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">shell of a real program</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Model definition"><a rel="nofollow" class="trm-toc-link" href="#Model-definition"><span class="trm-toc-number">1.5.4.</span> <span class="trm-toc-text">Model definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Simplified Segment Definition"><a rel="nofollow" class="trm-toc-link" href="#Simplified-Segment-Definition"><span class="trm-toc-number">1.5.5.</span> <span class="trm-toc-text">Simplified Segment Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Full Segment Definition"><a rel="nofollow" class="trm-toc-link" href="#Full-Segment-Definition"><span class="trm-toc-number">1.5.6.</span> <span class="trm-toc-text">Full Segment Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Control Transfer Instructions"><a rel="nofollow" class="trm-toc-link" href="#Control-Transfer-Instructions"><span class="trm-toc-number">1.5.7.</span> <span class="trm-toc-text">Control Transfer Instructions</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Conditional Jumps"><a rel="nofollow" class="trm-toc-link" href="#Conditional-Jumps"><span class="trm-toc-number">1.5.8.</span> <span class="trm-toc-text">Conditional Jumps</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Unconditional jumps"><a rel="nofollow" class="trm-toc-link" href="#Unconditional-jumps"><span class="trm-toc-number">1.5.9.</span> <span class="trm-toc-text">Unconditional jumps</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="subroutine &amp; call statement"><a rel="nofollow" class="trm-toc-link" href="#subroutine-call-statement"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">subroutine &amp; call statement</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Data Types &amp; Definition"><a rel="nofollow" class="trm-toc-link" href="#Data-Types-Definition"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">Data Types &amp; Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Arithmetic instructions"><a rel="nofollow" class="trm-toc-link" href="#Arithmetic-instructions"><span class="trm-toc-number">1.6.2.</span> <span class="trm-toc-text">Arithmetic instructions</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Logic Instructions"><a rel="nofollow" class="trm-toc-link" href="#Logic-Instructions"><span class="trm-toc-number">1.6.3.</span> <span class="trm-toc-text">Logic Instructions</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 06: Memory Address Decoding"><a rel="nofollow" class="trm-toc-link" href="#Lecture-06-Memory-Address-Decoding"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">Lecture 06: Memory Address Decoding</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Address decoding"><a rel="nofollow" class="trm-toc-link" href="#Address-decoding"><span class="trm-toc-number">1.7.1.</span> <span class="trm-toc-text">Address decoding</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Data integrity"><a rel="nofollow" class="trm-toc-link" href="#Data-integrity"><span class="trm-toc-number">1.7.2.</span> <span class="trm-toc-text">Data integrity</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Memory Organization in 8086"><a rel="nofollow" class="trm-toc-link" href="#Memory-Organization-in-8086"><span class="trm-toc-number">1.7.3.</span> <span class="trm-toc-text">Memory Organization in 8086</span></a></li><li class="trm-toc-item trm-toc-level-3" title="I&#x2F;O in x86 family"><a rel="nofollow" class="trm-toc-link" href="#I-O-in-x86-family"><span class="trm-toc-number">1.7.4.</span> <span class="trm-toc-text">I&#x2F;O in x86 family</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 07: 8255 PPI Chip"><a rel="nofollow" class="trm-toc-link" href="#Lecture-07-8255-PPI-Chip"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">Lecture 07: 8255 PPI Chip</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Internal Structure and Pins"><a rel="nofollow" class="trm-toc-link" href="#Internal-Structure-and-Pins"><span class="trm-toc-number">1.8.1.</span> <span class="trm-toc-text">Internal Structure and Pins</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Mode 0"><a rel="nofollow" class="trm-toc-link" href="#Mode-0"><span class="trm-toc-number">1.8.2.</span> <span class="trm-toc-text">Mode 0</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Mode 1"><a rel="nofollow" class="trm-toc-link" href="#Mode-1"><span class="trm-toc-number">1.8.3.</span> <span class="trm-toc-text">Mode 1</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Mode 2 (Bidirectional Bus)"><a rel="nofollow" class="trm-toc-link" href="#Mode-2-Bidirectional-Bus"><span class="trm-toc-number">1.8.4.</span> <span class="trm-toc-text">Mode 2 (Bidirectional Bus)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 08: 8253&#x2F;4 Timer"><a rel="nofollow" class="trm-toc-link" href="#Lecture-08-8253-4-Timer"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">Lecture 08: 8253&#x2F;4 Timer</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Internal Structure &amp; pins"><a rel="nofollow" class="trm-toc-link" href="#Internal-Structure-pins"><span class="trm-toc-number">1.9.1.</span> <span class="trm-toc-text">Internal Structure &amp; pins</span></a></li><li class="trm-toc-item trm-toc-level-3" title="control word register"><a rel="nofollow" class="trm-toc-link" href="#control-word-register"><span class="trm-toc-number">1.9.2.</span> <span class="trm-toc-text">control word register</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Counters:"><a rel="nofollow" class="trm-toc-link" href="#Counters"><span class="trm-toc-number">1.9.3.</span> <span class="trm-toc-text">Counters:</span></a></li><li class="trm-toc-item trm-toc-level-3" title="W&#x2F;R Operations"><a rel="nofollow" class="trm-toc-link" href="#W-R-Operations"><span class="trm-toc-number">1.9.4.</span> <span class="trm-toc-text">W&#x2F;R Operations</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Modes"><a rel="nofollow" class="trm-toc-link" href="#Modes"><span class="trm-toc-number">1.9.5.</span> <span class="trm-toc-text">Modes</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Mode 0：Interrupt on Terminal Count"><a rel="nofollow" class="trm-toc-link" href="#Mode-0：Interrupt-on-Terminal-Count"><span class="trm-toc-number">1.9.5.1.</span> <span class="trm-toc-text">Mode 0：Interrupt on Terminal Count</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Mode 1：Hardware Retriggerable One-shot"><a rel="nofollow" class="trm-toc-link" href="#Mode-1：Hardware-Retriggerable-One-shot"><span class="trm-toc-number">1.9.5.2.</span> <span class="trm-toc-text">Mode 1：Hardware Retriggerable One-shot</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Mode 2: Rate Generator"><a rel="nofollow" class="trm-toc-link" href="#Mode-2-Rate-Generator"><span class="trm-toc-number">1.9.5.3.</span> <span class="trm-toc-text">Mode 2: Rate Generator</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Mode 3: Square Wave Rate Generator"><a rel="nofollow" class="trm-toc-link" href="#Mode-3-Square-Wave-Rate-Generator"><span class="trm-toc-number">1.9.5.4.</span> <span class="trm-toc-text">Mode 3: Square Wave Rate Generator</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Mode 4: Software Triggered Strobe"><a rel="nofollow" class="trm-toc-link" href="#Mode-4-Software-Triggered-Strobe"><span class="trm-toc-number">1.9.5.5.</span> <span class="trm-toc-text">Mode 4: Software Triggered Strobe</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Mode 5: Hardware Triggered Strobe"><a rel="nofollow" class="trm-toc-link" href="#Mode-5-Hardware-Triggered-Strobe"><span class="trm-toc-number">1.9.5.6.</span> <span class="trm-toc-text">Mode 5: Hardware Triggered Strobe</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 9: Interrupts &amp;8259"><a rel="nofollow" class="trm-toc-link" href="#Lecture-9-Interrupts-8259"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">Lecture 9: Interrupts &amp;8259</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Categories："><a rel="nofollow" class="trm-toc-link" href="#Categories："><span class="trm-toc-number">1.10.0.1.</span> <span class="trm-toc-text">Categories：</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Hardware Interrupts"><a rel="nofollow" class="trm-toc-link" href="#Hardware-Interrupts"><span class="trm-toc-number">1.10.1.</span> <span class="trm-toc-text">Hardware Interrupts</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 10: BIOS and DOS Programming"><a rel="nofollow" class="trm-toc-link" href="#Lecture-10-BIOS-and-DOS-Programming"><span class="trm-toc-number">1.11.</span> <span class="trm-toc-text">Lecture 10: BIOS and DOS Programming</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="BIOS INT 10H Programming"><a rel="nofollow" class="trm-toc-link" href="#BIOS-INT-10H-Programming"><span class="trm-toc-number">1.11.1.</span> <span class="trm-toc-text">BIOS INT 10H Programming</span></a></li><li class="trm-toc-item trm-toc-level-3" title="DOS Interrupt 21H"><a rel="nofollow" class="trm-toc-link" href="#DOS-Interrupt-21H"><span class="trm-toc-number">1.11.2.</span> <span class="trm-toc-text">DOS Interrupt 21H</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Lecture 11: Serial Data Communication &amp; 8251"><a rel="nofollow" class="trm-toc-link" href="#Lecture-11-Serial-Data-Communication-8251"><span class="trm-toc-number">1.12.</span> <span class="trm-toc-text">Lecture 11: Serial Data Communication &amp; 8251</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Two ways: parallel &amp; Serial"><a rel="nofollow" class="trm-toc-link" href="#Two-ways-parallel-Serial"><span class="trm-toc-number">1.12.1.</span> <span class="trm-toc-text">Two ways: parallel &amp; Serial</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Serial Communication"><a rel="nofollow" class="trm-toc-link" href="#Serial-Communication"><span class="trm-toc-number">1.12.2.</span> <span class="trm-toc-text">Serial Communication</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Data Transfer Rate"><a rel="nofollow" class="trm-toc-link" href="#Data-Transfer-Rate"><span class="trm-toc-number">1.12.2.1.</span> <span class="trm-toc-text">Data Transfer Rate</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Synchronization Methods"><a rel="nofollow" class="trm-toc-link" href="#Synchronization-Methods"><span class="trm-toc-number">1.12.2.2.</span> <span class="trm-toc-text">Synchronization Methods</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Communication Modes"><a rel="nofollow" class="trm-toc-link" href="#Communication-Modes"><span class="trm-toc-number">1.12.3.</span> <span class="trm-toc-text">Communication Modes</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Error Detection"><a rel="nofollow" class="trm-toc-link" href="#Error-Detection"><span class="trm-toc-number">1.12.4.</span> <span class="trm-toc-text">Error Detection</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="END"><a rel="nofollow" class="trm-toc-link" href="#END"><span class="trm-toc-number">1.13.</span> <span class="trm-toc-text">END</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

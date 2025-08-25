@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="图论整理第一章 基本概念1.1 图的概念 $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图  只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$  一些概念：  $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图论整理">
+<meta property="og:url" content="https://ryanstarfox.github.io/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="图论整理第一章 基本概念1.1 图的概念 $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图  只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$  一些概念：  $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-12-01T13:34:00.000Z">
+<meta property="article:modified_time" content="2024-12-01T13:34:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta property="article:tag" content="理论&#x2F;Theory">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >图论整理</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-12-01 21:34:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/%E5%9B%BE%E8%AE%BA.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            图论整理
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            12/01
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            21:34
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="图论整理"><a href="#图论整理" class="headerlink" title="图论整理"></a>图论整理</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><h3 id="1-1-图的概念"><a href="#1-1-图的概念" class="headerlink" title="1.1 图的概念"></a>1.1 图的概念</h3><ol>
+<li><p>$(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图</p>
+</li>
+<li><p>只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$</p>
+</li>
+<li><p>一些概念：</p>
+<ol>
+<li><p>$e_k&#x3D;(v_i,v_j)$</p>
+<ol>
+<li>称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$</li>
+<li>称$v_i是e_k的始点，v_j是e_k的终点，v_i是v_j的直接前趋，v_j是v_i的直接后继$</li>
+</ol>
+</li>
+<li><p><strong>邻接边</strong>：有一个共同顶点的两条边</p>
+</li>
+<li><p><strong>有向图</strong>：全部由有向边构成的图</p>
+<p>**无向图：**全部由无向边构成的图</p>
+<p>**混合图：**既有有向边又有无向边构成的图</p>
+</li>
+<li><p>**自环：**只与一个顶点关联的边</p>
+</li>
+<li><p>**多重边：**同一对顶点之间存在多条边</p>
+<p>**多重图：**含有重边的图</p>
+</li>
+<li><p>**孤立点：**没有与任何边关联的顶点</p>
+</li>
+<li><p>**度$d(v)$：**与顶点关联的边的数目</p>
+<p>**入读：**入边条数</p>
+<p>**出度：**出边条数</p>
+<p>**奇点：**度为奇数的点</p>
+<p>**偶点：**度为偶数的点</p>
+</li>
+<li><p>**简单图：**不存在自环的无向图</p>
+</li>
+</ol>
+</li>
+<li><p>$\sum\limits_{v\in{V(G)}}d(v)&#x3D;2m$</p>
+</li>
+<li><p>G中奇数的顶点必为偶数个</p>
+</li>
+<li><p>G中出度之和&#x3D;入度之和</p>
+</li>
+<li><p>K<del>n</del>的变数是$\cfrac12n(n-1)$</p>
+</li>
+<li><p>非空简单图G中一定存在度相同的顶点</p>
+</li>
+<li><p><strong>n阶完全图：K<del>n</del></strong></p>
+</li>
+<li><p><strong>完全二分图：K<del>m,n</del></strong></p>
+</li>
+<li><p>**平凡图：**n&#x3D;1的图</p>
+</li>
+<li><p>**空图&#x2F;零图：**m&#x3D;0的图</p>
+</li>
+<li><p>**（k度）正则图：**所有顶点度数均相等（为k）的图</p>
+</li>
+<li><p><strong>阶为k的(k-1)-正则图：k-完全图</strong></p>
+</li>
+<li><p>**正权图：**权为正实数的赋权图</p>
+</li>
+<li><p><strong>子图：</strong>$V’\in V,E’\in E$</p>
+<p><strong>支撑子图&#x2F;生成子图：</strong>$V’&#x3D;V,E’\in E$</p>
+<p><strong>导出子图：</strong>$V’\in V,E’_V &#x3D; E_V$</p>
+</li>
+<li><p><strong>邻点集：</strong>$\Gamma(v)$</p>
+<p><strong>直接后继集&#x2F;外邻集：</strong>$\Gamma^+(v)$</p>
+<p><strong>直接前趋集&#x2F;内邻集：</strong>$\Gamma^-(v)$</p>
+</li>
+</ol>
+<h3 id="1-2-图的代数表示"><a href="#1-2-图的代数表示" class="headerlink" title="1.2 图的代数表示"></a>1.2 图的代数表示</h3><ol>
+<li><strong>邻接矩阵</strong><ul>
+<li>对称矩阵</li>
+<li>可以表示自环</li>
+<li>无法表示重边</li>
+</ul>
+</li>
+<li><strong>权矩阵</strong><ul>
+<li>邻接矩阵基础上加入权值信息</li>
+</ul>
+</li>
+<li><strong>关联矩阵</strong><ul>
+<li>n x m的矩阵</li>
+<li>$b_{ij}&#x3D;\begin{cases}1,&amp;e_j&#x3D;(v_i,v_k)\in E\-1,&amp;e_j&#x3D;(v_k,v_i)\in E\0,&amp;其他\end{cases}$</li>
+<li>无法表示自环</li>
+<li>可以表示重边</li>
+</ul>
+</li>
+<li><strong>边列表</strong><ul>
+<li>边列表是对关联矩阵的列进行压缩的结果</li>
+<li>两个m维向量$\vec A$和$\vec B$，前者存放起点，后者存放终点</li>
+<li>可选的$\vec Z$，存放权值</li>
+<li>可以表示自环</li>
+<li>可以表示重边</li>
+</ul>
+</li>
+<li><strong>正向表</strong><ul>
+<li>对邻接矩阵的行进行压缩的结果，把每个顶点的直接后趋集中在一起存放<ul>
+<li>n+1维向量$\vec A$，m维向量$\vec B$</li>
+<li>$d^+(v_i)&#x3D;A(i+1)-A(i)$</li>
+<li>$B(A(i))$到$B(A(i+1)-1)中的任一个值，都是v_i的直接后继$</li>
+</ul>
+</li>
+<li>可选的$\vec Z$，存放权值</li>
+<li>可以表示自环</li>
+<li>可以表示重边</li>
+</ul>
+</li>
+<li><strong>逆向表</strong><ul>
+<li>与正向表类似，把每个顶点的直接前趋放在一张表里存放</li>
+</ul>
+</li>
+<li><strong>邻接表</strong><ul>
+<li>每一个表顶点|a|b|c|，a存放点编号，b存放边的数值，c存放下一表顶点的地址指针</li>
+<li>可以存放权值</li>
+<li>可以表示自环</li>
+<li>可以表示重边</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二章-道路和回路"><a href="#第二章-道路和回路" class="headerlink" title="第二章 道路和回路"></a>第二章 道路和回路</h2><h3 id="2-1-图的连通性"><a href="#2-1-图的连通性" class="headerlink" title="2.1 图的连通性"></a>2.1 图的连通性</h3><ol>
+<li><p>有向图中：</p>
+<p>有向道路、有向回路：字面意思</p>
+<p>无重边：<strong>简单有向道路&#x2F;简单有向回路</strong></p>
+<p>无重边、无重顶点：<strong>初级有向道路&#x2F;初级有向回路</strong>，简称<strong>路</strong>和<strong>回路</strong></p>
+</li>
+<li><p>无向图中：</p>
+<p>道路&#x2F;链、回路&#x2F;圈：字面意思</p>
+<p>无重边：<strong>简单道路&#x2F;简单回路</strong></p>
+<p>无重边、无重顶点：<strong>初级道路&#x2F;初级回路</strong></p>
+</li>
+</ol>
+<p>**弦：**圈中不相邻顶点的边</p>
+<p>**连通图：**G的任意两点之间都存在道路H不是G任何连通子图的真子图</p>
+<p>**树：**不含回路的连通图</p>
+<p>**割边&#x2F;割点：**移去后使得原有图不再连通的边&#x2F;顶点</p>
+<p>**块：**G中极大的没有割点的连通子图</p>
+<p>割点相关等价命题：</p>
+<ol>
+<li>v是G的一个割点</li>
+<li>存在与v不同的点u,w，使得任何一条u到w的道路P<del>uw</del>经过v</li>
+<li>V-v可以划分为两个顶点集U，W，任意$u\in U,w\in W$，u在每一条道路P<del>uw</del>上</li>
+</ol>
+<p>割边相关等价命题：</p>
+<ol>
+<li>e是G的一条割边</li>
+<li>e不属于G的任何回路</li>
+<li>存在G得顶点u，w，e属于u和w的任何一条道路P<del>uw</del></li>
+<li>G-e可以划分为两个顶点集U和W，使得对任何顶点$u\in U,w\in W$，在G中的道路P<del>uw</del>都经过e</li>
+</ol>
+<p>图G移去若干顶点后分为两个连通子图或者剩下一个孤立的点，这些点的集合称为点断集&#x2F;断集A</p>
+<p>$\mathcal K(G)&#x3D;\min\limits_{A\in\emptyset}{|A|}$为断量</p>
+<p>同理边断集B，边断量$\lambda(G)$</p>
+<p>若$\mathcal K(G)\geq k$称G为k连通图，同理k边连通图</p>
+<p>$\mathcal K(G)\leq \lambda(G)\leq \delta(G),\delta(G)是顶点的最小度$</p>
+<h3 id="2-3-欧拉道路与回路"><a href="#2-3-欧拉道路与回路" class="headerlink" title="2.3 欧拉道路与回路"></a>2.3 欧拉道路与回路</h3><p>**欧拉回路&#x2F;道路：**经过所有边的简单回路&#x2F;道路</p>
+<p>**欧拉图：**存在欧拉回路</p>
+<p>**半欧拉图：**存在欧拉道路而不存在欧拉回路</p>
+<p>$存在欧拉回路\Leftrightarrow 各顶点的度为偶数&#x2F;出度入读相等$</p>
+<p>$存在欧拉道路\Leftrightarrow 只有两个度为奇数的点$</p>
+<h3 id="2-4-哈密顿道路与回路"><a href="#2-4-哈密顿道路与回路" class="headerlink" title="2.4 哈密顿道路与回路"></a>2.4 哈密顿道路与回路</h3><p>**哈密顿回路&#x2F;道路：**无向图的一条过全部顶点的初级回路</p>
+<p>**哈密顿图：**含有H回路的无向连通图</p>
+<p>**半哈密顿图：**含有H道路而不含H回路的无向连通图</p>
+<p>一些充分定理：</p>
+<ol>
+<li><p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n-1，则G中存在哈密顿道路$</p>
+</li>
+<li><p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n，则G中存在哈密顿回路$</p>
+</li>
+<li><p>$若简单图每个顶点的度均大于等于\cfrac n2，则G有H回路$</p>
+</li>
+<li><p>$设G是简单图，v_i,v_j是不相邻顶点，且满足d(v_i)+d(v_j)\geq n，则G存在H回路的充要条件是G+(v_i,v_j)有H回路$</p>
+</li>
+<li><p>$先定义闭合图:若d(v_i)+d(v_j)\geq n，令G’&#x3D;G+(v_i,v_j)，重复，直到不存在这样的顶点对为止，得到的即为闭合图，记作C(G)$</p>
+<p>$简单图G存在哈密顿回路的充要条件是其闭合图存在哈密顿回路$</p>
+</li>
+<li><p>$若C(G)是完全图，则G有H回路$</p>
+</li>
+</ol>
+<h3 id="2-6-最短路径：Dijkstra算法"><a href="#2-6-最短路径：Dijkstra算法" class="headerlink" title="2.6 最短路径：Dijkstra算法"></a>2.6 最短路径：Dijkstra算法</h3><h3 id="2-7-关键路径：AOE"><a href="#2-7-关键路径：AOE" class="headerlink" title="2.7 关键路径：AOE"></a>2.7 关键路径：AOE</h3><h3 id="2-8-中国邮路"><a href="#2-8-中国邮路" class="headerlink" title="2.8 中国邮路"></a>2.8 中国邮路</h3><p>先找到奇点，选择最小的几条路径，加上使这些奇点变偶，然后欧拉回路</p>
+<h2 id="第三章-树"><a href="#第三章-树" class="headerlink" title="第三章 树"></a>第三章 树</h2><h3 id="3-1-树的相关定义"><a href="#3-1-树的相关定义" class="headerlink" title="3.1 树的相关定义"></a>3.1 树的相关定义</h3><p>不含任何回路的连通图称为树（T），T中的边称为树枝，度为1的顶点称为树叶</p>
+<p>若T是G的支撑子图，且又是一棵树，则T使G的支撑树&#x2F;生成树，又称G的树</p>
+<h3 id="3-5-Huffman树"><a href="#3-5-Huffman树" class="headerlink" title="3.5 Huffman树"></a>3.5 Huffman树</h3><p>小在左，大在右，0在左，1在右</p>
+<h3 id="3-6-最短树"><a href="#3-6-最短树" class="headerlink" title="3.6 最短树"></a>3.6 最短树</h3><ol>
+<li>Kruskal算法：不断加入最短边，如成环则换次短边</li>
+<li>Prim算法：选到已选区域最近的点</li>
+</ol>
+<h2 id="第四章-平面图与图图的着色"><a href="#第四章-平面图与图图的着色" class="headerlink" title="第四章 平面图与图图的着色"></a>第四章 平面图与图图的着色</h2><h3 id="4-1-平面图"><a href="#4-1-平面图" class="headerlink" title="4.1 平面图"></a>4.1 平面图</h3><p>平面图：能放在一个平面上，任何两条边都不相交，称G<strong>可嵌入平面</strong>，G是<strong>可平面图</strong>，其中一个嵌入称为<strong>平面图</strong></p>
+<p>G同构于平面图P，称P是G的一个<strong>平面嵌入</strong></p>
+<p>面&#x2F;域：不含任何顶点和边的区域，其中诸边称为边界</p>
+<p>欧拉公式：对于平面连通图，$d&#x3D;m-n+2$</p>
+<p>若G有k个连通支，则$n-m+d &#x3D; k+1$</p>
+<p>对于一般平面图G，恒有$n-m+d\geq 2$</p>
+<p>若平面连通图G没有割边，且每个域的边界数至少t，则$m\leq\cfrac{t(n-2)}{t-2}$</p>
+<h3 id="4-2-极大平面图"><a href="#4-2-极大平面图" class="headerlink" title="4.2 极大平面图"></a>4.2 极大平面图</h3><p>极大平面图：</p>
+<ol>
+<li>连通</li>
+<li>不存在割边</li>
+<li>每个域边界数为3</li>
+<li>3d&#x3D;2m, m&#x3D;3n-6, d&#x3D;2n-4</li>
+</ol>
+<p>简单平面图满足$m\leq 3n-6,d\leq 2n-4$</p>
+<p>简单平面图G中存在度小于6的顶点</p>
+<h3 id="4-3-非平面图"><a href="#4-3-非平面图" class="headerlink" title="4.3 非平面图"></a>4.3 非平面图</h3><ol>
+<li>K<del>5</del>是非平面图，也称K^(1)^</li>
+<li>K<del>3,3</del>是非平面图，也称K^(2)^</li>
+<li>K^(1)^和K^(2)^图上任意加一些度为2的顶点之后得到的图称为K^(1)^型图和K^(2)^型图，统称为K型图</li>
+<li>G是可平面图的充要条件是G不存在K型子图</li>
+</ol>
+<h3 id="4-4-对偶图"><a href="#4-4-对偶图" class="headerlink" title="4.4 对偶图"></a>4.4 对偶图</h3><ol>
+<li>域-&gt;顶点，共边-&gt;相邻，求对呕吐的过程称为D过程（draw）</li>
+<li>性质<ol>
+<li>若G是平面图，则G一定有唯一对偶图G^*^</li>
+<li>G^*^是连通图</li>
+<li>若G是平面连通图，则（G^<em>^)^</em>^&#x3D;G</li>
+<li>m&#x3D;m^<em>^, n&#x3D;d^</em>^, d&#x3D;n^*^</li>
+<li>若C是平面图G得一个初级回路，S^<em>^是G^</em>^中与C的各边e<del>i</del>对应的e<del>i</del>^<em>^的集合，那么S^</em>^是G^*^的一个割集</li>
+<li>G有对偶图等价于G为平面图</li>
+</ol>
+</li>
+<li>每一个平面图都是5-可着色的</li>
+<li>如果平面图G有哈密顿回路，则四色猜想成立</li>
+<li>若任何一个3-正则平面图的域4-可着色，则任何平面图的域4-可着色</li>
+</ol>
+<h3 id="4-5-色数与色数多项式"><a href="#4-5-色数与色数多项式" class="headerlink" title="4.5 色数与色数多项式"></a>4.5 色数与色数多项式</h3><p>不断分割即可</p>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/12/09/2024/20241209%20%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/12/09/2024/20241209%20%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" class="trm-anima-link">
+                    数理逻辑整理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/12/09</li>
+                <li>10:27</li>
+                
+                    <li>1.7k</li>
+                
+                
+                    <li>8</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/11/09/2024/20241109%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/11/09/2024/20241109%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" class="trm-anima-link">
+                    计算机组成整理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/11/09</li>
+                <li>13:35</li>
+                
+                    <li>6.8k</li>
+                
+                
+                    <li>42</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="图论整理"><a rel="nofollow" class="trm-toc-link" href="#图论整理"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">图论整理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="第一章 基本概念"><a rel="nofollow" class="trm-toc-link" href="#第一章-基本概念"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">第一章 基本概念</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 图的概念"><a rel="nofollow" class="trm-toc-link" href="#1-1-图的概念"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 图的概念</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 图的代数表示"><a rel="nofollow" class="trm-toc-link" href="#1-2-图的代数表示"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 图的代数表示</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第二章 道路和回路"><a rel="nofollow" class="trm-toc-link" href="#第二章-道路和回路"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">第二章 道路和回路</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 图的连通性"><a rel="nofollow" class="trm-toc-link" href="#2-1-图的连通性"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 图的连通性</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 欧拉道路与回路"><a rel="nofollow" class="trm-toc-link" href="#2-3-欧拉道路与回路"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.3 欧拉道路与回路</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 哈密顿道路与回路"><a rel="nofollow" class="trm-toc-link" href="#2-4-哈密顿道路与回路"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.4 哈密顿道路与回路</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 最短路径：Dijkstra算法"><a rel="nofollow" class="trm-toc-link" href="#2-6-最短路径：Dijkstra算法"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.6 最短路径：Dijkstra算法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.7 关键路径：AOE"><a rel="nofollow" class="trm-toc-link" href="#2-7-关键路径：AOE"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.7 关键路径：AOE</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.8 中国邮路"><a rel="nofollow" class="trm-toc-link" href="#2-8-中国邮路"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.8 中国邮路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第三章 树"><a rel="nofollow" class="trm-toc-link" href="#第三章-树"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">第三章 树</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 树的相关定义"><a rel="nofollow" class="trm-toc-link" href="#3-1-树的相关定义"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 树的相关定义</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Huffman树"><a rel="nofollow" class="trm-toc-link" href="#3-5-Huffman树"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.5 Huffman树</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.6 最短树"><a rel="nofollow" class="trm-toc-link" href="#3-6-最短树"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.6 最短树</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第四章 平面图与图图的着色"><a rel="nofollow" class="trm-toc-link" href="#第四章-平面图与图图的着色"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">第四章 平面图与图图的着色</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 平面图"><a rel="nofollow" class="trm-toc-link" href="#4-1-平面图"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 极大平面图"><a rel="nofollow" class="trm-toc-link" href="#4-2-极大平面图"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 极大平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.3 非平面图"><a rel="nofollow" class="trm-toc-link" href="#4-3-非平面图"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 非平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.4 对偶图"><a rel="nofollow" class="trm-toc-link" href="#4-4-对偶图"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">4.4 对偶图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.5 色数与色数多项式"><a rel="nofollow" class="trm-toc-link" href="#4-5-色数与色数多项式"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">4.5 色数与色数多项式</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

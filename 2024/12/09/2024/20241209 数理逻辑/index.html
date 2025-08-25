@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="数理逻辑第一章 命题逻辑的基本概念 命题是一个陈述句，不能是悖论，有固定的真假值（只是这个值可以未知） $P\to Q&#x3D; \neg P\vee Q$ $P \leftrightarrow Q&#x3D;(P\to Q)\wedge(Q\to P)$ 合式公式 简单命题是合式公式 如果$A$是合式公式，那么$\neg A$也是合式公式 如果$A,B$是合式公式，那么$(A\vee B),(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数理逻辑整理">
+<meta property="og:url" content="https://ryanstarfox.github.io/2024/12/09/2024/20241209%20%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="数理逻辑第一章 命题逻辑的基本概念 命题是一个陈述句，不能是悖论，有固定的真假值（只是这个值可以未知） $P\to Q&#x3D; \neg P\vee Q$ $P \leftrightarrow Q&#x3D;(P\to Q)\wedge(Q\to P)$ 合式公式 简单命题是合式公式 如果$A$是合式公式，那么$\neg A$也是合式公式 如果$A,B$是合式公式，那么$(A\vee B),(">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-12-09T02:27:00.000Z">
+<meta property="article:modified_time" content="2024-12-09T02:27:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta property="article:tag" content="理论&#x2F;Theory">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >数理逻辑整理</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-12-09 10:27:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            数理逻辑整理
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            12/09
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            10:27
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="数理逻辑"><a href="#数理逻辑" class="headerlink" title="数理逻辑"></a>数理逻辑</h1><h2 id="第一章-命题逻辑的基本概念"><a href="#第一章-命题逻辑的基本概念" class="headerlink" title="第一章 命题逻辑的基本概念"></a>第一章 命题逻辑的基本概念</h2><ol>
+<li>命题是一个陈述句，不能是悖论，有固定的真假值（只是这个值可以未知）</li>
+<li>$P\to Q&#x3D; \neg P\vee Q$</li>
+<li>$P \leftrightarrow Q&#x3D;(P\to Q)\wedge(Q\to P)$</li>
+<li>合式公式<ol>
+<li>简单命题是合式公式</li>
+<li>如果$A$是合式公式，那么$\neg A$也是合式公式</li>
+<li>如果$A,B$是合式公式，那么$(A\vee B),(A\wedge B),(A\to B),(A\leftrightarrow B)也是合式公式$</li>
+<li>当且仅当使用有限次(1),(2),(3)所组成的符号串是合式公式</li>
+</ol>
+</li>
+<li>重言式&#x3D;永真式，矛盾式&#x3D;永假式</li>
+</ol>
+<h2 id="第二章-命题逻辑的等值与推理运算"><a href="#第二章-命题逻辑的等值与推理运算" class="headerlink" title="第二章 命题逻辑的等值与推理运算"></a>第二章 命题逻辑的等值与推理运算</h2><ol>
+<li><p>$A$与$B$真值表相同，则$A&#x3D;B$或者$A\Leftrightarrow B$</p>
+</li>
+<li><p>运算规律：</p>
+<ol>
+<li><p>双重否定律</p>
+<p>$\neg\neg P&#x3D;P$</p>
+</li>
+<li><p>结合律</p>
+<p>$(P\wedge Q)\wedge R&#x3D;P\wedge(Q\wedge R)$</p>
+<p>$(P\vee Q)\vee R&#x3D;P\wedge(Q\vee R)$</p>
+<p>$(P\leftrightarrow Q)\leftrightarrow R&#x3D;P\leftrightarrow(Q\leftrightarrow R)$</p>
+<p>$(P\to Q)\to R\neq P\to(Q\to R)$</p>
+</li>
+<li><p>交换律</p>
+<p>$P\wedge Q&#x3D;Q\wedge P$</p>
+<p>$P\vee Q&#x3D;Q\vee P$</p>
+<p>$P\leftrightarrow Q&#x3D;Q\leftrightarrow P$</p>
+<p>$P\to Q\neq Q\to P$</p>
+</li>
+<li><p>分配律</p>
+<p>$P\wedge(Q\vee R)&#x3D;(P\wedge Q)\vee(P\wedge R)$</p>
+<p>$P\vee(Q\wedge R)&#x3D;(P\vee Q)\wedge(P\vee R)$</p>
+<p>$P\leftrightarrow (Q\leftrightarrow R)\neq (P\leftrightarrow Q)\leftrightarrow (P\leftrightarrow Q)$</p>
+<p>$P\to(Q\to R)&#x3D;(P\to Q)\to(P\to R)$</p>
+</li>
+<li><p>恒等律</p>
+<p>$P\wedge P&#x3D;P$</p>
+<p>$P\vee P&#x3D;P$</p>
+<p>$P\leftrightarrow P&#x3D;T$</p>
+<p>$P\to P&#x3D;T$</p>
+</li>
+<li><p>吸收率</p>
+<p>$P\vee(P\wedge Q)&#x3D;P$</p>
+<p>$P\wedge(P\vee Q)&#x3D;P$</p>
+</li>
+<li><p>摩根律</p>
+<p>$\neg (P\vee Q)&#x3D;\neg P\wedge\neg Q$</p>
+<p>$\neg (P\wedge Q)&#x3D;\neg P\vee\neg Q$</p>
+<p>$\neg(P\leftrightarrow Q)&#x3D;\neg P\leftrightarrow Q&#x3D;P\leftrightarrow\neg Q&#x3D;(\neg P\wedge Q)\vee(P\wedge\neq Q)$</p>
+<p>$\neg(P\to Q)&#x3D;P\wedge\neg Q$</p>
+</li>
+<li><p>同一律</p>
+<p>$P\vee F&#x3D;P$</p>
+<p>$P\wedge T&#x3D;P$</p>
+<p>$T\leftrightarrow P&#x3D;P$</p>
+<p>$T\to P&#x3D;P$</p>
+<p>$P\to F&#x3D;\neg P$</p>
+<p>$P\leftrightarrow F&#x3D;\neg P$</p>
+</li>
+<li><p>零律</p>
+<p>$P\wedge F&#x3D;F$</p>
+<p>$P\vee T&#x3D;T$</p>
+<p>$P\to T&#x3D;T$</p>
+<p>$F\to P&#x3D;T$</p>
+</li>
+<li><p>补余律</p>
+<p>$P\wedge\neg P&#x3D;F$</p>
+<p>$P\vee\neg P&#x3D;T$</p>
+<p>$P\to\neg P&#x3D;\neg P$</p>
+<p>$\neg P\to P&#x3D;P$</p>
+<p>$P\leftrightarrow\neg P&#x3D;F$</p>
+</li>
+</ol>
+</li>
+<li><p>常用：</p>
+<ol>
+<li>$P\to Q&#x3D; \neg P\vee Q$</li>
+<li>$P\to Q&#x3D;\neg Q\to\neg P$</li>
+<li>$P\to(Q\to R)&#x3D;(P\wedge Q)\to R$</li>
+<li>$P\leftrightarrow Q&#x3D;(P\wedge Q)\vee(\neg P\wedge\neg Q)$</li>
+<li>$P\leftrightarrow Q&#x3D;(P\vee\neg Q)\wedge(\neg P\vee Q)$</li>
+<li>$P\leftrightarrow Q&#x3D;(P\to Q)\vee (Q\to P)$</li>
+<li>$P\to(Q\to R)&#x3D;Q\to(P\to R)$</li>
+<li>$(P\to R)\wedge(Q\to R)&#x3D;(P\vee Q)\to R$</li>
+</ol>
+</li>
+<li><p>永真式、永假式、可满足式</p>
+</li>
+<li><p>$\bar\vee异或，\uparrow与非，\downarrow或非$</p>
+</li>
+<li><p>连接词的完备集：${\neg,\wedge,\vee},{\neg,\vee},{\neg,\wedge},{\neg,\to},{\uparrow},{\downarrow}$</p>
+</li>
+<li><p>对偶式：将$A$中的$\vee,\wedge,T,F$换成$\wedge,\vee,F,T$，记作$A^*$</p>
+</li>
+<li><p>若$A&#x3D;A(P_1,P_2,\cdots,P_n)，$则令$A^-&#x3D;A(\neg P_1,\neg P_2,\cdots,\neg P_n)$</p>
+</li>
+<li><p>$\neg (A^<em>)&#x3D;(\neg A)^</em>,\neg(A^-)&#x3D;(\neg A)^-$</p>
+<p>$(A^<em>)^</em>&#x3D;A,(A^-)^-&#x3D;A$</p>
+<p>$\neg A &#x3D; A^{*-}$</p>
+<p>$A&#x3D;B \Leftrightarrow A^<em>&#x3D;B^</em>$</p>
+<p>$A\to B与B^*\to A^*同永真$</p>
+<p>$A与A^-同永真性，\neg A与A^*同永真性$</p>
+</li>
+<li><p>析取范式形如$A_1\vee A_2\vee\cdots\vee A_n$</p>
+</li>
+</ol>
+<p>   合取范式形如$A_1\wedge A_2\wedge\cdots\wedge A_n$</p>
+<p>   任一命题都有与之等值的合取范式和析取范式</p>
+<p>   求范式的步骤：</p>
+<ol>
+<li><p>消去$\to, \leftrightarrow$</p>
+</li>
+<li><p>使用摩根律和双重否定律，把否定词移到命题变项上</p>
+</li>
+<li><p>重复使用分配律</p>
+</li>
+<li><p>仅由极小项构成的析取式为主析取范式，极小项用$m_i$表示</p>
+<p>仅由极大项构成的合取式为主合取范式，极大项用$M_i$表示</p>
+</li>
+<li><p>前提真结论必真的推理形式为正确的推理形式</p>
+</li>
+<li><p>$(A\Rightarrow B)\Leftrightarrow(A\to B)$</p>
+<p>$(A\Rightarrow B)\Leftrightarrow (A\wedge \neg B)$</p>
+</li>
+</ol>
+<h2 id="第三章-命题逻辑的公理化"><a href="#第三章-命题逻辑的公理化" class="headerlink" title="第三章 命题逻辑的公理化"></a>第三章 命题逻辑的公理化</h2><ol>
+<li><p>公理系统：</p>
+<ul>
+<li>初始符号：公理系统允许出现的全体符号的集合</li>
+<li>形成规则：定义了合法序列</li>
+<li>公理：最基本的重言式</li>
+<li>变形规则</li>
+<li>定理：所有的重言式和它们的证明</li>
+</ul>
+</li>
+<li><p>命题逻辑的公理系统</p>
+<ul>
+<li>初始符号：<ul>
+<li>$A,B,C\cdots表示命题$</li>
+<li>$\wedge,\vee,\neg表示连接词$</li>
+<li>$( )圆括号$</li>
+<li>$\vdash加在公式之前，表示其是永真式$</li>
+</ul>
+</li>
+<li>形成规则：<ul>
+<li>$符号\pi是合式公式，\pi取值为A,B,\cdots$</li>
+<li>$若A，B是合式公式，则(A\vee B)是合式公式$</li>
+<li>$若A是合式公式，则\neg A是合式公式$</li>
+<li>$只有符合(1),(2),(3)的符号序列才是合式公式$</li>
+</ul>
+</li>
+<li>定义：<ul>
+<li>$(A\to B)定义为(\neg A\vee B)$</li>
+<li>$(A\wedge B)定义为\neg(\neg A\vee\neg B)$</li>
+<li>$(A\leftrightarrow B)定义为((A\to B)\wedge(B\to A))$</li>
+</ul>
+</li>
+<li>公理：<ul>
+<li>$\vdash((P\vee P)\to P)$</li>
+<li>$\vdash(P\to(P\vee Q))$</li>
+<li>$\vdash ((P\vee Q)\to(Q\vee P))$</li>
+<li>$\vdash((Q\to R)\to((P\vee Q)\to(P\vee R)))$</li>
+</ul>
+</li>
+<li>推理规则<ul>
+<li>$代入原则$</li>
+<li>$分离原则：\vdash A,\vdash A\to B\Rightarrow\vdash B$</li>
+<li>$置换规则$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>若所有成立的定理都可由系统推导出来，则称其为完备系统</p>
+</li>
+<li><p>推理方法：</p>
+<p>$\gamma\to\alpha\wedge \beta \Rightarrow (\gamma\to\alpha) \wedge(\gamma\to\beta)$</p>
+<p>$\gamma\to\alpha\vee \beta\Rightarrow\gamma\wedge \neg\alpha\to\beta$</p>
+<p>$\alpha\wedge\beta\to\gamma\Rightarrow\alpha\to(\beta\to\gamma)$</p>
+<p>$\alpha\vee\beta\to\gamma\Rightarrow(\alpha\to\gamma)\wedge(\beta\to\gamma)$</p>
+</li>
+</ol>
+<h2 id="第四章-谓词逻辑的基本概念"><a href="#第四章-谓词逻辑的基本概念" class="headerlink" title="第四章 谓词逻辑的基本概念"></a>第四章 谓词逻辑的基本概念</h2><ol>
+<li><p>受量词约束-&gt;约束变元；</p>
+<p>不受量词约束-&gt;自由变元</p>
+</li>
+<li><p>严格来说，x要在有限域内，$\forall x$和$\exists x$才能称为合式公式</p>
+</li>
+</ol>
+<h2 id="第五章-谓词逻辑的等值和推理演算"><a href="#第五章-谓词逻辑的等值和推理演算" class="headerlink" title="第五章 谓词逻辑的等值和推理演算"></a>第五章 谓词逻辑的等值和推理演算</h2><ol>
+<li><p>等值式</p>
+<p>$\neg (\forall x)P(x)&#x3D;(\exists x)\neg P(x)$</p>
+<p>$\neg (\exists x)P(X)&#x3D;(\forall x)\neg P(x)$</p>
+<p>$(\forall x)(P(x)\to q)&#x3D;(\exists x)P(x)\to q$</p>
+<p>$(\exists x)(P(x)\to q)&#x3D;(\forall x)P(x)\to q$</p>
+<p>$(\forall x)(p\to Q(x))&#x3D;p\to(\forall x)Q(x)$</p>
+<p>$(\exists x)(p\to Q(x))&#x3D;p\to(\exists x)Q(x)$</p>
+<p>$(\forall x)(P(x)\wedge Q(x))&#x3D;(\forall x)P(x)\wedge (\forall x)Q(x)$</p>
+<p>$(\exists x)(P(x)\vee Q(X))&#x3D;(\exists x)P(x)\vee(\exists x)Q(x)$</p>
+<p>$(\forall x)(\forall y)(P(x)\vee Q(y))&#x3D;(\forall x)P(x)\vee(\forall x)Q(x)$</p>
+<p>$(\exists x)(\exists y)(P(x)\wedge Q(y))&#x3D;(\exists x)P(x)\wedge(\exists x)Q(x)$</p>
+</li>
+<li><p>范式</p>
+<ol>
+<li><p>前束范式</p>
+<p>$A&#x3D;(Q_1x_1)\cdots(Q_nx_n)M(x_1,\cdots,x_n)$</p>
+<p>$Q_i为量词，M称作公式A的母式（基式），M中不再有量词$</p>
+</li>
+<li><p>Skolem标准形</p>
+<p>$(\exists x_1)\cdots(\exists x_i)(\forall x_{i+1})\cdots(\forall x_n)M(x_1,\cdots,x_n)$</p>
+</li>
+</ol>
+</li>
+<li><p>基本的推理公式</p>
+<ol>
+<li>$(\forall x) P(x)\vee(\forall x)Q(x)\Rightarrow (\forall x)(P(x)\vee Q(x))$</li>
+<li>$(\exists x)(P(x)\wedge Q(x))\Rightarrow (\exists x)P(x)\wedge (\exists x)Q(x)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\Rightarrow(\forall x)P(x)\to(\forall x)Q(x)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\Rightarrow(\exists x)P(x)\to(\exists x)Q(x)$</li>
+<li>$(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow(\forall x)P(x)\leftrightarrow(\forall x)Q(x)$</li>
+<li>$(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow(\exists x)P(x)\leftrightarrow(\exists x)Q(x)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\wedge(\forall x)(Q(x)\to R(X))\Rightarrow(\forall x)(P(x)\to R(X))$</li>
+<li>$(\forall x)(P(X)\to Q(X))\wedge P(a)\Rightarrow Q(a)$</li>
+<li>$(\forall x)(\forall y)P(x,y)\Rightarrow (\exists x)(\forall y)P(x,y)$</li>
+<li>$(\exists x)(\forall y)P(x,y)\Rightarrow(\forall y)(\exists x)P(x,y)$</li>
+</ol>
+</li>
+<li></li>
+</ol>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%94%9F%E6%B4%BB-Life/">
+                    生活/Life
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-anima-link">
+                    骑车-2
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/12/26</li>
+                <li>15:00</li>
+                
+                    <li>425</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E5%9B%BE%E8%AE%BA.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/" class="trm-anima-link">
+                    图论整理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/12/01</li>
+                <li>21:34</li>
+                
+                    <li>2.3k</li>
+                
+                
+                    <li>9</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="数理逻辑"><a rel="nofollow" class="trm-toc-link" href="#数理逻辑"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">数理逻辑</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="第一章 命题逻辑的基本概念"><a rel="nofollow" class="trm-toc-link" href="#第一章-命题逻辑的基本概念"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">第一章 命题逻辑的基本概念</span></a></li><li class="trm-toc-item trm-toc-level-2" title="第二章 命题逻辑的等值与推理运算"><a rel="nofollow" class="trm-toc-link" href="#第二章-命题逻辑的等值与推理运算"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">第二章 命题逻辑的等值与推理运算</span></a></li><li class="trm-toc-item trm-toc-level-2" title="第三章 命题逻辑的公理化"><a rel="nofollow" class="trm-toc-link" href="#第三章-命题逻辑的公理化"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">第三章 命题逻辑的公理化</span></a></li><li class="trm-toc-item trm-toc-level-2" title="第四章 谓词逻辑的基本概念"><a rel="nofollow" class="trm-toc-link" href="#第四章-谓词逻辑的基本概念"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">第四章 谓词逻辑的基本概念</span></a></li><li class="trm-toc-item trm-toc-level-2" title="第五章 谓词逻辑的等值和推理演算"><a rel="nofollow" class="trm-toc-link" href="#第五章-谓词逻辑的等值和推理演算"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">第五章 谓词逻辑的等值和推理演算</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>

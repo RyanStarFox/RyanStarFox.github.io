@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="C++ 常用库iostream 控制精度 1cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926 小数模式：fixed  科学技术法：scientific   fstream 逐行读取文件内容 123456789101112131415161718192021#include &lt;iostream&gt;#include &lt;fstream&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 常用库">
+<meta property="og:url" content="https://ryanstarfox.github.io/2025/01/07/2025/20250107%20C++%E5%B8%B8%E7%94%A8%E5%BA%93/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="C++ 常用库iostream 控制精度 1cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926 小数模式：fixed  科学技术法：scientific   fstream 逐行读取文件内容 123456789101112131415161718192021#include &lt;iostream&gt;#include &lt;fstream&amp;gt">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-01-07T06:47:00.000Z">
+<meta property="article:modified_time" content="2025-01-07T06:47:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="技术&#x2F;Tech">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta name="twitter:card" content="summary">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >C++ 常用库</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-01-07 14:47:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/C++libs.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            C++ 常用库
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            01/07
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            14:47
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h2 id="C-常用库"><a href="#C-常用库" class="headerlink" title="C++ 常用库"></a>C++ 常用库</h2><h3 id="iostream"><a href="#iostream" class="headerlink" title="iostream"></a>iostream</h3><ol>
+<li><p>控制精度</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">3</span>) &lt;&lt; <span class="number">3.1415926</span></span><br></pre></td></tr></table></figure></li>
+<li><p>小数模式：<code>fixed</code></p>
+</li>
+<li><p>科学技术法：<code>scientific</code></p>
+</li>
+</ol>
+<h3 id="fstream"><a href="#fstream" class="headerlink" title="fstream"></a>fstream</h3><ol>
+<li><p>逐行读取文件内容</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">std::ifstream <span class="title">file</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;  <span class="comment">// 打开文件</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!file) &#123;  <span class="comment">// 检查文件是否成功打开</span></span><br><span class="line">        std::cerr &lt;&lt; <span class="string">&quot;Unable to open the file!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    std::string line;</span><br><span class="line">    <span class="comment">// 逐行读取文件内容</span></span><br><span class="line">    <span class="keyword">while</span> (std::<span class="built_in">getline</span>(file, line)) &#123;</span><br><span class="line">        std::cout &lt;&lt; line &lt;&lt; std::endl;  <span class="comment">// 输出每一行</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    file.<span class="built_in">close</span>();  <span class="comment">// 关闭文件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>写入文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;output.txt&quot;</span>)</span></span>;</span><br><span class="line">file &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="sstream"><a href="#sstream" class="headerlink" title="sstream"></a>sstream</h3><ol>
+<li><p>isstream</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function">std::istringstream <span class="title">iss</span><span class="params">(<span class="string">&quot;42 3.14 hello&quot;</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">double</span> d;</span><br><span class="line">    std::string str;</span><br><span class="line">    iss &gt;&gt; i &gt;&gt; d &gt;&gt; str;</span><br><span class="line">    std::cout &lt;&lt; i &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; d &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; str &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>osstream</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::ostringstream oss;</span><br><span class="line">oss &lt;&lt; <span class="number">42</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="number">3.14</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">std::string result = oss.<span class="built_in">str</span>();  <span class="comment">// 获取输出结果字符串</span></span><br><span class="line">std::cout &lt;&lt; result &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;42 3.14 hello&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>stringstream配合getline处理输入：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">stringstream <span class="title">ss</span><span class="params">(input1)</span></span>;</span><br><span class="line">string segment;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">getline</span>(ss, segment,<span class="string">&#x27; &#x27;</span>))&#123;</span><br><span class="line">    <span class="function">stringstream <span class="title">NodeStream</span><span class="params">(segment)</span></span>;</span><br><span class="line">    string node, distance;</span><br><span class="line">    <span class="built_in">getline</span>(NodeStream, node, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    <span class="built_in">getline</span>(NodeStream, distance, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    graph[node].distance = <span class="built_in">stoi</span>(distance);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ss = <span class="built_in">stringstream</span>(input2);</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">getline</span>(ss, segment, <span class="string">&#x27; &#x27;</span>)) &#123;</span><br><span class="line">    <span class="comment">// 分割每个连接描述，例如 &quot;S:A&quot;</span></span><br><span class="line">    <span class="function">stringstream <span class="title">edgeStream</span><span class="params">(segment)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">getline</span>(edgeStream, from, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    <span class="built_in">getline</span>(edgeStream, to, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><h4 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h4><ul>
+<li><code>vector(size_type n, const value_type&amp; val)</code>：构造一个包含n个元素的vector，每个元素都初始化为val。</li>
+<li><code>vector(const vector&amp; x)</code>：复制构造函数，创建一个与x相同的vector。</li>
+</ul>
+<h4 id="容量相关函数"><a href="#容量相关函数" class="headerlink" title="容量相关函数"></a>容量相关函数</h4><ul>
+<li><code>size()</code>：返回vector中元素的个数。</li>
+<li><code>empty()</code>：检查vector是否为空，如果为空则返回true。</li>
+</ul>
+<h4 id="元素访问函数"><a href="#元素访问函数" class="headerlink" title="元素访问函数"></a>元素访问函数</h4><ul>
+<li><code>operator[]</code>：返回指定位置元素的引用。</li>
+<li><code>at(size_type n)</code>：返回指定位置元素的引用，同时进行边界检查。</li>
+<li><code>front()</code>：返回vector中第一个元素的引用。</li>
+<li><code>back()</code>：返回vector中最后一个元素的引用。</li>
+</ul>
+<h4 id="修改器函数"><a href="#修改器函数" class="headerlink" title="修改器函数"></a>修改器函数</h4><ul>
+<li><code>assign(size_type n, const value_type&amp; val)</code>：将vector中的元素替换为n个val。</li>
+<li><code>push_back(const value_type&amp; val)</code>：在vector的末尾添加一个元素val。</li>
+<li><code>pop_back()</code>：删除vector末尾的元素。</li>
+<li><code>insert(iterator position, const value_type&amp; val)</code>：在position位置插入一个元素val。</li>
+<li><code>erase(iterator position)</code>：删除position位置处的元素。</li>
+<li><code>erase(iterator first, iterator last)</code>：删除[first, last)区间内的元素。</li>
+<li><code>clear()</code>：清空vector中的所有元素。</li>
+</ul>
+<h4 id="迭代器函数"><a href="#迭代器函数" class="headerlink" title="迭代器函数"></a>迭代器函数</h4><ul>
+<li><p><code>begin()</code>：返回指向vector中第一个元素的迭代器。</p>
+</li>
+<li><p><code>end()</code>：返回指向vector中最后一个元素之后位置的迭代器。</p>
+</li>
+<li><p><code>rbegin()</code>：返回指向vector中最后一个元素的逆向迭代器。</p>
+</li>
+<li><p><code>rend()</code>：返回指向vector中第一个元素之前位置的逆向迭代器。</p>
+</li>
+<li><p><code>vector::iterator</code>&amp;<code>vector::reverse_iterator</code></p>
+</li>
+<li><p>迭代器可以用类似这样的语法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i:v)&#123; cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i = v.<span class="built_in">begin</span>(); i!=v.end; i++)&#123;cout &lt;&lt; *i &lt;&lt; <span class="string">&quot; &quot;</span>&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h4><ul>
+<li><code>emplace(iterator position, const value_type&amp; val)</code>：在vector的指定位置直接构造元素（是插入）。</li>
+<li><code>emplace_back(val)</code>：在vector的末尾直接构造元素。</li>
+</ul>
+<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h3><ul>
+<li><code>swap(vector&lt;T&gt;&amp; other)</code>：交换两个 <code>vector</code>的内容。</li>
+<li><code>assign(size_type n, const T&amp; val)</code>：将 <code>vector</code>中的元素替换为 <code>n</code>个 <code>val</code>。</li>
+<li><code>assign(iterator first, iterator last)</code>：将 <code>vector</code>中的元素替换为指定范围的元素。</li>
+</ul>
+<h3 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h3><h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><ul>
+<li><code>pair(const first_type&amp; a, const second_type&amp; b)</code>：创建一个pair，其first成员初始化为a，second成员初始化为b。</li>
+</ul>
+<h3 id="成员访问"><a href="#成员访问" class="headerlink" title="成员访问"></a>成员访问</h3><ul>
+<li><code>first</code>：返回pair的第一个成员的引用。</li>
+<li><code>second</code>：返回pair的第二个成员的引用。</li>
+</ul>
+<h3 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h3><ul>
+<li><code>swap(pair&amp; p)</code>：交换两个pair的成员。</li>
+</ul>
+<h3 id="非成员函数"><a href="#非成员函数" class="headerlink" title="非成员函数"></a>非成员函数</h3><ul>
+<li><code>make_pair(T1 a, T2 b)</code>：创建一个pair对象，其first成员用a初始化，second成员用b初始化。</li>
+<li><code>pair</code>的比较规则：先比较pair.first，再比较pair.second</li>
+</ul>
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>同 <code>vector</code></p>
+<h3 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h3><h4 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h4><ul>
+<li><code>stack&lt;T&gt; stk;</code>：创建一个空的 <code>stack</code>，元素类型为 <code>T</code>。</li>
+<li><code>stack&lt;T&gt; stk(c);</code>：使用容器 <code>c</code> 的副本作为 <code>stack</code> 的底层容器来创建 <code>stack</code>。</li>
+<li><code>stack&lt;T, Container&lt;T&gt;&gt; stk;</code>：创建一个 <code>stack</code>，元素类型为 <code>T</code>，底层容器为 <code>Container</code>。</li>
+</ul>
+<h4 id="容量操作"><a href="#容量操作" class="headerlink" title="容量操作"></a>容量操作</h4><ul>
+<li><code>empty()</code>：检查 <code>stack</code> 是否为空。</li>
+<li><code>size()</code>：返回 <code>stack</code> 中元素的数量。</li>
+</ul>
+<h4 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h4><ul>
+<li><code>top()</code>：返回栈顶元素的引用。如果栈为空，则行为未定义。</li>
+</ul>
+<h4 id="修改器"><a href="#修改器" class="headerlink" title="修改器"></a>修改器</h4><ul>
+<li><code>push(const T&amp; val)</code>：将元素 <code>val</code> 压入栈顶。</li>
+<li><code>pop()</code>：移除栈顶元素。如果栈为空，则行为未定义。</li>
+<li><code>emplace(args...)</code>：在栈顶构造元素，使用 <code>args</code> 作为构造函数的参数。</li>
+<li><code>swap(stack&lt;T&gt;&amp; other)</code>：交换两个 <code>stack</code> 的内容。</li>
+</ul>
+<h3 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h3><p>同 <code>stack</code>，元素访问变成 <code>front()</code>和 <code>back()</code></p>
+<h3 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h3><p>同 <code>queue</code></p>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><h4 id="创建-set"><a href="#创建-set" class="headerlink" title="创建 set"></a>创建 <code>set</code></h4><ul>
+<li><code>set&lt;T&gt; s;</code>：创建一个空的 <code>set</code>，元素类型为 <code>T</code>，默认使用 <code>operator&lt;</code> 作为比较函数。</li>
+<li><code>set&lt;T, Compare&gt; s;</code>：创建一个 <code>set</code>，元素类型为 <code>T</code>，比较函数为 <code>Compare</code>。</li>
+<li>可以直接用 <code>&#123;&#125;</code>来初始化</li>
+</ul>
+<h4 id="容量操作-1"><a href="#容量操作-1" class="headerlink" title="容量操作"></a>容量操作</h4><ul>
+<li><code>empty()</code>：检查 <code>set</code> 是否为空。</li>
+<li><code>size()</code>：返回 <code>set</code> 中元素的数量。</li>
+</ul>
+<h4 id="元素访问-1"><a href="#元素访问-1" class="headerlink" title="元素访问"></a>元素访问</h4><ul>
+<li><code>find(const T&amp; val)</code>：返回一个指向 <code>set</code> 中值为 <code>val</code> 的元素的迭代器，如果找不到，则返回 <code>end()</code>。</li>
+<li><code>count(const T&amp; val)</code>：返回 <code>set</code> 中值为 <code>val</code> 的元素的数量，由于 <code>set</code> 中元素唯一，因此结果只能是 0 或 1。</li>
+</ul>
+<h4 id="修改器-1"><a href="#修改器-1" class="headerlink" title="修改器"></a>修改器</h4><ul>
+<li><code>insert(const T&amp; val)</code>：将 <code>val</code> 插入到 <code>set</code> 中，如果 <code>val</code> 已经存在，则 <code>set</code> 不变。</li>
+<li><code>erase(iterator position)</code>：从 <code>set</code> 中删除迭代器 <code>position</code> 指向的元素。</li>
+<li><code>erase(const T&amp; val)</code>：从 <code>set</code> 中删除所有值为 <code>val</code> 的元素。</li>
+<li><code>clear()</code>：删除 <code>set</code> 中所有的元素。</li>
+<li><code>emplace(args...)</code>：在 <code>set</code> 中构造元素，使用 <code>args</code> 作为构造函数的参数。</li>
+<li><code>emplace_hint(const_iterator position, args...)</code>：在 <code>set</code> 中构造元素，使用 <code>args</code> 作为构造函数的参数，并尽量在 <code>position</code> 之前插入。</li>
+</ul>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><h4 id="创建-map"><a href="#创建-map" class="headerlink" title="创建 map"></a>创建 <code>map</code></h4><ul>
+<li><code>map&lt;Key, T&gt; m;</code>：创建一个空的 <code>map</code>，键类型为 <code>Key</code>，值类型为 <code>T</code>，默认使用 <code>operator&lt;</code> 作为比较函数。</li>
+<li><code>map&lt;Key, T, Compare&gt; m;</code>：创建一个 <code>map</code>，键类型为 <code>Key</code>，值类型为 <code>T</code>，比较函数为 <code>Compare</code>。</li>
+</ul>
+<h4 id="容量操作-2"><a href="#容量操作-2" class="headerlink" title="容量操作"></a>容量操作</h4><ul>
+<li><code>empty()</code>：检查 <code>map</code> 是否为空。</li>
+<li><code>size()</code>：返回 <code>map</code> 中键值对的数量。</li>
+</ul>
+<h4 id="元素访问-2"><a href="#元素访问-2" class="headerlink" title="元素访问"></a>元素访问</h4><ul>
+<li><code>operator[]</code>：允许通过键直接访问对应的值，如果键不存在，则自动创建一个键值对，其值为值类型的默认构造值。</li>
+<li><code>at(const Key&amp; key)</code>：返回键 <code>key</code> 对应的值，如果键不存在，则抛出 <code>std::out_of_range</code> 异常。</li>
+</ul>
+<h4 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h4><ul>
+<li><code>find(const Key&amp; key)</code>：返回一个指向键 <code>key</code> 对应的键值对的迭代器，如果找不到，则返回 <code>end()</code>。</li>
+<li><code>count(const Key&amp; key)</code>：返回 <code>map</code> 中键 <code>key</code> 的数量，由于键是唯一的，结果只能是 0 或 1。</li>
+</ul>
+<h4 id="修改器-2"><a href="#修改器-2" class="headerlink" title="修改器"></a>修改器</h4><ul>
+<li><code>insert(const value_type&amp; val)</code>：插入一个键值对。</li>
+<li><code>erase(iterator position)</code>：删除迭代器 <code>position</code> 指向的键值对。</li>
+<li><code>erase(const Key&amp; key)</code>：删除键 <code>key</code> 对应的键值对。</li>
+<li><code>clear()</code>：删除 <code>map</code> 中所有的键值对。</li>
+<li><code>emplace(args...)</code>：在 <code>map</code> 中构造键值对，使用 <code>args</code> 作为构造函数的参数。</li>
+</ul>
+<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><h4 id="字符串长度和容量"><a href="#字符串长度和容量" class="headerlink" title="字符串长度和容量"></a>字符串长度和容量</h4><ul>
+<li><code>size()</code>：返回字符串中的字符数。</li>
+</ul>
+<h4 id="字符串修改"><a href="#字符串修改" class="headerlink" title="字符串修改"></a>字符串修改</h4><ul>
+<li><code>clear()</code>：清空字符串。</li>
+<li><code>insert(size_t pos, const string&amp; str)</code>：在位置 <code>pos</code> 插入字符串 <code>str</code>。</li>
+<li><code>erase(size_t pos, size_t len)</code>：删除从位置 <code>pos</code> 开始的 <code>len</code> 个字符。</li>
+<li><code>replace(size_t pos, size_t len, const string&amp; str)</code>：将位置 <code>pos</code> 开始的 <code>len</code> 个字符替换为字符串 <code>str</code>。</li>
+<li><code>push_back(char c)</code>：在字符串末尾添加字符 <code>c</code>。</li>
+<li><code>pop_back()</code>：删除字符串末尾的字符。</li>
+</ul>
+<h4 id="字符串查询"><a href="#字符串查询" class="headerlink" title="字符串查询"></a>字符串查询</h4><ul>
+<li><code>find(const string&amp; str, size_t pos=0)</code>：从位置 <code>pos</code> 开始查找子字符串 <code>str</code>，返回找到的位置，如果没有找到则返回 <code>string::npos</code>。</li>
+<li><code>rfind(const string&amp; str, size_t pos=npos)</code>：从位置 <code>pos</code> 开始向左查找子字符串 <code>str</code>，返回找到的位置，如果没有找到则返回 <code>string::npos</code>。</li>
+<li><code>find_first_of(const string&amp; str, size_t pos=0)</code>：从位置 <code>pos</code> 开始查找任意一个属于 <code>str</code> 的字符，返回找到的位置，如果没有找到则返回 <code>string::npos</code>。</li>
+</ul>
+<h4 id="字符串的子串"><a href="#字符串的子串" class="headerlink" title="字符串的子串"></a>字符串的子串</h4><ul>
+<li><code>substr(size_t pos, size_t len)</code>：返回从位置 <code>pos</code> 开始的 <code>len</code> 个字符的子字符串。</li>
+</ul>
+<h4 id="字符串的连接"><a href="#字符串的连接" class="headerlink" title="字符串的连接"></a>字符串的连接</h4><ul>
+<li><code>operator+(const string&amp; str)</code>：返回两个字符串连接后的新字符串。</li>
+<li><code>append(const string&amp; str)</code>：将字符串 <code>str</code> 添加到当前字符串的末尾。</li>
+</ul>
+<h4 id="字符串与数字之间的转换"><a href="#字符串与数字之间的转换" class="headerlink" title="字符串与数字之间的转换"></a>字符串与数字之间的转换</h4><ul>
+<li><code>to_string</code></li>
+<li><code>stoi</code></li>
+<li><code>stod</code></li>
+</ul>
+<h3 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h3><h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><ol>
+<li>sort</li>
+</ol>
+<ul>
+<li><pre><code class="language-cpp">std::sort(arr, arr + n); // 对数组 arr 中的前 n 个元素排序
+std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. stable_sort</span><br><span class="line"></span><br><span class="line">- ```cpp</span><br><span class="line">  std::stable_sort(v.begin(), v.end()); // 稳定排序</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<ol start="3">
+<li>Partial_sort</li>
+</ol>
+<ul>
+<li><pre><code class="language-cpp">std::partial_sort(arr, arr + n, arr + m); // 排序前 n 个元素
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### find</span><br><span class="line"></span><br><span class="line">1. find</span><br><span class="line"></span><br><span class="line">- ```cpp</span><br><span class="line">  auto it = std::find(v.begin(), v.end(), value);</span><br><span class="line">  if (it != v.end()) &#123;</span><br><span class="line">      // 找到了元素</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<ol start="2">
+<li>Find_if</li>
+</ol>
+<ul>
+<li><pre><code class="language-cpp">auto it = std::find_if(v.begin(), v.end(), [](int x) &#123; return x &gt; 10; &#125;);
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. Lower_bound</span><br><span class="line"></span><br><span class="line">- ```cpp</span><br><span class="line">  auto it = std::lower_bound(v.begin(), v.end(), value);</span><br></pre></td></tr></table></figure>
+
+类似也有upper_bound
+</code></pre>
+</li>
+</ul>
+<h4 id="permutation"><a href="#permutation" class="headerlink" title="permutation"></a>permutation</h4><ol>
+<li><pre><code class="language-cpp">next_permutation(v.begin, v.end)
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2. ```cpp</span><br><span class="line">   prev_permutation(v.begin, v.end)</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ol>
+<h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><h4 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h4><h4 id="rotate"><a href="#rotate" class="headerlink" title="rotate"></a>rotate</h4><h3 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Complex</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">double</span> real, imag;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Complex</span>(<span class="type">double</span> r = <span class="number">0</span>, <span class="type">double</span> i = <span class="number">0</span>) : <span class="built_in">real</span>(r), <span class="built_in">imag</span>(i) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span>+(<span class="type">const</span> Complex&amp; other) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Complex</span>(real + other.real, imag + other.imag);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; real &lt;&lt; <span class="string">&quot; + &quot;</span> &lt;&lt; imag &lt;&lt; <span class="string">&quot;i&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">Complex <span class="title">c1</span><span class="params">(<span class="number">1.0</span>, <span class="number">2.0</span>)</span>, <span class="title">c2</span><span class="params">(<span class="number">3.0</span>, <span class="number">4.0</span>)</span></span>;</span><br><span class="line">    Complex c3 = c1 + c2;</span><br><span class="line">    c<span class="number">3.</span><span class="built_in">display</span>();  <span class="comment">// 输出: 4.0 + 6.0i</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="捕捉异常"><a href="#捕捉异常" class="headerlink" title="捕捉异常"></a>捕捉异常</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    cout &lt;&lt; a.<span class="built_in">at</span>(<span class="number">6</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span> (<span class="type">const</span> out_of_range e)&#123;</span><br><span class="line">cerr &lt;&lt; <span class="string">&quot;a: &quot;</span> &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/01/08/2025/20250108%20%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/01/08/2025/20250108%20%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" class="trm-anima-link">
+                    概率统计整理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/01/08</li>
+                <li>10:09</li>
+                
+                    <li>3.3k</li>
+                
+                
+                    <li>17</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%94%9F%E6%B4%BB-Life/">
+                    生活/Life
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-anima-link">
+                    骑车-2
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/12/26</li>
+                <li>15:00</li>
+                
+                    <li>425</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2025</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="C++ 常用库"><a rel="nofollow" class="trm-toc-link" href="#C-常用库"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">C++ 常用库</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="iostream"><a rel="nofollow" class="trm-toc-link" href="#iostream"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">iostream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="fstream"><a rel="nofollow" class="trm-toc-link" href="#fstream"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">fstream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="sstream"><a rel="nofollow" class="trm-toc-link" href="#sstream"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">sstream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="vector"><a rel="nofollow" class="trm-toc-link" href="#vector"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">vector</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数和析构函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数和析构函数"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">构造函数和析构函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量相关函数"><a rel="nofollow" class="trm-toc-link" href="#容量相关函数"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">容量相关函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问函数"><a rel="nofollow" class="trm-toc-link" href="#元素访问函数"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">元素访问函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器函数"><a rel="nofollow" class="trm-toc-link" href="#修改器函数"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">修改器函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="迭代器函数"><a rel="nofollow" class="trm-toc-link" href="#迭代器函数"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">迭代器函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="队列操作"><a rel="nofollow" class="trm-toc-link" href="#队列操作"><span class="trm-toc-number">1.4.6.</span> <span class="trm-toc-text">队列操作</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="其他操作"><a rel="nofollow" class="trm-toc-link" href="#其他操作"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">其他操作</span></a></li><li class="trm-toc-item trm-toc-level-3" title="pair"><a rel="nofollow" class="trm-toc-link" href="#pair"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">pair</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">构造函数</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="成员访问"><a rel="nofollow" class="trm-toc-link" href="#成员访问"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">成员访问</span></a></li><li class="trm-toc-item trm-toc-level-3" title="成员函数"><a rel="nofollow" class="trm-toc-link" href="#成员函数"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">成员函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="非成员函数"><a rel="nofollow" class="trm-toc-link" href="#非成员函数"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">非成员函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="deque"><a rel="nofollow" class="trm-toc-link" href="#deque"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">deque</span></a></li><li class="trm-toc-item trm-toc-level-3" title="stack"><a rel="nofollow" class="trm-toc-link" href="#stack"><span class="trm-toc-number">1.11.</span> <span class="trm-toc-text">stack</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数-1"><span class="trm-toc-number">1.11.1.</span> <span class="trm-toc-text">构造函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作"><span class="trm-toc-number">1.11.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问"><span class="trm-toc-number">1.11.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器"><span class="trm-toc-number">1.11.4.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="queue"><a rel="nofollow" class="trm-toc-link" href="#queue"><span class="trm-toc-number">1.12.</span> <span class="trm-toc-text">queue</span></a></li><li class="trm-toc-item trm-toc-level-3" title="priority_queue"><a rel="nofollow" class="trm-toc-link" href="#priority-queue"><span class="trm-toc-number">1.13.</span> <span class="trm-toc-text">priority_queue</span></a></li><li class="trm-toc-item trm-toc-level-3" title="set"><a rel="nofollow" class="trm-toc-link" href="#set"><span class="trm-toc-number">1.14.</span> <span class="trm-toc-text">set</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="创建 set"><a rel="nofollow" class="trm-toc-link" href="#创建-set"><span class="trm-toc-number">1.14.1.</span> <span class="trm-toc-text">创建 set</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作-1"><span class="trm-toc-number">1.14.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问-1"><span class="trm-toc-number">1.14.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器-1"><span class="trm-toc-number">1.14.4.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="map"><a rel="nofollow" class="trm-toc-link" href="#map"><span class="trm-toc-number">1.15.</span> <span class="trm-toc-text">map</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="创建 map"><a rel="nofollow" class="trm-toc-link" href="#创建-map"><span class="trm-toc-number">1.15.1.</span> <span class="trm-toc-text">创建 map</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作-2"><span class="trm-toc-number">1.15.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问-2"><span class="trm-toc-number">1.15.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="查找元素"><a rel="nofollow" class="trm-toc-link" href="#查找元素"><span class="trm-toc-number">1.15.4.</span> <span class="trm-toc-text">查找元素</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器-2"><span class="trm-toc-number">1.15.5.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="string"><a rel="nofollow" class="trm-toc-link" href="#string"><span class="trm-toc-number">1.16.</span> <span class="trm-toc-text">string</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="字符串长度和容量"><a rel="nofollow" class="trm-toc-link" href="#字符串长度和容量"><span class="trm-toc-number">1.16.1.</span> <span class="trm-toc-text">字符串长度和容量</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串修改"><a rel="nofollow" class="trm-toc-link" href="#字符串修改"><span class="trm-toc-number">1.16.2.</span> <span class="trm-toc-text">字符串修改</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串查询"><a rel="nofollow" class="trm-toc-link" href="#字符串查询"><span class="trm-toc-number">1.16.3.</span> <span class="trm-toc-text">字符串查询</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串的子串"><a rel="nofollow" class="trm-toc-link" href="#字符串的子串"><span class="trm-toc-number">1.16.4.</span> <span class="trm-toc-text">字符串的子串</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串的连接"><a rel="nofollow" class="trm-toc-link" href="#字符串的连接"><span class="trm-toc-number">1.16.5.</span> <span class="trm-toc-text">字符串的连接</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串与数字之间的转换"><a rel="nofollow" class="trm-toc-link" href="#字符串与数字之间的转换"><span class="trm-toc-number">1.16.6.</span> <span class="trm-toc-text">字符串与数字之间的转换</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="algorithm"><a rel="nofollow" class="trm-toc-link" href="#algorithm"><span class="trm-toc-number">1.17.</span> <span class="trm-toc-text">algorithm</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="sort"><a rel="nofollow" class="trm-toc-link" href="#sort"><span class="trm-toc-number">1.17.1.</span> <span class="trm-toc-text">sort</span></a></li><li class="trm-toc-item trm-toc-level-4" title="permutation"><a rel="nofollow" class="trm-toc-link" href="#permutation"><span class="trm-toc-number">1.17.2.</span> <span class="trm-toc-text">permutation</span></a></li><li class="trm-toc-item trm-toc-level-4" title="reverse"><a rel="nofollow" class="trm-toc-link" href="#reverse"><span class="trm-toc-number">1.17.3.</span> <span class="trm-toc-text">reverse</span></a></li><li class="trm-toc-item trm-toc-level-4" title="copy"><a rel="nofollow" class="trm-toc-link" href="#copy"><span class="trm-toc-number">1.17.4.</span> <span class="trm-toc-text">copy</span></a></li><li class="trm-toc-item trm-toc-level-4" title="rotate"><a rel="nofollow" class="trm-toc-link" href="#rotate"><span class="trm-toc-number">1.17.5.</span> <span class="trm-toc-text">rotate</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="运算符重载"><a rel="nofollow" class="trm-toc-link" href="#运算符重载"><span class="trm-toc-number">1.18.</span> <span class="trm-toc-text">运算符重载</span></a></li><li class="trm-toc-item trm-toc-level-3" title="捕捉异常"><a rel="nofollow" class="trm-toc-link" href="#捕捉异常"><span class="trm-toc-number">1.19.</span> <span class="trm-toc-text">捕捉异常</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
