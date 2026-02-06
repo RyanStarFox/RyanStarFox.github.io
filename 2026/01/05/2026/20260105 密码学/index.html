@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="密码学 古典密码代换 移位密码（Caesar密码是k&#x3D;3的特殊情况） 密钥空间仅25个元素  单表代换密码 密钥空间26!种，足够大 但是可以通过统计学解密  仿射密码：单表代换密码的一种 $e(x)&#x3D;ax+b(mod 26),a,b\in Z_{26}$    多表代换密码，一次加密多个字符，掩盖统计频率  Playfair密码：两个字母→两个字母 先排成5*5矩阵 一组中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密码学整理">
+<meta property="og:url" content="https://ryanstarfox.github.io/2026/01/05/2026/20260105%20%E5%AF%86%E7%A0%81%E5%AD%A6/index.html">
+<meta property="og:site_name" content="RyanStarFox&#39;s Blog">
+<meta property="og:description" content="密码学 古典密码代换 移位密码（Caesar密码是k&#x3D;3的特殊情况） 密钥空间仅25个元素  单表代换密码 密钥空间26!种，足够大 但是可以通过统计学解密  仿射密码：单表代换密码的一种 $e(x)&#x3D;ax+b(mod 26),a,b\in Z_{26}$    多表代换密码，一次加密多个字符，掩盖统计频率  Playfair密码：两个字母→两个字母 先排成5*5矩阵 一组中的">
+<meta property="og:locale">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="article:published_time" content="2026-01-05T03:08:00.000Z">
+<meta property="article:modified_time" content="2026-01-05T03:08:00.000Z">
+<meta property="article:author" content="RyanStarFox">
+<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ryanstarfox.github.io/img/404.jpg">
+
+    <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
+
+
+<title >密码学整理</title>
+
+<!-- Favicon -->
+
+    <link href='/metadata/favicon-16x16.png?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/metadata/favicon-32x32.png?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/metadata/apple-touch-icon.png?v=2.2.6' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4986549_ky403esii4k.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-01-05 11:08:00"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/metadata/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            StarFox<span>Ryan</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    主页/Home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    文章/Articles
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/categories/" target="">
+                            分类/Categories
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a  href="/tags/" target="">
+                            标签/Tags
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/useful_links/" target="">
+                    实用链接/Useful Links
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于/About
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/atom.xml" target="">
+                    RSS
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/%E5%AF%86%E7%A0%81%E5%AD%A6.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            密码学整理
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2026
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        RyanStarFox
+    </h5>
+    
+        <div class="trm-label">
+            享受
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/ryanstarfox" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+        <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzUwODYxNg==&scene=117#wechat_redirect" title="微信/WeChat" rel="nofollow" target="_blank">
+            <i class="iconfont icon-weixin"></i>
+        </a>
+    
+        <a href="https://www.douban.com/people/228126645/?_i=3768991No3Dcw3,3769006BLWdikJ" title="豆瓣/Douban" rel="nofollow" target="_blank">
+            <i class="iconfont icon-douban"></i>
+        </a>
+    
+        <a href="https://www.zhihu.com/people/xiao-yan-34-80-24" title="知乎/Zhihu" rel="nofollow" target="_blank">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+        <a href="/atom.xml" title="RSS" rel="nofollow" target="_blank">
+            <i class="iconfont icon-RSS"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                城市:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                学校:
+            </div>
+            <div class="trm-label trm-label-light">
+                上海交通大学
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                专业:
+            </div>
+            <div class="trm-label trm-label-light">
+                计算机科学与技术
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                爱好:
+            </div>
+            <div class="trm-label trm-label-light">
+                电影 书籍 折腾 Apple
+            </div>
+        </li>
+    
+    <li style="height: 20px;"></li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                Shanghai
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                School:
+            </div>
+            <div class="trm-label trm-label-light">
+                SJTU
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Major:
+            </div>
+            <div class="trm-label trm-label-light">
+                Computer Science
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Hobby:
+            </div>
+            <div class="trm-label trm-label-light">
+                Movies  Books  Tech
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
+            联系我/Contact Me
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            01/05
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            11:08
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            RyanStarFox
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><p><img src="/images/2026/%E5%AF%86%E7%A0%81%E5%AD%A6%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.png" alt="密码学思维导图"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h2><h3 id="代换"><a href="#代换" class="headerlink" title="代换"></a>代换</h3><ul>
+<li><p>移位密码（Caesar密码是k&#x3D;3的特殊情况）</p>
+<p>密钥空间仅25个元素</p>
+</li>
+<li><p>单表代换密码</p>
+<p>密钥空间26!种，足够大</p>
+<p>但是可以通过统计学解密</p>
+<ul>
+<li><p>仿射密码：单表代换密码的一种</p>
+<p>$e(x)&#x3D;ax+b(mod 26),a,b\in Z_{26}$</p>
+</li>
+</ul>
+</li>
+<li><p>多表代换密码，一次加密多个字符，掩盖统计频率</p>
+<ul>
+<li>Playfair密码：两个字母→两个字母<ul>
+<li>先排成5*5矩阵</li>
+<li>一组中的两字母同行，则每个字母用该行的后一字母替代；</li>
+<li>一组中的两字母同列，则每个字母用该列的后一字母替代；</li>
+<li>非同行同列字母替代，用对角的两个字母替代</li>
+</ul>
+</li>
+<li>Hill密码：m个连续字母用m个密文字母代替，乘以密钥矩阵</li>
+<li>Vigenere Cipher：<ul>
+<li>密钥确定字母表的顺序，第i个字母表示使用第i个字母表</li>
+<li>依次使用字母表，周期使用密钥</li>
+</ul>
+</li>
+<li>OTP（One Time Pad）：绝对安全<ul>
+<li>密钥长度与明文一样长</li>
+<li>密文可拓展（可以被修改）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h3><ul>
+<li>栅栏加密：横着写竖着读</li>
+<li>换位技术：明文写为矩阵块，但是列顺序打乱</li>
+</ul>
+<h3 id="乘积密码"><a href="#乘积密码" class="headerlink" title="乘积密码"></a>乘积密码</h3><p>密码的复合</p>
+<h2 id="对称式密码"><a href="#对称式密码" class="headerlink" title="对称式密码"></a>对称式密码</h2><h3 id="Feistel-密码"><a href="#Feistel-密码" class="headerlink" title="Feistel 密码"></a>Feistel 密码</h3><p>每一轮加密：</p>
+<p>$E_k(L,R) &#x3D; \left(R,L\oplus F(R,K)\right)$</p>
+<p>$E_k^{-1}(L,R) &#x3D; \left(R\oplus F(L,K),L\right)$</p>
+<p>加密和解密是一样的，只不过密钥倒序</p>
+<h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><p>DES密码使用了Feistel架构，其轮函数F和密钥构造如下：</p>
+<h4 id="轮函数"><a href="#轮函数" class="headerlink" title="轮函数"></a>轮函数</h4><p>$F(L,K)&#x3D; &#x3D; P( S( E(L) \oplus K ) )$</p>
+<p>其中$S$是一个固定公开是代换，$P$是一个固定公开的置换</p>
+<h4 id="密钥构造"><a href="#密钥构造" class="headerlink" title="密钥构造"></a>密钥构造</h4><h3 id="3重DES"><a href="#3重DES" class="headerlink" title="3重DES"></a>3重DES</h3><p>2DES可以用2^56^攻破（Merkle-Hellman攻击），因此使用3DES，需要2^112^攻破</p>
+<p>3DES一般性使用$E_{k_1}\circ D_{k_2}\circ E_{k_1}$</p>
+<p>当$k_1&#x3D;k_2$时，退化为DES</p>
+<h4 id="Merkle-Hellman攻击："><a href="#Merkle-Hellman攻击：" class="headerlink" title="Merkle-Hellman攻击："></a>Merkle-Hellman攻击：</h4><h5 id="1-准备阶段（离线预计算）"><a href="#1-准备阶段（离线预计算）" class="headerlink" title="1. 准备阶段（离线预计算）"></a>1. 准备阶段（离线预计算）</h5><p>你说得对，这步不需要知道真实的密钥。</p>
+<ul>
+<li>攻击者设定中间值 A&#x3D;0。</li>
+<li>对于 DES 所有可能的密钥 k（共 256 个），计算什么样的明文 P 经过加密能得到 0。</li>
+<li><strong>结果：</strong> 得到一张表，里面存了 256 组 (Pi,K1,i)，满足 EK1,i(Pi)&#x3D;0。</li>
+</ul>
+<h5 id="2-采样阶段（获取数据）"><a href="#2-采样阶段（获取数据）" class="headerlink" title="2. 采样阶段（获取数据）"></a>2. 采样阶段（获取数据）</h5><ul>
+<li>这就是课件里说的“代价：256 数量级的选择明文”。</li>
+<li>攻击者获取 256 组真实的明文密文对 (P,C)。</li>
+<li><strong>逻辑：</strong> 根据概率，这 256 组里，<strong>极大概率</strong>有一个明文 P∗，它在<strong>真实密钥</strong> K1 的作用下，产生的中间值 A刚好就是 0。</li>
+</ul>
+<h5 id="3-破解阶段（在线匹配）"><a href="#3-破解阶段（在线匹配）" class="headerlink" title="3. 破解阶段（在线匹配）"></a>3. 破解阶段（在线匹配）</h5><p>这是你提到的“做一个 2DES”的部分，但重点在于<strong>匹配</strong>：</p>
+<ol>
+<li><strong>从密文端反推：</strong> 既然我们假设 A&#x3D;0 了，那么剩下的两层加密（K2,K3）就变成了一个 <strong>2DES</strong> 过程：C&#x3D;EK3(DK2(0))。<ul>
+<li><em>注：这里课件为了简化，可能假设了 K2&#x3D;K3 或者某种两重加密结构，计算量级约在 256 到 2112之间。</em></li>
+</ul>
+</li>
+<li><strong>寻找匹配：</strong> 当你通过密文端算出一组可能的 (K2,K3) 后，你手头已经有了那个“让 A&#x3D;0”的特定明文 P∗。</li>
+<li><strong>最终锁定：</strong> 你去第一步那张大表里，查这个 P∗ 对应的 K1 是谁</li>
+</ol>
+<h3 id="更多发展"><a href="#更多发展" class="headerlink" title="更多发展"></a>更多发展</h3><p>IDEA、AES、SM4</p>
+<h2 id="常用密码算法"><a href="#常用密码算法" class="headerlink" title="常用密码算法"></a>常用密码算法</h2><h3 id="密码本模式（ECB模式）"><a href="#密码本模式（ECB模式）" class="headerlink" title="密码本模式（ECB模式）"></a>密码本模式（ECB模式）</h3><p>用相同密钥对各个明文组分别加密，一次处理</p>
+<p>𝑛位明文每个𝑛位明文对应唯一密文</p>
+<p>容易被攻击，因为相同𝑛位明文对应相同𝑛位密文</p>
+<h3 id="密码分组链接模式-（CBC模式）"><a href="#密码分组链接模式-（CBC模式）" class="headerlink" title="密码分组链接模式 （CBC模式）"></a>密码分组链接模式 （CBC模式）</h3><p>将消息分为很多块，并通过加密进行链接。已加密</p>
+<p>的密文分组与当前的明文分组链接在一起。</p>
+<p>需要使用初始向量IV</p>
+<p>加密时：</p>
+<p>$C_{i}&#x3D;E_k(P_{i}\oplus C_{i-1}),C_{-1}&#x3D;\text{IV}$</p>
+<p>解密时:</p>
+<p>$P_{i}&#x3D; D_K(C_{i}) \oplus C_{i-1},C_{-1}&#x3D;\text{IV}$</p>
+<ul>
+<li><strong>优点</strong><ul>
+<li>每个密文分组均依据于之前的全部分组</li>
+<li>对任意一个分组的改动都会影响后继的所有密文分组</li>
+<li>需要初始向量（IV必须随机选择）</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li>如果攻击者获得了IV，可以通过预先改变IV中的某些位，使得接收者的明文中部分位被取反</li>
+<li>$P_1[i] &#x3D; \text{IV}[i] ⊕ E_k^{-1}(C_1[i])$</li>
+<li><strong>解决方法</strong>：在发送消息前<strong>用ECB来保护IV</strong></li>
+<li>会受到选择密文攻击</li>
+</ul>
+</li>
+</ul>
+<h3 id="密码反馈模式（CFB）"><a href="#密码反馈模式（CFB）" class="headerlink" title="密码反馈模式（CFB）"></a>密码反馈模式（CFB）</h3><p>类似CBC</p>
+<p>加密：</p>
+<p>$C_i&#x3D; P_i \oplus E_K(C_{i-1}), C_{-1}&#x3D;\text{IV}$</p>
+<p>解密：</p>
+<p>$P_i&#x3D;C_i \oplus E_K(C_{i-1}),C_{-1}&#x3D;\text{IV}$</p>
+<h3 id="输出反馈模式（OFB）"><a href="#输出反馈模式（OFB）" class="headerlink" title="输出反馈模式（OFB）"></a>输出反馈模式（OFB）</h3><p>加密：</p>
+<p>$C_i&#x3D; P_i \oplus O_i$</p>
+<p>$O_i&#x3D;E_K(O_{i-1}),O_0&#x3D;\text{IV}$</p>
+<p>解密：</p>
+<p>$P_i&#x3D; C_i \oplus O_i$</p>
+<p>$O_i&#x3D;E_K(O_{i-1}),O_0&#x3D;\text{IV}$</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>传输过程中，比特差错不会扩散</li>
+<li>可以预计算分组，流加密时不需停顿</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>对抗消息流篡改攻击的能力弱于CFB：若对密文取反，则解密后的明文也取反，可以看作是一次一密的变形（Vernam密码），所以绝对不能重复使用相同的密钥序列和IV</li>
+<li>发送方和接收方必须同步</li>
+</ul>
+<h3 id="计数器模式（CTR）"><a href="#计数器模式（CTR）" class="headerlink" title="计数器模式（CTR）"></a>计数器模式（CTR）</h3><p>类似OFB</p>
+<p>对每个明文，必须使用不同的分组密钥和计算器值（类似OTP，绝不重用）</p>
+<p>可以并行处理</p>
+<p>$C_i&#x3D; P_i \oplus O_i$</p>
+<p>$O_i &#x3D; E_K(\text{Counter++})$</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>高效<ul>
+<li>可以并行处理多块明文密文</li>
+<li>可以预计算</li>
+<li>Good for bursty high speed links</li>
+</ul>
+</li>
+<li>随机访问：密文的第i个分组可以随机访问，不需知道前面i-1个密文组（比较：CBC）</li>
+<li>可证安全：是CPA安全的<ul>
+<li>前提：使用了真正的随机数生成器生成counter的起始值，并且绝不重用</li>
+</ul>
+</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>密钥、计数器值绝不能重用</li>
+</ul>
+<h3 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h3><h4 id="随机性测试"><a href="#随机性测试" class="headerlink" title="随机性测试"></a>随机性测试</h4><ul>
+<li>测试特征<ul>
+<li>均匀性：0或1出现的概率和量大致相等</li>
+<li>可伸缩性：测试可以用于子序列</li>
+<li>一致性：测试针对所有的初始值</li>
+</ul>
+</li>
+<li>NIST SP800-22给出了15种测试方法<ul>
+<li>频率测试（最基本）：0&#x2F;1个数与真随机序列的期望大致相等</li>
+<li>Maurer通用统计测试：测试是否可以大幅压缩数据且不损失信息</li>
+</ul>
+</li>
+<li>不可预测程度<ul>
+<li>前向不可预测性：不知道种子，无法依据已有bit预测下一bit</li>
+<li>后向不可预测性：从序列无法推出种子值</li>
+</ul>
+</li>
+</ul>
+<h4 id="伪随机数生成器："><a href="#伪随机数生成器：" class="headerlink" title="伪随机数生成器："></a>伪随机数生成器：</h4><ul>
+<li>形式化定义：</li>
+<li>指任意多项式时间算法，都不能以不可忽略的概率区分𝐺(𝑠)所产生的序列 vs. 等长的真随机序列。</li>
+<li>证明：如果攻击者不能区分 PRG 输出和真随机序列，那么他也就不能区分用 PRG 加密的密文与 OTP 加密的密文。</li>
+</ul>
+<h2 id="对称保密技术"><a href="#对称保密技术" class="headerlink" title="对称保密技术"></a>对称保密技术</h2><p>定理：完善保密系统中，明文空间的尺寸</p>
+<p>$|M|$一定小于等于密钥空间的尺寸$|K|$ ，即$|𝐾| ≥ |𝑀|$</p>
+<p>完善保密，但是不实用</p>
+<p>新的安全的定义</p>
+<ul>
+<li>严格的安全定义（现代密码学的第一准则）：攻击者能力及攻击者成功：安全模型</li>
+<li>合理的假设（现代密码学的第二准则）：往往是数学难题</li>
+<li>严格的安全证明（现代密码学的第三准则）：严密的推理过程</li>
+</ul>
+<p>一些定义</p>
+<ul>
+<li>有效的算法：多项式时间可以执行的算法</li>
+<li>可忽略的量：对任意多项式$p$，都存在$N$，使得对所有$n &gt; N$，都有$f(n)&lt;\dfrac1{p(n)}$<ul>
+<li>对于加法和乘法封闭</li>
+</ul>
+</li>
+</ul>
+<p>计算安全: 没有多项式时间的攻击者能以不可忽略的概率实现攻击</p>
+<p>IND-CPA vs IND CCA：前者只能获得挑战密文的解密结果，后者可以获得除挑战密文外，任意密文结果</p>
+<h2 id="散列函数（Hash函数）"><a href="#散列函数（Hash函数）" class="headerlink" title="散列函数（Hash函数）"></a>散列函数（Hash函数）</h2><p>$h &#x3D; H(M)$, $M$是变长的消息,$h$是定长的散列值.</p>
+<ul>
+<li><strong>单向性</strong>：对任意给定的码$h$, 寻求$x$使得$H(x)&#x3D;h$在计算上是不可行的;</li>
+<li><strong>弱抗碰撞性</strong>：任意给定消息x, 寻求不等于x的y, 使得H(y)&#x3D; H(x)在计算上不可行</li>
+<li><strong>强抗碰撞性</strong>：寻求对任何的(x,y)对使得H(x)&#x3D;H(y)在计算上不可行</li>
+</ul>
+<h3 id="Merkle-Damgard结构"><a href="#Merkle-Damgard结构" class="headerlink" title="Merkle Damgard结构"></a>Merkle Damgard结构</h3><p>实际上就和CBC模式比较像，只是使用的f函数不一样，使得该密码不可逆</p>
+<p>长度拓展攻击：知道HASH(message)的情况下，也可以推算出HASH(Message||Append)的值</p>
+<p>生日攻击：对输出长度为m的Hash函数，值$2^{\frac m2}$决定了该Hash函数抗穷举攻击的能力，因为超过这个值就有一半的概率能找到两个碰撞</p>
+<h3 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h3><ul>
+<li><p><strong>步骤</strong>1：添加填充位(一个1 和若干个0)</p>
+<p>在消息的最后添加适当的填充位使得数据位的长度满足</p>
+<p>$$<br>\text {length}\equiv  448 (\mod 512)<br>$$</p>
+</li>
+<li><p><strong>步骤</strong>2：添加长度</p>
+</li>
+<li><p>原始消息长度（二进制位的个数），用64位表示。如果长度超过2^64^位，则仅取最低64位，即mod 2^64^。</p>
+<p>到此为止，我们已经得到$L$个512位的数据块：$Y_0,Y_1,\cdots,Y_{L-1}$。其长度为$L\times 512$ bits。令$N&#x3D;L\times16$，令$M[0\cdots N-1]$表示以字为单位的消息表示。</p>
+</li>
+<li><p><strong>步骤</strong>3：初始化MD缓冲区</p>
+<p>一个128位MD缓冲区用以保存中间和最终散列函数的结果。它可以表示为4个32位的寄存器(A,B,C,D)。寄存器初始化为以下的16进制值。使用低端格式存储。</p>
+</li>
+<li><p><strong>步骤</strong>4：处理消息块（Compress函数）</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">A_old = A</span><br><span class="line">B_old = B</span><br><span class="line">C_old = C</span><br><span class="line">D_old = D</span><br><span class="line"></span><br><span class="line">A_prime = B_old + ROL(A_old + F(B_old, C_old, D_old) + M[k] + T[i], s)</span><br><span class="line"></span><br><span class="line">A = D_old</span><br><span class="line">B = A_prime</span><br><span class="line">C = B_old</span><br><span class="line">D = C_old</span><br></pre></td></tr></table></figure>
+
+<p>其中T[i] 是 MD5 里预先定义的一组 <strong>64 个常数</strong>，由正弦函数生成</p>
+<p>ROL是左移，s是左移的位数，预先固定</p>
+<p>F在第一轮中使用，二三四轮分别使用HGI函数，每轮有16步</p>
+<p>$F(B,C,D) &#x3D; (B \land C) \lor (\neg B \land D)$</p>
+<p>$G(B,C,D) &#x3D; (B \land D) \lor (C \land \neg D)$</p>
+<p>$H(B,C,D) &#x3D; B \oplus C \oplus D$</p>
+<p>$I(B,C,D) &#x3D; C \oplus (B \lor \neg D)$</p>
+</li>
+<li><p><strong>步骤</strong>5：重复步骤4，直至结束。</p>
+<p>$\text{Compress}(H_{i-1},H_i)$，其中$H_0&#x3D;{A,B,C,D}$</p>
+</li>
+</ul>
+<p>注：步骤四中还要打乱顺序</p>
+<ul>
+<li>每轮中X[0…15]恰好被使用一次</li>
+<li>轮1 保持初始顺序</li>
+<li>轮2 $\rho_2(i) \equiv (1+5i) (mod 16)$</li>
+<li>轮3 $\rho_3(i) \equiv (5+3i) (mod 16)$</li>
+<li>轮4 $\rho_4(i) \equiv 7i (mod 16)$</li>
+</ul>
+<h3 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h3><p>从64拓展到了80（分组数变成5组，4轮）</p>
+<p>X[0…15]变成了消息扩展（16→80）</p>
+<h3 id="SHA-3"><a href="#SHA-3" class="headerlink" title="SHA-3"></a>SHA-3</h3><p>Keccak算法，有sponge函数</p>
+<h2 id="消息认证码-MAC"><a href="#消息认证码-MAC" class="headerlink" title="消息认证码(MAC)"></a>消息认证码(MAC)</h2><ul>
+<li>类似加密函数，但是不可逆</li>
+<li>提供认证性（信息是全的），不提供数字签名（谁发的信息）</li>
+</ul>
+<h3 id="DAC"><a href="#DAC" class="headerlink" title="DAC"></a>DAC</h3><ul>
+<li>DES MAC （CBC-MAC)，只输出CBC最后那一个数据块</li>
+</ul>
+<h3 id="CMAC"><a href="#CMAC" class="headerlink" title="CMAC"></a>CMAC</h3><ul>
+<li><p>消息认证：M||C<del>k</del>(M)</p>
+</li>
+<li><p>消息加密、认证：E<del>k2</del>(M||C<del>k1</del>(M))或者E<del>k2</del>(M)||C<del>k1</del>(E<del>k2</del>(M))</p>
+</li>
+<li><p>主密钥 K：用户提供的原始密钥（如 AES-128 密钥）。</p>
+<p>子密钥 K1：由 K 派生，用于处理完整分组的最后一组。</p>
+<p>子密钥 K2：由 K 派生，用于处理不完整分组的最后一组</p>
+</li>
+</ul>
+<p>使用AES+CBC模式</p>
+<h3 id="HMAC"><a href="#HMAC" class="headerlink" title="HMAC"></a>HMAC</h3><p>简单来说：Hash(密钥 + Hash(密钥 + 消息))</p>
+<p>实际上：</p>
+<p>$$<br>\text{HMAC}_K(M) &#x3D; \text{Hash}[(K^+ \oplus \text{opad}) \Vert \text{Hash}[(K^+ \oplus \text{ipad}) \Vert M]]<br>$$</p>
+<h3 id="认证加密方式"><a href="#认证加密方式" class="headerlink" title="认证加密方式"></a>认证加密方式</h3><ul>
+<li>HtE&#x2F;Hash then Encrypt&#x2F;E<del>k</del>(M||H(M))</li>
+<li>MtE&#x2F;Mac then Encrypt&#x2F;E<del>k</del>(M||MAC(M))</li>
+<li>E&amp;M&#x2F;Encrypt and Mac&#x2F;E<del>k</del>(M)||MAC(M)</li>
+<li>EtM&#x2F;Encrypt then Mac&#x2F;E<del>k</del>(M)||MAC(E<del>k</del>(M))</li>
+</ul>
+<h3 id="认证加密模式"><a href="#认证加密模式" class="headerlink" title="认证加密模式"></a>认证加密模式</h3><p>CCM：$\text{Result} &#x3D; \underbrace{\text{CTR}<em>K(M)}</em>{\text{密文 } C} \parallel \underbrace{(\text{MAC}<em>K(M) \oplus S_0)}</em>{\text{加密后的标签 } T’}$，其中$S_0&#x3D;E_K(\text{Nonce} \parallel\text{Counter}_0)$</p>
+<p>GCM模式</p>
+<h2 id="公钥密码算法"><a href="#公钥密码算法" class="headerlink" title="公钥密码算法"></a>公钥密码算法</h2><h3 id="数论"><a href="#数论" class="headerlink" title="数论"></a>数论</h3><h4 id="素数"><a href="#素数" class="headerlink" title="素数"></a>素数</h4><ol>
+<li>素数个数无限</li>
+<li>$\pi(x)$代表不大于$x$的素数个数，有<ol>
+<li>$\lim\limits_{x\to\infty}\dfrac{\pi(x)}x&#x3D;0$</li>
+<li>$\lim\limits_{x\to\infty}\dfrac{\pi(x)}{\frac x{\log x}} &#x3D; 1$</li>
+</ol>
+</li>
+<li>双生素数有无限多对</li>
+</ol>
+<h4 id="同余与整除"><a href="#同余与整除" class="headerlink" title="同余与整除"></a>同余与整除</h4><ol>
+<li><p>寻找最大公约数：辗转相除法；也可以用来找到取模意义下的逆元，此时称为拓展欧几里得算法</p>
+</li>
+<li><p>整数唯一因子分解</p>
+</li>
+<li><p>等价类和剩余系</p>
+<p>将整数集合$Z$分成$m$个等价类：$[0],[1],\cdots,[m-1]$</p>
+<ul>
+<li>模$m$的<strong>完全剩余系</strong>：$a_i\in[i]\to{a_0,a_1,\cdots,a_{m-1}}$</li>
+<li>模$m$的<strong>非负最小完全剩余系</strong>（$Z_m$）：${0,1,\cdots,m-1}$</li>
+<li>模$m$的<strong>简化剩余系</strong>：去掉模$m$的完全剩余系中，与$m$不互素的那些数，剩下的部分</li>
+</ul>
+</li>
+<li><p>欧拉定理</p>
+<p>若$(a,n)&#x3D;1$，则$a^{\phi(n)}\equiv 1(\mod n)$</p>
+<p>特别地，若$n&#x3D;pq$，$p$，$q$为素数时，有$a^{\phi(pq)+1}\equiv a^{(p-1)(q-1)+1}\equiv a(\mod n)$，即使$(n,a)\ne1$，等式仍成立</p>
+</li>
+<li><p>费马小定理</p>
+<p>$p$是素数，$a$是正整数，$p\nmid a$，则有$a^{p-1}\equiv 1(\mod p)$</p>
+</li>
+<li><p>素性测试：返回否定结论一定正确，放回肯定概率出错概率极低，执行多次之后返回肯定结论出错概率大大降低</p>
+<p>常用Miller-Rabin概率算法</p>
+</li>
+<li><p>中国剩余定理</p>
+</li>
+</ol>
+<h4 id="次数和原根"><a href="#次数和原根" class="headerlink" title="次数和原根"></a>次数和原根</h4><ul>
+<li>次数<ul>
+<li>$(a,m)&#x3D;1$，使得$a$的幂模$m$同余循环的最小周期$k$，称为$a$模$m$的次数</li>
+<li>$k\mid\Phi(m)$，但是$k&#x3D;\Phi(m)$不一定成立</li>
+</ul>
+</li>
+<li>原根<ul>
+<li>若$a$模$m$的次数为$\Phi(m)$，则称$a$是模$m$的一个原根</li>
+<li>$m$有原根的充要条件是$m$形如$2,4,2^np^l,p^l$，且原根个数有$\Phi(\Phi(m))个$</li>
+</ul>
+</li>
+</ul>
+<h4 id="离散对数问题"><a href="#离散对数问题" class="headerlink" title="离散对数问题"></a>离散对数问题</h4><p>$y\equiv g^x(\mod m)$，则$x&#x3D;\log_gy(\mod m)$</p>
+<p>由x,g,m计算y容易，但是由y,g,m计算x非常困难</p>
+<h4 id="一些抽象代数"><a href="#一些抽象代数" class="headerlink" title="一些抽象代数"></a>一些抽象代数</h4><ul>
+<li><p>群：封闭性、结合律、单位元、逆元</p>
+<ul>
+<li>交换群：群+交换律</li>
+<li>有限群：群+元素个数有限</li>
+<li>循环群：所有元素可以通过生成元自乘得到</li>
+</ul>
+</li>
+<li><p>环 (Ring)：集合 R 定义了加法 (+) 和乘法 (×)：</p>
+<ol>
+<li>(R, $+$) 必须是一个交换群（单位元是 0）。</li>
+<li>(R, $\times$) 满足结合律（不要求有单位元，也不要求可交换）。</li>
+<li>分配律：a(b+c)&#x3D;ab+ac</li>
+</ol>
+<ul>
+<li><p>交换环：满足乘法交换律 (ab&#x3D;ba)</p>
+</li>
+<li><p>含单位元环：存在乘法单位元（通常记为 1）。</p>
+</li>
+<li><p>整环 (Integral Domain)：</p>
+<ul>
+<li>是一个交换环。</li>
+<li>有乘法单位元 1。</li>
+<li>无零因子：即若 ab&#x3D;0，则必有 a&#x3D;0 或 b&#x3D;0。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>域：整环+每个元素都有乘法逆元</p>
+<ul>
+<li>有限域：集合内个数有限</li>
+</ul>
+</li>
+</ul>
+<p>$$<br>\text{群} \xrightarrow{\text{+乘法,分配律}} \text{环} \xrightarrow{\text{+交换,单位元}} \text{交换环} \xrightarrow{\text{+无零因子}} \text{整环} \xrightarrow{\text{+非零元有逆}} \text{域}<br>$$</p>
+<h3 id="公钥系统定义及RSA"><a href="#公钥系统定义及RSA" class="headerlink" title="公钥系统定义及RSA"></a>公钥系统定义及RSA</h3><p>仅利用对称加密，在无可信第三方，双方互不信任时，实现双方密钥交换——Merkle Puzzle</p>
+<p>但是通信效率低</p>
+<p>之后需要非对称算法——公钥算法</p>
+<p>需要找到一个单向函数——找到了离散对数</p>
+<h4 id="非对称算法"><a href="#非对称算法" class="headerlink" title="非对称算法"></a>非对称算法</h4><ol>
+<li><p>MH scheme背包问题：本质上是子集元素和——被攻破</p>
+</li>
+<li><p>RSA算法——大模型取模，基于整数分解</p>
+<ol>
+<li>选素数：随机选择两个不同的大素数 p 和 q。</li>
+<li>算模数：计算 n&#x3D;p×q。这个 n 的长度（如 2048 位）决定了加密强度。</li>
+<li>计算欧拉函数：计算 ϕ(n)&#x3D;(p−1)(q−1)。ϕ(n) 表示不超过 n 且与 n 互素的正整数个数。</li>
+<li>选公钥指数 e：选择一个整数 e，满足 1&lt;e&lt;ϕ(n) 且 gcd(ϕ(n),e)&#x3D;1（即 e 与 ϕ(n) 互素）。</li>
+<li>算私钥指数 d：计算 d 使得 d≡e^−1^(modϕ(n))。这一步通常利用图片中提到的扩展欧几里得算法来求解逆元。</li>
+</ol>
+<p>结果：</p>
+<ul>
+<li>公开参数：大模数 n 和公钥 e。</li>
+<li>秘密参数：大素数 p,q 和私钥 d。</li>
+</ul>
+<p>加解密：</p>
+<ul>
+<li>加密：$C\equiv M^e\mod n$</li>
+<li>解密：$M\equiv C^d\mod n$</li>
+</ul>
+<p>攻击：</p>
+<ul>
+<li>p,q太接近</li>
+<li>共模攻击：使用相同的n</li>
+<li>小e攻击</li>
+<li>计时攻击</li>
+</ul>
+</li>
+<li><p>Diffie-Hellman密钥协商，基于离散对数</p>
+<p>就是直接把自己的密钥，用对方的公钥加密发送给对方</p>
+<p>容易被中间人攻击</p>
+</li>
+<li><p>ElGamel加密算法</p>
+<p>系统参数 $p,g$</p>
+<p>Alice选择私钥$x_A\in F_p^*$，计算公钥$y_A\equiv g^{X_A}\mod p$</p>
+<p>Bob发送消息给Alice，密文$C&#x3D;(C_1,C_2)$，随机选择$k\in F_p^*$</p>
+<p>$C_1 \equiv g^k\mod p$    $C_2\equiv y_A^k\cdot M$</p>
+<p>Alice解密过程：$M&#x3D;\dfrac{C_2}{C_1^{x_A}}$</p>
+<ul>
+<li>不抗CPA&#x2F;CCA攻击（实际使用的是抗的）</li>
+</ul>
+</li>
+</ol>
+<h4 id="公钥加密安全模型"><a href="#公钥加密安全模型" class="headerlink" title="公钥加密安全模型"></a>公钥加密安全模型</h4><h5 id="Chosen-Plaintext-Attack-CPA-安全模型"><a href="#Chosen-Plaintext-Attack-CPA-安全模型" class="headerlink" title="Chosen Plaintext Attack (CPA)安全模型"></a>Chosen Plaintext Attack (CPA)安全模型</h5><ol>
+<li>C发公钥$p_k$给A</li>
+<li>A发$m_0,m_1$给C</li>
+<li>C随机加密$m_0,m_1$之后，发给A，让A破解出私钥</li>
+</ol>
+<h5 id="Chosen-Ciphertext-Attack-CCA-安全模型"><a href="#Chosen-Ciphertext-Attack-CCA-安全模型" class="headerlink" title="Chosen Ciphertext Attack (CCA)安全模型"></a>Chosen Ciphertext Attack (CCA)安全模型</h5><ol>
+<li>A访问$Dec_{sk}()$</li>
+<li>C发公钥$p_k$给A</li>
+<li>A发$m_0,m_1$给C</li>
+<li>C随机加密$m_0,m_1$之后，发给A，</li>
+<li>A访问$Dec_{sk}()$，让A破解出私钥</li>
+</ol>
+<p>增加了一个Decoder，可以随时获取密文对应的明文结果</p>
+<h3 id="椭圆曲线"><a href="#椭圆曲线" class="headerlink" title="椭圆曲线"></a>椭圆曲线</h3><p>$E_p(a,b)(x,y):y^2&#x3D;x^3+ax+b$且$4a^3+27b^2\ne 0$外加无穷远点</p>
+<p>可以证明$E(x, y)$结合所定义的加法构成一个“加群”</p>
+<p>$P,Q$两点的连线$L$，$L$与$E$相交于点$R’$，$P+Q$定义为 $R &#x3D; -R’$。其几何意义为:</p>
+<ul>
+<li>如果$x_1≠ x_2$， $P+Q&#x3D;R$：是$P$和$Q$连线$L$与$E$的交点关于$x$轴的对称点</li>
+<li>如果$x_1&#x3D;x_2$， $y_1&#x3D;-y_2$ ，$P+Q&#x3D;O$：即无穷远点</li>
+<li>如果$x_1&#x3D; x_2$，$y_1&#x3D; y_2$ ，$P+Q&#x3D;2P$：是过$P$的$E$的切线与$E$的交点关于$x$轴的对称点</li>
+</ul>
+<p>它是一个可循环Abel群，因此可以定义离散对数问题，且是困难的，所以可以用于加密</p>
+<p>同样可以有DH，ElGamal（只不过是定义在加法群而不是乘法群上面）</p>
+<p>加法的具体算法：$x_3&#x3D;\lambda^2-x_1-x_2;y_3&#x3D;\lambda(x_1-x_3)-y_1$</p>
+<h4 id="SM2"><a href="#SM2" class="headerlink" title="SM2"></a>SM2</h4><p>规定符号：</p>
+<ul>
+<li>KDF(input): 代表用输入(input)计算出一个给定长度的随机数</li>
+<li>H(input): 代表用输入(input)计算出哈希(hash)函数值</li>
+<li>所有指数运算都在椭圆曲线群上进行</li>
+</ul>
+<p>计算方式：</p>
+<ul>
+<li>密钥生成<ul>
+<li>选择私钥$x$，计算公钥$g^x$</li>
+</ul>
+</li>
+<li>加密算法<ul>
+<li>选择随机数$k$，计算$C_1&#x3D;g^k$</li>
+<li>计算$C_2&#x3D; \text{KDF}((g^x)^k)\oplus M$</li>
+<li>计算$C_3&#x3D; \text H(C_2,M)$</li>
+<li>密文$C&#x3D;C1 ||C2||C3$</li>
+</ul>
+</li>
+<li>解密算法<ul>
+<li>计算$M&#x3D;C_2\oplus \text{KDF}((C_1)^x)$</li>
+<li>验证$C_3&#x3D; \text H(C_2,M)$是否成立</li>
+<li>若成立，输出$M$为解密结果</li>
+<li>否则报错并退出</li>
+</ul>
+</li>
+</ul>
+<h2 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="直接数字签名"><a href="#直接数字签名" class="headerlink" title="直接数字签名"></a>直接数字签名</h4><h4 id="间接数字签名"><a href="#间接数字签名" class="headerlink" title="间接数字签名"></a>间接数字签名</h4><p>对哈希函数签名</p>
+<h3 id="RSA签名方案"><a href="#RSA签名方案" class="headerlink" title="RSA签名方案"></a>RSA签名方案</h3><p>PKCSA1:先哈希，再签名</p>
+<p>要有填充，防止选择密文攻击</p>
+<h3 id="DSS签名方案"><a href="#DSS签名方案" class="headerlink" title="DSS签名方案"></a>DSS签名方案</h3><h3 id="ECC签名方案"><a href="#ECC签名方案" class="headerlink" title="ECC签名方案"></a>ECC签名方案</h3><p>ECDSA：椭圆曲线上的DSA签名</p>
+<h3 id="怎么管理公钥"><a href="#怎么管理公钥" class="headerlink" title="怎么管理公钥"></a>怎么管理公钥</h3><h4 id="最简单的"><a href="#最简单的" class="headerlink" title="最简单的"></a>最简单的</h4><p>容易被中间人攻击</p>
+<h4 id="公开可访问目录"><a href="#公开可访问目录" class="headerlink" title="公开可访问目录"></a>公开可访问目录</h4><p>一旦攻击者获得目录管理员私钥，则可伪造任意通信方</p>
+<h4 id="公钥授权"><a href="#公钥授权" class="headerlink" title="公钥授权"></a>公钥授权</h4><p>管理员容易被DDOS攻击</p>
+<h4 id="公钥证书"><a href="#公钥证书" class="headerlink" title="公钥证书"></a>公钥证书</h4><p>类似信用卡，有一定的有效期</p>
+<h2 id="身份认证协议"><a href="#身份认证协议" class="headerlink" title="身份认证协议"></a>身份认证协议</h2><h3 id="口令认证"><a href="#口令认证" class="headerlink" title="口令认证"></a>口令认证</h3><p>相当于输密码</p>
+<ul>
+<li>在线字典攻击：穷举所有可能口令（从常用密码开始）</li>
+<li>离线字典攻击：获取所有H(p<del>w</del>)，枚举p<del>w</del></li>
+<li>带预处理的离线字典攻击：提前计算所有可能口令对应的Hash值</li>
+</ul>
+<p>增加破解难度：</p>
+<ul>
+<li>加公开盐</li>
+<li>加秘密盐</li>
+<li>使用慢Hash函数</li>
+<li>使用高存储代价的Hash函数</li>
+</ul>
+<h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><p>引入认证服务器、票据服务器，前者只给用户访问票据服务器的票据，后者只给用户访问其它应用的票据</p>
+<h2 id="X-509认证"><a href="#X-509认证" class="headerlink" title="X.509认证"></a>X.509认证</h2><p>数字身份证</p>
+<p>链状签发&#x2F;信任</p>
+<p>自签名证书——危险</p>
+<p>撤销证书</p>
+<ul>
+<li>证书撤销列表</li>
+<li>在线证书状况协议（OCSP）：可以给OCSP服务器验证是否valid</li>
+</ul>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章/Other Articles
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2026/01/05/2026/20260105%20%E6%AF%9B%E6%A6%82/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/notes/%E6%AF%9B%E6%A6%82.png">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
+                    知识整理/Knowledge
+                </a>
+            </div>
+            <h5>
+                <a href="/2026/01/05/2026/20260105%20%E6%AF%9B%E6%A6%82/" class="trm-anima-link">
+                    毛泽东思想和中国特色社会主义理论体系概论
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>26/01/05</li>
+                <li>20:46</li>
+                
+                    <li>5.5k</li>
+                
+                
+                    <li>18</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/12/08/2025/20251208%20%E6%82%B2%E6%83%A8%E4%B8%96%E7%95%8C/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/images/2025/LesMiserables.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%8A%80%E6%9C%AF-Tech/">
+                    技术/Tech
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/12/08/2025/20251208%20%E6%82%B2%E6%83%A8%E4%B8%96%E7%95%8C/" class="trm-anima-link">
+                    《悲惨世界》 Repo
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/12/08</li>
+                <li>02:14</li>
+                
+                    <li>1.8k</li>
+                
+                
+                    <li>6</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2025 - 2026</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">RyanStarFox</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题/Theme - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航/Table of Contents
+				<span id="post-toc-top">
+					置顶/Sticky
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="密码学"><a rel="nofollow" class="trm-toc-link" href="#密码学"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">密码学</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="古典密码"><a rel="nofollow" class="trm-toc-link" href="#古典密码"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">古典密码</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="代换"><a rel="nofollow" class="trm-toc-link" href="#代换"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">代换</span></a></li><li class="trm-toc-item trm-toc-level-3" title="置换"><a rel="nofollow" class="trm-toc-link" href="#置换"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">置换</span></a></li><li class="trm-toc-item trm-toc-level-3" title="乘积密码"><a rel="nofollow" class="trm-toc-link" href="#乘积密码"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">乘积密码</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="对称式密码"><a rel="nofollow" class="trm-toc-link" href="#对称式密码"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">对称式密码</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Feistel 密码"><a rel="nofollow" class="trm-toc-link" href="#Feistel-密码"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">Feistel 密码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="DES"><a rel="nofollow" class="trm-toc-link" href="#DES"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">DES</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="轮函数"><a rel="nofollow" class="trm-toc-link" href="#轮函数"><span class="trm-toc-number">1.2.2.1.</span> <span class="trm-toc-text">轮函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="密钥构造"><a rel="nofollow" class="trm-toc-link" href="#密钥构造"><span class="trm-toc-number">1.2.2.2.</span> <span class="trm-toc-text">密钥构造</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="3重DES"><a rel="nofollow" class="trm-toc-link" href="#3重DES"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">3重DES</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Merkle-Hellman攻击："><a rel="nofollow" class="trm-toc-link" href="#Merkle-Hellman攻击："><span class="trm-toc-number">1.2.3.1.</span> <span class="trm-toc-text">Merkle-Hellman攻击：</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="1. 准备阶段（离线预计算）"><a rel="nofollow" class="trm-toc-link" href="#1-准备阶段（离线预计算）"><span class="trm-toc-number">1.2.3.1.1.</span> <span class="trm-toc-text">1. 准备阶段（离线预计算）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="2. 采样阶段（获取数据）"><a rel="nofollow" class="trm-toc-link" href="#2-采样阶段（获取数据）"><span class="trm-toc-number">1.2.3.1.2.</span> <span class="trm-toc-text">2. 采样阶段（获取数据）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="3. 破解阶段（在线匹配）"><a rel="nofollow" class="trm-toc-link" href="#3-破解阶段（在线匹配）"><span class="trm-toc-number">1.2.3.1.3.</span> <span class="trm-toc-text">3. 破解阶段（在线匹配）</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="更多发展"><a rel="nofollow" class="trm-toc-link" href="#更多发展"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">更多发展</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="常用密码算法"><a rel="nofollow" class="trm-toc-link" href="#常用密码算法"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">常用密码算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="密码本模式（ECB模式）"><a rel="nofollow" class="trm-toc-link" href="#密码本模式（ECB模式）"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">密码本模式（ECB模式）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="密码分组链接模式 （CBC模式）"><a rel="nofollow" class="trm-toc-link" href="#密码分组链接模式-（CBC模式）"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">密码分组链接模式 （CBC模式）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="密码反馈模式（CFB）"><a rel="nofollow" class="trm-toc-link" href="#密码反馈模式（CFB）"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">密码反馈模式（CFB）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="输出反馈模式（OFB）"><a rel="nofollow" class="trm-toc-link" href="#输出反馈模式（OFB）"><span class="trm-toc-number">1.3.4.</span> <span class="trm-toc-text">输出反馈模式（OFB）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="计数器模式（CTR）"><a rel="nofollow" class="trm-toc-link" href="#计数器模式（CTR）"><span class="trm-toc-number">1.3.5.</span> <span class="trm-toc-text">计数器模式（CTR）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="随机数"><a rel="nofollow" class="trm-toc-link" href="#随机数"><span class="trm-toc-number">1.3.6.</span> <span class="trm-toc-text">随机数</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="随机性测试"><a rel="nofollow" class="trm-toc-link" href="#随机性测试"><span class="trm-toc-number">1.3.6.1.</span> <span class="trm-toc-text">随机性测试</span></a></li><li class="trm-toc-item trm-toc-level-4" title="伪随机数生成器："><a rel="nofollow" class="trm-toc-link" href="#伪随机数生成器："><span class="trm-toc-number">1.3.6.2.</span> <span class="trm-toc-text">伪随机数生成器：</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="对称保密技术"><a rel="nofollow" class="trm-toc-link" href="#对称保密技术"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">对称保密技术</span></a></li><li class="trm-toc-item trm-toc-level-2" title="散列函数（Hash函数）"><a rel="nofollow" class="trm-toc-link" href="#散列函数（Hash函数）"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">散列函数（Hash函数）</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Merkle Damgard结构"><a rel="nofollow" class="trm-toc-link" href="#Merkle-Damgard结构"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">Merkle Damgard结构</span></a></li><li class="trm-toc-item trm-toc-level-3" title="MD5"><a rel="nofollow" class="trm-toc-link" href="#MD5"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">MD5</span></a></li><li class="trm-toc-item trm-toc-level-3" title="SHA-1"><a rel="nofollow" class="trm-toc-link" href="#SHA-1"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">SHA-1</span></a></li><li class="trm-toc-item trm-toc-level-3" title="SHA-3"><a rel="nofollow" class="trm-toc-link" href="#SHA-3"><span class="trm-toc-number">1.5.4.</span> <span class="trm-toc-text">SHA-3</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="消息认证码(MAC)"><a rel="nofollow" class="trm-toc-link" href="#消息认证码-MAC"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">消息认证码(MAC)</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="DAC"><a rel="nofollow" class="trm-toc-link" href="#DAC"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">DAC</span></a></li><li class="trm-toc-item trm-toc-level-3" title="CMAC"><a rel="nofollow" class="trm-toc-link" href="#CMAC"><span class="trm-toc-number">1.6.2.</span> <span class="trm-toc-text">CMAC</span></a></li><li class="trm-toc-item trm-toc-level-3" title="HMAC"><a rel="nofollow" class="trm-toc-link" href="#HMAC"><span class="trm-toc-number">1.6.3.</span> <span class="trm-toc-text">HMAC</span></a></li><li class="trm-toc-item trm-toc-level-3" title="认证加密方式"><a rel="nofollow" class="trm-toc-link" href="#认证加密方式"><span class="trm-toc-number">1.6.4.</span> <span class="trm-toc-text">认证加密方式</span></a></li><li class="trm-toc-item trm-toc-level-3" title="认证加密模式"><a rel="nofollow" class="trm-toc-link" href="#认证加密模式"><span class="trm-toc-number">1.6.5.</span> <span class="trm-toc-text">认证加密模式</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="公钥密码算法"><a rel="nofollow" class="trm-toc-link" href="#公钥密码算法"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">公钥密码算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="数论"><a rel="nofollow" class="trm-toc-link" href="#数论"><span class="trm-toc-number">1.7.1.</span> <span class="trm-toc-text">数论</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="素数"><a rel="nofollow" class="trm-toc-link" href="#素数"><span class="trm-toc-number">1.7.1.1.</span> <span class="trm-toc-text">素数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="同余与整除"><a rel="nofollow" class="trm-toc-link" href="#同余与整除"><span class="trm-toc-number">1.7.1.2.</span> <span class="trm-toc-text">同余与整除</span></a></li><li class="trm-toc-item trm-toc-level-4" title="次数和原根"><a rel="nofollow" class="trm-toc-link" href="#次数和原根"><span class="trm-toc-number">1.7.1.3.</span> <span class="trm-toc-text">次数和原根</span></a></li><li class="trm-toc-item trm-toc-level-4" title="离散对数问题"><a rel="nofollow" class="trm-toc-link" href="#离散对数问题"><span class="trm-toc-number">1.7.1.4.</span> <span class="trm-toc-text">离散对数问题</span></a></li><li class="trm-toc-item trm-toc-level-4" title="一些抽象代数"><a rel="nofollow" class="trm-toc-link" href="#一些抽象代数"><span class="trm-toc-number">1.7.1.5.</span> <span class="trm-toc-text">一些抽象代数</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="公钥系统定义及RSA"><a rel="nofollow" class="trm-toc-link" href="#公钥系统定义及RSA"><span class="trm-toc-number">1.7.2.</span> <span class="trm-toc-text">公钥系统定义及RSA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="非对称算法"><a rel="nofollow" class="trm-toc-link" href="#非对称算法"><span class="trm-toc-number">1.7.2.1.</span> <span class="trm-toc-text">非对称算法</span></a></li><li class="trm-toc-item trm-toc-level-4" title="公钥加密安全模型"><a rel="nofollow" class="trm-toc-link" href="#公钥加密安全模型"><span class="trm-toc-number">1.7.2.2.</span> <span class="trm-toc-text">公钥加密安全模型</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="Chosen Plaintext Attack (CPA)安全模型"><a rel="nofollow" class="trm-toc-link" href="#Chosen-Plaintext-Attack-CPA-安全模型"><span class="trm-toc-number">1.7.2.2.1.</span> <span class="trm-toc-text">Chosen Plaintext Attack (CPA)安全模型</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Chosen Ciphertext Attack (CCA)安全模型"><a rel="nofollow" class="trm-toc-link" href="#Chosen-Ciphertext-Attack-CCA-安全模型"><span class="trm-toc-number">1.7.2.2.2.</span> <span class="trm-toc-text">Chosen Ciphertext Attack (CCA)安全模型</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="椭圆曲线"><a rel="nofollow" class="trm-toc-link" href="#椭圆曲线"><span class="trm-toc-number">1.7.3.</span> <span class="trm-toc-text">椭圆曲线</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="SM2"><a rel="nofollow" class="trm-toc-link" href="#SM2"><span class="trm-toc-number">1.7.3.1.</span> <span class="trm-toc-text">SM2</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="数字签名"><a rel="nofollow" class="trm-toc-link" href="#数字签名"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">数字签名</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="分类"><a rel="nofollow" class="trm-toc-link" href="#分类"><span class="trm-toc-number">1.8.1.</span> <span class="trm-toc-text">分类</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="直接数字签名"><a rel="nofollow" class="trm-toc-link" href="#直接数字签名"><span class="trm-toc-number">1.8.1.1.</span> <span class="trm-toc-text">直接数字签名</span></a></li><li class="trm-toc-item trm-toc-level-4" title="间接数字签名"><a rel="nofollow" class="trm-toc-link" href="#间接数字签名"><span class="trm-toc-number">1.8.1.2.</span> <span class="trm-toc-text">间接数字签名</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="RSA签名方案"><a rel="nofollow" class="trm-toc-link" href="#RSA签名方案"><span class="trm-toc-number">1.8.2.</span> <span class="trm-toc-text">RSA签名方案</span></a></li><li class="trm-toc-item trm-toc-level-3" title="DSS签名方案"><a rel="nofollow" class="trm-toc-link" href="#DSS签名方案"><span class="trm-toc-number">1.8.3.</span> <span class="trm-toc-text">DSS签名方案</span></a></li><li class="trm-toc-item trm-toc-level-3" title="ECC签名方案"><a rel="nofollow" class="trm-toc-link" href="#ECC签名方案"><span class="trm-toc-number">1.8.4.</span> <span class="trm-toc-text">ECC签名方案</span></a></li><li class="trm-toc-item trm-toc-level-3" title="怎么管理公钥"><a rel="nofollow" class="trm-toc-link" href="#怎么管理公钥"><span class="trm-toc-number">1.8.5.</span> <span class="trm-toc-text">怎么管理公钥</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="最简单的"><a rel="nofollow" class="trm-toc-link" href="#最简单的"><span class="trm-toc-number">1.8.5.1.</span> <span class="trm-toc-text">最简单的</span></a></li><li class="trm-toc-item trm-toc-level-4" title="公开可访问目录"><a rel="nofollow" class="trm-toc-link" href="#公开可访问目录"><span class="trm-toc-number">1.8.5.2.</span> <span class="trm-toc-text">公开可访问目录</span></a></li><li class="trm-toc-item trm-toc-level-4" title="公钥授权"><a rel="nofollow" class="trm-toc-link" href="#公钥授权"><span class="trm-toc-number">1.8.5.3.</span> <span class="trm-toc-text">公钥授权</span></a></li><li class="trm-toc-item trm-toc-level-4" title="公钥证书"><a rel="nofollow" class="trm-toc-link" href="#公钥证书"><span class="trm-toc-number">1.8.5.4.</span> <span class="trm-toc-text">公钥证书</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="身份认证协议"><a rel="nofollow" class="trm-toc-link" href="#身份认证协议"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">身份认证协议</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="口令认证"><a rel="nofollow" class="trm-toc-link" href="#口令认证"><span class="trm-toc-number">1.9.1.</span> <span class="trm-toc-text">口令认证</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Kerberos"><a rel="nofollow" class="trm-toc-link" href="#Kerberos"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">Kerberos</span></a></li><li class="trm-toc-item trm-toc-level-2" title="X.509认证"><a rel="nofollow" class="trm-toc-link" href="#X-509认证"><span class="trm-toc-number">1.11.</span> <span class="trm-toc-text">X.509认证</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" data-swup-reload-script></script>
+
+        
+            
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/copy-tex.min.js" data-swup-reload-script></script>
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" data-swup-reload-script></script>
+
+        <script data-swup-reload-script>
+              window.renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                ],
+                ...{},
+            })
+        </script>
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+</body>
+
+</html>
