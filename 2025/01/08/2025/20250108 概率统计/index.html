@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="概率统计整理第一章 随机事件和概率1.1 随机事件及其运算 区分概念：样本点、样本空间 运算规律： $交换律：A\cup B&#x3D;B\cup A,AB&#x3D;BA$ $结合律：(A\cup B)\cup C&#x3D;A\cup(B\cup C),(AB)C&#x3D;A(BC)$ $分配律：A\cup(BC)&#x3D;(A\cup B)(A\cup C),A(B\cup C)&amp;#x3">
+<meta name="description" content="概率统计整理 ¶第一章 随机事件和概率 ¶1.1 随机事件及其运算  区分概念：样本点、样本空间 运算规律：  $交换律：A\cup B&#x3D;B\cup A,AB&#x3D;BA$ $结合律：(A\cup B)\cup C&#x3D;A\cup(B\cup C),(AB)C&#x3D;A(BC)$ $分配律：A\cup(BC)&#x3D;(A\cup B)(A\cup C),A(B\cup C)&#x3D;(AB)\cup (AC)$ $对偶律(De">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率统计整理">
 <meta property="og:url" content="https://ryanstarfox.github.io/2025/01/08/2025/20250108%20%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="概率统计整理第一章 随机事件和概率1.1 随机事件及其运算 区分概念：样本点、样本空间 运算规律： $交换律：A\cup B&#x3D;B\cup A,AB&#x3D;BA$ $结合律：(A\cup B)\cup C&#x3D;A\cup(B\cup C),(AB)C&#x3D;A(BC)$ $分配律：A\cup(BC)&#x3D;(A\cup B)(A\cup C),A(B\cup C)&amp;#x3">
+<meta property="og:description" content="概率统计整理 ¶第一章 随机事件和概率 ¶1.1 随机事件及其运算  区分概念：样本点、样本空间 运算规律：  $交换律：A\cup B&#x3D;B\cup A,AB&#x3D;BA$ $结合律：(A\cup B)\cup C&#x3D;A\cup(B\cup C),(AB)C&#x3D;A(BC)$ $分配律：A\cup(BC)&#x3D;(A\cup B)(A\cup C),A(B\cup C)&#x3D;(AB)\cup (AC)$ $对偶律(De">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-01-08T02:09:00.000Z">
 <meta property="article:modified_time" content="2025-01-08T02:09:00.000Z">
@@ -459,167 +459,213 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="概率统计整理"><a href="#概率统计整理" class="headerlink" title="概率统计整理"></a>概率统计整理</h1><h2 id="第一章-随机事件和概率"><a href="#第一章-随机事件和概率" class="headerlink" title="第一章 随机事件和概率"></a>第一章 随机事件和概率</h2><h3 id="1-1-随机事件及其运算"><a href="#1-1-随机事件及其运算" class="headerlink" title="1.1 随机事件及其运算"></a>1.1 随机事件及其运算</h3><ol>
+    <h1>概率统计整理</h1>
+<h2 id="第一章-随机事件和概率"><a class="header-anchor" href="#第一章-随机事件和概率">¶</a>第一章 随机事件和概率</h2>
+<h3 id="1-1-随机事件及其运算"><a class="header-anchor" href="#1-1-随机事件及其运算">¶</a>1.1 随机事件及其运算</h3>
+<ol>
 <li>区分概念：样本点、样本空间</li>
-<li>运算规律：<ol>
-<li>$交换律：A\cup B&#x3D;B\cup A,AB&#x3D;BA$</li>
-<li>$结合律：(A\cup B)\cup C&#x3D;A\cup(B\cup C),(AB)C&#x3D;A(BC)$</li>
-<li>$分配律：A\cup(BC)&#x3D;(A\cup B)(A\cup C),A(B\cup C)&#x3D;(AB)\cup (AC)$</li>
-<li>$对偶律(De Morgan)：\overline{A\cup B}&#x3D;\bar A\bar B,\overline{AB}&#x3D;\bar A\cup\bar B$</li>
+<li>运算规律：
+<ol>
+<li>$交换律：A\cup B=B\cup A,AB=BA$</li>
+<li>$结合律：(A\cup B)\cup C=A\cup(B\cup C),(AB)C=A(BC)$</li>
+<li>$分配律：A\cup(BC)=(A\cup B)(A\cup C),A(B\cup C)=(AB)\cup (AC)$</li>
+<li>$对偶律(De Morgan)：\overline{A\cup B}=\bar A\bar B,\overline{AB}=\bar A\cup\bar B$</li>
 </ol>
 </li>
 </ol>
-<h3 id="1-2-随机事件的概率"><a href="#1-2-随机事件的概率" class="headerlink" title="1.2 随机事件的概率"></a>1.2 随机事件的概率</h3><ol>
-<li>概率三公理：<ol>
+<h3 id="1-2-随机事件的概率"><a class="header-anchor" href="#1-2-随机事件的概率">¶</a>1.2 随机事件的概率</h3>
+<ol>
+<li>概率三公理：
+<ol>
 <li>$\forall A, P(A)\geq0$</li>
-<li>$对于必然事件\Omega, P(\Omega)&#x3D;1$</li>
-<li>$对于两两互不相容的事件A_1,A_2,\cdots,A_n,\cdots,即A_iA_j&#x3D;\empty,i\neq j,i,i&#x3D;1,2,\cdots,有P(\bigcup\limits_{i&#x3D;1}^{+\infty})&#x3D;\sum\limits_{i&#x3D;1}^{+\infty}P(A_i)$</li>
+<li>$对于必然事件\Omega, P(\Omega)=1$</li>
+<li>$对于两两互不相容的事件A_1,A_2,\cdots,A_n,\cdots,即A_iA_j=\empty,i\neq j,i,i=1,2,\cdots,有P(\bigcup\limits_{i=1}^{+\infty})=\sum\limits_{i=1}^{+\infty}P(A_i)$</li>
 </ol>
 </li>
-<li>概率性质：<ol>
-<li>$P(\empty)&#x3D;0$</li>
-<li>$设A_1,A_2,\cdots,A_n满足A_iA_j&#x3D;\empty,i\neq j,i,j&#x3D;1,2,\cdots,n,则有P(\bigcup\limits_{i&#x3D;1}^nA_i)&#x3D;\sum\limits_{i&#x3D;1}^nP(A_i)$</li>
-<li>$P(\bar A)&#x3D;1-P(A)$</li>
-<li>$A\subset B\Rightarrow P(B-A)&#x3D;P(B)-P(A),P(B)\geq P(A)$</li>
-<li>$P(A\cup B)&#x3D;P(A)+P(B)-P(AB)$</li>
+<li>概率性质：
+<ol>
+<li>$P(\empty)=0$</li>
+<li>$设A_1,A_2,\cdots,A_n满足A_iA_j=\empty,i\neq j,i,j=1,2,\cdots,n,则有P(\bigcup\limits_{i=1}^nA_i)=\sum\limits_{i=1}^nP(A_i)$</li>
+<li>$P(\bar A)=1-P(A)$</li>
+<li>$A\subset B\Rightarrow P(B-A)=P(B)-P(A),P(B)\geq P(A)$</li>
+<li>$P(A\cup B)=P(A)+P(B)-P(AB)$</li>
 </ol>
 </li>
 </ol>
-<h3 id="1-3-条件概率"><a href="#1-3-条件概率" class="headerlink" title="1.3 条件概率"></a>1.3 条件概率</h3><ol>
-<li>$P(B|A)&#x3D;\dfrac{P(AB)}{P(A)}$</li>
-<li>$若B_1, B_2,\cdots,B_n为样本空间\Omega的一个划分，且P(B_i)&gt;0(i &#x3D; 1,2,\cdots,n)则对任一事件A，有P(A)&#x3D;\sum\limits_{i&#x3D;1}^nP(B_i)P(A|B_i)$</li>
-<li>$Bayes公式：若B_1, B_2,\cdots,B_n为样本空间\Omega的一个划分，且P(B_i)&gt;0(i &#x3D; 1,2,\cdots,n)则对任一事件A，有P(B_i|A)&#x3D;\dfrac{P(AB_i)}{P(A)}&#x3D;\dfrac{P(B_i)P(A|B_i)}{\sum\limits_{i&#x3D;1}^nP(B_i)P(A|B_i)}$</li>
+<h3 id="1-3-条件概率"><a class="header-anchor" href="#1-3-条件概率">¶</a>1.3 条件概率</h3>
+<ol>
+<li>$P(B|A)=\dfrac{P(AB)}{P(A)}$</li>
+<li>$若B_1, B_2,\cdots,B_n为样本空间\Omega的一个划分，且P(B_i)&gt;0(i = 1,2,\cdots,n)则对任一事件A，有P(A)=\sum\limits_{i=1}^nP(B_i)P(A|B_i)$</li>
+<li>$Bayes公式：若B_1, B_2,\cdots,B_n为样本空间\Omega的一个划分，且P(B_i)&gt;0(i = 1,2,\cdots,n)则对任一事件A，有P(B_i|A)=\dfrac{P(AB_i)}{P(A)}=\dfrac{P(B_i)P(A|B_i)}{\sum\limits_{i=1}^nP(B_i)P(A|B_i)}$</li>
 </ol>
-<h3 id="1-4-随机事件的独立性"><a href="#1-4-随机事件的独立性" class="headerlink" title="1.4 随机事件的独立性"></a>1.4 随机事件的独立性</h3><ol>
-<li><p>$P(AB)&#x3D;P(A)P(B)则A，B独立$</p>
+<h3 id="1-4-随机事件的独立性"><a class="header-anchor" href="#1-4-随机事件的独立性">¶</a>1.4 随机事件的独立性</h3>
+<ol>
+<li>
+<p>$P(AB)=P(A)P(B)则A，B独立$</p>
 </li>
-<li><p>$P(A_1A_2)&#x3D;P(A_1)P(A_2)—(1)$</p>
-<p>$P(A_2A_3)&#x3D;P(A_2)P(A_3)—(2)$</p>
-<p>$P(A_3A_1)&#x3D;P(A_3)P(A_1)—(3)$</p>
-<p>$P(A_2A_2A_3)&#x3D;P(A_1)P(A_2)P(A_3)—(4)$</p>
+<li>
+<p>$P(A_1A_2)=P(A_1)P(A_2)---(1)$</p>
+<p>$P(A_2A_3)=P(A_2)P(A_3)---(2)$</p>
+<p>$P(A_3A_1)=P(A_3)P(A_1)---(3)$</p>
+<p>$P(A_2A_2A_3)=P(A_1)P(A_2)P(A_3)---(4)$</p>
 <p>$(1)(2)(3)成立则A_1,A_2,A_3两两独立，(1)(2)(3)(4)都成立则A_1,A_2,A_3相互独立$</p>
 </li>
 </ol>
-<h2 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h2><h3 id="2-1-随机变量及其分布函数"><a href="#2-1-随机变量及其分布函数" class="headerlink" title="2.1 随机变量及其分布函数"></a>2.1 随机变量及其分布函数</h3><ol>
-<li>$概率分布函数F(x)&#x3D;P(X\leq x)$</li>
-</ol>
-<h3 id="2-2-离散随机变量及其分布律"><a href="#2-2-离散随机变量及其分布律" class="headerlink" title="2.2 离散随机变量及其分布律"></a>2.2 离散随机变量及其分布律</h3><p>$P(X&#x3D;x_k)&#x3D;p_k,k&#x3D;1,2\cdots称为X的分布律，有性质：$</p>
+<h2 id="第二章-随机变量及其分布"><a class="header-anchor" href="#第二章-随机变量及其分布">¶</a>第二章 随机变量及其分布</h2>
+<h3 id="2-1-随机变量及其分布函数"><a class="header-anchor" href="#2-1-随机变量及其分布函数">¶</a>2.1 随机变量及其分布函数</h3>
 <ol>
-<li>$p_k\geq0,k&#x3D;1,2,\cdots,$</li>
-<li>$\sum\limits p_k&#x3D;1$</li>
+<li>$概率分布函数F(x)=P(X\leq x)$</li>
 </ol>
-<h4 id="1-0-1-分布"><a href="#1-0-1-分布" class="headerlink" title="1. 0-1 分布"></a>1. 0-1 分布</h4><table>
+<h3 id="2-2-离散随机变量及其分布律"><a class="header-anchor" href="#2-2-离散随机变量及其分布律">¶</a>2.2 离散随机变量及其分布律</h3>
+<p>$P(X=x_k)=p_k,k=1,2\cdots称为X的分布律，有性质：$</p>
+<ol>
+<li>$p_k\geq0,k=1,2,\cdots,$</li>
+<li>$\sum\limits p_k=1$</li>
+</ol>
+<h4 id="1-0-1-分布"><a class="header-anchor" href="#1-0-1-分布">¶</a>1. 0-1 分布</h4>
+<table>
 <thead>
 <tr>
-<th align="center">X</th>
-<th align="center">1</th>
-<th align="center">0</th>
+<th style="text-align:center">X</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">0</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">P</td>
-<td align="center">p</td>
-<td align="center">1-p</td>
+<tbody>
+<tr>
+<td style="text-align:center">P</td>
+<td style="text-align:center">p</td>
+<td style="text-align:center">1-p</td>
 </tr>
-</tbody></table>
-<p>$P(X&#x3D;k)&#x3D;p^k(1-p)^{1-k},k&#x3D;0,1$</p>
-<h4 id="2-二项分布-X-B-n-p"><a href="#2-二项分布-X-B-n-p" class="headerlink" title="2. 二项分布 X~B(n,p)"></a>2. 二项分布 X~B(n,p)</h4><ol>
+</tbody>
+</table>
+<p>$P(X=k)=p^k(1-p)^{1-k},k=0,1$</p>
+<h4 id="2-二项分布-X-B-n-p"><a class="header-anchor" href="#2-二项分布-X-B-n-p">¶</a>2. 二项分布 X~B(n,p)</h4>
+<ol>
 <li>可独立重复进行n次</li>
 <li>每次实验结果只有两个</li>
 </ol>
 <p>称n重Bernoulli试验，Bernoulli概型</p>
-<p>$P(X&#x3D;k)&#x3D;C_n^kp^k(1-p)^{n-k},k&#x3D;0,1,\cdots,n$</p>
-<h4 id="3-泊松分布-X-P-λ"><a href="#3-泊松分布-X-P-λ" class="headerlink" title="3. 泊松分布 X~P(λ)"></a>3. 泊松分布 X~P(λ)</h4><p>$Poisson定理：\lim\limits_{n\to\infty}np_n&#x3D;\lambda&gt;0，则\lim\limits_{n\to\infty}C_n^kp_n^k(1-p_n)^{n-k}&#x3D;e^{-\lambda}\dfrac{\lambda^k}{k!}$</p>
-<p>$P(X&#x3D;k)&#x3D;e^{-\lambda}\dfrac{\lambda^k}{k!}$</p>
-<h3 id="2-3-连续型随机变量及其概率密度"><a href="#2-3-连续型随机变量及其概率密度" class="headerlink" title="2.3 连续型随机变量及其概率密度"></a>2.3 连续型随机变量及其概率密度</h3><p>$概率分布函数F(x)-&#x3D;\int\limits_{-\infty}^xf(t)dt,-\infty&lt;x&lt;\infty,其中f(x)是概率密度函数$</p>
+<p>$P(X=k)=C_n^kp^k(1-p)^{n-k},k=0,1,\cdots,n$</p>
+<h4 id="3-泊松分布-X-P-λ"><a class="header-anchor" href="#3-泊松分布-X-P-λ">¶</a>3. 泊松分布 X~P(λ)</h4>
+<p>$Poisson定理：\lim\limits_{n\to\infty}np_n=\lambda&gt;0，则\lim\limits_{n\to\infty}C_n^kp_n^k(1-p_n)^{n-k}=e^{-\lambda}\dfrac{\lambda^k}{k!}$</p>
+<p>$P(X=k)=e^{-\lambda}\dfrac{\lambda^k}{k!}$</p>
+<h3 id="2-3-连续型随机变量及其概率密度"><a class="header-anchor" href="#2-3-连续型随机变量及其概率密度">¶</a>2.3 连续型随机变量及其概率密度</h3>
+<p>$概率分布函数F(x)-=\int\limits_{-\infty}^xf(t)dt,-\infty&lt;x&lt;\infty,其中f(x)是概率密度函数$</p>
 <p>$性质$</p>
 <ol>
 <li>$f(x)\geq0$</li>
-<li>$\int\limits_{-\infty}^\infty f(x)dx&#x3D;F(+\infty)&#x3D;1$</li>
-<li>$f(x)&#x3D;F’(x)$</li>
+<li>$\int\limits_{-\infty}^\infty f(x)dx=F(+\infty)=1$</li>
+<li>$f(x)=F'(x)$</li>
 <li>$P(x_0&lt;X\leq x_0+\Delta x)\approx f(x_0)\Delta x$</li>
-<li>$P(x&#x3D;a)&#x3D;0$</li>
+<li>$P(x=a)=0$</li>
 </ol>
-<h4 id="1-均匀分布-X～U-a-b"><a href="#1-均匀分布-X～U-a-b" class="headerlink" title="1. 均匀分布 X～U(a,b)"></a>1. 均匀分布 X～U(a,b)</h4><p>$f(x)&#x3D;\begin{cases}\dfrac{1}{b-a},&amp;a&lt;x&lt;b\0,&amp;其他\end{cases}$</p>
-<p>$F(x)&#x3D;\begin{cases}0,&amp;x&lt;a,\\dfrac{x-a}{b-a},&amp;a\leq x&lt;b,\1,&amp;x\geq b.\end{cases}$</p>
-<h4 id="2-指数分布-X-E-λ"><a href="#2-指数分布-X-E-λ" class="headerlink" title="2. 指数分布 X~E(λ)"></a>2. 指数分布 X~E(λ)</h4><p>$f(x)&#x3D;\begin{cases}\lambda e^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leq 0,\end{cases}$</p>
-<p>$F(x)&#x3D;\begin{cases}1-e^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leq0\end{cases}$</p>
-<h4 id="3-正态分布-X～N-mu-sigma-2"><a href="#3-正态分布-X～N-mu-sigma-2" class="headerlink" title="3. 正态分布 X～N($\mu,\sigma^2$)"></a>3. 正态分布 X～N(<strong>$\mu,\sigma^2$</strong>)</h4><p>$\phi(x)&#x3D;\dfrac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}},-\infty&lt;x&lt;+\infty$</p>
-<p>$\Phi(x)&#x3D;\dfrac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^xe^{-\frac{t^2}2}dt,-\infty&lt;x&lt;+\infty$</p>
-<p>$\phi(x)&#x3D;\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}，-\infty&lt;x&lt;+\infty$</p>
-<p>$\Phi(x)&#x3D;\dfrac 1{\sqrt{2\pi}}\int\limits_{-\infty}^{x}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x\infty$</p>
-<h4 id="2-4-随机变量函数的分布"><a href="#2-4-随机变量函数的分布" class="headerlink" title="2.4 随机变量函数的分布"></a>2.4 随机变量函数的分布</h4><p>$已知X的概率密度函数为f_X(x)，设y&#x3D;g(x),Y&#x3D;g(X)的分布函数为f_X(g^{-1}(y))\cdot|\dfrac{dx}{dy}|$</p>
-<h2 id="第三章-多维随机变量及其分布"><a href="#第三章-多维随机变量及其分布" class="headerlink" title="第三章 多维随机变量及其分布"></a>第三章 多维随机变量及其分布</h2><h3 id="3-1-二维随机变量及其分布"><a href="#3-1-二维随机变量及其分布" class="headerlink" title="3.1 二维随机变量及其分布"></a>3.1 二维随机变量及其分布</h3><ol>
-<li><p>$F(x,y)&#x3D;P({X\leq x}\cap{Y\leq y})&#x3D;P(X\leq x,Y\leq y)$</p>
-</li>
-<li><p>性质：</p>
+<h4 id="1-均匀分布-X～U-a-b"><a class="header-anchor" href="#1-均匀分布-X～U-a-b">¶</a>1. 均匀分布 X～U(a,b)</h4>
+<p>$f(x)=\begin{cases}\dfrac{1}{b-a},&amp;a&lt;x&lt;b\0,&amp;其他\end{cases}$</p>
+<p>$F(x)=\begin{cases}0,&amp;x&lt;a,\\dfrac{x-a}{b-a},&amp;a\leq x&lt;b,\1,&amp;x\geq b.\end{cases}$</p>
+<h4 id="2-指数分布-X-E-λ"><a class="header-anchor" href="#2-指数分布-X-E-λ">¶</a>2. 指数分布 X~E(λ)</h4>
+<p>$f(x)=\begin{cases}\lambda e^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leq 0,\end{cases}$</p>
+<p>$F(x)=\begin{cases}1-e^{-\lambda x},&amp;x&gt;0,\0,&amp;x\leq0\end{cases}$</p>
+<h4 id="3-正态分布-X～N-mu-sigma-2"><a class="header-anchor" href="#3-正态分布-X～N-mu-sigma-2">¶</a>3. 正态分布 X～N(<strong>$\mu,\sigma^2$</strong>)</h4>
+<p>$\phi(x)=\dfrac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}},-\infty&lt;x&lt;+\infty$</p>
+<p>$\Phi(x)=\dfrac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^xe^{-\frac{t^2}2}dt,-\infty&lt;x&lt;+\infty$</p>
+<p>$\phi(x)=\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}，-\infty&lt;x&lt;+\infty$</p>
+<p>$\Phi(x)=\dfrac 1{\sqrt{2\pi}}\int\limits_{-\infty}^{x}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x\infty$</p>
+<h4 id="2-4-随机变量函数的分布"><a class="header-anchor" href="#2-4-随机变量函数的分布">¶</a>2.4 随机变量函数的分布</h4>
+<p>$已知X的概率密度函数为f_X(x)，设y=g(x),Y=g(X)的分布函数为f_X(g^{-1}(y))\cdot|\dfrac{dx}{dy}|$</p>
+<h2 id="第三章-多维随机变量及其分布"><a class="header-anchor" href="#第三章-多维随机变量及其分布">¶</a>第三章 多维随机变量及其分布</h2>
+<h3 id="3-1-二维随机变量及其分布"><a class="header-anchor" href="#3-1-二维随机变量及其分布">¶</a>3.1 二维随机变量及其分布</h3>
 <ol>
-<li>$0\leq F(x,y)\leq 1,F(-\infty,y) &#x3D; 0,F(x,-\infty) &#x3D; 0,F(-\infty,-\infty)&#x3D;0,F(+\infty,+\infty)&#x3D;1$</li>
+<li>
+<p>$F(x,y)=P({X\leq x}\cap{Y\leq y})=P(X\leq x,Y\leq y)$</p>
+</li>
+<li>
+<p>性质：</p>
+<ol>
+<li>$0\leq F(x,y)\leq 1,F(-\infty,y) = 0,F(x,-\infty) = 0,F(-\infty,-\infty)=0,F(+\infty,+\infty)=1$</li>
 <li>$以x或y为主元，都是单调不减函数$</li>
 <li>$以x或y为主元，都是右连续函数$</li>
-<li>$\forall a&lt;b,c&lt;d,F(b,d)-F(a,d)-F(b,c)+F(a,c)&#x3D;P(a&lt;x\leq  b,c&lt;Y\leq d)\geq 0$</li>
+<li>$\forall a&lt;b,c&lt;d,F(b,d)-F(a,d)-F(b,c)+F(a,c)=P(a&lt;x\leq  b,c&lt;Y\leq d)\geq 0$</li>
 </ol>
 </li>
-<li><p>$边缘分布函数F_X(x)&#x3D;F(x,+\infty),F_Y(y)&#x3D;F(+\infty,y)$</p>
+<li>
+<p>$边缘分布函数F_X(x)=F(x,+\infty),F_Y(y)=F(+\infty,y)$</p>
 </li>
 </ol>
-<h4 id="二维离散型随机变量"><a href="#二维离散型随机变量" class="headerlink" title="二维离散型随机变量"></a>二维离散型随机变量</h4><p>性质：</p>
+<h4 id="二维离散型随机变量"><a class="header-anchor" href="#二维离散型随机变量">¶</a>二维离散型随机变量</h4>
+<p>性质：</p>
 <ol>
 <li>$p_{ij}\geq 0$</li>
-<li>$\sum\limits_i\sum\limits_j p_{ij}&#x3D;1$</li>
+<li>$\sum\limits_i\sum\limits_j p_{ij}=1$</li>
 </ol>
-<h4 id="二维连续型随机变量"><a href="#二维连续型随机变量" class="headerlink" title="二维连续型随机变量"></a>二维连续型随机变量</h4><p>性质：</p>
+<h4 id="二维连续型随机变量"><a class="header-anchor" href="#二维连续型随机变量">¶</a>二维连续型随机变量</h4>
+<p>性质：</p>
 <ol>
 <li>$f(x,y)\geq 0$</li>
-<li>$\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}f(x,y)dxdy&#x3D;1$</li>
-<li>$P((X,Y)\in D)&#x3D;\iint\limits_D f(x,y)dxdy &#x3D; 1$</li>
-<li>$在f(x,y)的连续点处，有\dfrac{\partial^2F(x,y)}{\partial x\partial y}&#x3D;f(x,y)$</li>
+<li>$\int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty}f(x,y)dxdy=1$</li>
+<li>$P((X,Y)\in D)=\iint\limits_D f(x,y)dxdy = 1$</li>
+<li>$在f(x,y)的连续点处，有\dfrac{\partial^2F(x,y)}{\partial x\partial y}=f(x,y)$</li>
 </ol>
-<h5 id="二维均匀分布"><a href="#二维均匀分布" class="headerlink" title="二维均匀分布"></a>二维均匀分布</h5><p>$f(x,y)&#x3D;\begin{cases}\dfrac{1}{G的面积}，&amp;(x,y)\in G\0,&amp;其他\end{cases}$</p>
-<h5 id="二维正态分布-X-Y-sim-N-mu-1-sigma-1-2-mu-2-sigma-2-2-rho"><a href="#二维正态分布-X-Y-sim-N-mu-1-sigma-1-2-mu-2-sigma-2-2-rho" class="headerlink" title="二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$"></a>二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$</h5><p>$f(x,y)&#x3D;\dfrac1{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}exp\bigg{-\dfrac1{2(1-p^2)}\Big [\dfrac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\dfrac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\dfrac{(y-\mu_2)^2}{\sigma_2^2}\Big]\bigg}$</p>
-<h3 id="3-2-二维随机变量的条件分布"><a href="#3-2-二维随机变量的条件分布" class="headerlink" title="3.2 二维随机变量的条件分布"></a>3.2 二维随机变量的条件分布</h3><ol>
-<li><p>$P(X&#x3D;x_i|Y&#x3D;y_j)&#x3D;\dfrac{P(X&#x3D;x_i,Y&#x3D;y_j)}{P(Y&#x3D;y_j)}&#x3D;\dfrac{p_{ij}}{P_{\cdot j}}$</p>
+<h5 id="二维均匀分布"><a class="header-anchor" href="#二维均匀分布">¶</a>二维均匀分布</h5>
+<p>$f(x,y)=\begin{cases}\dfrac{1}{G的面积}，&amp;(x,y)\in G\0,&amp;其他\end{cases}$</p>
+<h5 id="二维正态分布-X-Y-sim-N-mu-1-sigma-1-2-mu-2-sigma-2-2-rho"><a class="header-anchor" href="#二维正态分布-X-Y-sim-N-mu-1-sigma-1-2-mu-2-sigma-2-2-rho">¶</a>二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$</h5>
+<p>$f(x,y)=\dfrac1{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}exp\bigg{-\dfrac1{2(1-p^2)}\Big [\dfrac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\dfrac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\dfrac{(y-\mu_2)^2}{\sigma_2^2}\Big]\bigg}$</p>
+<h3 id="3-2-二维随机变量的条件分布"><a class="header-anchor" href="#3-2-二维随机变量的条件分布">¶</a>3.2 二维随机变量的条件分布</h3>
+<ol>
+<li>
+<p>$P(X=x_i|Y=y_j)=\dfrac{P(X=x_i,Y=y_j)}{P(Y=y_j)}=\dfrac{p_{ij}}{P_{\cdot j}}$</p>
 </li>
-<li><p>$P(X&#x3D;x_i)&#x3D;\sum\limits_j P(Y&#x3D;y_j)P(X&#x3D;x_i|Y&#x3D;y_j)$</p>
+<li>
+<p>$P(X=x_i)=\sum\limits_j P(Y=y_j)P(X=x_i|Y=y_j)$</p>
 </li>
-<li><p>$f_{X|Y}(x|y)&#x3D;\dfrac{f(x,y)}{f_Y(y)}$</p>
-<p>$F_{X|Y}(x|y)&#x3D;\int\limits_{-\infty}^x\dfrac{f(u,y)}{f_Y(y)}du$</p>
+<li>
+<p>$f_{X|Y}(x|y)=\dfrac{f(x,y)}{f_Y(y)}$</p>
+<p>$F_{X|Y}(x|y)=\int\limits_{-\infty}^x\dfrac{f(u,y)}{f_Y(y)}du$</p>
 </li>
 </ol>
-<h3 id="3-3-随机变量的独立性"><a href="#3-3-随机变量的独立性" class="headerlink" title="3.3 随机变量的独立性"></a>3.3 随机变量的独立性</h3><ol>
-<li>$X与Y相互独立\Leftrightarrow F(x,y)&#x3D;F_X(x)F_y(y);f_X(x)f_Y(y)$</li>
-<li>$设(X,Y)为二维离散型随机变量，联合分布律为P(X&#x3D;x_i,Y&#x3D;y_j)&#x3D;p_{ij},则X，Y相互独立的充要条件为：P(X&#x3D;x_i,Y&#x3D;y_j)&#x3D;P(X&#x3D;x_i)P(Y&#x3D;y_j),若连续型，则f(x,y)&#x3D;f_X(x)f_Y(y)$</li>
+<h3 id="3-3-随机变量的独立性"><a class="header-anchor" href="#3-3-随机变量的独立性">¶</a>3.3 随机变量的独立性</h3>
+<ol>
+<li>$X与Y相互独立\Leftrightarrow F(x,y)=F_X(x)F_y(y);f_X(x)f_Y(y)$</li>
+<li>$设(X,Y)为二维离散型随机变量，联合分布律为P(X=x_i,Y=y_j)=p_{ij},则X，Y相互独立的充要条件为：P(X=x_i,Y=y_j)=P(X=x_i)P(Y=y_j),若连续型，则f(x,y)=f_X(x)f_Y(y)$</li>
 </ol>
-<h2 id="第四章-随机变量的数字特征"><a href="#第四章-随机变量的数字特征" class="headerlink" title="第四章 随机变量的数字特征"></a>第四章 随机变量的数字特征</h2><h3 id="4-1-数学期望"><a href="#4-1-数学期望" class="headerlink" title="4.1 数学期望"></a>4.1 数学期望</h3><ol>
-<li><p>$离散：E(X)&#x3D;\sum\limits_{k&#x3D;1}^{+\infty}x_kp_k$</p>
-<p>$连续：E(x)&#x3D;\int_{-\infty}^{+\infty}xf(x)$</p>
+<h2 id="第四章-随机变量的数字特征"><a class="header-anchor" href="#第四章-随机变量的数字特征">¶</a>第四章 随机变量的数字特征</h2>
+<h3 id="4-1-数学期望"><a class="header-anchor" href="#4-1-数学期望">¶</a>4.1 数学期望</h3>
+<ol>
+<li>
+<p>$离散：E(X)=\sum\limits_{k=1}^{+\infty}x_kp_k$</p>
+<p>$连续：E(x)=\int_{-\infty}^{+\infty}xf(x)$</p>
 </li>
-<li><p>$数学期望的性质$</p>
+<li>
+<p>$数学期望的性质$</p>
 <ol>
 <li>$数学期望存在\Leftrightarrow E|X|&lt;+\infty$</li>
 <li>$X\leq Y,则E(X)\leq E(Y)$</li>
-<li>$E(C)&#x3D;0$</li>
-<li>$E(CX)&#x3D;CE(X)$</li>
-<li>$E(X+Y)&#x3D;E(X)+E(Y)$</li>
-<li>$若X，Y独立，则E(XY)&#x3D;E(X)\cdot E(Y)$</li>
+<li>$E(C)=0$</li>
+<li>$E(CX)=CE(X)$</li>
+<li>$E(X+Y)=E(X)+E(Y)$</li>
+<li>$若X，Y独立，则E(XY)=E(X)\cdot E(Y)$</li>
 </ol>
 </li>
 </ol>
-<h3 id="4-2-方差"><a href="#4-2-方差" class="headerlink" title="4.2 方差"></a>4.2 方差</h3><ol>
-<li><p>$D(X)&#x3D;E{[X-E(X)]^2}&#x3D;E(X^2)-[E(X)]^2$</p>
+<h3 id="4-2-方差"><a class="header-anchor" href="#4-2-方差">¶</a>4.2 方差</h3>
+<ol>
+<li>
+<p>$D(X)=E{[X-E(X)]^2}=E(X^2)-[E(X)]^2$</p>
 </li>
-<li><p>$方差的性质：$</p>
+<li>
+<p>$方差的性质：$</p>
 <ol>
 <li>$方差存在\Leftrightarrow E(X^2)&lt;+\infty$</li>
-<li>$C为常数\Rightarrow D(C)&#x3D;0$</li>
-<li>$C为常数，则D(CX)&#x3D;C^2D(X)$</li>
-<li>$X和Y独立且方差都存在，则D(X+Y)&#x3D;D(X)+D(Y)$</li>
+<li>$C为常数\Rightarrow D(C)=0$</li>
+<li>$C为常数，则D(CX)=C^2D(X)$</li>
+<li>$X和Y独立且方差都存在，则D(X+Y)=D(X)+D(Y)$</li>
 <li>$D(X)\leq E[(X-C)^2]$</li>
-<li>$D(X)&#x3D;0\Leftrightarrow \exists C,s.t.P(X&#x3D;C)&#x3D;1, C&#x3D;E(X)$</li>
+<li>$D(X)=0\Leftrightarrow \exists C,s.t.P(X=C)=1, C=E(X)$</li>
 </ol>
 </li>
 </ol>
-<h3 id="4-3-重要随机变量的数学期望和方差"><a href="#4-3-重要随机变量的数学期望和方差" class="headerlink" title="4.3 重要随机变量的数学期望和方差"></a>4.3 重要随机变量的数学期望和方差</h3><table>
+<h3 id="4-3-重要随机变量的数学期望和方差"><a class="header-anchor" href="#4-3-重要随机变量的数学期望和方差">¶</a>4.3 重要随机变量的数学期望和方差</h3>
+<table>
 <thead>
 <tr>
 <th>分布</th>
@@ -628,27 +674,28 @@
 <th>方差</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0-1分布$B(1,p)$</td>
-<td>$P(X&#x3D;k)&#x3D;p^k(1-p)^{1-k},\quad k&#x3D;0,1,\quad 0&lt;p&lt;1$</td>
+<td>$P(X=k)=p^k(1-p)^{1-k},\quad k=0,1,\quad 0&lt;p&lt;1$</td>
 <td>$p$</td>
 <td>$p(1−p)$</td>
 </tr>
 <tr>
 <td>二项分布$B(n,p)$</td>
-<td>$P(X&#x3D;k)&#x3D;C_{n}^{k}p^{k}(1-p)^{n-k},\quad k&#x3D;0,1,2,…,n,\quad 0&lt;p&lt;1 $</td>
+<td>$P(X=k)=C_{n}^{k}p^{k}(1-p)^{n-k},\quad k=0,1,2,...,n,\quad 0&lt;p&lt;1 $</td>
 <td>$np$</td>
 <td>$np(1−p)$</td>
 </tr>
 <tr>
 <td>泊松分布$P(\lambda)$</td>
-<td>$P(X&#x3D;k)&#x3D;\frac{\lambda ^{k}}{k!}e^{-λ},\quad \quad k&#x3D;0,1,2,…,\quad λ&gt;0$</td>
+<td>$P(X=k)=\frac{\lambda ^{k}}{k!}e^{-λ},\quad \quad k=0,1,2,...,\quad λ&gt;0$</td>
 <td>$\lambda$</td>
 <td>$\lambda$</td>
 </tr>
 <tr>
 <td>几何分布$G(p)$</td>
-<td>$P(X&#x3D;k)&#x3D;p(1-p)^{k-1}, k&#x3D;1, 2, \cdots, 0&lt;p&lt;1$</td>
+<td>$P(X=k)=p(1-p)^{k-1}, k=1, 2, \cdots, 0&lt;p&lt;1$</td>
 <td>$\frac{1}{p}$</td>
 <td>$\frac{1-p}{p^{2}}$</td>
 </tr>
@@ -658,136 +705,180 @@
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
-<p>$$<br>P(X&#x3D;k)&#x3D;\frac{C_{M}^{k}C_{N-M}^{n-k}}{C_{N}^{m}},<br>$$</p>
-<p> max$|0, n-N+M|\le k\le min|n, M                                               | $                     | $n\frac{M}{N}$          |<br>| 负二项分布 (Pascal 分布)       | $P(X&#x3D;k)&#x3D;C_{k-1}^{r-1}p^{r}(1-p)^{k-r}, k&#x3D;r, r+1, \cdots, 0&lt;p&lt;1$                                                                 | $\frac{r}{p}$       | $\frac{r(1-p)}{p^{2}}$  |<br>| 均匀分布$U(a,b)$             | $f(x)&#x3D;\left {\begin{matrix} \frac{1}{b-a}, &amp;a&lt;x&lt;b\ 0, &amp;其他\end{matrix} \right.$                                              | $\frac{a+b}{2}$     | $\frac{(b-a)^{2}}{12}$  |<br>| 指数分布$E(\lambda)$         | $f(x)&#x3D;\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他                                        | $\frac{1}{\lambda}$ | $\frac{1}{\lambda^{2}}$ |<br>| 正态分布$N(\mu, \sigma^{2})$ | $f(x, y)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$ | $\mu$               | $\sigma^{2}$            |</p>
-<h3 id="4-4-协方差和相关系数"><a href="#4-4-协方差和相关系数" class="headerlink" title="4.4 协方差和相关系数"></a>4.4 协方差和相关系数</h3><ol>
-<li>$cov(X,Y)&#x3D;E(XY)-E(<br>X)E(Y)$</li>
-<li>$\rho_{XY}&#x3D;\dfrac{cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}$</li>
-<li>$D(X\pm Y)&#x3D;D(X)+D(Y)\pm2cov(X,Y)$</li>
-<li>$协方差的性质：$<ol>
-<li>$cov(X,Y)&#x3D;cov(Y,X)$</li>
-<li>$cov(aX,bY)&#x3D;abcov(X,Y)$</li>
-<li>$cov(X+Y,Z)&#x3D;cov(X,Z)+cov(Y,Z)$</li>
-<li>$|cov(X,Y)|&#x3D;\sqrt{D(X)}\sqrt{D(Y)}$</li>
+</tbody>
+</table>
+<p>$$<br>
+P(X=k)=\frac{C_{M}^{k}C_{N-M}^{n-k}}{C_{N}^{m}},<br>
+$$</p>
+<p>max$|0, n-N+M|\le k\le min|n, M                                               | $                     | $n\frac{M}{N}$          |<br>
+| 负二项分布 (Pascal 分布)       | $P(X=k)=C_{k-1}^{r-1}p^{r}(1-p)^{k-r}, k=r, r+1, \cdots, 0&lt;p&lt;1$                                                                 | $\frac{r}{p}$       | $\frac{r(1-p)}{p^{2}}$  |<br>
+| 均匀分布$U(a,b)$             | $f(x)=\left {\begin{matrix} \frac{1}{b-a}, &amp;a&lt;x&lt;b\ 0, &amp;其他\end{matrix} \right.$                                              | $\frac{a+b}{2}$     | $\frac{(b-a)^{2}}{12}$  |<br>
+| 指数分布$E(\lambda)$         | $f(x)=\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他                                        | $\frac{1}{\lambda}$ | $\frac{1}{\lambda^{2}}$ |<br>
+| 正态分布$N(\mu, \sigma^{2})$ | $f(x, y)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$ | $\mu$               | $\sigma^{2}$            |</p>
+<h3 id="4-4-协方差和相关系数"><a class="header-anchor" href="#4-4-协方差和相关系数">¶</a>4.4 协方差和相关系数</h3>
+<ol>
+<li>$cov(X,Y)=E(XY)-E(<br>
+X)E(Y)$</li>
+<li>$\rho_{XY}=\dfrac{cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}$</li>
+<li>$D(X\pm Y)=D(X)+D(Y)\pm2cov(X,Y)$</li>
+<li>$协方差的性质：$
+<ol>
+<li>$cov(X,Y)=cov(Y,X)$</li>
+<li>$cov(aX,bY)=abcov(X,Y)$</li>
+<li>$cov(X+Y,Z)=cov(X,Z)+cov(Y,Z)$</li>
+<li>$|cov(X,Y)|=\sqrt{D(X)}\sqrt{D(Y)}$</li>
 </ol>
 </li>
-<li>$相关系数的性质$<ol>
+<li>$相关系数的性质$
+<ol>
 <li>$|\rho_{XY}|\leq 1$</li>
 </ol>
 </li>
-<li>$不相关的命题等价：$<ol>
+<li>$不相关的命题等价：$
+<ol>
 <li>$X和Y不相关$</li>
-<li>$\rho_{XY}&#x3D;0$</li>
-<li>$cov(X,Y)&#x3D;0$</li>
-<li>$E(XY)&#x3D;E(X)E(Y)$</li>
-<li>$D(X\pm Y)&#x3D;D(X)+D(Y)$</li>
-<li>$D(X+Y)&#x3D;D(X-Y)$</li>
+<li>$\rho_{XY}=0$</li>
+<li>$cov(X,Y)=0$</li>
+<li>$E(XY)=E(X)E(Y)$</li>
+<li>$D(X\pm Y)=D(X)+D(Y)$</li>
+<li>$D(X+Y)=D(X-Y)$</li>
 </ol>
 </li>
 </ol>
-<h3 id="4-5-随机变量的高阶矩"><a href="#4-5-随机变量的高阶矩" class="headerlink" title="4.5 随机变量的高阶矩"></a>4.5 随机变量的高阶矩</h3><p>$k阶原点矩：E(|X|^k)	$</p>
+<h3 id="4-5-随机变量的高阶矩"><a class="header-anchor" href="#4-5-随机变量的高阶矩">¶</a>4.5 随机变量的高阶矩</h3>
+<p>$k阶原点矩：E(|X|^k)	$</p>
 <p>$k阶中心矩：E{[X-E(X)]^k}$</p>
 <p>$k+l阶混合原点矩：E(|X|^k|Y|^l)$</p>
 <p>$k+l阶混合中心矩：E{[X-E(X)]^k[Y-E(Y)]^l}$</p>
-<h2 id="第五章-大数定律和中心极限定理"><a href="#第五章-大数定律和中心极限定理" class="headerlink" title="第五章 大数定律和中心极限定理"></a>第五章 大数定律和中心极限定理</h2><h3 id="5-1-预备知识"><a href="#5-1-预备知识" class="headerlink" title="5.1 预备知识"></a>5.1 预备知识</h3><ol>
+<h2 id="第五章-大数定律和中心极限定理"><a class="header-anchor" href="#第五章-大数定律和中心极限定理">¶</a>第五章 大数定律和中心极限定理</h2>
+<h3 id="5-1-预备知识"><a class="header-anchor" href="#5-1-预备知识">¶</a>5.1 预备知识</h3>
+<ol>
 <li>$Chebyshev不等式：P(|X-\mu|\geq \epsilon)\leq \dfrac{\sigma^2}{\epsilon^2},P(|X-\mu|&lt;\epsilon)&gt;1-\dfrac{\sigma^2}{\epsilon^2}$</li>
 </ol>
-<h3 id="5-2-大数定律"><a href="#5-2-大数定律" class="headerlink" title="5.2 大数定律"></a>5.2 大数定律</h3><ol>
-<li>$Bernoulli大数定律：\lim\limits_{n\to+\infty}P(|\dfrac{n_A}n-p|\geq\epsilon)&#x3D;0,\lim\limits_{n\to+\infty}P(|\dfrac{n_A}n-p|&lt;\epsilon)&#x3D;1$</li>
-<li>$Chebyshev大数定律：\lim\limits_{n\to+\infty}P(|\dfrac1n\sum\limits_{k&#x3D;1}^n X_k-\dfrac1n\sum\limits_{k&#x3D;1}^n\mu_k|&lt;\epsilon)&#x3D;1$</li>
-<li>$Khintchine大数定律：\lim\limits_{n\to\infty}P(|\dfrac1n\sum\limits_{k&#x3D;1}^nX_k-\mu|\geq\epsilon)&#x3D;0,\lim\limits_{n\to\infty}P(|\dfrac1n\sum\limits_{k&#x3D;1}^nX_k-\mu|&lt;\epsilon)&#x3D;1$</li>
+<h3 id="5-2-大数定律"><a class="header-anchor" href="#5-2-大数定律">¶</a>5.2 大数定律</h3>
+<ol>
+<li>$Bernoulli大数定律：\lim\limits_{n\to+\infty}P(|\dfrac{n_A}n-p|\geq\epsilon)=0,\lim\limits_{n\to+\infty}P(|\dfrac{n_A}n-p|&lt;\epsilon)=1$</li>
+<li>$Chebyshev大数定律：\lim\limits_{n\to+\infty}P(|\dfrac1n\sum\limits_{k=1}^n X_k-\dfrac1n\sum\limits_{k=1}^n\mu_k|&lt;\epsilon)=1$</li>
+<li>$Khintchine大数定律：\lim\limits_{n\to\infty}P(|\dfrac1n\sum\limits_{k=1}^nX_k-\mu|\geq\epsilon)=0,\lim\limits_{n\to\infty}P(|\dfrac1n\sum\limits_{k=1}^nX_k-\mu|&lt;\epsilon)=1$</li>
 </ol>
-<h3 id="5-3-中心极限定理"><a href="#5-3-中心极限定理" class="headerlink" title="5.3 中心极限定理"></a>5.3 中心极限定理</h3><ol>
-<li>$独立同分布的中心极限定理：设X_1,X_2,\cdots,X_n,\cdots为独立同分布的随机变量序列，\forall x,\lim\limits_{n\to\infty}P(\dfrac{\sum\limits_{k&#x3D;1}^nX_k-n\mu}{\sqrt n\sigma}\leq x)&#x3D;\Phi(x)$</li>
+<h3 id="5-3-中心极限定理"><a class="header-anchor" href="#5-3-中心极限定理">¶</a>5.3 中心极限定理</h3>
+<ol>
+<li>$独立同分布的中心极限定理：设X_1,X_2,\cdots,X_n,\cdots为独立同分布的随机变量序列，\forall x,\lim\limits_{n\to\infty}P(\dfrac{\sum\limits_{k=1}^nX_k-n\mu}{\sqrt n\sigma}\leq x)=\Phi(x)$</li>
 <li>$De moivre-Laplace中心极限定理：设随机变量Y_n\sim B(n,p),n\to\infty, Y_n\sim N(np, np(1-p))$</li>
 </ol>
-<h2 id="第六章-数理统计的预备知识"><a href="#第六章-数理统计的预备知识" class="headerlink" title="第六章 数理统计的预备知识"></a>第六章 数理统计的预备知识</h2><h3 id="6-1-数理统计的基本概念"><a href="#6-1-数理统计的基本概念" class="headerlink" title="6.1 数理统计的基本概念"></a>6.1 数理统计的基本概念</h3><ol>
-<li>$\bar X&#x3D;\dfrac1n \sum\limits_{i&#x3D;1}^n X_i$</li>
-<li>$S^2&#x3D;\dfrac1{n-1}\sum\limits_{i&#x3D;1}^n(X_i-\bar X)^2$</li>
-<li>$M_k&#x3D;\dfrac1n\sum\limits_{i&#x3D;1}^n X_i^k(k&#x3D;1,2,\cdots)$</li>
-<li>$(CM)<em>k&#x3D;\dfrac 1n\sum\limits</em>{i&#x3D;1}^n(X_i-\bar X)^k(k&#x3D;1,2,\cdots)$</li>
+<h2 id="第六章-数理统计的预备知识"><a class="header-anchor" href="#第六章-数理统计的预备知识">¶</a>第六章 数理统计的预备知识</h2>
+<h3 id="6-1-数理统计的基本概念"><a class="header-anchor" href="#6-1-数理统计的基本概念">¶</a>6.1 数理统计的基本概念</h3>
+<ol>
+<li>$\bar X=\dfrac1n \sum\limits_{i=1}^n X_i$</li>
+<li>$S^2=\dfrac1{n-1}\sum\limits_{i=1}^n(X_i-\bar X)^2$</li>
+<li>$M_k=\dfrac1n\sum\limits_{i=1}^n X_i^k(k=1,2,\cdots)$</li>
+<li>$(CM)<em>k=\dfrac 1n\sum\limits</em>{i=1}^n(X_i-\bar X)^k(k=1,2,\cdots)$</li>
 </ol>
-<h3 id="6-2-几个常用统计量的分布"><a href="#6-2-几个常用统计量的分布" class="headerlink" title="6.2 几个常用统计量的分布"></a>6.2 几个常用统计量的分布</h3><ol>
-<li><p>$正态分布 X\sim N(\mu,\sigma^2)$</p>
+<h3 id="6-2-几个常用统计量的分布"><a class="header-anchor" href="#6-2-几个常用统计量的分布">¶</a>6.2 几个常用统计量的分布</h3>
+<ol>
+<li>
+<p>$正态分布 X\sim N(\mu,\sigma^2)$</p>
 </li>
-<li><p>$\chi^2分布：$</p>
-<p>$\chi^2&#x3D;\sum\limits_{i&#x3D;1}^n X_i^2\sim\chi^2(n)$</p>
-<p>$E(\chi^2)&#x3D;n,D(\chi^2)&#x3D;2n$</p>
+<li>
+<p>$\chi^2分布：$</p>
+<p>$\chi^2=\sum\limits_{i=1}^n X_i^2\sim\chi^2(n)$</p>
+<p>$E(\chi^2)=n,D(\chi^2)=2n$</p>
 <p>$若两者独立，则X_1+X_2\sim \chi^2(n_1+n_2)$</p>
 <p>$n很大时,近似符合正态分布N(n,2n)$</p>
 </li>
-<li><p>$t分布：$</p>
-<p>$X\sim N(0,1),Y\sim \chi^2(n),T&#x3D;\dfrac{X}{\sqrt{Y&#x2F;n}}\sim t(n)$</p>
+<li>
+<p>$t分布：$</p>
+<p>$X\sim N(0,1),Y\sim \chi^2(n),T=\dfrac{X}{\sqrt{Y/n}}\sim t(n)$</p>
 <p>$n充分大(&gt;45)时，近似服从标准正态分布$</p>
-<p>$t_{1-\alpha}(n)&#x3D;-t_\alpha(n)$</p>
+<p>$t_{1-\alpha}(n)=-t_\alpha(n)$</p>
 </li>
-<li><p>$F分布：$</p>
-<p>$U\sim\chi^2(m),V\sim\chi^2(n)，且U,V独立，F&#x3D;\dfrac{U&#x2F;m}{V&#x2F;n}～F(m,n)$</p>
+<li>
+<p>$F分布：$</p>
+<p>$U\sim\chi^2(m),V\sim\chi^2(n)，且U,V独立，F=\dfrac{U/m}{V/n}～F(m,n)$</p>
 <p>$F\sim F(m,n)\Rightarrow \dfrac1F\sim F(n,m)$</p>
-<p>$F_{1-\alpha}(m,n)&#x3D;\dfrac1{F_\alpha(n,m)}$</p>
+<p>$F_{1-\alpha}(m,n)=\dfrac1{F_\alpha(n,m)}$</p>
 </li>
 </ol>
-<h3 id="6-3-正态分布的抽样分布"><a href="#6-3-正态分布的抽样分布" class="headerlink" title="6.3 正态分布的抽样分布"></a>6.3 正态分布的抽样分布</h3><ol>
-<li>单个正态总体的抽样分布<ol>
+<h3 id="6-3-正态分布的抽样分布"><a class="header-anchor" href="#6-3-正态分布的抽样分布">¶</a>6.3 正态分布的抽样分布</h3>
+<ol>
+<li>单个正态总体的抽样分布
+<ol>
 <li>$\bar X\sim N(\mu,\dfrac{\sigma^2}{n})$</li>
-<li>$\dfrac{(n-1)S^2}{\sigma^2}&#x3D;\sum\limits_{i&#x3D;1}^n{\dfrac{X_i-\bar X}{\sigma}}\sim\chi^2(n-1)$</li>
+<li>$\dfrac{(n-1)S^2}{\sigma^2}=\sum\limits_{i=1}^n{\dfrac{X_i-\bar X}{\sigma}}\sim\chi^2(n-1)$</li>
 <li>$\bar X与\dfrac{(n-1)S^2}{\sigma^2}独立$</li>
-<li>$\cfrac{\bar X-\mu}{S&#x2F;\sqrt n}\sim t(n-1)$</li>
+<li>$\cfrac{\bar X-\mu}{S/\sqrt n}\sim t(n-1)$</li>
 </ol>
 </li>
-<li>两个正态总体的抽样分布<ol>
-<li>$\dfrac{S_1^2&#x2F;\sigma_1^2}{S_2^2&#x2F;\sigma_2^2}\sim F(n-1,m-1)$</li>
-<li>$\sigma_1&#x3D;\sigma_2&#x3D;\sigma时,\dfrac{(\bar X-\bar Y)-(\mu_1-\mu_2)}{\sqrt{\dfrac1n+\dfrac1m}\sqrt{\dfrac{(n-1)S_1^2+(m-1)S_2^2}{n+m-2}}}$</li>
+<li>两个正态总体的抽样分布
+<ol>
+<li>$\dfrac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}\sim F(n-1,m-1)$</li>
+<li>$\sigma_1=\sigma_2=\sigma时,\dfrac{(\bar X-\bar Y)-(\mu_1-\mu_2)}{\sqrt{\dfrac1n+\dfrac1m}\sqrt{\dfrac{(n-1)S_1^2+(m-1)S_2^2}{n+m-2}}}$</li>
 </ol>
 </li>
 </ol>
-<h2 id="第七章-参数估计"><a href="#第七章-参数估计" class="headerlink" title="第七章 参数估计"></a>第七章 参数估计</h2><h3 id="7-1-点估计"><a href="#7-1-点估计" class="headerlink" title="7.1 点估计"></a>7.1 点估计</h3><ol>
+<h2 id="第七章-参数估计"><a class="header-anchor" href="#第七章-参数估计">¶</a>第七章 参数估计</h2>
+<h3 id="7-1-点估计"><a class="header-anchor" href="#7-1-点估计">¶</a>7.1 点估计</h3>
+<ol>
 <li>频率替代法</li>
 <li>矩估计法</li>
 <li>最大似然估计法</li>
 </ol>
-<h3 id="7-2-估计量的评价标准"><a href="#7-2-估计量的评价标准" class="headerlink" title="7.2 估计量的评价标准"></a>7.2 估计量的评价标准</h3><ol>
+<h3 id="7-2-估计量的评价标准"><a class="header-anchor" href="#7-2-估计量的评价标准">¶</a>7.2 估计量的评价标准</h3>
+<ol>
 <li>无偏性——估计值的期望是实际值</li>
-<li>有效性<ol>
+<li>有效性
+<ol>
 <li>有效性的比较看方差大小，方差小的更有效</li>
 <li>$若D(\hat\theta)&lt;D(\theta)且无偏,则有效$</li>
 </ol>
 </li>
-<li>一致性<ol>
-<li>$\lim\limits_{n\to+\infty} D(\hat\theta_n)&#x3D;0$</li>
+<li>一致性
+<ol>
+<li>$\lim\limits_{n\to+\infty} D(\hat\theta_n)=0$</li>
 </ol>
 </li>
 </ol>
-<h3 id="7-3-区间估计"><a href="#7-3-区间估计" class="headerlink" title="7.3 区间估计"></a>7.3 区间估计</h3><ol>
+<h3 id="7-3-区间估计"><a class="header-anchor" href="#7-3-区间估计">¶</a>7.3 区间估计</h3>
+<ol>
 <li>要选定枢轴量</li>
 </ol>
-<h2 id="第八章-假设检验"><a href="#第八章-假设检验" class="headerlink" title="第八章 假设检验"></a>第八章 假设检验</h2><p>确定检验统计量、拒绝域</p>
-<h3 id="8-1-单个正态总体均值的假设检验"><a href="#8-1-单个正态总体均值的假设检验" class="headerlink" title="8.1 单个正态总体均值的假设检验"></a>8.1 单个正态总体均值的假设检验</h3><ol>
-<li><p>方差已知</p>
-<p>$U&#x3D;\dfrac{\bar X-\mu_0}{\sigma&#x2F;\sqrt n}\sim N(0,1)$</p>
+<h2 id="第八章-假设检验"><a class="header-anchor" href="#第八章-假设检验">¶</a>第八章 假设检验</h2>
+<p>确定检验统计量、拒绝域</p>
+<h3 id="8-1-单个正态总体均值的假设检验"><a class="header-anchor" href="#8-1-单个正态总体均值的假设检验">¶</a>8.1 单个正态总体均值的假设检验</h3>
+<ol>
+<li>
+<p>方差已知</p>
+<p>$U=\dfrac{\bar X-\mu_0}{\sigma/\sqrt n}\sim N(0,1)$</p>
 </li>
-<li><p>方差未知</p>
-<p>$T&#x3D;\dfrac{\bar X-\mu_0}{S&#x2F;\sqrt{n}}\sim t(n-1)$</p>
-</li>
-</ol>
-<h3 id="8-2-单个正态总体方差的假设检验"><a href="#8-2-单个正态总体方差的假设检验" class="headerlink" title="8.2 单个正态总体方差的假设检验"></a>8.2 单个正态总体方差的假设检验</h3><ol>
-<li><p>均值已知</p>
-<p>$\chi^2&#x3D;\dfrac{\sum\limits_{i&#x3D;1}^n(X_i-\mu)^2}{\sigma_0^2}\sim\chi^2(n)$</p>
-</li>
-<li><p>均值未知</p>
-<p>$\chi^2&#x3D;\dfrac{(n-1)S^2}{\sigma_0^2}\sim\chi^2(n-1)$</p>
+<li>
+<p>方差未知</p>
+<p>$T=\dfrac{\bar X-\mu_0}{S/\sqrt{n}}\sim t(n-1)$</p>
 </li>
 </ol>
-<h3 id="8-3-两个正态总体参数均值差的假设检验"><a href="#8-3-两个正态总体参数均值差的假设检验" class="headerlink" title="8.3 两个正态总体参数均值差的假设检验"></a>8.3 两个正态总体参数均值差的假设检验</h3><ol>
-<li><p>方差$\sigma_1^2,\sigma_2^2已知$</p>
+<h3 id="8-2-单个正态总体方差的假设检验"><a class="header-anchor" href="#8-2-单个正态总体方差的假设检验">¶</a>8.2 单个正态总体方差的假设检验</h3>
+<ol>
+<li>
+<p>均值已知</p>
+<p>$\chi^2=\dfrac{\sum\limits_{i=1}^n(X_i-\mu)^2}{\sigma_0^2}\sim\chi^2(n)$</p>
+</li>
+<li>
+<p>均值未知</p>
+<p>$\chi^2=\dfrac{(n-1)S^2}{\sigma_0^2}\sim\chi^2(n-1)$</p>
+</li>
+</ol>
+<h3 id="8-3-两个正态总体参数均值差的假设检验"><a class="header-anchor" href="#8-3-两个正态总体参数均值差的假设检验">¶</a>8.3 两个正态总体参数均值差的假设检验</h3>
+<ol>
+<li>
+<p>方差$\sigma_1^2,\sigma_2^2已知$</p>
 <p>$\bar X-\bar Y\sim N(\delta,\dfrac{\sigma_1^2}n+\dfrac{\sigma_2^2}m)$</p>
 </li>
-<li><p>方差$\sigma_1^2&#x3D;\sigma_2^2&#x3D;\sigma^2$未知</p>
-<p>$T&#x3D;\dfrac{\bar X-\bar Y-\delta}{S_W\sqrt{\dfrac1n+\dfrac1m}}\sim t(n+m-2)$</p>
+<li>
+<p>方差$\sigma_1^2=\sigma_2^2=\sigma^2$未知</p>
+<p>$T=\dfrac{\bar X-\bar Y-\delta}{S_W\sqrt{\dfrac1n+\dfrac1m}}\sim t(n+m-2)$</p>
 </li>
-<li><p>方差$\sigma_1^2,\sigma_2^2$未知，但样本容量相等</p>
-<p>$\dfrac{\bar Z-\delta}{S_Z&#x2F;\sqrt n}\sim t(n-1)$</p>
+<li>
+<p>方差$\sigma_1^2,\sigma_2^2$未知，但样本容量相等</p>
+<p>$\dfrac{\bar Z-\delta}{S_Z/\sqrt n}\sim t(n-1)$</p>
 </li>
 </ol>
 
@@ -934,7 +1025,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="概率统计整理"><a rel="nofollow" class="trm-toc-link" href="#概率统计整理"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">概率统计整理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="第一章 随机事件和概率"><a rel="nofollow" class="trm-toc-link" href="#第一章-随机事件和概率"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">第一章 随机事件和概率</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 随机事件及其运算"><a rel="nofollow" class="trm-toc-link" href="#1-1-随机事件及其运算"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 随机事件及其运算</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 随机事件的概率"><a rel="nofollow" class="trm-toc-link" href="#1-2-随机事件的概率"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 随机事件的概率</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 条件概率"><a rel="nofollow" class="trm-toc-link" href="#1-3-条件概率"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.3 条件概率</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4 随机事件的独立性"><a rel="nofollow" class="trm-toc-link" href="#1-4-随机事件的独立性"><span class="trm-toc-number">1.1.4.</span> <span class="trm-toc-text">1.4 随机事件的独立性</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第二章 随机变量及其分布"><a rel="nofollow" class="trm-toc-link" href="#第二章-随机变量及其分布"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">第二章 随机变量及其分布</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 随机变量及其分布函数"><a rel="nofollow" class="trm-toc-link" href="#2-1-随机变量及其分布函数"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 随机变量及其分布函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 离散随机变量及其分布律"><a rel="nofollow" class="trm-toc-link" href="#2-2-离散随机变量及其分布律"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.2 离散随机变量及其分布律</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="1. 0-1 分布"><a rel="nofollow" class="trm-toc-link" href="#1-0-1-分布"><span class="trm-toc-number">1.2.2.1.</span> <span class="trm-toc-text">1. 0-1 分布</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2. 二项分布 X~B(n,p)"><a rel="nofollow" class="trm-toc-link" href="#2-二项分布-X-B-n-p"><span class="trm-toc-number">1.2.2.2.</span> <span class="trm-toc-text">2. 二项分布 X~B(n,p)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3. 泊松分布 X~P(λ)"><a rel="nofollow" class="trm-toc-link" href="#3-泊松分布-X-P-λ"><span class="trm-toc-number">1.2.2.3.</span> <span class="trm-toc-text">3. 泊松分布 X~P(λ)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.3 连续型随机变量及其概率密度"><a rel="nofollow" class="trm-toc-link" href="#2-3-连续型随机变量及其概率密度"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.3 连续型随机变量及其概率密度</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="1. 均匀分布 X～U(a,b)"><a rel="nofollow" class="trm-toc-link" href="#1-均匀分布-X～U-a-b"><span class="trm-toc-number">1.2.3.1.</span> <span class="trm-toc-text">1. 均匀分布 X～U(a,b)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2. 指数分布 X~E(λ)"><a rel="nofollow" class="trm-toc-link" href="#2-指数分布-X-E-λ"><span class="trm-toc-number">1.2.3.2.</span> <span class="trm-toc-text">2. 指数分布 X~E(λ)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3. 正态分布 X～N($\mu,\sigma^2$)"><a rel="nofollow" class="trm-toc-link" href="#3-正态分布-X～N-mu-sigma-2"><span class="trm-toc-number">1.2.3.3.</span> <span class="trm-toc-text">3. 正态分布 X～N($\mu,\sigma^2$)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2.4 随机变量函数的分布"><a rel="nofollow" class="trm-toc-link" href="#2-4-随机变量函数的分布"><span class="trm-toc-number">1.2.3.4.</span> <span class="trm-toc-text">2.4 随机变量函数的分布</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第三章 多维随机变量及其分布"><a rel="nofollow" class="trm-toc-link" href="#第三章-多维随机变量及其分布"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">第三章 多维随机变量及其分布</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 二维随机变量及其分布"><a rel="nofollow" class="trm-toc-link" href="#3-1-二维随机变量及其分布"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 二维随机变量及其分布</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="二维离散型随机变量"><a rel="nofollow" class="trm-toc-link" href="#二维离散型随机变量"><span class="trm-toc-number">1.3.1.1.</span> <span class="trm-toc-text">二维离散型随机变量</span></a></li><li class="trm-toc-item trm-toc-level-4" title="二维连续型随机变量"><a rel="nofollow" class="trm-toc-link" href="#二维连续型随机变量"><span class="trm-toc-number">1.3.1.2.</span> <span class="trm-toc-text">二维连续型随机变量</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="二维均匀分布"><a rel="nofollow" class="trm-toc-link" href="#二维均匀分布"><span class="trm-toc-number">1.3.1.2.1.</span> <span class="trm-toc-text">二维均匀分布</span></a></li><li class="trm-toc-item trm-toc-level-5" title="二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$"><a rel="nofollow" class="trm-toc-link" href="#二维正态分布-X-Y-sim-N-mu-1-sigma-1-2-mu-2-sigma-2-2-rho"><span class="trm-toc-number">1.3.1.2.2.</span> <span class="trm-toc-text">二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="3.2 二维随机变量的条件分布"><a rel="nofollow" class="trm-toc-link" href="#3-2-二维随机变量的条件分布"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.2 二维随机变量的条件分布</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 随机变量的独立性"><a rel="nofollow" class="trm-toc-link" href="#3-3-随机变量的独立性"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.3 随机变量的独立性</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第四章 随机变量的数字特征"><a rel="nofollow" class="trm-toc-link" href="#第四章-随机变量的数字特征"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">第四章 随机变量的数字特征</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 数学期望"><a rel="nofollow" class="trm-toc-link" href="#4-1-数学期望"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 数学期望</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 方差"><a rel="nofollow" class="trm-toc-link" href="#4-2-方差"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 方差</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.3 重要随机变量的数学期望和方差"><a rel="nofollow" class="trm-toc-link" href="#4-3-重要随机变量的数学期望和方差"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 重要随机变量的数学期望和方差</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.4 协方差和相关系数"><a rel="nofollow" class="trm-toc-link" href="#4-4-协方差和相关系数"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">4.4 协方差和相关系数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.5 随机变量的高阶矩"><a rel="nofollow" class="trm-toc-link" href="#4-5-随机变量的高阶矩"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">4.5 随机变量的高阶矩</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第五章 大数定律和中心极限定理"><a rel="nofollow" class="trm-toc-link" href="#第五章-大数定律和中心极限定理"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">第五章 大数定律和中心极限定理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="5.1 预备知识"><a rel="nofollow" class="trm-toc-link" href="#5-1-预备知识"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">5.1 预备知识</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.2 大数定律"><a rel="nofollow" class="trm-toc-link" href="#5-2-大数定律"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">5.2 大数定律</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.3 中心极限定理"><a rel="nofollow" class="trm-toc-link" href="#5-3-中心极限定理"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">5.3 中心极限定理</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第六章 数理统计的预备知识"><a rel="nofollow" class="trm-toc-link" href="#第六章-数理统计的预备知识"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">第六章 数理统计的预备知识</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="6.1 数理统计的基本概念"><a rel="nofollow" class="trm-toc-link" href="#6-1-数理统计的基本概念"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">6.1 数理统计的基本概念</span></a></li><li class="trm-toc-item trm-toc-level-3" title="6.2 几个常用统计量的分布"><a rel="nofollow" class="trm-toc-link" href="#6-2-几个常用统计量的分布"><span class="trm-toc-number">1.6.2.</span> <span class="trm-toc-text">6.2 几个常用统计量的分布</span></a></li><li class="trm-toc-item trm-toc-level-3" title="6.3 正态分布的抽样分布"><a rel="nofollow" class="trm-toc-link" href="#6-3-正态分布的抽样分布"><span class="trm-toc-number">1.6.3.</span> <span class="trm-toc-text">6.3 正态分布的抽样分布</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第七章 参数估计"><a rel="nofollow" class="trm-toc-link" href="#第七章-参数估计"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">第七章 参数估计</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="7.1 点估计"><a rel="nofollow" class="trm-toc-link" href="#7-1-点估计"><span class="trm-toc-number">1.7.1.</span> <span class="trm-toc-text">7.1 点估计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="7.2 估计量的评价标准"><a rel="nofollow" class="trm-toc-link" href="#7-2-估计量的评价标准"><span class="trm-toc-number">1.7.2.</span> <span class="trm-toc-text">7.2 估计量的评价标准</span></a></li><li class="trm-toc-item trm-toc-level-3" title="7.3 区间估计"><a rel="nofollow" class="trm-toc-link" href="#7-3-区间估计"><span class="trm-toc-number">1.7.3.</span> <span class="trm-toc-text">7.3 区间估计</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第八章 假设检验"><a rel="nofollow" class="trm-toc-link" href="#第八章-假设检验"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">第八章 假设检验</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="8.1 单个正态总体均值的假设检验"><a rel="nofollow" class="trm-toc-link" href="#8-1-单个正态总体均值的假设检验"><span class="trm-toc-number">1.8.1.</span> <span class="trm-toc-text">8.1 单个正态总体均值的假设检验</span></a></li><li class="trm-toc-item trm-toc-level-3" title="8.2 单个正态总体方差的假设检验"><a rel="nofollow" class="trm-toc-link" href="#8-2-单个正态总体方差的假设检验"><span class="trm-toc-number">1.8.2.</span> <span class="trm-toc-text">8.2 单个正态总体方差的假设检验</span></a></li><li class="trm-toc-item trm-toc-level-3" title="8.3 两个正态总体参数均值差的假设检验"><a rel="nofollow" class="trm-toc-link" href="#8-3-两个正态总体参数均值差的假设检验"><span class="trm-toc-number">1.8.3.</span> <span class="trm-toc-text">8.3 两个正态总体参数均值差的假设检验</span></a></li></ol></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="概率统计整理"><a class="trm-toc-link"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">概率统计整理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="第一章 随机事件和概率"><a rel="nofollow" class="trm-toc-link" href="#第一章-随机事件和概率"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">第一章 随机事件和概率</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 随机事件及其运算"><a rel="nofollow" class="trm-toc-link" href="#1-1-随机事件及其运算"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 随机事件及其运算</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 随机事件的概率"><a rel="nofollow" class="trm-toc-link" href="#1-2-随机事件的概率"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 随机事件的概率</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 条件概率"><a rel="nofollow" class="trm-toc-link" href="#1-3-条件概率"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.3 条件概率</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4 随机事件的独立性"><a rel="nofollow" class="trm-toc-link" href="#1-4-随机事件的独立性"><span class="trm-toc-number">1.1.4.</span> <span class="trm-toc-text">1.4 随机事件的独立性</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第二章 随机变量及其分布"><a rel="nofollow" class="trm-toc-link" href="#第二章-随机变量及其分布"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">第二章 随机变量及其分布</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 随机变量及其分布函数"><a rel="nofollow" class="trm-toc-link" href="#2-1-随机变量及其分布函数"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 随机变量及其分布函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 离散随机变量及其分布律"><a rel="nofollow" class="trm-toc-link" href="#2-2-离散随机变量及其分布律"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.2 离散随机变量及其分布律</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="1. 0-1 分布"><a rel="nofollow" class="trm-toc-link" href="#1-0-1-分布"><span class="trm-toc-number">1.2.2.1.</span> <span class="trm-toc-text">1. 0-1 分布</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2. 二项分布 X~B(n,p)"><a rel="nofollow" class="trm-toc-link" href="#2-二项分布-X-B-n-p"><span class="trm-toc-number">1.2.2.2.</span> <span class="trm-toc-text">2. 二项分布 X~B(n,p)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3. 泊松分布 X~P(λ)"><a rel="nofollow" class="trm-toc-link" href="#3-泊松分布-X-P-λ"><span class="trm-toc-number">1.2.2.3.</span> <span class="trm-toc-text">3. 泊松分布 X~P(λ)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.3 连续型随机变量及其概率密度"><a rel="nofollow" class="trm-toc-link" href="#2-3-连续型随机变量及其概率密度"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.3 连续型随机变量及其概率密度</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="1. 均匀分布 X～U(a,b)"><a rel="nofollow" class="trm-toc-link" href="#1-均匀分布-X～U-a-b"><span class="trm-toc-number">1.2.3.1.</span> <span class="trm-toc-text">1. 均匀分布 X～U(a,b)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2. 指数分布 X~E(λ)"><a rel="nofollow" class="trm-toc-link" href="#2-指数分布-X-E-λ"><span class="trm-toc-number">1.2.3.2.</span> <span class="trm-toc-text">2. 指数分布 X~E(λ)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3. 正态分布 X～N($\mu,\sigma^2$)"><a rel="nofollow" class="trm-toc-link" href="#3-正态分布-X～N-mu-sigma-2"><span class="trm-toc-number">1.2.3.3.</span> <span class="trm-toc-text">3. 正态分布 X～N($\mu,\sigma^2$)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2.4 随机变量函数的分布"><a rel="nofollow" class="trm-toc-link" href="#2-4-随机变量函数的分布"><span class="trm-toc-number">1.2.3.4.</span> <span class="trm-toc-text">2.4 随机变量函数的分布</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第三章 多维随机变量及其分布"><a rel="nofollow" class="trm-toc-link" href="#第三章-多维随机变量及其分布"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">第三章 多维随机变量及其分布</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 二维随机变量及其分布"><a rel="nofollow" class="trm-toc-link" href="#3-1-二维随机变量及其分布"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 二维随机变量及其分布</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="二维离散型随机变量"><a rel="nofollow" class="trm-toc-link" href="#二维离散型随机变量"><span class="trm-toc-number">1.3.1.1.</span> <span class="trm-toc-text">二维离散型随机变量</span></a></li><li class="trm-toc-item trm-toc-level-4" title="二维连续型随机变量"><a rel="nofollow" class="trm-toc-link" href="#二维连续型随机变量"><span class="trm-toc-number">1.3.1.2.</span> <span class="trm-toc-text">二维连续型随机变量</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="二维均匀分布"><a rel="nofollow" class="trm-toc-link" href="#二维均匀分布"><span class="trm-toc-number">1.3.1.2.1.</span> <span class="trm-toc-text">二维均匀分布</span></a></li><li class="trm-toc-item trm-toc-level-5" title="二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$"><a rel="nofollow" class="trm-toc-link" href="#二维正态分布-X-Y-sim-N-mu-1-sigma-1-2-mu-2-sigma-2-2-rho"><span class="trm-toc-number">1.3.1.2.2.</span> <span class="trm-toc-text">二维正态分布 $(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)$</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="3.2 二维随机变量的条件分布"><a rel="nofollow" class="trm-toc-link" href="#3-2-二维随机变量的条件分布"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.2 二维随机变量的条件分布</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 随机变量的独立性"><a rel="nofollow" class="trm-toc-link" href="#3-3-随机变量的独立性"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.3 随机变量的独立性</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第四章 随机变量的数字特征"><a rel="nofollow" class="trm-toc-link" href="#第四章-随机变量的数字特征"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">第四章 随机变量的数字特征</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 数学期望"><a rel="nofollow" class="trm-toc-link" href="#4-1-数学期望"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 数学期望</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 方差"><a rel="nofollow" class="trm-toc-link" href="#4-2-方差"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 方差</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.3 重要随机变量的数学期望和方差"><a rel="nofollow" class="trm-toc-link" href="#4-3-重要随机变量的数学期望和方差"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 重要随机变量的数学期望和方差</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.4 协方差和相关系数"><a rel="nofollow" class="trm-toc-link" href="#4-4-协方差和相关系数"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">4.4 协方差和相关系数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.5 随机变量的高阶矩"><a rel="nofollow" class="trm-toc-link" href="#4-5-随机变量的高阶矩"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">4.5 随机变量的高阶矩</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第五章 大数定律和中心极限定理"><a rel="nofollow" class="trm-toc-link" href="#第五章-大数定律和中心极限定理"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">第五章 大数定律和中心极限定理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="5.1 预备知识"><a rel="nofollow" class="trm-toc-link" href="#5-1-预备知识"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">5.1 预备知识</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.2 大数定律"><a rel="nofollow" class="trm-toc-link" href="#5-2-大数定律"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">5.2 大数定律</span></a></li><li class="trm-toc-item trm-toc-level-3" title="5.3 中心极限定理"><a rel="nofollow" class="trm-toc-link" href="#5-3-中心极限定理"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">5.3 中心极限定理</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第六章 数理统计的预备知识"><a rel="nofollow" class="trm-toc-link" href="#第六章-数理统计的预备知识"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">第六章 数理统计的预备知识</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="6.1 数理统计的基本概念"><a rel="nofollow" class="trm-toc-link" href="#6-1-数理统计的基本概念"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">6.1 数理统计的基本概念</span></a></li><li class="trm-toc-item trm-toc-level-3" title="6.2 几个常用统计量的分布"><a rel="nofollow" class="trm-toc-link" href="#6-2-几个常用统计量的分布"><span class="trm-toc-number">1.6.2.</span> <span class="trm-toc-text">6.2 几个常用统计量的分布</span></a></li><li class="trm-toc-item trm-toc-level-3" title="6.3 正态分布的抽样分布"><a rel="nofollow" class="trm-toc-link" href="#6-3-正态分布的抽样分布"><span class="trm-toc-number">1.6.3.</span> <span class="trm-toc-text">6.3 正态分布的抽样分布</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第七章 参数估计"><a rel="nofollow" class="trm-toc-link" href="#第七章-参数估计"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">第七章 参数估计</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="7.1 点估计"><a rel="nofollow" class="trm-toc-link" href="#7-1-点估计"><span class="trm-toc-number">1.7.1.</span> <span class="trm-toc-text">7.1 点估计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="7.2 估计量的评价标准"><a rel="nofollow" class="trm-toc-link" href="#7-2-估计量的评价标准"><span class="trm-toc-number">1.7.2.</span> <span class="trm-toc-text">7.2 估计量的评价标准</span></a></li><li class="trm-toc-item trm-toc-level-3" title="7.3 区间估计"><a rel="nofollow" class="trm-toc-link" href="#7-3-区间估计"><span class="trm-toc-number">1.7.3.</span> <span class="trm-toc-text">7.3 区间估计</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第八章 假设检验"><a rel="nofollow" class="trm-toc-link" href="#第八章-假设检验"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">第八章 假设检验</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="8.1 单个正态总体均值的假设检验"><a rel="nofollow" class="trm-toc-link" href="#8-1-单个正态总体均值的假设检验"><span class="trm-toc-number">1.8.1.</span> <span class="trm-toc-text">8.1 单个正态总体均值的假设检验</span></a></li><li class="trm-toc-item trm-toc-level-3" title="8.2 单个正态总体方差的假设检验"><a rel="nofollow" class="trm-toc-link" href="#8-2-单个正态总体方差的假设检验"><span class="trm-toc-number">1.8.2.</span> <span class="trm-toc-text">8.2 单个正态总体方差的假设检验</span></a></li><li class="trm-toc-item trm-toc-level-3" title="8.3 两个正态总体参数均值差的假设检验"><a rel="nofollow" class="trm-toc-link" href="#8-3-两个正态总体参数均值差的假设检验"><span class="trm-toc-number">1.8.3.</span> <span class="trm-toc-text">8.3 两个正态总体参数均值差的假设检验</span></a></li></ol></li></ol></li></ol>
       </div>
     </div>
 

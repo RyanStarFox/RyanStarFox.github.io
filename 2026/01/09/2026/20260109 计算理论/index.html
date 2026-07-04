@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="计算理论1 Finite Automata and Regular Languages   Machine Semantics Syntax    DFA Regular Regular Grammer   NFA Regular Regular Grammer   1.1 Deterministic Finite Automata (DFA)定义：五元组$(Q,\Sigma,\delta,q_0">
+<meta name="description" content="计算理论 ¶1 Finite Automata and Regular Languages    Machine Semantics Syntax     DFA Regular Regular Grammer   NFA Regular Regular Grammer    ¶1.1 Deterministic Finite Automata (DFA) 定义：五元组$(Q,\Sigma,\de">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算理论">
 <meta property="og:url" content="https://ryanstarfox.github.io/2026/01/09/2026/20260109%20%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="计算理论1 Finite Automata and Regular Languages   Machine Semantics Syntax    DFA Regular Regular Grammer   NFA Regular Regular Grammer   1.1 Deterministic Finite Automata (DFA)定义：五元组$(Q,\Sigma,\delta,q_0">
+<meta property="og:description" content="计算理论 ¶1 Finite Automata and Regular Languages    Machine Semantics Syntax     DFA Regular Regular Grammer   NFA Regular Regular Grammer    ¶1.1 Deterministic Finite Automata (DFA) 定义：五元组$(Q,\Sigma,\de">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-01-09T03:08:00.000Z">
 <meta property="article:modified_time" content="2026-01-09T03:08:00.000Z">
@@ -459,26 +459,31 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="计算理论"><a href="#计算理论" class="headerlink" title="计算理论"></a>计算理论</h1><h2 id="1-Finite-Automata-and-Regular-Languages"><a href="#1-Finite-Automata-and-Regular-Languages" class="headerlink" title="1 Finite Automata and Regular Languages"></a>1 Finite Automata and Regular Languages</h2><table>
+    <h1>计算理论</h1>
+<h2 id="1-Finite-Automata-and-Regular-Languages"><a class="header-anchor" href="#1-Finite-Automata-and-Regular-Languages">¶</a>1 Finite Automata and Regular Languages</h2>
+<table>
 <thead>
 <tr>
-<th align="center">Machine</th>
-<th align="center">Semantics</th>
-<th align="center">Syntax</th>
+<th style="text-align:center">Machine</th>
+<th style="text-align:center">Semantics</th>
+<th style="text-align:center">Syntax</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">DFA</td>
-<td align="center">Regular</td>
-<td align="center">Regular Grammer</td>
+<tbody>
+<tr>
+<td style="text-align:center">DFA</td>
+<td style="text-align:center">Regular</td>
+<td style="text-align:center">Regular Grammer</td>
 </tr>
 <tr>
-<td align="center">NFA</td>
-<td align="center">Regular</td>
-<td align="center">Regular Grammer</td>
+<td style="text-align:center">NFA</td>
+<td style="text-align:center">Regular</td>
+<td style="text-align:center">Regular Grammer</td>
 </tr>
-</tbody></table>
-<h3 id="1-1-Deterministic-Finite-Automata-DFA"><a href="#1-1-Deterministic-Finite-Automata-DFA" class="headerlink" title="1.1 Deterministic Finite Automata (DFA)"></a>1.1 Deterministic Finite Automata (DFA)</h3><p>定义：五元组$(Q,\Sigma,\delta,q_0,F)$</p>
+</tbody>
+</table>
+<h3 id="1-1-Deterministic-Finite-Automata-DFA"><a class="header-anchor" href="#1-1-Deterministic-Finite-Automata-DFA">¶</a>1.1 Deterministic Finite Automata (DFA)</h3>
+<p>定义：五元组$(Q,\Sigma,\delta,q_0,F)$</p>
 <ol>
 <li>(Q) is a finite set called the <strong>states</strong></li>
 <li>(\Sigma) is a finite set called the <strong>alphabet</strong></li>
@@ -487,40 +492,51 @@
 <li>(F \subseteq Q) is the set of <strong>accept states</strong></li>
 </ol>
 <p>注意其中第三条，(Q)中任意一个元素，都要和$\Sigma$中任意一个元素有这样一个函数</p>
-<h3 id="1-2-Nondeterministic-Finite-Automata-NFA"><a href="#1-2-Nondeterministic-Finite-Automata-NFA" class="headerlink" title="1.2 Nondeterministic Finite Automata (NFA)"></a>1.2 Nondeterministic Finite Automata (NFA)</h3><p>也是五元组$(Q,\Sigma,\delta,q_0,F)$，第三条不太一样</p>
+<h3 id="1-2-Nondeterministic-Finite-Automata-NFA"><a class="header-anchor" href="#1-2-Nondeterministic-Finite-Automata-NFA">¶</a>1.2 Nondeterministic Finite Automata (NFA)</h3>
+<p>也是五元组$(Q,\Sigma,\delta,q_0,F)$，第三条不太一样</p>
 <ol>
 <li>(Q) is a finite set called the <strong>states</strong>,</li>
 <li>(\Sigma) is a finite set called the <strong>alphabet</strong>,</li>
-<li>(\delta: Q \times \Sigma_\epsilon \to \mathcal{P}(Q)) is the <strong>transition function</strong>, where  (\Sigma_\epsilon &#x3D; \Sigma \cup {\epsilon}),</li>
+<li>(\delta: Q \times \Sigma_\epsilon \to \mathcal{P}(Q)) is the <strong>transition function</strong>, where  (\Sigma_\epsilon = \Sigma \cup {\epsilon}),</li>
 <li>(q_0 \in Q) is the <strong>start state</strong>,</li>
 <li>(F \subseteq Q) is the set of <strong>accept states</strong>.</li>
 </ol>
-<h3 id="1-3-DFA-NFA"><a href="#1-3-DFA-NFA" class="headerlink" title="1.3 DFA &amp; NFA"></a>1.3 DFA &amp; NFA</h3><p>任意一个NFA都存在和它等价的DFA</p>
+<h3 id="1-3-DFA-NFA"><a class="header-anchor" href="#1-3-DFA-NFA">¶</a>1.3 DFA &amp; NFA</h3>
+<p>任意一个NFA都存在和它等价的DFA</p>
 <p>使用NFA节点的集合作为DFA的节点即可</p>
-<p>$(Q,\Sigma,\delta,q_0,F)\to(P(Q),\Sigma,\delta’,E(q_0),F’)$</p>
+<p>$(Q,\Sigma,\delta,q_0,F)\to(P(Q),\Sigma,\delta',E(q_0),F')$</p>
 <ol>
-<li><p>$Q\to P(Q)$取幂集</p>
+<li>
+<p>$Q\to P(Q)$取幂集</p>
 </li>
-<li><p>$\delta\to\delta’:\delta’(R,a)&#x3D;\bigcup{E(q)|q\in Q\wedge(\exists r\in R)(q\in \delta(r,a))}$</p>
+<li>
+<p>$\delta\to\delta':\delta'(R,a)=\bigcup{E(q)|q\in Q\wedge(\exists r\in R)(q\in \delta(r,a))}$</p>
 </li>
-<li><p>$q_0\to E(q_0)$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">initially set E(q) = &#123;q&#125;;</span><br><span class="line">    repeat</span><br><span class="line">        E′(q) = E(q)</span><br><span class="line">        ∀x∈E(q),if ∃y∈δ(x,ϵ) ∧y̸∈E(q),E(q) = E(q) ∪&#123;y&#125;</span><br><span class="line">    until E(q) = E′(q)</span><br><span class="line">return E(q)</span><br></pre></td></tr></table></figure></li>
-<li><p>$F’&#x3D;{R\in Q’|R\cap F\ne\varnothing}$</p>
+<li>
+<p>$q_0\to E(q_0)$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">initially set E(q) = &#123;q&#125;;</span><br><span class="line">    repeat</span><br><span class="line">        E′(q) = E(q)</span><br><span class="line">        ∀x∈E(q),if ∃y∈δ(x,ϵ) ∧y̸∈E(q),E(q) = E(q) ∪&#123;y&#125;</span><br><span class="line">    until E(q) = E′(q)</span><br><span class="line">return E(q)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>$F'={R\in Q'|R\cap F\ne\varnothing}$</p>
 </li>
 </ol>
-<h3 id="1-4-Regular"><a href="#1-4-Regular" class="headerlink" title="1.4 Regular"></a>1.4 Regular</h3><p>A language is called regular if some finite automata recognizes it.</p>
+<h3 id="1-4-Regular"><a class="header-anchor" href="#1-4-Regular">¶</a>1.4 Regular</h3>
+<p>A language is called regular if some finite automata recognizes it.</p>
 <p>具有封闭性的运算：</p>
 <ul>
-<li><strong>Union</strong>：$A\cup B&#x3D;{x|x\in A\vee x\in B}$</li>
-<li><strong>Concatenation</strong>: $A\circ B&#x3D;{xy|x\in A\wedge y\in B}$</li>
-<li><strong>Kleene Star</strong>: $A^*&#x3D;{x_1x_2\cdots x_k|k\geq 0 \wedge x_i\in A}$</li>
-<li><strong>Complement</strong>: $\bar A&#x3D;{x|x\notin A}$</li>
+<li><strong>Union</strong>：$A\cup B={x|x\in A\vee x\in B}$</li>
+<li><strong>Concatenation</strong>: $A\circ B={xy|x\in A\wedge y\in B}$</li>
+<li><strong>Kleene Star</strong>: $A^*={x_1x_2\cdots x_k|k\geq 0 \wedge x_i\in A}$</li>
+<li><strong>Complement</strong>: $\bar A={x|x\notin A}$</li>
 </ul>
 <p>注意：</p>
-<p>$(01)^<em>\epsilon&#x3D;(01)^</em>$</p>
-<p>$(01)^*\varnothing&#x3D;\varnothing$</p>
-<p>** $\varnothing^\ast&#x3D;{\epsilon}$**</p>
-<h3 id="1-5-Pumping-Lemma"><a href="#1-5-Pumping-Lemma" class="headerlink" title="1.5 Pumping Lemma"></a>1.5 Pumping Lemma</h3><p>证明不是正则语言：pumping lemma<br>对每个无限正规语言 $L$，存在一个常数 $p \ge 1$（pumping length），使得<br>对任意字符串 $s \in L$ 且 $|s| \ge p$，可以写成：$s &#x3D; xyz$，满足：</p>
+<p>$(01)^<em>\epsilon=(01)^</em>$</p>
+<p>$(01)^*\varnothing=\varnothing$</p>
+<p>** $\varnothing^\ast={\epsilon}$**</p>
+<h3 id="1-5-Pumping-Lemma"><a class="header-anchor" href="#1-5-Pumping-Lemma">¶</a>1.5 Pumping Lemma</h3>
+<p>证明不是正则语言：pumping lemma<br>
+对每个无限正规语言 $L$，存在一个常数 $p \ge 1$（pumping length），使得<br>
+对任意字符串 $s \in L$ 且 $|s| \ge p$，可以写成：$s = xyz$，满足：</p>
 <ol>
 <li>$|xy| \le p $（前 p 个字符内包含 x 和 y）</li>
 <li>$|y| \ge 1$ （y 至少非空）</li>
@@ -531,22 +547,29 @@
 <p>pumping lemma的证明使用抽屉原理</p>
 <p>它只是必要条件，但不充分。满足Pumping Lemma但不是正则语言的反例：</p>
 <ol>
-<li>$L&#x3D;{a^nb^nc^n}\cup{a^ib^jc^k|i,j,k不全相等}$</li>
-<li>$L&#x3D;{a^ib^jc^j|i\geq1,j\geq0}\cup{b^ic^j|i,j\geq0}$</li>
-<li>$L&#x3D;{a^ib^jc^k|i&#x3D;0\or j&#x3D;k}$</li>
+<li>$L={a^nb^nc^n}\cup{a^ib^jc^k|i,j,k不全相等}$</li>
+<li>$L={a^ib^jc^j|i\geq1,j\geq0}\cup{b^ic^j|i,j\geq0}$</li>
+<li>$L={a^ib^jc^k|i=0\or j=k}$</li>
 </ol>
-<h3 id="1-6-三个问题"><a href="#1-6-三个问题" class="headerlink" title="1.6 三个问题"></a>1.6 三个问题</h3><h4 id="Q1-Acceptance-w-in-L-A-？"><a href="#Q1-Acceptance-w-in-L-A-？" class="headerlink" title="Q1: Acceptance: $w\in L(A)$？"></a>Q1: Acceptance: $w\in L(A)$？</h4><p>可以解决，走一遍就可以了</p>
-<h4 id="Q2-Emptiness-L-A-varnothing"><a href="#Q2-Emptiness-L-A-varnothing" class="headerlink" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"></a>Q2: Emptiness: $L(A)&#x3D;\varnothing$?</h4><p>可以解决，看看所有可能的路径能不能走通就行</p>
-<h4 id="Q3-Equality-L-A-L-B"><a href="#Q3-Equality-L-A-L-B" class="headerlink" title="Q3: Equality: $L(A)&#x3D;L(B)$?"></a>Q3: Equality: $L(A)&#x3D;L(B)$?</h4><p>可以解决</p>
-<p>$\Leftrightarrow L(A)\oplus L(B)&#x3D;\varnothing$</p>
-<h2 id="2-Context-Free-Languages"><a href="#2-Context-Free-Languages" class="headerlink" title="2 Context Free Languages"></a>2 Context Free Languages</h2><h3 id="2-1-Definition"><a href="#2-1-Definition" class="headerlink" title="2.1 Definition"></a>2.1 Definition</h3><p>定义：四元组$(V,\Sigma,R,S)$</p>
+<h3 id="1-6-三个问题"><a class="header-anchor" href="#1-6-三个问题">¶</a>1.6 三个问题</h3>
+<h4 id="Q1-Acceptance-w-in-L-A-？"><a class="header-anchor" href="#Q1-Acceptance-w-in-L-A-？">¶</a>Q1: Acceptance: $w\in L(A)$？</h4>
+<p>可以解决，走一遍就可以了</p>
+<h4 id="Q2-Emptiness-L-A-varnothing"><a class="header-anchor" href="#Q2-Emptiness-L-A-varnothing">¶</a>Q2: Emptiness: $L(A)=\varnothing$?</h4>
+<p>可以解决，看看所有可能的路径能不能走通就行</p>
+<h4 id="Q3-Equality-L-A-L-B"><a class="header-anchor" href="#Q3-Equality-L-A-L-B">¶</a>Q3: Equality: $L(A)=L(B)$?</h4>
+<p>可以解决</p>
+<p>$\Leftrightarrow L(A)\oplus L(B)=\varnothing$</p>
+<h2 id="2-Context-Free-Languages"><a class="header-anchor" href="#2-Context-Free-Languages">¶</a>2 Context Free Languages</h2>
+<h3 id="2-1-Definition"><a class="header-anchor" href="#2-1-Definition">¶</a>2.1 Definition</h3>
+<p>定义：四元组$(V,\Sigma,R,S)$</p>
 <ol>
 <li>$V$ is a finite set called the variables,</li>
 <li>$\Sigma$ is a finite set, disjoint from V, called the terminals,</li>
 <li>$R$ is a finite set of rules, with each rule being a variable and a string of variables and terminals,</li>
 <li>$S\in V$ is the start variable.</li>
 </ol>
-<h3 id="2-2模糊性"><a href="#2-2模糊性" class="headerlink" title="2.2模糊性"></a>2.2模糊性</h3><ol>
+<h3 id="2-2模糊性"><a class="header-anchor" href="#2-2模糊性">¶</a>2.2模糊性</h3>
+<ol>
 <li>规定优先级：Leftmost Derivation，先展开左边的</li>
 </ol>
 <p>但是依旧不能解决模糊性，之后的称为真正的模糊性</p>
@@ -555,7 +578,8 @@
 <li>不存在去除一个CFG的Ambiguity的算法</li>
 <li>不存在一个判断任何CFG是否Ambiguous的算法</li>
 </ol>
-<h3 id="2-3-Chomsy范式"><a href="#2-3-Chomsy范式" class="headerlink" title="2.3 Chomsy范式"></a>2.3 Chomsy范式</h3><p>定义：</p>
+<h3 id="2-3-Chomsy范式"><a class="header-anchor" href="#2-3-Chomsy范式">¶</a>2.3 Chomsy范式</h3>
+<p>定义：</p>
 <ol>
 <li>只允许$A\to BC$或者$A\to a$，其中$a$是终结符，$B，C$是非起始变量的变量</li>
 <li>允许$S\to\epsilon$，其中$S$为起始符</li>
@@ -565,7 +589,8 @@
 <li>所有CFG都可以用Chomsy范式解释</li>
 <li>$\forall G\in\text{CFG},w\in L(G),w\ne\epsilon$ can be derived from the start state in exactly $2|w|-1$ steps</li>
 </ol>
-<h3 id="2-4-Pushdown-Automata-PDA"><a href="#2-4-Pushdown-Automata-PDA" class="headerlink" title="2.4 Pushdown Automata (PDA)"></a>2.4 Pushdown Automata (PDA)</h3><p>CFG对应的机器是 Pushdown automata</p>
+<h3 id="2-4-Pushdown-Automata-PDA"><a class="header-anchor" href="#2-4-Pushdown-Automata-PDA">¶</a>2.4 Pushdown Automata (PDA)</h3>
+<p>CFG对应的机器是 Pushdown automata</p>
 <p>定义是六元组$(Q,\Sigma,\Gamma,\delta,q_0,F)$</p>
 <ol>
 <li>$Q$ is a finite set of states,</li>
@@ -577,22 +602,30 @@
 </ol>
 <p>其实就是压栈弹栈的过程</p>
 <p>需要有一个起始符，先压入栈，表示栈底</p>
-<h3 id="2-5-CFG等价于PDA"><a href="#2-5-CFG等价于PDA" class="headerlink" title="2.5 CFG等价于PDA"></a>2.5 CFG等价于PDA</h3><ul>
-<li><p>已知CFG，构造PDA：画出状态转移图即可</p>
-</li>
-<li><p>已知PDA，构造CFG：</p>
+<h3 id="2-5-CFG等价于PDA"><a class="header-anchor" href="#2-5-CFG等价于PDA">¶</a>2.5 CFG等价于PDA</h3>
 <ul>
-<li><p>简化PDA</p>
+<li>
+<p>已知CFG，构造PDA：画出状态转移图即可</p>
+</li>
+<li>
+<p>已知PDA，构造CFG：</p>
+<ul>
+<li>
+<p>简化PDA</p>
 <ul>
 <li>只有一个接受状态</li>
 <li>接受状态后栈空</li>
 <li>每次转换仅仅压栈一次或者弹栈一次</li>
 </ul>
 </li>
-<li><p>分类构造CFG</p>
-<p>Give $(Q, Σ, Γ, δ, q_0, q_{accept})$. We construct CFL $G$.<br>with variables set ${A_{pq} | p, q ∈ Q}$, start variable $A_{q_0,q_{accept}}$. The rules are as followings:</p>
+<li>
+<p>分类构造CFG</p>
+<p>Give $(Q, Σ, Γ, δ, q_0, q_{accept})$. We construct CFL $G$.<br>
+with variables set ${A_{pq} | p, q ∈ Q}$, start variable $A_{q_0,q_{accept}}$. The rules are as followings:</p>
 <ol>
-<li>For each $p, q, r, s ∈ Q$, $u ∈ \Gamma$, and $a, b ∈ \Sigma_ε$, if<br>$(r, u) ∈ δ(p, a, ε)$ and $(q, ε) ∈ δ(s, b, u)$, put the rule<br>$A_{pq} → a A_{rs} b$ in $G$.</li>
+<li>For each $p, q, r, s ∈ Q$, $u ∈ \Gamma$, and $a, b ∈ \Sigma_ε$, if<br>
+$(r, u) ∈ δ(p, a, ε)$ and $(q, ε) ∈ δ(s, b, u)$, put the rule<br>
+$A_{pq} → a A_{rs} b$ in $G$.</li>
 <li>For each $p, q, r ∈ Q$, put the rule $A_{pq} → A_{pr} A_{rq}$ in $G$.</li>
 <li>Finally, for each $p ∈ Q$, put the rule $A_{pp} → ε$ in $G$</li>
 </ol>
@@ -600,26 +633,34 @@
 </ul>
 </li>
 </ul>
-<h3 id="2-6-性质"><a href="#2-6-性质" class="headerlink" title="2.6 性质"></a>2.6 性质</h3><ol>
-<li><p>对Union封闭</p>
-<p>$N_1\cup N_2&#x3D;(V_1\cup V_2\cup{S},\Sigma_1\cup\Sigma_2,R_1\cup R_2\cup{S\to S_1,S\to S_2},S)$</p>
+<h3 id="2-6-性质"><a class="header-anchor" href="#2-6-性质">¶</a>2.6 性质</h3>
+<ol>
+<li>
+<p>对Union封闭</p>
+<p>$N_1\cup N_2=(V_1\cup V_2\cup{S},\Sigma_1\cup\Sigma_2,R_1\cup R_2\cup{S\to S_1,S\to S_2},S)$</p>
 </li>
-<li><p>对Concat封闭</p>
-<p>$N_1 N_2&#x3D;(V_1\cup V_2\cup{S},\Sigma_1\cup\Sigma_2,R_1\cup R_2\cup{S\to S_1S_2},S)$</p>
+<li>
+<p>对Concat封闭</p>
+<p>$N_1 N_2=(V_1\cup V_2\cup{S},\Sigma_1\cup\Sigma_2,R_1\cup R_2\cup{S\to S_1S_2},S)$</p>
 </li>
-<li><p>对Kleen Star封闭</p>
-<p>$N_1^*&#x3D;(V_1\cup{S},\Sigma_1,R_1\cup{S\to \epsilon,S\to SS_1},S)$</p>
+<li>
+<p>对Kleen Star封闭</p>
+<p>$N_1^*=(V_1\cup{S},\Sigma_1,R_1\cup{S\to \epsilon,S\to SS_1},S)$</p>
 </li>
-<li><p>CFL与RL的交集是CFL</p>
+<li>
+<p>CFL与RL的交集是CFL</p>
 </li>
-<li><p>CFL与CFL的交集不一定是CFL</p>
+<li>
+<p>CFL与CFL的交集不一定是CFL</p>
 </li>
-<li><p>对补集也不封闭</p>
+<li>
+<p>对补集也不封闭</p>
 </li>
 </ol>
-<h3 id="2-7-Pumping-Lemma"><a href="#2-7-Pumping-Lemma" class="headerlink" title="2.7 Pumping Lemma"></a>2.7 Pumping Lemma</h3><p>类似于RL的pumping lemma，用于证明不是CFL</p>
+<h3 id="2-7-Pumping-Lemma"><a class="header-anchor" href="#2-7-Pumping-Lemma">¶</a>2.7 Pumping Lemma</h3>
+<p>类似于RL的pumping lemma，用于证明不是CFL</p>
 <p>对每个无限 CFL $L$，存在一个常数 $p \ge 1$（称为“pumping length”），使得</p>
-<p>对任意长度 $≥ p$ 的字符串 $s \in L$，都可以写成：$s &#x3D; uvwxy$，并满足：</p>
+<p>对任意长度 $≥ p$ 的字符串 $s \in L$，都可以写成：$s = uvwxy$，并满足：</p>
 <ol>
 <li>$|vwx| \le p $（“中间区段不长”）</li>
 <li>$|vx| \ge 1$ （“v 和 x 至少有一个非空”）</li>
@@ -627,22 +668,29 @@
 </ol>
 <p>证明使用抽屉原理</p>
 <p>同样具有反例：</p>
-<p>$L&#x3D;{a^ib^jc^kd^l|a&#x3D;0\or j&#x3D;k&#x3D;l}$</p>
-<h3 id="2-8-三个问题"><a href="#2-8-三个问题" class="headerlink" title="2.8 三个问题"></a>2.8 三个问题</h3><h4 id="Q1-Acceptance-w-in-L-A-？-1"><a href="#Q1-Acceptance-w-in-L-A-？-1" class="headerlink" title="Q1: Acceptance: $w\in L(A)$？"></a>Q1: Acceptance: $w\in L(A)$？</h4><p>可以解决，转换为Chomsky范式，就必然能够在有限步内识别完</p>
-<h4 id="Q2-Emptiness-L-A-varnothing-1"><a href="#Q2-Emptiness-L-A-varnothing-1" class="headerlink" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"></a>Q2: Emptiness: $L(A)&#x3D;\varnothing$?</h4><p>可以解决，不断扩增所有“可生成变量”</p>
-<h4 id="Q3-Equality-L-A-L-B-1"><a href="#Q3-Equality-L-A-L-B-1" class="headerlink" title="Q3: Equality: $L(A)&#x3D;L(B)$?"></a>Q3: Equality: $L(A)&#x3D;L(B)$?</h4><p>不可以解决</p>
-<h3 id="2-9-DPDA-DCFL"><a href="#2-9-DPDA-DCFL" class="headerlink" title="2.9 DPDA &amp; DCFL"></a>2.9 DPDA &amp; DCFL</h3><p>就是确定PDA和确定CFL</p>
+<p>$L={a^ib^jc^kd^l|a=0\or j=k=l}$</p>
+<h3 id="2-8-三个问题"><a class="header-anchor" href="#2-8-三个问题">¶</a>2.8 三个问题</h3>
+<h4 id="Q1-Acceptance-w-in-L-A-？-2"><a class="header-anchor" href="#Q1-Acceptance-w-in-L-A-？-2">¶</a>Q1: Acceptance: $w\in L(A)$？</h4>
+<p>可以解决，转换为Chomsky范式，就必然能够在有限步内识别完</p>
+<h4 id="Q2-Emptiness-L-A-varnothing-2"><a class="header-anchor" href="#Q2-Emptiness-L-A-varnothing-2">¶</a>Q2: Emptiness: $L(A)=\varnothing$?</h4>
+<p>可以解决，不断扩增所有“可生成变量”</p>
+<h4 id="Q3-Equality-L-A-L-B-2"><a class="header-anchor" href="#Q3-Equality-L-A-L-B-2">¶</a>Q3: Equality: $L(A)=L(B)$?</h4>
+<p>不可以解决</p>
+<h3 id="2-9-DPDA-DCFL"><a class="header-anchor" href="#2-9-DPDA-DCFL">¶</a>2.9 DPDA &amp; DCFL</h3>
+<p>就是确定PDA和确定CFL</p>
 <p>类似DCFL和CFL关系类似于DFA和NFA</p>
 <p>但是DCFL和CFL是不等价的</p>
 <p>DCFL对补集是封闭的</p>
 <p>不具有模糊性</p>
 <p>能写成LR(k)文法（使用DK-test检测）</p>
-<h2 id="3-Turing-Machine"><a href="#3-Turing-Machine" class="headerlink" title="3 Turing Machine"></a>3 Turing Machine</h2><h3 id="3-1-Definition"><a href="#3-1-Definition" class="headerlink" title="3.1 Definition"></a>3.1 Definition</h3><p>7元组,$(Q,\Sigma,\Gamma,\delta,q_0,q_\text{accept},q_\text{reject})$, where $Q,\Sigma,\Gamma$ are all finite and</p>
+<h2 id="3-Turing-Machine"><a class="header-anchor" href="#3-Turing-Machine">¶</a>3 Turing Machine</h2>
+<h3 id="3-1-Definition"><a class="header-anchor" href="#3-1-Definition">¶</a>3.1 Definition</h3>
+<p>7元组,$(Q,\Sigma,\Gamma,\delta,q_0,q_\text{accept},q_\text{reject})$, where $Q,\Sigma,\Gamma$ are all finite and</p>
 <ol>
 <li>$Q$ is a set of states,</li>
 <li>$\Sigma$ is the input alphabet not containing the blank symbol $\sqcup$,</li>
 <li>$\Gamma$ is the tape alphabet, where $\sqcup∈\Gamma$ and $\Sigma \subseteq\Gamma$,</li>
-<li>$\delta: Q×\Gamma →Q×\Gamma ×{L,R}$is the transition function, (L, R means to move left&#x2F;right after current step)</li>
+<li>$\delta: Q×\Gamma →Q×\Gamma ×{L,R}$is the transition function, (L, R means to move left/right after current step)</li>
 <li>$q_0 \in Q$ is the start state,</li>
 <li>$q_\text{accept} \in Q$ is the accept state, and</li>
 <li>$q_\text{reject}\in Q$ is the reject state, where $q_\text{reject}\ne q_\text{accept}$.</li>
@@ -653,85 +701,103 @@
 <li>reject</li>
 <li>Non-halting</li>
 </ol>
-<h3 id="3-2-Variants-of-Turing-Machine"><a href="#3-2-Variants-of-Turing-Machine" class="headerlink" title="3.2 Variants of Turing Machine"></a>3.2 Variants of Turing Machine</h3><h4 id="Multitape-Turing-Machines"><a href="#Multitape-Turing-Machines" class="headerlink" title="Multitape Turing Machines"></a>Multitape Turing Machines</h4><p>$δ: Q×\Gamma^k →Q×\Gamma^k ×{L,R,S}^k$</p>
+<h3 id="3-2-Variants-of-Turing-Machine"><a class="header-anchor" href="#3-2-Variants-of-Turing-Machine">¶</a>3.2 Variants of Turing Machine</h3>
+<h4 id="Multitape-Turing-Machines"><a class="header-anchor" href="#Multitape-Turing-Machines">¶</a>Multitape Turing Machines</h4>
+<p>$δ: Q×\Gamma^k →Q×\Gamma^k ×{L,R,S}^k$</p>
 <p>多带图灵机与单带图灵机等价</p>
-<h4 id="Non-deterministic-Turing-Machine"><a href="#Non-deterministic-Turing-Machine" class="headerlink" title="Non-deterministic Turing Machine"></a>Non-deterministic Turing Machine</h4><p>$\delta:Q\times \Gamma\to\mathcal P(Q\times \Gamma\times{L,R})$</p>
+<h4 id="Non-deterministic-Turing-Machine"><a class="header-anchor" href="#Non-deterministic-Turing-Machine">¶</a>Non-deterministic Turing Machine</h4>
+<p>$\delta:Q\times \Gamma\to\mathcal P(Q\times \Gamma\times{L,R})$</p>
 <p>与确定图灵机等价</p>
 <ul>
 <li>确定图灵机相当于宽度优先遍历非确定图灵机的树</li>
 <li>不能深度优先遍历是因为会有死循环的情况</li>
 </ul>
-<h4 id="Enumerator"><a href="#Enumerator" class="headerlink" title="Enumerator"></a>Enumerator</h4><p>打印出自己所有可接受结果的机器</p>
+<h4 id="Enumerator"><a class="header-anchor" href="#Enumerator">¶</a>Enumerator</h4>
+<p>打印出自己所有可接受结果的机器</p>
 <p>也与图灵机等价</p>
-<h2 id="4-Decidability"><a href="#4-Decidability" class="headerlink" title="4 Decidability"></a>4 Decidability</h2><p>整理</p>
+<h2 id="4-Decidability"><a class="header-anchor" href="#4-Decidability">¶</a>4 Decidability</h2>
+<p>整理</p>
 <ul>
-<li>Decidable:<ul>
-<li>$A_\text{DFA}&#x3D;{\langle B,w\rangle|B\text{ is a DFA that accepts input string }w}$</li>
-<li>$A_\text{NFA}&#x3D;{\langle B,w\rangle|B\text{ is an NFA that accepts input string }w}$</li>
-<li>$A_\text{REX}&#x3D;{\langle R,w\rangle|R\text{ is a regular expression that generates }w}$</li>
-<li>$E_\text{DFA}&#x3D;{\langle A\rangle|A\text{ is a DFA and }L(A)&#x3D;\varnothing}$</li>
-<li>$EQ_\text{DFA}&#x3D;{\langle A,B\rangle|A\text{ and }B\text{ are DFAs and }L(A)&#x3D;L(B)}$</li>
-<li>$A_\text{CFG}&#x3D;{\langle G,w\rangle|G \text{ is a CFG that generates }w}$</li>
-<li>$E_\text{CFG}&#x3D;{\langle G\rangle|G\text{ is a CFG and  }L(G)&#x3D;\varnothing}$</li>
-<li>$A_\text{LBA}&#x3D;{\langle M,w\rangle|M\text{ is an LBA that accepts }w}$</li>
+<li>Decidable:
+<ul>
+<li>$A_\text{DFA}={\langle B,w\rangle|B\text{ is a DFA that accepts input string }w}$</li>
+<li>$A_\text{NFA}={\langle B,w\rangle|B\text{ is an NFA that accepts input string }w}$</li>
+<li>$A_\text{REX}={\langle R,w\rangle|R\text{ is a regular expression that generates }w}$</li>
+<li>$E_\text{DFA}={\langle A\rangle|A\text{ is a DFA and }L(A)=\varnothing}$</li>
+<li>$EQ_\text{DFA}={\langle A,B\rangle|A\text{ and }B\text{ are DFAs and }L(A)=L(B)}$</li>
+<li>$A_\text{CFG}={\langle G,w\rangle|G \text{ is a CFG that generates }w}$</li>
+<li>$E_\text{CFG}={\langle G\rangle|G\text{ is a CFG and  }L(G)=\varnothing}$</li>
+<li>$A_\text{LBA}={\langle M,w\rangle|M\text{ is an LBA that accepts }w}$</li>
 </ul>
 </li>
-<li>Recognizable<ul>
-<li>$A_\text{TM}&#x3D;{\langle M,w\rangle|M\text{ is a TM and }M\text{ accepts } m}$</li>
-<li>$HALT_\text{TM}&#x3D;{\langle M,w\rangle|M \text{ is a TM and }M\text{ halts on input } w}$</li>
+<li>Recognizable
+<ul>
+<li>$A_\text{TM}={\langle M,w\rangle|M\text{ is a TM and }M\text{ accepts } m}$</li>
+<li>$HALT_\text{TM}={\langle M,w\rangle|M \text{ is a TM and }M\text{ halts on input } w}$</li>
 </ul>
 </li>
-<li>co-Recognizable<ul>
-<li>$E_\text{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and }L(M)&#x3D;\varnothing}$</li>
-<li>$EQ_\text{CFG}&#x3D;{\langle G,H\rangle|G \text{ and } H\text{ are CFGs and }L(G)&#x3D;L(H)}$</li>
+<li>co-Recognizable
+<ul>
+<li>$E_\text{TM}={\langle M\rangle|M\text{ is a TM and }L(M)=\varnothing}$</li>
+<li>$EQ_\text{CFG}={\langle G,H\rangle|G \text{ and } H\text{ are CFGs and }L(G)=L(H)}$</li>
 </ul>
 </li>
-<li>not Recognizable and co-Recognizable<ul>
-<li>$EQ_\text{TM}&#x3D;{\langle A,B\rangle|A\text{ and }B\text{ are TMs and }L(A)&#x3D;L(B)}$</li>
-<li>$REGULAR_\text{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and }L(M)\text{ is a regular language}}$</li>
-<li>$E_\text{LBA}&#x3D;{\langle M\rangle|M\text{ is an LBA and }L(M)&#x3D;\varnothing}$</li>
+<li>not Recognizable and co-Recognizable
+<ul>
+<li>$EQ_\text{TM}={\langle A,B\rangle|A\text{ and }B\text{ are TMs and }L(A)=L(B)}$</li>
+<li>$REGULAR_\text{TM}={\langle M\rangle|M\text{ is a TM and }L(M)\text{ is a regular language}}$</li>
+<li>$E_\text{LBA}={\langle M\rangle|M\text{ is an LBA and }L(M)=\varnothing}$</li>
 <li>$ALL_\text{CFG}$</li>
 </ul>
 </li>
 </ul>
-<p>$\text{Decidabe}&#x3D;\text{Recognizable}\cap \text{co-Recognizable}$</p>
+<p>$\text{Decidabe}=\text{Recognizable}\cap \text{co-Recognizable}$</p>
 <p>？→ $\exists$ → $\forall$</p>
-<p>连续的 $\exists$ &#x2F; $\forall$多个视作一个 $\exists$ &#x2F; $\forall$</p>
-<p> $\forall$越多，复杂性越大</p>
-<p>$A_\text{TM} &#x3D; {⟨M,w⟩|M\text{ is a TM and }M\text{ accepts }w}$是undecidable但是recognizable的</p>
-<p>${\overline{A_\text{TM}}} &#x3D; {⟨M,w⟩|M\text{ is a TM and }M\text{ rejects }w}$是unrecognizable的，称为co-turing recognizable</p>
-<p>对于1的证明，可以通过构造$D$，$D(\langle M\rangle)&#x3D;\begin{cases}\text{accept if }M\text{ does not accept }\langle M\rangle,\\text{reject if }M\text{ accepts }\langle M\rangle,\end{cases}$</p>
+<p>连续的 $\exists$ / $\forall$多个视作一个 $\exists$ / $\forall$</p>
+<p>$\forall$越多，复杂性越大</p>
+<p>$A_\text{TM} = {⟨M,w⟩|M\text{ is a TM and }M\text{ accepts }w}$是undecidable但是recognizable的</p>
+<p>${\overline{A_\text{TM}}} = {⟨M,w⟩|M\text{ is a TM and }M\text{ rejects }w}$是unrecognizable的，称为co-turing recognizable</p>
+<p>对于1的证明，可以通过构造$D$，$D(\langle M\rangle)=\begin{cases}\text{accept if }M\text{ does not accept }\langle M\rangle,\\text{reject if }M\text{ accepts }\langle M\rangle,\end{cases}$</p>
 <p>那么$D\langle D\rangle$就是一个悖论</p>
 <p>对于2的证明，讨论一下$L$和$\bar L$在$A_\text{TM}$和$\overline{ A_\text{TM}}$接受的情况即可</p>
-<h2 id="5-Reducibility"><a href="#5-Reducibility" class="headerlink" title="5 Reducibility"></a>5 Reducibility</h2><p>用规约了证明问题</p>
-<h3 id="Undecidable-Problems-for-Language-Theory"><a href="#Undecidable-Problems-for-Language-Theory" class="headerlink" title="Undecidable Problems for Language Theory"></a>Undecidable Problems for Language Theory</h3><h4 id="HALT-text-TM"><a href="#HALT-text-TM" class="headerlink" title="$HALT_\text{TM}$"></a>$HALT_\text{TM}$</h4><p>$HALT_\text{TM} &#x3D; {\langle M,w\rangle|M\text{ is a TM and } M\text{halts on input } w}$ is undecidable</p>
+<h2 id="5-Reducibility"><a class="header-anchor" href="#5-Reducibility">¶</a>5 Reducibility</h2>
+<p>用规约了证明问题</p>
+<h3 id="Undecidable-Problems-for-Language-Theory"><a class="header-anchor" href="#Undecidable-Problems-for-Language-Theory">¶</a>Undecidable Problems for Language Theory</h3>
+<h4 id="HALT-text-TM"><a class="header-anchor" href="#HALT-text-TM">¶</a>$HALT_\text{TM}$</h4>
+<p>$HALT_\text{TM} = {\langle M,w\rangle|M\text{ is a TM and } M\text{halts on input } w}$ is undecidable</p>
 <p>将其直接归约为$A_\text{TM}$即可</p>
-<h4 id="E-text-TM"><a href="#E-text-TM" class="headerlink" title="$E_\text{TM}$"></a>$E_\text{TM}$</h4><p>$E_{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and }L(M)&#x3D;\varnothing }$ is undecidable</p>
-<p>构造一个$A’<em>\text{TM}$，参数为$A</em>\text{TM}(M,w)$，输入为$x$</p>
+<h4 id="E-text-TM"><a class="header-anchor" href="#E-text-TM">¶</a>$E_\text{TM}$</h4>
+<p>$E_{TM}={\langle M\rangle|M\text{ is a TM and }L(M)=\varnothing }$ is undecidable</p>
+<p>构造一个$A'<em>\text{TM}$，参数为$A</em>\text{TM}(M,w)$，输入为$x$</p>
 <p>在$A_\text{TM}(M,w)$接受时接受，拒绝时拒绝</p>
 <p>所以输出与$x$无关，可接受的是全集或者空集</p>
 <p>因为$A_\text{TM}$是undecidable的，所以$E_\text{TM}$也是undecidable的</p>
-<h4 id="Regular-text-TM"><a href="#Regular-text-TM" class="headerlink" title="$Regular_\text{TM}$"></a>$Regular_\text{TM}$</h4><p>$Regular_\text{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and } L(M)\in RL}$ is undecidable</p>
+<h4 id="Regular-text-TM"><a class="header-anchor" href="#Regular-text-TM">¶</a>$Regular_\text{TM}$</h4>
+<p>$Regular_\text{TM}={\langle M\rangle|M\text{ is a TM and } L(M)\in RL}$ is undecidable</p>
 <p>构造一个$S_{m,w}(x)$</p>
-<p>如果$x&#x3D;0^n1^n$ accept</p>
+<p>如果$x=0^n1^n$ accept</p>
 <p>如果$x\ne 0^n1^n$ return $A_\text{TM}(M,w)$</p>
-<p>$\therefore L(S)&#x3D;\begin{cases}\Sigma^* &amp; \langle M,w\rangle\in A_\text{TM}\{0^n1^n}&amp;\langle M,w\rangle\notin A_\text{TM}\end{cases}$</p>
+<p>$\therefore L(S)=\begin{cases}\Sigma^* &amp; \langle M,w\rangle\in A_\text{TM}\{0^n1^n}&amp;\langle M,w\rangle\notin A_\text{TM}\end{cases}$</p>
 <p>$\therefore \langle M,w\rangle\in A_\text{TM}\Leftrightarrow S\in Regular_\text{TM}$</p>
 <p>所以是undecidable的</p>
-<h4 id="EQ-text-TM"><a href="#EQ-text-TM" class="headerlink" title="$EQ_\text{TM}$"></a>$EQ_\text{TM}$</h4><p>$EQ_\text{TM} &#x3D; {\langle M_1,M_2\rangle|M_1\text{ and }M_2\text{ are TMs and } L(M_1)&#x3D;L(M_2)}$</p>
+<h4 id="EQ-text-TM"><a class="header-anchor" href="#EQ-text-TM">¶</a>$EQ_\text{TM}$</h4>
+<p>$EQ_\text{TM} = {\langle M_1,M_2\rangle|M_1\text{ and }M_2\text{ are TMs and } L(M_1)=L(M_2)}$</p>
 <p>取特例，令$M_2$为空，归约到$E_\text{TM}$即可</p>
-<h3 id="Reductions-via-computation-histories"><a href="#Reductions-via-computation-histories" class="headerlink" title="Reductions via computation histories"></a>Reductions via computation histories</h3><p>定义计算历史$C_1,\cdots, C_l$根据最后一个状态是accept还是reject定义它是接受&#x2F;拒绝的计算历史</p>
+<h3 id="Reductions-via-computation-histories"><a class="header-anchor" href="#Reductions-via-computation-histories">¶</a>Reductions via computation histories</h3>
+<p>定义计算历史$C_1,\cdots, C_l$根据最后一个状态是accept还是reject定义它是接受/拒绝的计算历史</p>
 <p>Linear Bounded Automata: 一个图灵机，但是指针只能在输入的范围上移动</p>
 <p>$A_\text{LBA}$ is decidable</p>
 <p>虽然LBA本身有无限的状态，但是给定输入之后，LBA的状态就是有限的，所以它是decidable的</p>
-<h4 id="E-text-LBA"><a href="#E-text-LBA" class="headerlink" title="$E_\text{LBA}$"></a>$E_\text{LBA}$</h4><p>$E_{LBA}$ is undecidable，也通过$A_\text{TM}$来归约</p>
+<h4 id="E-text-LBA"><a class="header-anchor" href="#E-text-LBA">¶</a>$E_\text{LBA}$</h4>
+<p>$E_{LBA}$ is undecidable，也通过$A_\text{TM}$来归约</p>
 <p>构造$B_{m,w}$，s.t. $\langle M,w\rangle\in A_\text{TM}\Leftrightarrow L(B_{m,w})\ne \varnothing$</p>
-<p>定义$B_{m,w}(x) &#x3D; B_\text{accept} \iff x \text{ is an accepting hostory of }M\text{ on }w$</p>
+<p>定义$B_{m,w}(x) = B_\text{accept} \iff x \text{ is an accepting hostory of }M\text{ on }w$</p>
 <p>直观来看，就是因为LBA无法在有限的空间里模拟$A_\text{TM}$，所以直接把$A_\text{TM}$的计算过程展开作为$B_\text{TM}$的输入，这样就可以放得下了</p>
-<h4 id="ALL-text-CFG"><a href="#ALL-text-CFG" class="headerlink" title="$ALL_\text{CFG}$"></a>$ALL_\text{CFG}$</h4><p>$ALL_\text{CFG} &#x3D; {\langle G\rangle|G \text{ is an CFG and }L(G)&#x3D;\Sigma^*}$  is undecidable</p>
+<h4 id="ALL-text-CFG"><a class="header-anchor" href="#ALL-text-CFG">¶</a>$ALL_\text{CFG}$</h4>
+<p>$ALL_\text{CFG} = {\langle G\rangle|G \text{ is an CFG and }L(G)=\Sigma^*}$  is undecidable</p>
 <p>$ALL_\text{CFG}\text{ is undecidable}\iff \overline{ALL_\text{CFG}} \text{ is undecidable}$</p>
 <p>下证$A_\text{TM}\leq \overline{ALL_\text{CFG}}$</p>
-<p><strong>接受计算历史 H 的格式：</strong> H&#x3D;#C1#C2#…#Cℓ#。</p>
+<p><strong>接受计算历史 H 的格式：</strong> H=#C1#C2#…#Cℓ#。</p>
 <p>G 需要生成所有不符合 H 特征的字符串。这些字符串不符合 H 的原因分为三类：</p>
 <ol>
 <li>无效开始 C1： 字符串不以 M 在 w 上的起始配置 C1 开头。</li>
@@ -740,8 +806,9 @@
 </ol>
 <p>G 识别的语言 L(G) 是识别这三类错误的语言的并集。前两类容易用 CFG 实现，第三类是关键。</p>
 <p>通过构造一个合适的PDA来实现这一点，但是堆栈会有问题</p>
-<p>让奇数位C<del>i</del>保持正序编码，偶数位保持逆序编码</p>
-<h3 id="Mapping-Reducibility"><a href="#Mapping-Reducibility" class="headerlink" title="Mapping Reducibility"></a>Mapping Reducibility</h3><p>函数的定义：$\Sigma^<em>\to\Sigma^</em>$，对于图灵机$M$，对于每一个输入$w$，终止时tape上的是$f(w)$</p>
+<p>让奇数位C~i~保持正序编码，偶数位保持逆序编码</p>
+<h3 id="Mapping-Reducibility"><a class="header-anchor" href="#Mapping-Reducibility">¶</a>Mapping Reducibility</h3>
+<p>函数的定义：$\Sigma^<em>\to\Sigma^</em>$，对于图灵机$M$，对于每一个输入$w$，终止时tape上的是$f(w)$</p>
 <p>定义mapping reducibility $A\leq_m B$: $\exists$ a computable function $f,\forall w\in\Sigma^*,w\in A\iff f(w)\in B$</p>
 <p>$A\leq_m B\iff\bar A\leq_m\bar B$:</p>
 <ol>
@@ -754,20 +821,23 @@
 <p>任何关于图灵机所识别语言的非平凡性质，都是不可判定的。</p>
 <p>两个核心前提：</p>
 <ul>
-<li><strong>是关于语言的性质（Property of Language）</strong>： 该性质只取决于图灵机接受哪些字符串，即如果 L(M1)&#x3D;L(M2)，那么它们必须同时具备或不具备该性质。</li>
+<li><strong>是关于语言的性质（Property of Language）</strong>： 该性质只取决于图灵机接受哪些字符串，即如果 L(M1)=L(M2)，那么它们必须同时具备或不具备该性质。</li>
 <li><strong>它是非平凡的（Non-trivial）</strong>： 这个性质既不是“永远成立”的，也不是“永远不成立”的。</li>
 </ul>
 <p>证明思路：</p>
 <ul>
-<li><p>定义</p>
+<li>
+<p>定义</p>
 <ul>
-<li>我现在有一个性质语言的性质$p$，满足$P_\text{TM}(x)&#x3D;{x|x是一个满足p的语言}$，设$Q\in P_\text{TM}$，$\varnothing\notin P_\text{TM}$（如果属于则证明其补语言是undecidable的），$Q$对应的图灵机是$M_q$</li>
+<li>我现在有一个性质语言的性质$p$，满足$P_\text{TM}(x)={x|x是一个满足p的语言}$，设$Q\in P_\text{TM}$，$\varnothing\notin P_\text{TM}$（如果属于则证明其补语言是undecidable的），$Q$对应的图灵机是$M_q$</li>
 <li>如果$P_\text{TM}$是decidable的，设它的判断器为$R$</li>
 </ul>
 </li>
-<li><p>现在开始把$P_\text{TM}$规约到$A_\text{TM}$：</p>
+<li>
+<p>现在开始把$P_\text{TM}$规约到$A_\text{TM}$：</p>
 <ul>
-<li><p>要测试$A(M,w)$的 时候，构造辅助TM $M_w$ ，$M_w(x)$定义为:</p>
+<li>
+<p>要测试$A(M,w)$的 时候，构造辅助TM $M_w$ ，$M_w(x)$定义为:</p>
 <p>运行$M(w)$，</p>
 <ol>
 <li>如果接受，则运行$M_q(x)$，$M_q$接受则$M_w$接受，$M_q$不接受则$M_w$不接受</li>
@@ -776,114 +846,130 @@
 </li>
 </ul>
 </li>
-<li><p>这样以来可以通过$R$构造$A_\text{TM}$的判别器$S$</p>
+<li>
+<p>这样以来可以通过$R$构造$A_\text{TM}$的判别器$S$</p>
 <ul>
 <li>如果$R(M_w)$接受，则$M_w$接受</li>
 <li>如果$R(M_w)$不接受，则$M_w$不接受</li>
 </ul>
 </li>
 </ul>
-<h2 id="6-Godel-Encoding"><a href="#6-Godel-Encoding" class="headerlink" title="6 Godel Encoding"></a>6 Godel Encoding</h2><p>构造一个程序到自然数的单射</p>
-<h2 id="7-Time-Complexity"><a href="#7-Time-Complexity" class="headerlink" title="7 Time Complexity"></a>7 Time Complexity</h2><p>图灵机$o(n\log n)$ 内能识别的，是正则语言</p>
+<h2 id="6-Godel-Encoding"><a class="header-anchor" href="#6-Godel-Encoding">¶</a>6 Godel Encoding</h2>
+<p>构造一个程序到自然数的单射</p>
+<h2 id="7-Time-Complexity"><a class="header-anchor" href="#7-Time-Complexity">¶</a>7 Time Complexity</h2>
+<p>图灵机$o(n\log n)$ 内能识别的，是正则语言</p>
 <p>多带图灵机$O(t(n))$能做的，单带图灵机$O(t(n^2))$也能做的</p>
 <p>非确定图灵机$O(t(n))$能做的，确定图灵机$2^{O(t(n))}$也能做的</p>
-<h3 id="P-问题"><a href="#P-问题" class="headerlink" title="P 问题"></a>P 问题</h3><p>P问题是在确定单带图灵机上，多项式时间内可以decidable的问题</p>
+<h3 id="P-问题"><a class="header-anchor" href="#P-问题">¶</a>P 问题</h3>
+<p>P问题是在确定单带图灵机上，多项式时间内可以decidable的问题</p>
 <p>文本的编码：必须与文本长度的对数成正比（因此拒绝1进制）</p>
 <ul>
-<li>$PATH &#x3D; {\langle G,s,t\rangle|G\text{ is a directed graph that has a directed path from }s\text{ and }t}$</li>
-<li>$RELPRIME&#x3D;{\langle x,y\rangle|x\text{ and }y\text{ are relatively prime}}$</li>
+<li>$PATH = {\langle G,s,t\rangle|G\text{ is a directed graph that has a directed path from }s\text{ and }t}$</li>
+<li>$RELPRIME={\langle x,y\rangle|x\text{ and }y\text{ are relatively prime}}$</li>
 <li>CFL</li>
 </ul>
-<h3 id="NP-问题"><a href="#NP-问题" class="headerlink" title="NP 问题"></a>NP 问题</h3><p>NP问题是多项式时间可接受的</p>
-<p>NP问题是在不确定单带图灵机上，多项式时间内可以decidable的问题&#x2F;在确定单带图灵机上，多项式时间内可以verify的问题</p>
+<h3 id="NP-问题"><a class="header-anchor" href="#NP-问题">¶</a>NP 问题</h3>
+<p>NP问题是多项式时间可接受的</p>
+<p>NP问题是在不确定单带图灵机上，多项式时间内可以decidable的问题/在确定单带图灵机上，多项式时间内可以verify的问题</p>
 <ul>
-<li>$HAMPATH&#x3D;{\langle G,s,t\rangle|G\text{ is a directed graph with a hamilton path from }s\text{ to }t}$</li>
+<li>$HAMPATH={\langle G,s,t\rangle|G\text{ is a directed graph with a hamilton path from }s\text{ to }t}$</li>
 </ul>
-<h3 id="NPC问题"><a href="#NPC问题" class="headerlink" title="NPC问题"></a>NPC问题</h3><ul>
+<h3 id="NPC问题"><a class="header-anchor" href="#NPC问题">¶</a>NPC问题</h3>
+<ul>
 <li>SAT</li>
 <li>3SAT</li>
 <li>CLIQUE</li>
 <li>Vertex Cover</li>
 </ul>
-<h3 id="归约"><a href="#归约" class="headerlink" title="归约"></a>归约</h3><p>A归约到B &#x3D; A≤B &#x3D; A难度小于等于B</p>
+<h3 id="归约"><a class="header-anchor" href="#归约">¶</a>归约</h3>
+<p>A归约到B = A≤B = A难度小于等于B</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    %% 1. 结构定义</span><br><span class="line">    SAT[SAT] --&gt; 3SAT[3SAT]</span><br><span class="line">    3SAT--&gt;SUBSET-SUM[SUBSET-SUM]</span><br><span class="line">  </span><br><span class="line">    %% 左侧分支：子图/覆盖类</span><br><span class="line">    3SAT --&gt; CLIQUE[CLIQUE]</span><br><span class="line">    3SAT --&gt; VC[Vertex Cover]</span><br><span class="line">    CLIQUE &lt;--&gt; VC</span><br><span class="line"></span><br><span class="line">    %% 右侧分支：路径类</span><br><span class="line">    3SAT --&gt; DHAMP[Directed HAMPATH]</span><br><span class="line">    DHAMP --&gt; HAMP[Undirected HAMPATH]</span><br><span class="line">    HAMP --&gt; TSP[TSP]</span><br><span class="line"></span><br><span class="line">    %% 2. 样式定义</span><br><span class="line">    classDef logic fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;</span><br><span class="line">    classDef graphNode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;</span><br><span class="line">    classDef pathNode fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;</span><br><span class="line"></span><br><span class="line">    %% 3. 应用样式</span><br><span class="line">    class SAT,3SAT logic;</span><br><span class="line">    class CLIQUE,VC graphNode;</span><br><span class="line">    class DHAMP,HAMP,TSP pathNode;</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-Space-Complexity"><a href="#8-Space-Complexity" class="headerlink" title="8 Space Complexity"></a>8 Space Complexity</h2><p>定义：</p>
+<h2 id="8-Space-Complexity"><a class="header-anchor" href="#8-Space-Complexity">¶</a>8 Space Complexity</h2>
+<p>定义：</p>
 <p>Space(N)：在DTM上的空间复杂度</p>
 <p>NSpace(N): 在NTM上的空间复杂度</p>
 <p>考虑的都是decider而不是verifyer</p>
-<p>在空间复杂度上，PSPACE&#x3D;NPSPACE</p>
+<p>在空间复杂度上，PSPACE=NPSPACE</p>
 <p>事实上NPSPACE(f(n))$\subseteq$SPACE(f^2^(n))</p>
 <p>P $\subseteq$ PSPACE</p>
-<p>NP $\subseteq$ NPSPACE $&#x3D;$ PSPACE $\subseteq$ EXPTIME</p>
-<p>NPSPACE&#x3D;co-NPSPACE</p>
+<p>NP $\subseteq$ NPSPACE $=$ PSPACE $\subseteq$ EXPTIME</p>
+<p>NPSPACE=co-NPSPACE</p>
 <p>PSPACE上的归约依旧是多项式时间内的归约</p>
 <p>PSPACE-complete: TQBF</p>
 <p>LSPACE：输入带（只读）是线性的，但是工作带（读写）是$O(\log n)$</p>
-<p>NL$\subseteq$P，L&#x3D;co-NL，但是不清楚L与NL是否相等（倾向于不等）</p>
+<p>NL$\subseteq$P，L=co-NL，但是不清楚L与NL是否相等（倾向于不等）</p>
 <p>PATH$\in$NLC</p>
 <p>NL-Complete的reducible，是log-space reducibility，而不是polynomial time reducible</p>
 <p>规约的过程中，A的输出，B的输入，可能是多项式空间的——解决方法，每次只读取一个字符，要读下一个字符就重新算一遍</p>
-<h2 id="9-Intractability"><a href="#9-Intractability" class="headerlink" title="9 Intractability"></a>9 Intractability</h2><h3 id="Hierarchy-Theorems"><a href="#Hierarchy-Theorems" class="headerlink" title="Hierarchy Theorems"></a>Hierarchy Theorems</h3><h4 id="Space-constructible"><a href="#Space-constructible" class="headerlink" title="Space constructible"></a>Space constructible</h4><p>判断一个算法是否是$O(f(n))$的，计算算法复杂度的算法的复杂度本身，也必须是$O(f(n))$的</p>
+<h2 id="9-Intractability"><a class="header-anchor" href="#9-Intractability">¶</a>9 Intractability</h2>
+<h3 id="Hierarchy-Theorems"><a class="header-anchor" href="#Hierarchy-Theorems">¶</a>Hierarchy Theorems</h3>
+<h4 id="Space-constructible"><a class="header-anchor" href="#Space-constructible">¶</a>Space constructible</h4>
+<p>判断一个算法是否是$O(f(n))$的，计算算法复杂度的算法的复杂度本身，也必须是$O(f(n))$的</p>
 <p>如果$f(n)$是$o(n)$的，就使用工作带只读带的逻辑（类似LSPACE）</p>
-<h4 id="Space-hierarchy-theorem"><a href="#Space-hierarchy-theorem" class="headerlink" title="Space hierarchy theorem"></a>Space hierarchy theorem</h4><p>对于任何<strong>空间可构造函数</strong> $f(n)$，一定存在一个语言（即一个问题）A，它：</p>
+<h4 id="Space-hierarchy-theorem"><a class="header-anchor" href="#Space-hierarchy-theorem">¶</a>Space hierarchy theorem</h4>
+<p>对于任何<strong>空间可构造函数</strong> $f(n)$，一定存在一个语言（即一个问题）A，它：</p>
 <ul>
 <li>可以用 $O(f(n))$ 的空间解决。</li>
 <li><strong>不可能</strong>用 $o(f(n))$ 的空间解决（即增长速度严格慢于 $f(n)$ 的空间都不行）。</li>
 </ul>
 <p>同理，也有时间层次定理</p>
-<h3 id="Relativization"><a href="#Relativization" class="headerlink" title="Relativization"></a>Relativization</h3><p>假设有神谕oracle，能够在$O(1)$下解决某一类问题时，各类不同问题的复杂性</p>
-<h3 id="Circuit"><a href="#Circuit" class="headerlink" title="Circuit"></a>Circuit</h3><p>电路复杂性</p>
+<h3 id="Relativization"><a class="header-anchor" href="#Relativization">¶</a>Relativization</h3>
+<p>假设有神谕oracle，能够在$O(1)$下解决某一类问题时，各类不同问题的复杂性</p>
+<h3 id="Circuit"><a class="header-anchor" href="#Circuit">¶</a>Circuit</h3>
+<p>电路复杂性</p>
 <p>时间复杂度$O(t(n))$，电路复杂性$O(t^2(n))$</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><table>
+<h2 id="附录"><a class="header-anchor" href="#附录">¶</a>附录</h2>
+<table>
 <thead>
 <tr>
 <th><strong>关系式</strong></th>
 <th><strong>状态</strong></th>
-<th><strong>相关定理&#x2F;依据</strong></th>
+<th><strong>相关定理/依据</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td>$P \stackrel{?}{&#x3D;} NP$</td>
+<tbody>
+<tr>
+<td>$P \stackrel{?}{=} NP$</td>
 <td><strong>广泛认为 $\neq$</strong></td>
 <td>尚未证明</td>
 </tr>
 <tr>
-<td>$NP \stackrel{?}{&#x3D;} coNP$</td>
+<td>$NP \stackrel{?}{=} coNP$</td>
 <td><strong>广泛认为 $\neq$</strong></td>
-<td>尚未证明（若$P&#x3D;NP$ 则成立）</td>
+<td>尚未证明（若$P=NP$ 则成立）</td>
 </tr>
 <tr>
-<td>$P &#x3D; coP$</td>
+<td>$P = coP$</td>
 <td><strong>确定相等</strong></td>
 <td>$P$ 对补运算封闭</td>
 </tr>
 <tr>
-<td>$L \stackrel{?}{&#x3D;} NL$</td>
+<td>$L \stackrel{?}{=} NL$</td>
 <td><strong>广泛认为 $\neq$</strong></td>
 <td>尚未证明</td>
 </tr>
 <tr>
-<td>$NL &#x3D; coNL$</td>
+<td>$NL = coNL$</td>
 <td><strong>确定相等</strong></td>
 <td><strong>Immerman–Szelepcsényi 定理</strong></td>
 </tr>
 <tr>
-<td>$PSPACE &#x3D; NPSPACE$</td>
+<td>$PSPACE = NPSPACE$</td>
 <td><strong>确定相等</strong></td>
 <td><strong>Savitch 定理</strong></td>
 </tr>
 <tr>
-<td>$PSPACE&#x3D;coPSPACE$</td>
+<td>$PSPACE=coPSPACE$</td>
 <td><strong>确定相等</strong></td>
 <td></td>
 </tr>
 <tr>
-<td>$NPSPACE &#x3D; coNPSPACE$</td>
+<td>$NPSPACE = coNPSPACE$</td>
 <td><strong>确定相等</strong></td>
-<td>同$NL&#x3D;coNL$ 的原理</td>
+<td>同$NL=coNL$ 的原理</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 </article>
     
@@ -924,10 +1010,10 @@
                 <li>26/01/13</li>
                 <li>12:37</li>
                 
-                    <li>5.7k</li>
+                    <li>5.6k</li>
                 
                 
-                    <li>25</li>
+                    <li>24</li>
                 
             </ul>
         </div>
@@ -1028,7 +1114,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="计算理论"><a rel="nofollow" class="trm-toc-link" href="#计算理论"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">计算理论</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 Finite Automata and Regular Languages"><a rel="nofollow" class="trm-toc-link" href="#1-Finite-Automata-and-Regular-Languages"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 Finite Automata and Regular Languages</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 Deterministic Finite Automata (DFA)"><a rel="nofollow" class="trm-toc-link" href="#1-1-Deterministic-Finite-Automata-DFA"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 Deterministic Finite Automata (DFA)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 Nondeterministic Finite Automata (NFA)"><a rel="nofollow" class="trm-toc-link" href="#1-2-Nondeterministic-Finite-Automata-NFA"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 Nondeterministic Finite Automata (NFA)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 DFA &amp; NFA"><a rel="nofollow" class="trm-toc-link" href="#1-3-DFA-NFA"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.3 DFA &amp; NFA</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4 Regular"><a rel="nofollow" class="trm-toc-link" href="#1-4-Regular"><span class="trm-toc-number">1.1.4.</span> <span class="trm-toc-text">1.4 Regular</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.5 Pumping Lemma"><a rel="nofollow" class="trm-toc-link" href="#1-5-Pumping-Lemma"><span class="trm-toc-number">1.1.5.</span> <span class="trm-toc-text">1.5 Pumping Lemma</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.6 三个问题"><a rel="nofollow" class="trm-toc-link" href="#1-6-三个问题"><span class="trm-toc-number">1.1.6.</span> <span class="trm-toc-text">1.6 三个问题</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Q1: Acceptance: $w\in L(A)$？"><a rel="nofollow" class="trm-toc-link" href="#Q1-Acceptance-w-in-L-A-？"><span class="trm-toc-number">1.1.6.1.</span> <span class="trm-toc-text">Q1: Acceptance: $w\in L(A)$？</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"><a rel="nofollow" class="trm-toc-link" href="#Q2-Emptiness-L-A-varnothing"><span class="trm-toc-number">1.1.6.2.</span> <span class="trm-toc-text">Q2: Emptiness: $L(A)&#x3D;\varnothing$?</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q3: Equality: $L(A)&#x3D;L(B)$?"><a rel="nofollow" class="trm-toc-link" href="#Q3-Equality-L-A-L-B"><span class="trm-toc-number">1.1.6.3.</span> <span class="trm-toc-text">Q3: Equality: $L(A)&#x3D;L(B)$?</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="2 Context Free Languages"><a rel="nofollow" class="trm-toc-link" href="#2-Context-Free-Languages"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 Context Free Languages</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 Definition"><a rel="nofollow" class="trm-toc-link" href="#2-1-Definition"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2模糊性"><a rel="nofollow" class="trm-toc-link" href="#2-2模糊性"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.2模糊性</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 Chomsy范式"><a rel="nofollow" class="trm-toc-link" href="#2-3-Chomsy范式"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.3 Chomsy范式</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Pushdown Automata (PDA)"><a rel="nofollow" class="trm-toc-link" href="#2-4-Pushdown-Automata-PDA"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.4 Pushdown Automata (PDA)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 CFG等价于PDA"><a rel="nofollow" class="trm-toc-link" href="#2-5-CFG等价于PDA"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.5 CFG等价于PDA</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 性质"><a rel="nofollow" class="trm-toc-link" href="#2-6-性质"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.6 性质</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.7 Pumping Lemma"><a rel="nofollow" class="trm-toc-link" href="#2-7-Pumping-Lemma"><span class="trm-toc-number">1.2.7.</span> <span class="trm-toc-text">2.7 Pumping Lemma</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.8 三个问题"><a rel="nofollow" class="trm-toc-link" href="#2-8-三个问题"><span class="trm-toc-number">1.2.8.</span> <span class="trm-toc-text">2.8 三个问题</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Q1: Acceptance: $w\in L(A)$？"><a rel="nofollow" class="trm-toc-link" href="#Q1-Acceptance-w-in-L-A-？-1"><span class="trm-toc-number">1.2.8.1.</span> <span class="trm-toc-text">Q1: Acceptance: $w\in L(A)$？</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"><a rel="nofollow" class="trm-toc-link" href="#Q2-Emptiness-L-A-varnothing-1"><span class="trm-toc-number">1.2.8.2.</span> <span class="trm-toc-text">Q2: Emptiness: $L(A)&#x3D;\varnothing$?</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q3: Equality: $L(A)&#x3D;L(B)$?"><a rel="nofollow" class="trm-toc-link" href="#Q3-Equality-L-A-L-B-1"><span class="trm-toc-number">1.2.8.3.</span> <span class="trm-toc-text">Q3: Equality: $L(A)&#x3D;L(B)$?</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.9 DPDA &amp; DCFL"><a rel="nofollow" class="trm-toc-link" href="#2-9-DPDA-DCFL"><span class="trm-toc-number">1.2.9.</span> <span class="trm-toc-text">2.9 DPDA &amp; DCFL</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="3 Turing Machine"><a rel="nofollow" class="trm-toc-link" href="#3-Turing-Machine"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 Turing Machine</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 Definition"><a rel="nofollow" class="trm-toc-link" href="#3-1-Definition"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 Variants of Turing Machine"><a rel="nofollow" class="trm-toc-link" href="#3-2-Variants-of-Turing-Machine"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.2 Variants of Turing Machine</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Multitape Turing Machines"><a rel="nofollow" class="trm-toc-link" href="#Multitape-Turing-Machines"><span class="trm-toc-number">1.3.2.1.</span> <span class="trm-toc-text">Multitape Turing Machines</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Non-deterministic Turing Machine"><a rel="nofollow" class="trm-toc-link" href="#Non-deterministic-Turing-Machine"><span class="trm-toc-number">1.3.2.2.</span> <span class="trm-toc-text">Non-deterministic Turing Machine</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Enumerator"><a rel="nofollow" class="trm-toc-link" href="#Enumerator"><span class="trm-toc-number">1.3.2.3.</span> <span class="trm-toc-text">Enumerator</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="4 Decidability"><a rel="nofollow" class="trm-toc-link" href="#4-Decidability"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 Decidability</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5 Reducibility"><a rel="nofollow" class="trm-toc-link" href="#5-Reducibility"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">5 Reducibility</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Undecidable Problems for Language Theory"><a rel="nofollow" class="trm-toc-link" href="#Undecidable-Problems-for-Language-Theory"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">Undecidable Problems for Language Theory</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="$HALT_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#HALT-text-TM"><span class="trm-toc-number">1.5.1.1.</span> <span class="trm-toc-text">$HALT_\text{TM}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$E_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#E-text-TM"><span class="trm-toc-number">1.5.1.2.</span> <span class="trm-toc-text">$E_\text{TM}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$Regular_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#Regular-text-TM"><span class="trm-toc-number">1.5.1.3.</span> <span class="trm-toc-text">$Regular_\text{TM}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$EQ_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#EQ-text-TM"><span class="trm-toc-number">1.5.1.4.</span> <span class="trm-toc-text">$EQ_\text{TM}$</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Reductions via computation histories"><a rel="nofollow" class="trm-toc-link" href="#Reductions-via-computation-histories"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">Reductions via computation histories</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="$E_\text{LBA}$"><a rel="nofollow" class="trm-toc-link" href="#E-text-LBA"><span class="trm-toc-number">1.5.2.1.</span> <span class="trm-toc-text">$E_\text{LBA}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$ALL_\text{CFG}$"><a rel="nofollow" class="trm-toc-link" href="#ALL-text-CFG"><span class="trm-toc-number">1.5.2.2.</span> <span class="trm-toc-text">$ALL_\text{CFG}$</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Mapping Reducibility"><a rel="nofollow" class="trm-toc-link" href="#Mapping-Reducibility"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">Mapping Reducibility</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="6 Godel Encoding"><a rel="nofollow" class="trm-toc-link" href="#6-Godel-Encoding"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">6 Godel Encoding</span></a></li><li class="trm-toc-item trm-toc-level-2" title="7 Time Complexity"><a rel="nofollow" class="trm-toc-link" href="#7-Time-Complexity"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">7 Time Complexity</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="P 问题"><a rel="nofollow" class="trm-toc-link" href="#P-问题"><span class="trm-toc-number">1.7.1.</span> <span class="trm-toc-text">P 问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="NP 问题"><a rel="nofollow" class="trm-toc-link" href="#NP-问题"><span class="trm-toc-number">1.7.2.</span> <span class="trm-toc-text">NP 问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="NPC问题"><a rel="nofollow" class="trm-toc-link" href="#NPC问题"><span class="trm-toc-number">1.7.3.</span> <span class="trm-toc-text">NPC问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="归约"><a rel="nofollow" class="trm-toc-link" href="#归约"><span class="trm-toc-number">1.7.4.</span> <span class="trm-toc-text">归约</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="8 Space Complexity"><a rel="nofollow" class="trm-toc-link" href="#8-Space-Complexity"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">8 Space Complexity</span></a></li><li class="trm-toc-item trm-toc-level-2" title="9 Intractability"><a rel="nofollow" class="trm-toc-link" href="#9-Intractability"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">9 Intractability</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Hierarchy Theorems"><a rel="nofollow" class="trm-toc-link" href="#Hierarchy-Theorems"><span class="trm-toc-number">1.9.1.</span> <span class="trm-toc-text">Hierarchy Theorems</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Space constructible"><a rel="nofollow" class="trm-toc-link" href="#Space-constructible"><span class="trm-toc-number">1.9.1.1.</span> <span class="trm-toc-text">Space constructible</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Space hierarchy theorem"><a rel="nofollow" class="trm-toc-link" href="#Space-hierarchy-theorem"><span class="trm-toc-number">1.9.1.2.</span> <span class="trm-toc-text">Space hierarchy theorem</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Relativization"><a rel="nofollow" class="trm-toc-link" href="#Relativization"><span class="trm-toc-number">1.9.2.</span> <span class="trm-toc-text">Relativization</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Circuit"><a rel="nofollow" class="trm-toc-link" href="#Circuit"><span class="trm-toc-number">1.9.3.</span> <span class="trm-toc-text">Circuit</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="附录"><a rel="nofollow" class="trm-toc-link" href="#附录"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">附录</span></a></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="计算理论"><a class="trm-toc-link"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">计算理论</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 Finite Automata and Regular Languages"><a rel="nofollow" class="trm-toc-link" href="#1-Finite-Automata-and-Regular-Languages"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 Finite Automata and Regular Languages</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 Deterministic Finite Automata (DFA)"><a rel="nofollow" class="trm-toc-link" href="#1-1-Deterministic-Finite-Automata-DFA"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 Deterministic Finite Automata (DFA)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 Nondeterministic Finite Automata (NFA)"><a rel="nofollow" class="trm-toc-link" href="#1-2-Nondeterministic-Finite-Automata-NFA"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 Nondeterministic Finite Automata (NFA)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 DFA &amp; NFA"><a rel="nofollow" class="trm-toc-link" href="#1-3-DFA-NFA"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.3 DFA &amp; NFA</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4 Regular"><a rel="nofollow" class="trm-toc-link" href="#1-4-Regular"><span class="trm-toc-number">1.1.4.</span> <span class="trm-toc-text">1.4 Regular</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.5 Pumping Lemma"><a rel="nofollow" class="trm-toc-link" href="#1-5-Pumping-Lemma"><span class="trm-toc-number">1.1.5.</span> <span class="trm-toc-text">1.5 Pumping Lemma</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.6 三个问题"><a rel="nofollow" class="trm-toc-link" href="#1-6-三个问题"><span class="trm-toc-number">1.1.6.</span> <span class="trm-toc-text">1.6 三个问题</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Q1: Acceptance: $w\in L(A)$？"><a rel="nofollow" class="trm-toc-link" href="#Q1-Acceptance-w-in-L-A-？"><span class="trm-toc-number">1.1.6.1.</span> <span class="trm-toc-text">Q1: Acceptance: $w\in L(A)$？</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"><a rel="nofollow" class="trm-toc-link" href="#Q2-Emptiness-L-A-varnothing"><span class="trm-toc-number">1.1.6.2.</span> <span class="trm-toc-text">Q2: Emptiness: $L(A)&#x3D;\varnothing$?</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q3: Equality: $L(A)&#x3D;L(B)$?"><a rel="nofollow" class="trm-toc-link" href="#Q3-Equality-L-A-L-B"><span class="trm-toc-number">1.1.6.3.</span> <span class="trm-toc-text">Q3: Equality: $L(A)&#x3D;L(B)$?</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="2 Context Free Languages"><a rel="nofollow" class="trm-toc-link" href="#2-Context-Free-Languages"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 Context Free Languages</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 Definition"><a rel="nofollow" class="trm-toc-link" href="#2-1-Definition"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2模糊性"><a rel="nofollow" class="trm-toc-link" href="#2-2模糊性"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.2模糊性</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 Chomsy范式"><a rel="nofollow" class="trm-toc-link" href="#2-3-Chomsy范式"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.3 Chomsy范式</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Pushdown Automata (PDA)"><a rel="nofollow" class="trm-toc-link" href="#2-4-Pushdown-Automata-PDA"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.4 Pushdown Automata (PDA)</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 CFG等价于PDA"><a rel="nofollow" class="trm-toc-link" href="#2-5-CFG等价于PDA"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.5 CFG等价于PDA</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 性质"><a rel="nofollow" class="trm-toc-link" href="#2-6-性质"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.6 性质</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.7 Pumping Lemma"><a rel="nofollow" class="trm-toc-link" href="#2-7-Pumping-Lemma"><span class="trm-toc-number">1.2.7.</span> <span class="trm-toc-text">2.7 Pumping Lemma</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.8 三个问题"><a rel="nofollow" class="trm-toc-link" href="#2-8-三个问题"><span class="trm-toc-number">1.2.8.</span> <span class="trm-toc-text">2.8 三个问题</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Q1: Acceptance: $w\in L(A)$？"><a rel="nofollow" class="trm-toc-link" href="#Q1-Acceptance-w-in-L-A-？-2"><span class="trm-toc-number">1.2.8.1.</span> <span class="trm-toc-text">Q1: Acceptance: $w\in L(A)$？</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"><a rel="nofollow" class="trm-toc-link" href="#Q2-Emptiness-L-A-varnothing-2"><span class="trm-toc-number">1.2.8.2.</span> <span class="trm-toc-text">Q2: Emptiness: $L(A)&#x3D;\varnothing$?</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Q3: Equality: $L(A)&#x3D;L(B)$?"><a rel="nofollow" class="trm-toc-link" href="#Q3-Equality-L-A-L-B-2"><span class="trm-toc-number">1.2.8.3.</span> <span class="trm-toc-text">Q3: Equality: $L(A)&#x3D;L(B)$?</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.9 DPDA &amp; DCFL"><a rel="nofollow" class="trm-toc-link" href="#2-9-DPDA-DCFL"><span class="trm-toc-number">1.2.9.</span> <span class="trm-toc-text">2.9 DPDA &amp; DCFL</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="3 Turing Machine"><a rel="nofollow" class="trm-toc-link" href="#3-Turing-Machine"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 Turing Machine</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 Definition"><a rel="nofollow" class="trm-toc-link" href="#3-1-Definition"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 Definition</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 Variants of Turing Machine"><a rel="nofollow" class="trm-toc-link" href="#3-2-Variants-of-Turing-Machine"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.2 Variants of Turing Machine</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Multitape Turing Machines"><a rel="nofollow" class="trm-toc-link" href="#Multitape-Turing-Machines"><span class="trm-toc-number">1.3.2.1.</span> <span class="trm-toc-text">Multitape Turing Machines</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Non-deterministic Turing Machine"><a rel="nofollow" class="trm-toc-link" href="#Non-deterministic-Turing-Machine"><span class="trm-toc-number">1.3.2.2.</span> <span class="trm-toc-text">Non-deterministic Turing Machine</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Enumerator"><a rel="nofollow" class="trm-toc-link" href="#Enumerator"><span class="trm-toc-number">1.3.2.3.</span> <span class="trm-toc-text">Enumerator</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="4 Decidability"><a rel="nofollow" class="trm-toc-link" href="#4-Decidability"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 Decidability</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5 Reducibility"><a rel="nofollow" class="trm-toc-link" href="#5-Reducibility"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">5 Reducibility</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Undecidable Problems for Language Theory"><a rel="nofollow" class="trm-toc-link" href="#Undecidable-Problems-for-Language-Theory"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">Undecidable Problems for Language Theory</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="$HALT_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#HALT-text-TM"><span class="trm-toc-number">1.5.1.1.</span> <span class="trm-toc-text">$HALT_\text{TM}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$E_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#E-text-TM"><span class="trm-toc-number">1.5.1.2.</span> <span class="trm-toc-text">$E_\text{TM}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$Regular_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#Regular-text-TM"><span class="trm-toc-number">1.5.1.3.</span> <span class="trm-toc-text">$Regular_\text{TM}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$EQ_\text{TM}$"><a rel="nofollow" class="trm-toc-link" href="#EQ-text-TM"><span class="trm-toc-number">1.5.1.4.</span> <span class="trm-toc-text">$EQ_\text{TM}$</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Reductions via computation histories"><a rel="nofollow" class="trm-toc-link" href="#Reductions-via-computation-histories"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">Reductions via computation histories</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="$E_\text{LBA}$"><a rel="nofollow" class="trm-toc-link" href="#E-text-LBA"><span class="trm-toc-number">1.5.2.1.</span> <span class="trm-toc-text">$E_\text{LBA}$</span></a></li><li class="trm-toc-item trm-toc-level-4" title="$ALL_\text{CFG}$"><a rel="nofollow" class="trm-toc-link" href="#ALL-text-CFG"><span class="trm-toc-number">1.5.2.2.</span> <span class="trm-toc-text">$ALL_\text{CFG}$</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Mapping Reducibility"><a rel="nofollow" class="trm-toc-link" href="#Mapping-Reducibility"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">Mapping Reducibility</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="6 Godel Encoding"><a rel="nofollow" class="trm-toc-link" href="#6-Godel-Encoding"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">6 Godel Encoding</span></a></li><li class="trm-toc-item trm-toc-level-2" title="7 Time Complexity"><a rel="nofollow" class="trm-toc-link" href="#7-Time-Complexity"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">7 Time Complexity</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="P 问题"><a rel="nofollow" class="trm-toc-link" href="#P-问题"><span class="trm-toc-number">1.7.1.</span> <span class="trm-toc-text">P 问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="NP 问题"><a rel="nofollow" class="trm-toc-link" href="#NP-问题"><span class="trm-toc-number">1.7.2.</span> <span class="trm-toc-text">NP 问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="NPC问题"><a rel="nofollow" class="trm-toc-link" href="#NPC问题"><span class="trm-toc-number">1.7.3.</span> <span class="trm-toc-text">NPC问题</span></a></li><li class="trm-toc-item trm-toc-level-3" title="归约"><a rel="nofollow" class="trm-toc-link" href="#归约"><span class="trm-toc-number">1.7.4.</span> <span class="trm-toc-text">归约</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="8 Space Complexity"><a rel="nofollow" class="trm-toc-link" href="#8-Space-Complexity"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">8 Space Complexity</span></a></li><li class="trm-toc-item trm-toc-level-2" title="9 Intractability"><a rel="nofollow" class="trm-toc-link" href="#9-Intractability"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">9 Intractability</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="Hierarchy Theorems"><a rel="nofollow" class="trm-toc-link" href="#Hierarchy-Theorems"><span class="trm-toc-number">1.9.1.</span> <span class="trm-toc-text">Hierarchy Theorems</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Space constructible"><a rel="nofollow" class="trm-toc-link" href="#Space-constructible"><span class="trm-toc-number">1.9.1.1.</span> <span class="trm-toc-text">Space constructible</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Space hierarchy theorem"><a rel="nofollow" class="trm-toc-link" href="#Space-hierarchy-theorem"><span class="trm-toc-number">1.9.1.2.</span> <span class="trm-toc-text">Space hierarchy theorem</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="Relativization"><a rel="nofollow" class="trm-toc-link" href="#Relativization"><span class="trm-toc-number">1.9.2.</span> <span class="trm-toc-text">Relativization</span></a></li><li class="trm-toc-item trm-toc-level-3" title="Circuit"><a rel="nofollow" class="trm-toc-link" href="#Circuit"><span class="trm-toc-number">1.9.3.</span> <span class="trm-toc-text">Circuit</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="附录"><a rel="nofollow" class="trm-toc-link" href="#附录"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">附录</span></a></li></ol></li></ol>
       </div>
     </div>
 

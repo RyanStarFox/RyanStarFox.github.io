@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="CNN发展总结正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 1 LeNetLeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  2 AlexNet与LeNet思路类似，在imageNet比赛中取">
+<meta name="description" content="CNN发展总结 正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 ¶1 LeNet LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  ¶2 AlexNet 与LeNet思路类似，在imageNet比赛中取">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN发展总结">
 <meta property="og:url" content="https://ryanstarfox.github.io/2025/08/18/2025/20250819%20CNN%E5%8F%91%E5%B1%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="CNN发展总结正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 1 LeNetLeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  2 AlexNet与LeNet思路类似，在imageNet比赛中取">
+<meta property="og:description" content="CNN发展总结 正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 ¶1 LeNet LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  ¶2 AlexNet 与LeNet思路类似，在imageNet比赛中取">
 <meta property="og:locale">
 <meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
 <meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
@@ -468,35 +468,41 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="CNN发展总结"><a href="#CNN发展总结" class="headerlink" title="CNN发展总结"></a>CNN发展总结</h1><p>正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。</p>
-<h2 id="1-LeNet"><a href="#1-LeNet" class="headerlink" title="1 LeNet"></a>1 LeNet</h2><p>LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：</p>
+    <h1>CNN发展总结</h1>
+<p>正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。</p>
+<h2 id="1-LeNet"><a class="header-anchor" href="#1-LeNet">¶</a>1 LeNet</h2>
+<p>LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：</p>
 <p><img src="/images/2025/LeNet.drawio.svg" alt="LeNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p>那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。</p>
+<p>那时的汇聚层、激活函数还是AvergePool和Sigmoid/Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。</p>
 <p><img src="/images/2025/AlexNet.drawio.svg" alt="AlexNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h2 id="2-AlexNet"><a href="#2-AlexNet" class="headerlink" title="2 AlexNet"></a>2 AlexNet</h2><p>与LeNet思路类似，在imageNet比赛中取得了不错的成绩，证明了更深更大的模型可以有非常好的效果</p>
+<h2 id="2-AlexNet"><a class="header-anchor" href="#2-AlexNet">¶</a>2 AlexNet</h2>
+<p>与LeNet思路类似，在imageNet比赛中取得了不错的成绩，证明了更深更大的模型可以有非常好的效果</p>
 <ol>
 <li>更深的模型层数</li>
 <li>卷积通道数目巨大，卷积窗口更大</li>
-<li>激活函数从Sigmoid&#x2F;Tanh改成ReLU</li>
+<li>激活函数从Sigmoid/Tanh改成ReLU</li>
 <li>通过Dropout全连接层控制模型复杂度</li>
 <li>使用大量增强数据：翻转、裁切、变色</li>
 </ol>
 <p>其架构如下：</p>
-<h2 id="3-使用块的网络（VGG）"><a href="#3-使用块的网络（VGG）" class="headerlink" title="3 使用块的网络（VGG）"></a>3 使用块的网络（VGG）</h2><p>在AlexNet的实现中，我们可以意识到两件事：</p>
+<h2 id="3-使用块的网络（VGG）"><a class="header-anchor" href="#3-使用块的网络（VGG）">¶</a>3 使用块的网络（VGG）</h2>
+<p>在AlexNet的实现中，我们可以意识到两件事：</p>
 <ol>
 <li>更深更大的神经网络确实可以有更好的效果</li>
 <li>有很多层的组合（例如卷积层+池化层）反复出现</li>
 </ol>
 <p>因此为了方便构建模块化地构建更大的网络，我们可以将一系列“层”定义一个“块”，以“块”为基本单位之一构建网络。</p>
 <p><img src="/images/2025/VGG.drawio.svg" alt="VGG.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h2 id="4-网络中的网络（NiN）"><a href="#4-网络中的网络（NiN）" class="headerlink" title="4 网络中的网络（NiN）"></a>4 网络中的网络（NiN）</h2><p>VGG把神经网络的规模做得非常巨大，但是此时又暴露出了内存&#x2F;显存占用巨大的问题——尤其是卷积层之后的第一个全连接层，因输入输出的维度都巨大，参数的数量也巨大。</p>
+<h2 id="4-网络中的网络（NiN）"><a class="header-anchor" href="#4-网络中的网络（NiN）">¶</a>4 网络中的网络（NiN）</h2>
+<p>VGG把神经网络的规模做得非常巨大，但是此时又暴露出了内存/显存占用巨大的问题——尤其是卷积层之后的第一个全连接层，因输入输出的维度都巨大，参数的数量也巨大。</p>
 <p>为了改善存储占用的问题，NiN网络中使用了使用NiN块与GAP层。</p>
 <ul>
 <li>NiN块中使用了1$\times$1的卷积层，相当于通道维度的全连接层，不仅可以减少参数量，而且可以减少过拟合</li>
 <li>Global Average Pooling （GAP）层被用来代替全连接层，减少了存储的参数的数量</li>
 </ul>
 <p><img src="/images/2025/NiN.drawio.svg" alt="NiN.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h2 id="4-含并⾏连结的⽹络（GoogLeNet）"><a href="#4-含并⾏连结的⽹络（GoogLeNet）" class="headerlink" title="4 含并⾏连结的⽹络（GoogLeNet）"></a>4 含并⾏连结的⽹络（GoogLeNet）</h2><p>有了NiN之后，我们有了控制网络总参数量的工具。由此，我们可以构建更深、更复杂的网络。</p>
+<h2 id="4-含并⾏连结的⽹络（GoogLeNet）"><a class="header-anchor" href="#4-含并⾏连结的⽹络（GoogLeNet）">¶</a>4 含并⾏连结的⽹络（GoogLeNet）</h2>
+<p>有了NiN之后，我们有了控制网络总参数量的工具。由此，我们可以构建更深、更复杂的网络。</p>
 <p>GoogLeNet的想法很自然：</p>
 <ul>
 <li>在我们构建了足够强大的线形网络之后，我们也可以构建一些并行的有分支的网络</li>
@@ -513,10 +519,12 @@
 <p>其中白底的仅仅是用于调整深度，深紫底的才是实际提取特征的层。</p>
 <p>由此可以构建出GoogLeNet</p>
 <p>#<img src="/images/2025/GoogLeNet.drawio.svg" alt="GoogLeNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h2 id="5-残差网络（ResNet）"><a href="#5-残差网络（ResNet）" class="headerlink" title="5 残差网络（ResNet）"></a>5 残差网络（ResNet）</h2><ul>
-<li>超深神经网络存在两大挑战：<ol>
+<h2 id="5-残差网络（ResNet）"><a class="header-anchor" href="#5-残差网络（ResNet）">¶</a>5 残差网络（ResNet）</h2>
+<ul>
+<li>超深神经网络存在两大挑战：
+<ol>
 <li>参数量庞大，计算和存储开销大。</li>
-<li>深度增加导致梯度消失&#x2F;梯度爆炸，训练困难。</li>
+<li>深度增加导致梯度消失/梯度爆炸，训练困难。</li>
 </ol>
 </li>
 </ul>
@@ -524,18 +532,20 @@
 <p>ResNet的核心思想如下：</p>
 <ol>
 <li>更复杂的网络应包含原有的更简单网络，保证性能至少不劣于浅层网络。</li>
-<li>引入残差函数 $F(x) &#x3D; f(x) - x$，将学习目标改写为：$f(x) &#x3D; F(x) + x$</li>
+<li>引入残差函数 $F(x) = f(x) - x$，将学习目标改写为：$f(x) = F(x) + x$</li>
 </ol>
 <p>残差函数的作用主要想概括为以下两点：</p>
 <ol>
-<li><p>保证“性能不劣于浅层网络”</p>
+<li>
+<p>保证“性能不劣于浅层网络”</p>
 <ul>
-<li>当 $F(x) &#x3D; 0$ 时，网络输出即退化为恒等映射 $y &#x3D; x$</li>
+<li>当 $F(x) = 0$ 时，网络输出即退化为恒等映射 $y = x$</li>
 <li>网络可以在恒等映射附近开始学习，使训练更容易</li>
 <li>如果$F(x)$对于结果不好，那$F(x)$拿不到梯度，还是在0附近</li>
 </ul>
 </li>
-<li><p>梯度传递优势</p>
+<li>
+<p>梯度传递优势</p>
 <ul>
 <li>前向传播时，恒等映射提供了直接捷径</li>
 <li>反向传播时，梯度可以沿 $+x$ 这条捷径无衰减地传回，缓解梯度消失问题</li>
@@ -544,23 +554,28 @@
 </ol>
 <p>ResNet最大的挑战是：相加的时候捷径的形状不同。</p>
 <ol>
-<li><p>通道数量不同</p>
+<li>
+<p>通道数量不同</p>
 <p>通过增加$1\times1$卷积层来控制通道数</p>
 </li>
-<li><p>维度不同</p>
+<li>
+<p>维度不同</p>
 <p>通过卷积核为1，有stride的卷积层来控制维度</p>
 </li>
 </ol>
 <p>ResNet基本结构的图示如下：</p>
 <p><img src="/images/2025/ResNet.drawio.svg" alt="ResNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<h2 id="6-稠密连接网络（DenseNet）"><a href="#6-稠密连接网络（DenseNet）" class="headerlink" title="6 稠密连接网络（DenseNet）"></a>6 稠密连接网络（DenseNet）</h2><p>DenseNet 继承了ResNet的思想，将其进一步发展。</p>
+<h2 id="6-稠密连接网络（DenseNet）"><a class="header-anchor" href="#6-稠密连接网络（DenseNet）">¶</a>6 稠密连接网络（DenseNet）</h2>
+<p>DenseNet 继承了ResNet的思想，将其进一步发展。</p>
 <p>如果说ResNet是泰勒展开的一阶近似，那DenseNet就是高阶近似。DenseNet讲更多的过往的层传到现在的结果。</p>
 <p>DenseNet主要由两种块构成：</p>
 <ul>
-<li><p>稠密块</p>
+<li>
+<p>稠密块</p>
 <p>大量旁路，为了将这么多结果整合在一起，DenseNet像GoogLeNet一样，在通道维度把结果拼接起来。</p>
 </li>
-<li><p>过渡块</p>
+<li>
+<p>过渡块</p>
 <p>经过稠密块后通道数巨大，因此使用$1\times1$卷积层减小通道数，使用平均汇聚层减小维数。</p>
 </li>
 </ul>
@@ -708,7 +723,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="CNN发展总结"><a rel="nofollow" class="trm-toc-link" href="#CNN发展总结"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">CNN发展总结</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 LeNet"><a rel="nofollow" class="trm-toc-link" href="#1-LeNet"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 LeNet</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2 AlexNet"><a rel="nofollow" class="trm-toc-link" href="#2-AlexNet"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 AlexNet</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3 使用块的网络（VGG）"><a rel="nofollow" class="trm-toc-link" href="#3-使用块的网络（VGG）"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 使用块的网络（VGG）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4 网络中的网络（NiN）"><a rel="nofollow" class="trm-toc-link" href="#4-网络中的网络（NiN）"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 网络中的网络（NiN）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4 含并⾏连结的⽹络（GoogLeNet）"><a rel="nofollow" class="trm-toc-link" href="#4-含并⾏连结的⽹络（GoogLeNet）"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">4 含并⾏连结的⽹络（GoogLeNet）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5 残差网络（ResNet）"><a rel="nofollow" class="trm-toc-link" href="#5-残差网络（ResNet）"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">5 残差网络（ResNet）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6 稠密连接网络（DenseNet）"><a rel="nofollow" class="trm-toc-link" href="#6-稠密连接网络（DenseNet）"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">6 稠密连接网络（DenseNet）</span></a></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="CNN发展总结"><a class="trm-toc-link"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">CNN发展总结</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 LeNet"><a rel="nofollow" class="trm-toc-link" href="#1-LeNet"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 LeNet</span></a></li><li class="trm-toc-item trm-toc-level-2" title="2 AlexNet"><a rel="nofollow" class="trm-toc-link" href="#2-AlexNet"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 AlexNet</span></a></li><li class="trm-toc-item trm-toc-level-2" title="3 使用块的网络（VGG）"><a rel="nofollow" class="trm-toc-link" href="#3-使用块的网络（VGG）"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 使用块的网络（VGG）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4 网络中的网络（NiN）"><a rel="nofollow" class="trm-toc-link" href="#4-网络中的网络（NiN）"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 网络中的网络（NiN）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4 含并⾏连结的⽹络（GoogLeNet）"><a rel="nofollow" class="trm-toc-link" href="#4-含并⾏连结的⽹络（GoogLeNet）"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">4 含并⾏连结的⽹络（GoogLeNet）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="5 残差网络（ResNet）"><a rel="nofollow" class="trm-toc-link" href="#5-残差网络（ResNet）"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">5 残差网络（ResNet）</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6 稠密连接网络（DenseNet）"><a rel="nofollow" class="trm-toc-link" href="#6-稠密连接网络（DenseNet）"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">6 稠密连接网络（DenseNet）</span></a></li></ol></li></ol>
       </div>
     </div>
 

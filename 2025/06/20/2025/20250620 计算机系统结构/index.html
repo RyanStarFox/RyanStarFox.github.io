@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="1 Fundamentals of Computer Science1.1 IntroductionHow to make computers faster?  increase clock rate increase logic density  1.2 Classes of ComputersComputer categories:  Personal Mobile Device Wirele">
+<meta name="description" content="¶1 Fundamentals of Computer Science ¶1.1 Introduction How to make computers faster?  increase clock rate increase logic density  ¶1.2 Classes of Computers Computer categories:  Personal Mobile Device">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机系统结构整理">
 <meta property="og:url" content="https://ryanstarfox.github.io/2025/06/20/2025/20250620%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="1 Fundamentals of Computer Science1.1 IntroductionHow to make computers faster?  increase clock rate increase logic density  1.2 Classes of ComputersComputer categories:  Personal Mobile Device Wirele">
+<meta property="og:description" content="¶1 Fundamentals of Computer Science ¶1.1 Introduction How to make computers faster?  increase clock rate increase logic density  ¶1.2 Classes of Computers Computer categories:  Personal Mobile Device">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-06-20T02:17:00.000Z">
 <meta property="article:modified_time" content="2025-06-20T02:17:00.000Z">
@@ -460,53 +460,65 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h2 id="1-Fundamentals-of-Computer-Science"><a href="#1-Fundamentals-of-Computer-Science" class="headerlink" title="1 Fundamentals of Computer Science"></a>1 Fundamentals of Computer Science</h2><h3 id="1-1-Introduction"><a href="#1-1-Introduction" class="headerlink" title="1.1 Introduction"></a>1.1 Introduction</h3><p>How to make computers faster?</p>
+    <h2 id="1-Fundamentals-of-Computer-Science"><a class="header-anchor" href="#1-Fundamentals-of-Computer-Science">¶</a>1 Fundamentals of Computer Science</h2>
+<h3 id="1-1-Introduction"><a class="header-anchor" href="#1-1-Introduction">¶</a>1.1 Introduction</h3>
+<p>How to make computers faster?</p>
 <ul>
 <li>increase clock rate</li>
 <li>increase logic density</li>
 </ul>
-<h3 id="1-2-Classes-of-Computers"><a href="#1-2-Classes-of-Computers" class="headerlink" title="1.2 Classes of Computers"></a>1.2 Classes of Computers</h3><p>Computer categories:</p>
+<h3 id="1-2-Classes-of-Computers"><a class="header-anchor" href="#1-2-Classes-of-Computers">¶</a>1.2 Classes of Computers</h3>
+<p>Computer categories:</p>
 <ul>
-<li>Personal Mobile Device<ul>
+<li>Personal Mobile Device
+<ul>
 <li>Wireless</li>
-<li>Energy efficiency important<ul>
+<li>Energy efficiency important
+<ul>
 <li>battery</li>
 <li>no fan</li>
 </ul>
 </li>
-<li>Flash memory instead of disks<ul>
+<li>Flash memory instead of disks
+<ul>
 <li>enery efficiency</li>
 <li>size limit</li>
 </ul>
 </li>
-<li>Responsiveness&#x2F;real-time performance<ul>
+<li>Responsiveness/real-time performance
+<ul>
 <li>hard real-time</li>
 <li>soft real-time</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Desktop Computing<ul>
+<li>Desktop Computing
+<ul>
 <li>price</li>
-<li>performance<ul>
+<li>performance
+<ul>
 <li>compute</li>
 <li>graphic</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Servers<ul>
+<li>Servers
+<ul>
 <li>availability</li>
 <li>scalability</li>
 <li>energy</li>
 </ul>
 </li>
-<li>Clusters&#x2F;Warehouse Scale Computers<ul>
+<li>Clusters/Warehouse Scale Computers
+<ul>
 <li>expensive</li>
 <li>software as a service (SaaS)</li>
 </ul>
 </li>
-<li>Embedded Computers<ul>
+<li>Embedded Computers
+<ul>
 <li>Application-specific</li>
 <li>can be 8-, 16-, 32-bit</li>
 </ul>
@@ -514,41 +526,46 @@
 </ul>
 <p>2 kinds of parallelism:</p>
 <ul>
-<li><p>data-level parallelism (DLP) &gt; thread-level parallelism (TLP)</p>
+<li>
+<p>data-level parallelism (DLP) &gt; thread-level parallelism (TLP)</p>
 <ul>
 <li>Instruction-Level parallelism (eg. pipelining)</li>
-<li>Vector architecture &#x2F; Graphic Processor Units</li>
+<li>Vector architecture / Graphic Processor Units</li>
 <li>Multi-core (TLP)</li>
 <li>Clusters (Request-level parallelism $\in$ TSP)</li>
 </ul>
 </li>
 </ul>
-<p>Flynn’s Taxonmy</p>
+<p>Flynn's Taxonmy</p>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">Single Data Stream</th>
-<th align="center">Multiple Data Stream</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Single Data Stream</th>
+<th style="text-align:center">Multiple Data Stream</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">Single Intruction Stream</td>
-<td align="center">SISD<br />Simplest</td>
-<td align="center">SIMD<br />Vector Architectures &#x2F; GPU</td>
+<tbody>
+<tr>
+<td style="text-align:center">Single Intruction Stream</td>
+<td style="text-align:center">SISD<br />Simplest</td>
+<td style="text-align:center">SIMD<br />Vector Architectures / GPU</td>
 </tr>
 <tr>
-<td align="center">Multiple Intructin Stream</td>
-<td align="center">MISD<br />No Commercial Implementation</td>
-<td align="center">MIMD<br />Tightly&#x2F;Loosely-coupled MIMD</td>
+<td style="text-align:center">Multiple Intructin Stream</td>
+<td style="text-align:center">MISD<br />No Commercial Implementation</td>
+<td style="text-align:center">MIMD<br />Tightly/Loosely-coupled MIMD</td>
 </tr>
-</tbody></table>
-<h3 id="1-3-Defining-Computer-Architecture"><a href="#1-3-Defining-Computer-Architecture" class="headerlink" title="1.3 Defining Computer Architecture"></a>1.3 Defining Computer Architecture</h3><ul>
+</tbody>
+</table>
+<h3 id="1-3-Defining-Computer-Architecture"><a class="header-anchor" href="#1-3-Defining-Computer-Architecture">¶</a>1.3 Defining Computer Architecture</h3>
+<ul>
 <li>ISA: Instruction Set Architecture</li>
 <li>Addressing Modes</li>
 <li>Microarchitecture</li>
 </ul>
-<h3 id="1-4-Trends-in-Technology"><a href="#1-4-Trends-in-Technology" class="headerlink" title="1.4 Trends in Technology"></a>1.4 Trends in Technology</h3><p>5 critical implememtation techs</p>
+<h3 id="1-4-Trends-in-Technology"><a class="header-anchor" href="#1-4-Trends-in-Technology">¶</a>1.4 Trends in Technology</h3>
+<p>5 critical implememtation techs</p>
 <ul>
 <li>Integrated circuit logic technology</li>
 <li>Semiconductor DRAM</li>
@@ -558,13 +575,17 @@
 </ul>
 <p>ENIAC(decimal, vacuum tubes)-&gt;transisters-&gt;Microelectronics</p>
 <p>Two Metrics: Bandwidth &amp; Latency (former outpaces latter)</p>
-<h3 id="1-5-Trends-in-Power-and-Energy-in-ICs"><a href="#1-5-Trends-in-Power-and-Energy-in-ICs" class="headerlink" title="1.5 Trends in Power and Energy in ICs"></a>1.5 Trends in Power and Energy in ICs</h3><p>contradiction between power and energy: get power in, get power and heat out</p>
+<h3 id="1-5-Trends-in-Power-and-Energy-in-ICs"><a class="header-anchor" href="#1-5-Trends-in-Power-and-Energy-in-ICs">¶</a>1.5 Trends in Power and Energy in ICs</h3>
+<p>contradiction between power and energy: get power in, get power and heat out</p>
 <ul>
-<li><p>Thermal design power (TDP)</p>
+<li>
+<p>Thermal design power (TDP)</p>
 </li>
-<li><p>Clock rate</p>
+<li>
+<p>Clock rate</p>
 </li>
-<li><p>Dynamic power&#x2F;energy (trans from 0 to 1)–voltage is key</p>
+<li>
+<p>Dynamic power/energy (trans from 0 to 1)--voltage is key</p>
 <p>to reduce:</p>
 <ul>
 <li>Turn off clock of inactive modules</li>
@@ -573,39 +594,47 @@
 <li>Turn off a few cores</li>
 </ul>
 </li>
-<li><p>Static power: leakage current flows</p>
+<li>
+<p>Static power: leakage current flows</p>
 </li>
 </ul>
-<h3 id="1-6-Trends-in-Cost"><a href="#1-6-Trends-in-Cost" class="headerlink" title="1.6 Trends in Cost"></a>1.6 Trends in Cost</h3><p>IC Cost &#x3D; (Die Cost + Testing Cost + Packaging Cost)&#x2F;Finaltest yield</p>
-<p>Die Cost &#x3D; Wafer cost &#x2F; (Die per Wafer $\times$ Die Yield)</p>
-<h3 id="1-7-Dependability"><a href="#1-7-Dependability" class="headerlink" title="1.7 Dependability"></a>1.7 Dependability</h3><p>MTTF (mean time to failure)</p>
+<h3 id="1-6-Trends-in-Cost"><a class="header-anchor" href="#1-6-Trends-in-Cost">¶</a>1.6 Trends in Cost</h3>
+<p>IC Cost = (Die Cost + Testing Cost + Packaging Cost)/Finaltest yield</p>
+<p>Die Cost = Wafer cost / (Die per Wafer $\times$ Die Yield)</p>
+<h3 id="1-7-Dependability"><a class="header-anchor" href="#1-7-Dependability">¶</a>1.7 Dependability</h3>
+<p>MTTF (mean time to failure)</p>
 <p>MTTR (mean time to repair)</p>
-<p>MTBF (mean time between failures &#x3D; MTTF+MTTR)</p>
+<p>MTBF (mean time between failures = MTTF+MTTR)</p>
 <p>Satisfy Poisson Distribution</p>
-<p>If serial, total <strong>MTTF &#x3D; ($\sum$ MTTF$_i^{-1}$)$^{-1}$</strong></p>
-<h3 id="1-8-Measuring-Performance"><a href="#1-8-Measuring-Performance" class="headerlink" title="1.8 Measuring Performance"></a>1.8 Measuring Performance</h3><p>Benchmark Suit: A collection of benchmark programs</p>
+<p>If serial, total <strong>MTTF = ($\sum$ MTTF$_i^{-1}$)$^{-1}$</strong></p>
+<h3 id="1-8-Measuring-Performance"><a class="header-anchor" href="#1-8-Measuring-Performance">¶</a>1.8 Measuring Performance</h3>
+<p>Benchmark Suit: A collection of benchmark programs</p>
 <p>SPEC: Standard Performance Evaluation Corporation</p>
-<h3 id="1-9-Quantitative-Principles"><a href="#1-9-Quantitative-Principles" class="headerlink" title="1.9 Quantitative Principles"></a>1.9 Quantitative Principles</h3><ul>
-<li><p>Take advantage of parallelism</p>
+<h3 id="1-9-Quantitative-Principles"><a class="header-anchor" href="#1-9-Quantitative-Principles">¶</a>1.9 Quantitative Principles</h3>
+<ul>
+<li>
+<p>Take advantage of parallelism</p>
 <ul>
 <li>Data level parallelism and task level parallelism</li>
 <li>Pipelining, set-associative caches</li>
 <li>Multicore, multiprocessor, vector</li>
 </ul>
 </li>
-<li><p>Principle of locality</p>
+<li>
+<p>Principle of locality</p>
 <ul>
 <li>reuse recently used data and instructions</li>
 <li>Temporal locality and spatial locality</li>
 </ul>
 </li>
-<li><p>Focus on common use</p>
+<li>
+<p>Focus on common use</p>
 </li>
 </ul>
-<p><strong>Amdahl’s Law:</strong></p>
+<p><strong>Amdahl's Law:</strong></p>
 <ul>
-<li>$Execution\ time_{new} &#x3D; Execution\ time_{old} × (1 - Fraction_{enhanced}) + \dfrac{Fraction_{enhanced}}{ Speedup_{enhanced}}$</li>
-<li>$Speedup_{overall}&#x3D; \dfrac{Execution\ time_{old}}  {Execution\ time_{new}} &#x3D; \dfrac1 { ((1 - Fraction_{enhanced}) + \dfrac{Fraction_{enhanced}}{ Speedup_{enhanced}}}$</li>
+<li>$Execution\ time_{new} = Execution\ time_{old} × (1 - Fraction_{enhanced}) + \dfrac{Fraction_{enhanced}}{ Speedup_{enhanced}}$</li>
+<li>$Speedup_{overall}= \dfrac{Execution\ time_{old}}  {Execution\ time_{new}} = \dfrac1 { ((1 - Fraction_{enhanced}) + \dfrac{Fraction_{enhanced}}{ Speedup_{enhanced}}}$</li>
 </ul>
 <p>Three factors for processor improvement:</p>
 <ul>
@@ -613,70 +642,74 @@
 <li>Cycles per Instruction (CPI)</li>
 <li>Instruction Count (IC)</li>
 </ul>
-<p>CPU clock cycles &#x3D; $\sum$IC<del>i</del>$\times$CPI<del>i</del></p>
-<p>CPU time &#x3D; ($\sum$IC<del>i</del>$\times$CPI<del>i</del>)$\times$Clock cycle time</p>
-<h2 id="2-ISA"><a href="#2-ISA" class="headerlink" title="2 ISA"></a>2 ISA</h2><h3 id="MIPS-RISC"><a href="#MIPS-RISC" class="headerlink" title="MIPS (RISC)"></a>MIPS (RISC)</h3><table>
+<p>CPU clock cycles = $\sum$IC~i~$\times$CPI~i~</p>
+<p>CPU time = ($\sum$IC~i~$\times$CPI~i~)$\times$Clock cycle time</p>
+<h2 id="2-ISA"><a class="header-anchor" href="#2-ISA">¶</a>2 ISA</h2>
+<h3 id="MIPS-RISC"><a class="header-anchor" href="#MIPS-RISC">¶</a>MIPS (RISC)</h3>
+<table>
 <thead>
 <tr>
-<th align="center">op</th>
-<th align="center">rs</th>
-<th align="center">rt</th>
-<th align="center">rd</th>
-<th align="center">shamt</th>
-<th align="center">funct</th>
+<th style="text-align:center">op</th>
+<th style="text-align:center">rs</th>
+<th style="text-align:center">rt</th>
+<th style="text-align:center">rd</th>
+<th style="text-align:center">shamt</th>
+<th style="text-align:center">funct</th>
 </tr>
 </thead>
 </table>
 <table>
 <thead>
 <tr>
-<th align="center">name</th>
-<th align="center">length(bits)</th>
-<th align="center">function</th>
+<th style="text-align:center">name</th>
+<th style="text-align:center">length(bits)</th>
+<th style="text-align:center">function</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">op</td>
-<td align="center">6</td>
-<td align="center">opcode that specifies the operation</td>
+<tbody>
+<tr>
+<td style="text-align:center">op</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">opcode that specifies the operation</td>
 </tr>
 <tr>
-<td align="center">rs</td>
-<td align="center">5</td>
-<td align="center">register file address of the first source operand</td>
+<td style="text-align:center">rs</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">register file address of the first source operand</td>
 </tr>
 <tr>
-<td align="center">rt</td>
-<td align="center">5</td>
-<td align="center">register file address of the second source operand</td>
+<td style="text-align:center">rt</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">register file address of the second source operand</td>
 </tr>
 <tr>
-<td align="center">rd</td>
-<td align="center">5</td>
-<td align="center">register file address of the result’s destination</td>
+<td style="text-align:center">rd</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">register file address of the result’s destination</td>
 </tr>
 <tr>
-<td align="center">shamt</td>
-<td align="center">5</td>
-<td align="center">shift amount (for shift instructions)</td>
+<td style="text-align:center">shamt</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">shift amount (for shift instructions)</td>
 </tr>
 <tr>
-<td align="center">funct</td>
-<td align="center">6</td>
-<td align="center">function code augmenting the opcode</td>
+<td style="text-align:center">funct</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">function code augmenting the opcode</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>3 instruction formats:</p>
 <p>R format</p>
 <table>
 <thead>
 <tr>
-<th align="center">op(6)</th>
-<th align="center">rs (5)</th>
-<th align="center">rt (5)</th>
-<th align="center">rd (5)</th>
-<th align="center">shamt (5)</th>
-<th align="center">funct (6)</th>
+<th style="text-align:center">op(6)</th>
+<th style="text-align:center">rs (5)</th>
+<th style="text-align:center">rt (5)</th>
+<th style="text-align:center">rd (5)</th>
+<th style="text-align:center">shamt (5)</th>
+<th style="text-align:center">funct (6)</th>
 </tr>
 </thead>
 </table>
@@ -684,10 +717,10 @@
 <table>
 <thead>
 <tr>
-<th align="center">op (6)</th>
-<th align="center">rs (5)</th>
-<th align="center">rt (5)</th>
-<th align="center">immediate (16)</th>
+<th style="text-align:center">op (6)</th>
+<th style="text-align:center">rs (5)</th>
+<th style="text-align:center">rt (5)</th>
+<th style="text-align:center">immediate (16)</th>
 </tr>
 </thead>
 </table>
@@ -695,93 +728,98 @@
 <table>
 <thead>
 <tr>
-<th align="center">op (5)</th>
-<th align="center">jump target (27)</th>
+<th style="text-align:center">op (5)</th>
+<th style="text-align:center">jump target (27)</th>
 </tr>
 </thead>
 </table>
 <table>
 <thead>
 <tr>
-<th align="center">Name</th>
-<th align="center">Register Number</th>
-<th align="center">Usage</th>
+<th style="text-align:center">Name</th>
+<th style="text-align:center">Register Number</th>
+<th style="text-align:center">Usage</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$zero</td>
-<td align="center">0</td>
-<td align="center">constant 0 (hardware)</td>
+<tbody>
+<tr>
+<td style="text-align:center">$zero</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">constant 0 (hardware)</td>
 </tr>
 <tr>
-<td align="center">$at</td>
-<td align="center">1</td>
-<td align="center">reserved for assembler</td>
+<td style="text-align:center">$at</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">reserved for assembler</td>
 </tr>
 <tr>
-<td align="center">$v0 - $v1</td>
-<td align="center">2-3</td>
-<td align="center">returned values</td>
+<td style="text-align:center">$v0 - $v1</td>
+<td style="text-align:center">2-3</td>
+<td style="text-align:center">returned values</td>
 </tr>
 <tr>
-<td align="center">$a0 - $a3</td>
-<td align="center">4-7</td>
-<td align="center">arguments</td>
+<td style="text-align:center">$a0 - $a3</td>
+<td style="text-align:center">4-7</td>
+<td style="text-align:center">arguments</td>
 </tr>
 <tr>
-<td align="center">$t0 - $t7</td>
-<td align="center">8-15</td>
-<td align="center">temporaries</td>
+<td style="text-align:center">$t0 - $t7</td>
+<td style="text-align:center">8-15</td>
+<td style="text-align:center">temporaries</td>
 </tr>
 <tr>
-<td align="center">$s0 - $s7</td>
-<td align="center">16-23</td>
-<td align="center">saved values</td>
+<td style="text-align:center">$s0 - $s7</td>
+<td style="text-align:center">16-23</td>
+<td style="text-align:center">saved values</td>
 </tr>
 <tr>
-<td align="center">$t8 - $t9</td>
-<td align="center">24-25</td>
-<td align="center">temporaries</td>
+<td style="text-align:center">$t8 - $t9</td>
+<td style="text-align:center">24-25</td>
+<td style="text-align:center">temporaries</td>
 </tr>
 <tr>
-<td align="center">$k0-$k1</td>
-<td align="center">26-28</td>
-<td align="center">reserved for OS kernel</td>
+<td style="text-align:center">$k0-$k1</td>
+<td style="text-align:center">26-28</td>
+<td style="text-align:center">reserved for OS kernel</td>
 </tr>
 <tr>
-<td align="center">$gp</td>
-<td align="center">28</td>
-<td align="center">global pointer</td>
+<td style="text-align:center">$gp</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">global pointer</td>
 </tr>
 <tr>
-<td align="center">$sp</td>
-<td align="center">29</td>
-<td align="center">stack pointer</td>
+<td style="text-align:center">$sp</td>
+<td style="text-align:center">29</td>
+<td style="text-align:center">stack pointer</td>
 </tr>
 <tr>
-<td align="center">$fp</td>
-<td align="center">30</td>
-<td align="center">frame pointer</td>
+<td style="text-align:center">$fp</td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">frame pointer</td>
 </tr>
 <tr>
-<td align="center">$ra</td>
-<td align="center">31</td>
-<td align="center">return addr (hardware)</td>
+<td style="text-align:center">$ra</td>
+<td style="text-align:center">31</td>
+<td style="text-align:center">return addr (hardware)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>Big endian (MIPS) （高位字节在低地址）vs little endian (8086)（高位字节在高地址）</p>
 <p>Big and little endian are for the position of byte in a word</p>
 <p>The order of the bits in a byte is fixed, regardless of big or small endian</p>
 <p>some examples of MIPS commands</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">add $s3, $t0, $t1	//$s3=$t0+$t1</span><br><span class="line">lw $t0, 1($s3)	//$(s3+1)=$t0</span><br><span class="line">beq $t0, $t1, label	//if $t0==$t1, execute label</span><br><span class="line">bne $t0, $t1, label	//if $t0!=$t1, execute label</span><br><span class="line">slti $t0, $t1, immediate	//if t1 &lt; immediate, t0=1</span><br><span class="line">sltiu $t0, $t1, $t2	//if unsigned t1 &lt; unsigned t2, t0=1</span><br></pre></td></tr></table></figure>
-
 <p>if jump is to far, assembler will insert an unconditional jump</p>
-<h3 id="RISC-V"><a href="#RISC-V" class="headerlink" title="RISC-V"></a>RISC-V</h3><p>Open, simple, extendable</p>
-<h2 id="3-Single-cycle-Processor"><a href="#3-Single-cycle-Processor" class="headerlink" title="3 Single-cycle Processor"></a>3 Single-cycle Processor</h2><p>4 stages:</p>
+<h3 id="RISC-V"><a class="header-anchor" href="#RISC-V">¶</a>RISC-V</h3>
+<p>Open, simple, extendable</p>
+<h2 id="3-Single-cycle-Processor"><a class="header-anchor" href="#3-Single-cycle-Processor">¶</a>3 Single-cycle Processor</h2>
+<p>4 stages:</p>
 <ul>
-<li>IF (instruction fetch)<ul>
-<li>PC+&#x3D;4 in each cycle</li>
-<li>for branch<ul>
+<li>IF (instruction fetch)
+<ul>
+<li>PC+=4 in each cycle</li>
+<li>for branch
+<ul>
 <li>A PC Ext (signed) to add immediate to PC</li>
 <li>A zero flag to determine whether to add immediate to PC</li>
 </ul>
@@ -789,25 +827,31 @@
 <li>for I-type: replace lower 28 bits of PC with the lower 26 bits of the fetched instruction shifted left by 2 bits</li>
 </ul>
 </li>
-<li>Decode<ul>
-<li>for R-type<ul>
+<li>Decode
+<ul>
+<li>for R-type
+<ul>
 <li>Generate a RegWr signal for Registers</li>
 <li>Generate a ALUctr signal for Registers</li>
 </ul>
 </li>
-<li>for I-type<ul>
-<li>calculation, like ori<ul>
-<li>Expand immediate from 16 bits to 32 bits (unsigned&#x2F;zero extension)</li>
+<li>for I-type
+<ul>
+<li>calculation, like ori
+<ul>
+<li>Expand immediate from 16 bits to 32 bits (unsigned/zero extension)</li>
 <li>need a multiplexer, because in R-type write to Rd but in I-type write to Rt</li>
 </ul>
 </li>
-<li>memory access, like lw &amp; sw<ul>
+<li>memory access, like lw &amp; sw
+<ul>
 <li>Expand immediate from 16 bits to 32 bits (signed extension)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>for J-type<ul>
+<li>for J-type
+<ul>
 <li>shift lower 26 bits of the fetched instruction by 2 bits (*4)</li>
 </ul>
 </li>
@@ -820,7 +864,8 @@
 <p>Two Layers of Decoding: Main Control &amp; ALU Control</p>
 <p>op $\Rightarrow$ other control signals</p>
 <p>ALUop, func $\Rightarrow$ ALUctr</p>
-<h2 id="4-Multi-cycle-Processor"><a href="#4-Multi-cycle-Processor" class="headerlink" title="4 Multi-cycle Processor"></a>4 Multi-cycle Processor</h2><p>硬件中添加5个编译器不能读取的寄存器</p>
+<h2 id="4-Multi-cycle-Processor"><a class="header-anchor" href="#4-Multi-cycle-Processor">¶</a>4 Multi-cycle Processor</h2>
+<p>硬件中添加5个编译器不能读取的寄存器</p>
 <ul>
 <li>A，B：读出的AB地址的数据</li>
 <li>ALUout：临时存储ALUout的数据</li>
@@ -830,103 +875,116 @@
 <table>
 <thead>
 <tr>
-<th align="center">Phase</th>
-<th align="center">Instr Fetch</th>
-<th align="center">Decode</th>
-<th align="center">Execute</th>
-<th align="center">Memory Access</th>
-<th align="center">Write-back</th>
+<th style="text-align:center">Phase</th>
+<th style="text-align:center">Instr Fetch</th>
+<th style="text-align:center">Decode</th>
+<th style="text-align:center">Execute</th>
+<th style="text-align:center">Memory Access</th>
+<th style="text-align:center">Write-back</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>R-type</strong></td>
-<td align="center">IR &#x3D; Memory[PC];<code>&lt;br&gt;</code>PC &#x3D; PC + 4;</td>
-<td align="center">A &#x3D; Reg[IR[25-21]];<code>&lt;br&gt;</code>B &#x3D; Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut &#x3D; PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
-<td align="center">ALUOut &#x3D; A op B;</td>
-<td align="center">Reg[IR[15-11]] &#x3D; ALUOut;</td>
-<td align="center">—</td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>R-type</strong></td>
+<td style="text-align:center">IR = Memory[PC];<code>&lt;br&gt;</code>PC = PC + 4;</td>
+<td style="text-align:center">A = Reg[IR[25-21]];<code>&lt;br&gt;</code>B = Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut = PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
+<td style="text-align:center">ALUOut = A op B;</td>
+<td style="text-align:center">Reg[IR[15-11]] = ALUOut;</td>
+<td style="text-align:center">—</td>
 </tr>
 <tr>
-<td align="center"><strong>Mem Ref</strong></td>
-<td align="center">IR &#x3D; Memory[PC];<code>&lt;br&gt;</code>PC &#x3D; PC + 4;</td>
-<td align="center">A &#x3D; Reg[IR[25-21]];<code>&lt;br&gt;</code>B &#x3D; Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut &#x3D; PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
-<td align="center">ALUOut &#x3D; A + sign-extend(IR[15-0]);</td>
-<td align="center">MDR &#x3D; Memory[ALUOut];<code>&lt;br&gt;</code>or Memory[ALUOut] &#x3D; B;</td>
-<td align="center">Reg[IR[20-16]] &#x3D; MDR;</td>
+<td style="text-align:center"><strong>Mem Ref</strong></td>
+<td style="text-align:center">IR = Memory[PC];<code>&lt;br&gt;</code>PC = PC + 4;</td>
+<td style="text-align:center">A = Reg[IR[25-21]];<code>&lt;br&gt;</code>B = Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut = PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
+<td style="text-align:center">ALUOut = A + sign-extend(IR[15-0]);</td>
+<td style="text-align:center">MDR = Memory[ALUOut];<code>&lt;br&gt;</code>or Memory[ALUOut] = B;</td>
+<td style="text-align:center">Reg[IR[20-16]] = MDR;</td>
 </tr>
 <tr>
-<td align="center"><strong>Branch</strong></td>
-<td align="center">IR &#x3D; Memory[PC];<code>&lt;br&gt;</code>PC &#x3D; PC + 4;</td>
-<td align="center">A &#x3D; Reg[IR[25-21]];<code>&lt;br&gt;</code>B &#x3D; Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut &#x3D; PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
-<td align="center">if (A &#x3D;&#x3D; B)<code>&lt;br&gt;</code>PC &#x3D; ALUOut;</td>
-<td align="center">—</td>
-<td align="center">—</td>
+<td style="text-align:center"><strong>Branch</strong></td>
+<td style="text-align:center">IR = Memory[PC];<code>&lt;br&gt;</code>PC = PC + 4;</td>
+<td style="text-align:center">A = Reg[IR[25-21]];<code>&lt;br&gt;</code>B = Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut = PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
+<td style="text-align:center">if (A == B)<code>&lt;br&gt;</code>PC = ALUOut;</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
 </tr>
 <tr>
-<td align="center"><strong>Jump</strong></td>
-<td align="center">IR &#x3D; Memory[PC];<code>&lt;br&gt;</code>PC &#x3D; PC + 4;</td>
-<td align="center">A &#x3D; Reg[IR[25-21]];<code>&lt;br&gt;</code>B &#x3D; Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut &#x3D; PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
-<td align="center">PC &#x3D; PC[31-28]|| (IR[25-0] &lt;&lt; 2);</td>
-<td align="center">—</td>
-<td align="center">—</td>
+<td style="text-align:center"><strong>Jump</strong></td>
+<td style="text-align:center">IR = Memory[PC];<code>&lt;br&gt;</code>PC = PC + 4;</td>
+<td style="text-align:center">A = Reg[IR[25-21]];<code>&lt;br&gt;</code>B = Reg[IR[20-16]];<code>&lt;br&gt;</code>ALUOut = PC + (sign-extend(IR[15-0]) &lt;&lt; 2);</td>
+<td style="text-align:center">PC = PC[31-28]|| (IR[25-0] &lt;&lt; 2);</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li>在IF就执行PC&#x3D;PC+4是为了利用空闲的ALU</li>
+<li>在IF就执行PC=PC+4是为了利用空闲的ALU</li>
 <li>在Decode阶段是为所有可能做好准备。读取A，B是为了准备对A，B地址的数据进行操作；计算Branch Destination并存入ALUout是为可能的branch指令做准备。Decode阶段还会准备好Execute阶段对应的控制信号。</li>
-<li>Execute阶段：<ul>
+<li>Execute阶段：
+<ul>
 <li>R：计算正确的计算结果</li>
-<li>LW&#x2F;SW：正确的地址覆盖掉ALUout（而不是之前算出来的Branch Destination)</li>
+<li>LW/SW：正确的地址覆盖掉ALUout（而不是之前算出来的Branch Destination)</li>
 <li>Branch：比较A和B输出一个zero control signal，用于控制PCwrite；ALUout准备传输给PC</li>
 <li>J：Jump Destination给PC</li>
 </ul>
 </li>
-<li>Memory Access阶段：<ul>
+<li>Memory Access阶段：
+<ul>
 <li>R：ALUout的值写入R[Rd]</li>
 <li>SW：把B存入M[ALUout]，其中B是第二个阶段被更新，第三个阶段被同样的数据覆盖（因为IR没变），第四个阶段被用到</li>
 <li>LW：把M[ALUout]存入MDR</li>
 </ul>
 </li>
-<li>Writeback阶段：<ul>
+<li>Writeback阶段：
+<ul>
 <li>LW：MDR写入Reg[IR[20-16]]</li>
 </ul>
 </li>
 </ul>
 <p>控制信号：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">    Start([Start]) --&gt; IF[&lt;b&gt;1 InstrFetch&lt;/b&gt;&lt;br/&gt;IorD=0&lt;br/&gt;MemRead;IRWrite&lt;br/&gt;ALUSrcA=0&lt;br/&gt;ALUSrcB=1&lt;br/&gt;PCSource, ALUOp=00&lt;br/&gt;PCWrite]</span><br><span class="line">IF --&gt;Decode[&lt;b&gt;2 Decode&lt;/b&gt;&lt;br/&gt;ALUSrcA=0&lt;br/&gt;ALUSrcB=11&lt;br/&gt;ALUOp=00&lt;br/&gt;PCWriteCond=0]</span><br><span class="line"></span><br><span class="line">    Decode --&gt;|Op = lw or sw| ExecMem[&lt;b&gt;3 Execute lw/sw&lt;/b&gt;&lt;br/&gt;ALUSrcA=1&lt;br/&gt;ALUSrcB=10&lt;br/&gt;ALUOp=00&lt;br/&gt;PCWriteCond=0]</span><br><span class="line">    Decode --&gt;|Op = R-type| ExecR[&lt;b&gt;3 Execute R-type&lt;/b&gt;&lt;br/&gt;ALUSrcA=1&lt;br/&gt;ALUSrcB=00&lt;br/&gt;ALUOp=10&lt;br/&gt;PCWriteCond=0]</span><br><span class="line">    Decode --&gt;|Op = beq| ExecBeq[&lt;b&gt;3 Execute beq&lt;/b&gt;&lt;br/&gt;ALUSrcA=1&lt;br/&gt;ALUSrcB=00&lt;br/&gt;ALUOp=01&lt;br/&gt;PCSource=01]</span><br><span class="line">    Decode --&gt;|Op = j| Jump[&lt;b&gt;3 Jump&lt;/b&gt;&lt;br/&gt;PCSource=10&lt;br/&gt;PCWrite]</span><br><span class="line">  </span><br><span class="line">    ExecMem --&gt;|Op = lw| MemRead[&lt;b&gt;4 Memory Access lw&lt;/b&gt;&lt;br/&gt;MemRead&lt;br/&gt;IorD=1&lt;br/&gt;PCWriteCond=0]</span><br><span class="line">    ExecMem --&gt;|Op = sw| MemWrite[&lt;b&gt;4 Memory Access sw&lt;/b&gt;&lt;br/&gt;MemWrite&lt;br/&gt;IorD=1&lt;br/&gt;PCWriteCond=0]</span><br><span class="line">  </span><br><span class="line">    MemRead --&gt; WB[&lt;b&gt;5 Write Back lw&lt;/b&gt;&lt;br/&gt;RegWrite=1&lt;br/&gt;MemtoReg=1]</span><br><span class="line">    MemWrite --&gt; End((End))</span><br><span class="line">    WB --&gt; End</span><br><span class="line">  </span><br><span class="line">    ExecR --&gt; WriteR[&lt;b&gt;4 Memory Access R-type&lt;/b&gt;&lt;br/&gt;RegDst=1&lt;br/&gt;RegWrite=1&lt;br/&gt;MemtoReg=0&lt;br/&gt;PCWriteCond=0]</span><br><span class="line">    WriteR --&gt; End</span><br><span class="line">  </span><br><span class="line">    ExecBeq --&gt; End</span><br><span class="line">    Jump --&gt; End</span><br><span class="line">    End--&gt;Start</span><br></pre></td></tr></table></figure>
-
 <p>CPI: Cycle per Instruction</p>
-<h2 id="5-Pipelining"><a href="#5-Pipelining" class="headerlink" title="5 Pipelining"></a>5 Pipelining</h2><h3 id="5-1-Introduction-to-Pipelining"><a href="#5-1-Introduction-to-Pipelining" class="headerlink" title="5.1 Introduction to Pipelining"></a>5.1 Introduction to Pipelining</h3><p>Multiple instructions are being executed simultaneously</p>
-<h3 id="5-2-How-Pipelining-is-Implemented"><a href="#5-2-How-Pipelining-is-Implemented" class="headerlink" title="5.2 How Pipelining is Implemented"></a>5.2 How Pipelining is Implemented</h3><p>在Single-cycle processor的基础上修改，分为5个阶段：IF, ID, EX, MEM, WB</p>
+<h2 id="5-Pipelining"><a class="header-anchor" href="#5-Pipelining">¶</a>5 Pipelining</h2>
+<h3 id="5-1-Introduction-to-Pipelining"><a class="header-anchor" href="#5-1-Introduction-to-Pipelining">¶</a>5.1 Introduction to Pipelining</h3>
+<p>Multiple instructions are being executed simultaneously</p>
+<h3 id="5-2-How-Pipelining-is-Implemented"><a class="header-anchor" href="#5-2-How-Pipelining-is-Implemented">¶</a>5.2 How Pipelining is Implemented</h3>
+<p>在Single-cycle processor的基础上修改，分为5个阶段：IF, ID, EX, MEM, WB</p>
 <p>在每两个阶段中间，加入超大Register，存储数据和ID阶段产生的Control Signal</p>
 <p>Branch是在MEM阶段解决的</p>
-<h3 id="5-3-Pipeline-hazards"><a href="#5-3-Pipeline-hazards" class="headerlink" title="5.3 Pipeline hazards"></a>5.3 Pipeline hazards</h3><ul>
-<li><p>Structure hazard：不同指令在统一时间周期内需要访问同一个硬件资源</p>
+<h3 id="5-3-Pipeline-hazards"><a class="header-anchor" href="#5-3-Pipeline-hazards">¶</a>5.3 Pipeline hazards</h3>
+<ul>
+<li>
+<p>Structure hazard：不同指令在统一时间周期内需要访问同一个硬件资源</p>
 <p>解决方法：</p>
 <ul>
 <li>给多个端口访问内存</li>
 <li>Instruction Memory和Data Memory分离</li>
 </ul>
 </li>
-<li><p>Data hazard：前一个指令还没完成对于Data的修改，后一个指令就已经读取了数据，ID阶段就需要检查</p>
+<li>
+<p>Data hazard：前一个指令还没完成对于Data的修改，后一个指令就已经读取了数据，ID阶段就需要检查</p>
 <p>解决方法：</p>
 <ul>
 <li>Code Scheduling：不改变执行结果的情况下，让两条Data hazards的指令隔得远一点</li>
-<li>Forwarding&#x2F;Bypassing：通过硬件，不待数据存回内存，就直接给到下一条指令，但是即便如此，lw后一个需要读寄存器的指令依旧会有Data hazard</li>
+<li>Forwarding/Bypassing：通过硬件，不待数据存回内存，就直接给到下一条指令，但是即便如此，lw后一个需要读寄存器的指令依旧会有Data hazard</li>
 <li>Stalling：给一条空指令（Bubble）</li>
 </ul>
 </li>
-<li><p>Control hazard：Branch影响了Instruction流</p>
+<li>
+<p>Control hazard：Branch影响了Instruction流</p>
 <p>解决方法：</p>
 <ul>
 <li>把branch提前到ID之后，减少Bubble从2个变为1个</li>
 <li>延迟分支和延迟槽：再增加一个无论都会执行的分支，包含两个延迟槽，填充原来两个bubble的位置</li>
-<li>分支预测：预测（猜）下一个进入哪一个分支<ul>
-<li>静态：总是跳转&#x2F;不跳转</li>
-<li>动态：<ul>
+<li>分支预测：预测（猜）下一个进入哪一个分支
+<ul>
+<li>静态：总是跳转/不跳转</li>
+<li>动态：
+<ul>
 <li>1位预测器：根据上一次的结果</li>
 <li>2位预测器：00，01，10，11，跳转加1，不跳转减1，只有到00和11的时候，才会改变跳不跳转的状态</li>
-<li>全局&#x2F;局部历史预测</li>
+<li>全局/局部历史预测</li>
 </ul>
 </li>
 <li>prediction correct就继续运行，错误则原来的预测直接flush掉，称为bubble，立即执行正确的</li>
@@ -935,7 +993,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="5-4-Exceptions"><a href="#5-4-Exceptions" class="headerlink" title="5.4 Exceptions"></a>5.4 Exceptions</h3><p>Also-called Interrupt&#x2F;Fault</p>
+<h3 id="5-4-Exceptions"><a class="header-anchor" href="#5-4-Exceptions">¶</a>5.4 Exceptions</h3>
+<p>Also-called Interrupt/Fault</p>
 <p>situations where the normal execution order of instruction is changed, CPU may abort instructions in the pipeline</p>
 <p>The most difficult exceptions have 2 properties:</p>
 <ul>
@@ -956,36 +1015,42 @@
 <table>
 <thead>
 <tr>
-<th align="center">Pipeline stage</th>
-<th align="center">Problem exceptions occurring</th>
+<th style="text-align:center">Pipeline stage</th>
+<th style="text-align:center">Problem exceptions occurring</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">IF</td>
-<td align="center">Page fault on instruction fetch; misaligned memory access; memory protection violation</td>
+<tbody>
+<tr>
+<td style="text-align:center">IF</td>
+<td style="text-align:center">Page fault on instruction fetch; misaligned memory access; memory protection violation</td>
 </tr>
 <tr>
-<td align="center">ID</td>
-<td align="center">Undefined or illegal opcode</td>
+<td style="text-align:center">ID</td>
+<td style="text-align:center">Undefined or illegal opcode</td>
 </tr>
 <tr>
-<td align="center">EX</td>
-<td align="center">Arithmetic exception</td>
+<td style="text-align:center">EX</td>
+<td style="text-align:center">Arithmetic exception</td>
 </tr>
 <tr>
-<td align="center">MEM</td>
-<td align="center">Page fault on data fetch; misaligned memory access; memory protection violation</td>
+<td style="text-align:center">MEM</td>
+<td style="text-align:center">Page fault on data fetch; misaligned memory access; memory protection violation</td>
 </tr>
 <tr>
-<td align="center">WB</td>
-<td align="center">None</td>
+<td style="text-align:center">WB</td>
+<td style="text-align:center">None</td>
 </tr>
-</tbody></table>
-<h3 id="5-5-Handling-Multicycle-Operations"><a href="#5-5-Handling-Multicycle-Operations" class="headerlink" title="5.5 Handling Multicycle Operations"></a>5.5 Handling Multicycle Operations</h3><p>深pipeline</p>
-<h2 id="6-Instruction-level-Parallelism"><a href="#6-Instruction-level-Parallelism" class="headerlink" title="6 Instruction-level Parallelism"></a>6 Instruction-level Parallelism</h2><h3 id="6-1-Concepts-and-Challenges"><a href="#6-1-Concepts-and-Challenges" class="headerlink" title="6.1 Concepts and Challenges"></a>6.1 Concepts and Challenges</h3><p>trying to minimize CPI</p>
+</tbody>
+</table>
+<h3 id="5-5-Handling-Multicycle-Operations"><a class="header-anchor" href="#5-5-Handling-Multicycle-Operations">¶</a>5.5 Handling Multicycle Operations</h3>
+<p>深pipeline</p>
+<h2 id="6-Instruction-level-Parallelism"><a class="header-anchor" href="#6-Instruction-level-Parallelism">¶</a>6 Instruction-level Parallelism</h2>
+<h3 id="6-1-Concepts-and-Challenges"><a class="header-anchor" href="#6-1-Concepts-and-Challenges">¶</a>6.1 Concepts and Challenges</h3>
+<p>trying to minimize CPI</p>
 <p>3 kinds of dependences:</p>
 <ul>
-<li><p>Data Dependences</p>
+<li>
+<p>Data Dependences</p>
 <p>指令的结果被另一条指令使用</p>
 <ul>
 <li>True Dependence: 一条指令产生的结果被后续指令使用</li>
@@ -993,10 +1058,12 @@
 <li>Output Dependence: 多条指令写入同一个寄存器</li>
 </ul>
 </li>
-<li><p>Name Dependences</p>
+<li>
+<p>Name Dependences</p>
 <p>两条指令使用相同的寄存器或内存位置，但它们之间并没有真正的数据依赖，可以用寄存器重命名消除</p>
 </li>
-<li><p>Control Dependences</p>
+<li>
+<p>Control Dependences</p>
 <p>指令的执行依赖于控制流（如分支指令）的结果</p>
 </li>
 </ul>
@@ -1006,40 +1073,50 @@
 <li>Write after write WAW</li>
 <li>Write after read WAR</li>
 </ul>
-<h3 id="6-2-Basic-Compiler-Techniques"><a href="#6-2-Basic-Compiler-Techniques" class="headerlink" title="6.2 Basic Compiler Techniques"></a>6.2 Basic Compiler Techniques</h3><ol>
-<li><p>Pipelining Stalls</p>
+<h3 id="6-2-Basic-Compiler-Techniques"><a class="header-anchor" href="#6-2-Basic-Compiler-Techniques">¶</a>6.2 Basic Compiler Techniques</h3>
+<ol>
+<li>
+<p>Pipelining Stalls</p>
 </li>
-<li><p>Pipelining Scheduling</p>
+<li>
+<p>Pipelining Scheduling</p>
 </li>
-<li><p>Loop Unrolling</p>
+<li>
+<p>Loop Unrolling</p>
 <p>减少跳转，让一个loop里面执行4个loop的内容</p>
 <p>需要计算好余数</p>
 </li>
 </ol>
-<h3 id="6-3-Reducing-Branch-Costs-with-Advanced-Branch-Prediction"><a href="#6-3-Reducing-Branch-Costs-with-Advanced-Branch-Prediction" class="headerlink" title="6.3 Reducing Branch Costs with Advanced Branch Prediction"></a>6.3 Reducing Branch Costs with Advanced Branch Prediction</h3><p>Control Speculation——if mis-speculated:</p>
+<h3 id="6-3-Reducing-Branch-Costs-with-Advanced-Branch-Prediction"><a class="header-anchor" href="#6-3-Reducing-Branch-Costs-with-Advanced-Branch-Prediction">¶</a>6.3 Reducing Branch Costs with Advanced Branch Prediction</h3>
+<p>Control Speculation——if mis-speculated:</p>
 <ul>
 <li>Recovery Mechanism</li>
 <li>Squash instructions on the incorrect path</li>
 </ul>
 <p>Branch Prediction: Dynamic &amp; Static: 见5.3Control hazards部分</p>
-<h3 id="6-4-Overcoming-Data-Hazards-with-Dynamic-Scheduling"><a href="#6-4-Overcoming-Data-Hazards-with-Dynamic-Scheduling" class="headerlink" title="6.4 Overcoming Data Hazards with Dynamic Scheduling"></a>6.4 Overcoming Data Hazards with Dynamic Scheduling</h3><p>The ID stage is divided into two parts</p>
+<h3 id="6-4-Overcoming-Data-Hazards-with-Dynamic-Scheduling"><a class="header-anchor" href="#6-4-Overcoming-Data-Hazards-with-Dynamic-Scheduling">¶</a>6.4 Overcoming Data Hazards with Dynamic Scheduling</h3>
+<p>The ID stage is divided into two parts</p>
 <ul>
 <li>checking for any structural hazard</li>
 <li>waiting for the absence of a data hazard</li>
 </ul>
 <p>为了进一步提高运行效率，重排指令执行顺序，减少data hazards，可以按序发射，乱序执行(in-order issue, out-of-order execution)</p>
 <ol>
-<li><p>list all WAR and WAW hazards</p>
+<li>
+<p>list all WAR and WAW hazards</p>
 </li>
-<li><p>dynamic scheduling</p>
+<li>
+<p>dynamic scheduling</p>
 <ul>
-<li><p>Advantages:</p>
+<li>
+<p>Advantages:</p>
 <ul>
-<li>Compiler doesn’t need to have knowledge of microarchitecture</li>
+<li>Compiler doesn't need to have knowledge of microarchitecture</li>
 <li>Handle cases where dependencies are still unknown</li>
 </ul>
 </li>
-<li><p>Disadvantages:</p>
+<li>
+<p>Disadvantages:</p>
 <ul>
 <li>More complex hardware</li>
 <li>Complicates execptions</li>
@@ -1048,8 +1125,9 @@
 </ul>
 </li>
 </ol>
-<h2 id="7-Memory-Hierarchy-Design"><a href="#7-Memory-Hierarchy-Design" class="headerlink" title="7 Memory Hierarchy Design"></a>7 Memory Hierarchy Design</h2><h3 id="7-1-Cache-Organization"><a href="#7-1-Cache-Organization" class="headerlink" title="7.1 Cache Organization"></a>7.1 Cache Organization</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">Regfile---ITLB</span><br><span class="line">Regfile---DTLB</span><br><span class="line">ITLB---InstrCache</span><br><span class="line">DTLB---DataCache</span><br><span class="line">InstrCache---SRAM[&quot;Second Level Cache (SRAM)&quot;]</span><br><span class="line">DataCache---SRAM</span><br><span class="line">SRAM---DRAM[&quot;Main Memory (DRAM)&quot;]</span><br><span class="line">DRAM---Disk[&quot;Secondary Memory (Disk)&quot;]</span><br></pre></td></tr></table></figure>
-
+<h2 id="7-Memory-Hierarchy-Design"><a class="header-anchor" href="#7-Memory-Hierarchy-Design">¶</a>7 Memory Hierarchy Design</h2>
+<h3 id="7-1-Cache-Organization"><a class="header-anchor" href="#7-1-Cache-Organization">¶</a>7.1 Cache Organization</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">Regfile---ITLB</span><br><span class="line">Regfile---DTLB</span><br><span class="line">ITLB---InstrCache</span><br><span class="line">DTLB---DataCache</span><br><span class="line">InstrCache---SRAM[&quot;Second Level Cache (SRAM)&quot;]</span><br><span class="line">DataCache---SRAM</span><br><span class="line">SRAM---DRAM[&quot;Main Memory (DRAM)&quot;]</span><br><span class="line">DRAM---Disk[&quot;Secondary Memory (Disk)&quot;]</span><br></pre></td></tr></table></figure>
 <p>Principle of Locality: Programs tend to reuse data and instructions near those they have used recently, or those were recently referenced themselves.</p>
 <ul>
 <li>Temporal locality: Recently referenced items are likely to be referenced in the near future.</li>
@@ -1067,16 +1145,15 @@
   </tr>
 </table>
 对于一个Four-Way Set Associative Cache，先通过Index定位到一个包含4个Block的组，再通过tag来找到（或者找不到）正确的block，然后再通过Block Offset找到正确的byte
-
-<p>Bits per row &#x3D; Data Bits (Block Size in bits) +Tag Bits+Valid Bit</p>
+<p>Bits per row = Data Bits (Block Size in bits) +Tag Bits+Valid Bit</p>
 <p>Cache大小的计算：如果一个32位block是22位tag，8位index，2位block offset，又是一个4-way cache，则：</p>
 <ul>
 <li>set的数量：2^8</li>
-<li>每个set中block的数量：4&#x3D;2^2</li>
+<li>每个set中block的数量：4=2^2</li>
 <li>每个block中Byte的数量：2^2</li>
 </ul>
-<p>所以总大小：2^8^$\times$2^2^$\times$2^2^B&#x3D;2^12^B&#x3D;4KB</p>
-<p>如果出现Miss的情况，需要替换掉一个block，LRU&#x2F;FIFO&#x2F;Random</p>
+<p>所以总大小：2^8^$\times$2^2^$\times$2^2^B=2^12^B=4KB</p>
+<p>如果出现Miss的情况，需要替换掉一个block，LRU/FIFO/Random</p>
 <p>Write strategy：</p>
 <ul>
 <li>write through：每次都写进cache和memory</li>
@@ -1084,16 +1161,20 @@
 </ul>
 <p>Handling</p>
 <ul>
-<li>Cache Hits<ul>
+<li>Cache Hits
+<ul>
 <li>Read hits: Just read it !</li>
-<li>Write hits<ul>
-<li>require the cache and memory to be consistent<ul>
+<li>Write hits
+<ul>
+<li>require the cache and memory to be consistent
+<ul>
 <li>write through</li>
 <li>slow</li>
 <li>can use a write buffer or stall when write buffer is full</li>
 </ul>
 </li>
-<li>allow cache and memory to be inconsistent<ul>
+<li>allow cache and memory to be inconsistent
+<ul>
 <li>write back</li>
 <li>need dirty bit to tell whether or not required to write back to memory</li>
 <li>can use a write buffer when writing back</li>
@@ -1103,8 +1184,10 @@
 </li>
 </ul>
 </li>
-<li>Cache Misses<ul>
-<li>Read Misses: block size增加，miss penalty也增加；miss一个word要从memory获得一整个block<ul>
+<li>Cache Misses
+<ul>
+<li>Read Misses: block size增加，miss penalty也增加；miss一个word要从memory获得一整个block
+<ul>
 <li>一收到block中的word，不等block完全上传完就执行</li>
 <li>需要的word先传，再传block剩下的部分</li>
 <li>非阻塞式cache：处理器在cache在处理先前miss的时候还可以继续获取cache中的内容</li>
@@ -1114,13 +1197,13 @@
 </ul>
 </li>
 </ul>
-<p><strong>CPU Time &#x3D; (CPU Execution Clock Cycles + Memory Stall Clock Cycles) $\times$ Cycle Time</strong></p>
+<p><strong>CPU Time = (CPU Execution Clock Cycles + Memory Stall Clock Cycles) $\times$ Cycle Time</strong></p>
 <p>因此cache行为对CPU time影响很大</p>
-<h3 id="7-2-Virtual-Memory"><a href="#7-2-Virtual-Memory" class="headerlink" title="7.2 Virtual Memory"></a>7.2 Virtual Memory</h3><p>Virtual page number + page offset -&gt; physical page number + page offset</p>
+<h3 id="7-2-Virtual-Memory"><a class="header-anchor" href="#7-2-Virtual-Memory">¶</a>7.2 Virtual Memory</h3>
+<p>Virtual page number + page offset -&gt; physical page number + page offset</p>
 <p>因为实际上是在page table里面的physical page里查找哪一个page number和请求的(virtual) page number一致，所以很费时间（查找）</p>
 <p>使用TLB来解决这个问题（这一部分仅仅是用来找数据所在的地址，不找数据本身，找数据本身见7.1）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">VPN[Virtual Page #]--&gt;|TLB hit|TLB[TLB]</span><br><span class="line">VPN--&gt;|TLB miss|PTR[&quot;Page Table&lt;br&gt;(Stored in physical memory)&quot;]</span><br><span class="line">TLB--&gt;Data[&quot;Data&lt;br&gt;in cache, memory or storage&quot;]</span><br><span class="line">PTR--&gt;Data</span><br><span class="line">VPN--&gt;|TLB miss and page fault|Data</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>TLB, Page Table查到的地址对应的数据可能存在cache，memory，storage里面</p>
 <table>
 <thead>
@@ -1131,7 +1214,8 @@
 <th>Possible? Under what circumstances?</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Hit</td>
 <td>Hit</td>
 <td>Hit</td>
@@ -1164,7 +1248,7 @@
 <tr>
 <td>Hit</td>
 <td>Miss</td>
-<td>Miss&#x2F; Hit</td>
+<td>Miss/ Hit</td>
 <td>Impossible – TLB translation not possible if page is not present in memory</td>
 </tr>
 <tr>
@@ -1173,28 +1257,36 @@
 <td>Hit</td>
 <td>Impossible – data not allowed in cache if page is not in memory</td>
 </tr>
-</tbody></table>
-<h3 id="7-3-Six-Basic-Cache-Optimizations"><a href="#7-3-Six-Basic-Cache-Optimizations" class="headerlink" title="7.3 Six Basic Cache Optimizations"></a>7.3 Six Basic Cache Optimizations</h3><p>Average Memory Access Time &#x3D; Hit Time + Miss Rate $\times$ Miss Penalty</p>
+</tbody>
+</table>
+<h3 id="7-3-Six-Basic-Cache-Optimizations"><a class="header-anchor" href="#7-3-Six-Basic-Cache-Optimizations">¶</a>7.3 Six Basic Cache Optimizations</h3>
+<p>Average Memory Access Time = Hit Time + Miss Rate $\times$ Miss Penalty</p>
 <ol>
-<li><p>Reducing the miss rate</p>
+<li>
+<p>Reducing the miss rate</p>
 <p>Larger block size, larger cache size, higher associativity</p>
 </li>
-<li><p>Reducing the miss penalty</p>
+<li>
+<p>Reducing the miss penalty</p>
 <p>Multilevel caches, giving reads priority over writes</p>
 </li>
-<li><p>Reducing the time to hit in the cache</p>
+<li>
+<p>Reducing the time to hit in the cache</p>
 <p>Avoiding address translation when indexing the cache</p>
 </li>
 </ol>
 <p>Three Categories of Misses</p>
 <ul>
-<li><p>Compulsory</p>
+<li>
+<p>Compulsory</p>
 <p>The very first access to a block cannot be in the cache</p>
 </li>
-<li><p>Capacity</p>
+<li>
+<p>Capacity</p>
 <p>If the cache cannot contain all the blocks needed during execution of a program, capacity misses occur</p>
 </li>
-<li><p>Conflict</p>
+<li>
+<p>Conflict</p>
 <p>In case of set associative and direct mapped, conflict misses occur. Different blocks mapped onto the same place</p>
 </li>
 </ul>
@@ -1211,7 +1303,8 @@
 <th>Miss Penalty</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>Larger block size</strong></td>
 <td>⬇️</td>
 <td>⬆️</td>
@@ -1265,20 +1358,24 @@
 <td>—</td>
 <td>—</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p>Higher associativity</p>
+<li>
+<p>Higher associativity</p>
 <p>more potential place to store data, thus reducing conflict misses</p>
 </li>
-<li><p>Giving priority to read misses over writes</p>
+<li>
+<p>Giving priority to read misses over writes</p>
 <p>Usually has a write buffer, so write can wait</p>
 </li>
-<li><p>Avoid address translations</p>
+<li>
+<p>Avoid address translations</p>
 <p>让cache直接使用虚拟地址访问，省去翻译的步骤，但是也有问题：</p>
 <ul>
 <li>不同正在运行的进程的虚拟地址相互干扰</li>
 <li>进程切换的时候，需要flush cache</li>
-<li>不同的虚拟地址可能映射到同一个物理地址（alias&#x2F;synonym），写数据的时候可能导致数据不同步</li>
+<li>不同的虚拟地址可能映射到同一个物理地址（alias/synonym），写数据的时候可能导致数据不同步</li>
 </ul>
 <p>因此，折中一下，使用VIPT：Virtually Indexed, Physically Tagged</p>
 <p>要求：一页只能映射到一个Cache Set</p>
@@ -1288,7 +1385,7 @@
 <li>用VPN查找到了PPN，获得了物理地址的tag</li>
 <li>对比两个tag，判断是否命中，命中就返回，未命中就Cache Miss，进一步访问memory</li>
 </ol>
-<p>Limits: Cache Size &#x3D; page size $\times$ associativity</p>
+<p>Limits: Cache Size = page size $\times$ associativity</p>
 <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; text-align: center;">
     <tr>
       <th>Virtual Page Number</th>
@@ -1299,42 +1396,57 @@
       <td>Index</td>
       <td>Block offset</td>
     </tr>
-  </table></li>
+  </table>
+</li>
 </ul>
-<p><strong>cache size &#x3D; number of sets $\times$ associativity (number of block in a set) $\times$ block size &#x3D; 2^index^ ^bits^$\times$ N $\times$ 2^byte^ ^offset^ ^bits^</strong></p>
-<p><strong>minimum page size &#x3D; cache size $\div$ associativity &#x3D; number of sets$\times$ block size &#x3D; 2^index^ ^bits^ $\times$ 2^byte^ ^offset^ ^bits^</strong></p>
-<h3 id="7-4-Ten-Advanced-Optimizations-of-Cache-Performance"><a href="#7-4-Ten-Advanced-Optimizations-of-Cache-Performance" class="headerlink" title="7.4 Ten Advanced Optimizations of Cache Performance"></a>7.4 Ten Advanced Optimizations of Cache Performance</h3><ol>
-<li><p>Small and simple first level caches</p>
+<p><strong>cache size = number of sets $\times$ associativity (number of block in a set) $\times$ block size = 2^index^ ^bits^$\times$ N $\times$ 2^byte^ ^offset^ ^bits^</strong></p>
+<p><strong>minimum page size = cache size $\div$ associativity = number of sets$\times$ block size = 2^index^ ^bits^ $\times$ 2^byte^ ^offset^ ^bits^</strong></p>
+<h3 id="7-4-Ten-Advanced-Optimizations-of-Cache-Performance"><a class="header-anchor" href="#7-4-Ten-Advanced-Optimizations-of-Cache-Performance">¶</a>7.4 Ten Advanced Optimizations of Cache Performance</h3>
+<ol>
+<li>
+<p>Small and simple first level caches</p>
 </li>
-<li><p>Way Prediction</p>
+<li>
+<p>Way Prediction</p>
 </li>
-<li><p>Pipelining Cache</p>
+<li>
+<p>Pipelining Cache</p>
 </li>
-<li><p>Nonblocking Caches (allow hits before previous misses complete)</p>
+<li>
+<p>Nonblocking Caches (allow hits before previous misses complete)</p>
 </li>
-<li><p>Multibanked Caches (support simultaneous access)</p>
+<li>
+<p>Multibanked Caches (support simultaneous access)</p>
 </li>
-<li><p>Critical Word First, Early Restart</p>
+<li>
+<p>Critical Word First, Early Restart</p>
 <ul>
 <li>critical word first: 先去请求关键字给CPU</li>
 <li>early restart: 按顺序请求，一到关键字就不等读完立即给CPU</li>
 </ul>
 </li>
-<li><p>Merging Write buffer: 如果要写入的字已经在write buffer里面了，直接更新write buffer</p>
+<li>
+<p>Merging Write buffer: 如果要写入的字已经在write buffer里面了，直接更新write buffer</p>
 </li>
-<li><p>Compiler Optimizations: 例如矩阵的读取，从左右上下变为上下左右</p>
+<li>
+<p>Compiler Optimizations: 例如矩阵的读取，从左右上下变为上下左右</p>
 </li>
-<li><p>Hardware Prefetching: utilizing memory bandwidth that otherwise would be unused</p>
+<li>
+<p>Hardware Prefetching: utilizing memory bandwidth that otherwise would be unused</p>
 </li>
-<li><p>Compiler Prefetching: Insert prefetch instructions before data is needed (register&#x2F;cache)</p>
+<li>
+<p>Compiler Prefetching: Insert prefetch instructions before data is needed (register/cache)</p>
 </li>
 </ol>
-<h3 id="7-5-Memory-Technology-and-Optimizations"><a href="#7-5-Memory-Technology-and-Optimizations" class="headerlink" title="7.5 Memory Technology and Optimizations"></a>7.5 Memory Technology and Optimizations</h3><p>performance merits: Latency &amp; Bandwidth</p>
+<h3 id="7-5-Memory-Technology-and-Optimizations"><a class="header-anchor" href="#7-5-Memory-Technology-and-Optimizations">¶</a>7.5 Memory Technology and Optimizations</h3>
+<p>performance merits: Latency &amp; Bandwidth</p>
 <p>SRAM (mainly for cache) complex, costly</p>
 <p>DRAM (mainly for memory) simple, cheaper than SRAM</p>
 <p>Flash Memory: type of EEPROM</p>
 <p>new trends: NVM(Non-Volatile Memory)</p>
-<h2 id="8-Data-Level-Parallelism"><a href="#8-Data-Level-Parallelism" class="headerlink" title="8 Data-Level Parallelism"></a>8 Data-Level Parallelism</h2><h3 id="8-1-Introduction"><a href="#8-1-Introduction" class="headerlink" title="8.1 Introduction"></a>8.1 Introduction</h3><p>见1.2最后Flynn’s Classification</p>
+<h2 id="8-Data-Level-Parallelism"><a class="header-anchor" href="#8-Data-Level-Parallelism">¶</a>8 Data-Level Parallelism</h2>
+<h3 id="8-1-Introduction"><a class="header-anchor" href="#8-1-Introduction">¶</a>8.1 Introduction</h3>
+<p>见1.2最后Flynn’s Classification</p>
 <p>SISD，MISD(x)，SIMD，MIMD</p>
 <p>SIMD advantages:</p>
 <ul>
@@ -1342,7 +1454,8 @@
 <li>more energy efficient</li>
 <li>more comfortable for programmers</li>
 </ul>
-<h3 id="8-2-Vector-Architecture"><a href="#8-2-Vector-Architecture" class="headerlink" title="8.2 Vector Architecture"></a>8.2 Vector Architecture</h3><p>basic idea:</p>
+<h3 id="8-2-Vector-Architecture"><a class="header-anchor" href="#8-2-Vector-Architecture">¶</a>8.2 Vector Architecture</h3>
+<p>basic idea:</p>
 <ul>
 <li>Read sets of data elements into “vector registers”</li>
 <li>Operate on those registers</li>
@@ -1350,22 +1463,26 @@
 </ul>
 <p>Architecture: VMIPS</p>
 <ul>
-<li>vector registers<ul>
+<li>vector registers
+<ul>
 <li>containing 64 elements, each elements have 64 bits</li>
-<li>16 read ports and 8 write ports (read&#x2F;write an element at a time)</li>
+<li>16 read ports and 8 write ports (read/write an element at a time)</li>
 </ul>
 </li>
-<li>Vector functional units<ul>
+<li>Vector functional units
+<ul>
 <li>Fully pipelined</li>
 <li>Data and control hazards are detected</li>
 </ul>
 </li>
-<li>Vector load-store unit<ul>
+<li>Vector load-store unit
+<ul>
 <li>Fully pipeline</li>
 <li>One word per clock cycle after initial latency</li>
 </ul>
 </li>
-<li>Scalar registers<ul>
+<li>Scalar registers
+<ul>
 <li>32 general-purpose registers</li>
 <li>32 floating-point registers</li>
 </ul>
@@ -1388,14 +1505,15 @@
 <p>vector load and store</p>
 <p>Vector Mask Registers：选择哪些bit参与运算</p>
 <p>most vector processors use memory banks to allow multiple independent accesses</p>
-<h3 id="8-3-SIMD-Instruction-Set-Extension"><a href="#8-3-SIMD-Instruction-Set-Extension" class="headerlink" title="8.3 SIMD Instruction Set Extension"></a>8.3 SIMD Instruction Set Extension</h3><p>折中一下，Vector Architecture又贵又难造</p>
+<h3 id="8-3-SIMD-Instruction-Set-Extension"><a class="header-anchor" href="#8-3-SIMD-Instruction-Set-Extension">¶</a>8.3 SIMD Instruction Set Extension</h3>
+<p>折中一下，Vector Architecture又贵又难造</p>
 <p>用SIMD指令在普通结构的机器上达到近似Vector Machine 的效果</p>
 <p>很多指令加上类似“.4D”，表示一次处理4个double类型的数据</p>
-<h3 id="8-4-GPU-Graphic-Processing-Unit"><a href="#8-4-GPU-Graphic-Processing-Unit" class="headerlink" title="8.4 GPU (Graphic Processing Unit)"></a>8.4 GPU (Graphic Processing Unit)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">VG[Vertex Generation]--&gt;VP[Vertex Processing]</span><br><span class="line">VP--&gt;PG[Primitive Generation]</span><br><span class="line">PG--&gt;PP[Primitive Processing]</span><br><span class="line">PP--&gt;FG[Fragment Generation]</span><br><span class="line">FG--&gt;FP[Fragment Processing]</span><br><span class="line">FP--&gt;PO[Pixel Operations]</span><br></pre></td></tr></table></figure>
-
-<p>CUDA （Compute Unified Device Architecture）<br>highly parallel</p>
+<h3 id="8-4-GPU-Graphic-Processing-Unit"><a class="header-anchor" href="#8-4-GPU-Graphic-Processing-Unit">¶</a>8.4 GPU (Graphic Processing Unit)</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">flowchart TD</span><br><span class="line">VG[Vertex Generation]--&gt;VP[Vertex Processing]</span><br><span class="line">VP--&gt;PG[Primitive Generation]</span><br><span class="line">PG--&gt;PP[Primitive Processing]</span><br><span class="line">PP--&gt;FG[Fragment Generation]</span><br><span class="line">FG--&gt;FP[Fragment Processing]</span><br><span class="line">FP--&gt;PO[Pixel Operations]</span><br></pre></td></tr></table></figure>
+<p>CUDA （Compute Unified Device Architecture）<br>
+highly parallel</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">          Grid</span><br><span class="line">┌─────────────────────────────┐</span><br><span class="line">│    Block 0      Block 1     │ ← 一整个 Grid 中有多个 Block</span><br><span class="line">│  ┌──────────┐  ┌──────────┐ │</span><br><span class="line">│  │ Thread x │  │ Thread x │ │ ← 每个 Block 有多个 Thread</span><br><span class="line">│  │ Thread y │  │ Thread y │ │</span><br><span class="line">│  └──────────┘  └──────────┘ │</span><br><span class="line">└─────────────────────────────┘</span><br></pre></td></tr></table></figure>
-
 <p>1个函数就是1个kernel，对应1个grid，grid之下有多个block，block之中有多个thread</p>
 <p>block之间数据不共享，thread之间数据共享</p>
 <p>block是调度单位，thread是运算单位，一般性一个block内最多1024个thread</p>
@@ -1404,56 +1522,58 @@
 <table>
 <thead>
 <tr>
-<th align="center">Memory Type</th>
-<th align="center">R&#x2F;W</th>
-<th align="center">Work for</th>
-<th align="center">Location</th>
-<th align="center">Speed</th>
+<th style="text-align:center">Memory Type</th>
+<th style="text-align:center">R/W</th>
+<th style="text-align:center">Work for</th>
+<th style="text-align:center">Location</th>
+<th style="text-align:center">Speed</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>Registers</strong></td>
-<td align="center">RW</td>
-<td align="center">per thread</td>
-<td align="center">GPU registers</td>
-<td align="center">🚀 Fastest</td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Registers</strong></td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">per thread</td>
+<td style="text-align:center">GPU registers</td>
+<td style="text-align:center">🚀 Fastest</td>
 </tr>
 <tr>
-<td align="center"><strong>Local Memory</strong></td>
-<td align="center">RW</td>
-<td align="center">per thread</td>
-<td align="center">Global memory</td>
-<td align="center">🐢 Slow <code>&lt;br&gt;</code>(stored in global memory)</td>
+<td style="text-align:center"><strong>Local Memory</strong></td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">per thread</td>
+<td style="text-align:center">Global memory</td>
+<td style="text-align:center">🐢 Slow <code>&lt;br&gt;</code>(stored in global memory)</td>
 </tr>
 <tr>
-<td align="center"><strong>Shared Memory</strong></td>
-<td align="center">RW</td>
-<td align="center">per block</td>
-<td align="center">On-chip (SM)</td>
-<td align="center">⚡ Fast&#96;&#96;(low latency, manually managed)</td>
+<td style="text-align:center"><strong>Shared Memory</strong></td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">per block</td>
+<td style="text-align:center">On-chip (SM)</td>
+<td style="text-align:center">⚡ Fast``(low latency, manually managed)</td>
 </tr>
 <tr>
-<td align="center"><strong>Global Memory</strong></td>
-<td align="center">RW</td>
-<td align="center">per grid</td>
-<td align="center">Off-chip on GPU DRAM</td>
-<td align="center">🐌 Slowest&#96;&#96;(high latency)</td>
+<td style="text-align:center"><strong>Global Memory</strong></td>
+<td style="text-align:center">RW</td>
+<td style="text-align:center">per grid</td>
+<td style="text-align:center">Off-chip on GPU DRAM</td>
+<td style="text-align:center">🐌 Slowest``(high latency)</td>
 </tr>
 <tr>
-<td align="center"><strong>Constant Memory</strong></td>
-<td align="center">R</td>
-<td align="center">per grid</td>
-<td align="center">Off-chip on GPU DRAM&#96;&#96; (with read cache)</td>
-<td align="center">⚡ Fast for broadcast&#96;&#96;(cached)</td>
+<td style="text-align:center"><strong>Constant Memory</strong></td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">per grid</td>
+<td style="text-align:center">Off-chip on GPU DRAM`` (with read cache)</td>
+<td style="text-align:center">⚡ Fast for broadcast``(cached)</td>
 </tr>
 <tr>
-<td align="center"><strong>Texture Memory</strong></td>
-<td align="center">R</td>
-<td align="center">per grid</td>
-<td align="center">Off-chip on GPU DRAM&#96;&#96;(with texture cache)</td>
-<td align="center">⚡ Fast&#96;&#96;optimized for spatial access</td>
+<td style="text-align:center"><strong>Texture Memory</strong></td>
+<td style="text-align:center">R</td>
+<td style="text-align:center">per grid</td>
+<td style="text-align:center">Off-chip on GPU DRAM``(with texture cache)</td>
+<td style="text-align:center">⚡ Fast``optimized for spatial access</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>这里的R指的是对于kernel来说R，可以通过CPU通过CUDA-API写入</p>
 <p>每个kernel支持1，2，3维，可以选择启用几个维度</p>
 <p>warp: SM指挥warp，一个warp一次可以执行32个线程。warp之内的线程是并行的，warp之间的运作类似round robin</p>
@@ -1533,10 +1653,10 @@
                 <li>25/06/17</li>
                 <li>13:42</li>
                 
-                    <li>4.1k</li>
+                    <li>4k</li>
                 
                 
-                    <li>20</li>
+                    <li>19</li>
                 
             </ul>
         </div>

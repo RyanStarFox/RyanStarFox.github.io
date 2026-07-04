@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="图论整理第一章 基本概念1.1 图的概念 $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图  只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$  一些概念：  $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$">
+<meta name="description" content="图论整理 ¶第一章 基本概念 ¶1.1 图的概念   $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图   只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$   一些概念：   $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$ 称$v_i是e_k的始">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图论整理">
 <meta property="og:url" content="https://ryanstarfox.github.io/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="图论整理第一章 基本概念1.1 图的概念 $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图  只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$  一些概念：  $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$">
+<meta property="og:description" content="图论整理 ¶第一章 基本概念 ¶1.1 图的概念   $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图   只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$   一些概念：   $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$ 称$v_i是e_k的始">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-12-01T13:34:00.000Z">
 <meta property="article:modified_time" content="2024-12-01T13:34:00.000Z">
@@ -460,94 +460,127 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="图论整理"><a href="#图论整理" class="headerlink" title="图论整理"></a>图论整理</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><h3 id="1-1-图的概念"><a href="#1-1-图的概念" class="headerlink" title="1.1 图的概念"></a>1.1 图的概念</h3><ol>
-<li><p>$(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图</p>
-</li>
-<li><p>只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$</p>
-</li>
-<li><p>一些概念：</p>
+    <h1>图论整理</h1>
+<h2 id="第一章-基本概念"><a class="header-anchor" href="#第一章-基本概念">¶</a>第一章 基本概念</h2>
+<h3 id="1-1-图的概念"><a class="header-anchor" href="#1-1-图的概念">¶</a>1.1 图的概念</h3>
 <ol>
-<li><p>$e_k&#x3D;(v_i,v_j)$</p>
+<li>
+<p>$(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G=(V,E)$表示图</p>
+</li>
+<li>
+<p>只讨论有限图，$|V|=n$称为图的阶，$|E|=m$</p>
+</li>
+<li>
+<p>一些概念：</p>
+<ol>
+<li>
+<p>$e_k=(v_i,v_j)$</p>
 <ol>
 <li>称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$</li>
 <li>称$v_i是e_k的始点，v_j是e_k的终点，v_i是v_j的直接前趋，v_j是v_i的直接后继$</li>
 </ol>
 </li>
-<li><p><strong>邻接边</strong>：有一个共同顶点的两条边</p>
+<li>
+<p><strong>邻接边</strong>：有一个共同顶点的两条边</p>
 </li>
-<li><p><strong>有向图</strong>：全部由有向边构成的图</p>
+<li>
+<p><strong>有向图</strong>：全部由有向边构成的图</p>
 <p>**无向图：**全部由无向边构成的图</p>
 <p>**混合图：**既有有向边又有无向边构成的图</p>
 </li>
-<li><p>**自环：**只与一个顶点关联的边</p>
+<li>
+<p>**自环：**只与一个顶点关联的边</p>
 </li>
-<li><p>**多重边：**同一对顶点之间存在多条边</p>
+<li>
+<p>**多重边：**同一对顶点之间存在多条边</p>
 <p>**多重图：**含有重边的图</p>
 </li>
-<li><p>**孤立点：**没有与任何边关联的顶点</p>
+<li>
+<p>**孤立点：**没有与任何边关联的顶点</p>
 </li>
-<li><p>**度$d(v)$：**与顶点关联的边的数目</p>
+<li>
+<p>**度$d(v)$：**与顶点关联的边的数目</p>
 <p>**入读：**入边条数</p>
 <p>**出度：**出边条数</p>
 <p>**奇点：**度为奇数的点</p>
 <p>**偶点：**度为偶数的点</p>
 </li>
-<li><p>**简单图：**不存在自环的无向图</p>
+<li>
+<p>**简单图：**不存在自环的无向图</p>
 </li>
 </ol>
 </li>
-<li><p>$\sum\limits_{v\in{V(G)}}d(v)&#x3D;2m$</p>
+<li>
+<p>$\sum\limits_{v\in{V(G)}}d(v)=2m$</p>
 </li>
-<li><p>G中奇数的顶点必为偶数个</p>
+<li>
+<p>G中奇数的顶点必为偶数个</p>
 </li>
-<li><p>G中出度之和&#x3D;入度之和</p>
+<li>
+<p>G中出度之和=入度之和</p>
 </li>
-<li><p>K<del>n</del>的变数是$\cfrac12n(n-1)$</p>
+<li>
+<p>K~n~的变数是$\cfrac12n(n-1)$</p>
 </li>
-<li><p>非空简单图G中一定存在度相同的顶点</p>
+<li>
+<p>非空简单图G中一定存在度相同的顶点</p>
 </li>
-<li><p><strong>n阶完全图：K<del>n</del></strong></p>
+<li>
+<p><strong>n阶完全图：K~n~</strong></p>
 </li>
-<li><p><strong>完全二分图：K<del>m,n</del></strong></p>
+<li>
+<p><strong>完全二分图：K~m,n~</strong></p>
 </li>
-<li><p>**平凡图：**n&#x3D;1的图</p>
+<li>
+<p>**平凡图：**n=1的图</p>
 </li>
-<li><p>**空图&#x2F;零图：**m&#x3D;0的图</p>
+<li>
+<p>**空图/零图：**m=0的图</p>
 </li>
-<li><p>**（k度）正则图：**所有顶点度数均相等（为k）的图</p>
+<li>
+<p>**（k度）正则图：**所有顶点度数均相等（为k）的图</p>
 </li>
-<li><p><strong>阶为k的(k-1)-正则图：k-完全图</strong></p>
+<li>
+<p><strong>阶为k的(k-1)-正则图：k-完全图</strong></p>
 </li>
-<li><p>**正权图：**权为正实数的赋权图</p>
+<li>
+<p>**正权图：**权为正实数的赋权图</p>
 </li>
-<li><p><strong>子图：</strong>$V’\in V,E’\in E$</p>
-<p><strong>支撑子图&#x2F;生成子图：</strong>$V’&#x3D;V,E’\in E$</p>
-<p><strong>导出子图：</strong>$V’\in V,E’_V &#x3D; E_V$</p>
+<li>
+<p><strong>子图：</strong>$V'\in V,E'\in E$</p>
+<p><strong>支撑子图/生成子图：</strong>$V'=V,E'\in E$</p>
+<p><strong>导出子图：</strong>$V'\in V,E'_V = E_V$</p>
 </li>
-<li><p><strong>邻点集：</strong>$\Gamma(v)$</p>
-<p><strong>直接后继集&#x2F;外邻集：</strong>$\Gamma^+(v)$</p>
-<p><strong>直接前趋集&#x2F;内邻集：</strong>$\Gamma^-(v)$</p>
+<li>
+<p><strong>邻点集：</strong>$\Gamma(v)$</p>
+<p><strong>直接后继集/外邻集：</strong>$\Gamma^+(v)$</p>
+<p><strong>直接前趋集/内邻集：</strong>$\Gamma^-(v)$</p>
 </li>
 </ol>
-<h3 id="1-2-图的代数表示"><a href="#1-2-图的代数表示" class="headerlink" title="1.2 图的代数表示"></a>1.2 图的代数表示</h3><ol>
-<li><strong>邻接矩阵</strong><ul>
+<h3 id="1-2-图的代数表示"><a class="header-anchor" href="#1-2-图的代数表示">¶</a>1.2 图的代数表示</h3>
+<ol>
+<li><strong>邻接矩阵</strong>
+<ul>
 <li>对称矩阵</li>
 <li>可以表示自环</li>
 <li>无法表示重边</li>
 </ul>
 </li>
-<li><strong>权矩阵</strong><ul>
+<li><strong>权矩阵</strong>
+<ul>
 <li>邻接矩阵基础上加入权值信息</li>
 </ul>
 </li>
-<li><strong>关联矩阵</strong><ul>
+<li><strong>关联矩阵</strong>
+<ul>
 <li>n x m的矩阵</li>
-<li>$b_{ij}&#x3D;\begin{cases}1,&amp;e_j&#x3D;(v_i,v_k)\in E\-1,&amp;e_j&#x3D;(v_k,v_i)\in E\0,&amp;其他\end{cases}$</li>
+<li>$b_{ij}=\begin{cases}1,&amp;e_j=(v_i,v_k)\in E\-1,&amp;e_j=(v_k,v_i)\in E\0,&amp;其他\end{cases}$</li>
 <li>无法表示自环</li>
 <li>可以表示重边</li>
 </ul>
 </li>
-<li><strong>边列表</strong><ul>
+<li><strong>边列表</strong>
+<ul>
 <li>边列表是对关联矩阵的列进行压缩的结果</li>
 <li>两个m维向量$\vec A$和$\vec B$，前者存放起点，后者存放终点</li>
 <li>可选的$\vec Z$，存放权值</li>
@@ -555,10 +588,12 @@
 <li>可以表示重边</li>
 </ul>
 </li>
-<li><strong>正向表</strong><ul>
-<li>对邻接矩阵的行进行压缩的结果，把每个顶点的直接后趋集中在一起存放<ul>
+<li><strong>正向表</strong>
+<ul>
+<li>对邻接矩阵的行进行压缩的结果，把每个顶点的直接后趋集中在一起存放
+<ul>
 <li>n+1维向量$\vec A$，m维向量$\vec B$</li>
-<li>$d^+(v_i)&#x3D;A(i+1)-A(i)$</li>
+<li>$d^+(v_i)=A(i+1)-A(i)$</li>
 <li>$B(A(i))$到$B(A(i+1)-1)中的任一个值，都是v_i的直接后继$</li>
 </ul>
 </li>
@@ -567,11 +602,13 @@
 <li>可以表示重边</li>
 </ul>
 </li>
-<li><strong>逆向表</strong><ul>
+<li><strong>逆向表</strong>
+<ul>
 <li>与正向表类似，把每个顶点的直接前趋放在一张表里存放</li>
 </ul>
 </li>
-<li><strong>邻接表</strong><ul>
+<li><strong>邻接表</strong>
+<ul>
 <li>每一个表顶点|a|b|c|，a存放点编号，b存放边的数值，c存放下一表顶点的地址指针</li>
 <li>可以存放权值</li>
 <li>可以表示自环</li>
@@ -579,103 +616,128 @@
 </ul>
 </li>
 </ol>
-<h2 id="第二章-道路和回路"><a href="#第二章-道路和回路" class="headerlink" title="第二章 道路和回路"></a>第二章 道路和回路</h2><h3 id="2-1-图的连通性"><a href="#2-1-图的连通性" class="headerlink" title="2.1 图的连通性"></a>2.1 图的连通性</h3><ol>
-<li><p>有向图中：</p>
+<h2 id="第二章-道路和回路"><a class="header-anchor" href="#第二章-道路和回路">¶</a>第二章 道路和回路</h2>
+<h3 id="2-1-图的连通性"><a class="header-anchor" href="#2-1-图的连通性">¶</a>2.1 图的连通性</h3>
+<ol>
+<li>
+<p>有向图中：</p>
 <p>有向道路、有向回路：字面意思</p>
-<p>无重边：<strong>简单有向道路&#x2F;简单有向回路</strong></p>
-<p>无重边、无重顶点：<strong>初级有向道路&#x2F;初级有向回路</strong>，简称<strong>路</strong>和<strong>回路</strong></p>
+<p>无重边：<strong>简单有向道路/简单有向回路</strong></p>
+<p>无重边、无重顶点：<strong>初级有向道路/初级有向回路</strong>，简称<strong>路</strong>和<strong>回路</strong></p>
 </li>
-<li><p>无向图中：</p>
-<p>道路&#x2F;链、回路&#x2F;圈：字面意思</p>
-<p>无重边：<strong>简单道路&#x2F;简单回路</strong></p>
-<p>无重边、无重顶点：<strong>初级道路&#x2F;初级回路</strong></p>
+<li>
+<p>无向图中：</p>
+<p>道路/链、回路/圈：字面意思</p>
+<p>无重边：<strong>简单道路/简单回路</strong></p>
+<p>无重边、无重顶点：<strong>初级道路/初级回路</strong></p>
 </li>
 </ol>
 <p>**弦：**圈中不相邻顶点的边</p>
 <p>**连通图：**G的任意两点之间都存在道路H不是G任何连通子图的真子图</p>
 <p>**树：**不含回路的连通图</p>
-<p>**割边&#x2F;割点：**移去后使得原有图不再连通的边&#x2F;顶点</p>
+<p>**割边/割点：**移去后使得原有图不再连通的边/顶点</p>
 <p>**块：**G中极大的没有割点的连通子图</p>
 <p>割点相关等价命题：</p>
 <ol>
 <li>v是G的一个割点</li>
-<li>存在与v不同的点u,w，使得任何一条u到w的道路P<del>uw</del>经过v</li>
-<li>V-v可以划分为两个顶点集U，W，任意$u\in U,w\in W$，u在每一条道路P<del>uw</del>上</li>
+<li>存在与v不同的点u,w，使得任何一条u到w的道路P~uw~经过v</li>
+<li>V-v可以划分为两个顶点集U，W，任意$u\in U,w\in W$，u在每一条道路P~uw~上</li>
 </ol>
 <p>割边相关等价命题：</p>
 <ol>
 <li>e是G的一条割边</li>
 <li>e不属于G的任何回路</li>
-<li>存在G得顶点u，w，e属于u和w的任何一条道路P<del>uw</del></li>
-<li>G-e可以划分为两个顶点集U和W，使得对任何顶点$u\in U,w\in W$，在G中的道路P<del>uw</del>都经过e</li>
+<li>存在G得顶点u，w，e属于u和w的任何一条道路P~uw~</li>
+<li>G-e可以划分为两个顶点集U和W，使得对任何顶点$u\in U,w\in W$，在G中的道路P~uw~都经过e</li>
 </ol>
-<p>图G移去若干顶点后分为两个连通子图或者剩下一个孤立的点，这些点的集合称为点断集&#x2F;断集A</p>
-<p>$\mathcal K(G)&#x3D;\min\limits_{A\in\emptyset}{|A|}$为断量</p>
+<p>图G移去若干顶点后分为两个连通子图或者剩下一个孤立的点，这些点的集合称为点断集/断集A</p>
+<p>$\mathcal K(G)=\min\limits_{A\in\emptyset}{|A|}$为断量</p>
 <p>同理边断集B，边断量$\lambda(G)$</p>
 <p>若$\mathcal K(G)\geq k$称G为k连通图，同理k边连通图</p>
 <p>$\mathcal K(G)\leq \lambda(G)\leq \delta(G),\delta(G)是顶点的最小度$</p>
-<h3 id="2-3-欧拉道路与回路"><a href="#2-3-欧拉道路与回路" class="headerlink" title="2.3 欧拉道路与回路"></a>2.3 欧拉道路与回路</h3><p>**欧拉回路&#x2F;道路：**经过所有边的简单回路&#x2F;道路</p>
+<h3 id="2-3-欧拉道路与回路"><a class="header-anchor" href="#2-3-欧拉道路与回路">¶</a>2.3 欧拉道路与回路</h3>
+<p>**欧拉回路/道路：**经过所有边的简单回路/道路</p>
 <p>**欧拉图：**存在欧拉回路</p>
 <p>**半欧拉图：**存在欧拉道路而不存在欧拉回路</p>
-<p>$存在欧拉回路\Leftrightarrow 各顶点的度为偶数&#x2F;出度入读相等$</p>
+<p>$存在欧拉回路\Leftrightarrow 各顶点的度为偶数/出度入读相等$</p>
 <p>$存在欧拉道路\Leftrightarrow 只有两个度为奇数的点$</p>
-<h3 id="2-4-哈密顿道路与回路"><a href="#2-4-哈密顿道路与回路" class="headerlink" title="2.4 哈密顿道路与回路"></a>2.4 哈密顿道路与回路</h3><p>**哈密顿回路&#x2F;道路：**无向图的一条过全部顶点的初级回路</p>
+<h3 id="2-4-哈密顿道路与回路"><a class="header-anchor" href="#2-4-哈密顿道路与回路">¶</a>2.4 哈密顿道路与回路</h3>
+<p>**哈密顿回路/道路：**无向图的一条过全部顶点的初级回路</p>
 <p>**哈密顿图：**含有H回路的无向连通图</p>
 <p>**半哈密顿图：**含有H道路而不含H回路的无向连通图</p>
 <p>一些充分定理：</p>
 <ol>
-<li><p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n-1，则G中存在哈密顿道路$</p>
+<li>
+<p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n-1，则G中存在哈密顿道路$</p>
 </li>
-<li><p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n，则G中存在哈密顿回路$</p>
+<li>
+<p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n，则G中存在哈密顿回路$</p>
 </li>
-<li><p>$若简单图每个顶点的度均大于等于\cfrac n2，则G有H回路$</p>
+<li>
+<p>$若简单图每个顶点的度均大于等于\cfrac n2，则G有H回路$</p>
 </li>
-<li><p>$设G是简单图，v_i,v_j是不相邻顶点，且满足d(v_i)+d(v_j)\geq n，则G存在H回路的充要条件是G+(v_i,v_j)有H回路$</p>
+<li>
+<p>$设G是简单图，v_i,v_j是不相邻顶点，且满足d(v_i)+d(v_j)\geq n，则G存在H回路的充要条件是G+(v_i,v_j)有H回路$</p>
 </li>
-<li><p>$先定义闭合图:若d(v_i)+d(v_j)\geq n，令G’&#x3D;G+(v_i,v_j)，重复，直到不存在这样的顶点对为止，得到的即为闭合图，记作C(G)$</p>
+<li>
+<p>$先定义闭合图:若d(v_i)+d(v_j)\geq n，令G'=G+(v_i,v_j)，重复，直到不存在这样的顶点对为止，得到的即为闭合图，记作C(G)$</p>
 <p>$简单图G存在哈密顿回路的充要条件是其闭合图存在哈密顿回路$</p>
 </li>
-<li><p>$若C(G)是完全图，则G有H回路$</p>
+<li>
+<p>$若C(G)是完全图，则G有H回路$</p>
 </li>
 </ol>
-<h3 id="2-6-最短路径：Dijkstra算法"><a href="#2-6-最短路径：Dijkstra算法" class="headerlink" title="2.6 最短路径：Dijkstra算法"></a>2.6 最短路径：Dijkstra算法</h3><h3 id="2-7-关键路径：AOE"><a href="#2-7-关键路径：AOE" class="headerlink" title="2.7 关键路径：AOE"></a>2.7 关键路径：AOE</h3><h3 id="2-8-中国邮路"><a href="#2-8-中国邮路" class="headerlink" title="2.8 中国邮路"></a>2.8 中国邮路</h3><p>先找到奇点，选择最小的几条路径，加上使这些奇点变偶，然后欧拉回路</p>
-<h2 id="第三章-树"><a href="#第三章-树" class="headerlink" title="第三章 树"></a>第三章 树</h2><h3 id="3-1-树的相关定义"><a href="#3-1-树的相关定义" class="headerlink" title="3.1 树的相关定义"></a>3.1 树的相关定义</h3><p>不含任何回路的连通图称为树（T），T中的边称为树枝，度为1的顶点称为树叶</p>
-<p>若T是G的支撑子图，且又是一棵树，则T使G的支撑树&#x2F;生成树，又称G的树</p>
-<h3 id="3-5-Huffman树"><a href="#3-5-Huffman树" class="headerlink" title="3.5 Huffman树"></a>3.5 Huffman树</h3><p>小在左，大在右，0在左，1在右</p>
-<h3 id="3-6-最短树"><a href="#3-6-最短树" class="headerlink" title="3.6 最短树"></a>3.6 最短树</h3><ol>
+<h3 id="2-6-最短路径：Dijkstra算法"><a class="header-anchor" href="#2-6-最短路径：Dijkstra算法">¶</a>2.6 最短路径：Dijkstra算法</h3>
+<h3 id="2-7-关键路径：AOE"><a class="header-anchor" href="#2-7-关键路径：AOE">¶</a>2.7 关键路径：AOE</h3>
+<h3 id="2-8-中国邮路"><a class="header-anchor" href="#2-8-中国邮路">¶</a>2.8 中国邮路</h3>
+<p>先找到奇点，选择最小的几条路径，加上使这些奇点变偶，然后欧拉回路</p>
+<h2 id="第三章-树"><a class="header-anchor" href="#第三章-树">¶</a>第三章 树</h2>
+<h3 id="3-1-树的相关定义"><a class="header-anchor" href="#3-1-树的相关定义">¶</a>3.1 树的相关定义</h3>
+<p>不含任何回路的连通图称为树（T），T中的边称为树枝，度为1的顶点称为树叶</p>
+<p>若T是G的支撑子图，且又是一棵树，则T使G的支撑树/生成树，又称G的树</p>
+<h3 id="3-5-Huffman树"><a class="header-anchor" href="#3-5-Huffman树">¶</a>3.5 Huffman树</h3>
+<p>小在左，大在右，0在左，1在右</p>
+<h3 id="3-6-最短树"><a class="header-anchor" href="#3-6-最短树">¶</a>3.6 最短树</h3>
+<ol>
 <li>Kruskal算法：不断加入最短边，如成环则换次短边</li>
 <li>Prim算法：选到已选区域最近的点</li>
 </ol>
-<h2 id="第四章-平面图与图图的着色"><a href="#第四章-平面图与图图的着色" class="headerlink" title="第四章 平面图与图图的着色"></a>第四章 平面图与图图的着色</h2><h3 id="4-1-平面图"><a href="#4-1-平面图" class="headerlink" title="4.1 平面图"></a>4.1 平面图</h3><p>平面图：能放在一个平面上，任何两条边都不相交，称G<strong>可嵌入平面</strong>，G是<strong>可平面图</strong>，其中一个嵌入称为<strong>平面图</strong></p>
+<h2 id="第四章-平面图与图图的着色"><a class="header-anchor" href="#第四章-平面图与图图的着色">¶</a>第四章 平面图与图图的着色</h2>
+<h3 id="4-1-平面图"><a class="header-anchor" href="#4-1-平面图">¶</a>4.1 平面图</h3>
+<p>平面图：能放在一个平面上，任何两条边都不相交，称G<strong>可嵌入平面</strong>，G是<strong>可平面图</strong>，其中一个嵌入称为<strong>平面图</strong></p>
 <p>G同构于平面图P，称P是G的一个<strong>平面嵌入</strong></p>
-<p>面&#x2F;域：不含任何顶点和边的区域，其中诸边称为边界</p>
-<p>欧拉公式：对于平面连通图，$d&#x3D;m-n+2$</p>
-<p>若G有k个连通支，则$n-m+d &#x3D; k+1$</p>
+<p>面/域：不含任何顶点和边的区域，其中诸边称为边界</p>
+<p>欧拉公式：对于平面连通图，$d=m-n+2$</p>
+<p>若G有k个连通支，则$n-m+d = k+1$</p>
 <p>对于一般平面图G，恒有$n-m+d\geq 2$</p>
 <p>若平面连通图G没有割边，且每个域的边界数至少t，则$m\leq\cfrac{t(n-2)}{t-2}$</p>
-<h3 id="4-2-极大平面图"><a href="#4-2-极大平面图" class="headerlink" title="4.2 极大平面图"></a>4.2 极大平面图</h3><p>极大平面图：</p>
+<h3 id="4-2-极大平面图"><a class="header-anchor" href="#4-2-极大平面图">¶</a>4.2 极大平面图</h3>
+<p>极大平面图：</p>
 <ol>
 <li>连通</li>
 <li>不存在割边</li>
 <li>每个域边界数为3</li>
-<li>3d&#x3D;2m, m&#x3D;3n-6, d&#x3D;2n-4</li>
+<li>3d=2m, m=3n-6, d=2n-4</li>
 </ol>
 <p>简单平面图满足$m\leq 3n-6,d\leq 2n-4$</p>
 <p>简单平面图G中存在度小于6的顶点</p>
-<h3 id="4-3-非平面图"><a href="#4-3-非平面图" class="headerlink" title="4.3 非平面图"></a>4.3 非平面图</h3><ol>
-<li>K<del>5</del>是非平面图，也称K^(1)^</li>
-<li>K<del>3,3</del>是非平面图，也称K^(2)^</li>
+<h3 id="4-3-非平面图"><a class="header-anchor" href="#4-3-非平面图">¶</a>4.3 非平面图</h3>
+<ol>
+<li>K~5~是非平面图，也称K^(1)^</li>
+<li>K~3,3~是非平面图，也称K^(2)^</li>
 <li>K^(1)^和K^(2)^图上任意加一些度为2的顶点之后得到的图称为K^(1)^型图和K^(2)^型图，统称为K型图</li>
 <li>G是可平面图的充要条件是G不存在K型子图</li>
 </ol>
-<h3 id="4-4-对偶图"><a href="#4-4-对偶图" class="headerlink" title="4.4 对偶图"></a>4.4 对偶图</h3><ol>
+<h3 id="4-4-对偶图"><a class="header-anchor" href="#4-4-对偶图">¶</a>4.4 对偶图</h3>
+<ol>
 <li>域-&gt;顶点，共边-&gt;相邻，求对呕吐的过程称为D过程（draw）</li>
-<li>性质<ol>
+<li>性质
+<ol>
 <li>若G是平面图，则G一定有唯一对偶图G^*^</li>
 <li>G^*^是连通图</li>
-<li>若G是平面连通图，则（G^<em>^)^</em>^&#x3D;G</li>
-<li>m&#x3D;m^<em>^, n&#x3D;d^</em>^, d&#x3D;n^*^</li>
-<li>若C是平面图G得一个初级回路，S^<em>^是G^</em>^中与C的各边e<del>i</del>对应的e<del>i</del>^<em>^的集合，那么S^</em>^是G^*^的一个割集</li>
+<li>若G是平面连通图，则（G^<em>^)^</em>^=G</li>
+<li>m=m^<em>^, n=d^</em>^, d=n^*^</li>
+<li>若C是平面图G得一个初级回路，S^<em>^是G^</em>^中与C的各边e~i~对应的e~i~^<em>^的集合，那么S^</em>^是G^*^的一个割集</li>
 <li>G有对偶图等价于G为平面图</li>
 </ol>
 </li>
@@ -683,7 +745,8 @@
 <li>如果平面图G有哈密顿回路，则四色猜想成立</li>
 <li>若任何一个3-正则平面图的域4-可着色，则任何平面图的域4-可着色</li>
 </ol>
-<h3 id="4-5-色数与色数多项式"><a href="#4-5-色数与色数多项式" class="headerlink" title="4.5 色数与色数多项式"></a>4.5 色数与色数多项式</h3><p>不断分割即可</p>
+<h3 id="4-5-色数与色数多项式"><a class="header-anchor" href="#4-5-色数与色数多项式">¶</a>4.5 色数与色数多项式</h3>
+<p>不断分割即可</p>
 
 </article>
     
@@ -760,10 +823,10 @@
                 <li>24/11/09</li>
                 <li>13:35</li>
                 
-                    <li>6.8k</li>
+                    <li>6.7k</li>
                 
                 
-                    <li>42</li>
+                    <li>41</li>
                 
             </ul>
         </div>
@@ -828,7 +891,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="图论整理"><a rel="nofollow" class="trm-toc-link" href="#图论整理"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">图论整理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="第一章 基本概念"><a rel="nofollow" class="trm-toc-link" href="#第一章-基本概念"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">第一章 基本概念</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 图的概念"><a rel="nofollow" class="trm-toc-link" href="#1-1-图的概念"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 图的概念</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 图的代数表示"><a rel="nofollow" class="trm-toc-link" href="#1-2-图的代数表示"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 图的代数表示</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第二章 道路和回路"><a rel="nofollow" class="trm-toc-link" href="#第二章-道路和回路"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">第二章 道路和回路</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 图的连通性"><a rel="nofollow" class="trm-toc-link" href="#2-1-图的连通性"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 图的连通性</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 欧拉道路与回路"><a rel="nofollow" class="trm-toc-link" href="#2-3-欧拉道路与回路"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.3 欧拉道路与回路</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 哈密顿道路与回路"><a rel="nofollow" class="trm-toc-link" href="#2-4-哈密顿道路与回路"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.4 哈密顿道路与回路</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 最短路径：Dijkstra算法"><a rel="nofollow" class="trm-toc-link" href="#2-6-最短路径：Dijkstra算法"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.6 最短路径：Dijkstra算法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.7 关键路径：AOE"><a rel="nofollow" class="trm-toc-link" href="#2-7-关键路径：AOE"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.7 关键路径：AOE</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.8 中国邮路"><a rel="nofollow" class="trm-toc-link" href="#2-8-中国邮路"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.8 中国邮路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第三章 树"><a rel="nofollow" class="trm-toc-link" href="#第三章-树"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">第三章 树</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 树的相关定义"><a rel="nofollow" class="trm-toc-link" href="#3-1-树的相关定义"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 树的相关定义</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Huffman树"><a rel="nofollow" class="trm-toc-link" href="#3-5-Huffman树"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.5 Huffman树</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.6 最短树"><a rel="nofollow" class="trm-toc-link" href="#3-6-最短树"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.6 最短树</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第四章 平面图与图图的着色"><a rel="nofollow" class="trm-toc-link" href="#第四章-平面图与图图的着色"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">第四章 平面图与图图的着色</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 平面图"><a rel="nofollow" class="trm-toc-link" href="#4-1-平面图"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 极大平面图"><a rel="nofollow" class="trm-toc-link" href="#4-2-极大平面图"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 极大平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.3 非平面图"><a rel="nofollow" class="trm-toc-link" href="#4-3-非平面图"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 非平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.4 对偶图"><a rel="nofollow" class="trm-toc-link" href="#4-4-对偶图"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">4.4 对偶图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.5 色数与色数多项式"><a rel="nofollow" class="trm-toc-link" href="#4-5-色数与色数多项式"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">4.5 色数与色数多项式</span></a></li></ol></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="图论整理"><a class="trm-toc-link"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">图论整理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="第一章 基本概念"><a rel="nofollow" class="trm-toc-link" href="#第一章-基本概念"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">第一章 基本概念</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 图的概念"><a rel="nofollow" class="trm-toc-link" href="#1-1-图的概念"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 图的概念</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 图的代数表示"><a rel="nofollow" class="trm-toc-link" href="#1-2-图的代数表示"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 图的代数表示</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第二章 道路和回路"><a rel="nofollow" class="trm-toc-link" href="#第二章-道路和回路"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">第二章 道路和回路</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 图的连通性"><a rel="nofollow" class="trm-toc-link" href="#2-1-图的连通性"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 图的连通性</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 欧拉道路与回路"><a rel="nofollow" class="trm-toc-link" href="#2-3-欧拉道路与回路"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.3 欧拉道路与回路</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 哈密顿道路与回路"><a rel="nofollow" class="trm-toc-link" href="#2-4-哈密顿道路与回路"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.4 哈密顿道路与回路</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 最短路径：Dijkstra算法"><a rel="nofollow" class="trm-toc-link" href="#2-6-最短路径：Dijkstra算法"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.6 最短路径：Dijkstra算法</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.7 关键路径：AOE"><a rel="nofollow" class="trm-toc-link" href="#2-7-关键路径：AOE"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.7 关键路径：AOE</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.8 中国邮路"><a rel="nofollow" class="trm-toc-link" href="#2-8-中国邮路"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.8 中国邮路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第三章 树"><a rel="nofollow" class="trm-toc-link" href="#第三章-树"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">第三章 树</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 树的相关定义"><a rel="nofollow" class="trm-toc-link" href="#3-1-树的相关定义"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 树的相关定义</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Huffman树"><a rel="nofollow" class="trm-toc-link" href="#3-5-Huffman树"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.5 Huffman树</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.6 最短树"><a rel="nofollow" class="trm-toc-link" href="#3-6-最短树"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.6 最短树</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="第四章 平面图与图图的着色"><a rel="nofollow" class="trm-toc-link" href="#第四章-平面图与图图的着色"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">第四章 平面图与图图的着色</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 平面图"><a rel="nofollow" class="trm-toc-link" href="#4-1-平面图"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 极大平面图"><a rel="nofollow" class="trm-toc-link" href="#4-2-极大平面图"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 极大平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.3 非平面图"><a rel="nofollow" class="trm-toc-link" href="#4-3-非平面图"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 非平面图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.4 对偶图"><a rel="nofollow" class="trm-toc-link" href="#4-4-对偶图"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">4.4 对偶图</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.5 色数与色数多项式"><a rel="nofollow" class="trm-toc-link" href="#4-5-色数与色数多项式"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">4.5 色数与色数多项式</span></a></li></ol></li></ol></li></ol>
       </div>
     </div>
 

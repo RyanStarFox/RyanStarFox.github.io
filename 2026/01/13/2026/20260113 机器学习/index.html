@@ -7,12 +7,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="机器学习1 聚类1.1 K-means流程 初始化$\mu_1,\mu_2,\cdots,\mu_k$ 把每个数据点分配给最近的$\mu_i$ 把$\mu_i$更新为所分配的点的均值 重复2，3直至迭代停止  收敛性 每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且">
+<meta name="description" content="机器学习 ¶1 聚类 ¶1.1 K-means ¶流程  初始化$\mu_1,\mu_2,\cdots,\mu_k$ 把每个数据点分配给最近的$\mu_i$ 把$\mu_i$更新为所分配的点的均值 重复2，3直至迭代停止  ¶收敛性  每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且J有下界 但">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习">
 <meta property="og:url" content="https://ryanstarfox.github.io/2026/01/13/2026/20260113%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="机器学习1 聚类1.1 K-means流程 初始化$\mu_1,\mu_2,\cdots,\mu_k$ 把每个数据点分配给最近的$\mu_i$ 把$\mu_i$更新为所分配的点的均值 重复2，3直至迭代停止  收敛性 每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且">
+<meta property="og:description" content="机器学习 ¶1 聚类 ¶1.1 K-means ¶流程  初始化$\mu_1,\mu_2,\cdots,\mu_k$ 把每个数据点分配给最近的$\mu_i$ 把$\mu_i$更新为所分配的点的均值 重复2，3直至迭代停止  ¶收敛性  每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且J有下界 但">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-01-13T04:37:00.000Z">
 <meta property="article:modified_time" content="2026-01-13T04:37:00.000Z">
@@ -459,24 +459,31 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="1-聚类"><a href="#1-聚类" class="headerlink" title="1 聚类"></a>1 聚类</h2><h3 id="1-1-K-means"><a href="#1-1-K-means" class="headerlink" title="1.1 K-means"></a>1.1 K-means</h3><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
+    <h1>机器学习</h1>
+<h2 id="1-聚类"><a class="header-anchor" href="#1-聚类">¶</a>1 聚类</h2>
+<h3 id="1-1-K-means"><a class="header-anchor" href="#1-1-K-means">¶</a>1.1 K-means</h3>
+<h4 id="流程"><a class="header-anchor" href="#流程">¶</a>流程</h4>
+<ol>
 <li>初始化$\mu_1,\mu_2,\cdots,\mu_k$</li>
 <li>把每个数据点分配给最近的$\mu_i$</li>
 <li>把$\mu_i$更新为所分配的点的均值</li>
 <li>重复2，3直至迭代停止</li>
 </ol>
-<h4 id="收敛性"><a href="#收敛性" class="headerlink" title="收敛性"></a>收敛性</h4><ol>
-<li>每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且J有下界</li>
+<h4 id="收敛性"><a class="header-anchor" href="#收敛性">¶</a>收敛性</h4>
+<ol>
+<li>每一步目标函数$J=\sum\limits_{i=1}^n\sum\limits_{k=1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且J有下界</li>
 <li>但是J非凸（因为$r_{ik}$），往往收敛到局部最小值</li>
 </ol>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<h4 id="问题"><a class="header-anchor" href="#问题">¶</a>问题</h4>
+<ul>
 <li>不能软分类</li>
 <li>K值手动指定</li>
 <li>初始值敏感（对极端值敏感）</li>
 <li>使用欧几里得距离，高维失效</li>
 <li>计算开销大</li>
 </ul>
-<h3 id="1-2-Hierarchical-Clustering"><a href="#1-2-Hierarchical-Clustering" class="headerlink" title="1.2 Hierarchical Clustering"></a>1.2 Hierarchical Clustering</h3><ol>
+<h3 id="1-2-Hierarchical-Clustering"><a class="header-anchor" href="#1-2-Hierarchical-Clustering">¶</a>1.2 Hierarchical Clustering</h3>
+<ol>
 <li>每个点作为一个类</li>
 <li>距离最近的两个类合并</li>
 <li>直至只剩下一个类为止</li>
@@ -488,8 +495,10 @@
 <li>最大值</li>
 <li>均值</li>
 </ul>
-<h3 id="1-3-Adaptive-Learning"><a href="#1-3-Adaptive-Learning" class="headerlink" title="1.3 Adaptive Learning"></a>1.3 Adaptive Learning</h3><p>可以随时增加新的数据点</p>
-<h4 id="Competitve-Learning"><a href="#Competitve-Learning" class="headerlink" title="Competitve Learning"></a>Competitve Learning</h4><blockquote>
+<h3 id="1-3-Adaptive-Learning"><a class="header-anchor" href="#1-3-Adaptive-Learning">¶</a>1.3 Adaptive Learning</h3>
+<p>可以随时增加新的数据点</p>
+<h4 id="Competitve-Learning"><a class="header-anchor" href="#Competitve-Learning">¶</a>Competitve Learning</h4>
+<blockquote>
 <p>老师fx比喻为资本主义</p>
 </blockquote>
 <p>类似于分步的K-means</p>
@@ -499,15 +508,17 @@
 <li>不断重复</li>
 </ol>
 <p>但是这样的话，很有可能有一部分类别一直吃不到数据点，导致“饿死”</p>
-<p>lr&#x3D;1&#x2F;n，n为当前簇样本数的话，就是online k-means</p>
-<h4 id="Frequency-Sensitive-Competitive-Learning-FSCR"><a href="#Frequency-Sensitive-Competitive-Learning-FSCR" class="headerlink" title="Frequency Sensitive Competitive Learning (FSCR)"></a>Frequency Sensitive Competitive Learning (FSCR)</h4><blockquote>
+<p>lr=1/n，n为当前簇样本数的话，就是online k-means</p>
+<h4 id="Frequency-Sensitive-Competitive-Learning-FSCR"><a class="header-anchor" href="#Frequency-Sensitive-Competitive-Learning-FSCR">¶</a>Frequency Sensitive Competitive Learning (FSCR)</h4>
+<blockquote>
 <p>老师fx比喻为吃大锅饭</p>
 </blockquote>
 <p>惩罚frequent winners，在比较距离的时候，加入惩罚系数$\alpha$</p>
-<p>$\varepsilon_t(\theta_j)&#x3D;\alpha_j||x_t-m_j||^2$</p>
-<p>其中$\alpha_j&#x3D;\dfrac{u_j}{\sum u_i}$</p>
+<p>$\varepsilon_t(\theta_j)=\alpha_j||x_t-m_j||^2$</p>
+<p>其中$\alpha_j=\dfrac{u_j}{\sum u_i}$</p>
 <p>但是如果初始类别太多了，可能会出问题</p>
-<h4 id="Rival-penalized-competitive-learning-RPCL"><a href="#Rival-penalized-competitive-learning-RPCL" class="headerlink" title="Rival penalized competitive learning (RPCL)"></a>Rival penalized competitive learning (RPCL)</h4><blockquote>
+<h4 id="Rival-penalized-competitive-learning-RPCL"><a class="header-anchor" href="#Rival-penalized-competitive-learning-RPCL">¶</a>Rival penalized competitive learning (RPCL)</h4>
+<blockquote>
 <p>老师fx比喻为吃中国特色社会主义</p>
 </blockquote>
 <p>对于一个新点</p>
@@ -516,57 +527,76 @@
 <li>第二近的类将被向新点拉远</li>
 </ul>
 <p>还能顺便解决K数值的解决方式</p>
-<h3 id="1-4-概率"><a href="#1-4-概率" class="headerlink" title="1.4 概率"></a>1.4 概率</h3><p>频率学派vs贝叶斯学派：</p>
+<h3 id="1-4-概率"><a class="header-anchor" href="#1-4-概率">¶</a>1.4 概率</h3>
+<p>频率学派vs贝叶斯学派：</p>
 <p>前者例如GMM；后者代入GMM的例子，会认为实际上$\theta$也只是符合某一个分布而已</p>
 <p>前者MLE（极大似然估计），后者全贝叶斯学习，中间地带MAP（最大后验估计）</p>
 <p>贝叶斯学派是有方法组织滑坡的，例如假定最高层的分布是均匀分布，或者限制分布的层数</p>
-<h4 id="Gaussian-Mixture-Models-GMM"><a href="#Gaussian-Mixture-Models-GMM" class="headerlink" title="Gaussian Mixture Models (GMM)"></a>Gaussian Mixture Models (GMM)</h4><p>类似于K-Means，不过K-Means是硬的，这个是软的</p>
+<h4 id="Gaussian-Mixture-Models-GMM"><a class="header-anchor" href="#Gaussian-Mixture-Models-GMM">¶</a>Gaussian Mixture Models (GMM)</h4>
+<p>类似于K-Means，不过K-Means是硬的，这个是软的</p>
 <p>相当于是使用很多高维高斯分布的叠加来表示样本点的分布</p>
-<p>$\mathcal N(x|\mu_k,\Sigma_k)&#x3D;p(x \mid \mu_k, \Sigma_k) &#x3D; \frac{1}{\sqrt{(2\pi)^d |\Sigma_k|}} \exp\Big(-\frac{1}{2}(x-\mu_k)^T \Sigma_k^{-1} (x-\mu_k)\Big)$</p>
+<p>$\mathcal N(x|\mu_k,\Sigma_k)=p(x \mid \mu_k, \Sigma_k) = \frac{1}{\sqrt{(2\pi)^d |\Sigma_k|}} \exp\Big(-\frac{1}{2}(x-\mu_k)^T \Sigma_k^{-1} (x-\mu_k)\Big)$</p>
 <p>如果使用欧氏距离，$\Sigma_k$就取$I$；如果使用马氏距离，$\Sigma_k$就使用协方差矩阵</p>
-<p>$L(\theta)&#x3D;\ln p(\mathbf x|\theta) &#x3D; \sum\limits_{n&#x3D;1}^N\ln p(x_n|\theta)&#x3D;\sum\limits_{n&#x3D;1}^N\ln \sum\limits_{k&#x3D;1}^K \pi_k\mathcal N(x_n|\mu_k,\Sigma_k)&#x3D;\sum\limits_{n&#x3D;1}^N\ln \sum\limits_{k&#x3D;1}^K \gamma_{nk}\dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}\geq\sum\limits_{n&#x3D;1}^N\sum\limits_{k&#x3D;1}^K\gamma_{nk}\ln  \dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}&#x3D;Q(\theta),\text{iff }\dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}&#x3D;\text{Const}$</p>
-<h4 id="EM算法训练GMM"><a href="#EM算法训练GMM" class="headerlink" title="EM算法训练GMM"></a>EM算法训练GMM</h4><h5 id="Step-0：初始化"><a href="#Step-0：初始化" class="headerlink" title="Step 0：初始化"></a>Step 0：初始化</h5><ul>
+<p>$L(\theta)=\ln p(\mathbf x|\theta) = \sum\limits_{n=1}^N\ln p(x_n|\theta)=\sum\limits_{n=1}^N\ln \sum\limits_{k=1}^K \pi_k\mathcal N(x_n|\mu_k,\Sigma_k)=\sum\limits_{n=1}^N\ln \sum\limits_{k=1}^K \gamma_{nk}\dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}\geq\sum\limits_{n=1}^N\sum\limits_{k=1}^K\gamma_{nk}\ln  \dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}=Q(\theta),\text{iff }\dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}=\text{Const}$</p>
+<h4 id="EM算法训练GMM"><a class="header-anchor" href="#EM算法训练GMM">¶</a>EM算法训练GMM</h4>
+<h5 id="Step-0：初始化"><a class="header-anchor" href="#Step-0：初始化">¶</a>Step 0：初始化</h5>
+<ul>
 <li>选择簇数 $K$</li>
-<li>随机初始化：<ul>
+<li>随机初始化：
+<ul>
 <li>均值 $\mu_k$</li>
 <li>协方差矩阵 $\Sigma_k$</li>
 <li>混合系数 $\pi_k$（先验概率）</li>
 </ul>
 </li>
 </ul>
-<h5 id="Step-1：E-步（Expectation）"><a href="#Step-1：E-步（Expectation）" class="headerlink" title="Step 1：E 步（Expectation）"></a>Step 1：E 步（Expectation）</h5><ul>
-<li>对每个数据点 $x_n$ 计算其属于每个簇的概率（责任度）：<br>$\gamma_{nk} &#x3D; P(z_n &#x3D; k \mid x_n) &#x3D; \frac{\pi_k , \mathcal{N}(x_n \mid \mu_k, \Sigma_k)}{\sum_{j&#x3D;1}^{K} \pi_j , \mathcal{N}(x_n \mid \mu_j, \Sigma_j)}$</li>
-<li>这里：<ul>
-<li>$z_n$ &#x3D; 数据点 $x_n$ 的簇标签（隐藏变量）</li>
+<h5 id="Step-1：E-步（Expectation）"><a class="header-anchor" href="#Step-1：E-步（Expectation）">¶</a>Step 1：E 步（Expectation）</h5>
+<ul>
+<li>对每个数据点 $x_n$ 计算其属于每个簇的概率（责任度）：<br>
+$\gamma_{nk} = P(z_n = k \mid x_n) = \frac{\pi_k , \mathcal{N}(x_n \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j , \mathcal{N}(x_n \mid \mu_j, \Sigma_j)}$</li>
+<li>这里：
+<ul>
+<li>$z_n$ = 数据点 $x_n$ 的簇标签（隐藏变量）</li>
 <li>$\gamma_{nk}$ 是软分配（soft assignment）</li>
 </ul>
 </li>
 </ul>
-<h5 id="Step-2：M-步（Maximization）"><a href="#Step-2：M-步（Maximization）" class="headerlink" title="Step 2：M 步（Maximization）"></a>Step 2：M 步（Maximization）</h5><ul>
+<h5 id="Step-2：M-步（Maximization）"><a class="header-anchor" href="#Step-2：M-步（Maximization）">¶</a>Step 2：M 步（Maximization）</h5>
+<ul>
 <li>根据责任度 $\gamma_{nk}$ 更新参数，使似然最大：</li>
 </ul>
 <ol>
-<li>更新均值：<br>$\mu_k &#x3D; \frac{\sum_{n&#x3D;1}^{N} \gamma_{nk} x_n}{\sum_{n&#x3D;1}^{N} \gamma_{nk}}$</li>
-<li>更新协方差：<br>$\Sigma_k &#x3D; \frac{\sum_{n&#x3D;1}^{N} \gamma_{nk} (x_n - \mu_k)(x_n - \mu_k)^T}{\sum_{n&#x3D;1}^{N} \gamma_{nk}}$</li>
-<li>更新混合系数：<br>$\pi_k &#x3D; \frac{\sum_{n&#x3D;1}^{N} \gamma_{nk}}{N}$</li>
+<li>更新均值：<br>
+$\mu_k = \frac{\sum_{n=1}^{N} \gamma_{nk} x_n}{\sum_{n=1}^{N} \gamma_{nk}}$</li>
+<li>更新协方差：<br>
+$\Sigma_k = \frac{\sum_{n=1}^{N} \gamma_{nk} (x_n - \mu_k)(x_n - \mu_k)^T}{\sum_{n=1}^{N} \gamma_{nk}}$</li>
+<li>更新混合系数：<br>
+$\pi_k = \frac{\sum_{n=1}^{N} \gamma_{nk}}{N}$</li>
 </ol>
-<h5 id="Step-3：迭代"><a href="#Step-3：迭代" class="headerlink" title="Step 3：迭代"></a>Step 3：迭代</h5><ul>
-<li>重复 <strong>E 步 → M 步</strong>，直到：<ul>
+<h5 id="Step-3：迭代"><a class="header-anchor" href="#Step-3：迭代">¶</a>Step 3：迭代</h5>
+<ul>
+<li>重复 <strong>E 步 → M 步</strong>，直到：
+<ul>
 <li>对数似然收敛，或者</li>
 <li>参数变化很小</li>
 </ul>
 </li>
 </ul>
-<h5 id="Step-4：簇分配（可选）"><a href="#Step-4：簇分配（可选）" class="headerlink" title="Step 4：簇分配（可选）"></a>Step 4：簇分配（可选）</h5><ul>
-<li>每个点属于簇 $k^<em>$：<br>$k^</em> &#x3D; \arg\max_k \gamma_{nk}$</li>
+<h5 id="Step-4：簇分配（可选）"><a class="header-anchor" href="#Step-4：簇分配（可选）">¶</a>Step 4：簇分配（可选）</h5>
+<ul>
+<li>每个点属于簇 $k^<em>$：<br>
+$k^</em> = \arg\max_k \gamma_{nk}$</li>
 <li>或者你可以直接使用概率做软分类。</li>
 </ul>
-<h5 id="注"><a href="#注" class="headerlink" title="注"></a>注</h5><p>在每一步迭代中：</p>
-<p>$$<br>L(\theta_{new}) \ge Q(\theta_{new}, \theta_{old}) \ge Q(\theta_{old}, \theta_{old}) &#x3D; L(\theta_{old})<br>$$</p>
+<h5 id="注"><a class="header-anchor" href="#注">¶</a>注</h5>
+<p>在每一步迭代中：</p>
+<p>$$<br>
+L(\theta_{new}) \ge Q(\theta_{new}, \theta_{old}) \ge Q(\theta_{old}, \theta_{old}) = L(\theta_{old})<br>
+$$</p>
 <ul>
 <li>第一个$\geq$：Q函数是L函数的下限</li>
 <li>第二个$\geq$：M步</li>
-<li>第三个$&#x3D;$：E步，Q函数等于L函数取等条件</li>
+<li>第三个$=$：E步，Q函数等于L函数取等条件</li>
 </ul>
 <p>EM的算法的目标函数用了KL散度</p>
 <ul>
@@ -575,23 +605,28 @@
 </ul>
 <p>使用求导更新$\mu$,$\Sigma$</p>
 <p>使用拉格朗日乘子法更新$\pi$（有约束和为0求极值）</p>
-<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><ul>
+<h4 id="其它"><a class="header-anchor" href="#其它">¶</a>其它</h4>
+<ul>
 <li>只能收敛到局部最优值</li>
-<li>退化到K-means<ul>
+<li>退化到K-means
+<ul>
 <li>$\gamma_{nk}$ 只取0或者1</li>
 <li>$\pi_k$均分，均取$\dfrac1k$</li>
-<li>$\Sigma &#x3D; I$</li>
+<li>$\Sigma = I$</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-5-选择合适的K"><a href="#1-5-选择合适的K" class="headerlink" title="1.5 选择合适的K"></a>1.5 选择合适的K</h3><p>核心逻辑：</p>
+<h3 id="1-5-选择合适的K"><a class="header-anchor" href="#1-5-选择合适的K">¶</a>1.5 选择合适的K</h3>
+<p>核心逻辑：</p>
 <p>平衡最小化loss和模型复杂度</p>
-<h4 id="AIC-BIC"><a href="#AIC-BIC" class="headerlink" title="AIC &amp; BIC"></a>AIC &amp; BIC</h4><p>$J &#x3D; L + D$</p>
+<h4 id="AIC-BIC"><a class="header-anchor" href="#AIC-BIC">¶</a>AIC &amp; BIC</h4>
+<p>$J = L + D$</p>
 <p>其中$L$是最大似然，$D$是模型复杂度</p>
-<p>AIC中，$D &#x3D; - d_k$，$J &#x3D; \ln P(X_N|\hat \Theta_K)-d_k$</p>
-<p>BIC中，$D &#x3D; -\dfrac12d_k\ln N$， $J &#x3D; \ln P(X_N|\hat \Theta_K)-\dfrac12d_k\ln N$</p>
+<p>AIC中，$D = - d_k$，$J = \ln P(X_N|\hat \Theta_K)-d_k$</p>
+<p>BIC中，$D = -\dfrac12d_k\ln N$， $J = \ln P(X_N|\hat \Theta_K)-\dfrac12d_k\ln N$</p>
 <p>其中$d_k$为模型中参数数量</p>
-<h4 id="VBEM"><a href="#VBEM" class="headerlink" title="VBEM"></a>VBEM</h4><p>变分贝叶斯EM（VBEM）引入<strong>贝叶斯思想 + 变分推断</strong>：</p>
+<h4 id="VBEM"><a class="header-anchor" href="#VBEM">¶</a>VBEM</h4>
+<p>变分贝叶斯EM（VBEM）引入<strong>贝叶斯思想 + 变分推断</strong>：</p>
 <ul>
 <li>不再求参数的点估计；</li>
 <li>而是求一个近似后验分布 $q(Z, \theta) \approx p(Z, \theta \mid X)$。</li>
@@ -599,171 +634,215 @@
 <p>目标变成最小化KL散度：</p>
 <p>$\min_{q(Z,\theta)} D_{KL}(q(Z,\theta) | p(Z,\theta \mid X))$</p>
 <p>因为贝叶斯有前验概率，所以说不重要的簇的前验概率会越来越趋于0，因此可以拟合出K的具体数值</p>
-<h2 id="2-Linear-Models-PCA-FA-ICA"><a href="#2-Linear-Models-PCA-FA-ICA" class="headerlink" title="2 Linear Models: PCA, FA, ICA"></a>2 Linear Models: PCA, FA, ICA</h2><h3 id="2-1-Mathmetical-Backgrounds"><a href="#2-1-Mathmetical-Backgrounds" class="headerlink" title="2.1 Mathmetical Backgrounds"></a>2.1 Mathmetical Backgrounds</h3><p>矩阵的内积&#x2F;Frobenius范数：$\langle A, B \rangle &#x3D; \mathrm{trace}(A^\top B) &#x3D; \sum_{i&#x3D;1}^m \sum_{j&#x3D;1}^n A_{ij} B_{ij} $</p>
-<p>$l_p$范数：$||x||_p&#x3D;(|x_1|^p+\cdots+|x_n|^p)^{\frac 1p}$</p>
-<p>P-quadratic norms：对于正定矩阵P，$||x||_P&#x3D;(x^\top Px)^\frac12&#x3D;||P^\frac12x||_2$</p>
-<h3 id="2-2-主成分分析PCA"><a href="#2-2-主成分分析PCA" class="headerlink" title="2.2 主成分分析PCA"></a>2.2 主成分分析PCA</h3><h4 id="2-2-1-特征值分解-EVD"><a href="#2-2-1-特征值分解-EVD" class="headerlink" title="2.2.1 特征值分解 EVD"></a>2.2.1 特征值分解 EVD</h4><p>预备知识：特征值分解（EVD）：对于方阵$A$，$A&#x3D;Q\Lambda Q^{-1}$</p>
-<p>$Av_i&#x3D;\lambda_i v_i$</p>
-<p>令$Q &#x3D; \begin{bmatrix}v_1\v_2\\vdots\v_n\end{bmatrix},\Lambda &#x3D; \begin{bmatrix}\lambda_1\&amp;\lambda_2\&amp;&amp;\ddots\&amp;&amp;&amp;\lambda_n\end{bmatrix}$</p>
-<p>$\therefore AQ&#x3D;\Lambda Q&#x3D;Q\Lambda$</p>
-<p>$\therefore A &#x3D; Q\Lambda Q^{-1}$</p>
-<h4 id="2-2-2-奇异值分解-SVD"><a href="#2-2-2-奇异值分解-SVD" class="headerlink" title="2.2.2 奇异值分解 SVD"></a>2.2.2 奇异值分解 SVD</h4><p>以此为基础推导奇异值分解（SVD）对于矩阵$A$，$A&#x3D;U\Sigma V^\top$，也是旋转-缩放-旋转的逻辑</p>
-<p>$A^\top Av_i&#x3D;\lambda_i v_i$</p>
-<p>计算模长：$||Av_i||^2&#x3D;(Av_i)^\top(Av_i)&#x3D;v_i^\top A^\top Av_i&#x3D;v_i^\top \lambda_i v_i&#x3D;\lambda_i v_i^\top v_i&#x3D;\lambda_i$</p>
-<p>$\sigma_i&#x3D;\sqrt{\lambda_i}$，$u_i&#x3D;\dfrac{Av_i}{\sigma_i}$</p>
+<h2 id="2-Linear-Models-PCA-FA-ICA"><a class="header-anchor" href="#2-Linear-Models-PCA-FA-ICA">¶</a>2 Linear Models: PCA, FA, ICA</h2>
+<h3 id="2-1-Mathmetical-Backgrounds"><a class="header-anchor" href="#2-1-Mathmetical-Backgrounds">¶</a>2.1 Mathmetical Backgrounds</h3>
+<p>矩阵的内积/Frobenius范数：$\langle A, B \rangle = \mathrm{trace}(A^\top B) = \sum_{i=1}^m \sum_{j=1}^n A_{ij} B_{ij} $</p>
+<p>$l_p$范数：$||x||_p=(|x_1|^p+\cdots+|x_n|^p)^{\frac 1p}$</p>
+<p>P-quadratic norms：对于正定矩阵P，$||x||_P=(x^\top Px)^\frac12=||P^\frac12x||_2$</p>
+<h3 id="2-2-主成分分析PCA"><a class="header-anchor" href="#2-2-主成分分析PCA">¶</a>2.2 主成分分析PCA</h3>
+<h4 id="2-2-1-特征值分解-EVD"><a class="header-anchor" href="#2-2-1-特征值分解-EVD">¶</a>2.2.1 特征值分解 EVD</h4>
+<p>预备知识：特征值分解（EVD）：对于方阵$A$，$A=Q\Lambda Q^{-1}$</p>
+<p>$Av_i=\lambda_i v_i$</p>
+<p>令$Q = \begin{bmatrix}v_1\v_2\\vdots\v_n\end{bmatrix},\Lambda = \begin{bmatrix}\lambda_1\&amp;\lambda_2\&amp;&amp;\ddots\&amp;&amp;&amp;\lambda_n\end{bmatrix}$</p>
+<p>$\therefore AQ=\Lambda Q=Q\Lambda$</p>
+<p>$\therefore A = Q\Lambda Q^{-1}$</p>
+<h4 id="2-2-2-奇异值分解-SVD"><a class="header-anchor" href="#2-2-2-奇异值分解-SVD">¶</a>2.2.2 奇异值分解 SVD</h4>
+<p>以此为基础推导奇异值分解（SVD）对于矩阵$A$，$A=U\Sigma V^\top$，也是旋转-缩放-旋转的逻辑</p>
+<p>$A^\top Av_i=\lambda_i v_i$</p>
+<p>计算模长：$||Av_i||^2=(Av_i)^\top(Av_i)=v_i^\top A^\top Av_i=v_i^\top \lambda_i v_i=\lambda_i v_i^\top v_i=\lambda_i$</p>
+<p>$\sigma_i=\sqrt{\lambda_i}$，$u_i=\dfrac{Av_i}{\sigma_i}$</p>
 <p>易证$u_i$互相垂直</p>
-<p>$\therefore A\begin{bmatrix}v_1&amp;v_2&amp;\cdots&amp;v_n\end{bmatrix}&#x3D;\begin{bmatrix}u_1&amp;u_2&amp;\cdots u_n\end{bmatrix}\begin{bmatrix}\sigma_1\&amp;\sigma_2\&amp;&amp;\ddots\&amp;&amp;&amp;\sigma_n\end{bmatrix}$</p>
-<p>$\therefore AV&#x3D;U\Sigma$</p>
-<p>$\therefore A &#x3D; U\Sigma V^{-1}&#x3D;U\Sigma V^\top$</p>
-<h4 id="2-2-3-Hebbian-Learning"><a href="#2-2-3-Hebbian-Learning" class="headerlink" title="2.2.3 Hebbian Learning"></a>2.2.3 Hebbian Learning</h4><p>Hebbian Learning</p>
+<p>$\therefore A\begin{bmatrix}v_1&amp;v_2&amp;\cdots&amp;v_n\end{bmatrix}=\begin{bmatrix}u_1&amp;u_2&amp;\cdots u_n\end{bmatrix}\begin{bmatrix}\sigma_1\&amp;\sigma_2\&amp;&amp;\ddots\&amp;&amp;&amp;\sigma_n\end{bmatrix}$</p>
+<p>$\therefore AV=U\Sigma$</p>
+<p>$\therefore A = U\Sigma V^{-1}=U\Sigma V^\top$</p>
+<h4 id="2-2-3-Hebbian-Learning"><a class="header-anchor" href="#2-2-3-Hebbian-Learning">¶</a>2.2.3 Hebbian Learning</h4>
+<p>Hebbian Learning</p>
 <p>如果神经元 $i$ 的输入 $x_i$ 和神经元 $j$ 的输出 $y_j$ 经常同时处于高激活状态，那么它们之间的连接权重 $w_{ij}$ 就会增强。</p>
-<p>输入为 $\mathbf{x}$，输出为 $y &#x3D; \mathbf{w}^T\mathbf{x}$，则：</p>
-<p>$\Delta \mathbf{w} &#x3D; \eta y \mathbf{x} &#x3D; \eta (\mathbf{w}^T\mathbf{x})\mathbf{x}$</p>
+<p>输入为 $\mathbf{x}$，输出为 $y = \mathbf{w}^T\mathbf{x}$，则：</p>
+<p>$\Delta \mathbf{w} = \eta y \mathbf{x} = \eta (\mathbf{w}^T\mathbf{x})\mathbf{x}$</p>
 <p>但不稳定，权重会无限增大。</p>
-<p>使用 Oja’s Rule增加了一个归一化项（惩罚项）</p>
-<p>$\Delta \mathbf{w} &#x3D; \eta (y \mathbf{x} - y^2 \mathbf{w})$</p>
-<p>实际上是$\mathbf w_\text{temp}&#x3D;\mathbf w+\eta y \mathbf x$，$\mathbf w_\text{new}&#x3D;\dfrac{\mathbf w_\text{temp}}{||w_\text{temp}||}\underbrace{\approx}_{泰勒展开} \mathbf w+\eta(y\mathbf x-y^2\mathbf x)$</p>
-<h3 id="2-3-FA"><a href="#2-3-FA" class="headerlink" title="2.3 FA"></a>2.3 FA</h3><p>$𝒙 &#x3D; Ay + 𝝁 + 𝒆_t$</p>
+<p>使用 Oja's Rule增加了一个归一化项（惩罚项）</p>
+<p>$\Delta \mathbf{w} = \eta (y \mathbf{x} - y^2 \mathbf{w})$</p>
+<p>实际上是$\mathbf w_\text{temp}=\mathbf w+\eta y \mathbf x$，$\mathbf w_\text{new}=\dfrac{\mathbf w_\text{temp}}{||w_\text{temp}||}\underbrace{\approx}_{泰勒展开} \mathbf w+\eta(y\mathbf x-y^2\mathbf x)$</p>
+<h3 id="2-3-FA"><a class="header-anchor" href="#2-3-FA">¶</a>2.3 FA</h3>
+<p>$𝒙 = Ay + 𝝁 + 𝒆_t$</p>
 <p><strong>x</strong>: 观测到的数据向量（高维）。</p>
-<p><strong>y</strong>: 潜在因子向量，$p(y)&#x3D;G(y∣0,I)$。</p>
+<p><strong>y</strong>: 潜在因子向量，$p(y)=G(y∣0,I)$。</p>
 <p><strong>A</strong>: 因子载荷矩阵 (Factor Loading Matrix)，类似于线性回归中的系数，描述了因子 y 如何影响观测变量 x。</p>
 <p><strong>μ</strong>: 观测数据的均值向量。</p>
-<p><strong>e</strong>: 唯一性误差向量（或噪声），$p(e)&#x3D;G(e∣0,\Psi)$。</p>
+<p><strong>e</strong>: 唯一性误差向量（或噪声），$p(e)=G(e∣0,\Psi)$。</p>
 <p>e与y独立</p>
 <p>FA有旋转不确定性</p>
 <p>可以使用EM算法</p>
-<h3 id="2-4-Model-selection-for-PCA-FA"><a href="#2-4-Model-selection-for-PCA-FA" class="headerlink" title="2.4 Model selection for PCA&#x2F;FA"></a>2.4 Model selection for PCA&#x2F;FA</h3><h4 id="2-4-1-Dimensionality-Reduction"><a href="#2-4-1-Dimensionality-Reduction" class="headerlink" title="2.4.1 Dimensionality Reduction"></a>2.4.1 Dimensionality Reduction</h4><p>使用矩阵$W$把$X$投影到$Y$上，其中$X &#x3D; U\Lambda U^\top$，$U&#x3D;(W_{n\times m},V)_{n\times n}$</p>
-<p>其保有的信息量$1-\dfrac{\dfrac1N\sum\limits_{t&#x3D;1}^N||x_t-\hat x_t||}{\dfrac1N\sum\limits_{t&#x3D;1}^N||x_t||} &#x3D; \dfrac{\sum\limits_{i&#x3D;1}^m \lambda_i}{\sum\limits_{i&#x3D;1}^n \lambda_i}$</p>
-<h3 id="2-4-2-确定合适的特征数"><a href="#2-4-2-确定合适的特征数" class="headerlink" title="2.4.2 确定合适的特征数"></a>2.4.2 确定合适的特征数</h3><p>也可以使用AIL&#x2F;BIL&#x2F;VBEM</p>
-<h3 id="2-5-ICA"><a href="#2-5-ICA" class="headerlink" title="2.5 ICA"></a>2.5 ICA</h3><p>独立与相关不等价，但是在高斯分布中，两者等价</p>
+<h3 id="2-4-Model-selection-for-PCA-FA"><a class="header-anchor" href="#2-4-Model-selection-for-PCA-FA">¶</a>2.4 Model selection for PCA/FA</h3>
+<h4 id="2-4-1-Dimensionality-Reduction"><a class="header-anchor" href="#2-4-1-Dimensionality-Reduction">¶</a>2.4.1 Dimensionality Reduction</h4>
+<p>使用矩阵$W$把$X$投影到$Y$上，其中$X = U\Lambda U^\top$，$U=(W_{n\times m},V)_{n\times n}$</p>
+<p>其保有的信息量$1-\dfrac{\dfrac1N\sum\limits_{t=1}^N||x_t-\hat x_t||}{\dfrac1N\sum\limits_{t=1}^N||x_t||} = \dfrac{\sum\limits_{i=1}^m \lambda_i}{\sum\limits_{i=1}^n \lambda_i}$</p>
+<h3 id="2-4-2-确定合适的特征数"><a class="header-anchor" href="#2-4-2-确定合适的特征数">¶</a>2.4.2 确定合适的特征数</h3>
+<p>也可以使用AIL/BIL/VBEM</p>
+<h3 id="2-5-ICA"><a class="header-anchor" href="#2-5-ICA">¶</a>2.5 ICA</h3>
+<p>独立与相关不等价，但是在高斯分布中，两者等价</p>
 <p>Natural measure of statistical dependence:</p>
-<p>$I(x;y)&#x3D;\sum\limits_y\sum\limits_x p(x,y)\log\left(\dfrac{p(x,y)}{p(x)p(y)}\right)$</p>
-<p>$I(x;y)&#x3D;\int\limits_y\int\limits_x p(x,y)\log\left(\dfrac{p(x,y)}{p(x)p(y)}\right)\text d x\text d y$</p>
+<p>$I(x;y)=\sum\limits_y\sum\limits_x p(x,y)\log\left(\dfrac{p(x,y)}{p(x)p(y)}\right)$</p>
+<p>$I(x;y)=\int\limits_y\int\limits_x p(x,y)\log\left(\dfrac{p(x,y)}{p(x)p(y)}\right)\text d x\text d y$</p>
 <p>ICA只能分离非高斯的独立成分</p>
 <p>ICA的缺陷：无法恢复原有的幅度和顺序</p>
-<p>无法恢复幅度：$x&#x3D;As&#x3D;\sum\limits_{i&#x3D;1}^n as_i&#x3D;\sum\limits_{i&#x3D;1}^n (a \lambda_i^{-1})\cdot(\lambda_i s_i)$</p>
-<p>无法恢复顺序：对于置换矩阵P，$x&#x3D;As&#x3D;(AP^{-1})\cdot(Ps)$</p>
-<h4 id="2-5-1-度量非高斯性"><a href="#2-5-1-度量非高斯性" class="headerlink" title="2.5.1 度量非高斯性"></a>2.5.1 度量非高斯性</h4><h5 id="峰度：Kurtosis-or-the-fourth-order-cumulant"><a href="#峰度：Kurtosis-or-the-fourth-order-cumulant" class="headerlink" title="峰度：Kurtosis or the fourth order cumulant"></a>峰度：Kurtosis or the fourth order cumulant</h5><p>$\text{kurt}(y)&#x3D;E[y^4]-3E[y^2]^2$</p>
+<p>无法恢复幅度：$x=As=\sum\limits_{i=1}^n as_i=\sum\limits_{i=1}^n (a \lambda_i^{-1})\cdot(\lambda_i s_i)$</p>
+<p>无法恢复顺序：对于置换矩阵P，$x=As=(AP^{-1})\cdot(Ps)$</p>
+<h4 id="2-5-1-度量非高斯性"><a class="header-anchor" href="#2-5-1-度量非高斯性">¶</a>2.5.1 度量非高斯性</h4>
+<h5 id="峰度：Kurtosis-or-the-fourth-order-cumulant"><a class="header-anchor" href="#峰度：Kurtosis-or-the-fourth-order-cumulant">¶</a>峰度：Kurtosis or the fourth order cumulant</h5>
+<p>$\text{kurt}(y)=E[y^4]-3E[y^2]^2$</p>
 <p>&lt;0则subgaussian</p>
 <p>&gt;0则super-gaussian</p>
 <p>但是对异常值非常敏感</p>
-<h5 id="负熵——理论上最完美的度量"><a href="#负熵——理论上最完美的度量" class="headerlink" title="负熵——理论上最完美的度量"></a>负熵——理论上最完美的度量</h5><p>在方差相同的情况下，高斯变量拥有最大的熵</p>
-<p>负熵定义为$J(y)&#x3D;H(y_\text{gauss})-H(y)$</p>
+<h5 id="负熵——理论上最完美的度量"><a class="header-anchor" href="#负熵——理论上最完美的度量">¶</a>负熵——理论上最完美的度量</h5>
+<p>在方差相同的情况下，高斯变量拥有最大的熵</p>
+<p>负熵定义为$J(y)=H(y_\text{gauss})-H(y)$</p>
 <p>越大越高斯</p>
 <p>计算非常困难</p>
-<h5 id="互信息"><a href="#互信息" class="headerlink" title="互信息"></a>互信息</h5><p>$I(y_1,\cdots,y_n)&#x3D;\sum\limits_i^n H(y_i)-H(y)&#x3D;C-\sum\limits_i^n J(y_i)$</p>
+<h5 id="互信息"><a class="header-anchor" href="#互信息">¶</a>互信息</h5>
+<p>$I(y_1,\cdots,y_n)=\sum\limits_i^n H(y_i)-H(y)=C-\sum\limits_i^n J(y_i)$</p>
 <p>实际上是$p(y_1,\cdots,y_n)$和$p(y_1)\cdots p(y_n)$之间的KL散度</p>
-<h5 id="FastICA"><a href="#FastICA" class="headerlink" title="FastICA"></a>FastICA</h5><p>杀死了游戏</p>
-<h3 id="2-6-Noisy-ICA-IFA"><a href="#2-6-Noisy-ICA-IFA" class="headerlink" title="2.6 Noisy ICA&#x2F;IFA"></a>2.6 Noisy ICA&#x2F;IFA</h3><p>也是通过GMM，把分类看作是多个高斯分布的组合</p>
+<h5 id="FastICA"><a class="header-anchor" href="#FastICA">¶</a>FastICA</h5>
+<p>杀死了游戏</p>
+<h3 id="2-6-Noisy-ICA-IFA"><a class="header-anchor" href="#2-6-Noisy-ICA-IFA">¶</a>2.6 Noisy ICA/IFA</h3>
+<p>也是通过GMM，把分类看作是多个高斯分布的组合</p>
 <p>和GMM的区别在于，GMM的隐状态只有一层（属于哪一个高斯分布）</p>
 <p>$\gamma_1$,$\gamma_2$ 等等时通过ICA分离获得的独立成分（用向量表示，也就是混合向量）</p>
 <p>但是我们有了这个独立成分的向量表示之后，实际上依旧没有把原来的数据分离成不同的组</p>
 <p>因此我们使用GMM</p>
 <p>对于每一个独立成分，把它变成若干个高斯分布之和</p>
 <p>但是Noisy ICA的隐状态有两层（数据属于哪一个GMM，GMM属于哪一个$y_i$，都是软分布）</p>
-<p>GMM是$x&#x3D;y$，没有系数$\Lambda$，没有误差$e$</p>
-<p>ICA中$x&#x3D;\Lambda y+e$，有系数$\Lambda$保证属于不同信号的数据，乘了一个不同的系数,，同时还增加了误差项fghgg</p>
+<p>GMM是$x=y$，没有系数$\Lambda$，没有误差$e$</p>
+<p>ICA中$x=\Lambda y+e$，有系数$\Lambda$保证属于不同信号的数据，乘了一个不同的系数,，同时还增加了误差项fghgg</p>
 <hr>
 <p>老师有一个很好的板书</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">data--&gt;|&quot;p(y|x)&quot;|y</span><br><span class="line">y--&gt;|Ay+e|data</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>y~Gaussian→PCA&#x2F;FA, x~G</li>
-<li>y~Non-G→ICA&#x2F;NFA, x~GMM</li>
+<li>y~Gaussian→PCA/FA, x~G</li>
+<li>y~Non-G→ICA/NFA, x~GMM</li>
 <li>Nonlinear f(y)→VAE, x~Non-G</li>
 </ul>
 <p>Tradeoff:</p>
 <ul>
-<li>model<ul>
+<li>model
+<ul>
 <li>powerful</li>
 <li>flexible</li>
 <li>complex</li>
 </ul>
 </li>
-<li>computation<ul>
+<li>computation
+<ul>
 <li>easy</li>
 <li>simple</li>
 </ul>
 </li>
 </ul>
-<h2 id="3-监督学习"><a href="#3-监督学习" class="headerlink" title="3 监督学习"></a>3 监督学习</h2><h3 id="3-1-线性回归"><a href="#3-1-线性回归" class="headerlink" title="3.1 线性回归"></a>3.1 线性回归</h3><p>最小化均方误差$\min\limits |x-\hat x|^2$</p>
-<h3 id="3-2-Logisitic回归"><a href="#3-2-Logisitic回归" class="headerlink" title="3.2 Logisitic回归"></a>3.2 Logisitic回归</h3><p>就是sigmoid</p>
-<p>$p(x)&#x3D;P(Y&#x3D;1|x)&#x3D;\dfrac{e^{\beta_0+\beta_1X}}{1+e^{\beta_0+\beta_1X}}&#x3D;\dfrac{1}{1+e^{-(\beta_0+\beta_1X)}}$</p>
+<h2 id="3-监督学习"><a class="header-anchor" href="#3-监督学习">¶</a>3 监督学习</h2>
+<h3 id="3-1-线性回归"><a class="header-anchor" href="#3-1-线性回归">¶</a>3.1 线性回归</h3>
+<p>最小化均方误差$\min\limits |x-\hat x|^2$</p>
+<h3 id="3-2-Logisitic回归"><a class="header-anchor" href="#3-2-Logisitic回归">¶</a>3.2 Logisitic回归</h3>
+<p>就是sigmoid</p>
+<p>$p(x)=P(Y=1|x)=\dfrac{e^{\beta_0+\beta_1X}}{1+e^{\beta_0+\beta_1X}}=\dfrac{1}{1+e^{-(\beta_0+\beta_1X)}}$</p>
 <p>改进为多变量：</p>
-<p>$p(X)&#x3D;P(Y&#x3D;1|X)&#x3D;\dfrac{e^{\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p}}{1+e^{\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p}}&#x3D;\dfrac{1}{1+e^{-(\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p)}}$</p>
+<p>$p(X)=P(Y=1|X)=\dfrac{e^{\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p}}{1+e^{\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p}}=\dfrac{1}{1+e^{-(\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p)}}$</p>
 <p>改进为多分类</p>
-<p>$P(Y&#x3D;k|X)&#x3D;\dfrac{e^{\beta_{0k}+\beta_{1k}X_1+\beta_{2k}X_2+\cdots\beta_{pk}X_p}}{1+\sum\limits_{i&#x3D;1}^ne^{\beta_{0i}+\beta_{1i}X_1+\beta_{2i}X_2+\cdots\beta_{pi}X_p}}$</p>
-<p>为了防止过拟合，需要加入正则项，即参数的平方，所以$J&#x3D;\dfrac 1{2m}\left[\sum\limits_{i&#x3D;1}^m(\hat y-y)^2+\lambda\sum\limits_{j&#x3D;1}^n\theta_j^2 \right]$\</p>
+<p>$P(Y=k|X)=\dfrac{e^{\beta_{0k}+\beta_{1k}X_1+\beta_{2k}X_2+\cdots\beta_{pk}X_p}}{1+\sum\limits_{i=1}^ne^{\beta_{0i}+\beta_{1i}X_1+\beta_{2i}X_2+\cdots\beta_{pi}X_p}}$</p>
+<p>为了防止过拟合，需要加入正则项，即参数的平方，所以$J=\dfrac 1{2m}\left[\sum\limits_{i=1}^m(\hat y-y)^2+\lambda\sum\limits_{j=1}^n\theta_j^2 \right]$\</p>
 <p>正则化可以使用各种范数</p>
 <ul>
 <li>LASSO：L1范数，比较严格</li>
 <li>Ridge：L2范数，比较温和（事实上，从贝叶斯的视角，L2正则化就是在相信数据和相信先验常识之间平衡）</li>
 <li>Elastic：两者混合，介于两者中间</li>
 </ul>
-<h3 id="3-3-神经网络-Neural-Network-NN"><a href="#3-3-神经网络-Neural-Network-NN" class="headerlink" title="3.3 神经网络&#x2F;Neural Network&#x2F;NN"></a>3.3 神经网络&#x2F;Neural Network&#x2F;NN</h3><p>梯度下降算法</p>
+<h3 id="3-3-神经网络-Neural-Network-NN"><a class="header-anchor" href="#3-3-神经网络-Neural-Network-NN">¶</a>3.3 神经网络/Neural Network/NN</h3>
+<p>梯度下降算法</p>
 <p>每一层都是线性函数+Activation（非线性）函数（tanh，sigmoid，ReLU等）</p>
 <p>也需要正则化</p>
-<h3 id="3-4-深度神经网络-Deep-Neural-Networks-DNN"><a href="#3-4-深度神经网络-Deep-Neural-Networks-DNN" class="headerlink" title="3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN"></a>3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN</h3><h4 id="3-4-1-CNN"><a href="#3-4-1-CNN" class="headerlink" title="3.4.1 CNN"></a>3.4.1 CNN</h4><p>加入了卷积层和池化层</p>
+<h3 id="3-4-深度神经网络-Deep-Neural-Networks-DNN"><a class="header-anchor" href="#3-4-深度神经网络-Deep-Neural-Networks-DNN">¶</a>3.4 深度神经网络/Deep Neural Networks/DNN</h3>
+<h4 id="3-4-1-CNN"><a class="header-anchor" href="#3-4-1-CNN">¶</a>3.4.1 CNN</h4>
+<p>加入了卷积层和池化层</p>
 <p>还有一些技巧——正则化、BatchNorm、Dropout</p>
-<h4 id="3-4-2-ResNet"><a href="#3-4-2-ResNet" class="headerlink" title="3.4.2 ResNet"></a>3.4.2 ResNet</h4><p>增加了一些旁路跳过一些块</p>
-<h4 id="3-4-3-DenseNet"><a href="#3-4-3-DenseNet" class="headerlink" title="3.4.3 DenseNet"></a>3.4.3 DenseNet</h4><p>每两个块之间都有旁路连接</p>
+<h4 id="3-4-2-ResNet"><a class="header-anchor" href="#3-4-2-ResNet">¶</a>3.4.2 ResNet</h4>
+<p>增加了一些旁路跳过一些块</p>
+<h4 id="3-4-3-DenseNet"><a class="header-anchor" href="#3-4-3-DenseNet">¶</a>3.4.3 DenseNet</h4>
+<p>每两个块之间都有旁路连接</p>
 <p>ResNet的超级升级</p>
-<h4 id="3-4-4-RNN-Recurrent-NN"><a href="#3-4-4-RNN-Recurrent-NN" class="headerlink" title="3.4.4 RNN&#x2F;Recurrent NN"></a>3.4.4 RNN&#x2F;Recurrent NN</h4><p>上一个输出的token作为下一个输入的token</p>
-<h4 id="3-4-5-Transformer"><a href="#3-4-5-Transformer" class="headerlink" title="3.4.5 Transformer"></a>3.4.5 Transformer</h4><p>ATTENTION IS ALL YOU NEED！</p>
+<h4 id="3-4-4-RNN-Recurrent-NN"><a class="header-anchor" href="#3-4-4-RNN-Recurrent-NN">¶</a>3.4.4 RNN/Recurrent NN</h4>
+<p>上一个输出的token作为下一个输入的token</p>
+<h4 id="3-4-5-Transformer"><a class="header-anchor" href="#3-4-5-Transformer">¶</a>3.4.5 Transformer</h4>
+<p>ATTENTION IS ALL YOU NEED！</p>
 <p>伟大，无需多言</p>
 <p>自己去看论文吧</p>
 <p>大概就是</p>
 <p>Query、Key、Value</p>
-<h4 id="3-4-6-GNN-Graph-NN"><a href="#3-4-6-GNN-Graph-NN" class="headerlink" title="3.4.6 GNN&#x2F;Graph NN"></a>3.4.6 GNN&#x2F;Graph NN</h4><p>按顺序遍历所有节点，先聚合节点的邻居节点，再与节点自己的数据聚合</p>
+<h4 id="3-4-6-GNN-Graph-NN"><a class="header-anchor" href="#3-4-6-GNN-Graph-NN">¶</a>3.4.6 GNN/Graph NN</h4>
+<p>按顺序遍历所有节点，先聚合节点的邻居节点，再与节点自己的数据聚合</p>
 <p>使用时接一个classifer，梯度回传是按照GNN的规则回传若干轮（轮数决定感受野）</p>
-<h4 id="3-4-7-GCN"><a href="#3-4-7-GCN" class="headerlink" title="3.4.7 GCN"></a>3.4.7 GCN</h4><p>GNN基础上小改进：把聚合自己节点看作有一个自环；聚合的时候要归一化</p>
-<h4 id="3-4-8-支持向量机-SVM"><a href="#3-4-8-支持向量机-SVM" class="headerlink" title="3.4.8 支持向量机&#x2F;SVM"></a>3.4.8 支持向量机&#x2F;SVM</h4><p>逻辑是把所有的数据投影到一个超空间上，然后用一个超平面将超空间分成两类，使得所有样本到超平面的最小几何间隔最大化</p>
-<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><h6 id="第一步：模型定义与几何间隔"><a href="#第一步：模型定义与几何间隔" class="headerlink" title="第一步：模型定义与几何间隔"></a>第一步：模型定义与几何间隔</h6><p>假定数据是$D&#x3D;{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)}$，$x_i\in\mathbb R^d,y_i\in{-1,1}$</p>
-<p>线性超平面为$w^\top x+b&#x3D;0$，其中$w$是法向量，$b$是截距</p>
+<h4 id="3-4-7-GCN"><a class="header-anchor" href="#3-4-7-GCN">¶</a>3.4.7 GCN</h4>
+<p>GNN基础上小改进：把聚合自己节点看作有一个自环；聚合的时候要归一化</p>
+<h4 id="3-4-8-支持向量机-SVM"><a class="header-anchor" href="#3-4-8-支持向量机-SVM">¶</a>3.4.8 支持向量机/SVM</h4>
+<p>逻辑是把所有的数据投影到一个超空间上，然后用一个超平面将超空间分成两类，使得所有样本到超平面的最小几何间隔最大化</p>
+<h5 id="实现"><a class="header-anchor" href="#实现">¶</a>实现</h5>
+<h6 id="第一步：模型定义与几何间隔"><a class="header-anchor" href="#第一步：模型定义与几何间隔">¶</a>第一步：模型定义与几何间隔</h6>
+<p>假定数据是$D={(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)}$，$x_i\in\mathbb R^d,y_i\in{-1,1}$</p>
+<p>线性超平面为$w^\top x+b=0$，其中$w$是法向量，$b$是截距</p>
 <p>$x_i$到超平面的集合距离为$\gamma_i$为</p>
-<p>$\gamma_i&#x3D;\dfrac{|w^\top x_i+b|}{||w||}&#x3D;\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
-<h6 id="第二步：目标函数拟定"><a href="#第二步：目标函数拟定" class="headerlink" title="第二步：目标函数拟定"></a>第二步：目标函数拟定</h6><p>目标函数是$\max\limits_{w,b}\min\limits_{i}\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
-<p>等比例缩放$w$和$b$不改变超平面，为了计算方便，令距离最近的点满足$y_i(w^\top x_i+b)&#x3D;1$</p>
+<p>$\gamma_i=\dfrac{|w^\top x_i+b|}{||w||}=\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
+<h6 id="第二步：目标函数拟定"><a class="header-anchor" href="#第二步：目标函数拟定">¶</a>第二步：目标函数拟定</h6>
+<p>目标函数是$\max\limits_{w,b}\min\limits_{i}\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
+<p>等比例缩放$w$和$b$不改变超平面，为了计算方便，令距离最近的点满足$y_i(w^\top x_i+b)=1$</p>
 <p>此时目标函数是$\max_\limits{w,b}\dfrac1{||w||}$，即$\min\limits_{w,b}\dfrac12||w||^2$，s.t. $1-y_i(w^\top x_i+b)\leq 0$</p>
-<h6 id="第三步：拉格朗日对偶化"><a href="#第三步：拉格朗日对偶化" class="headerlink" title="第三步：拉格朗日对偶化"></a>第三步：拉格朗日对偶化</h6><p>引入拉格朗日乘子$\alpha_i\geq0$</p>
-<p>$L(w,b,\alpha)&#x3D;\dfrac12||w||^2+\sum\limits_{i&#x3D;1}^n\alpha_i[1-y_i(w^\top x_i+b)]$</p>
+<h6 id="第三步：拉格朗日对偶化"><a class="header-anchor" href="#第三步：拉格朗日对偶化">¶</a>第三步：拉格朗日对偶化</h6>
+<p>引入拉格朗日乘子$\alpha_i\geq0$</p>
+<p>$L(w,b,\alpha)=\dfrac12||w||^2+\sum\limits_{i=1}^n\alpha_i[1-y_i(w^\top x_i+b)]$</p>
 <p>求极小值：</p>
 <ol>
-<li>$\dfrac{\partial L}{\partial w}&#x3D;w-\sum\limits_{i&#x3D;1}^n\alpha_iy_ix_i&#x3D;0\Rightarrow w &#x3D; \sum\limits_{i&#x3D;1}^n\alpha_iy_ix_i$</li>
-<li>$\dfrac{\partial L}{\partial b}&#x3D;-\sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0\Rightarrow \sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0$</li>
+<li>$\dfrac{\partial L}{\partial w}=w-\sum\limits_{i=1}^n\alpha_iy_ix_i=0\Rightarrow w = \sum\limits_{i=1}^n\alpha_iy_ix_i$</li>
+<li>$\dfrac{\partial L}{\partial b}=-\sum\limits_{i=1}^n \alpha_iy_i=0\Rightarrow \sum\limits_{i=1}^n \alpha_iy_i=0$</li>
 </ol>
 <p>代入得到对偶问题：</p>
-<p>$\max\limits_\alpha\sum\limits_{i&#x3D;1}^n \alpha_i-\dfrac12\sum\limits_{i&#x3D;1}^n\sum\limits_{j&#x3D;1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，s.t.$\sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0$，$\alpha_i\geq 0$</p>
-<h6 id="第四步：KKT-条件与支持向量"><a href="#第四步：KKT-条件与支持向量" class="headerlink" title="第四步：KKT 条件与支持向量"></a>第四步：KKT 条件与支持向量</h6><p>通过数值优化算法计算出$\alpha^*$</p>
+<p>$\max\limits_\alpha\sum\limits_{i=1}^n \alpha_i-\dfrac12\sum\limits_{i=1}^n\sum\limits_{j=1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，s.t.$\sum\limits_{i=1}^n \alpha_iy_i=0$，$\alpha_i\geq 0$</p>
+<h6 id="第四步：KKT-条件与支持向量"><a class="header-anchor" href="#第四步：KKT-条件与支持向量">¶</a>第四步：KKT 条件与支持向量</h6>
+<p>通过数值优化算法计算出$\alpha^*$</p>
 <p>代入，算$w^*$</p>
-<p>对于所有$a_s&gt;0$，应满足$y_s(w^\top x_s+b)&#x3D;1$，算出$b^*$，理论上算出来都相等的，但是由于浮点误差，一般取均值</p>
-<h5 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h5><h6 id="实现软约束"><a href="#实现软约束" class="headerlink" title="实现软约束"></a>实现软约束</h6><p>新的约束条件：$y_i(w^\top x_i+b)\geq 1-\xi_i$</p>
-<p>新的loss function：$\min\limits_{w,b}\dfrac12||w||^2+C\sum\limits_{i&#x3D;1}^N\xi_i$</p>
-<h6 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h6><p>$L(\alpha)&#x3D;\max\limits_\alpha\sum\limits_{i&#x3D;1}^n \alpha_i-\dfrac12\sum\limits_{i&#x3D;1}^n\sum\limits_{j&#x3D;1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，这里把$(x_i^\top x_j)$换成$\mathbf K(x_i,x_j)$即可</p>
+<p>对于所有$a_s&gt;0$，应满足$y_s(w^\top x_s+b)=1$，算出$b^*$，理论上算出来都相等的，但是由于浮点误差，一般取均值</p>
+<h5 id="升级"><a class="header-anchor" href="#升级">¶</a>升级</h5>
+<h6 id="实现软约束"><a class="header-anchor" href="#实现软约束">¶</a>实现软约束</h6>
+<p>新的约束条件：$y_i(w^\top x_i+b)\geq 1-\xi_i$</p>
+<p>新的loss function：$\min\limits_{w,b}\dfrac12||w||^2+C\sum\limits_{i=1}^N\xi_i$</p>
+<h6 id="核函数"><a class="header-anchor" href="#核函数">¶</a>核函数</h6>
+<p>$L(\alpha)=\max\limits_\alpha\sum\limits_{i=1}^n \alpha_i-\dfrac12\sum\limits_{i=1}^n\sum\limits_{j=1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，这里把$(x_i^\top x_j)$换成$\mathbf K(x_i,x_j)$即可</p>
 <p>一般有多项式核、RBF核（高斯核）</p>
 <p>核函数的要求：Mercer‘s Condition，即需要是一个合法的内积，也就是要具有非负性、正定性、非负性</p>
-<h3 id="3-5-Deep-Generative-Models"><a href="#3-5-Deep-Generative-Models" class="headerlink" title="3.5 Deep Generative Models"></a>3.5 Deep Generative Models</h3><h4 id="VAE-变分AutoEncoder"><a href="#VAE-变分AutoEncoder" class="headerlink" title="VAE&#x2F;变分AutoEncoder"></a>VAE&#x2F;变分AutoEncoder</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">	A[&quot;数据&quot;]--&gt;|encoder|B[&quot;隐变量&quot;]--&gt;|decoder|C[&quot;数据&quot;]</span><br></pre></td></tr></table></figure>
-
-<p>实际上和FA非常像，$X&#x3D;f(z;\theta)+\epsilon$</p>
+<h3 id="3-5-Deep-Generative-Models"><a class="header-anchor" href="#3-5-Deep-Generative-Models">¶</a>3.5 Deep Generative Models</h3>
+<h4 id="VAE-变分AutoEncoder"><a class="header-anchor" href="#VAE-变分AutoEncoder">¶</a>VAE/变分AutoEncoder</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">	A[&quot;数据&quot;]--&gt;|encoder|B[&quot;隐变量&quot;]--&gt;|decoder|C[&quot;数据&quot;]</span><br></pre></td></tr></table></figure>
+<p>实际上和FA非常像，$X=f(z;\theta)+\epsilon$</p>
 <p>f使用了一个复杂的模型（decoder），数学上计算z太复杂，因此使用模型快速计算（encoder）</p>
 <p>流程：</p>
 <ol>
 <li><strong>群体编码 (Encoder)</strong>：将猫、狗、鸟等不同数据输入同一编码器。模型不再赋予每张图孤立的坐标，而是将它们映射为隐空间中各具特征的<strong>高斯分布区</strong>（由各自的 μ 和 σ 定义）。</li>
 <li><strong>随机采样 (Sampling)</strong>：在训练时，从这些分布中抽取出隐变量 z。通过<strong>重参数化</strong>，确保猫的 z 落在“猫区”，鸟的 z 落在“鸟区”。</li>
 <li><strong>协同解码 (Decoder)</strong>：同一个解码器学习如何根据 z 所在的区域，“翻译”出对应的物种。</li>
-<li><strong>双重约束 (Loss)</strong>：<ul>
+<li><strong>双重约束 (Loss)</strong>：
+<ul>
 <li><strong>重构项</strong>：让模型分清物种特征（猫还原成猫，不能变狗）。</li>
 <li><strong>KL 散度项</strong>：像引力一样把猫、狗、鸟的分布全部拉向原点，迫使它们<strong>紧凑排列</strong>。</li>
 </ul>
 </li>
 </ol>
 <p><strong>最终效果</strong>：在同一个隐空间内，猫、狗、鸟形成了既相互独立（方便区分）又彼此邻接（连续可过渡）的<strong>聚类结构</strong>，使得模型只需在原点附近采样，就能生成各种具备物种特征的新样本。</p>
-<p>解释“重参数化”，因为随机采样不能回传梯度，所以改为$z&#x3D;\mu+\sigma\odot\epsilon$，其中$\epsilon\sim N(0,I)$，是噪声，不参与反向传播</p>
+<p>解释“重参数化”，因为随机采样不能回传梯度，所以改为$z=\mu+\sigma\odot\epsilon$，其中$\epsilon\sim N(0,I)$，是噪声，不参与反向传播</p>
 <p>升级：CVAE，把隐变量z和tag一起输入给decoder，方便人为控制输出（输出的种类，输出的方向等等）</p>
-<h4 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h4><p>核心思想：左右互搏</p>
+<h4 id="GAN"><a class="header-anchor" href="#GAN">¶</a>GAN</h4>
+<p>核心思想：左右互搏</p>
 <p>训练一个生成器和判别器，螺旋进步上升</p>
-<h4 id="Diffusion"><a href="#Diffusion" class="headerlink" title="Diffusion"></a>Diffusion</h4><p>先通过不断加噪将图像彻底“毁灭”为随机像素，再训练模型学习如何一步步逆转这个过程，从纯噪声中“还原”出富有结构的数据。</p>
-<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><table>
+<h4 id="Diffusion"><a class="header-anchor" href="#Diffusion">¶</a>Diffusion</h4>
+<p>先通过不断加噪将图像彻底“毁灭”为随机像素，再训练模型学习如何一步步逆转这个过程，从纯噪声中“还原”出富有结构的数据。</p>
+<h4 id="对比"><a class="header-anchor" href="#对比">¶</a>对比</h4>
+<table>
 <thead>
 <tr>
 <th><strong>模型</strong></th>
@@ -772,7 +851,8 @@
 <th><strong>最大的缺点</strong></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>VAE</strong></td>
 <td><strong>压缩包</strong>：把照片压得很小，再解压回来。</td>
 <td>听话、稳定、不崩盘。</td>
@@ -790,142 +870,176 @@
 <td>画质最美，最有创意。</td>
 <td>慢，得一步步变，很费时间。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>变分下界：最大化概率，用对数似然实现</p>
-<h2 id="4-因果性"><a href="#4-因果性" class="headerlink" title="4 因果性"></a>4 因果性</h2><h3 id="4-1-表示方法"><a href="#4-1-表示方法" class="headerlink" title="4.1 表示方法"></a>4.1 表示方法</h3><h4 id="4-1-1-Structural-Causal-Model-SCM"><a href="#4-1-1-Structural-Causal-Model-SCM" class="headerlink" title="4.1.1 Structural Causal Model&#x2F;SCM"></a>4.1.1 Structural Causal Model&#x2F;SCM</h4><p>Treatment &#x3D; {0,1}两种可能性</p>
-<p>Outcomes: Y<del>1</del>,Y<del>0</del></p>
-<p>要计算Individual causal effect (ICE) &#x3D; Y<del>1</del>-Y<del>0</del></p>
-<p>但是一般性实验组和对照组，都只能计算Y<del>1</del>和Y<del>0</del>中的一个</p>
+<h2 id="4-因果性"><a class="header-anchor" href="#4-因果性">¶</a>4 因果性</h2>
+<h3 id="4-1-表示方法"><a class="header-anchor" href="#4-1-表示方法">¶</a>4.1 表示方法</h3>
+<h4 id="4-1-1-Structural-Causal-Model-SCM"><a class="header-anchor" href="#4-1-1-Structural-Causal-Model-SCM">¶</a>4.1.1 Structural Causal Model/SCM</h4>
+<p>Treatment = {0,1}两种可能性</p>
+<p>Outcomes: Y~1~,Y~0~</p>
+<p>要计算Individual causal effect (ICE) = Y~1~-Y~0~</p>
+<p>但是一般性实验组和对照组，都只能计算Y~1~和Y~0~中的一个</p>
 <p>解决方法：随机试验、使用倾向性得分来降维、逆概率加权</p>
-<h4 id="4-1-2-Structural-Equation-Models-SEM"><a href="#4-1-2-Structural-Equation-Models-SEM" class="headerlink" title="4.1.2 Structural Equation Models&#x2F;SEM"></a>4.1.2 Structural Equation Models&#x2F;SEM</h4><p>多元回归分析和因子分析的“合体”</p>
-<h4 id="4-1-3-Directed-Acyclic-Graph-DAG"><a href="#4-1-3-Directed-Acyclic-Graph-DAG" class="headerlink" title="4.1.3 Directed Acyclic Graph&#x2F;DAG"></a>4.1.3 Directed Acyclic Graph&#x2F;DAG</h4><p>使用有向无环图来表示因果</p>
-<h4 id="4-1-4-Functional-Causal-Model-FCM"><a href="#4-1-4-Functional-Causal-Model-FCM" class="headerlink" title="4.1.4 Functional Causal Model&#x2F;FCM"></a>4.1.4 Functional Causal Model&#x2F;FCM</h4><p>把p(y|x)变成了p(y|do(x))</p>
-<h3 id="4-2-发现因果算法"><a href="#4-2-发现因果算法" class="headerlink" title="4.2 发现因果算法"></a>4.2 发现因果算法</h3><h4 id="4-2-1-PC算法"><a href="#4-2-1-PC算法" class="headerlink" title="4.2.1 PC算法"></a>4.2.1 PC算法</h4><ol>
+<h4 id="4-1-2-Structural-Equation-Models-SEM"><a class="header-anchor" href="#4-1-2-Structural-Equation-Models-SEM">¶</a>4.1.2 Structural Equation Models/SEM</h4>
+<p>多元回归分析和因子分析的“合体”</p>
+<h4 id="4-1-3-Directed-Acyclic-Graph-DAG"><a class="header-anchor" href="#4-1-3-Directed-Acyclic-Graph-DAG">¶</a>4.1.3 Directed Acyclic Graph/DAG</h4>
+<p>使用有向无环图来表示因果</p>
+<h4 id="4-1-4-Functional-Causal-Model-FCM"><a class="header-anchor" href="#4-1-4-Functional-Causal-Model-FCM">¶</a>4.1.4 Functional Causal Model/FCM</h4>
+<p>把p(y|x)变成了p(y|do(x))</p>
+<h3 id="4-2-发现因果算法"><a class="header-anchor" href="#4-2-发现因果算法">¶</a>4.2 发现因果算法</h3>
+<h4 id="4-2-1-PC算法"><a class="header-anchor" href="#4-2-1-PC算法">¶</a>4.2.1 PC算法</h4>
+<ol>
 <li><strong>初始化：</strong> 开始时，算法假设所有变量之间都有关联，画出一个<strong>全连接的无向图</strong>（Skeleton）。</li>
-<li><strong>骨架修剪（基于独立性检验）：</strong> 算法会逐一检查每一对变量。如果在给定某些变量集合 S 的情况下，发现 X 和 Y 是独立的（即满足 <strong>d-separation</strong>），那么就<strong>删掉</strong> X 和 Y 之间的连线。<ul>
+<li><strong>骨架修剪（基于独立性检验）：</strong> 算法会逐一检查每一对变量。如果在给定某些变量集合 S 的情况下，发现 X 和 Y 是独立的（即满足 <strong>d-separation</strong>），那么就<strong>删掉</strong> X 和 Y 之间的连线。
+<ul>
 <li>它先检查 0 阶独立（无条件独立），再检查 1 阶（给定 1 个变量时独立），以此类推，直到无法再删除边。</li>
 </ul>
 </li>
 <li><strong>确定方向：</strong> 剩下的连线是“确定有因果关系”的骨架，算法随后利用逻辑规则（如 <strong>v-structure</strong> 识别）来确定箭头的指向。</li>
 </ol>
 <p>一般输出的是一个等价类图（马尔可夫等价类），而不是DAG，不是所有的都能判断方向</p>
-<h4 id="4-2-2-LiNGAM"><a href="#4-2-2-LiNGAM" class="headerlink" title="4.2.2 LiNGAM"></a>4.2.2 LiNGAM</h4><p>LiNGAM 模型之所以能比传统 SEM 识别出更多的方向，是因为它引入了更强的假设：</p>
+<h4 id="4-2-2-LiNGAM"><a class="header-anchor" href="#4-2-2-LiNGAM">¶</a>4.2.2 LiNGAM</h4>
+<p>LiNGAM 模型之所以能比传统 SEM 识别出更多的方向，是因为它引入了更强的假设：</p>
 <ol>
-<li><strong>线性（Linear）：</strong> 变量之间的关系是线性的，即 Xi&#x3D;∑βijXj+ei。</li>
+<li><strong>线性（Linear）：</strong> 变量之间的关系是线性的，即 Xi=∑βijXj+ei。</li>
 <li><strong>非高斯（Non-Gaussian）：</strong> 干扰项（误差项） e 必须服从<strong>非高斯分布</strong>（例如均匀分布、拉普拉斯分布等）。这是该模型最关键的创新点。</li>
 <li><strong>无环（Acyclic）：</strong> 因果结构图中不存在环路（即它是一个 DAG）。</li>
 </ol>
-<h3 id="4-3-量化因果强弱算法"><a href="#4-3-量化因果强弱算法" class="headerlink" title="4.3 量化因果强弱算法"></a>4.3 量化因果强弱算法</h3><h4 id="4-2-2-do-calculus"><a href="#4-2-2-do-calculus" class="headerlink" title="4.2.2 do-calculus"></a>4.2.2 do-calculus</h4><p>do-演算由三条基础规则组成。在推导过程中，我们会对因果图进行微小的“手术”：</p>
+<h3 id="4-3-量化因果强弱算法"><a class="header-anchor" href="#4-3-量化因果强弱算法">¶</a>4.3 量化因果强弱算法</h3>
+<h4 id="4-2-2-do-calculus"><a class="header-anchor" href="#4-2-2-do-calculus">¶</a>4.2.2 do-calculus</h4>
+<p>do-演算由三条基础规则组成。在推导过程中，我们会对因果图进行微小的“手术”：</p>
 <ul>
-<li><strong>规则 1：观察的插入&#x2F;删除（针对无关信息）</strong> 如果在图中，Z 对 Y 的信息流被阻断了，那么在给定 X 的情况下，Z 对于预测 Y 是没用的。<ul>
-<li><strong>数学表示：</strong> P(y∣do(x),z,w)&#x3D;P(y∣do(x),w)</li>
+<li><strong>规则 1：观察的插入/删除（针对无关信息）</strong> 如果在图中，Z 对 Y 的信息流被阻断了，那么在给定 X 的情况下，Z 对于预测 Y 是没用的。
+<ul>
+<li><strong>数学表示：</strong> P(y∣do(x),z,w)=P(y∣do(x),w)</li>
 </ul>
 </li>
-<li><strong>规则 2：行动与观察的交换（针对后门路径）</strong> 如果你已经控制（Condition on）了足够的变量 Z，使得 X 到 Y 之间没有混杂因素的影响，那么“强制干预 X”的效果就等同于“观察到 X”。这就是所谓的<strong>后门准则</strong>。<ul>
-<li><strong>数学表示：</strong> P(y∣do(x),do(z),w)&#x3D;P(y∣x,do(z),w)</li>
+<li><strong>规则 2：行动与观察的交换（针对后门路径）</strong> 如果你已经控制（Condition on）了足够的变量 Z，使得 X 到 Y 之间没有混杂因素的影响，那么“强制干预 X”的效果就等同于“观察到 X”。这就是所谓的<strong>后门准则</strong>。
+<ul>
+<li><strong>数学表示：</strong> P(y∣do(x),do(z),w)=P(y∣x,do(z),w)</li>
 </ul>
 </li>
-<li><strong>规则 3：行动的插入&#x2F;删除（针对无因果关系）</strong> 如果从 X 到 Y 根本没有因果路径，那么强制改变 X 对 Y的分布完全没有影响。<ul>
-<li><strong>数学表示：</strong> P(y∣do(x),w)&#x3D;P(y∣w)</li>
+<li><strong>规则 3：行动的插入/删除（针对无因果关系）</strong> 如果从 X 到 Y 根本没有因果路径，那么强制改变 X 对 Y的分布完全没有影响。
+<ul>
+<li><strong>数学表示：</strong> P(y∣do(x),w)=P(y∣w)</li>
 </ul>
 </li>
 </ul>
-<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><h3 id="基础元素导数"><a href="#基础元素导数" class="headerlink" title="基础元素导数"></a>基础元素导数</h3><table>
+<h2 id="Appendix"><a class="header-anchor" href="#Appendix">¶</a>Appendix</h2>
+<h3 id="基础元素导数"><a class="header-anchor" href="#基础元素导数">¶</a>基础元素导数</h3>
+<table>
 <thead>
 <tr>
-<th align="center"><strong>表达式 (导数形式)</strong></th>
+<th style="text-align:center"><strong>表达式 (导数形式)</strong></th>
 <th><strong>结果</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$[\dfrac{\partial \mathbf{x}}{\partial y}]_i$ (向量对标量)</td>
+<tbody>
+<tr>
+<td style="text-align:center">$[\dfrac{\partial \mathbf{x}}{\partial y}]_i$ (向量对标量)</td>
 <td>$\dfrac{\partial x_i}{\partial y}$</td>
 </tr>
 <tr>
-<td align="center">$[\dfrac{\partial x}{\partial \mathbf{y}}]_i$ (标量对向量)</td>
+<td style="text-align:center">$[\dfrac{\partial x}{\partial \mathbf{y}}]_i$ (标量对向量)</td>
 <td>$\dfrac{\partial x}{\partial y_i}$</td>
 </tr>
 <tr>
-<td align="center">$[\dfrac{\partial \mathbf{x}}{\partial \mathbf{y}}]_{ij}$ (向量对向量 - Jacobian)</td>
+<td style="text-align:center">$[\dfrac{\partial \mathbf{x}}{\partial \mathbf{y}}]_{ij}$ (向量对向量 - Jacobian)</td>
 <td>$\dfrac{\partial x_i}{\partial y_j}$</td>
 </tr>
-</tbody></table>
-<h3 id="向量线性形式求导"><a href="#向量线性形式求导" class="headerlink" title="向量线性形式求导"></a>向量线性形式求导</h3><p>| <strong>表达式 (导数形式)</strong>                                        | <strong>结果</strong>                                                     |<br>| :————————————————————: |: ————————————————————: |<br>| $\dfrac{\partial (\mathbf{a}^\top \mathbf{x})}{\partial \mathbf{x}} &#x3D; \dfrac{\partial (\mathbf{x}^\top \mathbf{a})}{\partial \mathbf{x}}$ | $\mathbf{a}$                                                 |<br>| $\dfrac{\partial (\mathbf{x}^\top \mathbf{x})}{\partial \mathbf{x}}$ | $2\mathbf{x}$                                                |</p>
-<h3 id="矩阵双线性形式求导"><a href="#矩阵双线性形式求导" class="headerlink" title="矩阵双线性形式求导"></a>矩阵双线性形式求导</h3><table>
+</tbody>
+</table>
+<h3 id="向量线性形式求导"><a class="header-anchor" href="#向量线性形式求导">¶</a>向量线性形式求导</h3>
+<p>| <strong>表达式 (导数形式)</strong>                                        | <strong>结果</strong>                                                     |<br>
+| :------------------------------------------------------------: |: ------------------------------------------------------------: |<br>
+| $\dfrac{\partial (\mathbf{a}^\top \mathbf{x})}{\partial \mathbf{x}} = \dfrac{\partial (\mathbf{x}^\top \mathbf{a})}{\partial \mathbf{x}}$ | $\mathbf{a}$                                                 |<br>
+| $\dfrac{\partial (\mathbf{x}^\top \mathbf{x})}{\partial \mathbf{x}}$ | $2\mathbf{x}$                                                |</p>
+<h3 id="矩阵双线性形式求导"><a class="header-anchor" href="#矩阵双线性形式求导">¶</a>矩阵双线性形式求导</h3>
+<table>
 <thead>
 <tr>
-<th align="center"><strong>表达式 (导数形式)</strong></th>
+<th style="text-align:center"><strong>表达式 (导数形式)</strong></th>
 <th><strong>结果</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X} \mathbf{b})}{\partial \mathbf{X}}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X} \mathbf{b})}{\partial \mathbf{X}}$</td>
 <td>$\mathbf{a} \mathbf{b}^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X}^\top \mathbf{b})}{\partial \mathbf{X}}$</td>
+<td style="text-align:center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X}^\top \mathbf{b})}{\partial \mathbf{X}}$</td>
 <td>$\mathbf{b} \mathbf{a}^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X} \mathbf{a})}{\partial \mathbf{X}} &#x3D; \dfrac{\partial (\mathbf{a}^\top \mathbf{X}^\top \mathbf{a})}{\partial \mathbf{X}}$</td>
+<td style="text-align:center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X} \mathbf{a})}{\partial \mathbf{X}} = \dfrac{\partial (\mathbf{a}^\top \mathbf{X}^\top \mathbf{a})}{\partial \mathbf{X}}$</td>
 <td>$\mathbf{a} \mathbf{a}^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial \mathbf a^\top \mathbf X \mathbf a}{\partial \mathbf a}&#x3D;\dfrac{\partial \mathbf a^\top \mathbf X^\top \mathbf a}{\partial \mathbf a}$</td>
+<td style="text-align:center">$\dfrac{\partial \mathbf a^\top \mathbf X \mathbf a}{\partial \mathbf a}=\dfrac{\partial \mathbf a^\top \mathbf X^\top \mathbf a}{\partial \mathbf a}$</td>
 <td>$\mathbf X+\mathbf  X^\top a$</td>
 </tr>
-</tbody></table>
-<h3 id="迹函数求导"><a href="#迹函数求导" class="headerlink" title="迹函数求导"></a>迹函数求导</h3><table>
+</tbody>
+</table>
+<h3 id="迹函数求导"><a class="header-anchor" href="#迹函数求导">¶</a>迹函数求导</h3>
+<table>
 <thead>
 <tr>
-<th align="center"><strong>表达式 (导数形式)</strong></th>
+<th style="text-align:center"><strong>表达式 (导数形式)</strong></th>
 <th><strong>结果</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$\dfrac{\partial \mathrm{Tr}(\mathbf{A}\mathbf{X}\mathbf{B})}{\partial \mathbf{X}}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \mathrm{Tr}(\mathbf{A}\mathbf{X}\mathbf{B})}{\partial \mathbf{X}}$</td>
 <td>$\mathbf{A}^\top \mathbf{B}^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial \mathrm{Tr}(\mathbf{X}\mathbf{X}^\top)}{\partial \mathbf{X}}$</td>
+<td style="text-align:center">$\dfrac{\partial \mathrm{Tr}(\mathbf{X}\mathbf{X}^\top)}{\partial \mathbf{X}}$</td>
 <td>$2\mathbf{X}$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial \mathrm{Tr}(\mathbf{A} (\mathbf{X} \circ \mathbf{Y}))}{\partial \mathbf{X}}$</td>
+<td style="text-align:center">$\dfrac{\partial \mathrm{Tr}(\mathbf{A} (\mathbf{X} \circ \mathbf{Y}))}{\partial \mathbf{X}}$</td>
 <td>$\mathbf{A}^\top \circ \mathbf{Y}$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial\mathrm {tr}(\mathbf X^{-1}\mathbf A)}{\partial \mathbf X}$</td>
+<td style="text-align:center">$\dfrac{\partial\mathrm {tr}(\mathbf X^{-1}\mathbf A)}{\partial \mathbf X}$</td>
 <td>$-(\mathbf X^{-1}\mathbf A\mathbf X^{-1})^\top$</td>
 </tr>
-</tbody></table>
-<h3 id="行列矩阵求导"><a href="#行列矩阵求导" class="headerlink" title="行列矩阵求导"></a>行列矩阵求导</h3><table>
+</tbody>
+</table>
+<h3 id="行列矩阵求导"><a class="header-anchor" href="#行列矩阵求导">¶</a>行列矩阵求导</h3>
+<table>
 <thead>
 <tr>
-<th align="center"><strong>表达式 (导数形式)</strong></th>
+<th style="text-align:center"><strong>表达式 (导数形式)</strong></th>
 <th><strong>结果</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$\dfrac{\partial \det(\mathbf{X})}{\partial \mathbf{X}}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \det(\mathbf{X})}{\partial \mathbf{X}}$</td>
 <td>$\det(\mathbf{X})(\mathbf{X}^{-1})^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial \ln(\det(\mathbf{X}))}{\partial \mathbf{X}}$</td>
+<td style="text-align:center">$\dfrac{\partial \ln(\det(\mathbf{X}))}{\partial \mathbf{X}}$</td>
 <td>$(\mathbf{X}^{-1})^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial \mathbf{Y}^{-1}}{\partial x}$ (矩阵逆对标量)</td>
+<td style="text-align:center">$\dfrac{\partial \mathbf{Y}^{-1}}{\partial x}$ (矩阵逆对标量)</td>
 <td>$-\mathbf{Y}^{-1} \dfrac{\partial \mathbf{Y}}{\partial x} \mathbf{Y}^{-1}$</td>
 </tr>
 <tr>
-<td align="center">$\partial \mathbf X^{-1}$</td>
+<td style="text-align:center">$\partial \mathbf X^{-1}$</td>
 <td>$-\mathbf X^{-1}\partial \mathbf X\mathbf X^{-1}$</td>
 </tr>
-</tbody></table>
-<h3 id="其它公式"><a href="#其它公式" class="headerlink" title="其它公式"></a>其它公式</h3><ol>
-<li>马氏距离：$D_M(x)&#x3D;\sqrt{(x-\mu)^TS^{-1}(x-\mu)}$</li>
-<li>协方差矩阵：$S&#x3D;\dfrac1{N-1}\sum\limits_{i&#x3D;1}^N(x_i-\bar x)(x_i-\bar x)^T$</li>
+</tbody>
+</table>
+<h3 id="其它公式"><a class="header-anchor" href="#其它公式">¶</a>其它公式</h3>
+<ol>
+<li>马氏距离：$D_M(x)=\sqrt{(x-\mu)^TS^{-1}(x-\mu)}$</li>
+<li>协方差矩阵：$S=\dfrac1{N-1}\sum\limits_{i=1}^N(x_i-\bar x)(x_i-\bar x)^T$</li>
 </ol>
 
 </article>
@@ -967,7 +1081,7 @@
                 <li>26/02/06</li>
                 <li>18:43</li>
                 
-                    <li>260</li>
+                    <li>262</li>
                 
                 
                     <li>1</li>
@@ -1003,7 +1117,7 @@
                 <li>26/01/09</li>
                 <li>11:08</li>
                 
-                    <li>4.3k</li>
+                    <li>4.2k</li>
                 
                 
                     <li>20</li>
@@ -1071,7 +1185,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="机器学习"><a rel="nofollow" class="trm-toc-link" href="#机器学习"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">机器学习</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 聚类"><a rel="nofollow" class="trm-toc-link" href="#1-聚类"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 聚类</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 K-means"><a rel="nofollow" class="trm-toc-link" href="#1-1-K-means"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 K-means</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="流程"><a rel="nofollow" class="trm-toc-link" href="#流程"><span class="trm-toc-number">1.1.1.1.</span> <span class="trm-toc-text">流程</span></a></li><li class="trm-toc-item trm-toc-level-4" title="收敛性"><a rel="nofollow" class="trm-toc-link" href="#收敛性"><span class="trm-toc-number">1.1.1.2.</span> <span class="trm-toc-text">收敛性</span></a></li><li class="trm-toc-item trm-toc-level-4" title="问题"><a rel="nofollow" class="trm-toc-link" href="#问题"><span class="trm-toc-number">1.1.1.3.</span> <span class="trm-toc-text">问题</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.2 Hierarchical Clustering"><a rel="nofollow" class="trm-toc-link" href="#1-2-Hierarchical-Clustering"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 Hierarchical Clustering</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 Adaptive Learning"><a rel="nofollow" class="trm-toc-link" href="#1-3-Adaptive-Learning"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.3 Adaptive Learning</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Competitve Learning"><a rel="nofollow" class="trm-toc-link" href="#Competitve-Learning"><span class="trm-toc-number">1.1.3.1.</span> <span class="trm-toc-text">Competitve Learning</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Frequency Sensitive Competitive Learning (FSCR)"><a rel="nofollow" class="trm-toc-link" href="#Frequency-Sensitive-Competitive-Learning-FSCR"><span class="trm-toc-number">1.1.3.2.</span> <span class="trm-toc-text">Frequency Sensitive Competitive Learning (FSCR)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Rival penalized competitive learning (RPCL)"><a rel="nofollow" class="trm-toc-link" href="#Rival-penalized-competitive-learning-RPCL"><span class="trm-toc-number">1.1.3.3.</span> <span class="trm-toc-text">Rival penalized competitive learning (RPCL)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.4 概率"><a rel="nofollow" class="trm-toc-link" href="#1-4-概率"><span class="trm-toc-number">1.1.4.</span> <span class="trm-toc-text">1.4 概率</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Gaussian Mixture Models (GMM)"><a rel="nofollow" class="trm-toc-link" href="#Gaussian-Mixture-Models-GMM"><span class="trm-toc-number">1.1.4.1.</span> <span class="trm-toc-text">Gaussian Mixture Models (GMM)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="EM算法训练GMM"><a rel="nofollow" class="trm-toc-link" href="#EM算法训练GMM"><span class="trm-toc-number">1.1.4.2.</span> <span class="trm-toc-text">EM算法训练GMM</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="Step 0：初始化"><a rel="nofollow" class="trm-toc-link" href="#Step-0：初始化"><span class="trm-toc-number">1.1.4.2.1.</span> <span class="trm-toc-text">Step 0：初始化</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 1：E 步（Expectation）"><a rel="nofollow" class="trm-toc-link" href="#Step-1：E-步（Expectation）"><span class="trm-toc-number">1.1.4.2.2.</span> <span class="trm-toc-text">Step 1：E 步（Expectation）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 2：M 步（Maximization）"><a rel="nofollow" class="trm-toc-link" href="#Step-2：M-步（Maximization）"><span class="trm-toc-number">1.1.4.2.3.</span> <span class="trm-toc-text">Step 2：M 步（Maximization）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 3：迭代"><a rel="nofollow" class="trm-toc-link" href="#Step-3：迭代"><span class="trm-toc-number">1.1.4.2.4.</span> <span class="trm-toc-text">Step 3：迭代</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 4：簇分配（可选）"><a rel="nofollow" class="trm-toc-link" href="#Step-4：簇分配（可选）"><span class="trm-toc-number">1.1.4.2.5.</span> <span class="trm-toc-text">Step 4：簇分配（可选）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="注"><a rel="nofollow" class="trm-toc-link" href="#注"><span class="trm-toc-number">1.1.4.2.6.</span> <span class="trm-toc-text">注</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-4" title="其它"><a rel="nofollow" class="trm-toc-link" href="#其它"><span class="trm-toc-number">1.1.4.3.</span> <span class="trm-toc-text">其它</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.5 选择合适的K"><a rel="nofollow" class="trm-toc-link" href="#1-5-选择合适的K"><span class="trm-toc-number">1.1.5.</span> <span class="trm-toc-text">1.5 选择合适的K</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="AIC &amp; BIC"><a rel="nofollow" class="trm-toc-link" href="#AIC-BIC"><span class="trm-toc-number">1.1.5.1.</span> <span class="trm-toc-text">AIC &amp; BIC</span></a></li><li class="trm-toc-item trm-toc-level-4" title="VBEM"><a rel="nofollow" class="trm-toc-link" href="#VBEM"><span class="trm-toc-number">1.1.5.2.</span> <span class="trm-toc-text">VBEM</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="2 Linear Models: PCA, FA, ICA"><a rel="nofollow" class="trm-toc-link" href="#2-Linear-Models-PCA-FA-ICA"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 Linear Models: PCA, FA, ICA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 Mathmetical Backgrounds"><a rel="nofollow" class="trm-toc-link" href="#2-1-Mathmetical-Backgrounds"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 Mathmetical Backgrounds</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 主成分分析PCA"><a rel="nofollow" class="trm-toc-link" href="#2-2-主成分分析PCA"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.2 主成分分析PCA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="2.2.1 特征值分解 EVD"><a rel="nofollow" class="trm-toc-link" href="#2-2-1-特征值分解-EVD"><span class="trm-toc-number">1.2.2.1.</span> <span class="trm-toc-text">2.2.1 特征值分解 EVD</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2.2.2 奇异值分解 SVD"><a rel="nofollow" class="trm-toc-link" href="#2-2-2-奇异值分解-SVD"><span class="trm-toc-number">1.2.2.2.</span> <span class="trm-toc-text">2.2.2 奇异值分解 SVD</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2.2.3 Hebbian Learning"><a rel="nofollow" class="trm-toc-link" href="#2-2-3-Hebbian-Learning"><span class="trm-toc-number">1.2.2.3.</span> <span class="trm-toc-text">2.2.3 Hebbian Learning</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.3 FA"><a rel="nofollow" class="trm-toc-link" href="#2-3-FA"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.3 FA</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Model selection for PCA&#x2F;FA"><a rel="nofollow" class="trm-toc-link" href="#2-4-Model-selection-for-PCA-FA"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.4 Model selection for PCA&#x2F;FA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="2.4.1 Dimensionality Reduction"><a rel="nofollow" class="trm-toc-link" href="#2-4-1-Dimensionality-Reduction"><span class="trm-toc-number">1.2.4.1.</span> <span class="trm-toc-text">2.4.1 Dimensionality Reduction</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.4.2 确定合适的特征数"><a rel="nofollow" class="trm-toc-link" href="#2-4-2-确定合适的特征数"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.4.2 确定合适的特征数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 ICA"><a rel="nofollow" class="trm-toc-link" href="#2-5-ICA"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.5 ICA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="2.5.1 度量非高斯性"><a rel="nofollow" class="trm-toc-link" href="#2-5-1-度量非高斯性"><span class="trm-toc-number">1.2.6.1.</span> <span class="trm-toc-text">2.5.1 度量非高斯性</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="峰度：Kurtosis or the fourth order cumulant"><a rel="nofollow" class="trm-toc-link" href="#峰度：Kurtosis-or-the-fourth-order-cumulant"><span class="trm-toc-number">1.2.6.1.1.</span> <span class="trm-toc-text">峰度：Kurtosis or the fourth order cumulant</span></a></li><li class="trm-toc-item trm-toc-level-5" title="负熵——理论上最完美的度量"><a rel="nofollow" class="trm-toc-link" href="#负熵——理论上最完美的度量"><span class="trm-toc-number">1.2.6.1.2.</span> <span class="trm-toc-text">负熵——理论上最完美的度量</span></a></li><li class="trm-toc-item trm-toc-level-5" title="互信息"><a rel="nofollow" class="trm-toc-link" href="#互信息"><span class="trm-toc-number">1.2.6.1.3.</span> <span class="trm-toc-text">互信息</span></a></li><li class="trm-toc-item trm-toc-level-5" title="FastICA"><a rel="nofollow" class="trm-toc-link" href="#FastICA"><span class="trm-toc-number">1.2.6.1.4.</span> <span class="trm-toc-text">FastICA</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.6 Noisy ICA&#x2F;IFA"><a rel="nofollow" class="trm-toc-link" href="#2-6-Noisy-ICA-IFA"><span class="trm-toc-number">1.2.7.</span> <span class="trm-toc-text">2.6 Noisy ICA&#x2F;IFA</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="3 监督学习"><a rel="nofollow" class="trm-toc-link" href="#3-监督学习"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 监督学习</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 线性回归"><a rel="nofollow" class="trm-toc-link" href="#3-1-线性回归"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 线性回归</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 Logisitic回归"><a rel="nofollow" class="trm-toc-link" href="#3-2-Logisitic回归"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.2 Logisitic回归</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 神经网络&#x2F;Neural Network&#x2F;NN"><a rel="nofollow" class="trm-toc-link" href="#3-3-神经网络-Neural-Network-NN"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.3 神经网络&#x2F;Neural Network&#x2F;NN</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN"><a rel="nofollow" class="trm-toc-link" href="#3-4-深度神经网络-Deep-Neural-Networks-DNN"><span class="trm-toc-number">1.3.4.</span> <span class="trm-toc-text">3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="3.4.1 CNN"><a rel="nofollow" class="trm-toc-link" href="#3-4-1-CNN"><span class="trm-toc-number">1.3.4.1.</span> <span class="trm-toc-text">3.4.1 CNN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.2 ResNet"><a rel="nofollow" class="trm-toc-link" href="#3-4-2-ResNet"><span class="trm-toc-number">1.3.4.2.</span> <span class="trm-toc-text">3.4.2 ResNet</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.3 DenseNet"><a rel="nofollow" class="trm-toc-link" href="#3-4-3-DenseNet"><span class="trm-toc-number">1.3.4.3.</span> <span class="trm-toc-text">3.4.3 DenseNet</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.4 RNN&#x2F;Recurrent NN"><a rel="nofollow" class="trm-toc-link" href="#3-4-4-RNN-Recurrent-NN"><span class="trm-toc-number">1.3.4.4.</span> <span class="trm-toc-text">3.4.4 RNN&#x2F;Recurrent NN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.5 Transformer"><a rel="nofollow" class="trm-toc-link" href="#3-4-5-Transformer"><span class="trm-toc-number">1.3.4.5.</span> <span class="trm-toc-text">3.4.5 Transformer</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.6 GNN&#x2F;Graph NN"><a rel="nofollow" class="trm-toc-link" href="#3-4-6-GNN-Graph-NN"><span class="trm-toc-number">1.3.4.6.</span> <span class="trm-toc-text">3.4.6 GNN&#x2F;Graph NN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.7 GCN"><a rel="nofollow" class="trm-toc-link" href="#3-4-7-GCN"><span class="trm-toc-number">1.3.4.7.</span> <span class="trm-toc-text">3.4.7 GCN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.8 支持向量机&#x2F;SVM"><a rel="nofollow" class="trm-toc-link" href="#3-4-8-支持向量机-SVM"><span class="trm-toc-number">1.3.4.8.</span> <span class="trm-toc-text">3.4.8 支持向量机&#x2F;SVM</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="实现"><a rel="nofollow" class="trm-toc-link" href="#实现"><span class="trm-toc-number">1.3.4.8.1.</span> <span class="trm-toc-text">实现</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-6" title="第一步：模型定义与几何间隔"><a rel="nofollow" class="trm-toc-link" href="#第一步：模型定义与几何间隔"><span class="trm-toc-number">1.3.4.8.1.1.</span> <span class="trm-toc-text">第一步：模型定义与几何间隔</span></a></li><li class="trm-toc-item trm-toc-level-6" title="第二步：目标函数拟定"><a rel="nofollow" class="trm-toc-link" href="#第二步：目标函数拟定"><span class="trm-toc-number">1.3.4.8.1.2.</span> <span class="trm-toc-text">第二步：目标函数拟定</span></a></li><li class="trm-toc-item trm-toc-level-6" title="第三步：拉格朗日对偶化"><a rel="nofollow" class="trm-toc-link" href="#第三步：拉格朗日对偶化"><span class="trm-toc-number">1.3.4.8.1.3.</span> <span class="trm-toc-text">第三步：拉格朗日对偶化</span></a></li><li class="trm-toc-item trm-toc-level-6" title="第四步：KKT 条件与支持向量"><a rel="nofollow" class="trm-toc-link" href="#第四步：KKT-条件与支持向量"><span class="trm-toc-number">1.3.4.8.1.4.</span> <span class="trm-toc-text">第四步：KKT 条件与支持向量</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-5" title="升级"><a rel="nofollow" class="trm-toc-link" href="#升级"><span class="trm-toc-number">1.3.4.8.2.</span> <span class="trm-toc-text">升级</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-6" title="实现软约束"><a rel="nofollow" class="trm-toc-link" href="#实现软约束"><span class="trm-toc-number">1.3.4.8.2.1.</span> <span class="trm-toc-text">实现软约束</span></a></li><li class="trm-toc-item trm-toc-level-6" title="核函数"><a rel="nofollow" class="trm-toc-link" href="#核函数"><span class="trm-toc-number">1.3.4.8.2.2.</span> <span class="trm-toc-text">核函数</span></a></li></ol></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Deep Generative Models"><a rel="nofollow" class="trm-toc-link" href="#3-5-Deep-Generative-Models"><span class="trm-toc-number">1.3.5.</span> <span class="trm-toc-text">3.5 Deep Generative Models</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="VAE&#x2F;变分AutoEncoder"><a rel="nofollow" class="trm-toc-link" href="#VAE-变分AutoEncoder"><span class="trm-toc-number">1.3.5.1.</span> <span class="trm-toc-text">VAE&#x2F;变分AutoEncoder</span></a></li><li class="trm-toc-item trm-toc-level-4" title="GAN"><a rel="nofollow" class="trm-toc-link" href="#GAN"><span class="trm-toc-number">1.3.5.2.</span> <span class="trm-toc-text">GAN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Diffusion"><a rel="nofollow" class="trm-toc-link" href="#Diffusion"><span class="trm-toc-number">1.3.5.3.</span> <span class="trm-toc-text">Diffusion</span></a></li><li class="trm-toc-item trm-toc-level-4" title="对比"><a rel="nofollow" class="trm-toc-link" href="#对比"><span class="trm-toc-number">1.3.5.4.</span> <span class="trm-toc-text">对比</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="4 因果性"><a rel="nofollow" class="trm-toc-link" href="#4-因果性"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 因果性</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 表示方法"><a rel="nofollow" class="trm-toc-link" href="#4-1-表示方法"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 表示方法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="4.1.1 Structural Causal Model&#x2F;SCM"><a rel="nofollow" class="trm-toc-link" href="#4-1-1-Structural-Causal-Model-SCM"><span class="trm-toc-number">1.4.1.1.</span> <span class="trm-toc-text">4.1.1 Structural Causal Model&#x2F;SCM</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.1.2 Structural Equation Models&#x2F;SEM"><a rel="nofollow" class="trm-toc-link" href="#4-1-2-Structural-Equation-Models-SEM"><span class="trm-toc-number">1.4.1.2.</span> <span class="trm-toc-text">4.1.2 Structural Equation Models&#x2F;SEM</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.1.3 Directed Acyclic Graph&#x2F;DAG"><a rel="nofollow" class="trm-toc-link" href="#4-1-3-Directed-Acyclic-Graph-DAG"><span class="trm-toc-number">1.4.1.3.</span> <span class="trm-toc-text">4.1.3 Directed Acyclic Graph&#x2F;DAG</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.1.4 Functional Causal Model&#x2F;FCM"><a rel="nofollow" class="trm-toc-link" href="#4-1-4-Functional-Causal-Model-FCM"><span class="trm-toc-number">1.4.1.4.</span> <span class="trm-toc-text">4.1.4 Functional Causal Model&#x2F;FCM</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="4.2 发现因果算法"><a rel="nofollow" class="trm-toc-link" href="#4-2-发现因果算法"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 发现因果算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="4.2.1 PC算法"><a rel="nofollow" class="trm-toc-link" href="#4-2-1-PC算法"><span class="trm-toc-number">1.4.2.1.</span> <span class="trm-toc-text">4.2.1 PC算法</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.2.2 LiNGAM"><a rel="nofollow" class="trm-toc-link" href="#4-2-2-LiNGAM"><span class="trm-toc-number">1.4.2.2.</span> <span class="trm-toc-text">4.2.2 LiNGAM</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="4.3 量化因果强弱算法"><a rel="nofollow" class="trm-toc-link" href="#4-3-量化因果强弱算法"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 量化因果强弱算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="4.2.2 do-calculus"><a rel="nofollow" class="trm-toc-link" href="#4-2-2-do-calculus"><span class="trm-toc-number">1.4.3.1.</span> <span class="trm-toc-text">4.2.2 do-calculus</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Appendix"><a rel="nofollow" class="trm-toc-link" href="#Appendix"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">Appendix</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="基础元素导数"><a rel="nofollow" class="trm-toc-link" href="#基础元素导数"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">基础元素导数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="向量线性形式求导"><a rel="nofollow" class="trm-toc-link" href="#向量线性形式求导"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">向量线性形式求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="矩阵双线性形式求导"><a rel="nofollow" class="trm-toc-link" href="#矩阵双线性形式求导"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">矩阵双线性形式求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="迹函数求导"><a rel="nofollow" class="trm-toc-link" href="#迹函数求导"><span class="trm-toc-number">1.5.4.</span> <span class="trm-toc-text">迹函数求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="行列矩阵求导"><a rel="nofollow" class="trm-toc-link" href="#行列矩阵求导"><span class="trm-toc-number">1.5.5.</span> <span class="trm-toc-text">行列矩阵求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="其它公式"><a rel="nofollow" class="trm-toc-link" href="#其它公式"><span class="trm-toc-number">1.5.6.</span> <span class="trm-toc-text">其它公式</span></a></li></ol></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="机器学习"><a class="trm-toc-link"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">机器学习</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="1 聚类"><a rel="nofollow" class="trm-toc-link" href="#1-聚类"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">1 聚类</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 K-means"><a rel="nofollow" class="trm-toc-link" href="#1-1-K-means"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">1.1 K-means</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="流程"><a rel="nofollow" class="trm-toc-link" href="#流程"><span class="trm-toc-number">1.1.1.1.</span> <span class="trm-toc-text">流程</span></a></li><li class="trm-toc-item trm-toc-level-4" title="收敛性"><a rel="nofollow" class="trm-toc-link" href="#收敛性"><span class="trm-toc-number">1.1.1.2.</span> <span class="trm-toc-text">收敛性</span></a></li><li class="trm-toc-item trm-toc-level-4" title="问题"><a rel="nofollow" class="trm-toc-link" href="#问题"><span class="trm-toc-number">1.1.1.3.</span> <span class="trm-toc-text">问题</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.2 Hierarchical Clustering"><a rel="nofollow" class="trm-toc-link" href="#1-2-Hierarchical-Clustering"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">1.2 Hierarchical Clustering</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 Adaptive Learning"><a rel="nofollow" class="trm-toc-link" href="#1-3-Adaptive-Learning"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">1.3 Adaptive Learning</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Competitve Learning"><a rel="nofollow" class="trm-toc-link" href="#Competitve-Learning"><span class="trm-toc-number">1.1.3.1.</span> <span class="trm-toc-text">Competitve Learning</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Frequency Sensitive Competitive Learning (FSCR)"><a rel="nofollow" class="trm-toc-link" href="#Frequency-Sensitive-Competitive-Learning-FSCR"><span class="trm-toc-number">1.1.3.2.</span> <span class="trm-toc-text">Frequency Sensitive Competitive Learning (FSCR)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Rival penalized competitive learning (RPCL)"><a rel="nofollow" class="trm-toc-link" href="#Rival-penalized-competitive-learning-RPCL"><span class="trm-toc-number">1.1.3.3.</span> <span class="trm-toc-text">Rival penalized competitive learning (RPCL)</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.4 概率"><a rel="nofollow" class="trm-toc-link" href="#1-4-概率"><span class="trm-toc-number">1.1.4.</span> <span class="trm-toc-text">1.4 概率</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="Gaussian Mixture Models (GMM)"><a rel="nofollow" class="trm-toc-link" href="#Gaussian-Mixture-Models-GMM"><span class="trm-toc-number">1.1.4.1.</span> <span class="trm-toc-text">Gaussian Mixture Models (GMM)</span></a></li><li class="trm-toc-item trm-toc-level-4" title="EM算法训练GMM"><a rel="nofollow" class="trm-toc-link" href="#EM算法训练GMM"><span class="trm-toc-number">1.1.4.2.</span> <span class="trm-toc-text">EM算法训练GMM</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="Step 0：初始化"><a rel="nofollow" class="trm-toc-link" href="#Step-0：初始化"><span class="trm-toc-number">1.1.4.2.1.</span> <span class="trm-toc-text">Step 0：初始化</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 1：E 步（Expectation）"><a rel="nofollow" class="trm-toc-link" href="#Step-1：E-步（Expectation）"><span class="trm-toc-number">1.1.4.2.2.</span> <span class="trm-toc-text">Step 1：E 步（Expectation）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 2：M 步（Maximization）"><a rel="nofollow" class="trm-toc-link" href="#Step-2：M-步（Maximization）"><span class="trm-toc-number">1.1.4.2.3.</span> <span class="trm-toc-text">Step 2：M 步（Maximization）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 3：迭代"><a rel="nofollow" class="trm-toc-link" href="#Step-3：迭代"><span class="trm-toc-number">1.1.4.2.4.</span> <span class="trm-toc-text">Step 3：迭代</span></a></li><li class="trm-toc-item trm-toc-level-5" title="Step 4：簇分配（可选）"><a rel="nofollow" class="trm-toc-link" href="#Step-4：簇分配（可选）"><span class="trm-toc-number">1.1.4.2.5.</span> <span class="trm-toc-text">Step 4：簇分配（可选）</span></a></li><li class="trm-toc-item trm-toc-level-5" title="注"><a rel="nofollow" class="trm-toc-link" href="#注"><span class="trm-toc-number">1.1.4.2.6.</span> <span class="trm-toc-text">注</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-4" title="其它"><a rel="nofollow" class="trm-toc-link" href="#其它"><span class="trm-toc-number">1.1.4.3.</span> <span class="trm-toc-text">其它</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="1.5 选择合适的K"><a rel="nofollow" class="trm-toc-link" href="#1-5-选择合适的K"><span class="trm-toc-number">1.1.5.</span> <span class="trm-toc-text">1.5 选择合适的K</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="AIC &amp; BIC"><a rel="nofollow" class="trm-toc-link" href="#AIC-BIC"><span class="trm-toc-number">1.1.5.1.</span> <span class="trm-toc-text">AIC &amp; BIC</span></a></li><li class="trm-toc-item trm-toc-level-4" title="VBEM"><a rel="nofollow" class="trm-toc-link" href="#VBEM"><span class="trm-toc-number">1.1.5.2.</span> <span class="trm-toc-text">VBEM</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="2 Linear Models: PCA, FA, ICA"><a rel="nofollow" class="trm-toc-link" href="#2-Linear-Models-PCA-FA-ICA"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">2 Linear Models: PCA, FA, ICA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 Mathmetical Backgrounds"><a rel="nofollow" class="trm-toc-link" href="#2-1-Mathmetical-Backgrounds"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">2.1 Mathmetical Backgrounds</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 主成分分析PCA"><a rel="nofollow" class="trm-toc-link" href="#2-2-主成分分析PCA"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">2.2 主成分分析PCA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="2.2.1 特征值分解 EVD"><a rel="nofollow" class="trm-toc-link" href="#2-2-1-特征值分解-EVD"><span class="trm-toc-number">1.2.2.1.</span> <span class="trm-toc-text">2.2.1 特征值分解 EVD</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2.2.2 奇异值分解 SVD"><a rel="nofollow" class="trm-toc-link" href="#2-2-2-奇异值分解-SVD"><span class="trm-toc-number">1.2.2.2.</span> <span class="trm-toc-text">2.2.2 奇异值分解 SVD</span></a></li><li class="trm-toc-item trm-toc-level-4" title="2.2.3 Hebbian Learning"><a rel="nofollow" class="trm-toc-link" href="#2-2-3-Hebbian-Learning"><span class="trm-toc-number">1.2.2.3.</span> <span class="trm-toc-text">2.2.3 Hebbian Learning</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.3 FA"><a rel="nofollow" class="trm-toc-link" href="#2-3-FA"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">2.3 FA</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Model selection for PCA&#x2F;FA"><a rel="nofollow" class="trm-toc-link" href="#2-4-Model-selection-for-PCA-FA"><span class="trm-toc-number">1.2.4.</span> <span class="trm-toc-text">2.4 Model selection for PCA&#x2F;FA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="2.4.1 Dimensionality Reduction"><a rel="nofollow" class="trm-toc-link" href="#2-4-1-Dimensionality-Reduction"><span class="trm-toc-number">1.2.4.1.</span> <span class="trm-toc-text">2.4.1 Dimensionality Reduction</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.4.2 确定合适的特征数"><a rel="nofollow" class="trm-toc-link" href="#2-4-2-确定合适的特征数"><span class="trm-toc-number">1.2.5.</span> <span class="trm-toc-text">2.4.2 确定合适的特征数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 ICA"><a rel="nofollow" class="trm-toc-link" href="#2-5-ICA"><span class="trm-toc-number">1.2.6.</span> <span class="trm-toc-text">2.5 ICA</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="2.5.1 度量非高斯性"><a rel="nofollow" class="trm-toc-link" href="#2-5-1-度量非高斯性"><span class="trm-toc-number">1.2.6.1.</span> <span class="trm-toc-text">2.5.1 度量非高斯性</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="峰度：Kurtosis or the fourth order cumulant"><a rel="nofollow" class="trm-toc-link" href="#峰度：Kurtosis-or-the-fourth-order-cumulant"><span class="trm-toc-number">1.2.6.1.1.</span> <span class="trm-toc-text">峰度：Kurtosis or the fourth order cumulant</span></a></li><li class="trm-toc-item trm-toc-level-5" title="负熵——理论上最完美的度量"><a rel="nofollow" class="trm-toc-link" href="#负熵——理论上最完美的度量"><span class="trm-toc-number">1.2.6.1.2.</span> <span class="trm-toc-text">负熵——理论上最完美的度量</span></a></li><li class="trm-toc-item trm-toc-level-5" title="互信息"><a rel="nofollow" class="trm-toc-link" href="#互信息"><span class="trm-toc-number">1.2.6.1.3.</span> <span class="trm-toc-text">互信息</span></a></li><li class="trm-toc-item trm-toc-level-5" title="FastICA"><a rel="nofollow" class="trm-toc-link" href="#FastICA"><span class="trm-toc-number">1.2.6.1.4.</span> <span class="trm-toc-text">FastICA</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="2.6 Noisy ICA&#x2F;IFA"><a rel="nofollow" class="trm-toc-link" href="#2-6-Noisy-ICA-IFA"><span class="trm-toc-number">1.2.7.</span> <span class="trm-toc-text">2.6 Noisy ICA&#x2F;IFA</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="3 监督学习"><a rel="nofollow" class="trm-toc-link" href="#3-监督学习"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">3 监督学习</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 线性回归"><a rel="nofollow" class="trm-toc-link" href="#3-1-线性回归"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">3.1 线性回归</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 Logisitic回归"><a rel="nofollow" class="trm-toc-link" href="#3-2-Logisitic回归"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">3.2 Logisitic回归</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 神经网络&#x2F;Neural Network&#x2F;NN"><a rel="nofollow" class="trm-toc-link" href="#3-3-神经网络-Neural-Network-NN"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">3.3 神经网络&#x2F;Neural Network&#x2F;NN</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN"><a rel="nofollow" class="trm-toc-link" href="#3-4-深度神经网络-Deep-Neural-Networks-DNN"><span class="trm-toc-number">1.3.4.</span> <span class="trm-toc-text">3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="3.4.1 CNN"><a rel="nofollow" class="trm-toc-link" href="#3-4-1-CNN"><span class="trm-toc-number">1.3.4.1.</span> <span class="trm-toc-text">3.4.1 CNN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.2 ResNet"><a rel="nofollow" class="trm-toc-link" href="#3-4-2-ResNet"><span class="trm-toc-number">1.3.4.2.</span> <span class="trm-toc-text">3.4.2 ResNet</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.3 DenseNet"><a rel="nofollow" class="trm-toc-link" href="#3-4-3-DenseNet"><span class="trm-toc-number">1.3.4.3.</span> <span class="trm-toc-text">3.4.3 DenseNet</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.4 RNN&#x2F;Recurrent NN"><a rel="nofollow" class="trm-toc-link" href="#3-4-4-RNN-Recurrent-NN"><span class="trm-toc-number">1.3.4.4.</span> <span class="trm-toc-text">3.4.4 RNN&#x2F;Recurrent NN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.5 Transformer"><a rel="nofollow" class="trm-toc-link" href="#3-4-5-Transformer"><span class="trm-toc-number">1.3.4.5.</span> <span class="trm-toc-text">3.4.5 Transformer</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.6 GNN&#x2F;Graph NN"><a rel="nofollow" class="trm-toc-link" href="#3-4-6-GNN-Graph-NN"><span class="trm-toc-number">1.3.4.6.</span> <span class="trm-toc-text">3.4.6 GNN&#x2F;Graph NN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.7 GCN"><a rel="nofollow" class="trm-toc-link" href="#3-4-7-GCN"><span class="trm-toc-number">1.3.4.7.</span> <span class="trm-toc-text">3.4.7 GCN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="3.4.8 支持向量机&#x2F;SVM"><a rel="nofollow" class="trm-toc-link" href="#3-4-8-支持向量机-SVM"><span class="trm-toc-number">1.3.4.8.</span> <span class="trm-toc-text">3.4.8 支持向量机&#x2F;SVM</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-5" title="实现"><a rel="nofollow" class="trm-toc-link" href="#实现"><span class="trm-toc-number">1.3.4.8.1.</span> <span class="trm-toc-text">实现</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-6" title="第一步：模型定义与几何间隔"><a rel="nofollow" class="trm-toc-link" href="#第一步：模型定义与几何间隔"><span class="trm-toc-number">1.3.4.8.1.1.</span> <span class="trm-toc-text">第一步：模型定义与几何间隔</span></a></li><li class="trm-toc-item trm-toc-level-6" title="第二步：目标函数拟定"><a rel="nofollow" class="trm-toc-link" href="#第二步：目标函数拟定"><span class="trm-toc-number">1.3.4.8.1.2.</span> <span class="trm-toc-text">第二步：目标函数拟定</span></a></li><li class="trm-toc-item trm-toc-level-6" title="第三步：拉格朗日对偶化"><a rel="nofollow" class="trm-toc-link" href="#第三步：拉格朗日对偶化"><span class="trm-toc-number">1.3.4.8.1.3.</span> <span class="trm-toc-text">第三步：拉格朗日对偶化</span></a></li><li class="trm-toc-item trm-toc-level-6" title="第四步：KKT 条件与支持向量"><a rel="nofollow" class="trm-toc-link" href="#第四步：KKT-条件与支持向量"><span class="trm-toc-number">1.3.4.8.1.4.</span> <span class="trm-toc-text">第四步：KKT 条件与支持向量</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-5" title="升级"><a rel="nofollow" class="trm-toc-link" href="#升级"><span class="trm-toc-number">1.3.4.8.2.</span> <span class="trm-toc-text">升级</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-6" title="实现软约束"><a rel="nofollow" class="trm-toc-link" href="#实现软约束"><span class="trm-toc-number">1.3.4.8.2.1.</span> <span class="trm-toc-text">实现软约束</span></a></li><li class="trm-toc-item trm-toc-level-6" title="核函数"><a rel="nofollow" class="trm-toc-link" href="#核函数"><span class="trm-toc-number">1.3.4.8.2.2.</span> <span class="trm-toc-text">核函数</span></a></li></ol></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Deep Generative Models"><a rel="nofollow" class="trm-toc-link" href="#3-5-Deep-Generative-Models"><span class="trm-toc-number">1.3.5.</span> <span class="trm-toc-text">3.5 Deep Generative Models</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="VAE&#x2F;变分AutoEncoder"><a rel="nofollow" class="trm-toc-link" href="#VAE-变分AutoEncoder"><span class="trm-toc-number">1.3.5.1.</span> <span class="trm-toc-text">VAE&#x2F;变分AutoEncoder</span></a></li><li class="trm-toc-item trm-toc-level-4" title="GAN"><a rel="nofollow" class="trm-toc-link" href="#GAN"><span class="trm-toc-number">1.3.5.2.</span> <span class="trm-toc-text">GAN</span></a></li><li class="trm-toc-item trm-toc-level-4" title="Diffusion"><a rel="nofollow" class="trm-toc-link" href="#Diffusion"><span class="trm-toc-number">1.3.5.3.</span> <span class="trm-toc-text">Diffusion</span></a></li><li class="trm-toc-item trm-toc-level-4" title="对比"><a rel="nofollow" class="trm-toc-link" href="#对比"><span class="trm-toc-number">1.3.5.4.</span> <span class="trm-toc-text">对比</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="4 因果性"><a rel="nofollow" class="trm-toc-link" href="#4-因果性"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">4 因果性</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 表示方法"><a rel="nofollow" class="trm-toc-link" href="#4-1-表示方法"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">4.1 表示方法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="4.1.1 Structural Causal Model&#x2F;SCM"><a rel="nofollow" class="trm-toc-link" href="#4-1-1-Structural-Causal-Model-SCM"><span class="trm-toc-number">1.4.1.1.</span> <span class="trm-toc-text">4.1.1 Structural Causal Model&#x2F;SCM</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.1.2 Structural Equation Models&#x2F;SEM"><a rel="nofollow" class="trm-toc-link" href="#4-1-2-Structural-Equation-Models-SEM"><span class="trm-toc-number">1.4.1.2.</span> <span class="trm-toc-text">4.1.2 Structural Equation Models&#x2F;SEM</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.1.3 Directed Acyclic Graph&#x2F;DAG"><a rel="nofollow" class="trm-toc-link" href="#4-1-3-Directed-Acyclic-Graph-DAG"><span class="trm-toc-number">1.4.1.3.</span> <span class="trm-toc-text">4.1.3 Directed Acyclic Graph&#x2F;DAG</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.1.4 Functional Causal Model&#x2F;FCM"><a rel="nofollow" class="trm-toc-link" href="#4-1-4-Functional-Causal-Model-FCM"><span class="trm-toc-number">1.4.1.4.</span> <span class="trm-toc-text">4.1.4 Functional Causal Model&#x2F;FCM</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="4.2 发现因果算法"><a rel="nofollow" class="trm-toc-link" href="#4-2-发现因果算法"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">4.2 发现因果算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="4.2.1 PC算法"><a rel="nofollow" class="trm-toc-link" href="#4-2-1-PC算法"><span class="trm-toc-number">1.4.2.1.</span> <span class="trm-toc-text">4.2.1 PC算法</span></a></li><li class="trm-toc-item trm-toc-level-4" title="4.2.2 LiNGAM"><a rel="nofollow" class="trm-toc-link" href="#4-2-2-LiNGAM"><span class="trm-toc-number">1.4.2.2.</span> <span class="trm-toc-text">4.2.2 LiNGAM</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="4.3 量化因果强弱算法"><a rel="nofollow" class="trm-toc-link" href="#4-3-量化因果强弱算法"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">4.3 量化因果强弱算法</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="4.2.2 do-calculus"><a rel="nofollow" class="trm-toc-link" href="#4-2-2-do-calculus"><span class="trm-toc-number">1.4.3.1.</span> <span class="trm-toc-text">4.2.2 do-calculus</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="Appendix"><a rel="nofollow" class="trm-toc-link" href="#Appendix"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">Appendix</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="基础元素导数"><a rel="nofollow" class="trm-toc-link" href="#基础元素导数"><span class="trm-toc-number">1.5.1.</span> <span class="trm-toc-text">基础元素导数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="向量线性形式求导"><a rel="nofollow" class="trm-toc-link" href="#向量线性形式求导"><span class="trm-toc-number">1.5.2.</span> <span class="trm-toc-text">向量线性形式求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="矩阵双线性形式求导"><a rel="nofollow" class="trm-toc-link" href="#矩阵双线性形式求导"><span class="trm-toc-number">1.5.3.</span> <span class="trm-toc-text">矩阵双线性形式求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="迹函数求导"><a rel="nofollow" class="trm-toc-link" href="#迹函数求导"><span class="trm-toc-number">1.5.4.</span> <span class="trm-toc-text">迹函数求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="行列矩阵求导"><a rel="nofollow" class="trm-toc-link" href="#行列矩阵求导"><span class="trm-toc-number">1.5.5.</span> <span class="trm-toc-text">行列矩阵求导</span></a></li><li class="trm-toc-item trm-toc-level-3" title="其它公式"><a rel="nofollow" class="trm-toc-link" href="#其它公式"><span class="trm-toc-number">1.5.6.</span> <span class="trm-toc-text">其它公式</span></a></li></ol></li></ol></li></ol>
       </div>
     </div>
 
