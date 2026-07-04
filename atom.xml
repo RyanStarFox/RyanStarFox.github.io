@@ -6,7 +6,7 @@
   <link href="https://ryanstarfox.github.io/atom.xml" rel="self"/>
   
   <link href="https://ryanstarfox.github.io/"/>
-  <updated>2026-02-06T10:43:00.000Z</updated>
+  <updated>2026-07-04T16:33:00.000Z</updated>
   <id>https://ryanstarfox.github.io/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AntiRecommend脚本</title>
+    <link href="https://ryanstarfox.github.io/2026/07/05/2026/20260705%20AntiRecommend/"/>
+    <id>https://ryanstarfox.github.io/2026/07/05/2026/20260705%20AntiRecommend/</id>
+    <published>2026-07-04T16:33:00.000Z</published>
+    <updated>2026-07-04T16:33:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对抗推荐算法，夺回我的掌控——反视频推荐脚本「AntiRecommend」"><a href="#对抗推荐算法，夺回我的掌控——反视频推荐脚本「AntiRecommend」" class="headerlink" title="对抗推荐算法，夺回我的掌控——反视频推荐脚本「AntiRecommend」"></a>对抗推荐算法，夺回我的掌控——反视频推荐脚本「AntiRecommend」</h1><p><img src="https://github.com/RyanStarFox/AntiRecommend/blob/main/media/logo_text.png?raw=true" alt="AntiRecommend"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p><p>我一直很警惕自己沉迷于某一样东西不能自拔，感觉失去了对于自己的掌控感。</p><p>现在其实最容易让人沉迷的就是短视频了，但是我反而不沉迷短视频，一是一开始就保持距离；二是大多短视频都很俗，在声音和画面上都太满了，实在无法忍受。短视频从未成为我沉迷的原因。</p><p>长视频反而更让我沉迷。长视频本身就具有迷惑性，它看上去显得更加让人静下心来，也更有用，能获得知识。但是实际上刷的时候开两倍速，无止境地选择下一个推荐的视频——这个逻辑和短视频是一样的。</p><p>之前也一直用别的方法限制自己的视频时长。最开始是关闭移动端主页的个性化推荐，随后是删去移动端，只使用桌面端，再之后是桌面端把主页重定向到搜索页。这隐藏了很多数据流，这样以来我几乎只看我关注的博主的视频了——但是还有最后的漏洞：播放器右侧、视频播放临近结束和结束后的推荐与自动连播。</p><p>于是乎用vibe coding了<a href="https://github.com/RyanStarFox/AntiRecommend">AntiRecommend</a>，用于隐藏youtube和bilibili所有的推荐视频，顺便隐藏了一些广告。好用！推荐用！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;对抗推荐算法，夺回我的掌控——反视频推荐脚本「AntiRecommend」&quot;&gt;&lt;a href=&quot;#对抗推荐算法，夺回我的掌控——反视频推荐脚本「AntiRecommend」&quot; class=&quot;headerlink&quot; title=&quot;对抗推荐算法，夺回我的掌控——反视频</summary>
+      
+    
+    
+    
+    <category term="技术/Tech" scheme="https://ryanstarfox.github.io/categories/%E6%8A%80%E6%9C%AF-Tech/"/>
+    
+    
+    <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
+    
+  </entry>
+  
+  <entry>
     <title>樱花frp自动签到</title>
     <link href="https://ryanstarfox.github.io/2026/02/06/2026/20260206%20%E6%A8%B1%E8%8A%B1frp%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0/"/>
     <id>https://ryanstarfox.github.io/2026/02/06/2026/20260206%20%E6%A8%B1%E8%8A%B1frp%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0/</id>
     <published>2026-02-06T10:43:00.000Z</published>
     <updated>2026-02-06T10:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="樱花frp自动签到"><a href="#樱花frp自动签到" class="headerlink" title="樱花frp自动签到"></a>樱花frp自动签到</h1><p>之前习一直惯使用frp的内网穿透服务，但是因为不想签到，在网上找了一个库<a href="https://github.com/dutou520/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a>用于实现自动签到</p><p>近日樱花frp从九宫格选图片验证码改为了滑块验证码，因此在原基础上添加了兼容滑块验证码的功能。</p><p>滑块验证码的破解分为两部分：</p><ul><li>找到合适的位置</li><li>模拟人类动作</li></ul><p>对于第一点，本来想直接使用视觉模型，但是视觉模型无法精确到像素，也无法模拟人眼实时查看移动的位置是否与预期的位置相符，因此放弃。转而使用库<a href="https://github.com/chenwei-zhao/captcha-recognizer">captcha-recognizer</a>，成功✅</p><p>对于第二点，本来也想直接vibe-coding一个，但是效果不尽如人意，captcha一直显示“验证码被怪兽吃掉了”（笑，，，转而使用库<a href="https://github.com/asweigart/pyautogui">pyautogui</a>，成功✅</p><p>所以还是不要盲信vibe-coding，完善的第三方库+vibe-coding才是正解！</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="樱花frp自动签到"><a href="#樱花frp自动签到" class="headerlink" title="樱花frp自动签到"></a>樱花frp自动签到</h1><p>之前习一直惯使用frp的内网穿透服务，但是因为不想签到，在网上找了一个库<a href="https://github.com/dutou520/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a>用于实现自动签到</p><p>近日樱花frp从九宫格选图片验证码改为了滑块验证码，因此在原基础上添加了兼容滑块验证码的功能。</p><p>滑块验证码的破解分为两部分：</p><ul><li>找到合适的位置</li><li>模拟人类动作</li></ul><p>对于第一点，本来想直接使用视觉模型，但是视觉模型无法精确到像素，也无法模拟人眼实时查看移动的位置是否与预期的位置相符，因此放弃。转而使用库<a href="https://github.com/chenwei-zhao/captcha-recognizer">captcha-recognizer</a>，成功✅</p><p>对于第二点，本来也想直接vibe-coding一个，但是效果不尽如人意，captcha一直显示“验证码被怪兽吃掉了”（笑，，，转而使用库<a href="https://github.com/asweigart/pyautogui">pyautogui</a>，成功✅</p><p>所以还是不要盲信vibe-coding，完善的第三方库+vibe-coding才是正解！</p><p>最终的成果：<a href="https://github.com/RyanStarFox/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a></p>]]></content>
     
     
       
@@ -265,9 +289,9 @@
     
     <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
     
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
-    
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
+    
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -516,9 +540,9 @@
     
     <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
     
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
-    
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
+    
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -618,11 +642,11 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
     <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="大学/University" scheme="https://ryanstarfox.github.io/tags/%E5%A4%A7%E5%AD%A6-University/"/>
-    
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -858,9 +882,9 @@
     
     <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
     
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
-    
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
+    
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -886,9 +910,9 @@
     
     <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
     
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
-    
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
+    
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -943,9 +967,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="高中/High School" scheme="https://ryanstarfox.github.io/tags/%E9%AB%98%E4%B8%AD-High-School/"/>
     
@@ -973,9 +997,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="高中/High School" scheme="https://ryanstarfox.github.io/tags/%E9%AB%98%E4%B8%AD-High-School/"/>
     
@@ -1148,9 +1172,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
-    
     <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
+    
+    <category term="校园/School" scheme="https://ryanstarfox.github.io/tags/%E6%A0%A1%E5%9B%AD-School/"/>
     
     <category term="高中/High School" scheme="https://ryanstarfox.github.io/tags/%E9%AB%98%E4%B8%AD-High-School/"/>
     
@@ -1178,9 +1202,9 @@
     
     <category term="生活/Life" scheme="https://ryanstarfox.github.io/tags/%E7%94%9F%E6%B4%BB-Life/"/>
     
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
-    
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
+    
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
@@ -1207,9 +1231,9 @@
     
     <category term="技术/Tech" scheme="https://ryanstarfox.github.io/tags/%E6%8A%80%E6%9C%AF-Tech/"/>
     
-    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
-    
     <category term="Apple" scheme="https://ryanstarfox.github.io/tags/Apple/"/>
+    
+    <category term="微信/Wechat" scheme="https://ryanstarfox.github.io/tags/%E5%BE%AE%E4%BF%A1-Wechat/"/>
     
   </entry>
   
