@@ -16,12 +16,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="图论整理 ¶第一章 基本概念 ¶1.1 图的概念   $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图   只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$   一些概念：   $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$ 称$v_i是e_k的始">
+<meta name="description" content="图论整理第一章 基本概念1.1 图的概念 $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图  只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$  一些概念：  $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图论整理">
 <meta property="og:url" content="https://blog.ryanstarfox.top/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="图论整理 ¶第一章 基本概念 ¶1.1 图的概念   $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图   只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$   一些概念：   $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$ 称$v_i是e_k的始">
+<meta property="og:description" content="图论整理第一章 基本概念1.1 图的概念 $(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图  只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$  一些概念：  $e_k&#x3D;(v_i,v_j)$  称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-12-01T13:34:00.000Z">
 <meta property="article:modified_time" content="2024-12-01T13:34:00.000Z">
@@ -463,127 +463,94 @@
     <article id="article-container" class="trm-publication">
     
         <div class="post-body-zh i18n-zh">
-            <h1>图论整理</h1>
-<h2 id="第一章-基本概念"><a class="header-anchor" href="#第一章-基本概念">¶</a>第一章 基本概念</h2>
-<h3 id="1-1-图的概念"><a class="header-anchor" href="#1-1-图的概念">¶</a>1.1 图的概念</h3>
-<ol>
-<li>
-<p>$(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G=(V,E)$表示图</p>
+            <h1 id="图论整理"><a href="#图论整理" class="headerlink" title="图论整理"></a>图论整理</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><h3 id="1-1-图的概念"><a href="#1-1-图的概念" class="headerlink" title="1.1 图的概念"></a>1.1 图的概念</h3><ol>
+<li><p>$(V(G),E(G))$称为图，$V(G)$是非空集合，称为顶点集，$E(G)$是$V(G)$诸顶点之间边的集合。常用$G&#x3D;(V,E)$表示图</p>
 </li>
-<li>
-<p>只讨论有限图，$|V|=n$称为图的阶，$|E|=m$</p>
+<li><p>只讨论有限图，$|V|&#x3D;n$称为图的阶，$|E|&#x3D;m$</p>
 </li>
-<li>
-<p>一些概念：</p>
+<li><p>一些概念：</p>
 <ol>
-<li>
-<p>$e_k=(v_i,v_j)$</p>
+<li><p>$e_k&#x3D;(v_i,v_j)$</p>
 <ol>
 <li>称$v_i与v_j是相邻顶点；e_k分别与v_i,v_j关联$</li>
 <li>称$v_i是e_k的始点，v_j是e_k的终点，v_i是v_j的直接前趋，v_j是v_i的直接后继$</li>
 </ol>
 </li>
-<li>
-<p><strong>邻接边</strong>：有一个共同顶点的两条边</p>
+<li><p><strong>邻接边</strong>：有一个共同顶点的两条边</p>
 </li>
-<li>
-<p><strong>有向图</strong>：全部由有向边构成的图</p>
+<li><p><strong>有向图</strong>：全部由有向边构成的图</p>
 <p>**无向图：**全部由无向边构成的图</p>
 <p>**混合图：**既有有向边又有无向边构成的图</p>
 </li>
-<li>
-<p>**自环：**只与一个顶点关联的边</p>
+<li><p>**自环：**只与一个顶点关联的边</p>
 </li>
-<li>
-<p>**多重边：**同一对顶点之间存在多条边</p>
+<li><p>**多重边：**同一对顶点之间存在多条边</p>
 <p>**多重图：**含有重边的图</p>
 </li>
-<li>
-<p>**孤立点：**没有与任何边关联的顶点</p>
+<li><p>**孤立点：**没有与任何边关联的顶点</p>
 </li>
-<li>
-<p>**度$d(v)$：**与顶点关联的边的数目</p>
+<li><p>**度$d(v)$：**与顶点关联的边的数目</p>
 <p>**入读：**入边条数</p>
 <p>**出度：**出边条数</p>
 <p>**奇点：**度为奇数的点</p>
 <p>**偶点：**度为偶数的点</p>
 </li>
-<li>
-<p>**简单图：**不存在自环的无向图</p>
+<li><p>**简单图：**不存在自环的无向图</p>
 </li>
 </ol>
 </li>
-<li>
-<p>$\sum\limits_{v\in{V(G)}}d(v)=2m$</p>
+<li><p>$\sum\limits_{v\in{V(G)}}d(v)&#x3D;2m$</p>
 </li>
-<li>
-<p>G中奇数的顶点必为偶数个</p>
+<li><p>G中奇数的顶点必为偶数个</p>
 </li>
-<li>
-<p>G中出度之和=入度之和</p>
+<li><p>G中出度之和&#x3D;入度之和</p>
 </li>
-<li>
-<p>K~n~的变数是$\cfrac12n(n-1)$</p>
+<li><p>K<del>n</del>的变数是$\cfrac12n(n-1)$</p>
 </li>
-<li>
-<p>非空简单图G中一定存在度相同的顶点</p>
+<li><p>非空简单图G中一定存在度相同的顶点</p>
 </li>
-<li>
-<p><strong>n阶完全图：K~n~</strong></p>
+<li><p><strong>n阶完全图：K<del>n</del></strong></p>
 </li>
-<li>
-<p><strong>完全二分图：K~m,n~</strong></p>
+<li><p><strong>完全二分图：K<del>m,n</del></strong></p>
 </li>
-<li>
-<p>**平凡图：**n=1的图</p>
+<li><p>**平凡图：**n&#x3D;1的图</p>
 </li>
-<li>
-<p>**空图/零图：**m=0的图</p>
+<li><p>**空图&#x2F;零图：**m&#x3D;0的图</p>
 </li>
-<li>
-<p>**（k度）正则图：**所有顶点度数均相等（为k）的图</p>
+<li><p>**（k度）正则图：**所有顶点度数均相等（为k）的图</p>
 </li>
-<li>
-<p><strong>阶为k的(k-1)-正则图：k-完全图</strong></p>
+<li><p><strong>阶为k的(k-1)-正则图：k-完全图</strong></p>
 </li>
-<li>
-<p>**正权图：**权为正实数的赋权图</p>
+<li><p>**正权图：**权为正实数的赋权图</p>
 </li>
-<li>
-<p><strong>子图：</strong>$V'\in V,E'\in E$</p>
-<p><strong>支撑子图/生成子图：</strong>$V'=V,E'\in E$</p>
-<p><strong>导出子图：</strong>$V'\in V,E'_V = E_V$</p>
+<li><p><strong>子图：</strong>$V’\in V,E’\in E$</p>
+<p><strong>支撑子图&#x2F;生成子图：</strong>$V’&#x3D;V,E’\in E$</p>
+<p><strong>导出子图：</strong>$V’\in V,E’_V &#x3D; E_V$</p>
 </li>
-<li>
-<p><strong>邻点集：</strong>$\Gamma(v)$</p>
-<p><strong>直接后继集/外邻集：</strong>$\Gamma^+(v)$</p>
-<p><strong>直接前趋集/内邻集：</strong>$\Gamma^-(v)$</p>
+<li><p><strong>邻点集：</strong>$\Gamma(v)$</p>
+<p><strong>直接后继集&#x2F;外邻集：</strong>$\Gamma^+(v)$</p>
+<p><strong>直接前趋集&#x2F;内邻集：</strong>$\Gamma^-(v)$</p>
 </li>
 </ol>
-<h3 id="1-2-图的代数表示"><a class="header-anchor" href="#1-2-图的代数表示">¶</a>1.2 图的代数表示</h3>
-<ol>
-<li><strong>邻接矩阵</strong>
-<ul>
+<h3 id="1-2-图的代数表示"><a href="#1-2-图的代数表示" class="headerlink" title="1.2 图的代数表示"></a>1.2 图的代数表示</h3><ol>
+<li><strong>邻接矩阵</strong><ul>
 <li>对称矩阵</li>
 <li>可以表示自环</li>
 <li>无法表示重边</li>
 </ul>
 </li>
-<li><strong>权矩阵</strong>
-<ul>
+<li><strong>权矩阵</strong><ul>
 <li>邻接矩阵基础上加入权值信息</li>
 </ul>
 </li>
-<li><strong>关联矩阵</strong>
-<ul>
+<li><strong>关联矩阵</strong><ul>
 <li>n x m的矩阵</li>
-<li>$b_{ij}=\begin{cases}1,&amp;e_j=(v_i,v_k)\in E\-1,&amp;e_j=(v_k,v_i)\in E\0,&amp;其他\end{cases}$</li>
+<li>$b_{ij}&#x3D;\begin{cases}1,&amp;e_j&#x3D;(v_i,v_k)\in E\-1,&amp;e_j&#x3D;(v_k,v_i)\in E\0,&amp;其他\end{cases}$</li>
 <li>无法表示自环</li>
 <li>可以表示重边</li>
 </ul>
 </li>
-<li><strong>边列表</strong>
-<ul>
+<li><strong>边列表</strong><ul>
 <li>边列表是对关联矩阵的列进行压缩的结果</li>
 <li>两个m维向量$\vec A$和$\vec B$，前者存放起点，后者存放终点</li>
 <li>可选的$\vec Z$，存放权值</li>
@@ -591,12 +558,10 @@
 <li>可以表示重边</li>
 </ul>
 </li>
-<li><strong>正向表</strong>
-<ul>
-<li>对邻接矩阵的行进行压缩的结果，把每个顶点的直接后趋集中在一起存放
-<ul>
+<li><strong>正向表</strong><ul>
+<li>对邻接矩阵的行进行压缩的结果，把每个顶点的直接后趋集中在一起存放<ul>
 <li>n+1维向量$\vec A$，m维向量$\vec B$</li>
-<li>$d^+(v_i)=A(i+1)-A(i)$</li>
+<li>$d^+(v_i)&#x3D;A(i+1)-A(i)$</li>
 <li>$B(A(i))$到$B(A(i+1)-1)中的任一个值，都是v_i的直接后继$</li>
 </ul>
 </li>
@@ -605,13 +570,11 @@
 <li>可以表示重边</li>
 </ul>
 </li>
-<li><strong>逆向表</strong>
-<ul>
+<li><strong>逆向表</strong><ul>
 <li>与正向表类似，把每个顶点的直接前趋放在一张表里存放</li>
 </ul>
 </li>
-<li><strong>邻接表</strong>
-<ul>
+<li><strong>邻接表</strong><ul>
 <li>每一个表顶点|a|b|c|，a存放点编号，b存放边的数值，c存放下一表顶点的地址指针</li>
 <li>可以存放权值</li>
 <li>可以表示自环</li>
@@ -619,128 +582,103 @@
 </ul>
 </li>
 </ol>
-<h2 id="第二章-道路和回路"><a class="header-anchor" href="#第二章-道路和回路">¶</a>第二章 道路和回路</h2>
-<h3 id="2-1-图的连通性"><a class="header-anchor" href="#2-1-图的连通性">¶</a>2.1 图的连通性</h3>
-<ol>
-<li>
-<p>有向图中：</p>
+<h2 id="第二章-道路和回路"><a href="#第二章-道路和回路" class="headerlink" title="第二章 道路和回路"></a>第二章 道路和回路</h2><h3 id="2-1-图的连通性"><a href="#2-1-图的连通性" class="headerlink" title="2.1 图的连通性"></a>2.1 图的连通性</h3><ol>
+<li><p>有向图中：</p>
 <p>有向道路、有向回路：字面意思</p>
-<p>无重边：<strong>简单有向道路/简单有向回路</strong></p>
-<p>无重边、无重顶点：<strong>初级有向道路/初级有向回路</strong>，简称<strong>路</strong>和<strong>回路</strong></p>
+<p>无重边：<strong>简单有向道路&#x2F;简单有向回路</strong></p>
+<p>无重边、无重顶点：<strong>初级有向道路&#x2F;初级有向回路</strong>，简称<strong>路</strong>和<strong>回路</strong></p>
 </li>
-<li>
-<p>无向图中：</p>
-<p>道路/链、回路/圈：字面意思</p>
-<p>无重边：<strong>简单道路/简单回路</strong></p>
-<p>无重边、无重顶点：<strong>初级道路/初级回路</strong></p>
+<li><p>无向图中：</p>
+<p>道路&#x2F;链、回路&#x2F;圈：字面意思</p>
+<p>无重边：<strong>简单道路&#x2F;简单回路</strong></p>
+<p>无重边、无重顶点：<strong>初级道路&#x2F;初级回路</strong></p>
 </li>
 </ol>
 <p>**弦：**圈中不相邻顶点的边</p>
 <p>**连通图：**G的任意两点之间都存在道路H不是G任何连通子图的真子图</p>
 <p>**树：**不含回路的连通图</p>
-<p>**割边/割点：**移去后使得原有图不再连通的边/顶点</p>
+<p>**割边&#x2F;割点：**移去后使得原有图不再连通的边&#x2F;顶点</p>
 <p>**块：**G中极大的没有割点的连通子图</p>
 <p>割点相关等价命题：</p>
 <ol>
 <li>v是G的一个割点</li>
-<li>存在与v不同的点u,w，使得任何一条u到w的道路P~uw~经过v</li>
-<li>V-v可以划分为两个顶点集U，W，任意$u\in U,w\in W$，u在每一条道路P~uw~上</li>
+<li>存在与v不同的点u,w，使得任何一条u到w的道路P<del>uw</del>经过v</li>
+<li>V-v可以划分为两个顶点集U，W，任意$u\in U,w\in W$，u在每一条道路P<del>uw</del>上</li>
 </ol>
 <p>割边相关等价命题：</p>
 <ol>
 <li>e是G的一条割边</li>
 <li>e不属于G的任何回路</li>
-<li>存在G得顶点u，w，e属于u和w的任何一条道路P~uw~</li>
-<li>G-e可以划分为两个顶点集U和W，使得对任何顶点$u\in U,w\in W$，在G中的道路P~uw~都经过e</li>
+<li>存在G得顶点u，w，e属于u和w的任何一条道路P<del>uw</del></li>
+<li>G-e可以划分为两个顶点集U和W，使得对任何顶点$u\in U,w\in W$，在G中的道路P<del>uw</del>都经过e</li>
 </ol>
-<p>图G移去若干顶点后分为两个连通子图或者剩下一个孤立的点，这些点的集合称为点断集/断集A</p>
-<p>$\mathcal K(G)=\min\limits_{A\in\emptyset}{|A|}$为断量</p>
+<p>图G移去若干顶点后分为两个连通子图或者剩下一个孤立的点，这些点的集合称为点断集&#x2F;断集A</p>
+<p>$\mathcal K(G)&#x3D;\min\limits_{A\in\emptyset}{|A|}$为断量</p>
 <p>同理边断集B，边断量$\lambda(G)$</p>
 <p>若$\mathcal K(G)\geq k$称G为k连通图，同理k边连通图</p>
 <p>$\mathcal K(G)\leq \lambda(G)\leq \delta(G),\delta(G)是顶点的最小度$</p>
-<h3 id="2-3-欧拉道路与回路"><a class="header-anchor" href="#2-3-欧拉道路与回路">¶</a>2.3 欧拉道路与回路</h3>
-<p>**欧拉回路/道路：**经过所有边的简单回路/道路</p>
+<h3 id="2-3-欧拉道路与回路"><a href="#2-3-欧拉道路与回路" class="headerlink" title="2.3 欧拉道路与回路"></a>2.3 欧拉道路与回路</h3><p>**欧拉回路&#x2F;道路：**经过所有边的简单回路&#x2F;道路</p>
 <p>**欧拉图：**存在欧拉回路</p>
 <p>**半欧拉图：**存在欧拉道路而不存在欧拉回路</p>
-<p>$存在欧拉回路\Leftrightarrow 各顶点的度为偶数/出度入读相等$</p>
+<p>$存在欧拉回路\Leftrightarrow 各顶点的度为偶数&#x2F;出度入读相等$</p>
 <p>$存在欧拉道路\Leftrightarrow 只有两个度为奇数的点$</p>
-<h3 id="2-4-哈密顿道路与回路"><a class="header-anchor" href="#2-4-哈密顿道路与回路">¶</a>2.4 哈密顿道路与回路</h3>
-<p>**哈密顿回路/道路：**无向图的一条过全部顶点的初级回路</p>
+<h3 id="2-4-哈密顿道路与回路"><a href="#2-4-哈密顿道路与回路" class="headerlink" title="2.4 哈密顿道路与回路"></a>2.4 哈密顿道路与回路</h3><p>**哈密顿回路&#x2F;道路：**无向图的一条过全部顶点的初级回路</p>
 <p>**哈密顿图：**含有H回路的无向连通图</p>
 <p>**半哈密顿图：**含有H道路而不含H回路的无向连通图</p>
 <p>一些充分定理：</p>
 <ol>
-<li>
-<p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n-1，则G中存在哈密顿道路$</p>
+<li><p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n-1，则G中存在哈密顿道路$</p>
 </li>
-<li>
-<p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n，则G中存在哈密顿回路$</p>
+<li><p>$\forall v_i,v_j，恒有d(v_i)+d(v_j)\geq n，则G中存在哈密顿回路$</p>
 </li>
-<li>
-<p>$若简单图每个顶点的度均大于等于\cfrac n2，则G有H回路$</p>
+<li><p>$若简单图每个顶点的度均大于等于\cfrac n2，则G有H回路$</p>
 </li>
-<li>
-<p>$设G是简单图，v_i,v_j是不相邻顶点，且满足d(v_i)+d(v_j)\geq n，则G存在H回路的充要条件是G+(v_i,v_j)有H回路$</p>
+<li><p>$设G是简单图，v_i,v_j是不相邻顶点，且满足d(v_i)+d(v_j)\geq n，则G存在H回路的充要条件是G+(v_i,v_j)有H回路$</p>
 </li>
-<li>
-<p>$先定义闭合图:若d(v_i)+d(v_j)\geq n，令G'=G+(v_i,v_j)，重复，直到不存在这样的顶点对为止，得到的即为闭合图，记作C(G)$</p>
+<li><p>$先定义闭合图:若d(v_i)+d(v_j)\geq n，令G’&#x3D;G+(v_i,v_j)，重复，直到不存在这样的顶点对为止，得到的即为闭合图，记作C(G)$</p>
 <p>$简单图G存在哈密顿回路的充要条件是其闭合图存在哈密顿回路$</p>
 </li>
-<li>
-<p>$若C(G)是完全图，则G有H回路$</p>
+<li><p>$若C(G)是完全图，则G有H回路$</p>
 </li>
 </ol>
-<h3 id="2-6-最短路径：Dijkstra算法"><a class="header-anchor" href="#2-6-最短路径：Dijkstra算法">¶</a>2.6 最短路径：Dijkstra算法</h3>
-<h3 id="2-7-关键路径：AOE"><a class="header-anchor" href="#2-7-关键路径：AOE">¶</a>2.7 关键路径：AOE</h3>
-<h3 id="2-8-中国邮路"><a class="header-anchor" href="#2-8-中国邮路">¶</a>2.8 中国邮路</h3>
-<p>先找到奇点，选择最小的几条路径，加上使这些奇点变偶，然后欧拉回路</p>
-<h2 id="第三章-树"><a class="header-anchor" href="#第三章-树">¶</a>第三章 树</h2>
-<h3 id="3-1-树的相关定义"><a class="header-anchor" href="#3-1-树的相关定义">¶</a>3.1 树的相关定义</h3>
-<p>不含任何回路的连通图称为树（T），T中的边称为树枝，度为1的顶点称为树叶</p>
-<p>若T是G的支撑子图，且又是一棵树，则T使G的支撑树/生成树，又称G的树</p>
-<h3 id="3-5-Huffman树"><a class="header-anchor" href="#3-5-Huffman树">¶</a>3.5 Huffman树</h3>
-<p>小在左，大在右，0在左，1在右</p>
-<h3 id="3-6-最短树"><a class="header-anchor" href="#3-6-最短树">¶</a>3.6 最短树</h3>
-<ol>
+<h3 id="2-6-最短路径：Dijkstra算法"><a href="#2-6-最短路径：Dijkstra算法" class="headerlink" title="2.6 最短路径：Dijkstra算法"></a>2.6 最短路径：Dijkstra算法</h3><h3 id="2-7-关键路径：AOE"><a href="#2-7-关键路径：AOE" class="headerlink" title="2.7 关键路径：AOE"></a>2.7 关键路径：AOE</h3><h3 id="2-8-中国邮路"><a href="#2-8-中国邮路" class="headerlink" title="2.8 中国邮路"></a>2.8 中国邮路</h3><p>先找到奇点，选择最小的几条路径，加上使这些奇点变偶，然后欧拉回路</p>
+<h2 id="第三章-树"><a href="#第三章-树" class="headerlink" title="第三章 树"></a>第三章 树</h2><h3 id="3-1-树的相关定义"><a href="#3-1-树的相关定义" class="headerlink" title="3.1 树的相关定义"></a>3.1 树的相关定义</h3><p>不含任何回路的连通图称为树（T），T中的边称为树枝，度为1的顶点称为树叶</p>
+<p>若T是G的支撑子图，且又是一棵树，则T使G的支撑树&#x2F;生成树，又称G的树</p>
+<h3 id="3-5-Huffman树"><a href="#3-5-Huffman树" class="headerlink" title="3.5 Huffman树"></a>3.5 Huffman树</h3><p>小在左，大在右，0在左，1在右</p>
+<h3 id="3-6-最短树"><a href="#3-6-最短树" class="headerlink" title="3.6 最短树"></a>3.6 最短树</h3><ol>
 <li>Kruskal算法：不断加入最短边，如成环则换次短边</li>
 <li>Prim算法：选到已选区域最近的点</li>
 </ol>
-<h2 id="第四章-平面图与图图的着色"><a class="header-anchor" href="#第四章-平面图与图图的着色">¶</a>第四章 平面图与图图的着色</h2>
-<h3 id="4-1-平面图"><a class="header-anchor" href="#4-1-平面图">¶</a>4.1 平面图</h3>
-<p>平面图：能放在一个平面上，任何两条边都不相交，称G<strong>可嵌入平面</strong>，G是<strong>可平面图</strong>，其中一个嵌入称为<strong>平面图</strong></p>
+<h2 id="第四章-平面图与图图的着色"><a href="#第四章-平面图与图图的着色" class="headerlink" title="第四章 平面图与图图的着色"></a>第四章 平面图与图图的着色</h2><h3 id="4-1-平面图"><a href="#4-1-平面图" class="headerlink" title="4.1 平面图"></a>4.1 平面图</h3><p>平面图：能放在一个平面上，任何两条边都不相交，称G<strong>可嵌入平面</strong>，G是<strong>可平面图</strong>，其中一个嵌入称为<strong>平面图</strong></p>
 <p>G同构于平面图P，称P是G的一个<strong>平面嵌入</strong></p>
-<p>面/域：不含任何顶点和边的区域，其中诸边称为边界</p>
-<p>欧拉公式：对于平面连通图，$d=m-n+2$</p>
-<p>若G有k个连通支，则$n-m+d = k+1$</p>
+<p>面&#x2F;域：不含任何顶点和边的区域，其中诸边称为边界</p>
+<p>欧拉公式：对于平面连通图，$d&#x3D;m-n+2$</p>
+<p>若G有k个连通支，则$n-m+d &#x3D; k+1$</p>
 <p>对于一般平面图G，恒有$n-m+d\geq 2$</p>
 <p>若平面连通图G没有割边，且每个域的边界数至少t，则$m\leq\cfrac{t(n-2)}{t-2}$</p>
-<h3 id="4-2-极大平面图"><a class="header-anchor" href="#4-2-极大平面图">¶</a>4.2 极大平面图</h3>
-<p>极大平面图：</p>
+<h3 id="4-2-极大平面图"><a href="#4-2-极大平面图" class="headerlink" title="4.2 极大平面图"></a>4.2 极大平面图</h3><p>极大平面图：</p>
 <ol>
 <li>连通</li>
 <li>不存在割边</li>
 <li>每个域边界数为3</li>
-<li>3d=2m, m=3n-6, d=2n-4</li>
+<li>3d&#x3D;2m, m&#x3D;3n-6, d&#x3D;2n-4</li>
 </ol>
 <p>简单平面图满足$m\leq 3n-6,d\leq 2n-4$</p>
 <p>简单平面图G中存在度小于6的顶点</p>
-<h3 id="4-3-非平面图"><a class="header-anchor" href="#4-3-非平面图">¶</a>4.3 非平面图</h3>
-<ol>
-<li>K~5~是非平面图，也称K^(1)^</li>
-<li>K~3,3~是非平面图，也称K^(2)^</li>
+<h3 id="4-3-非平面图"><a href="#4-3-非平面图" class="headerlink" title="4.3 非平面图"></a>4.3 非平面图</h3><ol>
+<li>K<del>5</del>是非平面图，也称K^(1)^</li>
+<li>K<del>3,3</del>是非平面图，也称K^(2)^</li>
 <li>K^(1)^和K^(2)^图上任意加一些度为2的顶点之后得到的图称为K^(1)^型图和K^(2)^型图，统称为K型图</li>
 <li>G是可平面图的充要条件是G不存在K型子图</li>
 </ol>
-<h3 id="4-4-对偶图"><a class="header-anchor" href="#4-4-对偶图">¶</a>4.4 对偶图</h3>
-<ol>
+<h3 id="4-4-对偶图"><a href="#4-4-对偶图" class="headerlink" title="4.4 对偶图"></a>4.4 对偶图</h3><ol>
 <li>域-&gt;顶点，共边-&gt;相邻，求对呕吐的过程称为D过程（draw）</li>
-<li>性质
-<ol>
+<li>性质<ol>
 <li>若G是平面图，则G一定有唯一对偶图G^*^</li>
 <li>G^*^是连通图</li>
-<li>若G是平面连通图，则（G^<em>^)^</em>^=G</li>
-<li>m=m^<em>^, n=d^</em>^, d=n^*^</li>
-<li>若C是平面图G得一个初级回路，S^<em>^是G^</em>^中与C的各边e~i~对应的e~i~^<em>^的集合，那么S^</em>^是G^*^的一个割集</li>
+<li>若G是平面连通图，则（G^<em>^)^</em>^&#x3D;G</li>
+<li>m&#x3D;m^<em>^, n&#x3D;d^</em>^, d&#x3D;n^*^</li>
+<li>若C是平面图G得一个初级回路，S^<em>^是G^</em>^中与C的各边e<del>i</del>对应的e<del>i</del>^<em>^的集合，那么S^</em>^是G^*^的一个割集</li>
 <li>G有对偶图等价于G为平面图</li>
 </ol>
 </li>
@@ -748,298 +686,234 @@
 <li>如果平面图G有哈密顿回路，则四色猜想成立</li>
 <li>若任何一个3-正则平面图的域4-可着色，则任何平面图的域4-可着色</li>
 </ol>
-<h3 id="4-5-色数与色数多项式"><a class="header-anchor" href="#4-5-色数与色数多项式">¶</a>4.5 色数与色数多项式</h3>
-<p>不断分割即可</p>
+<h3 id="4-5-色数与色数多项式"><a href="#4-5-色数与色数多项式" class="headerlink" title="4.5 色数与色数多项式"></a>4.5 色数与色数多项式</h3><p>不断分割即可</p>
 
         </div>
         <div class="post-body-en i18n-en">
-            <h1>Graph Theory Summary</h1>
-<h2 id="Chapter-1-Basic-Concepts"><a class="header-anchor" href="#Chapter-1-Basic-Concepts">¶</a>Chapter 1: Basic Concepts</h2>
-<h3 id="1-1-Concepts-of-Graphs"><a class="header-anchor" href="#1-1-Concepts-of-Graphs">¶</a>1.1 Concepts of Graphs</h3>
-<ol>
-<li>
-<p>$(V(G), E(G))$ is called a graph. $V(G)$ is a non-empty set called the vertex set, and $E(G)$ is the set of edges between vertices in $V(G)$. A graph is commonly denoted as $G=(V,E)$.</p>
+            <h1 id="Graph-Theory-Summary"><a href="#Graph-Theory-Summary" class="headerlink" title="Graph Theory Summary"></a>Graph Theory Summary</h1><h2 id="Chapter-1-Basic-Concepts"><a href="#Chapter-1-Basic-Concepts" class="headerlink" title="Chapter 1: Basic Concepts"></a>Chapter 1: Basic Concepts</h2><h3 id="1-1-Concepts-of-Graphs"><a href="#1-1-Concepts-of-Graphs" class="headerlink" title="1.1 Concepts of Graphs"></a>1.1 Concepts of Graphs</h3><ol>
+<li><p>$(V(G), E(G))$ is called a graph. $V(G)$ is a non-empty set called the vertex set, and $E(G)$ is the set of edges between vertices in $V(G)$. A graph is commonly denoted as $G&#x3D;(V,E)$. </p>
 </li>
-<li>
-<p>We only discuss finite graphs here. $|V|=n$ is called the order of the graph, and $|E|=m$.</p>
+<li><p>We only discuss finite graphs here. $|V|&#x3D;n$ is called the order of the graph, and $|E|&#x3D;m$. </p>
 </li>
-<li>
-<p>Some concepts:</p>
+<li><p>Some concepts:</p>
 <ol>
-<li>
-<p>$e_k=(v_i,v_j)$</p>
+<li><p>$e_k&#x3D;(v_i,v_j)$</p>
 <ol>
-<li>$v_i$ and $v_j$ are called adjacent vertices; $e_k$ is incident to both $v_i$ and $v_j$.</li>
+<li>$v_i$ and $v_j$ are called adjacent vertices; $e_k$ is incident to both $v_i$ and $v_j$. </li>
 <li>$v_i$ is the start vertex of $e_k$, and $v_j$ is the end vertex of $e_k$. $v_i$ is the immediate predecessor of $v_j$, and $v_j$ is the immediate successor of $v_i$.</li>
 </ol>
 </li>
-<li>
-<p><strong>Adjacent edges</strong>: Two edges that share a common vertex.</p>
+<li><p><strong>Adjacent edges</strong>: Two edges that share a common vertex. </p>
 </li>
-<li>
-<p><strong>Directed graph</strong>: A graph composed entirely of directed edges.</p>
-<p><strong>Undirected graph</strong>: A graph composed entirely of undirected edges.</p>
-<p><strong>Mixed graph</strong>: A graph containing both directed and undirected edges.</p>
+<li><p><strong>Directed graph</strong>: A graph composed entirely of directed edges. </p>
+<p><strong>Undirected graph</strong>: A graph composed entirely of undirected edges. </p>
+<p><strong>Mixed graph</strong>: A graph containing both directed and undirected edges. </p>
 </li>
-<li>
-<p><strong>Loop</strong>: An edge that is incident to only one vertex.</p>
+<li><p><strong>Loop</strong>: An edge that is incident to only one vertex. </p>
 </li>
-<li>
-<p><strong>Multiple edges</strong>: Multiple edges exist between the same pair of vertices.</p>
-<p><strong>Multigraph</strong>: A graph containing multiple edges.</p>
+<li><p><strong>Multiple edges</strong>: Multiple edges exist between the same pair of vertices. </p>
+<p><strong>Multigraph</strong>: A graph containing multiple edges. </p>
 </li>
-<li>
-<p><strong>Isolated vertex</strong>: A vertex that has no incident edges.</p>
+<li><p><strong>Isolated vertex</strong>: A vertex that has no incident edges. </p>
 </li>
-<li>
-<p><strong>Degree $d(v)$</strong>: The number of edges incident to a vertex.</p>
-<p><strong>In-degree</strong>: The number of incoming edges.</p>
-<p><strong>Out-degree</strong>: The number of outgoing edges.</p>
-<p><strong>Odd vertex</strong>: A vertex with an odd degree.</p>
-<p><strong>Even vertex</strong>: A vertex with an even degree.</p>
+<li><p><strong>Degree $d(v)$</strong>: The number of edges incident to a vertex. </p>
+<p><strong>In-degree</strong>: The number of incoming edges. </p>
+<p><strong>Out-degree</strong>: The number of outgoing edges. </p>
+<p><strong>Odd vertex</strong>: A vertex with an odd degree. </p>
+<p><strong>Even vertex</strong>: A vertex with an even degree. </p>
 </li>
-<li>
-<p><strong>Simple graph</strong>: An undirected graph without loops.</p>
+<li><p><strong>Simple graph</strong>: An undirected graph without loops.</p>
 </li>
 </ol>
 </li>
-<li>
-<p>$\sum\limits_{v\in{V(G)}}d(v)=2m$.</p>
+<li><p>$\sum\limits_{v\in{V(G)}}d(v)&#x3D;2m$. </p>
 </li>
-<li>
-<p>The number of odd-degree vertices in $G$ must be even.</p>
+<li><p>The number of odd-degree vertices in $G$ must be even. </p>
 </li>
-<li>
-<p>The sum of out-degrees in $G$ equals the sum of in-degrees.</p>
+<li><p>The sum of out-degrees in $G$ equals the sum of in-degrees. </p>
 </li>
-<li>
-<p>The number of edges in $K_n$ is $\cfrac12n(n-1)$.</p>
+<li><p>The number of edges in $K_n$ is $\cfrac12n(n-1)$. </p>
 </li>
-<li>
-<p>In any non-empty simple graph $G$, there must exist vertices with the same degree.</p>
+<li><p>In any non-empty simple graph $G$, there must exist vertices with the same degree. </p>
 </li>
-<li>
-<p><strong>Complete graph of order $n$: $K_n$</strong>.</p>
+<li><p><strong>Complete graph of order $n$: $K_n$</strong>. </p>
 </li>
-<li>
-<p><strong>Complete bipartite graph: $K_{m,n}$</strong>.</p>
+<li><p><strong>Complete bipartite graph: $K_{m,n}$</strong>. </p>
 </li>
-<li>
-<p><strong>Trivial graph</strong>: A graph with $n=1$.</p>
+<li><p><strong>Trivial graph</strong>: A graph with $n&#x3D;1$. </p>
 </li>
-<li>
-<p><strong>Empty graph/null graph</strong>: A graph with $m=0$.</p>
+<li><p><strong>Empty graph&#x2F;null graph</strong>: A graph with $m&#x3D;0$. </p>
 </li>
-<li>
-<p><strong>$(k)$-regular graph</strong>: A graph where all vertices have equal degree (equal to $k$).</p>
+<li><p><strong>$(k)$-regular graph</strong>: A graph where all vertices have equal degree (equal to $k$). </p>
 </li>
-<li>
-<p>A $(k-1)$-regular graph of order $k$ is a complete graph of order $k$.</p>
+<li><p>A $(k-1)$-regular graph of order $k$ is a complete graph of order $k$. </p>
 </li>
-<li>
-<p><strong>Weighted graph with positive weights</strong>: A weighted graph where all edge weights are positive real numbers.</p>
+<li><p><strong>Weighted graph with positive weights</strong>: A weighted graph where all edge weights are positive real numbers. </p>
 </li>
-<li>
-<p><strong>Subgraph</strong>: $V'\in V, E'\in E$.</p>
-<p><strong>Spanning subgraph/generator subgraph</strong>: $V'=V, E'\in E$.</p>
-<p><strong>Induced subgraph</strong>: $V'\in V, E'_V = E_V$.</p>
+<li><p><strong>Subgraph</strong>: $V’\in V, E’\in E$. </p>
+<p><strong>Spanning subgraph&#x2F;generator subgraph</strong>: $V’&#x3D;V, E’\in E$. </p>
+<p><strong>Induced subgraph</strong>: $V’\in V, E’_V &#x3D; E_V$. </p>
 </li>
-<li>
-<p><strong>Neighbor set</strong>: $\Gamma(v)$.</p>
-<p><strong>Set of immediate successors/external neighbor set</strong>: $\Gamma^+(v)$.</p>
-<p><strong>Set of immediate predecessors/internal neighbor set</strong>: $\Gamma^-(v)$.</p>
+<li><p><strong>Neighbor set</strong>: $\Gamma(v)$. </p>
+<p><strong>Set of immediate successors&#x2F;external neighbor set</strong>: $\Gamma^+(v)$. </p>
+<p><strong>Set of immediate predecessors&#x2F;internal neighbor set</strong>: $\Gamma^-(v)$.</p>
 </li>
 </ol>
-<h3 id="1-2-Algebraic-Representations-of-Graphs"><a class="header-anchor" href="#1-2-Algebraic-Representations-of-Graphs">¶</a>1.2 Algebraic Representations of Graphs</h3>
-<ol>
-<li><strong>Adjacency matrix</strong>
-<ul>
-<li>It is a symmetric matrix.</li>
-<li>It can represent loops.</li>
+<h3 id="1-2-Algebraic-Representations-of-Graphs"><a href="#1-2-Algebraic-Representations-of-Graphs" class="headerlink" title="1.2 Algebraic Representations of Graphs"></a>1.2 Algebraic Representations of Graphs</h3><ol>
+<li><strong>Adjacency matrix</strong><ul>
+<li>It is a symmetric matrix. </li>
+<li>It can represent loops. </li>
 <li>It cannot represent multiple edges.</li>
 </ul>
 </li>
-<li><strong>Weight matrix</strong>
-<ul>
+<li><strong>Weight matrix</strong><ul>
 <li>It adds weight information to the adjacency matrix.</li>
 </ul>
 </li>
-<li><strong>Incidence matrix</strong>
-<ul>
-<li>It is an $n \times m$ matrix.</li>
-<li>$b_{ij}=\begin{cases}1,&amp;e_j=(v_i,v_k)\in E\-1,&amp;e_j=(v_k,v_i)\in E\0,&amp;otherwise\end{cases}$.</li>
-<li>It cannot represent loops.</li>
+<li><strong>Incidence matrix</strong><ul>
+<li>It is an $n \times m$ matrix. </li>
+<li>$b_{ij}&#x3D;\begin{cases}1,&amp;e_j&#x3D;(v_i,v_k)\in E\-1,&amp;e_j&#x3D;(v_k,v_i)\in E\0,&amp;otherwise\end{cases}$. </li>
+<li>It cannot represent loops. </li>
 <li>It can represent multiple edges.</li>
 </ul>
 </li>
-<li><strong>Edge list</strong>
-<ul>
-<li>The edge list is a compressed version of the columns of the incidence matrix.</li>
-<li>There are two $m$-dimensional vectors $\vec A$ and $\vec B$; the former stores start vertices, and the latter stores end vertices.</li>
-<li>An optional vector $\vec Z$ stores edge weights.</li>
-<li>It can represent loops.</li>
+<li><strong>Edge list</strong><ul>
+<li>The edge list is a compressed version of the columns of the incidence matrix. </li>
+<li>There are two $m$-dimensional vectors $\vec A$ and $\vec B$; the former stores start vertices, and the latter stores end vertices. </li>
+<li>An optional vector $\vec Z$ stores edge weights. </li>
+<li>It can represent loops. </li>
 <li>It can represent multiple edges.</li>
 </ul>
 </li>
-<li><strong>Forward star</strong>
-<ul>
-<li>It is a compressed version of the rows of the adjacency matrix, storing the set of immediate successors of each vertex together.
-<ul>
-<li>There is an $n+1$-dimensional vector $\vec A$ and an $m$-dimensional vector $\vec B$.</li>
-<li>$d^+(v_i)=A(i+1)-A(i)$.</li>
+<li><strong>Forward star</strong><ul>
+<li>It is a compressed version of the rows of the adjacency matrix, storing the set of immediate successors of each vertex together. <ul>
+<li>There is an $n+1$-dimensional vector $\vec A$ and an $m$-dimensional vector $\vec B$. </li>
+<li>$d^+(v_i)&#x3D;A(i+1)-A(i)$. </li>
 <li>Any value from $B(A(i))$ to $B(A(i+1)-1)$ is an immediate successor of $v_i$.</li>
 </ul>
 </li>
-<li>An optional vector $\vec Z$ stores edge weights.</li>
-<li>It can represent loops.</li>
+<li>An optional vector $\vec Z$ stores edge weights. </li>
+<li>It can represent loops. </li>
 <li>It can represent multiple edges.</li>
 </ul>
 </li>
-<li><strong>Backward star</strong>
-<ul>
+<li><strong>Backward star</strong><ul>
 <li>Similar to the forward star, it stores the set of immediate predecessors of each vertex in a table.</li>
 </ul>
 </li>
-<li><strong>Adjacency list</strong>
-<ul>
-<li>Each entry in the list is of the form $|a|b|c|$: $a$ stores the vertex index, $b$ stores the edge weight, and $c$ stores the address pointer to the next list entry.</li>
-<li>It can store edge weights.</li>
-<li>It can represent loops.</li>
+<li><strong>Adjacency list</strong><ul>
+<li>Each entry in the list is of the form $|a|b|c|$: $a$ stores the vertex index, $b$ stores the edge weight, and $c$ stores the address pointer to the next list entry. </li>
+<li>It can store edge weights. </li>
+<li>It can represent loops. </li>
 <li>It can represent multiple edges.</li>
 </ul>
 </li>
 </ol>
-<h2 id="Chapter-2-Paths-and-Cycles"><a class="header-anchor" href="#Chapter-2-Paths-and-Cycles">¶</a>Chapter 2: Paths and Cycles</h2>
-<h3 id="2-1-Connectivity-of-Graphs"><a class="header-anchor" href="#2-1-Connectivity-of-Graphs">¶</a>2.1 Connectivity of Graphs</h3>
-<ol>
-<li>
-<p>In directed graphs:</p>
-<p>Directed path, directed cycle: As the name implies.</p>
-<p>No repeated edges: <strong>Simple directed path/simple directed cycle</strong>.</p>
-<p>No repeated edges and no repeated vertices: <strong>Elementary directed path/elementary directed cycle</strong>, abbreviated as <strong>path</strong> and <strong>cycle</strong>.</p>
+<h2 id="Chapter-2-Paths-and-Cycles"><a href="#Chapter-2-Paths-and-Cycles" class="headerlink" title="Chapter 2: Paths and Cycles"></a>Chapter 2: Paths and Cycles</h2><h3 id="2-1-Connectivity-of-Graphs"><a href="#2-1-Connectivity-of-Graphs" class="headerlink" title="2.1 Connectivity of Graphs"></a>2.1 Connectivity of Graphs</h3><ol>
+<li><p>In directed graphs:</p>
+<p>Directed path, directed cycle: As the name implies. </p>
+<p>No repeated edges: <strong>Simple directed path&#x2F;simple directed cycle</strong>. </p>
+<p>No repeated edges and no repeated vertices: <strong>Elementary directed path&#x2F;elementary directed cycle</strong>, abbreviated as <strong>path</strong> and <strong>cycle</strong>. </p>
 </li>
-<li>
-<p>In undirected graphs:</p>
-<p>Path/chain, cycle: As the name implies.</p>
-<p>No repeated edges: <strong>Simple path/simple cycle</strong>.</p>
-<p>No repeated edges and no repeated vertices: <strong>Elementary path/elementary cycle</strong>.</p>
+<li><p>In undirected graphs:</p>
+<p>Path&#x2F;chain, cycle: As the name implies. </p>
+<p>No repeated edges: <strong>Simple path&#x2F;simple cycle</strong>. </p>
+<p>No repeated edges and no repeated vertices: <strong>Elementary path&#x2F;elementary cycle</strong>.</p>
 </li>
 </ol>
-<p><strong>Chord</strong>: An edge connecting two non-adjacent vertices on a cycle.</p>
-<p><strong>Connected graph</strong>: For any two vertices in $G$, there exists a path between them. $H$ is not a proper subgraph of any connected subgraph of $G$.</p>
-<p><strong>Tree</strong>: A connected graph with no cycles.</p>
-<p><strong>Cut edge/cut vertex</strong>: An edge/vertex whose removal makes the original graph disconnected.</p>
-<p><strong>Block</strong>: A maximal connected subgraph of $G$ with no cut vertices.</p>
+<p><strong>Chord</strong>: An edge connecting two non-adjacent vertices on a cycle. </p>
+<p><strong>Connected graph</strong>: For any two vertices in $G$, there exists a path between them. $H$ is not a proper subgraph of any connected subgraph of $G$. </p>
+<p><strong>Tree</strong>: A connected graph with no cycles. </p>
+<p><strong>Cut edge&#x2F;cut vertex</strong>: An edge&#x2F;vertex whose removal makes the original graph disconnected. </p>
+<p><strong>Block</strong>: A maximal connected subgraph of $G$ with no cut vertices. </p>
 <p>Equivalent propositions related to cut vertices:</p>
 <ol>
-<li>$v$ is a cut vertex of $G$.</li>
-<li>There exist vertices $u$ and $w$ different from $v$ such that any path $P_{uw}$ from $u$ to $w$ passes through $v$.</li>
+<li>$v$ is a cut vertex of $G$. </li>
+<li>There exist vertices $u$ and $w$ different from $v$ such that any path $P_{uw}$ from $u$ to $w$ passes through $v$. </li>
 <li>$V\setminus{v}$ can be partitioned into two vertex sets $U$ and $W$; for any $u\in U$ and $w\in W$, $u$ lies on every path $P_{uw}$.</li>
 </ol>
 <p>Equivalent propositions related to cut edges:</p>
 <ol>
-<li>$e$ is a cut edge of $G$.</li>
-<li>$e$ does not belong to any cycle in $G$.</li>
-<li>There exist vertices $u$ and $w$ in $G$ such that $e$ belongs to every path $P_{uw}$ between $u$ and $w$.</li>
+<li>$e$ is a cut edge of $G$. </li>
+<li>$e$ does not belong to any cycle in $G$. </li>
+<li>There exist vertices $u$ and $w$ in $G$ such that $e$ belongs to every path $P_{uw}$ between $u$ and $w$. </li>
 <li>$G\setminus{e}$ can be partitioned into two vertex sets $U$ and $W$ such that for any $u\in U$ and $w\in W$, every path $P_{uw}$ in $G$ passes through $e$.</li>
 </ol>
-<p>If removing several vertices from graph $G$ results in two connected subgraphs or a single isolated vertex, the set of these vertices is called a vertex cut/separating set $A$.</p>
-<p>$\mathcal K(G)=\min\limits_{A\in\emptyset}{|A|}$ is called the vertex connectivity.</p>
-<p>Similarly, for an edge cut set $B$, the edge connectivity is $\lambda(G)$.</p>
-<p>If $\mathcal K(G)\geq k$, $G$ is called a $k$-connected graph; similarly, a $k$-edge-connected graph.</p>
-<p>$\mathcal K(G)\leq \lambda(G)\leq \delta(G)$, where $\delta(G)$ is the minimum degree of the vertices.</p>
-<h3 id="2-3-Eulerian-Paths-and-Cycles"><a class="header-anchor" href="#2-3-Eulerian-Paths-and-Cycles">¶</a>2.3 Eulerian Paths and Cycles</h3>
-<p><strong>Eulerian cycle/path</strong>: A simple cycle/path that traverses all edges.</p>
-<p><strong>Eulerian graph</strong>: A graph that contains an Eulerian cycle.</p>
-<p><strong>Semi-Eulerian graph</strong>: A graph that contains an Eulerian path but no Eulerian cycle.</p>
-<p>$An Eulerian cycle exists \Leftrightarrow$ the degree of every vertex is even / the out-degree equals the in-degree for every vertex.</p>
-<p>$An Eulerian path exists \Leftrightarrow$ there are exactly two vertices with odd degree.</p>
-<h3 id="2-4-Hamiltonian-Paths-and-Cycles"><a class="header-anchor" href="#2-4-Hamiltonian-Paths-and-Cycles">¶</a>2.4 Hamiltonian Paths and Cycles</h3>
-<p><strong>Hamiltonian cycle/path</strong>: An elementary cycle in an undirected graph that visits all vertices.</p>
-<p><strong>Hamiltonian graph</strong>: A connected undirected graph that contains a Hamiltonian cycle.</p>
-<p><strong>Semi-Hamiltonian graph</strong>: A connected undirected graph that contains a Hamiltonian path but no Hamiltonian cycle.</p>
+<p>If removing several vertices from graph $G$ results in two connected subgraphs or a single isolated vertex, the set of these vertices is called a vertex cut&#x2F;separating set $A$. </p>
+<p>$\mathcal K(G)&#x3D;\min\limits_{A\in\emptyset}{|A|}$ is called the vertex connectivity. </p>
+<p>Similarly, for an edge cut set $B$, the edge connectivity is $\lambda(G)$. </p>
+<p>If $\mathcal K(G)\geq k$, $G$ is called a $k$-connected graph; similarly, a $k$-edge-connected graph. </p>
+<p>$\mathcal K(G)\leq \lambda(G)\leq \delta(G)$, where $\delta(G)$ is the minimum degree of the vertices. </p>
+<h3 id="2-3-Eulerian-Paths-and-Cycles"><a href="#2-3-Eulerian-Paths-and-Cycles" class="headerlink" title="2.3 Eulerian Paths and Cycles"></a>2.3 Eulerian Paths and Cycles</h3><p><strong>Eulerian cycle&#x2F;path</strong>: A simple cycle&#x2F;path that traverses all edges. </p>
+<p><strong>Eulerian graph</strong>: A graph that contains an Eulerian cycle. </p>
+<p><strong>Semi-Eulerian graph</strong>: A graph that contains an Eulerian path but no Eulerian cycle. </p>
+<p>$An Eulerian cycle exists \Leftrightarrow$ the degree of every vertex is even &#x2F; the out-degree equals the in-degree for every vertex. </p>
+<p>$An Eulerian path exists \Leftrightarrow$ there are exactly two vertices with odd degree. </p>
+<h3 id="2-4-Hamiltonian-Paths-and-Cycles"><a href="#2-4-Hamiltonian-Paths-and-Cycles" class="headerlink" title="2.4 Hamiltonian Paths and Cycles"></a>2.4 Hamiltonian Paths and Cycles</h3><p><strong>Hamiltonian cycle&#x2F;path</strong>: An elementary cycle in an undirected graph that visits all vertices. </p>
+<p><strong>Hamiltonian graph</strong>: A connected undirected graph that contains a Hamiltonian cycle. </p>
+<p><strong>Semi-Hamiltonian graph</strong>: A connected undirected graph that contains a Hamiltonian path but no Hamiltonian cycle. </p>
 <p>Some sufficient theorems:</p>
 <ol>
-<li>
-<p>If $\forall v_i,v_j$, we always have $d(v_i)+d(v_j)\geq n-1$, then $G$ contains a Hamiltonian path.</p>
+<li><p>If $\forall v_i,v_j$, we always have $d(v_i)+d(v_j)\geq n-1$, then $G$ contains a Hamiltonian path. </p>
 </li>
-<li>
-<p>If $\forall v_i,v_j$, we always have $d(v_i)+d(v_j)\geq n$, then $G$ contains a Hamiltonian cycle.</p>
+<li><p>If $\forall v_i,v_j$, we always have $d(v_i)+d(v_j)\geq n$, then $G$ contains a Hamiltonian cycle. </p>
 </li>
-<li>
-<p>If every vertex in a simple graph has degree $\geq \cfrac n2$, then $G$ has a Hamiltonian cycle.</p>
+<li><p>If every vertex in a simple graph has degree $\geq \cfrac n2$, then $G$ has a Hamiltonian cycle. </p>
 </li>
-<li>
-<p>Let $G$ be a simple graph, and $v_i, v_j$ be non-adjacent vertices satisfying $d(v_i)+d(v_j)\geq n$. Then $G$ has a Hamiltonian cycle if and only if $G+(v_i,v_j)$ has a Hamiltonian cycle.</p>
+<li><p>Let $G$ be a simple graph, and $v_i, v_j$ be non-adjacent vertices satisfying $d(v_i)+d(v_j)\geq n$. Then $G$ has a Hamiltonian cycle if and only if $G+(v_i,v_j)$ has a Hamiltonian cycle. </p>
 </li>
-<li>
-<p>First, define a closed graph: If $d(v_i)+d(v_j)\geq n$, let $G'=G+(v_i,v_j)$, and repeat this process until no such vertex pair exists; the resulting graph is the closed graph, denoted as $C(G)$.</p>
-<p>A simple graph $G$ has a Hamiltonian cycle if and only if its closed graph $C(G)$ has a Hamiltonian cycle.</p>
+<li><p>First, define a closed graph: If $d(v_i)+d(v_j)\geq n$, let $G’&#x3D;G+(v_i,v_j)$, and repeat this process until no such vertex pair exists; the resulting graph is the closed graph, denoted as $C(G)$. </p>
+<p>A simple graph $G$ has a Hamiltonian cycle if and only if its closed graph $C(G)$ has a Hamiltonian cycle. </p>
 </li>
-<li>
-<p>If $C(G)$ is a complete graph, then $G$ has a Hamiltonian cycle.</p>
+<li><p>If $C(G)$ is a complete graph, then $G$ has a Hamiltonian cycle.</p>
 </li>
 </ol>
-<h3 id="2-6-Shortest-Path-Dijkstra-s-Algorithm"><a class="header-anchor" href="#2-6-Shortest-Path-Dijkstra-s-Algorithm">¶</a>2.6 Shortest Path: Dijkstra's Algorithm</h3>
-<h3 id="2-7-Critical-Path-AOE"><a class="header-anchor" href="#2-7-Critical-Path-AOE">¶</a>2.7 Critical Path: AOE</h3>
-<h3 id="2-8-Chinese-Postman-Problem"><a class="header-anchor" href="#2-8-Chinese-Postman-Problem">¶</a>2.8 Chinese Postman Problem</h3>
-<p>First, identify the odd-degree vertices, select the shortest few paths to make these odd-degree vertices become even-degree vertices, and then construct an Eulerian cycle.</p>
-<h2 id="Chapter-3-Trees"><a class="header-anchor" href="#Chapter-3-Trees">¶</a>Chapter 3: Trees</h2>
-<h3 id="3-1-Definitions-Related-to-Trees"><a class="header-anchor" href="#3-1-Definitions-Related-to-Trees">¶</a>3.1 Definitions Related to Trees</h3>
-<p>A connected graph with no cycles is called a tree ($T$). The edges in $T$ are called branches, and vertices with degree 1 are called leaves.</p>
-<p>If $T$ is a spanning subgraph of $G$ and is also a tree, then $T$ is called a spanning tree/generator tree of $G$, or simply a tree of $G$.</p>
-<h3 id="3-5-Huffman-Tree"><a class="header-anchor" href="#3-5-Huffman-Tree">¶</a>3.5 Huffman Tree</h3>
-<p>The smaller value is placed on the left, the larger value on the right; 0 is on the left, 1 on the right.</p>
-<h3 id="3-6-Minimum-Spanning-Tree"><a class="header-anchor" href="#3-6-Minimum-Spanning-Tree">¶</a>3.6 Minimum Spanning Tree</h3>
-<ol>
-<li>Kruskal's algorithm: Continuously add the shortest edges; if a cycle forms, replace it with the next-shortest edge.</li>
-<li>Prim's algorithm: Select the vertex closest to the already selected region.</li>
+<h3 id="2-6-Shortest-Path-Dijkstra’s-Algorithm"><a href="#2-6-Shortest-Path-Dijkstra’s-Algorithm" class="headerlink" title="2.6 Shortest Path: Dijkstra’s Algorithm"></a>2.6 Shortest Path: Dijkstra’s Algorithm</h3><h3 id="2-7-Critical-Path-AOE"><a href="#2-7-Critical-Path-AOE" class="headerlink" title="2.7 Critical Path: AOE"></a>2.7 Critical Path: AOE</h3><h3 id="2-8-Chinese-Postman-Problem"><a href="#2-8-Chinese-Postman-Problem" class="headerlink" title="2.8 Chinese Postman Problem"></a>2.8 Chinese Postman Problem</h3><p>First, identify the odd-degree vertices, select the shortest few paths to make these odd-degree vertices become even-degree vertices, and then construct an Eulerian cycle.</p>
+<h2 id="Chapter-3-Trees"><a href="#Chapter-3-Trees" class="headerlink" title="Chapter 3: Trees"></a>Chapter 3: Trees</h2><h3 id="3-1-Definitions-Related-to-Trees"><a href="#3-1-Definitions-Related-to-Trees" class="headerlink" title="3.1 Definitions Related to Trees"></a>3.1 Definitions Related to Trees</h3><p>A connected graph with no cycles is called a tree ($T$). The edges in $T$ are called branches, and vertices with degree 1 are called leaves. </p>
+<p>If $T$ is a spanning subgraph of $G$ and is also a tree, then $T$ is called a spanning tree&#x2F;generator tree of $G$, or simply a tree of $G$. </p>
+<h3 id="3-5-Huffman-Tree"><a href="#3-5-Huffman-Tree" class="headerlink" title="3.5 Huffman Tree"></a>3.5 Huffman Tree</h3><p>The smaller value is placed on the left, the larger value on the right; 0 is on the left, 1 on the right. </p>
+<h3 id="3-6-Minimum-Spanning-Tree"><a href="#3-6-Minimum-Spanning-Tree" class="headerlink" title="3.6 Minimum Spanning Tree"></a>3.6 Minimum Spanning Tree</h3><ol>
+<li>Kruskal’s algorithm: Continuously add the shortest edges; if a cycle forms, replace it with the next-shortest edge. </li>
+<li>Prim’s algorithm: Select the vertex closest to the already selected region.</li>
 </ol>
-<h2 id="Chapter-4-Planar-Graphs-and-Graph-Coloring"><a class="header-anchor" href="#Chapter-4-Planar-Graphs-and-Graph-Coloring">¶</a>Chapter 4: Planar Graphs and Graph Coloring</h2>
-<h3 id="4-1-Planar-Graphs"><a class="header-anchor" href="#4-1-Planar-Graphs">¶</a>4.1 Planar Graphs</h3>
-<p>Planar graph: A graph that can be drawn on a plane without any intersecting edges. Such a drawing is called an <strong>embedding in the plane</strong>, and $G$ is a <strong>planar graph</strong>. One such embedding is called a <strong>planar representation</strong> of $G$.</p>
-<p>If $G$ is isomorphic to a planar graph $P$, then $P$ is called a <strong>planar embedding</strong> of $G$.</p>
-<p>Face/region: A region that contains no vertices or edges; the edges bounding the region are called its boundary.</p>
-<p>Euler's formula: For a connected planar graph, $d=m-n+2$.</p>
-<p>If $G$ has $k$ connected components, then $n-m+d = k+1$.</p>
-<p>For any general planar graph $G$, we always have $n-m+d\geq 2$.</p>
-<p>If a connected planar graph $G$ has no cut edges and the boundary of each face has at least $t$ edges, then $m\leq\cfrac{t(n-2)}{t-2}$.</p>
-<h3 id="4-2-Maximal-Planar-Graphs"><a class="header-anchor" href="#4-2-Maximal-Planar-Graphs">¶</a>4.2 Maximal Planar Graphs</h3>
-<p>Maximal planar graph:</p>
+<h2 id="Chapter-4-Planar-Graphs-and-Graph-Coloring"><a href="#Chapter-4-Planar-Graphs-and-Graph-Coloring" class="headerlink" title="Chapter 4: Planar Graphs and Graph Coloring"></a>Chapter 4: Planar Graphs and Graph Coloring</h2><h3 id="4-1-Planar-Graphs"><a href="#4-1-Planar-Graphs" class="headerlink" title="4.1 Planar Graphs"></a>4.1 Planar Graphs</h3><p>Planar graph: A graph that can be drawn on a plane without any intersecting edges. Such a drawing is called an <strong>embedding in the plane</strong>, and $G$ is a <strong>planar graph</strong>. One such embedding is called a <strong>planar representation</strong> of $G$. </p>
+<p>If $G$ is isomorphic to a planar graph $P$, then $P$ is called a <strong>planar embedding</strong> of $G$. </p>
+<p>Face&#x2F;region: A region that contains no vertices or edges; the edges bounding the region are called its boundary. </p>
+<p>Euler’s formula: For a connected planar graph, $d&#x3D;m-n+2$. </p>
+<p>If $G$ has $k$ connected components, then $n-m+d &#x3D; k+1$. </p>
+<p>For any general planar graph $G$, we always have $n-m+d\geq 2$. </p>
+<p>If a connected planar graph $G$ has no cut edges and the boundary of each face has at least $t$ edges, then $m\leq\cfrac{t(n-2)}{t-2}$. </p>
+<h3 id="4-2-Maximal-Planar-Graphs"><a href="#4-2-Maximal-Planar-Graphs" class="headerlink" title="4.2 Maximal Planar Graphs"></a>4.2 Maximal Planar Graphs</h3><p>Maximal planar graph:</p>
 <ol>
-<li>Connected.</li>
-<li>Has no cut edges.</li>
-<li>The boundary of each face has 3 edges.</li>
-<li>$3d=2m$, $m=3n-6$, $d=2n-4$.</li>
+<li>Connected. </li>
+<li>Has no cut edges. </li>
+<li>The boundary of each face has 3 edges. </li>
+<li>$3d&#x3D;2m$, $m&#x3D;3n-6$, $d&#x3D;2n-4$.</li>
 </ol>
-<p>For a simple planar graph, $m\leq 3n-6$ and $d\leq 2n-4$.</p>
-<p>There exist vertices with degree less than 6 in any simple planar graph $G$.</p>
-<h3 id="4-3-Non-planar-Graphs"><a class="header-anchor" href="#4-3-Non-planar-Graphs">¶</a>4.3 Non-planar Graphs</h3>
-<ol>
-<li>$K_5$ is a non-planar graph, also called $K^{(1)}$.</li>
-<li>$K_{3,3}$ is a non-planar graph, also called $K^{(2)}$.</li>
-<li>Graphs obtained by adding some vertices of degree 2 to $K^{(1)}$ and $K^{(2)}$ are called $K^{(1)}$-type graphs and $K^{(2)}$-type graphs, collectively referred to as $K$-type graphs.</li>
+<p>For a simple planar graph, $m\leq 3n-6$ and $d\leq 2n-4$. </p>
+<p>There exist vertices with degree less than 6 in any simple planar graph $G$. </p>
+<h3 id="4-3-Non-planar-Graphs"><a href="#4-3-Non-planar-Graphs" class="headerlink" title="4.3 Non-planar Graphs"></a>4.3 Non-planar Graphs</h3><ol>
+<li>$K_5$ is a non-planar graph, also called $K^{(1)}$. </li>
+<li>$K_{3,3}$ is a non-planar graph, also called $K^{(2)}$. </li>
+<li>Graphs obtained by adding some vertices of degree 2 to $K^{(1)}$ and $K^{(2)}$ are called $K^{(1)}$-type graphs and $K^{(2)}$-type graphs, collectively referred to as $K$-type graphs. </li>
 <li>A necessary and sufficient condition for $G$ to be planar is that $G$ contains no $K$-type subgraph.</li>
 </ol>
-<h3 id="4-4-Dual-Graph"><a class="header-anchor" href="#4-4-Dual-Graph">¶</a>4.4 Dual Graph</h3>
-<ol>
-<li>Face $\rightarrow$ vertex, adjacent edges $\rightarrow$ adjacency; the process of finding the dual is called the D process (draw).</li>
-<li>Properties:
-<ol>
-<li>If $G$ is a planar graph, then $G$ has a unique dual graph $G^*$.</li>
-<li>$G^*$ is a connected graph.</li>
-<li>If $G$ is a connected planar graph, then $(G^<em>)^</em> = G$.</li>
-<li>$m=m^<em>$, $n=d^</em>$, $d=n^*$.</li>
-<li>If $C$ is an elementary cycle in a planar graph $G$, and $S^<em>$ is the set of edges $e_i^</em>$ in $G^<em>$ corresponding to each edge $e_i$ on $C$, then $S^</em>$ is a cut set of $G^*$.</li>
+<h3 id="4-4-Dual-Graph"><a href="#4-4-Dual-Graph" class="headerlink" title="4.4 Dual Graph"></a>4.4 Dual Graph</h3><ol>
+<li>Face $\rightarrow$ vertex, adjacent edges $\rightarrow$ adjacency; the process of finding the dual is called the D process (draw). </li>
+<li>Properties:<ol>
+<li>If $G$ is a planar graph, then $G$ has a unique dual graph $G^*$. </li>
+<li>$G^*$ is a connected graph. </li>
+<li>If $G$ is a connected planar graph, then $(G^<em>)^</em> &#x3D; G$. </li>
+<li>$m&#x3D;m^<em>$, $n&#x3D;d^</em>$, $d&#x3D;n^*$. </li>
+<li>If $C$ is an elementary cycle in a planar graph $G$, and $S^<em>$ is the set of edges $e_i^</em>$ in $G^<em>$ corresponding to each edge $e_i$ on $C$, then $S^</em>$ is a cut set of $G^*$. </li>
 <li>$G$ has a dual graph if and only if $G$ is planar.</li>
 </ol>
 </li>
-<li>Every planar graph is 5-colorable.</li>
-<li>If a planar graph $G$ has a Hamiltonian cycle, then the four-color theorem holds.</li>
+<li>Every planar graph is 5-colorable. </li>
+<li>If a planar graph $G$ has a Hamiltonian cycle, then the four-color theorem holds. </li>
 <li>If the faces of any 3-regular planar graph are 4-colorable, then the faces of any planar graph are 4-colorable.</li>
 </ol>
-<h3 id="4-5-Chromatic-Number-and-Chromatic-Polynomial"><a class="header-anchor" href="#4-5-Chromatic-Number-and-Chromatic-Polynomial">¶</a>4.5 Chromatic Number and Chromatic Polynomial</h3>
-<p>Just keep subdividing.</p>
+<h3 id="4-5-Chromatic-Number-and-Chromatic-Polynomial"><a href="#4-5-Chromatic-Number-and-Chromatic-Polynomial" class="headerlink" title="4.5 Chromatic Number and Chromatic Polynomial"></a>4.5 Chromatic Number and Chromatic Polynomial</h3><p>Just keep subdividing.</p>
 
         </div>
     
@@ -1124,10 +998,10 @@
                 <li>24/11/09</li>
                 <li>13:35</li>
                 
-                    <li>6.7k</li>
+                    <li>6.8k</li>
                 
                 
-                    <li>41</li>
+                    <li>42</li>
                 
             </ul>
         </div>
