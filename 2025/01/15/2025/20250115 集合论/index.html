@@ -257,7 +257,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                集合论整理
+                                <span class="i18n-zh">集合论整理</span>
+                                <span class="i18n-en">Set Theory Summary</span>
                             
                         </h1>
 
@@ -460,10 +461,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>集合论</h1>
 <h2 id="第九章-集合"><a class="header-anchor" href="#第九章-集合">¶</a>第九章 集合</h2>
 <h3 id="9-1-集合的概念和表示方法"><a class="header-anchor" href="#9-1-集合的概念和表示方法">¶</a>9.1 集合的概念和表示方法</h3>
@@ -608,6 +606,150 @@
 <p>两者均存在，当且仅当f双射，此时左逆等于右逆</p>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <h1>Set Theory</h1>
+<h2 id="Chapter-9-Sets"><a class="header-anchor" href="#Chapter-9-Sets">¶</a>Chapter 9: Sets</h2>
+<h3 id="9-1-Concepts-and-Representations-of-Sets"><a class="header-anchor" href="#9-1-Concepts-and-Representations-of-Sets">¶</a>9.1 Concepts and Representations of Sets</h3>
+<p>$a\in A, a\notin A$</p>
+<h3 id="9-2-Relationships-Between-Sets-and-Special-Sets"><a class="header-anchor" href="#9-2-Relationships-Between-Sets-and-Special-Sets">¶</a>9.2 Relationships Between Sets and Special Sets</h3>
+<p>$=, \subset,\subseteq,\supset,\supseteq$</p>
+<ol>
+<li>
+<p>$A=B\Leftrightarrow A\subseteq B\wedge B\subseteq A$</p>
+</li>
+<li>
+<p>$A\subseteq A$</p>
+<p>$(A\subseteq B \wedge B\subseteq C)\Rightarrow A\subseteq C$</p>
+</li>
+<li>
+<p>$A\subset B$: $A$ is a proper subset of $B$</p>
+<p>$B\subset A$: $B$ is a proper superset of $A$</p>
+</li>
+</ol>
+<h3 id="9-3-Basic-Operations-on-Sets"><a class="header-anchor" href="#9-3-Basic-Operations-on-Sets">¶</a>9.3 Basic Operations on Sets</h3>
+<ol>
+<li>$Symmetric difference: A\oplus B=(A-B)\cup(B-A)$</li>
+<li>$Generalized union and intersection: It is stipulated that \cup \emptyset = \emptyset$, while \cap \emptyset is undefined.</li>
+<li>$Power set: P(A)={x|x\subseteq A}$</li>
+<li>$Cartesian product: A\times B={&lt;x,y&gt;|x\in A\wedge y\in B} (Note that &lt;x_1,x_2,x_3&gt;=&lt;&lt;x_1,x_2&gt;x_3&gt;, and &lt;x_1,x_2,x_3&gt;\ne &lt;x_1,&lt;x_2,x_3&gt;&gt;)$</li>
+</ol>
+<h3 id="9-5-Properties-and-Proofs-of-Set-Operations"><a class="header-anchor" href="#9-5-Properties-and-Proofs-of-Set-Operations">¶</a>9.5 Properties and Proofs of Set Operations</h3>
+<ol>
+<li>
+<p>$A\subseteq B\Leftrightarrow P(A)\subseteq P(B)$</p>
+<p>$P(A)\in P(B)\Leftrightarrow A\in B$</p>
+</li>
+<li>
+<p>$P(A)\cap P(B)=P(A\cap B)$</p>
+<p>$P(A)\cup P(B)\subseteq P(A\cup B)$</p>
+<p>$P(A-B)\subseteq (P(A)-P(B))\cup{\emptyset}$</p>
+<p>$Transitive set: All elements of the elements of $A$ are also elements of $A$.</p>
+<p>If $A$ is a transitive set, then $P(A)$ is also a transitive set.</p>
+</li>
+<li>
+<p>$A\subseteq B\Rightarrow \cup A\subseteq \cup B$</p>
+<p>$A\subseteq B\Rightarrow \cap B \subseteq \cap A$</p>
+<p>$\cup(A\cup B)=(\cup A)\cup(\cup B)$</p>
+<p>$\cap(A\cup B)=(\cap A)\cap(\cap B)$</p>
+<p>$\cup(P(A))=A$</p>
+</li>
+</ol>
+<h3 id="9-6-Cardinality-of-Finite-Sets"><a class="header-anchor" href="#9-6-Cardinality-of-Finite-Sets">¶</a>9.6 Cardinality of Finite Sets</h3>
+<ol>
+<li>It is denoted as #(A)=n, |A|=n, or card(A)=n.</li>
+</ol>
+<h2 id="Chapter-10-Relations"><a class="header-anchor" href="#Chapter-10-Relations">¶</a>Chapter 10: Relations</h2>
+<h3 id="10-1-Binary-Relations"><a class="header-anchor" href="#10-1-Binary-Relations">¶</a>10.1 Binary Relations</h3>
+<p>A binary relation is a set of ordered pairs.</p>
+<p>For a relation $R$ from $A$ to $B$, we can define:</p>
+<ol>
+<li>$Domain: dom(R)={x|(\exists y)(&lt;x,y&gt;\in R)}$</li>
+<li>$Range: ran(R)={y|(\exists x)(&lt;x,y&gt;\in R)}$</li>
+<li>$Field: fld(R)=dom(R)\cup ran(R)$</li>
+</ol>
+<h3 id="10-2-Relation-Matrix-and-Relation-Graph"><a class="header-anchor" href="#10-2-Relation-Matrix-and-Relation-Graph">¶</a>10.2 Relation Matrix and Relation Graph</h3>
+<ol>
+<li>Relation matrix: If $&lt;x_i,y_j&gt;\in R$, then $r_{ij}=1$; otherwise, it is 0.</li>
+<li>Relation graph: Connect nodes with an edge if there is a relation between them (directed graph).</li>
+</ol>
+<h3 id="10-3-Inverse-Composition-Restriction-and-Image-of-Relations"><a class="header-anchor" href="#10-3-Inverse-Composition-Restriction-and-Image-of-Relations">¶</a>10.3 Inverse, Composition, Restriction, and Image of Relations</h3>
+<p>Inverse: $R^{-1}={&lt;x,y&gt;|&lt;y,x&gt;\in R}$</p>
+<p>Composition:</p>
+<p>$S\circ R={&lt;x,y&gt;|(\exists z)(&lt;x,z&gt;\in R\wedge&lt;z,y&gt;\in S)}$ (It satisfies associativity but not commutativity.)</p>
+<p>Restriction: $R\upharpoonright A={&lt;x,y&gt;|&lt;x,y&gt;\in R\wedge x\in A}$</p>
+<p>Image: $R[A]={y|(\exists x)(x\in A\wedge&lt;x,y&gt;\in R}$</p>
+<p>Relation matrix: $M(S\circ R)=M(R)\cdot M(S)$</p>
+<h3 id="10-4-Properties-of-Relations"><a class="header-anchor" href="#10-4-Properties-of-Relations">¶</a>10.4 Properties of Relations</h3>
+<ol>
+<li>
+<p>$R$ is reflexive on $A \Leftrightarrow (\forall x)(x\in A\to xRx)$</p>
+<p>$R$ is irreflexive on $A \Leftrightarrow(\forall x)(x\in A\to x\not{R}x)$</p>
+</li>
+<li>
+<p>$Symmetric: \forall x,y\in A$, if $xRy$, then $yRx$.</p>
+<p>$Antisymmetric: (xRy\wedge yRx)\to (x=y)$</p>
+</li>
+<li>
+<p>$Transitive: \forall x,y,z\in A$, if $(xRy\wedge yRz)$, then $xRz$.</p>
+</li>
+</ol>
+<h3 id="10-5-Closures-of-Relations"><a class="header-anchor" href="#10-5-Closures-of-Relations">¶</a>10.5 Closures of Relations</h3>
+<ol>
+<li>
+<p>$Let $A$ be a finite set, and $R$ be a relation on $A$. If there exist natural numbers $s$ and $t$, with $s&lt;t$, such that $R^s=R^t$, then:</p>
+<ol>
+<li>$R^{s+k}=R^{t+k}$</li>
+<li>$R^{s+kp+i}=R^{s+i}$, where $k$ and $i$ are natural numbers, and $p=t-s$.</li>
+<li>$B={R^0,R^1,\cdots,R^{t-1}}$, so $\forall q\in \mathbb{N}^*, R^q\in B$.</li>
+</ol>
+</li>
+<li>
+<p>$Closure: For a relation $R$ on a non-empty set $A$, let $R'$ be another relation on $A$ satisfying:</p>
+<ol>
+<li>$R'$ is reflexive/symmetric/transitive.</li>
+<li>$R\subseteq R'$.</li>
+<li>For any reflexive/symmetric/transitive relation $R''$ on $A$, if $R\subseteq R''$, then $R'\subseteq R''$.</li>
+</ol>
+<p>In this case, $R'$ is called the reflexive/symmetric/transitive closure of $R$, denoted as $r(R)/s(R)/t(R)$. The Warshall algorithm is used to compute the transitive closure.</p>
+</li>
+</ol>
+<h3 id="10-6-Equivalence-Relations-and-Partitions"><a class="header-anchor" href="#10-6-Equivalence-Relations-and-Partitions">¶</a>10.6 Equivalence Relations and Partitions</h3>
+<ol>
+<li>$Equivalence relation: Reflexive, symmetric, and transitive.$</li>
+<li>$The partition of $A$ induced by an equivalence relation $R$ is denoted as \pi_R$.</li>
+<li>$The equivalence relation that induces a partition \pi is denoted as R_{\pi}$.</li>
+</ol>
+<h3 id="10-7-Compatibility-Relations-and-Covers"><a class="header-anchor" href="#10-7-Compatibility-Relations-and-Covers">¶</a>10.7 Compatibility Relations and Covers</h3>
+<ol>
+<li>$Compatibility relation: Reflexive and symmetric.$</li>
+<li>$Maximal compatible class: For a relation $R$ on a non-empty subset, a compatible class that is not a proper subset of any other compatible class is denoted as $C_R$.</li>
+<li>$The set of maximal compatible classes forms a cover of $A$, called the complete cover of $A$, denoted as $C_R(A)$. Note that $C_R(A)$ is unique.</li>
+</ol>
+<h3 id="10-8-Partial-Order-Relations"><a class="header-anchor" href="#10-8-Partial-Order-Relations">¶</a>10.8 Partial Order Relations</h3>
+<ol>
+<li>$Partial order relation: Reflexive, antisymmetric, and transitive.$</li>
+<li>$Quasi-order relation: Irreflexive and transitive (which implies antisymmetry).$</li>
+<li>$Partial order relations (weak partial orders, semi-orders) allow equality, while quasi-order relations (strict partial orders) do not allow equality.$</li>
+<li>$Hasse diagram.$</li>
+<li>$If every pair of elements is comparable, it is a total order relation.$</li>
+<li>$A well-ordered set, in addition to being a totally ordered set, must have a minimum element.$</li>
+</ol>
+<h2 id="Chapter-11-Functions"><a class="header-anchor" href="#Chapter-11-Functions">¶</a>Chapter 11: Functions</h2>
+<h3 id="11-1-Functions-and-the-Axiom-of-Choice"><a class="header-anchor" href="#11-1-Functions-and-the-Axiom-of-Choice">¶</a>11.1 Functions and the Axiom of Choice</h3>
+<p>Function: Single-valued.</p>
+<p>Image: The set of $y$ values corresponding to $x$.</p>
+<p>Complete preimage: The set of $x$ values corresponding to $y$.</p>
+<p>dom(f): Domain.</p>
+<p>ran(f): Range.</p>
+<p>Injective, surjective, bijective.</p>
+<h3 id="11-2-Composition-and-Inverse-of-Functions"><a class="header-anchor" href="#11-2-Composition-and-Inverse-of-Functions">¶</a>11.2 Composition and Inverse of Functions</h3>
+<p>The inverse of a function is not necessarily a function.</p>
+<p>If $f:A\to B$ and $g:B\to A$, and $g\circ f=I_A$, then $g$ is called the left inverse of $f$; similarly, the right inverse is defined accordingly.</p>
+<p>A left inverse exists if and only if $f$ is injective.</p>
+<p>A right inverse exists if and only if $f$ is surjective.</p>
+<p>Both exist if and only if $f$ is bijective; in this case, the left inverse equals the right inverse.</p>
+
+        </div>
     
 </article>
 
@@ -642,7 +784,7 @@
             <h5>
                 <a href="/2025/05/06/2025/20250506%20%E5%9C%B0%E9%A2%91%E7%BA%BF/" class="trm-anima-link">
                     
-                        地频线——或许是我最疯狂的事吧
+                        <span class="i18n-zh">地频线——或许是我最疯狂的事吧</span><span class="i18n-en">Horython — Perhaps the Craziest Thing I’ve Ever Done</span>
                     
                 </a>
             </h5>
@@ -681,7 +823,7 @@
             <h5>
                 <a href="/2025/01/08/2025/20250108%20%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" class="trm-anima-link">
                     
-                        概率统计整理
+                        <span class="i18n-zh">概率统计整理</span><span class="i18n-en">Probability Theory and Mathematical Statistics Notes</span>
                     
                 </a>
             </h5>
@@ -773,7 +915,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

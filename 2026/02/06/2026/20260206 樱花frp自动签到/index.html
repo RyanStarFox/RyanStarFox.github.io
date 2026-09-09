@@ -257,7 +257,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                樱花frp自动签到
+                                <span class="i18n-zh">樱花frp自动签到</span>
+                                <span class="i18n-en">SakuraFRP automatic sign-in</span>
                             
                         </h1>
 
@@ -460,10 +461,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>樱花frp自动签到</h1>
 <p>之前习一直惯使用frp的内网穿透服务，但是因为不想签到，在网上找了一个库<a target="_blank" rel="noopener" href="https://github.com/dutou520/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a>用于实现自动签到</p>
 <p>近日樱花frp从九宫格选图片验证码改为了滑块验证码，因此在原基础上添加了兼容滑块验证码的功能。</p>
@@ -476,6 +474,21 @@
 <p>对于第二点，本来也想直接vibe-coding一个，但是效果不尽如人意，captcha一直显示“验证码被怪兽吃掉了&quot;（笑，，，转而使用库<a target="_blank" rel="noopener" href="https://github.com/asweigart/pyautogui">pyautogui</a>，成功✅</p>
 <p>所以还是不要盲信vibe-coding，完善的第三方库+vibe-coding才是正解！</p>
 <p>最终的成果：<a target="_blank" rel="noopener" href="https://github.com/RyanStarFox/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a></p>
+
+        </div>
+        <div class="post-body-en i18n-en">
+            <h1>SakuraFRP Automatic Sign-in</h1>
+<p>I have long been using the frp internal network penetration service, but since I didn’t want to manually sign in, I found a repository <a target="_blank" rel="noopener" href="https://github.com/dutou520/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a> online to achieve automatic sign-in.</p>
+<p>Recently, SakuraFRP changed from a nine-grid image captcha to a slider captcha, so I added functionality to support slider captchas on top of the original code.</p>
+<p>Cracking a slider captcha involves two parts:</p>
+<ul>
+<li>Finding the correct position</li>
+<li>Simulating human-like movements</li>
+</ul>
+<p>For the first part, I initially considered using a vision model, but such models cannot achieve pixel-level accuracy, nor can they simulate real-time human eye tracking to verify if the moving position matches expectations. So I gave up on that idea and instead used the <a target="_blank" rel="noopener" href="https://github.com/chenwei-zhao/captcha-recognizer">captcha-recognizer</a> library, which worked successfully ✅.</p>
+<p>For the second part, I also tried to write code via vibe-coding, but the results were unsatisfactory — the captcha kept showing “The captcha was eaten by a monster” (lol). In the end, I turned to the <a target="_blank" rel="noopener" href="https://github.com/asweigart/pyautogui">pyautogui</a> library, which worked perfectly ✅.</p>
+<p>So it’s clear that we shouldn’t blindly rely on vibe-coding; combining well-maintained third-party libraries with vibe-coding is the right approach!</p>
+<p>The final result: <a target="_blank" rel="noopener" href="https://github.com/RyanStarFox/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a></p>
 
         </div>
     
@@ -512,7 +525,7 @@
             <h5>
                 <a href="/2026/07/05/2026/20260705%20AntiRecommend/" class="trm-anima-link">
                     
-                        对抗推荐，做回自己
+                        <span class="i18n-zh">对抗推荐，做回自己</span><span class="i18n-en">Against Recommendations, Be Yourself</span>
                     
                 </a>
             </h5>
@@ -551,7 +564,7 @@
             <h5>
                 <a href="/2026/01/13/2026/20260113%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="trm-anima-link">
                     
-                        机器学习
+                        <span class="i18n-zh">机器学习</span><span class="i18n-en">改进为多分类</span>
                     
                 </a>
             </h5>
@@ -643,7 +656,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

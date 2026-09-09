@@ -257,7 +257,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                概率统计整理
+                                <span class="i18n-zh">概率统计整理</span>
+                                <span class="i18n-en">Probability Theory and Mathematical Statistics Notes</span>
                             
                         </h1>
 
@@ -460,10 +461,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>概率统计整理</h1>
 <h2 id="第一章-随机事件和概率"><a class="header-anchor" href="#第一章-随机事件和概率">¶</a>第一章 随机事件和概率</h2>
 <h3 id="1-1-随机事件及其运算"><a class="header-anchor" href="#1-1-随机事件及其运算">¶</a>1.1 随机事件及其运算</h3>
@@ -888,6 +886,331 @@ X)E(Y)$</li>
 </ol>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <p>∞</p>
+<h4 id="2-4-Distribution-of-Functions-of-Random-Variables"><a class="header-anchor" href="#2-4-Distribution-of-Functions-of-Random-Variables">¶</a>2.4 Distribution of Functions of Random Variables</h4>
+<p>Given the probability density function of X as f_X(x), let y = g(x). The distribution function of Y = g(X) is f_X(g⁻¹(y)) · |dx/dy|.</p>
+<h2 id="Chapter-3-Multidimensional-Random-Variables-and-Their-Distributions"><a class="header-anchor" href="#Chapter-3-Multidimensional-Random-Variables-and-Their-Distributions">¶</a>Chapter 3: Multidimensional Random Variables and Their Distributions</h2>
+<h3 id="3-1-Two-Dimensional-Random-Variables-and-Their-Distributions"><a class="header-anchor" href="#3-1-Two-Dimensional-Random-Variables-and-Their-Distributions">¶</a>3.1 Two-Dimensional Random Variables and Their Distributions</h3>
+<ol>
+<li>F(x,y) = P({X ≤ x} ∩ {Y ≤ y}) = P(X ≤ x, Y ≤ y)</li>
+<li>Properties:
+<ul>
+<li>0 ≤ F(x,y) ≤ 1, F(-∞, y) = 0, F(x, -∞) = 0, F(-∞, -∞) = 0, F(+∞, +∞) = 1</li>
+<li>It is a non-decreasing function when taking x or y as the independent variable.</li>
+<li>It is a right-continuous function when taking x or y as the independent variable.</li>
+<li>∀a &lt; b, c &lt; d, F(b,d) - F(a,d) - F(b,c) + F(a,c) = P(a &lt; X ≤ b, c &lt; Y ≤ d) ≥ 0</li>
+</ul>
+</li>
+<li>Marginal distribution functions: F_X(x) = F(x, +∞), F_Y(y) = F(+, y)</li>
+</ol>
+<h4 id="Two-Dimensional-Discrete-Random-Variables"><a class="header-anchor" href="#Two-Dimensional-Discrete-Random-Variables">¶</a>Two-Dimensional Discrete Random Variables</h4>
+<p>Properties:</p>
+<ul>
+<li>p_ij ≥ 0</li>
+<li>∑ᵢ∑ⱼ p_ij = 1</li>
+</ul>
+<h4 id="Two-Dimensional-Continuous-Random-Variables"><a class="header-anchor" href="#Two-Dimensional-Continuous-Random-Variables">¶</a>Two-Dimensional Continuous Random Variables</h4>
+<p>Properties:</p>
+<ul>
+<li>f(x,y) ≥ 0</li>
+<li>∫_{-∞}^{∞}∫_{-∞}^{∞} f(x,y)dxdy = 1</li>
+<li>P((X,Y) ∈ D) = ∬_D f(x,y)dxdy = 1</li>
+<li>At points where f(x,y) is continuous, ∂²F(x,y)/∂x∂y = f(x,y)</li>
+</ul>
+<h5 id="Two-Dimensional-Uniform-Distribution"><a class="header-anchor" href="#Two-Dimensional-Uniform-Distribution">¶</a>Two-Dimensional Uniform Distribution</h5>
+<p>f(x,y) =<br>
+{<br>
+\dfrac{1}{\text{Area of } G}, &amp; (x,y) ∈ G \<br>
+0, &amp; otherwise<br>
+}</p>
+<h5 id="Two-Dimensional-Normal-Distribution-X-Y-N-μ₁-σ₁²-μ₂-σ₂²-ρ"><a class="header-anchor" href="#Two-Dimensional-Normal-Distribution-X-Y-N-μ₁-σ₁²-μ₂-σ₂²-ρ">¶</a>Two-Dimensional Normal Distribution (X,Y) ~ N(μ₁, σ₁²; μ₂, σ₂²; ρ)</h5>
+<p>f(x,y) = \dfrac{1}{2πσ₁σ₂\sqrt{1-ρ²}} exp\left{ -\dfrac{1}{2(1-ρ²)} \left[ \dfrac{(x-μ₁)²}{σ₁²} - 2ρ\dfrac{(x-μ₁)(y-μ₂)}{σ₁σ₂} + \dfrac{(y-μ₂)²}{σ₂²} \right] \right}</p>
+<h3 id="3-2-Conditional-Distributions-of-Two-Dimensional-Random-Variables"><a class="header-anchor" href="#3-2-Conditional-Distributions-of-Two-Dimensional-Random-Variables">¶</a>3.2 Conditional Distributions of Two-Dimensional Random Variables</h3>
+<ol>
+<li>
+<p>P(X = xᵢ | Y = yⱼ) = \dfrac{P(X = xᵢ, Y = yⱼ)}{P(Y = yⱼ)} = \dfrac{p_ij}{P_{·j}}</p>
+</li>
+<li>
+<p>P(X = xᵢ) = ∑ⱼ P(Y = yⱼ) P(X = xᵢ | Y = yⱼ)</p>
+</li>
+<li>
+<p>f_{X|Y}(x|y) = \dfrac{f(x,y)}{f_Y(y)}</p>
+<p>F_{X|Y}(x|y) = ∫_{-∞}^x \dfrac{f(u,y)}{f_Y(y)}du</p>
+</li>
+</ol>
+<h3 id="3-3-Independence-of-Random-Variables"><a class="header-anchor" href="#3-3-Independence-of-Random-Variables">¶</a>3.3 Independence of Random Variables</h3>
+<ol>
+<li>X and Y are independent ⇔ F(x,y) = F_X(x)F_Y(y); f_X(x)f_Y(y)</li>
+<li>If (X,Y) is a two-dimensional discrete random variable with joint probability mass function P(X = xᵢ, Y = yⱼ) = p_ij, then X and Y are independent if and only if: P(X = xᵢ, Y = yⱼ) = P(X = xᵢ)P(Y = yⱼ). For continuous random variables, this condition is f(x,y) = f_X(x)f_Y(y).</li>
+</ol>
+<h2 id="Chapter-4-Numerical-Characteristics-of-Random-Variables"><a class="header-anchor" href="#Chapter-4-Numerical-Characteristics-of-Random-Variables">¶</a>Chapter 4: Numerical Characteristics of Random Variables</h2>
+<h3 id="4-1-Mathematical-Expectation"><a class="header-anchor" href="#4-1-Mathematical-Expectation">¶</a>4.1 Mathematical Expectation</h3>
+<ol>
+<li>
+<p>Discrete case: E(X) = ∑_{k=1}^{+∞} x_kp_k</p>
+<p>Continuous case: E(x) = ∫_{-∞}^{+∞} xf(x)dx</p>
+</li>
+<li>
+<p>Properties of mathematical expectation:</p>
+<ul>
+<li>The mathematical expectation exists ⇔ E|X| &lt; +∞</li>
+<li>If X ≤ Y, then E(X) ≤ E(Y)</li>
+<li>E(C) = C</li>
+<li>E(CX) = CE(X)</li>
+<li>E(X+Y) = E(X) + E(Y)</li>
+<li>If X and Y are independent, then E(XY) = E(X) · E(Y)</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-2-Variance"><a class="header-anchor" href="#4-2-Variance">¶</a>4.2 Variance</h3>
+<ol>
+<li>D(X) = E{[X - E(X)]²} = E(X²) - [E(X)]²</li>
+<li>Properties of variance:
+<ul>
+<li>The variance exists ⇔ E(X²) &lt; +∞</li>
+<li>For a constant C, D(C) = 0</li>
+<li>For a constant C, D(CX) = C²D(X)</li>
+<li>If X and Y are independent and their variances exist, then D(X+Y) = D(X) + D(Y)</li>
+<li>D(X) ≤ E[(X-C)²]</li>
+<li>D(X) = 0 ⇔ ∃C such that P(X = C) = 1, and C = E(X)</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-3-Mathematical-Expectations-and-Variances-of-Important-Random-Variables"><a class="header-anchor" href="#4-3-Mathematical-Expectations-and-Variances-of-Important-Random-Variables">¶</a>4.3 Mathematical Expectations and Variances of Important Random Variables</h3>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Probability Mass Function or Density</th>
+<th>Expectation</th>
+<th>Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-1 distribution B(1,p)</td>
+<td>P(X=k) = p^k(1-p)^{1-k}, k=0,1, 0&lt;p&lt;1</td>
+<td>p</td>
+<td>p(1−p)</td>
+</tr>
+<tr>
+<td>Binomial distribution B(n,p)</td>
+<td>P(X=k) = C_n^k p^k(1-p)^{n-k}, k=0,1,2,...,n, 0&lt;p&lt;1</td>
+<td>np</td>
+<td>np(1−p)</td>
+</tr>
+<tr>
+<td>Poisson distribution P(λ)</td>
+<td>P(X=k) = \frac{λ^k}{k!}e^{-λ}, k=0,1,2,..., λ&gt;0</td>
+<td>λ</td>
+<td>λ</td>
+</tr>
+<tr>
+<td>Geometric distribution G(p)</td>
+<td>P(X=k) = p(1-p)^{k-1}, k=1, 2, ..., 0&lt;p&lt;1</td>
+<td>\frac{1}{p}</td>
+<td>\frac{1-p}{p²}</td>
+</tr>
+<tr>
+<td>Hypergeometric distribution H(n,M,N)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>P(X=k) = \frac{C_M^k C_{N-M}^{n-k}}{C_N^m},</p>
+<p>max{|0, n-N+M| ≤ k ≤ min{n, M}}                                                                 |                   | n\frac{M}{N}         |<br>
+| Negative binomial distribution (Pascal distribution) | P(X=k) = C_{k-1}^{r-1}p^r(1-p)^{k-r}, k=r, r+1, ..., 0&lt;p&lt;1                                           | \frac{r}{p}       | \frac{r(1-p)}{p²}    |<br>
+| Uniform distribution U(a,b) | f(x) =<br>
+{<br>
+\frac{1}{b-a}, &amp; a&lt;x&lt;b \<br>
+0, &amp; otherwise<br>
+}                                                                 | \frac{a+b}{2}     | \frac{(b-a)²}{12}   |<br>
+| Exponential distribution E(λ)| f(x) =<br>
+{<br>
+λe^{-λx}, &amp; x&gt;0 \<br>
+0, &amp; otherwise<br>
+}                                                                 | \frac{1}{λ}       | \frac{1}{λ²}        |<br>
+| Normal distribution N(μ, σ²)| f(x,y) = \frac{1}{\sqrt{2π}σ}e^{-\frac{(x-μ)²}{2σ²}}, -∞ &lt;x&lt;+∞, -∞ &lt;μ &lt;+∞, σ&gt;0                 | μ                 | σ²                  |</p>
+<h3 id="4-4-Covariance-and-Correlation-Coefficient"><a class="header-anchor" href="#4-4-Covariance-and-Correlation-Coefficient">¶</a>4.4 Covariance and Correlation Coefficient</h3>
+<ol>
+<li>cov(X,Y) = E(XY) - E(X)E(Y)</li>
+<li>ρ_{XY} = \dfrac{cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}</li>
+<li>D(X ± Y) = D(X) + D(Y) ± 2cov(X,Y)</li>
+<li>Properties of covariance:
+<ul>
+<li>cov(X,Y) = cov(Y,X)</li>
+<li>cov(aX,bY) = abcov(X,Y)</li>
+<li>cov(X+Y,Z) = cov(X,Z) + cov(Y,Z)</li>
+<li>|cov(X,Y)| ≤ \sqrt{D(X)}\sqrt{D(Y)}</li>
+</ul>
+</li>
+<li>Properties of correlation coefficient:
+<ul>
+<li>|ρ_{XY}| ≤ 1</li>
+</ul>
+</li>
+<li>Equivalent statements for uncorrelatedness:
+<ul>
+<li>X and Y are uncorrelated</li>
+<li>ρ_{XY} = 0</li>
+<li>cov(X,Y) = 0</li>
+<li>E(XY) = E(X)E(Y)</li>
+<li>D(X ± Y) = D(X) + D(Y)</li>
+<li>D(X+Y) = D(X-Y)</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-5-Higher-Order-Moments-of-Random-Variables"><a class="header-anchor" href="#4-5-Higher-Order-Moments-of-Random-Variables">¶</a>4.5 Higher-Order Moments of Random Variables</h3>
+<ul>
+<li>k-th order raw moment: E(|X|^k)</li>
+<li>k-th order central moment: E{[X - E(X)]ᵏ}</li>
+<li>k+l-th order mixed raw moment: E(|X|^k|Y|^l)</li>
+<li>k+l-th order mixed central moment: E{[X - E(X)]ᵏ[Y - E(Y)]ᵉ}</li>
+</ul>
+<h2 id="Chapter-5-Law-of-Large-Numbers-and-Central-Limit-Theorem"><a class="header-anchor" href="#Chapter-5-Law-of-Large-Numbers-and-Central-Limit-Theorem">¶</a>Chapter 5: Law of Large Numbers and Central Limit Theorem</h2>
+<h3 id="5-1-Preliminary-Knowledge"><a class="header-anchor" href="#5-1-Preliminary-Knowledge">¶</a>5.1 Preliminary Knowledge</h3>
+<ol>
+<li>Chebyshev's inequality: P(|X-μ| ≥ ε) ≤ \dfrac{σ²}{ε²}, P(|X-μ| &lt; ε) &gt; 1 - \dfrac{σ²}{ε²}</li>
+</ol>
+<h3 id="5-2-Law-of-Large-Numbers"><a class="header-anchor" href="#5-2-Law-of-Large-Numbers">¶</a>5.2 Law of Large Numbers</h3>
+<ol>
+<li>Bernoulli's law of large numbers: \lim_{n→+∞} P(|\dfrac{n_A}{n} - p| ≥ ε) = 0, \lim_{n→+∞} P(|\dfrac{n_A}{n} - p| &lt; ε) = 1</li>
+<li>Chebyshev's law of large numbers: \lim_{n→+∞} P(|\dfrac{1}{n}\sum_{k=1}^n X_k - \dfrac{1}{n}\sum_{k=1}^n μ_k| &lt; ε) = 1</li>
+<li>Khintchine's law of large numbers: \lim_{n→∞} P(|\dfrac{1}{n}\sum_{k=1}^n X_k - μ| ≥ ε) = 0, \lim_{n→∞} P(|\dfrac{1}{n}\sum_{k=1}^n X_k - μ| &lt; ε) = 1</li>
+</ol>
+<h3 id="5-3-Central-Limit-Theorem"><a class="header-anchor" href="#5-3-Central-Limit-Theorem">¶</a>5.3 Central Limit Theorem</h3>
+<ol>
+<li>Central limit theorem for independent and identically distributed variables: Let X₁, X₂, ⋯, Xₙ, ⋯ be a sequence of independent and identically distributed random variables. ∀x, \lim_{n→∞} P(\dfrac{\sum_{k=1}^n X_k - nμ}{\sqrt{n}σ} ≤ x) = Φ(x)</li>
+<li>De Moivre-Laplace central limit theorem: If the random variable Yₙ ~ B(n,p), as n → ∞, Yₙ ~ N(np, np(1-p)).</li>
+</ol>
+<h2 id="Chapter-6-Preliminary-Knowledge-of-Mathematical-Statistics"><a class="header-anchor" href="#Chapter-6-Preliminary-Knowledge-of-Mathematical-Statistics">¶</a>Chapter 6: Preliminary Knowledge of Mathematical Statistics</h2>
+<h3 id="6-1-Basic-Concepts-of-Mathematical-Statistics"><a class="header-anchor" href="#6-1-Basic-Concepts-of-Mathematical-Statistics">¶</a>6.1 Basic Concepts of Mathematical Statistics</h3>
+<ol>
+<li>\bar{X} = \dfrac{1}{n} \sum_{i=1}^n X_i</li>
+<li>S² = \dfrac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})²</li>
+<li>M_k = \dfrac{1}{n} \sum_{i=1}^n X_i^k (k=1,2,⋯)</li>
+<li>(CM)<em>k = \dfrac{1}{n} \sum</em>{i=1}^n (X_i - \bar{X})^k (k=1,2,⋯)</li>
+</ol>
+<h3 id="6-2-Distributions-of-Several-Common-Statistics"><a class="header-anchor" href="#6-2-Distributions-of-Several-Common-Statistics">¶</a>6.2 Distributions of Several Common Statistics</h3>
+<ol>
+<li>Normal distribution: X ~ N(μ, σ²)</li>
+<li>χ² distribution:
+<ul>
+<li>χ² = ∑_{i=1}^n X_i² ~ χ²(n)</li>
+<li>E(χ²) = n, D(χ²) = 2n</li>
+<li>If two χ² variables are independent, then X₁ + X₂ ~ χ²(n₁ + n₂)</li>
+<li>When n is large, it approximately follows a normal distribution N(n, 2n).</li>
+</ul>
+</li>
+<li>t distribution:
+<ul>
+<li>X ~ N(0,1), Y ~ χ²(n), T = \dfrac{X}{\sqrt{Y/n}} ~ t(n)</li>
+<li>When n is sufficiently large (&gt;45), it approximately follows a standard normal distribution.</li>
+<li>t_{1-α}(n) = -t_α(n)</li>
+</ul>
+</li>
+<li>F distribution:
+<ul>
+<li>U ~ χ²(m), V ~ χ²(n), and U, V are independent, then F = \dfrac{U/m}{V/n} ~ F(m,n)</li>
+<li>If F ~ F(m,n), then \dfrac{1}{F} ~ F(n,m)</li>
+<li>F_{1-α}(m,n) = \dfrac{1}{F_α(n,m)}</li>
+</ul>
+</li>
+</ol>
+<h3 id="6-3-Sampling-Distributions-of-the-Normal-Distribution"><a class="header-anchor" href="#6-3-Sampling-Distributions-of-the-Normal-Distribution">¶</a>6.3 Sampling Distributions of the Normal Distribution</h3>
+<ol>
+<li>Sampling distributions for a single normal population:
+<ul>
+<li>\bar{X} ~ N(μ, \dfrac{σ²}{n})</li>
+<li>\dfrac{(n-1)S²}{σ²} = ∑_{i=1}^n {\dfrac{X_i - \bar{X}}{σ}} ~ χ²(n-1)</li>
+<li>\bar{X} and \dfrac{(n-1)S²}{σ²} are independent.</li>
+<li>\cfrac{\bar{X} - μ}{S/\sqrt{n}} ~ t(n-1)</li>
+</ul>
+</li>
+<li>Sampling distributions for two normal populations:
+<ul>
+<li>\dfrac{S₁²/σ₁²}{S₂²/σ₂²} ~ F(n-1,m-1)</li>
+<li>When σ₁ = σ₂ = σ, \dfrac{(\bar{X} - \bar{Y}) - (μ₁ - μ₂)}{\sqrt{\dfrac{1}{n} + \dfrac{1}{m}} \sqrt{\dfrac{(n-1)S₁² + (m-1)S₂²}{n+m-2}}}</li>
+</ul>
+</li>
+</ol>
+<h2 id="Chapter-7-Parameter-Estimation"><a class="header-anchor" href="#Chapter-7-Parameter-Estimation">¶</a>Chapter 7: Parameter Estimation</h2>
+<h3 id="7-1-Point-Estimation"><a class="header-anchor" href="#7-1-Point-Estimation">¶</a>7.1 Point Estimation</h3>
+<ol>
+<li>Frequency substitution method</li>
+<li>Method of moments</li>
+<li>Maximum likelihood estimation method</li>
+</ol>
+<h3 id="7-2-Evaluation-Criteria-for-Estimators"><a class="header-anchor" href="#7-2-Evaluation-Criteria-for-Estimators">¶</a>7.2 Evaluation Criteria for Estimators</h3>
+<ol>
+<li>Unbiasedness: The expected value of the estimator equals the true value.</li>
+<li>Efficiency:
+<ul>
+<li>Efficiency is compared based on the size of the variance; a smaller variance indicates higher efficiency.</li>
+<li>If D(\hat{θ}) &lt; D(θ) and the estimator is unbiased, it is efficient.</li>
+</ul>
+</li>
+<li>Consistency:
+<ul>
+<li>\lim_{n→+∞} D(\hat{θ}_n) = 0</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-3-Interval-Estimation"><a class="header-anchor" href="#7-3-Interval-Estimation">¶</a>7.3 Interval Estimation</h3>
+<ol>
+<li>A pivotal quantity must be selected.</li>
+</ol>
+<h2 id="Chapter-8-Hypothesis-Testing"><a class="header-anchor" href="#Chapter-8-Hypothesis-Testing">¶</a>Chapter 8: Hypothesis Testing</h2>
+<p>Determine the test statistic and rejection region.</p>
+<h3 id="8-1-Hypothesis-Testing-for-the-Mean-of-a-Single-Normal-Population"><a class="header-anchor" href="#8-1-Hypothesis-Testing-for-the-Mean-of-a-Single-Normal-Population">¶</a>8.1 Hypothesis Testing for the Mean of a Single Normal Population</h3>
+<ol>
+<li>When the variance is known:
+<ul>
+<li>U = \dfrac{\bar{X} - μ₀}{σ/\sqrt{n}} ~ N(0,1)</li>
+</ul>
+</li>
+<li>When the variance is unknown:
+<ul>
+<li>T = \dfrac{\bar{X} - μ₀}{S/\sqrt{n}} ~ t(n-1)</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-2-Hypothesis-Testing-for-the-Variance-of-a-Single-Normal-Population"><a class="header-anchor" href="#8-2-Hypothesis-Testing-for-the-Variance-of-a-Single-Normal-Population">¶</a>8.2 Hypothesis Testing for the Variance of a Single Normal Population</h3>
+<ol>
+<li>When the mean is known:
+<ul>
+<li>χ² = \dfrac{∑_{i=1}^n (X_i - μ)²}{σ₀²} ~ χ²(n)</li>
+</ul>
+</li>
+<li>When the mean is unknown:
+<ul>
+<li>χ² = \dfrac{(n-1)S²}{σ₀²} ~ χ²(n-1)</li>
+</ul>
+</li>
+</ol>
+<h3 id="8-3-Hypothesis-Testing-for-the-Difference-in-Means-of-Two-Normal-Populations"><a class="header-anchor" href="#8-3-Hypothesis-Testing-for-the-Difference-in-Means-of-Two-Normal-Populations">¶</a>8.3 Hypothesis Testing for the Difference in Means of Two Normal Populations</h3>
+<ol>
+<li>When the variances σ₁², σ₂² are known:
+<ul>
+<li>\bar{X} - \bar{Y} ~ N(δ, \dfrac{σ₁²}{n} + \dfrac{σ₂²}{m})</li>
+</ul>
+</li>
+<li>When σ₁² = σ₂² = σ² is unknown:
+<ul>
+<li>T = \dfrac{\bar{X} - \bar{Y} - δ}{S_W\sqrt{\dfrac{1}{n} + \dfrac{1}{m}}} ~ t(n+m-2)</li>
+</ul>
+</li>
+<li>When σ₁², σ₂² are unknown but the sample sizes are equal:
+<ul>
+<li>\dfrac{\bar{Z} - δ}{S_Z/\sqrt{n}} ~ t(n-1)</li>
+</ul>
+</li>
+</ol>
+
+        </div>
     
 </article>
 
@@ -922,7 +1245,7 @@ X)E(Y)$</li>
             <h5>
                 <a href="/2025/01/15/2025/20250115%20%E9%9B%86%E5%90%88%E8%AE%BA/" class="trm-anima-link">
                     
-                        集合论整理
+                        <span class="i18n-zh">集合论整理</span><span class="i18n-en">Set Theory Summary</span>
                     
                 </a>
             </h5>
@@ -961,7 +1284,7 @@ X)E(Y)$</li>
             <h5>
                 <a href="/2025/01/07/2025/20250107%20C++%E5%B8%B8%E7%94%A8%E5%BA%93/" class="trm-anima-link">
                     
-                        C++ 常用库
+                        <span class="i18n-zh">C++ 常用库</span><span class="i18n-en">Common C++ Libraries</span>
                     
                 </a>
             </h5>
@@ -970,7 +1293,7 @@ X)E(Y)$</li>
                 <li>25/01/07</li>
                 <li>14:47</li>
                 
-                    <li>2.3k</li>
+                    <li>2.4k</li>
                 
                 
                     <li>10</li>
@@ -1053,7 +1376,7 @@ X)E(Y)$</li>
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

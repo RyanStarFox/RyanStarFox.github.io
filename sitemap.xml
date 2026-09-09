@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ryanstarfox.github.io/useful_links/index.undefined</loc>
+    <loc>https://ryanstarfox.github.io/useful_links/index.html</loc>
     
     <lastmod>2026-09-08</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/categories/index.undefined</loc>
+    <loc>https://ryanstarfox.github.io/categories/index.html</loc>
     
     <lastmod>2026-09-08</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/tags/index.undefined</loc>
+    <loc>https://ryanstarfox.github.io/tags/index.html</loc>
     
     <lastmod>2026-09-08</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/about/index.undefined</loc>
+    <loc>https://ryanstarfox.github.io/about/index.html</loc>
     
     <lastmod>2026-09-08</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/metadata/log.undefined</loc>
+    <loc>https://ryanstarfox.github.io/metadata/log.html</loc>
     
     <lastmod>2025-08-27</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/404.undefined</loc>
+    <loc>https://ryanstarfox.github.io/404.html</loc>
     
     <lastmod>2025-07-29</lastmod>
     
@@ -532,7 +532,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/tags/Apple/</loc>
+    <loc>https://ryanstarfox.github.io/tags/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -560,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/tags/%E6%84%9F%E6%82%9F/</loc>
+    <loc>https://ryanstarfox.github.io/tags/Apple/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -632,14 +632,14 @@
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/categories/%E6%84%9F%E6%82%9F/</loc>
+    <loc>https://ryanstarfox.github.io/categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ryanstarfox.github.io/categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
+    <loc>https://ryanstarfox.github.io/categories/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

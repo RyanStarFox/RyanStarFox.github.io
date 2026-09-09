@@ -257,7 +257,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                算法与复杂性整理
+                                <span class="i18n-zh">算法与复杂性整理</span>
+                                <span class="i18n-en">Algorithms and Complexity Notes</span>
                             
                         </h1>
 
@@ -460,10 +461,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>01 引论</h1>
 <p>N/A</p>
 <h1>02 数学归纳法</h1>
@@ -938,6 +936,471 @@
 </ul>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <h1>01 Introduction</h1>
+<p>N/A</p>
+<h1>02 Mathematical Induction</h1>
+<ol>
+<li>Euler's formula</li>
+<li>Finding loop invariants</li>
+</ol>
+<h1>03 Algorithm Analysis</h1>
+<h2 id="Notation"><a class="header-anchor" href="#Notation">¶</a>Notation</h2>
+<p>Symbol $O$: $f(n)=O(g(n))$, complexity $f(n)\leq g(n)$, $\exists c,N, \forall n\geq N, g(n)\leq cf(n)\Rightarrow g(n)=O(f(n))$</p>
+<p>Symbol $\Omega$: $f(n)=\Omega(g(n))$, complexity $f(n)\geq g(n)$, $g(n)=O(f(n))\Rightarrow f(n)=\Omega(g(n))$</p>
+<p>Symbol $\Theta$: $f(n)=\Theta(g(n))$, complexity $f(n)=g(n)$, $f(n)=O(g(n))\wedge g(n)=O(f(n))\Rightarrow f(n)=\Theta(g(n))$</p>
+<p>Symbol $o$: $f(n)=o(g(n))$, complexity $f(n)&lt; g(n)$, $\forall c,\exists N&gt;0,s.t\ \forall n \geq N,f(n)\leq cg(n)\Rightarrow f(n)=o(g(n))$</p>
+<h2 id="Common-formulas"><a class="header-anchor" href="#Common-formulas">¶</a>Common formulas</h2>
+<p>$\sum\limits_{i=1}^n \lfloor\log i\rfloor=(n+1)\lfloor(\log n)\rfloor-2^{\lfloor\log n\rfloor+1}+2=\Theta(n\log n)$</p>
+<p>$e=\lim\limits_{n\to\infty}(1+\dfrac 1n)^n=1+\dfrac 1{1!}+\dfrac1{2!}+\dfrac1{3!}+\cdots$</p>
+<p>$\log{(n!)}=\Theta(n\log n)$</p>
+<p>$\sum\limits_{j=1}^n \dfrac 1j=\ln n+\gamma+O(\dfrac1n),\gamma\approx0.577215$</p>
+<p>$\sum\limits_{j=1}^n jc^j=\Theta(nc^n)$</p>
+<h2 id="Recurrences"><a class="header-anchor" href="#Recurrences">¶</a>Recurrences</h2>
+<h3 id="Linear-homogeneous-recurrences"><a class="header-anchor" href="#Linear-homogeneous-recurrences">¶</a>Linear homogeneous recurrences</h3>
+<p>Characteristic equation</p>
+<h3 id="Divide-and-conquer-problems"><a class="header-anchor" href="#Divide-and-conquer-problems">¶</a>Divide and conquer problems</h3>
+<p>Assume there are $a$ subproblems, each of size $1/b$ of the original problem, and the time to combine subproblems is $cn^k$, i.e.</p>
+<p>$T(n)=aT(n/b)+cn^k$</p>
+<p>$T(n)=\begin{cases}O(n^{\log_ba})&amp;a&gt;b^k\O(n^k\log n)&amp;a=b^k\O(n^k)&amp;a&lt;b^k\end{cases}$</p>
+<h3 id="Master-Theorem"><a class="header-anchor" href="#Master-Theorem">¶</a>Master Theorem</h3>
+<p>$T(n)=aT(n/c)+f(n)$</p>
+<ol>
+<li>if $f(n)=O(n^{\log_ca-\epsilon})$ for some $\epsilon&gt;0$, then $T(n)=\Theta(n^{\log_ca})$</li>
+<li>if $f(n) = \Theta( n^{\log_ca} \cdot (\log n)^k ) $ for some$ k&gt;=0$, then $T(n) = \Theta(n^{\log_ca} \cdot (\log n)^k )$</li>
+<li>If $f(n)=W(n^{\log_ca+\epsilon}) $ for some $e&gt;0$  and if $a\cdot f(n/c)\leq kf(n) $ for some constant $ k&lt;1$ and all sufficiently large $n$, then $T(n)=\Theta(f(n))$</li>
+</ol>
+<p>Note: The above three cases do not completely cover all cases.</p>
+<h3 id="Recurrences-involving-full-history"><a class="header-anchor" href="#Recurrences-involving-full-history">¶</a>Recurrences involving full history</h3>
+<p>History elimination method</p>
+<h1>05 Induction-Based Algorithm Design</h1>
+<ol>
+<li>
+<p>Polynomial evaluation</p>
+<p>$p_n(x)=xp_{n-1}(x)+a_0$</p>
+</li>
+<li>
+<p>Find the largest induced subgraph where every vertex has degree &gt; k</p>
+<p>Just delete vertices with degree less than k, update degrees; the deletion order does not matter.</p>
+</li>
+<li>
+<p>Find a subset with a one-to-one mapping</p>
+<p>Delete points that are not mapped to.</p>
+</li>
+<li>
+<p>Celebrity problem</p>
+<p>Don't think from the person's perspective, think from the question's perspective. One question can determine that at least one person is not a celebrity; finally verify the remaining person to see if they are a celebrity.</p>
+</li>
+<li>
+<p>Outline problem</p>
+<p>Divide and conquer</p>
+</li>
+<li>
+<p>Find the maximum continuous subsequence</p>
+<p>Induction hypothesis: know how to find the maximum subsequence for size less than n, as well as the maximum subsequence ending as a suffix.</p>
+</li>
+<li>
+<p>Knapsack problem</p>
+<p>Dynamic programming</p>
+</li>
+</ol>
+<h1>06 Algorithms for Sequences and Sets</h1>
+<h2 id="Binary-Search"><a class="header-anchor" href="#Binary-Search">¶</a>Binary Search</h2>
+<ol>
+<li>
+<p>Basic binary search O(log n)</p>
+</li>
+<li>
+<p>Binary search on a cyclic sequence</p>
+<p>Find the minimum element in a cyclically increasing sequence.</p>
+<p>If we consider $x_p,x_q$, and if $x_p&lt;x_q$, then the minimum element cannot be between $x_p$ and $x_q$.</p>
+</li>
+<li>
+<p>Binary search for $a_i=i$</p>
+<p>Examine the value of $a_{\frac n2}$ and decide whether to search in the front or the back.</p>
+</li>
+<li>
+<p>Overlapping subsequence problem</p>
+<p>If there is an upper bound, use binary search.</p>
+<p>If there is no upper bound, double $i$ until a suitable range is found.</p>
+</li>
+<li>
+<p>Solving equations</p>
+<p>Use continuity to repeatedly reduce the range where a solution exists.</p>
+</li>
+<li>
+<p>Interpolation search O(log log n), but not necessarily more efficient than binary search.</p>
+</li>
+</ol>
+<h2 id="Sorting"><a class="header-anchor" href="#Sorting">¶</a>Sorting</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Sorting Algorithm</th>
+<th style="text-align:center">Worst</th>
+<th style="text-align:center">Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Insertion sort^{1^}</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:center">$O(n^2)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Selection sort</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:center">$O(n^2)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Merge sort^{2^}</td>
+<td style="text-align:center">$O(n\log n)$</td>
+<td style="text-align:center">$O(n\log n)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Quick sort</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:center">$O(n\log n)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Heap sort</td>
+<td style="text-align:center">$O(n\log n)$</td>
+<td style="text-align:center">$O(n\log n)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Counting sort^{3^}</td>
+<td style="text-align:center">$O(n+k)$</td>
+<td style="text-align:center">$O(n+k)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Bucket sort^{4^}</td>
+<td style="text-align:center">$O(m+n)$</td>
+<td style="text-align:center">$O(m+n)$</td>
+</tr>
+<tr>
+<td style="text-align:center">Radix sort^{5^}</td>
+<td style="text-align:center">$O(nk)$</td>
+<td style="text-align:center">$O(nk)$</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ol>
+<li>The insertion part can use binary search, and the complexity of that part can be reduced to $O(n\log n)$.</li>
+<li>Disadvantage: not an in-place sort; copying all numbers is time-consuming.</li>
+<li>Non-comparison sort, k is the number of distinct values.</li>
+<li>Non-comparison sort, m is the number of buckets.</li>
+<li>Non-comparison sort, k is the number of digits of the numbers to be sorted.</li>
+</ol>
+<h2 id="Order-Statistics-of-Sequences"><a class="header-anchor" href="#Order-Statistics-of-Sequences">¶</a>Order Statistics of Sequences</h2>
+<ol>
+<li>
+<p>Find maximum/minimum</p>
+<p>Can reduce computation using divide and conquer, but cannot reduce the order of magnitude $O(n)$.</p>
+</li>
+<li>
+<p>Find the k-th smallest number</p>
+<p>Use a method similar to quicksort, average $O(n)$, worst $O(n\log n)$.</p>
+</li>
+</ol>
+<h2 id="Data-Compression"><a class="header-anchor" href="#Data-Compression">¶</a>Data Compression</h2>
+<ol>
+<li>Huffman coding</li>
+</ol>
+<h2 id="String-Matching"><a class="header-anchor" href="#String-Matching">¶</a>String Matching</h2>
+<ol>
+<li>
+<p>KMP algorithm</p>
+<p>Build the next array for the pattern sequence to be searched.</p>
+</li>
+<li>
+<p>BM algorithm</p>
+<ol>
+<li>
+<p>Bad character rule</p>
+<p>The number of shifts = position of error in the pattern string - last occurrence position of the bad character in the pattern string.</p>
+<p>Use a table bc to store characters and indices in the pattern string.</p>
+</li>
+<li>
+<p>Good suffix rule</p>
+<p>Similar to KMP, reverse the pattern; can be precomputed.</p>
+</li>
+</ol>
+<p>Execute the larger shift of the two rules.</p>
+</li>
+</ol>
+<h3 id="Sequence-Comparison"><a class="header-anchor" href="#Sequence-Comparison">¶</a>Sequence Comparison</h3>
+<h3 id="Finding-the-Majority-Element"><a class="header-anchor" href="#Finding-the-Majority-Element">¶</a>Finding the Majority Element</h3>
+<p>Here &quot;majority&quot; means: appears more than half the time.</p>
+<ol>
+<li>
+<p>Brute force</p>
+</li>
+<li>
+<p>Sorting</p>
+</li>
+<li>
+<p>Find median then verify</p>
+</li>
+<li>
+<p>Advanced algorithm</p>
+<table>
+<thead>
+<tr>
+<th><strong>i</strong></th>
+<th><strong>X[i]</strong></th>
+<th><strong>C (candidate)</strong></th>
+<th><strong>M (counter)</strong></th>
+<th><strong>Operation description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1 → 2</td>
+<td>X[i] == C, M++</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>2 → 1</td>
+<td>X[i] ≠ C, M–</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1 → 0</td>
+<td>X[i] ≠ C, M–</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+<td>0 → 1</td>
+<td>M is 0, change candidate to X[i]=1, M=1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>1</td>
+<td>1 → 0</td>
+<td>X[i] ≠ C, M–</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2</td>
+<td>2</td>
+<td>0 → 1</td>
+<td>M is 0, change candidate to X[i]=2, M=1</td>
+</tr>
+</tbody>
+</table>
+<p>After finding the candidate, verify it.</p>
+</li>
+<li>
+<p>Frequent elements</p>
+<p>Find the t most frequent elements.</p>
+<p>Only an approximate algorithm exists: specify k counters.</p>
+<ol>
+<li>If there is a corresponding counter, increment that counter by 1.</li>
+<li>If there is no corresponding counter and the number of existing counters is less than k, allocate a new counter for this data item with value 1.</li>
+<li>If there is no corresponding counter and there are already k counters, decrement all counter values by 1, remove counters with value 0, and discard the new data item.</li>
+</ol>
+</li>
+<li>
+<p>Longest Increasing Subsequence</p>
+<ol>
+<li>Dynamic programming</li>
+<li>Maintain a tail array (BIS)</li>
+</ol>
+</li>
+</ol>
+<h1>07 Graph Algorithms</h1>
+<h2 id="DFS"><a class="header-anchor" href="#DFS">¶</a>DFS</h2>
+<p>Four types of edges in DFS:</p>
+<ol>
+<li>Tree edge: edge that first visits a new node and adds it to the DFS tree.</li>
+<li>Back edge: visits an ancestor node that has not finished and is still in recursion.</li>
+<li>Forward edge: visits a descendant node that has already finished.</li>
+<li>Cross edge: visits a node that has already finished, but is neither an ancestor nor a descendant.</li>
+</ol>
+<p>A directed graph has a directed cycle $\Leftrightarrow$ G has a back edge.</p>
+<h2 id="Topological-Sort"><a class="header-anchor" href="#Topological-Sort">¶</a>Topological Sort</h2>
+<p>Find vertices with indegree 0, mark as visited, and update the adjacency list.</p>
+<h2 id="Single-Source-Shortest-Paths"><a class="header-anchor" href="#Single-Source-Shortest-Paths">¶</a>Single-Source Shortest Paths</h2>
+<p>In an acyclic directed graph, the shortest paths from v to all other vertices in G.</p>
+<h3 id="Using-topological-sort-only-graphs-that-can-be-topologically-sorted-can-use-this-method"><a class="header-anchor" href="#Using-topological-sort-only-graphs-that-can-be-topologically-sorted-can-use-this-method">¶</a>Using topological sort (only graphs that can be topologically sorted can use this method)</h3>
+<p>Assume v has label k; vertices with labels less than k need not be considered, since there is no path; for labels greater than k, use induction: $min(l_i)+1$ for $i$ in $curr.parents$.</p>
+<h3 id="General-approach-Dijkstra-s-algorithm"><a class="header-anchor" href="#General-approach-Dijkstra-s-algorithm">¶</a>General approach: Dijkstra's algorithm</h3>
+<p>Use a priority queue to decide which vertex to update next.</p>
+<h3 id="All-pairs-shortest-paths-Floyd-s-algorithm"><a class="header-anchor" href="#All-pairs-shortest-paths-Floyd-s-algorithm">¶</a>All-pairs shortest paths: Floyd's algorithm</h3>
+<p>Edge weights can be negative, but there cannot be negative-weight cycles.</p>
+<p>Uses three nested loops.</p>
+<p>Initialize distances between connected vertices as the edge length, and others as +inf.</p>
+<p>Check whether each vertex can serve as an intermediate node for two other vertices; if so, update the shortest path.</p>
+<p>Can detect negative cycles (if running it twice produces changes, there is a negative cycle).</p>
+<h3 id="Transitive-closure-Floyd-Warshall-algorithm"><a class="header-anchor" href="#Transitive-closure-Floyd-Warshall-algorithm">¶</a>Transitive closure: Floyd-Warshall algorithm</h3>
+<h2 id="Minimum-Cost-Spanning-Tree"><a class="header-anchor" href="#Minimum-Cost-Spanning-Tree">¶</a>Minimum Cost Spanning Tree</h2>
+<p>Kruskal/Prim algorithm.</p>
+<p>The former expands edges + uses disjoint set union; the latter expands vertices + uses greedy method.</p>
+<h2 id="Partition-Biconnected-Components-Tarjan-s-Method"><a class="header-anchor" href="#Partition-Biconnected-Components-Tarjan-s-Method">¶</a>Partition Biconnected Components: Tarjan's Method</h2>
+<p>Articulation point (cut vertex): a node whose removal can separate the graph.</p>
+<p>A biconnected component is a component with no articulation point. A vertex can belong to different biconnected components, but an edge cannot.</p>
+<p>To find all articulation points:</p>
+<p>Use one DFS, updating timestamps and low values.</p>
+<h2 id="Partition-Strongly-Connected-Components-Tarjan-s-Method"><a class="header-anchor" href="#Partition-Strongly-Connected-Components-Tarjan-s-Method">¶</a>Partition Strongly Connected Components: Tarjan's Method</h2>
+<p>Can use a method similar to the biconnected component partition; the criterion changes from dfn &gt;= to dfn ==.</p>
+<h2 id="Matching"><a class="header-anchor" href="#Matching">¶</a>Matching</h2>
+<p>A matching is a set of edges with no common vertices between any two edges.</p>
+<ul>
+<li>Perfect matching: a matching in which all vertices are matched.</li>
+<li>Maximum matching: a matching with the maximum number of edges.</li>
+<li>Maximal matching: a matching to which no additional edge can be added.</li>
+</ul>
+<p>A maximal matching is not necessarily a maximum matching.</p>
+<ol>
+<li>Perfect matching in very dense graphs.</li>
+<li>Bipartite matching.</li>
+</ol>
+<p>Both are achieved by exchanging (augmenting paths).</p>
+<h2 id="Finding-Hamiltonian-Cycles-in-Very-Dense-Graphs"><a class="header-anchor" href="#Finding-Hamiltonian-Cycles-in-Very-Dense-Graphs">¶</a>Finding Hamiltonian Cycles in Very Dense Graphs</h2>
+<p>The degree sum of any two vertices is ≥ n.</p>
+<h1>08 Geometric Algorithms</h1>
+<h2 id="Determine-Whether-a-Point-Is-Inside-a-Polygon"><a class="header-anchor" href="#Determine-Whether-a-Point-Is-Inside-a-Polygon">¶</a>Determine Whether a Point Is Inside a Polygon</h2>
+<p>A line from any external point to this point has an odd number of intersections with the polygon.</p>
+<p>There are special cases.</p>
+<h2 id="Construct-a-Simple-Polygon"><a class="header-anchor" href="#Construct-a-Simple-Polygon">¶</a>Construct a Simple Polygon</h2>
+<ol>
+<li>Consider a large circle C containing all points; start rotating from the circle center (special cases exist).</li>
+<li>Start scanning from the point with maximum x-coordinate and minimum y-coordinate (special cases also exist).</li>
+</ol>
+<h2 id="Convex-Hull"><a class="header-anchor" href="#Convex-Hull">¶</a>Convex Hull</h2>
+<h3 id="Direct-method-extension-recursion-O-n-2"><a class="header-anchor" href="#Direct-method-extension-recursion-O-n-2">¶</a>Direct method: extension + recursion O(n^2)</h3>
+<p>Know how to find the convex hull of &lt;n points, then try to find the convex hull including the n-th point.</p>
+<p>Improvement: when adding a new point, delete points inside the old hull, connect the new point to points on the old hull to find supporting lines, and thus find two points to connect with the new point, forming a new hull.</p>
+<h3 id="Gift-Wrapping-O-n-2"><a class="header-anchor" href="#Gift-Wrapping-O-n-2">¶</a>Gift Wrapping O(n^2)</h3>
+<p>Start from an extreme point and find supporting lines; instead of constructing the convex hull incrementally, directly find parts of the convex hull.</p>
+<h3 id="Graham-scan-algorithm-O-n-log-n"><a class="header-anchor" href="#Graham-scan-algorithm-O-n-log-n">¶</a>Graham scan algorithm O(n log n)</h3>
+<p>Similar to gift wrapping, but does not directly find a part of the hull. First fix an extreme point $p_1$ on the x-axis, then compute the angle between $p_i p_1$ and the x-axis, sort in increasing order, and then add points one by one to the convex hull.</p>
+<h2 id="Closest-Pair-of-Points"><a class="header-anchor" href="#Closest-Pair-of-Points">¶</a>Closest Pair of Points</h2>
+<h3 id="Direct-method-O-n-2"><a class="header-anchor" href="#Direct-method-O-n-2">¶</a>Direct method O(n^2)</h3>
+<p>Directly compute distances between points and find the minimum.</p>
+<h3 id="Divide-and-conquer-O-n-log-2-n-O-n-log-n"><a class="header-anchor" href="#Divide-and-conquer-O-n-log-2-n-O-n-log-n">¶</a>Divide and conquer O(n log^2 n) -&gt; O(n log n)</h3>
+<p>If there are only two points, take their distance directly.</p>
+<p>Otherwise, divide into two groups, find the minimum in each, and find the minimum of cross terms.</p>
+<p>For cross terms, only consider a strip of width twice the minimum.</p>
+<p>If the y-coordinate ordering is preserved during each merge, the complexity can be reduced to $O(n\log n)$.</p>
+<h2 id="Finding-Intersections"><a class="header-anchor" href="#Finding-Intersections">¶</a>Finding Intersections</h2>
+<h3 id="Intersections-of-horizontal-and-vertical-line-segments"><a class="header-anchor" href="#Intersections-of-horizontal-and-vertical-line-segments">¶</a>Intersections of horizontal and vertical line segments</h3>
+<p>Direct method $O(mn)$</p>
+<p>Sweep line technique $O((m+n)\log(m+n)+R)$</p>
+<h3 id="Intersections-of-line-segments"><a class="header-anchor" href="#Intersections-of-line-segments">¶</a>Intersections of line segments</h3>
+<p>Sweep line technique $O((2n+m)\log(2n+m))$</p>
+<p>The sweep state set is dynamic geometry, describing the current sweep line state. It changes in the following situations:</p>
+<ol>
+<li>Encountering a new segment.</li>
+<li>An existing segment ends.</li>
+<li>Intersection of two segments.</li>
+</ol>
+<h2 id="Art-Gallery-Problem"><a class="header-anchor" href="#Art-Gallery-Problem">¶</a>Art Gallery Problem</h2>
+<h2 id="Polygon-Triangulation"><a class="header-anchor" href="#Polygon-Triangulation">¶</a>Polygon Triangulation</h2>
+<h3 id="If-it-is-a-monotone-polygon"><a class="header-anchor" href="#If-it-is-a-monotone-polygon">¶</a>If it is a monotone polygon</h3>
+<p>Sweep line algorithm for triangulation.</p>
+<h3 id="If-it-is-a-general-polygon"><a class="header-anchor" href="#If-it-is-a-general-polygon">¶</a>If it is a general polygon</h3>
+<p>Add diagonals to remove turning points.</p>
+<p>For split, merge, and start, there are different handling methods.</p>
+<h2 id="Intersecting-Half-Planes-Problem"><a class="header-anchor" href="#Intersecting-Half-Planes-Problem">¶</a>Intersecting Half-Planes Problem</h2>
+<p>Divide and conquer $O(n\log n)$</p>
+<h2 id="Intersection-of-Two-Convex-Polygons"><a class="header-anchor" href="#Intersection-of-Two-Convex-Polygons">¶</a>Intersection of Two Convex Polygons</h2>
+<p>Sweep line algorithm; the sweep line only needs to remember 4 edges, $O(n)$.</p>
+<h2 id="Voronoi-Diagram"><a class="header-anchor" href="#Voronoi-Diagram">¶</a>Voronoi Diagram</h2>
+<p>Use Fortune's algorithm, a sweep line algorithm. It specifies both a sweep line and a coastline (a series of parabolas; above the coastline, things do not change).</p>
+<ol>
+<li>Site event: When the sweep line passes through a site, a site event is generated. Insert a new parabola.</li>
+<li>When the left and right parabolas meet, the middle parabola disappears, forming a new Voronoi vertex.</li>
+</ol>
+<h1>09 Algebraic and Numerical Algorithms</h1>
+<h2 id="Sources-of-Error"><a class="header-anchor" href="#Sources-of-Error">¶</a>Sources of Error</h2>
+<ol>
+<li>Truncation error: error caused by truncating a Taylor series.</li>
+<li>Large number swallows small number: 2^100^+1-2^100^=0</li>
+<li>Stability: Recurrent algorithms accumulate errors.</li>
+</ol>
+<h2 id="Power-Computation"><a class="header-anchor" href="#Power-Computation">¶</a>Power Computation</h2>
+<ol>
+<li>Direct induction: $n^k = n \cdot n^{k-1}, O(k)$</li>
+<li>Binary induction: $n^k = (n^{\frac{k}{2}})^2, O(\log k)$</li>
+</ol>
+<h2 id="Greatest-Common-Divisor"><a class="header-anchor" href="#Greatest-Common-Divisor">¶</a>Greatest Common Divisor</h2>
+<p>Euclidean algorithm.</p>
+<p>Least common multiple can be obtained from the greatest common divisor.</p>
+<h2 id="Polynomial-Multiplication"><a class="header-anchor" href="#Polynomial-Multiplication">¶</a>Polynomial Multiplication</h2>
+<p>Divide and conquer; also, 4 multiplications can be optimized to 3 because B+C = E - A - D.</p>
+<h2 id="Positive-Integer-Multiplication"><a class="header-anchor" href="#Positive-Integer-Multiplication">¶</a>Positive Integer Multiplication</h2>
+<p>For n-digit numbers, $O(n^2)$.</p>
+<p>Use a divide-and-conquer method similar to polynomial multiplication.</p>
+<h2 id="Matrix-Multiplication"><a class="header-anchor" href="#Matrix-Multiplication">¶</a>Matrix Multiplication</h2>
+<p>Also similar divide-and-conquer $O(n^3)$; can also use Strassen's algorithm for similar optimization, $O(n^{2.81})$.</p>
+<h2 id="Boolean-Matrix-Multiplication"><a class="header-anchor" href="#Boolean-Matrix-Multiplication">¶</a>Boolean Matrix Multiplication</h2>
+<p>Cannot be optimized by Strassen's algorithm because subtraction is not defined for Boolean operations.</p>
+<h3 id="Method-1"><a class="header-anchor" href="#Method-1">¶</a>Method 1</h3>
+<p>Precompute all possible k-dimensional Boolean inner products, then look them up, $O(n^3/\log n)$.</p>
+<h3 id="Method-2"><a class="header-anchor" href="#Method-2">¶</a>Method 2</h3>
+<p>Decompose into sum of products of columns of A and rows of B + lookup, $O(n^3/\log n)$.</p>
+<h3 id="Method-3"><a class="header-anchor" href="#Method-3">¶</a>Method 3</h3>
+<p>Build an n-dimensional vector addition table, then partition, $O(n^3/\log^2 n)$.</p>
+<h2 id="Matrix-Chain-Multiplication"><a class="header-anchor" href="#Matrix-Chain-Multiplication">¶</a>Matrix Chain Multiplication</h2>
+<p>Linear programming.</p>
+<p>Multiplying an m<em>n matrix and an n</em>k matrix has default time complexity $O(m<em>n</em>k)$.</p>
+<h2 id="Polynomial-Multiplication-2"><a class="header-anchor" href="#Polynomial-Multiplication-2">¶</a>Polynomial Multiplication 2</h2>
+<p>Represent a polynomial function using points on the function, first perform forward Fourier transform, then inverse Fourier transform.</p>
+<h3 id="Forward-Fourier-transform"><a class="header-anchor" href="#Forward-Fourier-transform">¶</a>Forward Fourier transform</h3>
+<p>Among the chosen points, there are opposite numbers, reducing computation by half, then compute inductively (requires introducing complex numbers).</p>
+<h3 id="Inverse-Fourier-transform"><a class="header-anchor" href="#Inverse-Fourier-transform">¶</a>Inverse Fourier transform</h3>
+<p>Find the inverse of the matrix, which is $[V(\omega)]^{-1}=\dfrac{1}{n} V(\dfrac{1}{\omega})$.</p>
+<h1>Nonlinear Methods for Solving Equations</h1>
+<h2 id="Bisection-Method"><a class="header-anchor" href="#Bisection-Method">¶</a>Bisection Method</h2>
+<p>Disadvantage: cannot guarantee the precision of x; possibly y differs very little but x differs a lot.</p>
+<h2 id="Iterative-Method-for-Roots"><a class="header-anchor" href="#Iterative-Method-for-Roots">¶</a>Iterative Method for Roots</h2>
+<p>It is the cobweb method mentioned by Dong; the question is whether it converges.</p>
+<h2 id="Newton-s-Method"><a class="header-anchor" href="#Newton-s-Method">¶</a>Newton's Method</h2>
+<p>Find the next approximation using the tangent line; performance depends on the choice of x.</p>
+<h1>11 Computers Are Not All-Powerful</h1>
+<h2 id="NPC-Problems-from-Class"><a class="header-anchor" href="#NPC-Problems-from-Class">¶</a>NPC Problems from Class</h2>
+<ul>
+<li>
+<p>Vertex cover problem</p>
+<p>Let G=(V,E) be an undirected graph. A vertex cover of G is a set of vertices such that every edge in G is incident to at least one vertex in the set.</p>
+<p>Problem: Given an undirected graph G=(V,E) and an integer k, determine whether G has a vertex cover with at most k vertices.</p>
+</li>
+<li>
+<p>Dominating set problem</p>
+<p>Let G=(V,E) be an undirected graph. If a vertex set D satisfies that every vertex in G is either in D or adjacent to at least one vertex in D, then D is called a dominating set.</p>
+<p>Problem: Given an undirected graph G=(V,E) and an integer k, determine whether G has a dominating set with at most k vertices.</p>
+</li>
+<li>
+<p>3SAT problem</p>
+<p>The 3SAT problem is a restricted version of the general SAT problem. An instance of 3SAT is a Boolean expression in which each clause contains exactly 3 variables.</p>
+<p>Problem: Given a Boolean expression in CNF form with exactly 3 variables per clause, determine whether it is satisfiable.</p>
+</li>
+<li>
+<p>Clique problem</p>
+<p>Given an undirected graph G=(V,E), a clique C in G is a subgraph of G such that every two vertices in C are adjacent; in other words, a clique is a complete subgraph.</p>
+<p>Problem: Given an undirected graph G=(V,E) and an integer k, determine whether G contains a clique of size at least k.</p>
+</li>
+<li>
+<p>3-coloring problem</p>
+<p>Let G=(V,E) be an undirected graph. A proper coloring of G is an assignment of colors to all vertices such that each vertex is assigned one color and adjacent vertices are not assigned the same color.</p>
+<p>Problem: Given an undirected graph G=(V,E), determine whether G can be colored with 3 colors.<br>
+&lt;&lt;<END>&gt;&gt;</p>
+</li>
+</ul>
+
+        </div>
     
 </article>
 
@@ -972,7 +1435,7 @@
             <h5>
                 <a href="/2025/06/11/2025/20250611%20%E9%87%8F%E5%AD%90%E7%89%A9%E7%90%86/" class="trm-anima-link">
                     
-                        量子物理整理
+                        <span class="i18n-zh">量子物理整理</span><span class="i18n-en">Quantum Mechanics Notes</span>
                     
                 </a>
             </h5>
@@ -1011,7 +1474,7 @@
             <h5>
                 <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-anima-link">
                     
-                        马克思主义基本原理
+                        <span class="i18n-zh">马克思主义基本原理</span><span class="i18n-en">Basic Principles of Marxism</span>
                     
                 </a>
             </h5>
@@ -1103,7 +1566,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

@@ -23,20 +23,20 @@
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
 <meta property="og:description" content="CNN发展总结 正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。 ¶1 LeNet LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：  那时的汇聚层、激活函数还是AvergePool和Sigmoid&#x2F;Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。  ¶2 AlexNet 与LeNet思路类似，在imageNet比赛中取">
 <meta property="og:locale">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/LeNet.drawio.svg">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/AlexNet.drawio.svg">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/VGG.drawio.svg">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/NiN.drawio.svg">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/Inception.drawio.svg">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/GoogLeNet.drawio.svg">
-<meta property="og:image" content="https://ryanstarfox.github.io/images/2025/ResNet.drawio.svg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
+<meta property="og:image" content="https://ryanstarfox.github.io/img/404.jpg">
 <meta property="article:published_time" content="2025-08-17T18:19:05.000Z">
 <meta property="article:modified_time" content="2025-08-17T18:19:05.000Z">
 <meta property="article:author" content="RyanStarFox">
 <meta property="article:tag" content="技术">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ryanstarfox.github.io/images/2025/LeNet.drawio.svg">
+<meta name="twitter:image" content="https://ryanstarfox.github.io/img/404.jpg">
 
     <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
 
@@ -266,7 +266,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                CNN发展总结
+                                <span class="i18n-zh">CNN发展总结</span>
+                                <span class="i18n-en">Summary of CNN Development</span>
                             
                         </h1>
 
@@ -469,17 +470,14 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>CNN发展总结</h1>
 <p>正在学习李沐老师的d2l课程，梳理一下提到的几个标志性的CNN的逻辑以及发展的逻辑。</p>
 <h2 id="1-LeNet"><a class="header-anchor" href="#1-LeNet">¶</a>1 LeNet</h2>
 <p>LeNet是最早的卷积神经网络，引入了卷积层、池化层等等。其架构如下：</p>
-<p><img src="/images/2025/LeNet.drawio.svg" alt="LeNet.drawio"></p>
+<p><img src="/images/2025/LeNet.drawio.svg" alt="LeNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <p>那时的汇聚层、激活函数还是AvergePool和Sigmoid/Tanh，并非后来实践表明表现更好的ReLU和MaxPooling。</p>
-<p><img src="/images/2025/AlexNet.drawio.svg" alt="AlexNet.drawio"></p>
+<p><img src="/images/2025/AlexNet.drawio.svg" alt="AlexNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <h2 id="2-AlexNet"><a class="header-anchor" href="#2-AlexNet">¶</a>2 AlexNet</h2>
 <p>与LeNet思路类似，在imageNet比赛中取得了不错的成绩，证明了更深更大的模型可以有非常好的效果</p>
 <ol>
@@ -497,7 +495,7 @@
 <li>有很多层的组合（例如卷积层+池化层）反复出现</li>
 </ol>
 <p>因此为了方便构建模块化地构建更大的网络，我们可以将一系列“层”定义一个“块”，以“块”为基本单位之一构建网络。</p>
-<p><img src="/images/2025/VGG.drawio.svg" alt="VGG.drawio"></p>
+<p><img src="/images/2025/VGG.drawio.svg" alt="VGG.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <h2 id="4-网络中的网络（NiN）"><a class="header-anchor" href="#4-网络中的网络（NiN）">¶</a>4 网络中的网络（NiN）</h2>
 <p>VGG把神经网络的规模做得非常巨大，但是此时又暴露出了内存/显存占用巨大的问题——尤其是卷积层之后的第一个全连接层，因输入输出的维度都巨大，参数的数量也巨大。</p>
 <p>为了改善存储占用的问题，NiN网络中使用了使用NiN块与GAP层。</p>
@@ -505,7 +503,7 @@
 <li>NiN块中使用了1$\times$1的卷积层，相当于通道维度的全连接层，不仅可以减少参数量，而且可以减少过拟合</li>
 <li>Global Average Pooling （GAP）层被用来代替全连接层，减少了存储的参数的数量</li>
 </ul>
-<p><img src="/images/2025/NiN.drawio.svg" alt="NiN.drawio"></p>
+<p><img src="/images/2025/NiN.drawio.svg" alt="NiN.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <h2 id="4-含并⾏连结的⽹络（GoogLeNet）"><a class="header-anchor" href="#4-含并⾏连结的⽹络（GoogLeNet）">¶</a>4 含并⾏连结的⽹络（GoogLeNet）</h2>
 <p>有了NiN之后，我们有了控制网络总参数量的工具。由此，我们可以构建更深、更复杂的网络。</p>
 <p>GoogLeNet的想法很自然：</p>
@@ -520,10 +518,10 @@
 <li>在深度的维度上拼接，实现了并行输出的整合</li>
 </ul>
 <p>首先定义了一个Inception块</p>
-<p><img src="/images/2025/Inception.drawio.svg" alt="Inception.drawio"></p>
+<p><img src="/images/2025/Inception.drawio.svg" alt="Inception.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <p>其中白底的仅仅是用于调整深度，深紫底的才是实际提取特征的层。</p>
 <p>由此可以构建出GoogLeNet</p>
-<p>#<img src="/images/2025/GoogLeNet.drawio.svg" alt="GoogLeNet.drawio"></p>
+<p>#<img src="/images/2025/GoogLeNet.drawio.svg" alt="GoogLeNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <h2 id="5-残差网络（ResNet）"><a class="header-anchor" href="#5-残差网络（ResNet）">¶</a>5 残差网络（ResNet）</h2>
 <ul>
 <li>超深神经网络存在两大挑战：
@@ -569,7 +567,7 @@
 </li>
 </ol>
 <p>ResNet基本结构的图示如下：</p>
-<p><img src="/images/2025/ResNet.drawio.svg" alt="ResNet.drawio"></p>
+<p><img src="/images/2025/ResNet.drawio.svg" alt="ResNet.drawio"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
 <h2 id="6-稠密连接网络（DenseNet）"><a class="header-anchor" href="#6-稠密连接网络（DenseNet）">¶</a>6 稠密连接网络（DenseNet）</h2>
 <p>DenseNet 继承了ResNet的思想，将其进一步发展。</p>
 <p>如果说ResNet是泰勒展开的一阶近似，那DenseNet就是高阶近似。DenseNet讲更多的过往的层传到现在的结果。</p>
@@ -584,6 +582,33 @@
 <p>经过稠密块后通道数巨大，因此使用$1\times1$卷积层减小通道数，使用平均汇聚层减小维数。</p>
 </li>
 </ul>
+
+        </div>
+        <div class="post-body-en i18n-en">
+            <h1>Summary of CNN Development</h1>
+<p>I am currently studying the d2l course by Mu Li, and I will summarize the logic behind several landmark CNNs and the overall development trajectory they follow.</p>
+<h2 id="1-LeNet"><a class="header-anchor" href="#1-LeNet">¶</a>1 LeNet</h2>
+<p>LeNet is one of the earliest convolutional neural networks, introducing components such as convolutional layers and pooling layers. Its architecture is as follows:</p>
+<p><img src="/images/2025/LeNet.drawio.svg" alt="LeNet.drawio"></p>
+<p>At that time, the pooling layer and activation functions used were AveragePool and Sigmoid/Tanh, rather than ReLU and MaxPooling which proved to perform better in later practice.</p>
+<p><img src="/images/2025/AlexNet.drawio.svg" alt="AlexNet.drawio"></p>
+<h2 id="2-AlexNet"><a class="header-anchor" href="#2-AlexNet">¶</a>2 AlexNet</h2>
+<p>Similar in concept to LeNet, AlexNet achieved excellent results in the ImageNet competition, demonstrating that deeper and larger models can deliver very good performance.</p>
+<ol>
+<li>A greater number of model layers</li>
+<li>A large number of convolutional channels and larger convolutional windows</li>
+<li>The activation function was changed from Sigmoid/Tanh to ReLU</li>
+<li>Dropout was applied to fully connected layers to control model complexity</li>
+<li>A large amount of augmented data was used: flipping, cropping, color variation</li>
+</ol>
+<p>Its architecture is as follows:</p>
+<h2 id="3-Network-with-Blocks-VGG"><a class="header-anchor" href="#3-Network-with-Blocks-VGG">¶</a>3 Network with Blocks (VGG)</h2>
+<p>From the implementation of AlexNet, we can draw two conclusions:</p>
+<ol>
+<li>Deeper and larger neural networks can indeed achieve better performance.</li>
+<li>Many combinations of layers (such as convolutional layers + pooling layers) appear repeatedly.</li>
+</ol>
+<p>Therefore, to facilitate the modular construction of larger networks, we can define a series of</p>
 
         </div>
     
@@ -620,7 +645,7 @@
             <h5>
                 <a href="/2025/08/27/2025/20250827%20Bert%E7%AC%94%E8%AE%B0/" class="trm-anima-link">
                     
-                        Bert笔记
+                        <span class="i18n-zh">Bert笔记</span><span class="i18n-en">BERT Notes</span>
                     
                 </a>
             </h5>
@@ -659,7 +684,7 @@
             <h5>
                 <a href="/2025/08/03/2025/20250803%20%E5%8D%97%E4%BA%AC%E7%85%A7%E7%9B%B8%E9%A6%86/" class="trm-anima-link">
                     
-                        影评：《南京照相馆》
+                        <span class="i18n-zh">影评：《南京照相馆》</span><span class="i18n-en">Movie Review: Dead to Rights</span>
                     
                 </a>
             </h5>
@@ -751,7 +776,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

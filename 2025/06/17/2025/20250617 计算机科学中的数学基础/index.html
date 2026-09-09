@@ -258,7 +258,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                计算机科学中的数学基础整理
+                                <span class="i18n-zh">计算机科学中的数学基础整理</span>
+                                <span class="i18n-en">2. 组合数学与图论</span>
                             
                         </h1>
 
@@ -461,10 +462,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h2 id="1-Set-and-ordering"><a class="header-anchor" href="#1-Set-and-ordering">¶</a>1 Set and ordering</h2>
 <h3 id="1-1-Sets-relations-and-functions"><a class="header-anchor" href="#1-1-Sets-relations-and-functions">¶</a>1.1 Sets, relations and functions</h3>
 <ul>
@@ -1025,6 +1023,363 @@ $$</p>
 </ul>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <h3 id="2-3-生成函数"><a class="header-anchor" href="#2-3-生成函数">¶</a>2.3 生成函数</h3>
+<p>卡特兰数</p>
+<p>$C_n=\dfrac1{n+1}\binom{2n}n$</p>
+<h3 id="2-4-递推关系"><a class="header-anchor" href="#2-4-递推关系">¶</a>2.4 递推关系</h3>
+<p>注意首项要带入验算</p>
+<h3 id="2-5-波利亚计数理论"><a class="header-anchor" href="#2-5-波利亚计数理论">¶</a>2.5 波利亚计数理论</h3>
+<ol>
+<li><strong>轨道：</strong> 若$x\in X$，则$O_x={y\in X:\exists g \in G \text{使得} g*x=y}$</li>
+<li><strong>稳定子：</strong> $S_x={g:g*x=x}$</li>
+<li><strong>引理1：</strong> 轨道划分了$X$</li>
+<li><strong>引理2：</strong> 若$x\in X$，则$\left|O_x\right|\left|S_x\right |=\left | G\right|$</li>
+<li><strong>定理1：</strong> $\nu_{X,G}=\dfrac1{\left |G\right |}\sum\limits_{x\in X}\left| S_x\right |$，其中$\nu_{X,G}$表示轨道的数量</li>
+<li><strong>定理2：</strong> $\nu_{X,G}=\dfrac1{\left |G\right |}\sum\limits_{g\in G}\left| Fix\left( g\right )\right |$，对$g\in G$，定义$Fix(g)={x\in X:g*x=x}$</li>
+</ol>
+<p>本质上：两种计数方法</p>
+<ol>
+<li>固定颜色的排列，计算其对应的置换有多少种</li>
+<li>固定算子，计算保持不变的颜色（稳定子）有多少种</li>
+</ol>
+<h3 id="2-6-估值"><a class="header-anchor" href="#2-6-估值">¶</a>2.6 估值</h3>
+<ol>
+<li>
+<p>调和级数估值：$\dfrac12\lfloor\log_2n\rfloor&lt;\sum\limits_{i=1}^n\dfrac1i=H_n&lt;\log_2n+1$，因此$H_n=\Theta(\ln n)$</p>
+</li>
+<li>
+<p>阶乘估值（大小为$n$的集合$X$上的置换共有$n!$个）</p>
+<ol>
+<li>极值点估值：$2^n&lt;\left(\dfrac n2\right)^\dfrac n2&lt;\prod\limits_{i=n/2}^n\dfrac n2=n!&lt;n^n$</li>
+<li>高斯估值（均值不等式）：$n^{\frac n2}=\prod\limits_{i=1}^n\sqrt n\leq\prod\limits_{i=1}^n\sqrt{i(n+1-i)}=\left (\sqrt{\prod\limits_{i=1}^n i(n+1-i)}=\sqrt{n!\cdot n!}=n!\right )\leq\prod\limits_{i=1}^n\dfrac{n+1}2=\left(\dfrac{n+1}2\right)^n$</li>
+<li>进一步优化，利用$1+x≤e^x$及归纳法，可得$e\left(\dfrac ne\right)^n\leq n\leq en\left(\dfrac ne\right)^n$</li>
+</ol>
+<p>实际上，斯特林公式：$\lim\limits_{n\to \infty}\dfrac{\sqrt{2\pi n}(\frac ne)^n}{n!}=1$</p>
+</li>
+<li>
+<p>二项式系数估值：$\left (\dfrac nk\right)^k\leq\binom nk\leq\sum\limits_{i=0}^k\binom ni\leq(\dfrac{en}k)^k$，右侧的证明利用二项式定理并令$x=\dfrac kn$</p>
+</li>
+</ol>
+<h2 id="3-图论"><a class="header-anchor" href="#3-图论">¶</a>3 图论</h2>
+<h3 id="3-1-基本概念与握手引理"><a class="header-anchor" href="#3-1-基本概念与握手引理">¶</a>3.1 基本概念与握手引理</h3>
+<ol>
+<li>
+<p>图的最小度$\delta(G)$，最大度$\Delta G$</p>
+</li>
+<li>
+<p>子图：边集和点集均为原图的子集</p>
+<ol>
+<li>导出子图：子图中的点集在原图中对应的边，均属于子图的边</li>
+<li>生成子图：子图与原图的点集相同</li>
+</ol>
+</li>
+<li>
+<p>特殊图</p>
+<ol>
+<li>
+<p>路径图（$Path P_n$）：$V={0,1,\cdots,n}$</p>
+<p>$E={(i-1,i):i=1,2,\cdots,n}$</p>
+</li>
+<li>
+<p>环（$Circle C_n$）：$V={0,1,\cdots,n}$</p>
+<p>$E={(i,i+1):i=1,2,\cdots,n-1}\cup{(1,n)}$</p>
+</li>
+<li>
+<p>二分图（$Bipartite graph B_{n,m}$）：$V={u_1,\cdots,u_n}\cup{v_1,\cdots,v_m}$</p>
+<p>$E\subseteq{(u_i,v_j):i=1,2,\cdots,n;\ j=1,2,\cdots,m}$</p>
+<p>当$\subseteq$取等号时，为完全二分图（$Complete Bipartite graph K_{n,m}$）</p>
+</li>
+<li>
+<p>完全图：$（Complete graph K_n）$</p>
+</li>
+<li>
+<p>$r$-正则图（$r-regular graph$）：所有顶点的度数均为常数$r$的图</p>
+</li>
+<li>
+<p>简单图（$Simple Graph$）：没有自环、重边的图</p>
+</li>
+<li>
+<p>$\begin{cases}路径：不允许有环，每个顶点和边仅出现一次\游走：允许有环，顶点和边可重复\end{cases}$</p>
+</li>
+<li>
+<p>连通图：任意两点之间存在路径</p>
+</li>
+<li>
+<p>极大连通子图：既是子图又是连通图且无法再扩大的图</p>
+</li>
+<li>
+<p>树：无环的连通图</p>
+</li>
+</ol>
+</li>
+<li>
+<p>握手定理：$\sum\limits_{v\in V}deg_G(v)=2\left | E\right|$，奇点个数为偶数</p>
+</li>
+</ol>
+<h3 id="3-2-图同构与图的度序列"><a class="header-anchor" href="#3-2-图同构与图的度序列">¶</a>3.2 图同构与图的度序列</h3>
+<ol>
+<li>
+<p>有$n$个顶点且两两不同构的图有$x$个，则$\dfrac{2^\binom n2}{n!}\leq x\leq2^\binom n2$，因此$x=2^{\Theta(\frac{n^2}2)}$</p>
+</li>
+<li>
+<p>图的度序列：图$G$的度序列</p>
+<p>同构的图$\Rightarrow$度序列相同</p>
+<p>度序列相同$<br>
+Rightarrow$图同构</p>
+</li>
+<li>
+<p>度序列定理：去掉度数最高的点，将前最高度数个点度数减1，图的可画性不变</p>
+<p>$D=(d_1,d_2,\cdots,d_n)$，$d_1\leq d_2\leq\cdots\leq d_n$</p>
+<p>$d'=\begin{cases}d_i&amp;i&lt;n-d_n\d_i-1&amp;i\geq n-d_n\end{cases}$</p>
+<p>$D$与$D'$的可画性一致</p>
+</li>
+</ol>
+<h3 id="3-3-握手引理的应用：奇偶性论证"><a class="header-anchor" href="#3-3-握手引理的应用：奇偶性论证">¶</a>3.3 握手引理的应用：奇偶性论证</h3>
+<ol>
+<li>斯佩纳引理：对任意$n$维单形体进行分割并用$n + 1$种颜色着色，则任何合法的单形体分割着色方案下，必然存在一个包含全部不同颜色的单元。</li>
+<li>对于3-正则图，包含图上任意边$e$的哈密顿回路的条数必为偶数</li>
+</ol>
+<h3 id="3-5-树的同构"><a class="header-anchor" href="#3-5-树的同构">¶</a>3.5 树的同构</h3>
+<ol>
+<li>
+<p>叶子：度数为1的顶点</p>
+</li>
+<li>
+<p>树的生长定义：对于图$G$的叶子节点$v$，图$G$是树$\Leftrightarrow$图$G-v$是树</p>
+</li>
+<li>
+<p>树的等价刻画：</p>
+<ol>
+<li>图$G$是树。</li>
+<li>路径唯一：对任意两点$u, v \in V$，存在从$u$到$v$的唯一路径。</li>
+<li>最小连通图：$G$是连通图，且去掉任意一条边后便变为非连通图。</li>
+<li>最大无环图：$G$不含环，但添加任意一条边后得到的图$G + e$（其中$e \in \binom{V}{2} \setminus E $）中会出现一个环。</li>
+<li>欧拉方程：$G$是连通图，且$|V| = |E| + 1$。</li>
+</ol>
+</li>
+<li>
+<p>证明顶点数为$n$的不同构树有$n^{n-2}$个</p>
+<ol>
+<li>
+<p>通过度序列直接计算并化简可得</p>
+</li>
+<li>
+<p>树的骨架标本与$V$上的函数图一一对应，每棵树对应$n^2$个骨架标本，因此数量为$\dfrac {n^n}{n^2}=n^{n-2}$</p>
+</li>
+<li>
+<p>Prüfer编码（依次记录当前编号最小的叶子的父节点）与树一一对应，数量为$n^{n-2}$</p>
+</li>
+<li>
+<p>行列式：图$G$的拉普拉斯矩阵：$a_{ij}=\begin{cases}-1&amp;{i,j}\in E(G)\deg_G(i)&amp;i=j\0&amp;otherwise\end{cases}$</p>
+<p>$T(G)=T(G-e)+T(G:e)=\det Q_{11}'+\det Q_{11}''=\det Q_{11}$</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="3-4-生成树的数量"><a class="header-anchor" href="#3-4-生成树的数量">¶</a>3.4 生成树的数量</h3>
+<ol>
+<li>
+<p>树同构</p>
+<ol>
+<li>有根树同构$\cong'$，编码（非根叶节点用01表示，每个节点的编码为0+所有子树编码+1）后按字典序排序即可</li>
+<li>无根树同构$\cong$
+<ol>
+<li>相关概念
+<ol>
+<li>两点距离：最短路径的长度$dis_G(u,v)$</li>
+<li>一点偏心率：该点与其他点的最大距离$ex_G(v)$</li>
+<li>中心：偏心率最小的顶点集合$C(G)$，对于树而言，该集合大小为1或2</li>
+</ol>
+</li>
+<li>解决方法
+<ol>
+<li>找到中心</li>
+<li>若中心集合大小为1，将其作为根，转化为有根树</li>
+<li>若中心集合大小为2，去掉连接这两个中心的边，转化为两棵有根树</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="4-概率论：概率方法"><a class="header-anchor" href="#4-概率论：概率方法">¶</a>4 概率论：概率方法</h2>
+<h3 id="4-1-概率：简要回顾"><a class="header-anchor" href="#4-1-概率：简要回顾">¶</a>4.1 概率：简要回顾</h3>
+<ol>
+<li>
+<p>$P(E|F)=\dfrac{P(E\cap F)}{P(F)}$，若事件$E$与$F$独立，则$P(E|F)=P(E)$</p>
+</li>
+<li>
+<p>全概率公式：$P(B)=\sum P(B|E_i)P(E_i)$</p>
+</li>
+<li>
+<p>条件独立：$P(A\cap B|C)=P(A|C)\cdot P(B|C)$</p>
+</li>
+<li>
+<p>贝叶斯定理：$P(B|A)=\dfrac{P(AB)}{P(A)}=\dfrac{P(A|B)P(B)}{P(A)}$</p>
+</li>
+<li>
+<p>$E(X)+E(Y)=E(X+Y)$</p>
+<p>$D(X)$（即$Var(X)$）$=E((X-E[X])^2)=E[X^2]-E[X]^2$</p>
+<table>
+<thead>
+<tr>
+<th>分布</th>
+<th>分布律或概率密度</th>
+<th>期望</th>
+<th>方差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-1分布$B(1,p)$</td>
+<td>$P(X=k)=p^k(1-p)^{1-k},\quad k=0,1,\quad 0&lt;p&lt;1$</td>
+<td>$p$</td>
+<td>$p(1−p)$</td>
+</tr>
+<tr>
+<td>二项分布$B(n,p)$</td>
+<td>$P(X=k)=C_{n}^{k}p^{k}(1-p)^{n-k},\quad k=0,1,2,...,n,\quad 0&lt;p&lt;1 $</td>
+<td>$np$</td>
+<td>$np(1−p)$</td>
+</tr>
+<tr>
+<td>泊松分布$P(\lambda)$</td>
+<td>$P(X=k)=\frac{\lambda ^{k}}{k!}e^{-λ},\quad \quad k=0,1,2,...,\quad λ&gt;0$</td>
+<td>$\lambda$</td>
+<td>$\lambda$</td>
+</tr>
+<tr>
+<td>几何分布$G(p)$</td>
+<td>$P(X=k)=p(1-p)^{k-1}, k=1, 2, \cdots, 0&lt;p&lt;1$</td>
+<td>$\frac{1}{p}$</td>
+<td>$\frac{1-p}{p^{2}}$</td>
+</tr>
+<tr>
+<td>指数分布$E(\lambda)$</td>
+<td>$f(x)=\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他</td>
+<td>$\frac{1}{\lambda}$</td>
+<td>$\frac{1}{\lambda^{2}}$</td>
+</tr>
+<tr>
+<td>正态分布$N(\mu, \sigma^{2})$</td>
+<td>$f(x, y)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$</td>
+<td>$\mu$</td>
+<td>$\sigma^{2}$</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>概率的估算</p>
+<ol>
+<li>马尔可夫不等式：若$X$是只取非负值的随机变量，则$P(X\geq a)\leq\dfrac{E[X]}a$</li>
+<li>切比雪夫不等式：$P(\left|X-E[X]\right|\geq a)\leq\dfrac{Var[X]}{a^2}$</li>
+<li>变形：$P(X\geq a)=P_{min}(e^{tX}\geq e^{ta})\leq \min\limits_{t&gt;0}\dfrac{E(e^{tX})}{e^{t\cdot a}}$</li>
+<li>并集不等式</li>
+</ol>
+</li>
+</ol>
+<h3 id="4-2-概率方法"><a class="header-anchor" href="#4-2-概率方法">¶</a>4.2 概率方法</h3>
+<ol>
+<li>
+<p>拉姆齐数</p>
+<p>若$\binom nk2^{-\binom nk+1}&lt;1$，则可以将$K_n$的边用两种颜色着色，使得不存在单色的$K_k$子图</p>
+</li>
+<li>
+<p>任意由少于$2^{k-1}$个大小为$k$的集合构成的系统都存在一种2-着色方式</p>
+</li>
+<li>
+<p>定理：设$G$是一个顶点数为偶数$2n$、边数为$m &gt; 0$的图。则顶点集$V = V(G)$可以被划分为两个不相交的$n$元子集$A$和$B$，使得连接$A$和$B$的边数量超过$\frac{m}{2}$。</p>
+<p>寻找该解时，采样测试的方法效率较高。</p>
+</li>
+<li>
+<p>定理[洛瓦兹局部引理]：</p>
+<p>$$<br>
+E_1, E_2, \cdots, En<br>
+$$</p>
+<p>是一组事件，且满足以下条件：</p>
+<ol>
+<li>
+<p>对所有$i$，有</p>
+<p>$$<br>
+i$$<br>
+$$</p>
+<p>$Pr(E_i) \le p$；</p>
+</li>
+<li>
+<p>由$E_1, E_2, \cdots, E_n$构成的依赖图的度数上界为$d$；</p>
+</li>
+<li>
+<p>$$<br>
+4dp \le 1$$。<br>
+$$</p>
+</li>
+</ol>
+<p>则有</p>
+<p>$$<br>
+Pr\left(\bigcap_{i=1}^n \overline{Ei}\right) &gt; 0<br>
+$$</p>
+<p>。</p>
+</li>
+</ol>
+<h2 id="5-随机图"><a class="header-anchor" href="#5-随机图">¶</a>5 随机图</h2>
+<ol>
+<li>
+<p>$G(n,p)$模型：$\left|V\right|=n$，$P({u,v}\in E)=p$</p>
+<p>存在$k$-独立集的最大概率为$P(\alpha(G)\geq k)\leq\binom nk(1-p)^\binom nk$</p>
+<p>存在$k$-团集的最大概率为$P(\omega(G)\geq k)\leq\binom nkp^\binom nk$</p>
+</li>
+<li>
+<p>对于任意具有递增性质的事件，当$n\to\infty$时，该事件发生的概率要么趋近于0，要么趋近于1。</p>
+<p>具体趋近情况可能受$p$的影响，这个临界值称为阈值。</p>
+</li>
+<li>
+<p>可以利用马尔可夫不等式或切比雪夫不等式进行推导。</p>
+</li>
+</ol>
+<h2 id="6-数据科学入门"><a class="header-anchor" href="#6-数据科学入门">¶</a>6 数据科学入门</h2>
+<h3 id="6-1-高维空间"><a class="header-anchor" href="#6-1-高维空间">¶</a>6.1 高维空间</h3>
+<ol>
+<li>任意两个高维向量近似正交。</li>
+<li>单位立方体的顶点位于单位球外部。</li>
+<li>几乎所有点都分布在赤道上（无论以哪个点为北极点）。</li>
+<li>随着维度增加，体积趋近于0。</li>
+<li>在边长为2的立方体内随机撒点，几乎所有点都位于其内切球外部。</li>
+<li>高维高斯分布：概率密度最大的区域不在零点，而是在半径为$\sqrt d$的环上。</li>
+<li>寻找最近的两个向量→矩阵降维→用球形高斯分布生成$k$个向量，再将原向量投影到这些向量上，此时向量的相对距离关系大概率保持不变。</li>
+</ol>
+<h3 id="6-2-最佳拟合子空间与奇异值分解"><a class="header-anchor" href="#6-2-最佳拟合子空间与奇异值分解">¶</a>6.2 最佳拟合子空间与奇异值分解</h3>
+<h4 id="6-2-1-SVD与特征值压缩"><a class="header-anchor" href="#6-2-1-SVD与特征值压缩">¶</a>6.2.1 SVD与特征值压缩</h4>
+<p>方阵的EVD：通过特征值和特征矩阵，将原矩阵表示为$\mathbf{S}=U\boldsymbol\Lambda U^{-1}$；</p>
+<p>普通矩阵的SVD：$A=\underbrace{U}<em>{m\times m}\underbrace{\Sigma}</em>{m\times n} \underbrace{V^T}_{n\times n}$</p>
+<p>$U$的列是$AA^T$的特征向量，$V$的列是$A^TA$的特征向量，$\Sigma$的对角元素为特征值，其余位置为0。</p>
+<p>为了压缩矩阵，可以将最小的特征值置为零。</p>
+<h4 id="6-2-2-投影压缩"><a class="header-anchor" href="#6-2-2-投影压缩">¶</a>6.2.2 投影压缩</h4>
+<p>该方法与线性回归类似，目标是使原数据与新数据的协方差尽可能小，实际实现时可借助SVD。</p>
+<ol>
+<li>数据中心化：将每个特征减去其均值，使数据均值为零。</li>
+<li>计算协方差矩阵。</li>
+<li>进行特征值分解。</li>
+<li>选择主成分。</li>
+<li>对数据进行投影。</li>
+</ol>
+<h3 id="6-3-马尔可夫链蒙特卡洛方法简介"><a class="header-anchor" href="#6-3-马尔可夫链蒙特卡洛方法简介">¶</a>6.3 马尔可夫链蒙特卡洛方法简介</h3>
+<ul>
+<li>
+<p>持久状态（递归）：若随机过程曾到达该状态，则必然以概率1再次返回该状态。</p>
+</li>
+<li>
+<p>马尔可夫链蒙特卡洛：$E(f)=\sum\limits_xf(x)\cdot p(x)$</p>
+</li>
+<li>
+<p>梅特罗波利斯-黑斯廷斯算法：构造具有指定平稳分布的马尔可夫链</p>
+<p>$\begin{cases}p_{ij}=\dfrac 1r\min\left (1,\dfrac {p_j}{p_i}\right )\p_{ii}=1-\sum\limits_{i\ne j}p_{ij}\end{cases}$</p>
+</li>
+</ul>
+
+        </div>
     
 </article>
 
@@ -1059,7 +1414,7 @@ $$</p>
             <h5>
                 <a href="/2025/06/20/2025/20250620%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" class="trm-anima-link">
                     
-                        计算机系统结构整理
+                        <span class="i18n-zh">计算机系统结构整理</span><span class="i18n-en">计算机体系结构：异常处理、指令级并行与存储层次</span>
                     
                 </a>
             </h5>
@@ -1068,7 +1423,7 @@ $$</p>
                 <li>25/06/20</li>
                 <li>10:17</li>
                 
-                    <li>4.7k</li>
+                    <li>4.6k</li>
                 
                 
                     <li>24</li>
@@ -1098,7 +1453,7 @@ $$</p>
             <h5>
                 <a href="/2025/06/15/2025/20250615%20%E5%A7%8A%E5%A6%B9%E4%B9%8B%E6%AD%8C/" class="trm-anima-link">
                     
-                        影评：《姊妹之歌》
+                        <span class="i18n-zh">影评：《姊妹之歌》</span><span class="i18n-en">Film Review: A Sisters&#39; Tale</span>
                     
                 </a>
             </h5>
@@ -1190,7 +1545,7 @@ $$</p>
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

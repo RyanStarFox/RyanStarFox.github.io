@@ -258,7 +258,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                数理逻辑整理
+                                <span class="i18n-zh">数理逻辑整理</span>
+                                <span class="i18n-en">Mathematical Logic Summary</span>
                             
                         </h1>
 
@@ -461,10 +462,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>数理逻辑</h1>
 <h2 id="第一章-命题逻辑的基本概念"><a class="header-anchor" href="#第一章-命题逻辑的基本概念">¶</a>第一章 命题逻辑的基本概念</h2>
 <ol>
@@ -747,6 +745,283 @@
 </ol>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <h1>Mathematical Logic</h1>
+<h2 id="Chapter-1-Basic-Concepts-of-Propositional-Logic"><a class="header-anchor" href="#Chapter-1-Basic-Concepts-of-Propositional-Logic">¶</a>Chapter 1: Basic Concepts of Propositional Logic</h2>
+<ol>
+<li>A proposition is a declarative sentence; it cannot be a paradox and has a fixed truth value (even if this value is unknown).</li>
+<li>$P\to Q= \neg P\vee Q$</li>
+<li>$P \leftrightarrow Q=(P\to Q)\wedge(Q\to P)$</li>
+<li>Well-formed formulas:
+<ol>
+<li>Simple propositions are well-formed formulas.</li>
+<li>If $A$ is a well-formed formula, then $\neg A$ is also a well-formed formula.</li>
+<li>If $A$ and $B$ are well-formed formulas, then $(A\vee B)$, $(A\wedge B)$, $(A\to B)$, and $(A\leftrightarrow B)$ are also well-formed formulas.</li>
+<li>A string of symbols is a well-formed formula if and only if it is formed using (1), (2), and (3) a finite number of times.</li>
+</ol>
+</li>
+<li>A tautology is equivalent to a universally true formula; a contradiction is equivalent to a universally false formula.</li>
+</ol>
+<h2 id="Chapter-2-Equivalences-and-Inference-Operations-in-Propositional-Logic"><a class="header-anchor" href="#Chapter-2-Equivalences-and-Inference-Operations-in-Propositional-Logic">¶</a>Chapter 2: Equivalences and Inference Operations in Propositional Logic</h2>
+<ol>
+<li>
+<p>If the truth tables of $A$ and $B$ are identical, then $A=B$ or $A\Leftrightarrow B$.</p>
+</li>
+<li>
+<p>Operational rules:</p>
+<ol>
+<li>
+<p>Double negation law:</p>
+<p>$\neg\neg P=P$</p>
+</li>
+<li>
+<p>Associativity law:</p>
+<p>$(P\wedge Q)\wedge R=P\wedge(Q\wedge R)$</p>
+<p>$(P\vee Q)\vee R=P\vee(Q\vee R)$</p>
+<p>$(P\leftrightarrow Q)\leftrightarrow R=P\leftrightarrow(Q\leftrightarrow R)$</p>
+<p>$(P\to Q)\to R\neq P\to(Q\to R)$</p>
+</li>
+<li>
+<p>Commutativity law:</p>
+<p>$P\wedge Q=Q\wedge P$</p>
+<p>$P\vee Q=Q\vee P$</p>
+<p>$P\leftrightarrow Q=Q\leftrightarrow P$</p>
+<p>$P\to Q\neq Q\to P$</p>
+</li>
+<li>
+<p>Distributivity law:</p>
+<p>$P\wedge(Q\vee R)=(P\wedge Q)\vee(P\wedge R)$</p>
+<p>$P\vee(Q\wedge R)=(P\vee Q)\wedge(P\vee R)$</p>
+<p>$P\leftrightarrow (Q\leftrightarrow R)\neq (P\leftrightarrow Q)\leftrightarrow (P\leftrightarrow Q)$</p>
+<p>$P\to(Q\to R)=(P\to Q)\to(P\to R)$</p>
+</li>
+<li>
+<p>Identity law:</p>
+<p>$P\wedge P=P$</p>
+<p>$P\vee P=P$</p>
+<p>$P\leftrightarrow P=T$</p>
+<p>$P\to P=T$</p>
+</li>
+<li>
+<p>Absorption law:</p>
+<p>$P\vee(P\wedge Q)=P$</p>
+<p>$P\wedge(P\vee Q)=P$</p>
+</li>
+<li>
+<p>De Morgan's laws:</p>
+<p>$\neg (P\vee Q)=\neg P\wedge\neg Q$</p>
+<p>$\neg (P\wedge Q)=\neg P\vee\neg Q$</p>
+<p>$\neg(P\leftrightarrow Q)=\neg P\leftrightarrow Q=P\leftrightarrow\neg Q=(\neg P\wedge Q)\vee(P\wedge\neg Q)$</p>
+<p>$\neg(P\to Q)=P\wedge\neg Q$</p>
+</li>
+<li>
+<p>Identity law:</p>
+<p>$P\vee F=P$</p>
+<p>$P\wedge T=P$</p>
+<p>$T\leftrightarrow P=P$</p>
+<p>$T\to P=P$</p>
+<p>$P\to F=\neg P$</p>
+<p>$P\leftrightarrow F=\neg P$</p>
+</li>
+<li>
+<p>Zero law:</p>
+<p>$P\wedge F=F$</p>
+<p>$P\vee T=T$</p>
+<p>$P\to T=T$</p>
+<p>$F\to P=T$</p>
+</li>
+<li>
+<p>Complementarity law:</p>
+<p>$P\wedge\neg P=F$</p>
+<p>$P\vee\neg P=T$</p>
+<p>$P\to\neg P=\neg P$</p>
+<p>$\neg P\to P=P$</p>
+<p>$P\leftrightarrow\neg P=F$</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Common equivalences:</p>
+<ol>
+<li>$P\to Q= \neg P\vee Q$</li>
+<li>$P\to Q=\neg Q\to\neg P$</li>
+<li>$P\to(Q\to R)=(P\wedge Q)\to R$</li>
+<li>$P\leftrightarrow Q=(P\wedge Q)\vee(\neg P\wedge\neg Q)$</li>
+<li>$P\leftrightarrow Q=(P\vee\neg Q)\wedge(\neg P\vee Q)$</li>
+<li>$P\leftrightarrow Q=(P\to Q)\vee (Q\to P)$</li>
+<li>$P\to(Q\to R)=Q\to(P\to R)$</li>
+<li>$(P\to R)\wedge(Q\to R)=(P\vee Q)\to R$</li>
+</ol>
+</li>
+<li>
+<p>Tautologies, contradictions, and satisfiable formulas.</p>
+</li>
+<li>
+<p>$\bar\vee$ represents XOR, $\uparrow$ represents NAND, and $\downarrow$ represents NOR.</p>
+</li>
+<li>
+<p>Complete sets of connectives: ${\neg,\wedge,\vee}$, ${\neg,\vee}$, ${\neg,\wedge}$, ${\neg,\to}$, ${\uparrow}$, ${\downarrow}$.</p>
+</li>
+<li>
+<p>Dual formula: Replace $\vee$, $\wedge$, $T$, and $F$ in $A$ with $\wedge$, $\vee$, $F$, and $T$ respectively; denote it as $A^*$.</p>
+</li>
+<li>
+<p>If $A=A(P_1,P_2,\cdots,P_n)$, then let $A^-=A(\neg P_1,\neg P_2,\cdots,\neg P_n)$.</p>
+</li>
+<li>
+<p>$\neg (A^<em>)=(\neg A)^</em>,\neg(A^-)=(\neg A)^-$</p>
+<p>$(A^<em>)^</em>=A,(A^-)^-=A$</p>
+<p>$\neg A = A^{*-}$</p>
+<p>$A=B \Leftrightarrow A^<em>=B^</em>$</p>
+<p>$A\to B$ and $B^<em>\to A^</em>$ have the same truth value.</p>
+<p>$A$ and $A^-$ have the same truth value; $\neg A$ and $A^*$ have the same truth value.</p>
+</li>
+<li>
+<p>Disjunctive normal form has the form $A_1\vee A_2\vee\cdots\vee A_n$.</p>
+<p>Conjunctive normal form has the form $A_1\wedge A_2\wedge\cdots\wedge A_n$.</p>
+<p>Every proposition has an equivalent conjunctive normal form and disjunctive normal form.</p>
+<p>Steps to obtain normal forms:</p>
+</li>
+<li>
+<p>Eliminate $\to$ and $\leftrightarrow$.</p>
+</li>
+<li>
+<p>Use De Morgan's laws and the double negation law to move negations onto propositional variables.</p>
+</li>
+<li>
+<p>Apply the distributive law repeatedly.</p>
+</li>
+<li>
+<p>A disjunction consisting only of minterms is the principal disjunctive normal form; minterms are denoted as $m_i$.</p>
+<p>A conjunction consisting only of maxterms is the principal conjunctive normal form; maxterms are denoted as $M_i$.</p>
+</li>
+<li>
+<p>An inference form where the conclusion is true whenever the premises are true is a valid inference form.</p>
+</li>
+<li>
+<p>$(A\Rightarrow B)\Leftrightarrow(A\to B)$</p>
+<p>$(A\Rightarrow B)\Leftrightarrow (A\wedge \neg B)$</p>
+</li>
+</ol>
+<h2 id="Chapter-3-Axiomatization-of-Propositional-Logic"><a class="header-anchor" href="#Chapter-3-Axiomatization-of-Propositional-Logic">¶</a>Chapter 3: Axiomatization of Propositional Logic</h2>
+<ol>
+<li>
+<p>Axiomatic system:</p>
+<ul>
+<li>Initial symbols: The set of all symbols allowed in the axiomatic system.</li>
+<li>Formation rules: Define valid sequences.</li>
+<li>Axioms: The most basic tautologies.</li>
+<li>Transformation rules.</li>
+<li>Theorems: All tautologies and their proofs.</li>
+</ul>
+</li>
+<li>
+<p>Axiomatic system for propositional logic:</p>
+<ul>
+<li>Initial symbols:
+<ul>
+<li>$A,B,C\cdots$ represent propositions.</li>
+<li>$\wedge$, $\vee$, $<br>
+eg$ represent connectives.</li>
+<li>Parentheses $()$.</li>
+<li>$\vdash$ placed before a formula indicates it is a tautology.</li>
+</ul>
+</li>
+<li>Formation rules:
+<ul>
+<li>Symbol $\pi$ is a well-formed formula, where $\pi$ takes values $A,B,\cdots$.</li>
+<li>If $A$ and $B$ are well-formed formulas, then $(A\vee B)$ is a well-formed formula.</li>
+<li>If $A$ is a well-formed formula, then $\neg A$ is a well-formed formula.</li>
+<li>Only symbol sequences that conform to (1), (2), and (3) are well-formed formulas.</li>
+</ul>
+</li>
+<li>Definitions:
+<ul>
+<li>$(A\to B)$ is defined as $(\neg A\vee B)$.</li>
+<li>$(A\wedge B)$ is defined as $\neg(\neg A\vee\neg B)$.</li>
+<li>$(A\leftrightarrow B)$ is defined as $((A\to B)\wedge(B\to A))$.</li>
+</ul>
+</li>
+<li>Axioms:
+<ul>
+<li>$\vdash((P\vee P)\to P)$</li>
+<li>$\vdash(P\to(P\vee Q))$</li>
+<li>$\vdash ((P\vee Q)\to(Q\vee P))$</li>
+<li>$\vdash((Q\to R)\to((P\vee Q)\to(P\vee R)))$</li>
+</ul>
+</li>
+<li>Inference rules:
+<ul>
+<li>Substitution principle.</li>
+<li>Modus ponens: $\vdash A,\vdash A\to B\Rightarrow\vdash B$.</li>
+<li>Substitution rule.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If all valid theorems can be derived from the system, it is called a complete system.</p>
+</li>
+<li>
+<p>Inference methods:</p>
+<p>$\gamma\to\alpha\wedge \beta \Rightarrow (\gamma\to\alpha) \wedge(\gamma\to\beta)$</p>
+<p>$\gamma\to\alpha\vee \beta\Rightarrow\gamma\wedge \neg\alpha\to\beta$</p>
+<p>$\alpha\wedge\beta\to\gamma\Rightarrow\alpha\to(\beta\to\gamma)$</p>
+<p>$\alpha\vee\beta\to\gamma\Rightarrow(\alpha\to\gamma)\wedge(\beta\to\gamma)$</p>
+</li>
+</ol>
+<h2 id="Chapter-4-Basic-Concepts-of-Predicate-Logic"><a class="header-anchor" href="#Chapter-4-Basic-Concepts-of-Predicate-Logic">¶</a>Chapter 4: Basic Concepts of Predicate Logic</h2>
+<ol>
+<li>Variables bound by quantifiers are called bound variables; variables not bound by quantifiers are called free variables.</li>
+<li>Strictly speaking, $x$ must belong to a finite domain for $\forall x$ and $\exists x$ to be considered well-formed formulas.</li>
+</ol>
+<h2 id="Chapter-5-Equivalences-and-Inference-Calculations-in-Predicate-Logic"><a class="header-anchor" href="#Chapter-5-Equivalences-and-Inference-Calculations-in-Predicate-Logic">¶</a>Chapter 5: Equivalences and Inference Calculations in Predicate Logic</h2>
+<ol>
+<li>
+<p>Equivalence formulas:</p>
+<p>$\neg (\forall x)P(x)=(\exists x)\neg P(x)$</p>
+<p>$\neg (\exists x)P(x)=(\forall x)\neg P(x)$</p>
+<p>$(\forall x)(P(x)\to q)=(\exists x)P(x)\to q$</p>
+<p>$(\exists x)(P(x)\to q)=(\forall x)P(x)\to q$</p>
+<p>$(\forall x)(p\to Q(x))=p\to(\forall x)Q(x)$</p>
+<p>$(\exists x)(p\to Q(x))=p\to(\exists x)Q(x)$</p>
+<p>$(\forall x)(P(x)\wedge Q(x))=(\forall x)P(x)\wedge (\forall x)Q(x)$</p>
+<p>$(\exists x)(P(x)\vee Q(x))=(\exists x)P(x)\vee(\exists x)Q(x)$</p>
+<p>$(\forall x)(\forall y)(P(x)\vee Q(y))=(\forall x)P(x)\vee(\forall x)Q(x)$</p>
+<p>$(\exists x)(\exists y)(P(x)\wedge Q(y))=(\exists x)P(x)\wedge(\exists x)Q(x)$</p>
+</li>
+<li>
+<p>Normal forms:</p>
+<ol>
+<li>
+<p>Prenex normal form:</p>
+<p>$A=(Q_1x_1)\cdots(Q_nx_n)M(x_1,\cdots,x_n)$</p>
+<p>$Q_i$ are quantifiers; $M$ is called the matrix (or base formula) of formula $A$, and there are no quantifiers in $M$.</p>
+</li>
+<li>
+<p>Skolem normal form:</p>
+<p>$(\exists x_1)\cdots(\exists x_i)(\forall x_{i+1})\cdots(\forall x_n)M(x_1,\cdots,x_n)$</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Basic inference formulas:</p>
+<ol>
+<li>$(\forall x) P(x)\vee(\forall x)Q(x)\Rightarrow (\forall x)(P(x)\vee Q(x))$</li>
+<li>$(\exists x)(P(x)\wedge Q(x))\Rightarrow (\exists x)P(x)\wedge (\exists x)Q(x)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\Rightarrow(\forall x)P(x)\to(\forall x)Q(x)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\Rightarrow(\exists x)P(x)\to(\exists x)Q(x)$</li>
+<li>$(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow(\forall x)P(x)\leftrightarrow(\forall x)Q(x)$</li>
+<li>$(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow(\exists x)P(x)\leftrightarrow(\exists x)Q(x)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\wedge(\forall x)(Q(x)\to R(x))\Rightarrow(\forall x)(P(x)\to R(x))$</li>
+<li>$(\forall x)(P(x)\to Q(x))\wedge P(a)\Rightarrow Q(a)$</li>
+<li>$(\forall x)(\forall y)P(x,y)\Rightarrow (\exists x)(\forall y)P(x,y)$</li>
+<li>$(\exists x)(\forall y)P(x,y)\Rightarrow(\forall y)(\exists x)P(x,y)$</li>
+</ol>
+</li>
+</ol>
+
+        </div>
     
 </article>
 
@@ -781,7 +1056,7 @@
             <h5>
                 <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-anima-link">
                     
-                        骑车-2
+                        <span class="i18n-zh">骑车-2</span><span class="i18n-en">Cycling - 2</span>
                     
                 </a>
             </h5>
@@ -820,7 +1095,7 @@
             <h5>
                 <a href="/2024/12/01/2024/20241201%20%E5%9B%BE%E8%AE%BA/" class="trm-anima-link">
                     
-                        图论整理
+                        <span class="i18n-zh">图论整理</span><span class="i18n-en">Graph Theory Summary</span>
                     
                 </a>
             </h5>
@@ -912,7 +1187,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

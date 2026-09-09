@@ -257,7 +257,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                量子物理整理
+                                <span class="i18n-zh">量子物理整理</span>
+                                <span class="i18n-en">Quantum Mechanics Notes</span>
                             
                         </h1>
 
@@ -460,10 +461,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>第一章 量子物理基础</h1>
 <h2 id="1-1-光量子、玻尔原子"><a class="header-anchor" href="#1-1-光量子、玻尔原子">¶</a>1.1 光量子、玻尔原子</h2>
 <h3 id="1-1-1-黑体辐射与普朗克的量子假设"><a class="header-anchor" href="#1-1-1-黑体辐射与普朗克的量子假设">¶</a>1.1.1 黑体辐射与普朗克的量子假设</h3>
@@ -635,9 +633,9 @@
 <p>几率密度：$\rho=\Psi^*\Psi$</p>
 <p>几率流密度矢量：==$\vec J=\dfrac{i\hbar}{2m}[\Psi\nabla\Psi^<em>-\Psi^</em>\nabla\Psi]$==</p>
 <p>几率守恒方程：</p>
-<pre><code>微分形式：$\dfrac \partial{\partial t}\rho+\nabla\cdot\vec J=0$
+<pre><code>微分形式：$\dfrac \partial&#123;\partial t&#125;\rho+\nabla\cdot\vec J=0$
 
-积分形式：$\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\vec S$
+积分形式：$\frac&#123;d&#125;&#123;dt&#125;\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\vec S$
 </code></pre>
 <p>左边：闭区域$\tau$内找到粒子的总几率（或粒子数）在单位时间内的增量</p>
 <p>右边：单位时间内通过$\tau$的封闭表面 $S$流入（面积分前面的负号）$\tau$内的几率（或粒子数）</p>
@@ -918,6 +916,219 @@ $c_{n}$ 代表了两个态的“相似程度”→ 测量坍缩到本征态 $\ps
 <p>$[\hat H,\hat p]=0$</p>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <h3 id="1-3-2-Uncertainty-Relations"><a class="header-anchor" href="#1-3-2-Uncertainty-Relations">¶</a>1.3.2 Uncertainty Relations</h3>
+<p>$\Delta x\cdot\Delta p_x\geq\dfrac{\hbar}2$</p>
+<p>$\Delta y\cdot\Delta p_y\geq\dfrac{\hbar}2$</p>
+<p>$\Delta z\cdot\Delta p_z\geq\dfrac{\hbar}2$</p>
+<p>$\Delta E\cdot \Delta t\geq \dfrac \hbar 2$</p>
+<h3 id="1-3-3-Probability-Current-Density-Vector"><a class="header-anchor" href="#1-3-3-Probability-Current-Density-Vector">¶</a>1.3.3 Probability Current Density Vector</h3>
+<p>==$i\hbar(\Psi^<em>\Psi)=\dfrac{\hbar^2}{2m}\nabla\cdot[\Psi\nabla\Psi^</em>-\Psi^*\nabla\Psi]$==</p>
+<p>Probability density: $\rho=\Psi^*\Psi$</p>
+<p>Probability current density vector: ==$\vec J=\dfrac{i\hbar}{2m}[\Psi\nabla\Psi^<em>-\Psi^</em>\nabla\Psi]$==</p>
+<p>Probability conservation equation:</p>
+<pre><code>Differential form: $\dfrac \partial{\partial t}\rho+\nabla\cdot\vec J=0$
+
+Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\vec S$
+</code></pre>
+<p>Left side: The increment of the total probability (or number of particles) of finding the particle within the closed region $\tau$ per unit time.</p>
+<p>Right side: The probability (or number of particles) flowing into $\tau$ through the closed surface $S$ per unit time (the negative sign before the surface integral indicates inflow).</p>
+<h3 id="1-3-3-Superposition-State"><a class="header-anchor" href="#1-3-3-Superposition-State">¶</a>1.3.3 Superposition State</h3>
+<ol>
+<li>
+<p>If $\Psi_1,\Psi_2,\cdots,\Psi_n$ are possible states of a particle, the particle can also exist in their linear superposition state $\Psi=\sum\limits_{i=1}^nc_i\Psi_i$.</p>
+</li>
+<li>
+<p>When the particle is in state $\Psi$, it partially occupies each state. The probability of being in state $\Psi_k$ is $\left|c_k\right|^2$, and $\sum\limits_{k=1}^n\left|c_k\right|^2=1$.</p>
+<p>Conditions:</p>
+<ol>
+<li>$\Psi_1,\cdots,\Psi_n$ are orthonormal.</li>
+<li>$\Psi$ satisfies the normalization condition $\int\Psi^*\Psi_ldx=\delta_{kl}=\begin{cases}1&amp;k=l\0&amp;k\neq l\end{cases}$.</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-4-4-Particle-in-an-Infinite-Potential-Well"><a class="header-anchor" href="#1-4-4-Particle-in-an-Infinite-Potential-Well">¶</a>1.4.4 Particle in an Infinite Potential Well</h3>
+<p>==$\Phi(x)=\begin{cases}\sqrt{\dfrac{2}{a}}\sin\dfrac{n\pi}ax &amp;0&lt;x&lt;a\text{ (inside the well)}\-0&amp;x\leq0,x\geq a\text{ (outside the well)}\end{cases}$==</p>
+<p>Properties:</p>
+<ol>
+<li>Orthogonality: $\int\limits_{-\infty}^{+\infty}\Phi^*<em>m(x)\Phi_n(x)dx=\delta</em>{mn}=\begin{cases}1&amp;m=n\0&amp;m\ne n\end{cases}$.</li>
+<li>The coefficients of each eigenfunction are determined from the initial state.</li>
+<li>The ground state corresponds to $E_1$, and the $n$-th excited state corresponds to $E_{n+1}$. ==$E_n=\dfrac{n^2\pi^2\hbar^2}{2ma^2}$==.</li>
+<li>Boundary conditions: The function and its first derivative are continuous.</li>
+</ol>
+<h2 id="1-5-Physical-Quantities-and-Operators"><a class="header-anchor" href="#1-5-Physical-Quantities-and-Operators">¶</a>1.5 Physical Quantities and Operators</h2>
+<ol>
+<li>
+<p>Position operator: $\hat x\rightleftharpoons x$.</p>
+</li>
+<li>
+<p>Momentum operator: $\hat p \rightleftharpoons -i\hbar\nabla$.</p>
+</li>
+<li>
+<p>Total energy operator: $\hat H\rightleftharpoons-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r)$.</p>
+</li>
+<li>
+<p>Let the operator be $\hat A$; the ==average value of the corresponding physical quantity is $\int_{-\infty}^\infty \Psi^*\hat A\Psi dx$==.</p>
+<table>
+<thead>
+<tr>
+<th>Physical Quantity</th>
+<th>Representation in coordinate space ($x$-representation)</th>
+<th>Representation in momentum space ($p$-representation)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Position operator $\hat{x}$</td>
+<td>$\hat{x} = x$</td>
+<td>$\hat{x} = i\hbar \frac{d}{dp}$</td>
+<td>Multiplication and derivatives are Fourier pairs</td>
+</tr>
+<tr>
+<td>Momentum operator $\hat{p}$</td>
+<td>==$\hat{p} = -i\hbar \frac{d}{dx}$==</td>
+<td>$\hat{p} = p$</td>
+<td></td>
+</tr>
+<tr>
+<td>Kinetic energy operator $\hat{T}$</td>
+<td>==$\hat{T} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}$==</td>
+<td>$\hat{T} = \frac{p^2}{2m}$</td>
+<td></td>
+</tr>
+<tr>
+<td>Potential energy operator $\hat{U}(x)$</td>
+<td>==$\hat{U}(x) = U(x)$==</td>
+<td>$\hat{U}(x) = U(i\hbar \frac{d}{dp})$</td>
+<td>Non-translation-invariant potentials become differential operators</td>
+</tr>
+<tr>
+<td>Hamiltonian $\hat{H}$</td>
+<td>==$\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + U(x)$==</td>
+<td>$\hat{H} = \frac{p^2}{2m} + U(i\hbar \frac{d}{dp})$</td>
+<td>Total energy</td>
+</tr>
+<tr>
+<td>Torque $\hat{L}_z$</td>
+<td>$\hat{L}_z = -i\hbar \left( x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x} \right)$</td>
+<td>$\hat{L}_z = -i\hbar \left( p_x \frac{\partial}{\partial p_y} - p_y \frac{\partial}{\partial p_x} \right)$</td>
+<td>Planar angular momentum (z-component)</td>
+</tr>
+<tr>
+<td>Total angular momentum $\hat{\vec{L}}$</td>
+<td>$\hat{\vec{L}} = -i\hbar \vec{r} \times \nabla$</td>
+<td>$\hat{\vec{L}} = -i\hbar \vec{p} \times \nabla_p$</td>
+<td>3D angular momentum vector</td>
+</tr>
+<tr>
+<td>Square of angular momentum $\hat{L}^2$</td>
+<td>$\hat{L}^2 = -\hbar^2 \left( \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \phi^2} \right)$</td>
+<td>Same as left (identical structure in polar coordinates of $p$-space)</td>
+<td>Spherical coordinate form, common in central potential problems</td>
+</tr>
+<tr>
+<td>$\hat{L}_x$</td>
+<td>$-i\hbar (y \dfrac \partial{\partial z} - z \dfrac{\partial}{\partial y})$</td>
+<td>Same form</td>
+<td>Angular momentum x-component</td>
+</tr>
+<tr>
+<td>$\hat{L}_y$</td>
+<td>$-i\hbar (z \dfrac\partial{\partial x} - x \dfrac\partial{\partial z})$</td>
+<td>Same form</td>
+<td>Angular momentum y-component</td>
+</tr>
+<tr>
+<td>$\hat{L}_z$</td>
+<td>$-i\hbar (x \dfrac\partial{\partial y} - y \dfrac\partial{\partial x})$</td>
+<td>Same form</td>
+<td>Angular momentum z-component</td>
+</tr>
+<tr>
+<td>Spin $\hat{S}_x$</td>
+<td>$\hat{S}_x = \frac{\hbar}{2} \begin{pmatrix} 0 &amp; 1 \ 1 &amp; 0 \end{pmatrix}$</td>
+<td>Same as left</td>
+<td>Pauli matrix $\sigma_x$</td>
+</tr>
+<tr>
+<td>Spin $\hat{S}_y$</td>
+<td>$\hat{S}_y = \frac{\hbar}{2} \begin{pmatrix} 0 &amp; -i \ i &amp; 0 \end{pmatrix}$</td>
+<td>Same as left</td>
+<td>Pauli matrix $\sigma_y$</td>
+</tr>
+<tr>
+<td>Spin $\hat{S}_z$</td>
+<td>$\hat{S}_z = \frac{\hbar}{2} \begin{pmatrix} 1 &amp; 0 \ 0 &amp; -1 \end{pmatrix}$</td>
+<td>Same as left</td>
+<td>Pauli matrix $\sigma_z$</td>
+</tr>
+<tr>
+<td>Number operator $\hat{N}$</td>
+<td>$\hat{N} = \hat{a}^\dagger \hat{a}$</td>
+<td>Same as left</td>
+<td>Commonly used in harmonic oscillators/quantum field theory</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Operator operation rules:</p>
+<ol>
+<li>
+<p>Linear operators.</p>
+</li>
+<li>
+<p>Sum of operators: $(\hat A+\hat B)\psi=\hat A\psi+\hat B\psi$.</p>
+</li>
+<li>
+<p>Product of operators: $(\hat A\hat B)\phi=\hat A(\hat B\phi)$.</p>
+</li>
+<li>
+<p>$\left[\hat A\hat B-\hat B\hat A\right ]=\hat A\hat B-\hat B\hat A$ is the commutator of operators $\hat A$ and $\hat B$; if it equals 0, the two operators commute.</p>
+</li>
+<li>
+<p>Eigenvalue equation of an operator (similar to eigenvalues of a matrix): $\hat A\varphi=\lambda\phi$.</p>
+</li>
+<li>
+<p>Complex conjugate of an operator: Replace all complex quantities with their conjugates.</p>
+</li>
+<li>
+<p>Hermitian operators (the conjugate transpose of a Hermitian operator equals itself).</p>
+<p>For any two wave functions $\psi$ and $\varphi$, if $\int\psi^<em>\hat F\varphi d\tau=\int(\hat F\psi)^</em>\varphi d\tau$, where $d\tau\equiv dxdydz$.</p>
+<p>Common Hermitian operators: position operator, momentum operator, energy operator.</p>
+<p>All mechanical quantity operators in quantum mechanics are Hermitian.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Hermitian operators:</p>
+<ol>
+<li>
+<p>Realness: Their eigenvalues are real numbers.</p>
+</li>
+<li>
+<p>Orthogonality: Any two eigenfunctions are orthogonal.</p>
+<p>Orthogonality of functions: $\int\psi^*_1(\vec r)\psi_2(\vec r)d\tau=0$.</p>
+</li>
+<li>
+<p>Completeness:</p>
+</li>
+<li>
+<p>That is, for any square-integrable function $\psi$, it can be expressed as $\psi(\vec r)=\sum\limits_nc_n\psi_n(\vec r)$, which can also be called a generalized Fourier expansion.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="1-6-Measurement-Values-in-Mechanics-Measurement-and-Quantum-State-Collapse"><a class="header-anchor" href="#1-6-Measurement-Values-in-Mechanics-Measurement-and-Quantum-State-Collapse">¶</a>1.6 Measurement Values in Mechanics, Measurement, and Quantum State Collapse</h2>
+<ol>
+<li>When a particle is in an eigenstate $\psi _n$, the measurement value is definite and equals the eigenvalue $\lambda_n$.</li>
+<li>If the system's state $\psi(\vec{r})=\sum\limits_n c_n \psi_{n}(\vec{r})$ is not an eigenstate of $F$, the measurement value of its mechanical quantity is not definite: The measurement value may be any eigenvalue $\lambda_{n}(n=1,2,...)$ corresponding to an eigenstate $\psi_{n}$, and the corresponding probability distribution is $|c_n|^2$.<br>
+$c_{n}=\int \psi_{n}^{*}(\vec{r}) \psi(\vec{r}) d\tau$.<br>
+$c_{n}$ represents the</li>
+</ol>
+
+        </div>
     
 </article>
 
@@ -952,7 +1163,7 @@ $c_{n}$ 代表了两个态的“相似程度”→ 测量坍缩到本征态 $\ps
             <h5>
                 <a href="/2025/06/13/2025/20250622%20WWDC2025/" class="trm-anima-link">
                     
-                        2025 WWDC 小谈
+                        <span class="i18n-zh">2025 WWDC 小谈</span><span class="i18n-en">A Brief Talk on WWDC 2025</span>
                     
                 </a>
             </h5>
@@ -991,7 +1202,7 @@ $c_{n}$ 代表了两个态的“相似程度”→ 测量坍缩到本征态 $\ps
             <h5>
                 <a href="/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/" class="trm-anima-link">
                     
-                        算法与复杂性整理
+                        <span class="i18n-zh">算法与复杂性整理</span><span class="i18n-en">Algorithms and Complexity Notes</span>
                     
                 </a>
             </h5>
@@ -1083,7 +1294,7 @@ $c_{n}$ 代表了两个态的“相似程度”→ 测量坍缩到本征态 $\ps
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>

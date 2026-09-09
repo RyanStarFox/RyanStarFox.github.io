@@ -257,7 +257,8 @@
                         <h1 class="trm-mb-30 trm-hsmb-font">
                             
                             
-                                机器学习
+                                <span class="i18n-zh">机器学习</span>
+                                <span class="i18n-en">改进为多分类</span>
                             
                         </h1>
 
@@ -460,10 +461,7 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     
-        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
-            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
-        </div>
-        <div class="post-body-zh">
+        <div class="post-body-zh i18n-zh">
             <h1>机器学习</h1>
 <h2 id="1-聚类"><a class="header-anchor" href="#1-聚类">¶</a>1 聚类</h2>
 <h3 id="1-1-K-means"><a class="header-anchor" href="#1-1-K-means">¶</a>1.1 K-means</h3>
@@ -722,11 +720,7 @@ $$</p>
 <p>ICA中$x=\Lambda y+e$，有系数$\Lambda$保证属于不同信号的数据，乘了一个不同的系数,，同时还增加了误差项fghgg</p>
 <hr>
 <p>老师有一个很好的板书</p>
-<pre><code class="language-mermaid">flowchart LR
-data--&gt;|&quot;p(y|x)&quot;|y
-y--&gt;|Ay+e|data
-
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">data--&gt;|&quot;p(y|x)&quot;|y</span><br><span class="line">y--&gt;|Ay+e|data</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ul>
 <li>y~Gaussian→PCA/FA, x~G</li>
 <li>y~Non-G→ICA/NFA, x~GMM</li>
@@ -827,9 +821,7 @@ y--&gt;|Ay+e|data
 <p>核函数的要求：Mercer‘s Condition，即需要是一个合法的内积，也就是要具有非负性、正定性、非负性</p>
 <h3 id="3-5-Deep-Generative-Models"><a class="header-anchor" href="#3-5-Deep-Generative-Models">¶</a>3.5 Deep Generative Models</h3>
 <h4 id="VAE-变分AutoEncoder"><a class="header-anchor" href="#VAE-变分AutoEncoder">¶</a>VAE/变分AutoEncoder</h4>
-<pre><code class="language-mermaid">flowchart LR
-	A[&quot;数据&quot;]--&gt;|encoder|B[&quot;隐变量&quot;]--&gt;|decoder|C[&quot;数据&quot;]
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">	A[&quot;数据&quot;]--&gt;|encoder|B[&quot;隐变量&quot;]--&gt;|decoder|C[&quot;数据&quot;]</span><br></pre></td></tr></table></figure>
 <p>实际上和FA非常像，$X=f(z;\theta)+\epsilon$</p>
 <p>f使用了一个复杂的模型（decoder），数学上计算z太复杂，因此使用模型快速计算（encoder）</p>
 <p>流程：</p>
@@ -1054,6 +1046,305 @@ y--&gt;|Ay+e|data
 </ol>
 
         </div>
+        <div class="post-body-en i18n-en">
+            <p>改进为多分类</p>
+<p>$P(Y=k|X)=\dfrac{e^{\beta_{0k}+\beta_{1k}X_1+\beta_{2k}X_2+\cdots\beta_{pk}X_p}}{1+\sum\limits_{i=1}^ne^{\beta_{0i}+\beta_{1i}X_1+\beta_{2i}X_2+\cdots\beta_{pi}X_p}}$</p>
+<p>为了防止过拟合，需要加入正则项，也就是参数的平方，因此$J=\dfrac 1{2m}\left[\sum\limits_{i=1}^m(\hat y-y)^2+\lambda\sum\limits_{j=1}^n\theta_j^2 \right]$\</p>
+<p>正则化可以使用各种范数</p>
+<ul>
+<li>LASSO：L1范数，约束较为严格</li>
+<li>Ridge：L2范数，约束较为温和（实际上从贝叶斯视角来看，L2正则化是在相信数据与相信先验知识之间取得平衡）</li>
+<li>Elastic：两者混合，介于两者之间</li>
+</ul>
+<h3 id="3-3-神经网络-Neural-Network-NN"><a class="header-anchor" href="#3-3-神经网络-Neural-Network-NN">¶</a>3.3 神经网络/Neural Network/NN</h3>
+<p>梯度下降算法</p>
+<p>每一层都是线性函数加上激活（非线性）函数（如tanh、sigmoid、ReLU等）</p>
+<p>同样需要正则化</p>
+<h3 id="3-4-深度神经网络-Deep-Neural-Networks-DNN"><a class="header-anchor" href="#3-4-深度神经网络-Deep-Neural-Networks-DNN">¶</a>3.4 深度神经网络/Deep Neural Networks/DNN</h3>
+<h4 id="3-4-1-CNN"><a class="header-anchor" href="#3-4-1-CNN">¶</a>3.4.1 CNN</h4>
+<p>加入了卷积层和池化层</p>
+<p>还有一些技巧：正则化、BatchNorm、Dropout</p>
+<h4 id="3-4-2-ResNet"><a class="header-anchor" href="#3-4-2-ResNet">¶</a>3.4.2 ResNet</h4>
+<p>增加了一些旁路，可以跳过部分模块</p>
+<h4 id="3-4-3-DenseNet"><a class="header-anchor" href="#3-4-3-DenseNet">¶</a>3.4.3 DenseNet</h4>
+<p>每两个模块之间都有旁路连接</p>
+<p>可以说是ResNet的升级版</p>
+<h4 id="3-4-4-RNN-Recurrent-NN"><a class="header-anchor" href="#3-4-4-RNN-Recurrent-NN">¶</a>3.4.4 RNN/Recurrent NN</h4>
+<p>上一个输出的词元会作为下一个输入的词元</p>
+<h4 id="3-4-5-Transformer"><a class="header-anchor" href="#3-4-5-Transformer">¶</a>3.4.5 Transformer</h4>
+<p>ATTENTION IS ALL YOU NEED！</p>
+<p>堪称经典，无需多言</p>
+<p>建议直接阅读相关论文</p>
+<p>大致原理是</p>
+<p>Query、Key、Value</p>
+<h4 id="3-4-6-GNN-Graph-NN"><a class="header-anchor" href="#3-4-6-GNN-Graph-NN">¶</a>3.4.6 GNN/Graph NN</h4>
+<p>按顺序遍历所有节点，先聚合节点的邻居节点信息，再与节点自身的数据进行聚合</p>
+<p>使用时需要接一个分类器，梯度回传需按照GNN的规则回传若干轮（回传轮数决定了模型的感受野）</p>
+<h4 id="3-4-7-GCN"><a class="header-anchor" href="#3-4-7-GCN">¶</a>3.4.7 GCN</h4>
+<p>在GNN基础上的小改进：把节点自身的聚合视为存在一个自环；聚合时需要进行归一化处理</p>
+<h4 id="3-4-8-支持向量机-SVM"><a class="header-anchor" href="#3-4-8-支持向量机-SVM">¶</a>3.4.8 支持向量机/SVM</h4>
+<p>其逻辑是将所有数据投影到一个超空间中，再用一个超平面将超空间分为两类，使得所有样本到超平面的最小几何间隔最大化</p>
+<h5 id="实现"><a class="header-anchor" href="#实现">¶</a>实现</h5>
+<h6 id="第一步：模型定义与几何间隔"><a class="header-anchor" href="#第一步：模型定义与几何间隔">¶</a>第一步：模型定义与几何间隔</h6>
+<p>假定数据为$D={(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)}$，$x_i\in\mathbb R^d,y_i\in{-1,1}$</p>
+<p>线性超平面为$w^\top x+b=0$，其中$w$是法向量，$b$是截距</p>
+<p>$x_i$到超平面的几何距离为$\gamma_i$：</p>
+<p>$\gamma_i=\dfrac{|w^\top x_i+b|}{||w||}=\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
+<h6 id="第二步：目标函数拟定"><a class="header-anchor" href="#第二步：目标函数拟定">¶</a>第二步：目标函数拟定</h6>
+<p>目标函数为$\max\limits_{w,b}\min\limits_{i}\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
+<p>由于等比缩放$w$和$b$不会改变超平面，为了方便计算，令距离最近的点满足$y_i(w^\top x_i+b)=1$</p>
+<p>此时目标函数变为$\max_\limits{w,b}\dfrac1{||w||}$，也就是$\min\limits_{w,b}\dfrac12||w||^2$，约束条件为$1-y_i(w^\top x_i+b)\leq 0$</p>
+<h6 id="第三步：拉格朗日对偶化"><a class="header-anchor" href="#第三步：拉格朗日对偶化">¶</a>第三步：拉格朗日对偶化</h6>
+<p>引入拉格朗日乘子$\alpha_i\geq0$</p>
+<p>$L(w,b,\alpha)=\dfrac12||w||^2+\sum\limits_{i=1}^n\alpha_i[1-y_i(w^\top x_i+b)]$</p>
+<p>求极小值：</p>
+<ol>
+<li>$\dfrac{\partial L}{\partial w}=w-\sum\limits_{i=1}^n\alpha_iy_ix_i=0\Rightarrow w = \sum\limits_{i=1}^n\alpha_iy_ix_i$</li>
+<li>$\dfrac{\partial L}{\partial b}=-\sum\limits_{i=1}^n \alpha_iy_i=0\Rightarrow \sum\limits_{i=1}^n \alpha_iy_i=0$</li>
+</ol>
+<p>代入后可得到对偶问题：</p>
+<p>$\max\limits_\alpha\sum\limits_{i=1}^n \alpha_i-\dfrac12\sum\limits_{i=1}^n\sum\limits_{j=1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，约束条件为$\sum\limits_{i=1}^n \alpha_iy_i=0$，$\alpha_i\geq 0$</p>
+<h6 id="第四步：KKT条件与支持向量"><a class="header-anchor" href="#第四步：KKT条件与支持向量">¶</a>第四步：KKT条件与支持向量</h6>
+<p>通过数值优化算法计算出$\alpha^*$</p>
+<p>代入后可算出$w^*$</p>
+<p>对于所有$\alpha_s&gt;0$的情况，应满足$y_s(w^\top x_s+b)=1$，进而算出$b^<em>$。理论上算出的$b^</em>$值应该相等，但由于浮点误差，通常取平均值</p>
+<h5 id="升级"><a class="header-anchor" href="#升级">¶</a>升级</h5>
+<h6 id="实现软约束"><a class="header-anchor" href="#实现软约束">¶</a>实现软约束</h6>
+<p>新的约束条件为：$y_i(w^\top x_i+b)\geq 1-\xi_i$</p>
+<p>新的损失函数为：$\min\limits_{w,b}\dfrac12||w||^2+C\sum\limits_{i=1}^N\xi_i$</p>
+<h6 id="核函数"><a class="header-anchor" href="#核函数">¶</a>核函数</h6>
+<p>$L(\alpha)=\max\limits_\alpha\sum\limits_{i=1}^n \alpha_i-\dfrac12\sum\limits_{i=1}^n\sum\limits_{j=1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，此处只需将$(x_i^\top x_j)$替换为$\mathbf K(x_i,x_j)$即可</p>
+<p>常用的核函数有多项式核、RBF核（高斯核）</p>
+<p>核函数需要满足Mercer条件，也就是需要是一个合法的内积，具备非负性、正定性</p>
+<h3 id="3-5-深度生成模型"><a class="header-anchor" href="#3-5-深度生成模型">¶</a>3.5 深度生成模型</h3>
+<h4 id="VAE-变分自编码器"><a class="header-anchor" href="#VAE-变分自编码器">¶</a>VAE/变分自编码器</h4>
+<pre><code class="language-mermaid">flowchart LR
+	A[&quot;数据&quot;]--&gt;|编码器|B[&quot;隐变量&quot;]--&gt;|解码器|C[&quot;数据&quot;]
+</code></pre>
+<p>实际上它与FA非常类似，$X=f(z;\theta)+\epsilon$</p>
+<p>其中$f$使用了复杂的模型（解码器），由于数学上直接计算$z$过于复杂，因此使用模型来快速计算（编码器）</p>
+<p>流程如下：</p>
+<ol>
+<li><strong>群体编码（Encoder）</strong>：将猫、狗、鸟等不同类别的数据输入同一个编码器。模型不再为每张图片赋予孤立的坐标，而是将它们映射为隐空间中各具特征的<strong>高斯分布区</strong>（由各自的均值$\mu$和标准差$\sigma$定义）。</li>
+<li><strong>随机采样（Sampling）</strong>：训练时，从这些分布中抽取隐变量$z$。通过<strong>重参数化技巧</strong>，确保猫对应的$z$落在“猫区”，鸟的$z$落在“鸟区”。</li>
+<li><strong>协同解码（Decoder）</strong>：同一个解码器学习如何根据$z$所在的区域，还原出对应的物种图像。</li>
+<li><strong>双重约束（Loss）</strong>：
+<ul>
+<li><strong>重构项</strong>：让模型能够准确区分物种特征（猫还原为猫，不会变成狗）。</li>
+<li><strong>KL散度项</strong>：就像引力一样，将猫、狗、鸟的分布全部拉向原点，迫使它们<strong>紧凑排列</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>最终效果</strong>：在同一个隐空间中，猫、狗、鸟形成了既相互独立（便于区分）又彼此邻接（可实现连续过渡）的<strong>聚类结构</strong>，使得模型只需在原点附近采样，就能生成各类具有物种特征的新样本。</p>
+<p>关于“重参数化”：由于随机采样无法回传梯度，因此改为$z=\mu+\sigma\odot\epsilon$，其中$\epsilon\sim N(0,I)$，属于噪声，不参与反向传播</p>
+<p>升级版本：CVAE，将隐变量$z$和标签一起输入解码器，便于人工控制输出（如输出类别、输出方向等）</p>
+<h4 id="GAN"><a class="header-anchor" href="#GAN">¶</a>GAN</h4>
+<p>核心思想是“左右互搏”</p>
+<p>训练一个生成器和判别器，两者相互竞争、共同进步</p>
+<h4 id="Diffusion"><a class="header-anchor" href="#Diffusion">¶</a>Diffusion</h4>
+<p>先通过不断加噪将图像彻底“破坏”为随机像素，再训练模型学习如何逐步逆转这一过程，从纯噪声中“还原”出结构完整的数据。</p>
+<h4 id="对比"><a class="header-anchor" href="#对比">¶</a>对比</h4>
+<table>
+<thead>
+<tr>
+<th><strong>模型</strong></th>
+<th><strong>核心逻辑（一句话比喻）</strong></th>
+<th><strong>最大优点</strong></th>
+<th><strong>最大缺点</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VAE</strong></td>
+<td><strong>压缩包</strong>：把照片压缩得很小，再解压还原。</td>
+<td>稳定可靠、不易崩溃。</td>
+<td>画质模糊，像蒙了一层雾。</td>
+</tr>
+<tr>
+<td><strong>GAN</strong></td>
+<td><strong>造假币</strong>：造假者与警察互相博弈，最终造假技术大幅提升。</td>
+<td>画质最清晰、生成速度快。</td>
+<td>难以训练、容易收敛到局部最优。</td>
+</tr>
+<tr>
+<td><strong>Diffusion</strong></td>
+<td><strong>变魔术</strong>：把照片磨成灰，再练习将灰尘变回照片。</td>
+<td>画质最优、创意性强。</td>
+<td>生成速度慢，需逐步迭代，耗时久。</td>
+</tr>
+</tbody>
+</table>
+<p>变分下界：通过最大化概率，利用对数似然来实现</p>
+<h2 id="4-因果性"><a class="header-anchor" href="#4-因果性">¶</a>4 因果性</h2>
+<h3 id="4-1-表示方法"><a class="header-anchor" href="#4-1-表示方法">¶</a>4.1 表示方法</h3>
+<h4 id="4-1-1-结构因果模型-SCM"><a class="header-anchor" href="#4-1-1-结构因果模型-SCM">¶</a>4.1.1 结构因果模型/SCM</h4>
+<p>处理组取值为{0,1}两种</p>
+<p>结果变量：Y~1~、Y~0~</p>
+<p>需要计算的个体因果效应（ICE）为$Y~1~-Y~0~$</p>
+<p>但一般的实验组和对照组只能计算出$Y~1~$或$Y~0~$中的一个</p>
+<p>解决方法：随机试验、利用倾向性得分降维、逆概率加权</p>
+<h4 id="4-1-2-结构方程模型-SEM"><a class="header-anchor" href="#4-1-2-结构方程模型-SEM">¶</a>4.1.2 结构方程模型/SEM</h4>
+<p>多元回归分析与因子分析的结合体</p>
+<h4 id="4-1-3-有向无环图-DAG"><a class="header-anchor" href="#4-1-3-有向无环图-DAG">¶</a>4.1.3 有向无环图/DAG</h4>
+<p>用有向无环图来表示因果关系</p>
+<h4 id="4-1-4-函数因果模型-FCM"><a class="header-anchor" href="#4-1-4-函数因果模型-FCM">¶</a>4.1.4 函数因果模型/FCM</h4>
+<p>将$p(y|x)$转化为$p(y|do(x))$</p>
+<h3 id="4-2-发现因果的算法"><a class="header-anchor" href="#4-2-发现因果的算法">¶</a>4.2 发现因果的算法</h3>
+<h4 id="4-2-1-PC算法"><a class="header-anchor" href="#4-2-1-PC算法">¶</a>4.2.1 PC算法</h4>
+<ol>
+<li><strong>初始化</strong>：算法最初假设所有变量之间存在关联，画出<strong>全连接的无向图</strong>（骨架图）。</li>
+<li><strong>骨架修剪（基于独立性检验）</strong>：算法会逐一检查每一对变量。如果在给定某些变量集合$S$的条件下，发现$X$和$Y$相互独立（满足<strong>d分离</strong>条件），则<strong>删除</strong>$X$和$Y$之间的连线。
+<ul>
+<li>算法先检查0阶独立（无条件独立），再检查1阶独立（给定1个变量时独立），依此类推，直到无法再删除边为止。</li>
+</ul>
+</li>
+<li><strong>确定方向</strong>：剩余的连线代表“确实存在因果关系”的骨架，算法随后利用逻辑规则（如<strong>v型结构</strong>识别）来确定箭头的指向。</li>
+</ol>
+<p>该算法通常输出的是等价类图（马尔可夫等价类），而非确定的DAG，并非所有边的方向都能被判定</p>
+<h4 id="4-2-2-LiNGAM"><a class="header-anchor" href="#4-2-2-LiNGAM">¶</a>4.2.2 LiNGAM</h4>
+<p>LiNGAM模型之所以能比传统SEM识别出更多因果关系方向，是因为它引入了更强的假设：</p>
+<ol>
+<li><strong>线性</strong>：变量之间的关系是线性的，即$X_i=∑β_{ij}X_j+e_i$。</li>
+<li><strong>非高斯</strong>：干扰项（误差项）$e$必须服从<strong>非高斯分布</strong>（如均匀分布、拉普拉斯分布等）。这是该模型最核心的创新点。</li>
+<li><strong>无环</strong>：因果结构图中不存在环路（即它是一个DAG）。</li>
+</ol>
+<h3 id="4-3-量化因果强弱的算法"><a class="header-anchor" href="#4-3-量化因果强弱的算法">¶</a>4.3 量化因果强弱的算法</h3>
+<h4 id="4-2-2-do演算"><a class="header-anchor" href="#4-2-2-do演算">¶</a>4.2.2 do演算</h4>
+<p>do演算由三条基本规则组成。推导过程中，我们会对因果图进行微小的“修改”：</p>
+<ul>
+<li><strong>规则1：观察的插入/删除（针对无关信息）</strong>：如果在图中，$Z$对$Y$的信息流已被阻断，那么在给定$X$的条件下，$Z$对预测$Y$没有用处。
+<ul>
+<li><strong>数学表示</strong>：$P(y∣do(x),z,w)=P(y∣do(x),w)$</li>
+</ul>
+</li>
+<li><strong>规则2：行动与观察的交换（针对后门路径）</strong>：如果你已经控制（条件化于）了足够的变量$Z$，使得$X$到$Y$之间不存在混杂因素影响，那么“强制干预$X$”的效果等同于“观察到$X$”。这就是所谓的<strong>后门准则</strong>。
+<ul>
+<li><strong>数学表示</strong>：$P(y∣do(x),do(z),w)=P(y∣x,do(z),w)$</li>
+</ul>
+</li>
+<li><strong>规则3：行动的插入/删除（针对无因果关系）</strong>：如果$X$到$Y$之间根本不存在因果路径，那么强行改变$X$对$Y$的分布完全没有影响。
+<ul>
+<li><strong>数学表示</strong>：$P(y∣do(x),w)=P(y∣w)$</li>
+</ul>
+</li>
+</ul>
+<h2 id="附录"><a class="header-anchor" href="#附录">¶</a>附录</h2>
+<h3 id="基础元素导数"><a class="header-anchor" href="#基础元素导数">¶</a>基础元素导数</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>表达式（导数形式）</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$[\dfrac{\partial \mathbf{x}}{\partial y}]_i$（向量对标量）</td>
+<td>$\dfrac{\partial x_i}{\partial y}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$[\dfrac{\partial x}{\partial \mathbf{y}}]_i$（标量对向量）</td>
+<td>$\dfrac{\partial x}{\partial y_i}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$[\dfrac{\partial \mathbf{x}}{\partial \mathbf{y}}]_{ij}$（向量对向量 - Jacobian矩阵）</td>
+<td>$\dfrac{\partial x_i}{\partial y_j}$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="向量线性形式求导"><a class="header-anchor" href="#向量线性形式求导">¶</a>向量线性形式求导</h3>
+<p>| <strong>表达式（导数形式）</strong>                                        | <strong>结果</strong>                     |<br>
+| :------------------------------------------------------------: |: ----------------------------: |<br>
+| $\dfrac{\partial (\mathbf{a}^\top \mathbf{x})}{\partial \mathbf{x}} = \dfrac{\partial (\mathbf{x}^\top \mathbf{a})}{\partial \mathbf{x}}$ | $\mathbf{a}$                 |<br>
+| $\dfrac{\partial (\mathbf{x}^\top \mathbf{x})}{\partial \mathbf{x}}$ | $2\mathbf{x}$                |</p>
+<h3 id="矩阵双线性形式求导"><a class="header-anchor" href="#矩阵双线性形式求导">¶</a>矩阵双线性形式求导</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>表达式（导数形式）</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X} \mathbf{b})}{\partial \mathbf{X}}$</td>
+<td>$\mathbf{a} \mathbf{b}^\top$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X}^\top \mathbf{b})}{\partial \mathbf{X}}$</td>
+<td>$\mathbf{b} \mathbf{a}^\top$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial (\mathbf{a}^\top \mathbf{X} \mathbf{a})}{\partial \mathbf{X}} = \dfrac{\partial (\mathbf{a}^\top \mathbf{X}^\top \mathbf{a})}{\partial \mathbf{X}}$</td>
+<td>$\mathbf{a} \mathbf{a}^\top$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \mathbf a^\top \mathbf X \mathbf a}{\partial \mathbf a}=\dfrac{\partial \mathbf a^\top \mathbf X^\top \mathbf a}{\partial \mathbf a}$</td>
+<td>$\mathbf X+\mathbf  X^\top$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="迹函数求导"><a class="header-anchor" href="#迹函数求导">¶</a>迹函数求导</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>表达式（导数形式）</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \mathrm{Tr}(\mathbf{A}\mathbf{X}\mathbf{B})}{\partial \mathbf{X}}$</td>
+<td>$\mathbf{A}^\top \mathbf{B}^\top$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \mathrm{Tr}(\mathbf{X}\mathbf{X}^\top)}{\partial \mathbf{X}}$</td>
+<td>$2\mathbf{X}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \mathrm{Tr}(\mathbf{A} (\mathbf{X} \circ \mathbf{Y}))}{\partial \mathbf{X}}$</td>
+<td>$\mathbf{A}^\top \circ \mathbf{Y}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial\mathrm {tr}(\mathbf X^{-1}\mathbf A)}{\partial \mathbf X}$</td>
+<td>$-(\mathbf X^{-1}\mathbf A\mathbf X^{-1})^\top$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="行列式与矩阵求导"><a class="header-anchor" href="#行列式与矩阵求导">¶</a>行列式与矩阵求导</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>表达式（导数形式）</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \det(\mathbf{X})}{\partial \mathbf{X}}$</td>
+<td>$\det(\mathbf{X})(\mathbf{X}^{-1})^\top$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \ln(\det(\mathbf{X}))}{\partial \mathbf{X}}$</td>
+<td>$(\mathbf{X}^{-1})^\top$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\dfrac{\partial \mathbf{Y}^{-1}}{\partial x}$（矩阵逆对标量）</td>
+<td>$-\mathbf{Y}^{-1} \dfrac{\partial \mathbf{Y}}{\partial x} \mathbf{Y}^{-1}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\partial \mathbf X^{-1}$</td>
+<td>$-\mathbf X^{-1}\partial \mathbf X\mathbf X^{-1}$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其它公式"><a class="header-anchor" href="#其它公式">¶</a>其它公式</h3>
+<ol>
+<li>马氏距离：$D_M(x)=\sqrt{(x-\mu)^TS^{-1}(x-\mu)}$</li>
+<li>协方差矩阵：$S=\dfrac1{N-1}\sum\limits_{i=1}^N(x_i-\bar x)(x_i-\bar x)^T$</li>
+</ol>
+
+        </div>
     
 </article>
 
@@ -1088,7 +1379,7 @@ y--&gt;|Ay+e|data
             <h5>
                 <a href="/2026/02/06/2026/20260206%20%E6%A8%B1%E8%8A%B1frp%E8%87%AA%E5%8A%A8%E7%AD%BE%E5%88%B0/" class="trm-anima-link">
                     
-                        樱花frp自动签到
+                        <span class="i18n-zh">樱花frp自动签到</span><span class="i18n-en">SakuraFRP automatic sign-in</span>
                     
                 </a>
             </h5>
@@ -1127,7 +1418,7 @@ y--&gt;|Ay+e|data
             <h5>
                 <a href="/2026/01/09/2026/20260109%20%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/" class="trm-anima-link">
                     
-                        计算理论
+                        <span class="i18n-zh">计算理论</span><span class="i18n-en">Theory of Computation</span>
                     
                 </a>
             </h5>
@@ -1219,7 +1510,7 @@ y--&gt;|Ay+e|data
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">27k</span>
+            <span class="trm-accent-color">68k</span>
             words
         </span>
     </div>
