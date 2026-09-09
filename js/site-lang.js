@@ -2,7 +2,8 @@
 
 const SITE_I18N = {
   zh: {
-    placeholder: '搜索文章...',
+    placeholder: '搜索标题、正文、标签、分类…',
+    result_placeholder: '请输入关键词，或选择下方筛选条件',
     empty: '找不到您查询的内容: ${query}',
     hits: '找到 ${hits} 条结果',
     hits_time: '找到 ${hits} 条结果（用时 ${time} 毫秒）',
@@ -23,7 +24,8 @@ const SITE_I18N = {
     month: '个月前',
   },
   en: {
-    placeholder: 'Searching...',
+    placeholder: 'Search titles, body, tags, categories…',
+    result_placeholder: 'Type a keyword, or pick filters below',
     empty: "We didn't find any results for the search: ${query}.",
     hits: '${hits} results found',
     hits_time: '${hits} results found in ${time} ms',
@@ -93,10 +95,76 @@ function applyTypedText(lang) {
   if (lang === 'en' && Array.isArray(cfg.typed_text_en) && cfg.typed_text_en.length) {
     window.ASYNC_CONFIG.typed_text = cfg.typed_text_en.slice();
     window.ASYNC_CONFIG.typed_text_prefix = cfg.typed_text_prefix_en || 'Enjoy';
-  } else if (Array.isArray(cfg.typed_text_zh)) {
+  } else if (Array.isArray(cfg.typed_text_zh) && cfg.typed_text_zh.length) {
     window.ASYNC_CONFIG.typed_text = cfg.typed_text_zh.slice();
     window.ASYNC_CONFIG.typed_text_prefix = cfg.typed_text_prefix_zh || '享受';
   }
+}
+
+let typedTimer = null;
+let typedPauseTimer = null;
+
+function stopTypedText() {
+  if (typedTimer) {
+    clearInterval(typedTimer);
+    typedTimer = null;
+  }
+  if (typedPauseTimer) {
+    clearTimeout(typedPauseTimer);
+    typedPauseTimer = null;
+  }
+}
+
+function startTypedText(el, words) {
+  stopTypedText();
+  if (!el || !Array.isArray(words) || !words.length) return;
+
+  // Detach theme typing.js from this node by replacing it.
+  const fresh = el.cloneNode(false);
+  el.parentNode.replaceChild(fresh, el);
+  el = fresh;
+
+  const typeMs = 100;
+  const holdMs = 3000;
+  const MODE_TYPE = 0;
+  const MODE_DELETE = 1;
+  let mode = MODE_TYPE;
+  let wordIndex = 0;
+  let charIndex = 0;
+
+  function tick() {
+    const word = words[wordIndex] || '';
+    if (mode === MODE_TYPE) {
+      charIndex += 1;
+      el.textContent = word.substring(0, charIndex);
+      if (charIndex >= word.length) {
+        mode = MODE_DELETE;
+        clearInterval(typedTimer);
+        typedTimer = null;
+        typedPauseTimer = setTimeout(() => {
+          typedTimer = setInterval(tick, typeMs);
+        }, holdMs);
+      }
+      return;
+    }
+
+    charIndex -= 1;
+    el.textContent = word.substring(0, Math.max(charIndex, 0));
+    if (charIndex <= 0) {
+      mode = MODE_TYPE;
+      wordIndex = (wordIndex + 1) % words.length;
+      charIndex = 0;
+    }
+  }
+
+  typedTimer = setInterval(tick, typeMs);
+}
+
+function restartTypedText(lang) {
+  applyTypedText(lang);
+  const el = document.querySelector('.trm-typed-text');
+  const words = (window.ASYNC_CONFIG && window.ASYNC_CONFIG.typed_text) || [];
+  startTypedText(el, words);
 }
 
 function applyAsyncI18n(lang) {
@@ -112,7 +180,7 @@ function setLanguage(lang, { persist = true } = {}) {
     try { localStorage.setItem('site-lang', next); } catch (e) {}
   }
   applyAsyncI18n(next);
-  applyTypedText(next);
+  restartTypedText(next);
   document.querySelectorAll('.trm-lang-btn').forEach((btn) => {
     const active = btn.getAttribute('data-lang') === next;
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
