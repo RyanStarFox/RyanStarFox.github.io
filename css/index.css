@@ -3727,3 +3727,137 @@ pre .coffeescript .title {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+html[data-lang="zh"] .i18n-en,
+html:not([data-lang]) .i18n-en {
+  display: none !important;
+}
+html[data-lang="en"] .i18n-zh {
+  display: none !important;
+}
+html[data-lang="en"] .post-zh-only-notice {
+  display: block !important;
+}
+.trm-lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+.trm-lang-btn {
+  border: 1px solid var(--primary, #afb42b);
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  min-width: 34px;
+  height: 28px;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.trm-lang-btn[aria-pressed="true"] {
+  background: var(--primary, #afb42b);
+  color: #fff;
+  opacity: 1;
+}
+.trm-lang-btn:hover {
+  opacity: 1;
+}
+/* Real DOM tooltips for fixed buttons (theme ::before + attr() is unreliable here). */
+.trm-fixed-container .trm-fixed-btn::before {
+  content: none !important;
+  display: none !important;
+}
+.trm-fixed-container .trm-fixed-btn .trm-fixed-tip {
+  position: absolute;
+  z-index: 2;
+  right: 50px;
+  top: 50%;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background-color: var(--fixed-button-bg-color);
+  color: var(--fixed-button-color);
+  font-size: 0.8rem;
+  line-height: 2;
+  width: max-content;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(80%, -50%) scale(0);
+  transition: all 0.2s ease-in-out;
+}
+@media (any-hover: hover) {
+  .trm-fixed-container .trm-fixed-btn:hover .trm-fixed-tip {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+  }
+}
+/*
+ * Theme default draws a literal "#" before h4–h6 (publication.less).
+ * That reads like broken markdown (### → "#标题") instead of real hierarchy.
+ * Replace with a small accent bar and keep clear size steps for h3+.
+ */
+.trm-publication h4:before,
+.trm-publication h5:before,
+.trm-publication h6:before {
+  content: "";
+  display: inline-block;
+  width: 0.28em;
+  height: 0.85em;
+  margin-right: 0.45em;
+  border-radius: 2px;
+  background-color: var(--primary, #afb42b);
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+.trm-publication h3 {
+  position: relative;
+  padding-left: 0.65em;
+}
+.trm-publication h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  bottom: 0.2em;
+  width: 3px;
+  border-radius: 2px;
+  background-color: var(--primary, #afb42b);
+}
+.trm-publication h4 {
+  font-size: 1.15em;
+}
+.trm-publication h5 {
+  font-size: 1.05em;
+}
+.trm-publication h6 {
+  font-size: 1em;
+  opacity: 0.92;
+}
+/* GFM task lists: hide bullet so checkbox is the marker */
+.trm-publication,
+.trm-card {
+  /* marked outputs bare <li><input checkbox> without task-list-item class */
+}
+.trm-publication ul > li > input[type="checkbox"],
+.trm-card ul > li > input[type="checkbox"] {
+  margin-right: 0.45em;
+  vertical-align: middle;
+}
+.trm-publication li.task-list-item,
+.trm-card li.task-list-item,
+.trm-publication ul.contains-task-list > li,
+.trm-card ul.contains-task-list > li {
+  list-style: none;
+}
+.trm-publication ul.contains-task-list,
+.trm-card ul.contains-task-list {
+  padding-left: 1.2em;
+}
+.trm-publication ul > li:has(> input[type="checkbox"]),
+.trm-card ul > li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -0.2em;
+}

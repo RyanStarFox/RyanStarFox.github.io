@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
 
-<head>
+<head><!-- hexo injector head_begin start --><script>
+(function () {
+  try {
+    var lang = localStorage.getItem('site-lang') || 'zh';
+    document.documentElement.setAttribute('data-lang', lang === 'en' ? 'en' : 'zh');
+  } catch (e) {
+    document.documentElement.setAttribute('data-lang', 'zh');
+  }
+})();
+</script><!-- hexo injector head_begin end -->
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="x5-fullscreen" content="true">
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="¶C++ 常用库 ¶iostream   控制精度 1cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926   小数模式：fixed   科学技术法：scientific   ¶fstream   逐行读取文件内容 123456789101112131415161718192021#include &lt;iostream&gt;#include &amp;lt">
+<meta name="description" content="¶C++ 常用库 ¶iostream   控制精度 cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926    小数模式：fixed   科学技术法：scientific   ¶fstream   逐行读取文件内容 #include &lt;iostream&gt; #include &lt;fstream&gt; #include &lt;string">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ 常用库">
 <meta property="og:url" content="https://ryanstarfox.github.io/2025/01/07/2025/20250107%20C++%E5%B8%B8%E7%94%A8%E5%BA%93/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="¶C++ 常用库 ¶iostream   控制精度 1cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926   小数模式：fixed   科学技术法：scientific   ¶fstream   逐行读取文件内容 123456789101112131415161718192021#include &lt;iostream&gt;#include &amp;lt">
+<meta property="og:description" content="¶C++ 常用库 ¶iostream   控制精度 cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926    小数模式：fixed   科学技术法：scientific   ¶fstream   逐行读取文件内容 #include &lt;iostream&gt; #include &lt;fstream&gt; #include &lt;string">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-01-07T06:47:00.000Z">
 <meta property="article:modified_time" content="2025-01-07T06:47:00.000Z">
 <meta property="article:author" content="RyanStarFox">
-<meta property="article:tag" content="技术&#x2F;Tech">
-<meta property="article:tag" content="知识整理&#x2F;Knowledge">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="知识整理">
 <meta name="twitter:card" content="summary">
 
     <meta name="keywords" content="技术,编程,生活,Apple,博客,个人网站,技术分享,生活感悟">
@@ -66,7 +75,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者/Author：","copyright_link":"本文链接/Link：","copyright_license_title":"版权声明/Copyright Statement：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功/Copy Success","copy_failure":"复制失败/Copy Failure","open_read_mode":"进入阅读模式/Enter Reading Mode","exit_read_mode":"退出阅读模式/Exit Reading Mode","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶/Sticky","just":"刚刚/Just Now","min":"分钟前/Minutes Ago","hour":"小时前/Hours Ago","day":"天前/Days Ago","month":"个月前/Months Ago"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"网站运行时间"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"ryanstarfox.github.io","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":false,"default":"auto"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"<span class=\"i18n-zh\">置顶</span><span class=\"i18n-en\">TOP</span>","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"07/29/2025 15:00:00","prefix":"<span class=\"i18n-zh\">博客已运行</span><span class=\"i18n-en\">Blog uptime:</span> undefined <span class=\"i18n-zh\">天</span><span class=\"i18n-en\">days</span>"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
 <script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-01-07 14:47:00"};</script>
 
 <!-- Theme mode css -->
@@ -89,7 +98,17 @@
 <!-- Site Analytics -->
 
  
-<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start --><script>
+(function () {
+  try { localStorage.removeItem('theme-mode'); } catch (e) {}
+  var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.classList.toggle('dark', isDark);
+  if (window.ASYNC_CONFIG && window.ASYNC_CONFIG.theme) {
+    window.ASYNC_CONFIG.theme.default = isDark ? 'style-dark' : 'style-light';
+  }
+})();
+</script><script>window.SITE_LANG_CONFIG = {"typed_text_zh":[],"typed_text_prefix_zh":"享受","typed_text_en":[],"typed_text_prefix_en":"Enjoy"};</script>
+<link rel="stylesheet" href="/css/site-lang.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
 </head>
 
 <body>
@@ -154,27 +173,27 @@
             
             <li class="menu-item-has-children ">
                 <a  href="/" target="">
-                    主页/Home
+                    <span class="i18n-zh">主页</span><span class="i18n-en">Home</span>
                 </a>
                 
             </li>
             
             <li class="menu-item-has-children ">
                 <a  href="/archives/" target="">
-                    文章/Articles
+                    <span class="i18n-zh">文章</span><span class="i18n-en">Articles</span>
                 </a>
                 
                 <ul>
                     
                     <li>
                         <a  href="/categories/" target="">
-                            分类/Categories
+                            <span class="i18n-zh">分类</span><span class="i18n-en">Categories</span>
                         </a>
                     </li>
                     
                     <li>
                         <a  href="/tags/" target="">
-                            标签/Tags
+                            <span class="i18n-zh">标签</span><span class="i18n-en">Tags</span>
                         </a>
                     </li>
                     
@@ -184,21 +203,14 @@
             
             <li class="menu-item-has-children ">
                 <a  href="/useful_links/" target="">
-                    实用链接/Useful Links
+                    <span class="i18n-zh">实用链接</span><span class="i18n-en">Useful Links</span>
                 </a>
                 
             </li>
             
             <li class="menu-item-has-children ">
                 <a  href="/about/" target="">
-                    关于/About
-                </a>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/atom.xml" target="">
-                    RSS
+                    <span class="i18n-zh">关于</span><span class="i18n-en">About</span>
                 </a>
                 
             </li>
@@ -207,18 +219,12 @@
     </nav>
 </div>
 <!-- menu end -->
-			
-    <!-- mode switcher place -->
-    <div class="trm-mode-switcher-place">
-        <div class="trm-mode-switcher">
-            <i class="iconfont far fa-sun"></i>
-            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
-            <label class="trm-swich" for="trm-swich"></label>
-            <i class="iconfont far fa-moon"></i>
-        </div>
-    </div>
-    <!-- mode switcher place end -->
 
+			<div class="trm-lang-switcher" role="group" aria-label="Language">
+				<button type="button" class="trm-lang-btn" data-lang="zh" aria-pressed="true">中</button>
+				<button type="button" class="trm-lang-btn" data-lang="en" aria-pressed="false">EN</button>
+			</div>
+			
 			
 		</div>
 		<div class="trm-menu-btn">
@@ -226,6 +232,7 @@
 		</div>
 	</div>
 </header>
+
             <!-- top bar end -->
 
             <!-- body -->
@@ -234,12 +241,9 @@
     <!-- banner -->
     <div class="trm-banner">
     
-    <!-- banner cover -->
     <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/notes/C++libs.png">
-    <!-- banner cover end -->
     
 
-    <!-- banner content -->
     <div class="trm-banner-content trm-overlay">
         <div class="container">
             <div class="row">
@@ -247,20 +251,21 @@
                 <div class="col-lg-4"></div>
                 
                 <div class="col-lg-8">
-
-                    <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            C++ 常用库
+                            
+                            
+                                C++ 常用库
+                            
                         </h1>
 
                         
                             <ul class="trm-breadcrumbs trm-label">
                                 <li>
-                                    <a href="/" class="trm-anima-link">Home</a>
+                                    <a href="/" class="trm-anima-link"><span class="i18n-zh">主页</span><span class="i18n-en">Home</span></a>
                                 </li>
                                 <li>
                                     <span>
@@ -270,21 +275,17 @@
                             </ul>
                         
                     </div>
-                    <!-- banner title end -->
 
-                    <!-- scroll hint -->
                     <span id="scroll-triger" class="trm-scroll-hint-frame">
                         <div class="trm-scroll-hint"></div>
-                        <span class="trm-label">Scroll down</span>
+                        <span class="trm-label"><span class="i18n-zh">向下滚动</span><span class="i18n-en">Scroll down</span></span>
                     </span>
-                    <!-- scroll hint end -->
-
                 </div>
             </div>
         </div>
     </div>
-    <!-- banner content end -->
 </div>
+
     <!-- banner end -->
     <div class="container">
         <div class="row">
@@ -343,7 +344,7 @@
 <div class="trm-divider trm-mb-40 trm-mt-40"></div>
 <ul class="trm-table trm-mb-20">
     
-        <li>
+        <li class="i18n-zh">
             <div class="trm-label">
                 城市:
             </div>
@@ -352,7 +353,7 @@
             </div>
         </li>
     
-        <li>
+        <li class="i18n-zh">
             <div class="trm-label">
                 学校:
             </div>
@@ -361,7 +362,7 @@
             </div>
         </li>
     
-        <li>
+        <li class="i18n-zh">
             <div class="trm-label">
                 专业:
             </div>
@@ -370,7 +371,7 @@
             </div>
         </li>
     
-        <li>
+        <li class="i18n-zh">
             <div class="trm-label">
                 爱好:
             </div>
@@ -379,9 +380,8 @@
             </div>
         </li>
     
-    <li style="height: 20px;"></li>
     
-        <li>
+        <li class="i18n-en">
             <div class="trm-label">
                 City:
             </div>
@@ -390,7 +390,7 @@
             </div>
         </li>
     
-        <li>
+        <li class="i18n-en">
             <div class="trm-label">
                 School:
             </div>
@@ -399,7 +399,7 @@
             </div>
         </li>
     
-        <li>
+        <li class="i18n-en">
             <div class="trm-label">
                 Major:
             </div>
@@ -408,7 +408,7 @@
             </div>
         </li>
     
-        <li>
+        <li class="i18n-en">
             <div class="trm-label">
                 Hobby:
             </div>
@@ -425,7 +425,7 @@
     <!-- action button -->
     <div class="text-center">
         <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
-            联系我/Contact Me
+            <span class="i18n-zh">联系我</span><span class="i18n-en">Contact Me</span>
             <i class="iconfont far fa-envelope"></i>
         </a>
     </div>
@@ -460,12 +460,18 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h2 id="C-常用库"><a class="header-anchor" href="#C-常用库">¶</a>C++ 常用库</h2>
+    
+        <div class="post-zh-only-notice i18n-en trm-mb-20" style="display:none;">
+            <blockquote>English translation is not available yet. Showing the Chinese original.</blockquote>
+        </div>
+        <div class="post-body-zh">
+            <h2 id="C-常用库"><a class="header-anchor" href="#C-常用库">¶</a>C++ 常用库</h2>
 <h3 id="iostream"><a class="header-anchor" href="#iostream">¶</a>iostream</h3>
 <ol>
 <li>
 <p>控制精度</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">3</span>) &lt;&lt; <span class="number">3.1415926</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-C++">cout &lt;&lt; setprecision(3) &lt;&lt; 3.1415926
+</code></pre>
 </li>
 <li>
 <p>小数模式：<code>fixed</code></p>
@@ -478,26 +484,85 @@
 <ol>
 <li>
 <p>逐行读取文件内容</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">std::ifstream <span class="title">file</span><span class="params">(<span class="string">&quot;example.txt&quot;</span>)</span></span>;  <span class="comment">// 打开文件</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!file) &#123;  <span class="comment">// 检查文件是否成功打开</span></span><br><span class="line">        std::cerr &lt;&lt; <span class="string">&quot;Unable to open the file!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    std::string line;</span><br><span class="line">    <span class="comment">// 逐行读取文件内容</span></span><br><span class="line">    <span class="keyword">while</span> (std::<span class="built_in">getline</span>(file, line)) &#123;</span><br><span class="line">        std::cout &lt;&lt; line &lt;&lt; std::endl;  <span class="comment">// 输出每一行</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    file.<span class="built_in">close</span>();  <span class="comment">// 关闭文件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::ifstream file(&quot;example.txt&quot;);  // 打开文件
+
+    if (!file) {  // 检查文件是否成功打开
+        std::cerr &lt;&lt; &quot;Unable to open the file!&quot; &lt;&lt; std::endl;
+        return 1;
+    }
+
+    std::string line;
+    // 逐行读取文件内容
+    while (std::getline(file, line)) {
+        std::cout &lt;&lt; line &lt;&lt; std::endl;  // 输出每一行
+    }
+
+    file.close();  // 关闭文件
+    return 0;
+}
+</code></pre>
 </li>
 <li>
 <p>写入文件</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::ofstream <span class="title">file</span><span class="params">(<span class="string">&quot;output.txt&quot;</span>)</span></span>;</span><br><span class="line">file &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-C++">std::ofstream file(&quot;output.txt&quot;);
+file &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;
+</code></pre>
 </li>
 </ol>
 <h3 id="sstream"><a class="header-anchor" href="#sstream">¶</a>sstream</h3>
 <ol>
 <li>
 <p>isstream</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function">std::istringstream <span class="title">iss</span><span class="params">(<span class="string">&quot;42 3.14 hello&quot;</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">double</span> d;</span><br><span class="line">    std::string str;</span><br><span class="line">    iss &gt;&gt; i &gt;&gt; d &gt;&gt; str;</span><br><span class="line">    std::cout &lt;&lt; i &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; d &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; str &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-cpp"># include &lt;iostream&gt;
+# include &lt;sstream&gt;
+using namespace std;
+
+int main(){
+    std::istringstream iss(&quot;42 3.14 hello&quot;);
+    int i;
+    double d;
+    std::string str;
+    iss &gt;&gt; i &gt;&gt; d &gt;&gt; str;
+    std::cout &lt;&lt; i &lt;&lt; &quot;, &quot; &lt;&lt; d &lt;&lt; &quot;, &quot; &lt;&lt; str &lt;&lt; std::endl;
+}
+</code></pre>
 </li>
 <li>
 <p>osstream</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::ostringstream oss;</span><br><span class="line">oss &lt;&lt; <span class="number">42</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="number">3.14</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">std::string result = oss.<span class="built_in">str</span>();  <span class="comment">// 获取输出结果字符串</span></span><br><span class="line">std::cout &lt;&lt; result &lt;&lt; std::endl;  <span class="comment">// 输出 &quot;42 3.14 hello&quot;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="language-cpp">std::ostringstream oss;
+oss &lt;&lt; 42 &lt;&lt; &quot; &quot; &lt;&lt; 3.14 &lt;&lt; &quot; &quot; &lt;&lt; &quot;hello&quot;;
+std::string result = oss.str();  // 获取输出结果字符串
+std::cout &lt;&lt; result &lt;&lt; std::endl;  // 输出 &quot;42 3.14 hello&quot;
+</code></pre>
 </li>
 <li>
 <p>stringstream配合getline处理输入：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">stringstream <span class="title">ss</span><span class="params">(input1)</span></span>;</span><br><span class="line">string segment;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">getline</span>(ss, segment,<span class="string">&#x27; &#x27;</span>))&#123;</span><br><span class="line">    <span class="function">stringstream <span class="title">NodeStream</span><span class="params">(segment)</span></span>;</span><br><span class="line">    string node, distance;</span><br><span class="line">    <span class="built_in">getline</span>(NodeStream, node, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    <span class="built_in">getline</span>(NodeStream, distance, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    graph[node].distance = <span class="built_in">stoi</span>(distance);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ss = <span class="built_in">stringstream</span>(input2);</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">getline</span>(ss, segment, <span class="string">&#x27; &#x27;</span>)) &#123;</span><br><span class="line">    <span class="comment">// 分割每个连接描述，例如 &quot;S:A&quot;</span></span><br><span class="line">    <span class="function">stringstream <span class="title">edgeStream</span><span class="params">(segment)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">getline</span>(edgeStream, from, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    <span class="built_in">getline</span>(edgeStream, to, <span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="language-Cpp">stringstream ss(input1);
+string segment;
+
+while(getline(ss, segment,' ')){
+    stringstream NodeStream(segment);
+    string node, distance;
+    getline(NodeStream, node, ':');
+    getline(NodeStream, distance, ':');
+    graph[node].distance = stoi(distance);
+}
+
+ss = stringstream(input2);
+while (getline(ss, segment, ' ')) {
+    // 分割每个连接描述，例如 &quot;S:A&quot;
+    stringstream edgeStream(segment);
+
+    getline(edgeStream, from, ':');
+    getline(edgeStream, to, ':');
+}
+
+</code></pre>
 </li>
 </ol>
 <h3 id="vector"><a class="header-anchor" href="#vector">¶</a>vector</h3>
@@ -547,9 +612,11 @@
 </li>
 <li>
 <p>迭代器可以用类似这样的语法：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i:v)&#123; cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-cpp">for (auto i:v){ cout &lt;&lt; i &lt;&lt; &quot; &quot;;}
+</code></pre>
 <p>或者</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i = v.<span class="built_in">begin</span>(); i!=v.end; i++)&#123;cout &lt;&lt; *i &lt;&lt; <span class="string">&quot; &quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-cpp">for (auto i = v.begin(); i!=v.end; i++){cout &lt;&lt; *i &lt;&lt; &quot; &quot;}
+</code></pre>
 </li>
 </ul>
 <h4 id="队列操作"><a class="header-anchor" href="#队列操作">¶</a>队列操作</h4>
@@ -616,7 +683,7 @@
 <ul>
 <li><code>set&lt;T&gt; s;</code>：创建一个空的 <code>set</code>，元素类型为 <code>T</code>，默认使用 <code>operator&lt;</code> 作为比较函数。</li>
 <li><code>set&lt;T, Compare&gt; s;</code>：创建一个 <code>set</code>，元素类型为 <code>T</code>，比较函数为 <code>Compare</code>。</li>
-<li>可以直接用 <code>&#123;&#125;</code>来初始化</li>
+<li>可以直接用 <code>{}</code>来初始化</li>
 </ul>
 <h4 id="容量操作-2"><a class="header-anchor" href="#容量操作-2">¶</a>容量操作</h4>
 <ul>
@@ -710,8 +777,15 @@
 <li>
 <pre><code class="language-cpp">std::sort(arr, arr + n); // 对数组 arr 中的前 n 个元素排序
 std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. stable_sort</span><br><span class="line"></span><br><span class="line">- ```cpp</span><br><span class="line">  std::stable_sort(v.begin(), v.end()); // 稳定排序</span><br></pre></td></tr></table></figure>
-
+</code></pre>
+</li>
+</ul>
+<ol start="2">
+<li>stable_sort</li>
+</ol>
+<ul>
+<li>
+<pre><code class="language-cpp">std::stable_sort(v.begin(), v.end()); // 稳定排序
 </code></pre>
 </li>
 </ul>
@@ -721,8 +795,19 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
 <ul>
 <li>
 <pre><code class="language-cpp">std::partial_sort(arr, arr + n, arr + m); // 排序前 n 个元素
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### find</span><br><span class="line"></span><br><span class="line">1. find</span><br><span class="line"></span><br><span class="line">- ```cpp</span><br><span class="line">  auto it = std::find(v.begin(), v.end(), value);</span><br><span class="line">  if (it != v.end()) &#123;</span><br><span class="line">      // 找到了元素</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
+</code></pre>
+</li>
+</ul>
+<h4 id="find"><a class="header-anchor" href="#find">¶</a>find</h4>
+<ol>
+<li>find</li>
+</ol>
+<ul>
+<li>
+<pre><code class="language-cpp">auto it = std::find(v.begin(), v.end(), value);
+if (it != v.end()) {
+    // 找到了元素
+}
 </code></pre>
 </li>
 </ul>
@@ -731,20 +816,28 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
 </ol>
 <ul>
 <li>
-<pre><code class="language-cpp">auto it = std::find_if(v.begin(), v.end(), [](int x) &#123; return x &gt; 10; &#125;);
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. Lower_bound</span><br><span class="line"></span><br><span class="line">- ```cpp</span><br><span class="line">  auto it = std::lower_bound(v.begin(), v.end(), value);</span><br></pre></td></tr></table></figure>
-
-类似也有upper_bound
-
+<pre><code class="language-cpp">auto it = std::find_if(v.begin(), v.end(), [](int x) { return x &gt; 10; });
 </code></pre>
+</li>
+</ul>
+<ol start="3">
+<li>Lower_bound</li>
+</ol>
+<ul>
+<li>
+<pre><code class="language-cpp">auto it = std::lower_bound(v.begin(), v.end(), value);
+</code></pre>
+<p>类似也有upper_bound</p>
 </li>
 </ul>
 <h4 id="permutation"><a class="header-anchor" href="#permutation">¶</a>permutation</h4>
 <ol>
 <li>
 <pre><code class="language-cpp">next_permutation(v.begin, v.end)
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2. ```cpp</span><br><span class="line">   prev_permutation(v.begin, v.end)</span><br></pre></td></tr></table></figure>
-
+</code></pre>
+</li>
+<li>
+<pre><code class="language-cpp">prev_permutation(v.begin, v.end)
 </code></pre>
 </li>
 </ol>
@@ -752,11 +845,45 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
 <h4 id="copy"><a class="header-anchor" href="#copy">¶</a>copy</h4>
 <h4 id="rotate"><a class="header-anchor" href="#rotate">¶</a>rotate</h4>
 <h3 id="运算符重载"><a class="header-anchor" href="#运算符重载">¶</a>运算符重载</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Complex</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">double</span> real, imag;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Complex</span>(<span class="type">double</span> r = <span class="number">0</span>, <span class="type">double</span> i = <span class="number">0</span>) : <span class="built_in">real</span>(r), <span class="built_in">imag</span>(i) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Complex <span class="keyword">operator</span>+(<span class="type">const</span> Complex&amp; other) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Complex</span>(real + other.real, imag + other.imag);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; real &lt;&lt; <span class="string">&quot; + &quot;</span> &lt;&lt; imag &lt;&lt; <span class="string">&quot;i&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">Complex <span class="title">c1</span><span class="params">(<span class="number">1.0</span>, <span class="number">2.0</span>)</span>, <span class="title">c2</span><span class="params">(<span class="number">3.0</span>, <span class="number">4.0</span>)</span></span>;</span><br><span class="line">    Complex c3 = c1 + c2;</span><br><span class="line">    c<span class="number">3.</span><span class="built_in">display</span>();  <span class="comment">// 输出: 4.0 + 6.0i</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="捕捉异常"><a class="header-anchor" href="#捕捉异常">¶</a>捕捉异常</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    cout &lt;&lt; a.<span class="built_in">at</span>(<span class="number">6</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span> (<span class="type">const</span> out_of_range e)&#123;</span><br><span class="line">cerr &lt;&lt; <span class="string">&quot;a: &quot;</span> &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
 
+class Complex {
+public:
+    double real, imag;
+
+    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
+
+    Complex operator+(const Complex&amp; other) {
+        return Complex(real + other.real, imag + other.imag);
+    }
+
+    void display() const {
+        cout &lt;&lt; real &lt;&lt; &quot; + &quot; &lt;&lt; imag &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Complex c1(1.0, 2.0), c2(3.0, 4.0);
+    Complex c3 = c1 + c2;
+    c3.display();  // 输出: 4.0 + 6.0i
+    return 0;
+}
+</code></pre>
+<h3 id="捕捉异常"><a class="header-anchor" href="#捕捉异常">¶</a>捕捉异常</h3>
+<pre><code class="language-cpp">vector&lt;int&gt; a = {1,2,3,4,5};
+try{
+    cout &lt;&lt; a.at(6);
+}
+catch (const out_of_range e){
+cerr &lt;&lt; &quot;a: &quot; &lt;&lt; e.what() &lt;&lt; endl;
+}
+</code></pre>
+
+        </div>
+    
 </article>
+
     
     
 
@@ -765,7 +892,7 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            其他文章/Other Articles
+            <span class="i18n-zh">其他文章</span><span class="i18n-en">Other Articles</span>
             <span data-number="02"></span>
         </h5>
     </div>
@@ -781,13 +908,15 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
         
         <div class="trm-card-descr">
             <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86-Knowledge/">
-                    知识整理/Knowledge
+                <a href=" /categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">
+                    <span class="i18n-zh">知识整理</span><span class="i18n-en">Knowledge</span>
                 </a>
             </div>
             <h5>
                 <a href="/2025/01/08/2025/20250108%20%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" class="trm-anima-link">
-                    概率统计整理
+                    
+                        概率统计整理
+                    
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
@@ -804,6 +933,7 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
         </div>
     </div>
 </div>
+
     
     
         <div class="col-lg-6">
@@ -811,19 +941,21 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
         <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-cover-frame trm-anima-link">
             
             
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                <img alt="cover" class="no-fancybox" src="/images/2024/20241226-%E9%AA%91%E8%BD%A6.jpg">
             
         </a>
         
         <div class="trm-card-descr">
             <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E7%94%9F%E6%B4%BB-Life/">
-                    生活/Life
+                <a href=" /categories/%E7%94%9F%E6%B4%BB/">
+                    <span class="i18n-zh">生活</span><span class="i18n-en">Life</span>
                 </a>
             </div>
             <h5>
                 <a href="/2024/12/26/2024/20241226%20%E9%AA%91%E8%BD%A6/" class="trm-anima-link">
-                    骑车-2
+                    
+                        骑车-2
+                    
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
@@ -840,6 +972,7 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
         </div>
     </div>
 </div>
+
     
 </div>
 
@@ -864,22 +997,63 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
 
     
         <div class="trm-footer-item">
-            <span>
+            <span class="i18n-zh">
                 由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="i18n-en">
+                Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v7.3.0
             </span>
             <span class="footer-separator" data-separator=" | "></span>
             <span> 
-                主题/Theme - 
+                <span class="i18n-zh">主题</span><span class="i18n-en">Theme</span> - 
                 <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
                 v2.2.6
             </span>
         </div>
       
 
+    
+        <div class="trm-footer-item blog-run-long"></div>
      
+
+    
+    
+        <div class="trm-footer-item trm-busuanzi">
+            
+                <span id="busuanzi_container_site_uv" style="display:none">
+                    <span class="i18n-zh">本站访客</span><span class="i18n-en">Visitors</span>
+                    <span class="trm-accent-color" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+            
+                <span class="footer-separator" data-separator=" · "></span>
+                <span id="busuanzi_container_site_pv" style="display:none">
+                    <span class="i18n-zh">总访问量</span><span class="i18n-en">Page views</span>
+                    <span class="trm-accent-color" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+            
+        </div>
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+    <div class="trm-footer-item trm-site-wordcount">
+        <span class="i18n-zh">
+            全站
+            <span class="trm-accent-color">88k</span>
+            字
+        </span>
+        <span class="i18n-en">
+            Site total
+            <span class="trm-accent-color">27k</span>
+            words
+        </span>
+    </div>
 
      
 </footer>
+
                     <!-- footer end -->
 
                 </div>
@@ -893,33 +1067,37 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
 
     <div id="post-toc" class="trm-post-toc">
       <div class="trm-post-toc-header">
-        目录导航/Table of Contents
+        <span class="i18n-zh">目录</span><span class="i18n-en">Contents</span>
 				<span id="post-toc-top">
-					置顶/Sticky
+					<span class="i18n-zh">置顶</span><span class="i18n-en">TOP</span>
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="C++ 常用库"><a rel="nofollow" class="trm-toc-link" href="#C-常用库"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">C++ 常用库</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="iostream"><a rel="nofollow" class="trm-toc-link" href="#iostream"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">iostream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="fstream"><a rel="nofollow" class="trm-toc-link" href="#fstream"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">fstream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="sstream"><a rel="nofollow" class="trm-toc-link" href="#sstream"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">sstream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="vector"><a rel="nofollow" class="trm-toc-link" href="#vector"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">vector</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数和析构函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数和析构函数"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">构造函数和析构函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量相关函数"><a rel="nofollow" class="trm-toc-link" href="#容量相关函数"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">容量相关函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问函数"><a rel="nofollow" class="trm-toc-link" href="#元素访问函数"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">元素访问函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器函数"><a rel="nofollow" class="trm-toc-link" href="#修改器函数"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">修改器函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="迭代器函数"><a rel="nofollow" class="trm-toc-link" href="#迭代器函数"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">迭代器函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="队列操作"><a rel="nofollow" class="trm-toc-link" href="#队列操作"><span class="trm-toc-number">1.4.6.</span> <span class="trm-toc-text">队列操作</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="其他操作"><a rel="nofollow" class="trm-toc-link" href="#其他操作"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">其他操作</span></a></li><li class="trm-toc-item trm-toc-level-3" title="pair"><a rel="nofollow" class="trm-toc-link" href="#pair"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">pair</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">构造函数</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="成员访问"><a rel="nofollow" class="trm-toc-link" href="#成员访问"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">成员访问</span></a></li><li class="trm-toc-item trm-toc-level-3" title="成员函数"><a rel="nofollow" class="trm-toc-link" href="#成员函数"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">成员函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="非成员函数"><a rel="nofollow" class="trm-toc-link" href="#非成员函数"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">非成员函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="deque"><a rel="nofollow" class="trm-toc-link" href="#deque"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">deque</span></a></li><li class="trm-toc-item trm-toc-level-3" title="stack"><a rel="nofollow" class="trm-toc-link" href="#stack"><span class="trm-toc-number">1.11.</span> <span class="trm-toc-text">stack</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数-2"><span class="trm-toc-number">1.11.1.</span> <span class="trm-toc-text">构造函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作"><span class="trm-toc-number">1.11.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问"><span class="trm-toc-number">1.11.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器"><span class="trm-toc-number">1.11.4.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="queue"><a rel="nofollow" class="trm-toc-link" href="#queue"><span class="trm-toc-number">1.12.</span> <span class="trm-toc-text">queue</span></a></li><li class="trm-toc-item trm-toc-level-3" title="priority_queue"><a rel="nofollow" class="trm-toc-link" href="#priority-queue"><span class="trm-toc-number">1.13.</span> <span class="trm-toc-text">priority_queue</span></a></li><li class="trm-toc-item trm-toc-level-3" title="set"><a rel="nofollow" class="trm-toc-link" href="#set"><span class="trm-toc-number">1.14.</span> <span class="trm-toc-text">set</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="创建 set"><a rel="nofollow" class="trm-toc-link" href="#创建-set"><span class="trm-toc-number">1.14.1.</span> <span class="trm-toc-text">创建 set</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作-2"><span class="trm-toc-number">1.14.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问-2"><span class="trm-toc-number">1.14.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器-2"><span class="trm-toc-number">1.14.4.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="map"><a rel="nofollow" class="trm-toc-link" href="#map"><span class="trm-toc-number">1.15.</span> <span class="trm-toc-text">map</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="创建 map"><a rel="nofollow" class="trm-toc-link" href="#创建-map"><span class="trm-toc-number">1.15.1.</span> <span class="trm-toc-text">创建 map</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作-3"><span class="trm-toc-number">1.15.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问-3"><span class="trm-toc-number">1.15.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="查找元素"><a rel="nofollow" class="trm-toc-link" href="#查找元素"><span class="trm-toc-number">1.15.4.</span> <span class="trm-toc-text">查找元素</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器-3"><span class="trm-toc-number">1.15.5.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="string"><a rel="nofollow" class="trm-toc-link" href="#string"><span class="trm-toc-number">1.16.</span> <span class="trm-toc-text">string</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="字符串长度和容量"><a rel="nofollow" class="trm-toc-link" href="#字符串长度和容量"><span class="trm-toc-number">1.16.1.</span> <span class="trm-toc-text">字符串长度和容量</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串修改"><a rel="nofollow" class="trm-toc-link" href="#字符串修改"><span class="trm-toc-number">1.16.2.</span> <span class="trm-toc-text">字符串修改</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串查询"><a rel="nofollow" class="trm-toc-link" href="#字符串查询"><span class="trm-toc-number">1.16.3.</span> <span class="trm-toc-text">字符串查询</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串的子串"><a rel="nofollow" class="trm-toc-link" href="#字符串的子串"><span class="trm-toc-number">1.16.4.</span> <span class="trm-toc-text">字符串的子串</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串的连接"><a rel="nofollow" class="trm-toc-link" href="#字符串的连接"><span class="trm-toc-number">1.16.5.</span> <span class="trm-toc-text">字符串的连接</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串与数字之间的转换"><a rel="nofollow" class="trm-toc-link" href="#字符串与数字之间的转换"><span class="trm-toc-number">1.16.6.</span> <span class="trm-toc-text">字符串与数字之间的转换</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="algorithm"><a rel="nofollow" class="trm-toc-link" href="#algorithm"><span class="trm-toc-number">1.17.</span> <span class="trm-toc-text">algorithm</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="sort"><a rel="nofollow" class="trm-toc-link" href="#sort"><span class="trm-toc-number">1.17.1.</span> <span class="trm-toc-text">sort</span></a></li><li class="trm-toc-item trm-toc-level-4" title="permutation"><a rel="nofollow" class="trm-toc-link" href="#permutation"><span class="trm-toc-number">1.17.2.</span> <span class="trm-toc-text">permutation</span></a></li><li class="trm-toc-item trm-toc-level-4" title="reverse"><a rel="nofollow" class="trm-toc-link" href="#reverse"><span class="trm-toc-number">1.17.3.</span> <span class="trm-toc-text">reverse</span></a></li><li class="trm-toc-item trm-toc-level-4" title="copy"><a rel="nofollow" class="trm-toc-link" href="#copy"><span class="trm-toc-number">1.17.4.</span> <span class="trm-toc-text">copy</span></a></li><li class="trm-toc-item trm-toc-level-4" title="rotate"><a rel="nofollow" class="trm-toc-link" href="#rotate"><span class="trm-toc-number">1.17.5.</span> <span class="trm-toc-text">rotate</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="运算符重载"><a rel="nofollow" class="trm-toc-link" href="#运算符重载"><span class="trm-toc-number">1.18.</span> <span class="trm-toc-text">运算符重载</span></a></li><li class="trm-toc-item trm-toc-level-3" title="捕捉异常"><a rel="nofollow" class="trm-toc-link" href="#捕捉异常"><span class="trm-toc-number">1.19.</span> <span class="trm-toc-text">捕捉异常</span></a></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="C++ 常用库"><a rel="nofollow" class="trm-toc-link" href="#C-常用库"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">C++ 常用库</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="iostream"><a rel="nofollow" class="trm-toc-link" href="#iostream"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">iostream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="fstream"><a rel="nofollow" class="trm-toc-link" href="#fstream"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">fstream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="sstream"><a rel="nofollow" class="trm-toc-link" href="#sstream"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">sstream</span></a></li><li class="trm-toc-item trm-toc-level-3" title="vector"><a rel="nofollow" class="trm-toc-link" href="#vector"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">vector</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数和析构函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数和析构函数"><span class="trm-toc-number">1.4.1.</span> <span class="trm-toc-text">构造函数和析构函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量相关函数"><a rel="nofollow" class="trm-toc-link" href="#容量相关函数"><span class="trm-toc-number">1.4.2.</span> <span class="trm-toc-text">容量相关函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问函数"><a rel="nofollow" class="trm-toc-link" href="#元素访问函数"><span class="trm-toc-number">1.4.3.</span> <span class="trm-toc-text">元素访问函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器函数"><a rel="nofollow" class="trm-toc-link" href="#修改器函数"><span class="trm-toc-number">1.4.4.</span> <span class="trm-toc-text">修改器函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="迭代器函数"><a rel="nofollow" class="trm-toc-link" href="#迭代器函数"><span class="trm-toc-number">1.4.5.</span> <span class="trm-toc-text">迭代器函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="队列操作"><a rel="nofollow" class="trm-toc-link" href="#队列操作"><span class="trm-toc-number">1.4.6.</span> <span class="trm-toc-text">队列操作</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="其他操作"><a rel="nofollow" class="trm-toc-link" href="#其他操作"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">其他操作</span></a></li><li class="trm-toc-item trm-toc-level-3" title="pair"><a rel="nofollow" class="trm-toc-link" href="#pair"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">pair</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数"><span class="trm-toc-number">1.6.1.</span> <span class="trm-toc-text">构造函数</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="成员访问"><a rel="nofollow" class="trm-toc-link" href="#成员访问"><span class="trm-toc-number">1.7.</span> <span class="trm-toc-text">成员访问</span></a></li><li class="trm-toc-item trm-toc-level-3" title="成员函数"><a rel="nofollow" class="trm-toc-link" href="#成员函数"><span class="trm-toc-number">1.8.</span> <span class="trm-toc-text">成员函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="非成员函数"><a rel="nofollow" class="trm-toc-link" href="#非成员函数"><span class="trm-toc-number">1.9.</span> <span class="trm-toc-text">非成员函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="deque"><a rel="nofollow" class="trm-toc-link" href="#deque"><span class="trm-toc-number">1.10.</span> <span class="trm-toc-text">deque</span></a></li><li class="trm-toc-item trm-toc-level-3" title="stack"><a rel="nofollow" class="trm-toc-link" href="#stack"><span class="trm-toc-number">1.11.</span> <span class="trm-toc-text">stack</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="构造函数"><a rel="nofollow" class="trm-toc-link" href="#构造函数-2"><span class="trm-toc-number">1.11.1.</span> <span class="trm-toc-text">构造函数</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作"><span class="trm-toc-number">1.11.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问"><span class="trm-toc-number">1.11.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器"><span class="trm-toc-number">1.11.4.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="queue"><a rel="nofollow" class="trm-toc-link" href="#queue"><span class="trm-toc-number">1.12.</span> <span class="trm-toc-text">queue</span></a></li><li class="trm-toc-item trm-toc-level-3" title="priority_queue"><a rel="nofollow" class="trm-toc-link" href="#priority-queue"><span class="trm-toc-number">1.13.</span> <span class="trm-toc-text">priority_queue</span></a></li><li class="trm-toc-item trm-toc-level-3" title="set"><a rel="nofollow" class="trm-toc-link" href="#set"><span class="trm-toc-number">1.14.</span> <span class="trm-toc-text">set</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="创建 set"><a rel="nofollow" class="trm-toc-link" href="#创建-set"><span class="trm-toc-number">1.14.1.</span> <span class="trm-toc-text">创建 set</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作-2"><span class="trm-toc-number">1.14.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问-2"><span class="trm-toc-number">1.14.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器-2"><span class="trm-toc-number">1.14.4.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="map"><a rel="nofollow" class="trm-toc-link" href="#map"><span class="trm-toc-number">1.15.</span> <span class="trm-toc-text">map</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="创建 map"><a rel="nofollow" class="trm-toc-link" href="#创建-map"><span class="trm-toc-number">1.15.1.</span> <span class="trm-toc-text">创建 map</span></a></li><li class="trm-toc-item trm-toc-level-4" title="容量操作"><a rel="nofollow" class="trm-toc-link" href="#容量操作-3"><span class="trm-toc-number">1.15.2.</span> <span class="trm-toc-text">容量操作</span></a></li><li class="trm-toc-item trm-toc-level-4" title="元素访问"><a rel="nofollow" class="trm-toc-link" href="#元素访问-3"><span class="trm-toc-number">1.15.3.</span> <span class="trm-toc-text">元素访问</span></a></li><li class="trm-toc-item trm-toc-level-4" title="查找元素"><a rel="nofollow" class="trm-toc-link" href="#查找元素"><span class="trm-toc-number">1.15.4.</span> <span class="trm-toc-text">查找元素</span></a></li><li class="trm-toc-item trm-toc-level-4" title="修改器"><a rel="nofollow" class="trm-toc-link" href="#修改器-3"><span class="trm-toc-number">1.15.5.</span> <span class="trm-toc-text">修改器</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="string"><a rel="nofollow" class="trm-toc-link" href="#string"><span class="trm-toc-number">1.16.</span> <span class="trm-toc-text">string</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="字符串长度和容量"><a rel="nofollow" class="trm-toc-link" href="#字符串长度和容量"><span class="trm-toc-number">1.16.1.</span> <span class="trm-toc-text">字符串长度和容量</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串修改"><a rel="nofollow" class="trm-toc-link" href="#字符串修改"><span class="trm-toc-number">1.16.2.</span> <span class="trm-toc-text">字符串修改</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串查询"><a rel="nofollow" class="trm-toc-link" href="#字符串查询"><span class="trm-toc-number">1.16.3.</span> <span class="trm-toc-text">字符串查询</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串的子串"><a rel="nofollow" class="trm-toc-link" href="#字符串的子串"><span class="trm-toc-number">1.16.4.</span> <span class="trm-toc-text">字符串的子串</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串的连接"><a rel="nofollow" class="trm-toc-link" href="#字符串的连接"><span class="trm-toc-number">1.16.5.</span> <span class="trm-toc-text">字符串的连接</span></a></li><li class="trm-toc-item trm-toc-level-4" title="字符串与数字之间的转换"><a rel="nofollow" class="trm-toc-link" href="#字符串与数字之间的转换"><span class="trm-toc-number">1.16.6.</span> <span class="trm-toc-text">字符串与数字之间的转换</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="algorithm"><a rel="nofollow" class="trm-toc-link" href="#algorithm"><span class="trm-toc-number">1.17.</span> <span class="trm-toc-text">algorithm</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="sort"><a rel="nofollow" class="trm-toc-link" href="#sort"><span class="trm-toc-number">1.17.1.</span> <span class="trm-toc-text">sort</span></a></li><li class="trm-toc-item trm-toc-level-4" title="find"><a rel="nofollow" class="trm-toc-link" href="#find"><span class="trm-toc-number">1.17.2.</span> <span class="trm-toc-text">find</span></a></li><li class="trm-toc-item trm-toc-level-4" title="permutation"><a rel="nofollow" class="trm-toc-link" href="#permutation"><span class="trm-toc-number">1.17.3.</span> <span class="trm-toc-text">permutation</span></a></li><li class="trm-toc-item trm-toc-level-4" title="reverse"><a rel="nofollow" class="trm-toc-link" href="#reverse"><span class="trm-toc-number">1.17.4.</span> <span class="trm-toc-text">reverse</span></a></li><li class="trm-toc-item trm-toc-level-4" title="copy"><a rel="nofollow" class="trm-toc-link" href="#copy"><span class="trm-toc-number">1.17.5.</span> <span class="trm-toc-text">copy</span></a></li><li class="trm-toc-item trm-toc-level-4" title="rotate"><a rel="nofollow" class="trm-toc-link" href="#rotate"><span class="trm-toc-number">1.17.6.</span> <span class="trm-toc-text">rotate</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="运算符重载"><a rel="nofollow" class="trm-toc-link" href="#运算符重载"><span class="trm-toc-number">1.18.</span> <span class="trm-toc-text">运算符重载</span></a></li><li class="trm-toc-item trm-toc-level-3" title="捕捉异常"><a rel="nofollow" class="trm-toc-link" href="#捕捉异常"><span class="trm-toc-number">1.19.</span> <span class="trm-toc-text">捕捉异常</span></a></li></ol></li></ol>
       </div>
     </div>
 
             
 <div class="trm-fixed-container">
     
-        <div class="trm-fixed-btn post-toc-btn" data-title="目录/Table of Contents">
+        <div class="trm-fixed-btn post-toc-btn">
+            <span class="trm-fixed-tip" aria-hidden="true"><span class="i18n-zh">目录</span><span class="i18n-en">Contents</span></span>
             <i class="iconfont fas fa-th-list"></i>
         </div>
     
     
-        <div class="trm-fixed-btn" data-title="阅读模式/Reading Mode" onclick="asyncFun.switchReadMode()">
+        <div class="trm-fixed-btn" onclick="asyncFun.switchReadMode()">
+            <span class="trm-fixed-tip" aria-hidden="true"><span class="i18n-zh">阅读</span><span class="i18n-en">Read</span></span>
             <i class="iconfont fas fa-book-reader"></i>
         </div>
     
     
-    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部/Back to Top">
+    <div id="trm-back-top" class="trm-fixed-btn">
+        <span class="trm-fixed-tip" aria-hidden="true"><span class="i18n-zh">顶部</span><span class="i18n-en">Top</span></span>
         <i class="iconfont fas fa-arrow-up"></i>
     </div>
 </div>
+
         </div>
       </div>
       <!-- scroll container end -->
@@ -1001,6 +1179,25 @@ std::sort(v.begin(), v.end()); // 对 vector v 中的元素排序
 
 
 
-</body>
+<!-- hexo injector body_end start --><script>
+(function () {
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  function apply(isDark) {
+    var mode = isDark ? 'style-dark' : 'style-light';
+    if (window.ASYNC_CONFIG && window.ASYNC_CONFIG.theme) {
+      window.ASYNC_CONFIG.theme.default = mode;
+    }
+    try { localStorage.removeItem('theme-mode'); } catch (e) {}
+    document.documentElement.classList.toggle('dark', isDark);
+    var anim = document.querySelector('.trm-mode-swich-animation');
+    if (anim) anim.classList.toggle('trm-active', isDark);
+    if (window.asyncFun && typeof window.asyncFun.setThemeColor === 'function') {
+      window.asyncFun.setThemeColor();
+    }
+  }
+  if (mq.addEventListener) mq.addEventListener('change', function (e) { apply(e.matches); });
+  else if (mq.addListener) mq.addListener(function (e) { apply(e.matches); });
+})();
+</script><script src="/js/site-lang.js"></script><!-- hexo injector body_end end --></body>
 
 </html>

@@ -1,0 +1,10 @@
+html[data-lang="zh"] .i18n-en,html:not([data-lang]) .i18n-en{display:none!important}
+html[data-lang="en"] .i18n-zh{display:none!important}
+html[data-lang="en"] .post-zh-only-notice{display:block!important}
+.trm-lang-switcher{display:inline-flex;align-items:center;gap:4px;margin-right:12px;vertical-align:middle}
+.trm-lang-btn{border:1px solid var(--primary,#afb42b);background:transparent;color:inherit;border-radius:999px;min-width:34px;height:28px;padding:0 8px;font-size:12px;line-height:1;cursor:pointer;opacity:.7}
+.trm-lang-btn[aria-pressed="true"]{background:var(--primary,#afb42b);color:#fff;opacity:1}
+.trm-lang-btn:hover{opacity:1}
+.trm-fixed-container .trm-fixed-btn::before{content:none!important;display:none!important}
+.trm-fixed-container .trm-fixed-btn .trm-fixed-tip{position:absolute;z-index:2;right:50px;top:50%;padding:4px 10px;border-radius:4px;background-color:var(--fixed-button-bg-color);color:var(--fixed-button-color);font-size:.8rem;line-height:2;width:max-content;white-space:nowrap;pointer-events:none;opacity:0;transform:translate(80%,-50%) scale(0);transition:all .2s ease-in-out}
+@media (any-hover:hover){.trm-fixed-container .trm-fixed-btn:hover .trm-fixed-tip{opacity:1;transform:translate(0,-50%) scale(1)}}
