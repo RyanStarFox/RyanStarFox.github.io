@@ -4316,6 +4316,12 @@ html.dark .trm-website-card .trm-website-card__title,
   background: color-mix(in srgb, var(--primary, #afb42b) 22%, transparent);
   outline: none;
 }
+.trm-card-stack__nav--up {
+  transform: rotate(90deg);
+}
+.trm-card-stack__nav--down {
+  transform: rotate(90deg);
+}
 .trm-card-stack__stage {
   --stack-card-h: 64px;
   position: relative;

@@ -17,8 +17,6 @@
     let order = items.slice();
     let busy = false;
 
-    const front = () => order[0];
-
     const paint = () => {
       const n = order.length;
       order.forEach((el, i) => {
@@ -44,18 +42,30 @@
     const tf = (p, x, extraRot) =>
       `translate(${p.x + x}px, ${p.y}px) rotate(${p.rot + extraRot}deg)`;
 
-    const dealFrom = async (dir) => {
+    // Both actions travel via the right side:
+    // - down: peel top (above pile) → tuck under on the way back
+    // - up: slide out from under → land on top on the way back
+    const cycle = async (mode) => {
       if (busy || order.length < 2) return;
-      const el = front();
-      const width = el.offsetWidth || stage.offsetWidth || 320;
-      const off = dir * width * 1.22;
-      const extra = dir > 0 ? 6 : -6;
+
+      const width = order[0].offsetWidth || stage.offsetWidth || 320;
+      const off = width * 1.22;
+      const extra = 6;
+      const n = order.length;
+      const el = mode === 'down' ? order[0] : order[n - 1];
       const p = pose(el);
 
       busy = true;
       el.classList.add('is-flying');
       el.style.transition = 'none';
-      el.style.zIndex = String(order.length + 8);
+
+      if (mode === 'down') {
+        // Start above the pile (peeling the front card).
+        el.style.zIndex = String(n + 8);
+      } else {
+        // Stay under the pile while sliding out to the right.
+        el.style.zIndex = '1';
+      }
 
       const anim = el.animate(
         [
@@ -67,10 +77,19 @@
       );
 
       window.setTimeout(() => {
-        order.shift();
-        order.push(el);
-        paint();
-        el.style.zIndex = '1';
+        if (mode === 'down') {
+          // Off-screen: become the new bottom, stay under on return.
+          order.shift();
+          order.push(el);
+          paint();
+          el.style.zIndex = '1';
+        } else {
+          // Off-screen: become the new top, cover the pile on return.
+          order.pop();
+          order.unshift(el);
+          paint();
+          el.style.zIndex = String(order.length + 8);
+        }
       }, DURATION * PEAK);
 
       await waitAnim(anim);
@@ -88,14 +107,14 @@
       prevBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        dealFrom(-1);
+        cycle('up');
       });
     }
     if (nextBtn) {
       nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        dealFrom(1);
+        cycle('down');
       });
     }
 
