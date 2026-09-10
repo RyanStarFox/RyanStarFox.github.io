@@ -50,16 +50,16 @@ main {
   --color-btn-active-border: transparent;
   --color-btn-selected-bg: #0e4d66;
   --color-btn-primary-text: #00283a;
-  --color-btn-primary-bg: #c0ca33;
+  --color-btn-primary-bg: #afb42b;
   --color-btn-primary-border: transparent;
   --color-btn-primary-shadow: none;
   --color-btn-primary-inset-shadow: none;
-  --color-btn-primary-hover-bg: #d4e157;
+  --color-btn-primary-hover-bg: #c0ca33;
   --color-btn-primary-hover-border: transparent;
-  --color-btn-primary-selected-bg: #c0ca33;
+  --color-btn-primary-selected-bg: #afb42b;
   --color-btn-primary-selected-shadow: none;
-  --color-btn-primary-disabled-text: rgb(0 40 58 / 50%);
-  --color-btn-primary-disabled-bg: #c0ca3380;
+  --color-btn-primary-disabled-text: rgb(0 40 58 / 55%);
+  --color-btn-primary-disabled-bg: rgb(175 180 43 / 45%);
   --color-btn-primary-disabled-border: transparent;
   --color-action-list-item-default-hover-bg: rgb(255 255 255 / 8%);
   --color-segmented-control-bg: #0a3548;
@@ -176,6 +176,35 @@ main .form-control {
   border-radius: 0 !important;
   background-color: transparent !important;
   color: #e6eef4 !important;
+}
+
+.gsc-comment-box textarea::placeholder,
+.gsc-reply-box textarea::placeholder,
+main .form-control::placeholder {
+  color: #8aa0b0 !important;
+  opacity: 1 !important;
+}
+
+main .btn-primary,
+.gsc-comment-box .btn-primary,
+.gsc-reply-box .btn-primary {
+  background-color: #afb42b !important;
+  background-image: none !important;
+  color: #00283a !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+main .btn-primary:hover,
+.gsc-comment-box .btn-primary:hover,
+.gsc-reply-box .btn-primary:hover {
+  background-color: #c0ca33 !important;
+  color: #00283a !important;
+}
+
+.gsc-comment-box-bottom a,
+.gsc-comment-box-markdown-hint {
+  color: #9eb0be !important;
 }
 
 .gsc-comment-box-textarea-extras {
