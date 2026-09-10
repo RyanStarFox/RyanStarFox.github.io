@@ -80,7 +80,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"blog.ryanstarfox.top","author":"RyanStarFox","root":"/","typed_text":["生活","旅行","书籍","电影","思考","聊天"],"theme_version":"2.2.6","theme":{"switch":false,"default":"auto"},"favicon":{"logo":"/metadata/favicon.svg","icon16":"/metadata/favicon-16x16.png","icon32":"/metadata/favicon-32x32.png","apple_touch_icon":"/metadata/apple-touch-icon.png","webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索标题、正文、标签、分类…","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"<span class=\"i18n-zh\">置顶</span><span class=\"i18n-en\">TOP</span>","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"07/29/2025 15:00:00","prefix":"<span class=\"i18n-zh\">博客已运行</span><span class=\"i18n-en\">Blog uptime:</span> undefined <span class=\"i18n-zh\">天</span><span class=\"i18n-en\">days</span>"},"danmu":{"enable":false,"el":".trm-banner"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"preload":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2026-09-09 22:53:20"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":false,"isHome":false,"postUpdate":"2026-09-10 11:38:55"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
@@ -225,11 +225,13 @@
 </div>
 <!-- menu end -->
 
+			
+		</div>
+		<div class="trm-top-actions">
 			<div class="trm-lang-switcher" role="group" aria-label="Language">
 				<button type="button" class="trm-lang-btn" data-lang="zh" aria-pressed="true">中</button>
 				<button type="button" class="trm-lang-btn" data-lang="en" aria-pressed="false">EN</button>
 			</div>
-			
 			
     
     <div id="trm-search-btn" class="trm-search-btn">
@@ -237,9 +239,9 @@
     </div>
      
 
-		</div>
-		<div class="trm-menu-btn">
-			<span></span>
+			<div class="trm-menu-btn">
+				<span></span>
+			</div>
 		</div>
 	</div>
 </header>
@@ -252,6 +254,7 @@
 <div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner">
+    
     
     <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/metadata/banner.png">
     
@@ -437,13 +440,14 @@
         
     <div class="trm-divider trm-mb-40 trm-mt-40"></div>
     <!-- action button -->
-    <div class="text-center">
+    <div class="trm-contact-btn-wrap">
         <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
             <span class="i18n-zh">联系我</span><span class="i18n-en">Contact Me</span>
             <i class="iconfont far fa-envelope"></i>
         </a>
     </div>
     <!-- action button end -->
+
 
     </div>
 </div>
@@ -742,6 +746,24 @@
                         <span class="i18n-zh">清空筛选</span><span class="i18n-en">Clear filters</span>
                     </button>
                 </div>
+                <div class="trm-search-filter-group" data-facet="date">
+                    <div class="trm-search-filter-title">
+                        <span class="i18n-zh">时间</span><span class="i18n-en">Date</span>
+                    </div>
+                    <div class="trm-search-date-range">
+                        <div class="trm-search-date-field">
+                            <span class="i18n-zh">开始</span><span class="i18n-en">From</span>
+                            <select class="trm-search-date-select" data-date="from-year" aria-label="Start year"></select>
+                            <select class="trm-search-date-select" data-date="from-month" aria-label="Start month"></select>
+                        </div>
+                        <span class="trm-search-date-sep">–</span>
+                        <div class="trm-search-date-field">
+                            <span class="i18n-zh">结束</span><span class="i18n-en">To</span>
+                            <select class="trm-search-date-select" data-date="to-year" aria-label="End year"></select>
+                            <select class="trm-search-date-select" data-date="to-month" aria-label="End month"></select>
+                        </div>
+                    </div>
+                </div>
                 <div class="trm-search-filter-group" data-facet="categories">
                     <div class="trm-search-filter-title">
                         <span class="i18n-zh">分类</span><span class="i18n-en">Categories</span>
@@ -880,6 +902,8 @@
   if (mq.addEventListener) mq.addEventListener('change', function (e) { apply(e.matches); });
   else if (mq.addListener) mq.addListener(function (e) { apply(e.matches); });
 })();
-</script><script src="/js/site-lang.js"></script><!-- hexo injector body_end end --></body>
+</script><script src="/js/site-lang.js"></script>
+<script src="/js/cover-carousel.js"></script>
+<script src="/js/card-stack.js"></script><!-- hexo injector body_end end --></body>
 
 </html>

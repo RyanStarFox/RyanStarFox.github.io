@@ -223,11 +223,13 @@
 </div>
 <!-- menu end -->
 
+			
+		</div>
+		<div class="trm-top-actions">
 			<div class="trm-lang-switcher" role="group" aria-label="Language">
 				<button type="button" class="trm-lang-btn" data-lang="zh" aria-pressed="true">中</button>
 				<button type="button" class="trm-lang-btn" data-lang="en" aria-pressed="false">EN</button>
 			</div>
-			
 			
     
     <div id="trm-search-btn" class="trm-search-btn">
@@ -235,9 +237,9 @@
     </div>
      
 
-		</div>
-		<div class="trm-menu-btn">
-			<span></span>
+			<div class="trm-menu-btn">
+				<span></span>
+			</div>
 		</div>
 	</div>
 </header>
@@ -249,6 +251,7 @@
 <div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner">
+    
     
     <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/images/2025/%E5%9C%B0%E9%A2%91%E7%BA%BF_hd.jpg">
     
@@ -435,13 +438,14 @@
         
     <div class="trm-divider trm-mb-40 trm-mt-40"></div>
     <!-- action button -->
-    <div class="text-center">
+    <div class="trm-contact-btn-wrap">
         <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
             <span class="i18n-zh">联系我</span><span class="i18n-en">Contact Me</span>
             <i class="iconfont far fa-envelope"></i>
         </a>
     </div>
     <!-- action button end -->
+
 
     </div>
 </div>
@@ -513,10 +517,15 @@
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/" class="trm-cover-frame trm-anima-link">
+        <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-cover-frame trm-anima-link">
             
             
-                <img alt="cover" class="no-fancybox" src="/images/notes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.png">
+                
+
+
+  <img alt="cover" class="no-fancybox" src="/images/notes/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.png">
+
+
             
         </a>
         
@@ -527,9 +536,9 @@
                 </a>
             </div>
             <h5>
-                <a href="/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/" class="trm-anima-link">
+                <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-anima-link">
                     
-                        <span class="i18n-zh">算法与复杂性整理</span><span class="i18n-en">Algorithms and Complexity Notes</span>
+                        <span class="i18n-zh">马克思主义基本原理</span><span class="i18n-en">Basic Principles of Marxism</span>
                     
                 </a>
             </h5>
@@ -538,10 +547,10 @@
                 <li>25/06/08</li>
                 <li>00:00</li>
                 
-                    <li>3.8k</li>
+                    <li>13.4k</li>
                 
                 
-                    <li>15</li>
+                    <li>45</li>
                 
             </ul>
         </div>
@@ -555,7 +564,12 @@
         <a href="/2025/01/15/2025/20250115%20%E9%9B%86%E5%90%88%E8%AE%BA/" class="trm-cover-frame trm-anima-link">
             
             
-                <img alt="cover" class="no-fancybox" src="/images/notes/%E9%9B%86%E5%90%88%E8%AE%BA.png">
+                
+
+
+  <img alt="cover" class="no-fancybox" src="/images/notes/%E9%9B%86%E5%90%88%E8%AE%BA.png">
+
+
             
         </a>
         
@@ -730,6 +744,24 @@
                         <span class="i18n-zh">清空筛选</span><span class="i18n-en">Clear filters</span>
                     </button>
                 </div>
+                <div class="trm-search-filter-group" data-facet="date">
+                    <div class="trm-search-filter-title">
+                        <span class="i18n-zh">时间</span><span class="i18n-en">Date</span>
+                    </div>
+                    <div class="trm-search-date-range">
+                        <div class="trm-search-date-field">
+                            <span class="i18n-zh">开始</span><span class="i18n-en">From</span>
+                            <select class="trm-search-date-select" data-date="from-year" aria-label="Start year"></select>
+                            <select class="trm-search-date-select" data-date="from-month" aria-label="Start month"></select>
+                        </div>
+                        <span class="trm-search-date-sep">–</span>
+                        <div class="trm-search-date-field">
+                            <span class="i18n-zh">结束</span><span class="i18n-en">To</span>
+                            <select class="trm-search-date-select" data-date="to-year" aria-label="End year"></select>
+                            <select class="trm-search-date-select" data-date="to-month" aria-label="End month"></select>
+                        </div>
+                    </div>
+                </div>
                 <div class="trm-search-filter-group" data-facet="categories">
                     <div class="trm-search-filter-title">
                         <span class="i18n-zh">分类</span><span class="i18n-en">Categories</span>
@@ -872,6 +904,8 @@
   if (mq.addEventListener) mq.addEventListener('change', function (e) { apply(e.matches); });
   else if (mq.addListener) mq.addListener(function (e) { apply(e.matches); });
 })();
-</script><script src="/js/site-lang.js"></script><!-- hexo injector body_end end --></body>
+</script><script src="/js/site-lang.js"></script>
+<script src="/js/cover-carousel.js"></script>
+<script src="/js/card-stack.js"></script><!-- hexo injector body_end end --></body>
 
 </html>

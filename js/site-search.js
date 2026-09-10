@@ -6,6 +6,10 @@
     mode: 'and',
     selectedTags: new Set(),
     selectedCategories: new Set(),
+    dateFromYear: '',
+    dateFromMonth: '',
+    dateToYear: '',
+    dateToMonth: '',
   };
 
   function currentLang() {
@@ -54,7 +58,7 @@
     return query
       .trim()
       .toLowerCase()
-      .split(/[-\s]+/)
+      .split(/\s+/)
       .filter(Boolean);
   }
 
@@ -82,6 +86,77 @@
       hitCount,
       includedCount: included.size,
     };
+  }
+
+  function itemMonth(item) {
+    if (!item) return '';
+    const raw = item.date;
+    if (typeof raw === 'string') {
+      const m = raw.match(/^(\d{4})[-/](\d{1,2})/);
+      if (m) return `${m[1]}-${String(m[2]).padStart(2, '0')}`;
+      if (/^\d{4}$/.test(raw)) return `${raw}-01`;
+    }
+    const url = String(item.url || item.path || '');
+    const um = url.match(/\/(20\d{2})\/(\d{1,2})\//);
+    if (um) return `${um[1]}-${String(um[2]).padStart(2, '0')}`;
+    return '';
+  }
+
+  function availableYears() {
+    const now = new Date().getFullYear();
+    const set = new Set();
+    for (let y = now; y >= 2020; y -= 1) set.add(String(y));
+    (state.datas || []).forEach((item) => {
+      const month = itemMonth(item);
+      if (month) set.add(month.slice(0, 4));
+    });
+    return Array.from(set).sort((a, b) => Number(b) - Number(a));
+  }
+
+  function readDates(popup) {
+    if (!popup) return;
+    const val = (key) => {
+      const el = popup.querySelector(`[data-date="${key}"]`);
+      return el ? String(el.value || '') : '';
+    };
+    state.dateFromYear = val('from-year');
+    state.dateFromMonth = val('from-month');
+    state.dateToYear = val('to-year');
+    state.dateToMonth = val('to-month');
+  }
+
+  function matchDate(item) {
+    const fromYear = state.dateFromYear ? Number(state.dateFromYear) : null;
+    const toYear = state.dateToYear ? Number(state.dateToYear) : null;
+    if (fromYear == null && toYear == null) return true;
+
+    const month = itemMonth(item);
+    if (!month) return true;
+    const year = Number(month.slice(0, 4));
+    const mon = Number(month.slice(5, 7));
+    if (!year || !mon) return true;
+
+    const fromMon = state.dateFromMonth ? Number(state.dateFromMonth) : 1;
+    const toMon = state.dateToMonth ? Number(state.dateToMonth) : 12;
+
+    if (fromYear != null) {
+      if (year < fromYear) return false;
+      if (year === fromYear && mon < fromMon) return false;
+    }
+    if (toYear != null) {
+      if (year > toYear) return false;
+      if (year === toYear && mon > toMon) return false;
+    }
+    return true;
+  }
+
+  function hasActiveFilters() {
+    return (
+      state.selectedTags.size > 0 ||
+      state.selectedCategories.size > 0 ||
+      !!state.dateFromYear ||
+      !!state.dateToYear
+    );
   }
 
   function matchFacets(item) {
@@ -161,6 +236,7 @@
       lang === 'en' && item.tags_en && item.tags_en[i] ? item.tags_en[i] : name
     );
     const parts = [];
+    if (item.date) parts.push(item.date);
     if (cats.length) parts.push(cats.join(' / '));
     if (tags.length) parts.push(tags.join(', '));
     return parts.map(escapeHtml).join(' · ');
@@ -187,6 +263,7 @@
           state.facets = data.facets || { tags: [], categories: [] };
         }
         state.loading = null;
+        document.querySelectorAll('.trm-search-popup').forEach(renderDateSelects);
         return state.datas;
       })
       .catch((err) => {
@@ -195,6 +272,38 @@
         return null;
       });
     return state.loading;
+  }
+
+  function renderDateSelects(popup) {
+    if (!popup) return;
+    const lang = currentLang();
+    const any = lang === 'en' ? 'Any' : '不限';
+    const years = availableYears();
+
+    const fill = (key, opts, current) => {
+      const el = popup.querySelector(`[data-date="${key}"]`);
+      if (!el) return;
+      el.innerHTML = opts
+        .map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`)
+        .join('');
+      const wanted = current || '';
+      el.value = opts.some(([value]) => value === wanted) ? wanted : '';
+    };
+
+    const yearOpts = [['', any], ...years.map((y) => [y, y])];
+    const monthOpts = [
+      ['', any],
+      ...Array.from({ length: 12 }, (_, i) => {
+        const mm = String(i + 1).padStart(2, '0');
+        const label = lang === 'en' ? mm : `${i + 1}月`;
+        return [mm, label];
+      }),
+    ];
+
+    fill('from-year', yearOpts, state.dateFromYear);
+    fill('to-year', yearOpts, state.dateToYear);
+    fill('from-month', monthOpts, state.dateFromMonth);
+    fill('to-month', monthOpts, state.dateToMonth);
   }
 
   function renderChips(popup) {
@@ -222,7 +331,8 @@
 
     const query = input.value.trim();
     const keywords = tokenize(query);
-    const hasFilters = state.selectedTags.size > 0 || state.selectedCategories.size > 0;
+    readDates(popup);
+    const hasFilters = hasActiveFilters();
     const dict = i18n();
     const lang = currentLang();
 
@@ -244,6 +354,7 @@
     const results = [];
     state.datas.forEach((item, id) => {
       if (!matchFacets(item)) return;
+      if (!matchDate(item)) return;
       const kw = matchKeywords(item, keywords);
       if (!kw.ok) return;
       results.push({ item, id, ...kw });
@@ -313,11 +424,19 @@
 
     const run = () => renderResults(popup);
 
+    const onDate = (e) => {
+      const el = e.target.closest && e.target.closest('[data-date]');
+      if (!el) return;
+      readDates(popup);
+      run();
+    };
+
     const open = async () => {
       popup.classList.add('show');
       setTimeout(() => input.focus(), 200);
       await ensureData();
       if (filters) filters.hidden = false;
+      renderDateSelects(popup);
       renderChips(popup);
       syncPlaceholder(popup);
       run();
@@ -360,6 +479,11 @@
     const onClear = () => {
       state.selectedTags.clear();
       state.selectedCategories.clear();
+      state.dateFromYear = '';
+      state.dateFromMonth = '';
+      state.dateToYear = '';
+      state.dateToMonth = '';
+      renderDateSelects(popup);
       renderChips(popup);
       run();
     };
@@ -375,10 +499,12 @@
     popup.addEventListener('click', onBackdrop);
     popup.addEventListener('click', onMode);
     popup.addEventListener('click', onChip);
+    popup.addEventListener('change', onDate);
     if (clearBtn) clearBtn.addEventListener('click', onClear);
 
     const onLang = () => {
       syncPlaceholder(popup);
+      renderDateSelects(popup);
       renderChips(popup);
       run();
     };
@@ -395,6 +521,7 @@
       popup.removeEventListener('click', onBackdrop);
       popup.removeEventListener('click', onMode);
       popup.removeEventListener('click', onChip);
+      popup.removeEventListener('change', onDate);
       if (clearBtn) clearBtn.removeEventListener('click', onClear);
       document.documentElement.removeEventListener('site-lang-change', onLang);
     };

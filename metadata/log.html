@@ -227,11 +227,13 @@
 </div>
 <!-- menu end -->
 
+			
+		</div>
+		<div class="trm-top-actions">
 			<div class="trm-lang-switcher" role="group" aria-label="Language">
 				<button type="button" class="trm-lang-btn" data-lang="zh" aria-pressed="true">中</button>
 				<button type="button" class="trm-lang-btn" data-lang="en" aria-pressed="false">EN</button>
 			</div>
-			
 			
     
     <div id="trm-search-btn" class="trm-search-btn">
@@ -239,9 +241,9 @@
     </div>
      
 
-		</div>
-		<div class="trm-menu-btn">
-			<span></span>
+			<div class="trm-menu-btn">
+				<span></span>
+			</div>
 		</div>
 	</div>
 </header>
@@ -255,6 +257,7 @@
 <div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner">
+    
     
     <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/metadata/banner.png">
     
@@ -440,13 +443,14 @@
         
     <div class="trm-divider trm-mb-40 trm-mt-40"></div>
     <!-- action button -->
-    <div class="text-center">
+    <div class="trm-contact-btn-wrap">
         <a href="mailto:ryanwsy@icloud.com" class="trm-btn">
             <span class="i18n-zh">联系我</span><span class="i18n-en">Contact Me</span>
             <i class="iconfont far fa-envelope"></i>
         </a>
     </div>
     <!-- action button end -->
+
 
     </div>
 </div>
@@ -620,6 +624,24 @@
                         <span class="i18n-zh">清空筛选</span><span class="i18n-en">Clear filters</span>
                     </button>
                 </div>
+                <div class="trm-search-filter-group" data-facet="date">
+                    <div class="trm-search-filter-title">
+                        <span class="i18n-zh">时间</span><span class="i18n-en">Date</span>
+                    </div>
+                    <div class="trm-search-date-range">
+                        <div class="trm-search-date-field">
+                            <span class="i18n-zh">开始</span><span class="i18n-en">From</span>
+                            <select class="trm-search-date-select" data-date="from-year" aria-label="Start year"></select>
+                            <select class="trm-search-date-select" data-date="from-month" aria-label="Start month"></select>
+                        </div>
+                        <span class="trm-search-date-sep">–</span>
+                        <div class="trm-search-date-field">
+                            <span class="i18n-zh">结束</span><span class="i18n-en">To</span>
+                            <select class="trm-search-date-select" data-date="to-year" aria-label="End year"></select>
+                            <select class="trm-search-date-select" data-date="to-month" aria-label="End month"></select>
+                        </div>
+                    </div>
+                </div>
                 <div class="trm-search-filter-group" data-facet="categories">
                     <div class="trm-search-filter-title">
                         <span class="i18n-zh">分类</span><span class="i18n-en">Categories</span>
@@ -762,6 +784,8 @@
   if (mq.addEventListener) mq.addEventListener('change', function (e) { apply(e.matches); });
   else if (mq.addListener) mq.addListener(function (e) { apply(e.matches); });
 })();
-</script><script src="/js/site-lang.js"></script><!-- hexo injector body_end end --></body>
+</script><script src="/js/site-lang.js"></script>
+<script src="/js/cover-carousel.js"></script>
+<script src="/js/card-stack.js"></script><!-- hexo injector body_end end --></body>
 
 </html>
