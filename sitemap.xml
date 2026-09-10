@@ -4,7 +4,7 @@
   <url>
     <loc>https://blog.ryanstarfox.top/websites/index.html</loc>
     
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,16 @@
   <url>
     <loc>https://blog.ryanstarfox.top/useful_links/index.html</loc>
     
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ryanstarfox.top/about/index.html</loc>
+    
+    <lastmod>2026-09-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://blog.ryanstarfox.top/tags/index.html</loc>
-    
-    <lastmod>2026-09-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ryanstarfox.top/about/index.html</loc>
     
     <lastmod>2026-09-08</lastmod>
     
@@ -155,15 +155,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/metadata/log.html</loc>
-    
-    <lastmod>2025-08-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ryanstarfox.top/2025/08/27/2025/20250827%20Bert%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2025-08-27</lastmod>
@@ -254,7 +245,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/</loc>
+    <loc>https://blog.ryanstarfox.top/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/</loc>
     
     <lastmod>2025-06-07</lastmod>
     
@@ -263,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/</loc>
+    <loc>https://blog.ryanstarfox.top/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/</loc>
     
     <lastmod>2025-06-07</lastmod>
     
@@ -541,7 +532,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/tags/Apple/</loc>
+    <loc>https://blog.ryanstarfox.top/tags/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -569,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/tags/%E6%84%9F%E6%82%9F/</loc>
+    <loc>https://blog.ryanstarfox.top/tags/Apple/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -641,14 +632,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/categories/%E6%84%9F%E6%82%9F/</loc>
+    <loc>https://blog.ryanstarfox.top/categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.ryanstarfox.top/categories/%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
+    <loc>https://blog.ryanstarfox.top/categories/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

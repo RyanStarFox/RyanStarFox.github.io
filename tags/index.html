@@ -523,7 +523,7 @@
             
             
         </div>
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script defer src="https://vercount.one/js" data-swup-reload-script data-reset="true"></script>
     
 
     
@@ -712,10 +712,6 @@
 
     <!-- 评论插件 -->
     
-        
-
-        
-    
 
 		
 
@@ -755,6 +751,9 @@
     if (anim) anim.classList.toggle('trm-active', isDark);
     if (window.asyncFun && typeof window.asyncFun.setThemeColor === 'function') {
       window.asyncFun.setThemeColor();
+    }
+    if (typeof window.changeGiscusTheme === 'function') {
+      window.changeGiscusTheme();
     }
   }
   if (mq.addEventListener) mq.addEventListener('change', function (e) { apply(e.matches); });

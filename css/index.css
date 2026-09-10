@@ -4576,6 +4576,18 @@ html.dark .trm-stack-card,
   line-height: 1.5;
   opacity: 0.85;
 }
+.trm-post-comments {
+  margin-bottom: var(--card-bottom-card, 30px);
+}
+.trm-post-comments .comment-container.trm-card {
+  margin-bottom: 0;
+}
+.comment-container.trm-card iframe.giscus-frame {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color-scheme: normal;
+}
 @media (max-width: 768px) {
   .trm-search-popup .trm-search-result-container {
     height: calc(100% - 280px);

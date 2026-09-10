@@ -1,0 +1,293 @@
+/*! Async dark — giscus theme, matched to hexo-theme-async cards (#00283a). */
+html,
+body,
+main {
+  background-color: #00283a !important;
+  background: #00283a !important;
+  color-scheme: dark;
+}
+
+:root,
+main {
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #dedee0;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-bg: #b62324;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #1f6feb;
+  --color-prettylights-syntax-markup-italic: #dedee0;
+  --color-prettylights-syntax-markup-bold: #dedee0;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #dedee0;
+  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+  --color-btn-text: #d7e2ea;
+  --color-btn-bg: #0b3d52;
+  --color-btn-border: transparent;
+  --color-btn-shadow: none;
+  --color-btn-inset-shadow: none;
+  --color-btn-hover-bg: #114a62;
+  --color-btn-hover-border: transparent;
+  --color-btn-active-bg: #0a3548;
+  --color-btn-active-border: transparent;
+  --color-btn-selected-bg: #0e4d66;
+  --color-btn-primary-text: #00283a;
+  --color-btn-primary-bg: #c0ca33;
+  --color-btn-primary-border: transparent;
+  --color-btn-primary-shadow: none;
+  --color-btn-primary-inset-shadow: none;
+  --color-btn-primary-hover-bg: #d4e157;
+  --color-btn-primary-hover-border: transparent;
+  --color-btn-primary-selected-bg: #c0ca33;
+  --color-btn-primary-selected-shadow: none;
+  --color-btn-primary-disabled-text: rgb(0 40 58 / 50%);
+  --color-btn-primary-disabled-bg: #c0ca3380;
+  --color-btn-primary-disabled-border: transparent;
+  --color-action-list-item-default-hover-bg: rgb(255 255 255 / 8%);
+  --color-segmented-control-bg: #0a3548;
+  --color-segmented-control-button-bg: #12506a;
+  --color-segmented-control-button-selected-border: transparent;
+  --color-fg-default: #e6eef4;
+  --color-fg-muted: #9eb0be;
+  --color-fg-subtle: #7e93a3;
+  --color-canvas-default: #00283a;
+  --color-canvas-overlay: #00283a;
+  --color-canvas-inset: #0a3548;
+  --color-canvas-subtle: #0b3d52;
+  --color-border-default: rgb(198 214 224 / 16%);
+  --color-border-muted: rgb(198 214 224 / 10%);
+  --color-neutral-muted: rgb(222 222 224 / 12%);
+  --color-accent-fg: #9eb0be;
+  --color-accent-emphasis: rgb(198 214 224 / 22%);
+  --color-accent-muted: rgb(198 214 224 / 18%);
+  --color-accent-subtle: rgb(192 202 51 / 14%);
+  --color-success-fg: #57ab5a;
+  --color-attention-fg: #c69026;
+  --color-attention-muted: rgb(174 124 20 / 40%);
+  --color-attention-subtle: rgb(174 124 20 / 15%);
+  --color-danger-fg: #e5534b;
+  --color-danger-muted: rgb(229 83 75 / 40%);
+  --color-danger-subtle: rgb(229 83 75 / 10%);
+  --color-primer-shadow-inset: none;
+  --color-scale-gray-7: #063c54;
+  --color-scale-blue-8: #afb42b;
+  --color-social-reaction-bg-hover: #063c54;
+  --color-social-reaction-bg-reacted-hover: rgb(175 180 43 / 22%);
+}
+
+.gsc-comment,
+.gsc-reply,
+.gsc-comment-box,
+.gsc-reply-box,
+.gsc-comment-box-tabs,
+.gsc-comment-box-textarea,
+.gsc-comment-box-textarea-wrapper,
+.gsc-social-reaction-summary-item,
+.gsc-reactions-menu,
+main .btn,
+main .form-control,
+main .form-select,
+main textarea,
+main .Box {
+  border: 0 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.gsc-comment + .gsc-comment,
+.gsc-reply {
+  border-top: none !important;
+}
+
+.gsc-comment .border,
+.gsc-comment .Box,
+.gsc-comment .color-bg-primary,
+.gsc-comment .color-border-primary,
+.gsc-comment .color-border-info {
+  border: 1px solid rgb(198 214 224 / 16%) !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.gsc-right-header {
+  background: #0a3548 !important;
+  border-radius: 8px !important;
+}
+
+.gsc-right-header .BtnGroup-item--selected {
+  background: #12506a !important;
+}
+
+.gsc-right-header .btn {
+  color: #d7e2ea !important;
+}
+
+.gsc-social-reaction-summary-item {
+  color: #c0ca33 !important;
+}
+
+.gsc-tl-line,
+.gsc-replies .gsc-left-line {
+  display: none !important;
+}
+
+.gsc-comment-box,
+.gsc-reply-box,
+.gsc-comments,
+.gsc-main {
+  background: transparent !important;
+}
+
+.gsc-comment-box-tabs {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.gsc-comment-box-write,
+.gsc-reply-box .gsc-comment-box-write {
+  background-color: #0b3d52 !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.gsc-comment-box textarea,
+.gsc-reply-box textarea,
+main .form-control {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  color: #e6eef4 !important;
+}
+
+.gsc-comment-box-textarea-extras {
+  display: none !important;
+}
+
+.gsc-comment-box-tabs .btn {
+  border-radius: 999px !important;
+  background: transparent !important;
+}
+
+.gsc-comment-box-tabs .btn[aria-selected="true"],
+.gsc-comment-box-tabs .btn[aria-current="true"] {
+  background: transparent !important;
+  color: var(--color-fg-default) !important;
+  font-weight: 600 !important;
+}
+
+.gsc-left-header > em,
+.gsc-comment-box-md-toolbar {
+  display: none !important;
+}
+
+.gsc-header {
+  padding: 0 !important;
+  margin: 0 0 4px !important;
+  min-height: 0 !important;
+}
+
+.gsc-left-header {
+  gap: 0 !important;
+}
+
+.gsc-comments-count,
+.gsc-comments-count a,
+.gsc-replies-count {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  color: var(--color-fg-default) !important;
+}
+
+.gsc-comment-box {
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+}
+
+.gsc-timeline {
+  margin-top: 4px !important;
+  gap: 16px !important;
+}
+
+.gsc-comment-box-tabs {
+  padding: 0 !important;
+  margin: 0 0 8px !important;
+  min-height: 32px;
+  justify-content: flex-start !important;
+}
+
+.gsc-comment-box-tabs > div:first-child {
+  margin: 0 !important;
+}
+
+.gsc-comment-box-tabs button {
+  margin: 0 !important;
+  padding: 0 14px 0 0 !important;
+  font-size: 14px !important;
+  line-height: 32px !important;
+  font-weight: 500 !important;
+  color: var(--color-fg-muted) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.gsc-comment-box-tabs button.color-text-primary {
+  color: var(--color-fg-default) !important;
+  font-weight: 600 !important;
+}
+
+.gsc-comment-box-main,
+.gsc-comment-box-bottom {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.gsc-comment-box-main {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.gsc-comment-box-bottom {
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+}
+
+.gsc-comment-box-markdown-hint {
+  color: var(--color-fg-subtle) !important;
+  font-size: 12px !important;
+}
+
+.gsc-comments {
+  gap: 0 !important;
+}
+
+main .pagination-loader-container {
+  background-image: none;
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-dimmed.gif");
+}

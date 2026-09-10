@@ -518,12 +518,107 @@
     
 
 </div>
+
+    
+<div class="trm-post-comments row">
+    <div class="col-lg-12">
+        <h5 class="trm-title-with-divider">
+            <span class="i18n-zh">评论</span>
+            <span class="i18n-en">Comments</span>
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    <div class="col-lg-12">
+        <div id="giscus-wrap" class="trm-card trm-scroll-animation comment-container"></div>
+    </div>
+</div>
+<script data-swup-reload-script>
+    function giscusCssPath() {
+        var dark = document.documentElement.classList.contains('dark');
+        return '/css/giscus-' + (dark ? 'dark' : 'light') + '.css?v=9';
+    }
+
+    function giscusThemeUrl(css) {
+        return 'data:text/css;charset=utf-8,' + encodeURIComponent(css);
+    }
+
+    function loadGiscusCss() {
+        return fetch(giscusCssPath(), { cache: 'no-store' }).then(function (res) {
+            if (!res.ok) throw new Error('giscus css ' + res.status);
+            return res.text();
+        });
+    }
+
+    function loadGiscus() {
+        var wrap = document.getElementById('giscus-wrap');
+        if (!wrap) return;
+        wrap.querySelectorAll('script[src*="giscus.app"], iframe.giscus-frame').forEach(function (el) {
+            el.remove();
+        });
+        var lang = document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh-CN';
+        loadGiscusCss().then(function (css) {
+            var config = {
+                src: 'https://giscus.app/client.js',
+                'data-repo': 'RyanStarFox/RyanStarFox.github.io',
+                'data-repo-id': 'R_kgDOPUfYjw',
+                'data-category': 'Announcements',
+                'data-category-id': 'DIC_kwDOPUfYj84DFRkq',
+                'data-mapping': 'pathname',
+                'data-reactions-enabled': '0',
+                'data-emit-metadata': '0',
+                'data-input-position': 'top',
+                'data-theme': giscusThemeUrl(css),
+                'data-lang': lang,
+                crossorigin: 'anonymous',
+                async: true
+            };
+            var ele = document.createElement('script');
+            for (var key in config) {
+                ele.setAttribute(key, config[key]);
+            }
+            wrap.insertAdjacentElement('afterbegin', ele);
+        }).catch(function () {
+            var fallback = document.documentElement.classList.contains('dark') ? 'transparent_dark' : 'noborder_light';
+            var ele = document.createElement('script');
+            ele.src = 'https://giscus.app/client.js';
+            ele.setAttribute('data-repo', 'RyanStarFox/RyanStarFox.github.io');
+            ele.setAttribute('data-repo-id', 'R_kgDOPUfYjw');
+            ele.setAttribute('data-category', 'Announcements');
+            ele.setAttribute('data-category-id', 'DIC_kwDOPUfYj84DFRkq');
+            ele.setAttribute('data-mapping', 'pathname');
+            ele.setAttribute('data-reactions-enabled', '0');
+            ele.setAttribute('data-emit-metadata', '0');
+            ele.setAttribute('data-input-position', 'top');
+            ele.setAttribute('data-theme', fallback);
+            ele.setAttribute('data-lang', lang);
+            ele.setAttribute('crossorigin', 'anonymous');
+            ele.async = true;
+            wrap.insertAdjacentElement('afterbegin', ele);
+        });
+    }
+
+    function changeGiscusTheme() {
+        var iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe || !iframe.contentWindow) return;
+        loadGiscusCss().then(function (css) {
+            iframe.contentWindow.postMessage({
+                giscus: { setConfig: { theme: giscusThemeUrl(css) } }
+            }, 'https://giscus.app');
+        });
+    }
+
+    window.changeGiscusTheme = changeGiscusTheme;
+    loadGiscus();
+</script>
+
+
+
 <div class="trm-post-next-prev row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
             <span class="i18n-zh">其他文章</span><span class="i18n-en">Other Articles</span>
-            <span data-number="02"></span>
+            <span data-number="03"></span>
         </h5>
     </div>
     
@@ -616,8 +711,6 @@
     
 </div>
 
-    
-
 
 
                     <div class="trm-divider footer-divider"></div>
@@ -674,7 +767,7 @@
             
             
         </div>
-        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script defer src="https://vercount.one/js" data-swup-reload-script data-reset="true"></script>
     
 
     
@@ -911,6 +1004,9 @@
     if (anim) anim.classList.toggle('trm-active', isDark);
     if (window.asyncFun && typeof window.asyncFun.setThemeColor === 'function') {
       window.asyncFun.setThemeColor();
+    }
+    if (typeof window.changeGiscusTheme === 'function') {
+      window.changeGiscusTheme();
     }
   }
   if (mq.addEventListener) mq.addEventListener('change', function (e) { apply(e.matches); });
