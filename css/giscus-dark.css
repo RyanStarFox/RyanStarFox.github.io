@@ -1,10 +1,18 @@
-/*! Async dark — giscus theme, matched to hexo-theme-async cards (#00283a). */
+/*! Async dark — colors from hexo-theme-async .dark():
+   --theme-bg-color: #00283a (cards)
+   --theme-bg2-color: #02162b (form inputs)
+   --body-bg-color: #00151f
+   --theme-color: #dedee0
+   --tab-botton-bg-color: #063c54
+   --tab-button-hover-bg-color: #003146
+   --tab-button-active-bg-color: #042838
+   --primary: #afb42b / --primary-weak: #c0ca33 */
 html,
 body,
 main {
   background-color: #00283a !important;
   background: #00283a !important;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 :root,
@@ -39,16 +47,16 @@ main {
   --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-  --color-btn-text: #d7e2ea;
-  --color-btn-bg: #0b3d52;
+  --color-btn-text: #dedee0;
+  --color-btn-bg: #02162b;
   --color-btn-border: transparent;
   --color-btn-shadow: none;
   --color-btn-inset-shadow: none;
-  --color-btn-hover-bg: #114a62;
+  --color-btn-hover-bg: #003146;
   --color-btn-hover-border: transparent;
-  --color-btn-active-bg: #0a3548;
+  --color-btn-active-bg: #042838;
   --color-btn-active-border: transparent;
-  --color-btn-selected-bg: #0e4d66;
+  --color-btn-selected-bg: #042838;
   --color-btn-primary-text: #00283a;
   --color-btn-primary-bg: #afb42b;
   --color-btn-primary-border: transparent;
@@ -62,20 +70,20 @@ main {
   --color-btn-primary-disabled-bg: rgb(175 180 43 / 45%);
   --color-btn-primary-disabled-border: transparent;
   --color-action-list-item-default-hover-bg: rgb(255 255 255 / 8%);
-  --color-segmented-control-bg: #0a3548;
-  --color-segmented-control-button-bg: #12506a;
+  --color-segmented-control-bg: #063c54;
+  --color-segmented-control-button-bg: #00283a;
   --color-segmented-control-button-selected-border: transparent;
-  --color-fg-default: #e6eef4;
-  --color-fg-muted: #9eb0be;
-  --color-fg-subtle: #7e93a3;
+  --color-fg-default: #dedee0;
+  --color-fg-muted: #d1d9e9b3;
+  --color-fg-subtle: #d1d9e9b3;
   --color-canvas-default: #00283a;
   --color-canvas-overlay: #00283a;
-  --color-canvas-inset: #0a3548;
-  --color-canvas-subtle: #0b3d52;
+  --color-canvas-inset: #02162b;
+  --color-canvas-subtle: #00283a;
   --color-border-default: rgb(198 214 224 / 16%);
   --color-border-muted: rgb(198 214 224 / 10%);
   --color-neutral-muted: rgb(222 222 224 / 12%);
-  --color-accent-fg: #9eb0be;
+  --color-accent-fg: #dedee0;
   --color-accent-emphasis: rgb(198 214 224 / 22%);
   --color-accent-muted: rgb(198 214 224 / 18%);
   --color-accent-subtle: rgb(192 202 51 / 14%);
@@ -130,16 +138,16 @@ main .Box {
 }
 
 .gsc-right-header {
-  background: #0a3548 !important;
+  background: #063c54 !important;
   border-radius: 8px !important;
 }
 
 .gsc-right-header .BtnGroup-item--selected {
-  background: #12506a !important;
+  background: #003146 !important;
 }
 
 .gsc-right-header .btn {
-  color: #d7e2ea !important;
+  color: #dedee0 !important;
 }
 
 .gsc-social-reaction-summary-item {
@@ -151,11 +159,15 @@ main .Box {
   display: none !important;
 }
 
+.gsc-header,
 .gsc-comment-box,
 .gsc-reply-box,
 .gsc-comments,
-.gsc-main {
+.gsc-main,
+.gsc-timeline,
+.gsc-left-header {
   background: transparent !important;
+  background-color: transparent !important;
 }
 
 .gsc-comment-box-tabs {
@@ -165,7 +177,7 @@ main .Box {
 
 .gsc-comment-box-write,
 .gsc-reply-box .gsc-comment-box-write {
-  background-color: #0b3d52 !important;
+  background-color: #02162b !important;
   border-radius: 10px !important;
   overflow: hidden !important;
 }
@@ -175,13 +187,13 @@ main .Box {
 main .form-control {
   border-radius: 0 !important;
   background-color: transparent !important;
-  color: #e6eef4 !important;
+  color: #dedee0 !important;
 }
 
 .gsc-comment-box textarea::placeholder,
 .gsc-reply-box textarea::placeholder,
 main .form-control::placeholder {
-  color: #8aa0b0 !important;
+  color: #d1d9e9b3 !important;
   opacity: 1 !important;
 }
 
@@ -204,7 +216,7 @@ main .btn-primary:hover,
 
 .gsc-comment-box-bottom a,
 .gsc-comment-box-markdown-hint {
-  color: #9eb0be !important;
+  color: #d1d9e9b3 !important;
 }
 
 .gsc-comment-box-textarea-extras {

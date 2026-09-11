@@ -4075,6 +4075,9 @@ html[data-lang="en"] .post-zh-only-notice {
 .trm-website-card--library {
   --hub-accent: #4f6f8f;
 }
+.trm-website-card--scripts {
+  --hub-accent: #690;
+}
 .trm-website-card__icon {
   flex-shrink: 0;
   width: 64px;
@@ -4171,6 +4174,28 @@ html.dark .trm-website-card .trm-website-card__title,
     width: 100%;
     flex: none;
     align-items: center;
+    box-sizing: border-box;
+    opacity: 1 !important;
+    transform: none !important;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0 12px !important;
+    box-shadow: none;
+    transition: max-height 0.34s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+  .trm-top-bar .container .trm-right-side.trm-active {
+    opacity: 1 !important;
+    transform: none !important;
+    max-height: 22rem;
+    box-shadow: var(--top-bar-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.15));
+  }
+  .trm-menu {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .trm-menu nav ul {
+    margin: 8px 0 4px;
   }
   .trm-top-actions {
     margin-left: auto;
@@ -4591,8 +4616,8 @@ html.dark .trm-stack-card,
 .comment-container.trm-card iframe.giscus-frame {
   display: block;
   width: 100%;
-  background: transparent;
-  color-scheme: normal;
+  background-color: var(--theme-bg-color, #fcfcfe) !important;
+  color-scheme: light !important;
 }
 @media (max-width: 768px) {
   .trm-search-popup .trm-search-result-container {
