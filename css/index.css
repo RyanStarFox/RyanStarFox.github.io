@@ -4116,17 +4116,19 @@ html[data-lang="en"] .post-zh-only-notice {
     line-height: 1.25;
   }
 }
-/* Markdown ==highlight== → <mark> */
+/* Markdown ==highlight== → same marker band as .trm-publication a */
 .trm-publication mark {
-  background: color-mix(in srgb, var(--primary, #afb42b) 38%, transparent);
   color: inherit;
-  padding: 0.05em 0.2em;
-  border-radius: 3px;
+  background: linear-gradient(var(--primary-50, #afb42b), var(--primary-weak-50, #afb42b)) bottom no-repeat;
+  background-size: 100% 0.4em;
+  padding: 0;
+  border-radius: 0;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 :root.dark .trm-publication mark {
-  background: color-mix(in srgb, var(--primary, #afb42b) 45%, transparent);
+  background: linear-gradient(var(--primary-50, #afb42b), var(--primary-weak-50, #afb42b)) bottom no-repeat;
+  background-size: 100% 0.4em;
 }
 /* GFM task lists: hide bullet so checkbox is the marker */
 .trm-publication,
