@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ryanstarfox.top/useful_links/index.html</loc>
+    
+    <lastmod>2026-09-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ryanstarfox.top/2026/09/12/2026/20260910%20%E8%8B%B9%E6%9E%9C%E5%8F%91%E5%B8%83%E4%BC%9A/</loc>
     
     <lastmod>2026-09-11</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://blog.ryanstarfox.top/websites/index.html</loc>
-    
-    <lastmod>2026-09-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ryanstarfox.top/useful_links/index.html</loc>
     
     <lastmod>2026-09-10</lastmod>
     
@@ -660,5 +660,30 @@
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  
+  <!-- websites hub entries -->
+  <url>
+    <loc>https://lib.ryanstarfox.top</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cube.ryanstarfox.top</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://greasyfork.org/zh-CN/users/1576070-ryanstarfox</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tri.ryanstarfox.top</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- /websites hub entries -->
 </urlset>

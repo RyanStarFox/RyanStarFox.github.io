@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ryanstarfox.github.io/sitemap.xml 
+Sitemap: https://blog.ryanstarfox.top/sitemap.xml
