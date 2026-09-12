@@ -3903,6 +3903,20 @@ html[data-lang="en"] .post-zh-only-notice {
 .trm-label .trm-typed-text {
   margin-left: 0.3em;
 }
+/* Custom SVG social icons (e.g. Academic Pages) — match iconfont size & hover color */
+.trm-social .trm-social-svg {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: -0.2em;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
 .trm-lang-switcher {
   display: inline-flex;
   align-items: center;
