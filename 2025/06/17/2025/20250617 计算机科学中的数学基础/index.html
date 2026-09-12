@@ -16,12 +16,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="1 Set and ordering1.1 Sets, relations and functions 计算：$A\cup B, A\cap B,A-B,\bar A, A\oplus B$ “-”例子：${1,3,5}-{1,2,3}&#x3D;{5}$ “$\oplus$”对称差：类似于异或，$A\oplus B&#x3D;(A-B)\cup(B-A)$，$A\oplus B\oplus C">
+<meta name="description" content="1 Set and ordering 1.1 Sets, relations and functions  计算：$A\cup B, A\cap B,A-B,\bar A, A\oplus B$  “-”例子：${1,3,5}-{1,2,3}&#x3D;{5}$ “$\oplus$”对称差：类似于异或，$A\oplus B&#x3D;(A-B)\cup(B-A)$，$A\oplus B\oplus C &#x3D; \sum(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机科学中的数学基础整理">
 <meta property="og:url" content="https://blog.ryanstarfox.top/2025/06/17/2025/20250617%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="1 Set and ordering1.1 Sets, relations and functions 计算：$A\cup B, A\cap B,A-B,\bar A, A\oplus B$ “-”例子：${1,3,5}-{1,2,3}&#x3D;{5}$ “$\oplus$”对称差：类似于异或，$A\oplus B&#x3D;(A-B)\cup(B-A)$，$A\oplus B\oplus C">
+<meta property="og:description" content="1 Set and ordering 1.1 Sets, relations and functions  计算：$A\cup B, A\cap B,A-B,\bar A, A\oplus B$  “-”例子：${1,3,5}-{1,2,3}&#x3D;{5}$ “$\oplus$”对称差：类似于异或，$A\oplus B&#x3D;(A-B)\cup(B-A)$，$A\oplus B\oplus C &#x3D; \sum(">
 <meta property="og:locale">
 <meta property="article:published_time" content="2025-06-17T05:42:00.000Z">
 <meta property="article:modified_time" content="2025-06-20T05:42:00.000Z">
@@ -476,290 +476,375 @@
     <article id="article-container" class="trm-publication">
     
         <div class="post-body-zh i18n-zh">
-            <h2 id="1-Set-and-ordering"><a href="#1-Set-and-ordering" class="headerlink" title="1 Set and ordering"></a>1 Set and ordering</h2><h3 id="1-1-Sets-relations-and-functions"><a href="#1-1-Sets-relations-and-functions" class="headerlink" title="1.1 Sets, relations and functions"></a>1.1 Sets, relations and functions</h3><ul>
-<li>计算：$A\cup B, A\cap B,A-B,\bar A, A\oplus B$<ul>
-<li>“-”例子：${1,3,5}-{1,2,3}&#x3D;{5}$</li>
-<li>“$\oplus$”对称差：类似于异或，$A\oplus B&#x3D;(A-B)\cup(B-A)$，$A\oplus B\oplus C &#x3D; \sum(A-B-C)+A\cap B\cap C$</li>
+            <h2 id="1-Set-and-ordering">1 Set and ordering</h2>
+<h3 id="1-1-Sets-relations-and-functions">1.1 Sets, relations and functions</h3>
+<ul>
+<li>计算：$A\cup B, A\cap B,A-B,\bar A, A\oplus B$
+<ul>
+<li>“-”例子：${1,3,5}-{1,2,3}={5}$</li>
+<li>“$\oplus$”对称差：类似于异或，$A\oplus B=(A-B)\cup(B-A)$，$A\oplus B\oplus C = \sum(A-B-C)+A\cap B\cap C$</li>
 </ul>
 </li>
-<li>幂集 Power Set $P(S)&#x3D;{s|s\subseteq S}$</li>
-<li>笛卡尔积 Cartesian Product: $A\times B&#x3D;{&lt;x,y&gt;|x\in A\wedge y\in B}$，是有序对！</li>
-<li>关系是有序对的集合，有三种可能的性质<ul>
+<li>幂集 Power Set $P(S)={s|s\subseteq S}$</li>
+<li>笛卡尔积 Cartesian Product: $A\times B={&lt;x,y&gt;|x\in A\wedge y\in B}$，是有序对！</li>
+<li>关系是有序对的集合，有三种可能的性质
+<ul>
 <li>反身性 Reflexive，if $(\forall a\in x)(aRa) $</li>
 <li>对称性 Symmetric，if$( \forall a,b\in x)(aRb\rightarrow bRa)$</li>
 <li>传递性 Transitive，if $(\forall a,b,c\in x)[(aRb\wedge bRa)\rightarrow aRc]$</li>
 </ul>
 </li>
 <li>划分 Partition：$\pi$的一个划分是一个集合的集合$A$，$A$中的集合两两没有共同元素，$\pi$中所有元素可以在$A$的元素中找到</li>
-<li>等价类 Equivalence class<ul>
+<li>等价类 Equivalence class
+<ul>
 <li>等价关系：满足自反性、对称性、传递性</li>
-<li>商集$A&#x2F;R$把$A$根据关系$R$分类（事实上，R必须是等价关系）</li>
+<li>商集$A/R$把$A$根据关系$R$分类（事实上，R必须是等价关系）</li>
 <li>等价类就是关于某一个等价关系$R$做商集运算</li>
 <li>例：模6同余的等价关系</li>
 </ul>
 </li>
-<li>函数 Function<ul>
+<li>函数 Function
+<ul>
 <li>单射 injective: $x\ne y\rightarrow F(x)\ne F(y)$</li>
-<li>满射 surjective: $ran\ F&#x3D;B$</li>
-<li>一一映射&#x2F;双射 bijective function: 单射且满射</li>
+<li>满射 surjective: $ran\ F=B$</li>
+<li>一一映射/双射 bijective function: 单射且满射</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-2-Paradox-Cardinality"><a href="#1-2-Paradox-Cardinality" class="headerlink" title="1.2 Paradox &amp; Cardinality"></a>1.2 Paradox &amp; Cardinality</h3><ul>
-<li><p>理发师悖论$\rightarrow$罗素提出没有一个包含所有集合的集合</p>
-</li>
-<li><p>集合大小相等（等势）：集合之间存在一一映射关系</p>
+<h3 id="1-2-Paradox-Cardinality">1.2 Paradox &amp; Cardinality</h3>
 <ul>
-<li><p>$\omega\times\omega\approx\omega$，$\omega$为最小的无限序数（自然数集）</p>
+<li>
+<p>理发师悖论$\rightarrow$罗素提出没有一个包含所有集合的集合</p>
 </li>
-<li><p>$\omega\approx \mathbb Q$</p>
-</li>
-<li><p>$(0,1)\approx \R&#x3D;(n,m)&#x3D;(0,1]&#x3D;[0,1)&#x3D;[0,1]$</p>
+<li>
+<p>集合大小相等（等势）：集合之间存在一一映射关系</p>
 <ul>
-<li><p>proof for [0,1]&#x3D;[0,1):</p>
-<p>$f(x)&#x3D;\begin{cases}x&amp;0\leq x&lt;1\wedge x\ne\dfrac1{2^n}\\dfrac1{2^{n+1}}&amp;x&#x3D;\dfrac1{2^n}\end{cases}$</p>
+<li>
+<p>$\omega\times\omega\approx\omega$，$\omega$为最小的无限序数（自然数集）</p>
+</li>
+<li>
+<p>$\omega\approx \mathbb Q$</p>
+</li>
+<li>
+<p>$(0,1)\approx \R=(n,m)=(0,1]=[0,1)=[0,1]$</p>
+<ul>
+<li>
+<p>proof for [0,1]=[0,1):</p>
+<p>$f(x)=\begin{cases}x&amp;0\leq x&lt;1\wedge x\ne\dfrac1{2<sup>n}\\dfrac1{2</sup>{n+1}}&amp;x=\dfrac1{2^n}\end{cases}$</p>
 </li>
 </ul>
 </li>
-<li><p>没有集合和自己的幂集等势</p>
+<li>
+<p>没有集合和自己的幂集等势</p>
 </li>
 </ul>
 </li>
-<li><p>无限集合大小的比较</p>
+<li>
+<p>无限集合大小的比较</p>
 <ul>
 <li>$A\preccurlyeq B\iff A与B的一个子集等势$</li>
 <li>$A\preccurlyeq B\wedge B\preccurlyeq A\Rightarrow A\approx B$</li>
-<li>$2^{\alef_0}\leq\alef_0\cdot2^{\alef_0}\leq2^{\alef_0}\cdot2^{\alef_0}&#x3D;2^{\alef_0}\ \therefore2^{\alef_0}\approx\alef_0\cdot2^{\alef_0}$</li>
+<li>$2<sup>{\alef_0}\leq\alef_0\cdot2</sup>{\alef_0}\leq2<sup>{\alef_0}\cdot2</sup>{\alef_0}=2<sup>{\alef_0} \therefore2</sup>{\alef_0}\approx\alef_0\cdot2^{\alef_0}$</li>
 </ul>
 </li>
-<li><p>可数集：有限或者与自然数集等势</p>
+<li>
+<p>可数集：有限或者与自然数集等势</p>
 <ul>
 <li>可数集的子集、并集、笛卡尔积都是可数集</li>
 </ul>
 </li>
 </ul>
-<h3 id="1-3-Orderings-序"><a href="#1-3-Orderings-序" class="headerlink" title="1.3 Orderings 序"></a>1.3 Orderings 序</h3><ul>
-<li><p>偏序：偏序集</p>
-<p>$$<br>(S,R)<br>$$</p>
+<h3 id="1-3-Orderings-序">1.3 Orderings 序</h3>
+<ul>
+<li>
+<p>偏序：偏序集</p>
+<p>$$<br>
+(S,R)<br>
+$$</p>
 <p>: $R$是集合$S$上的偏序关系</p>
 </li>
-<li><p>线性序：任意两个元素均可作比较</p>
+<li>
+<p>线性序：任意两个元素均可作比较</p>
 </li>
-<li><p>立即前元：直接的更小的元素，$x$是$y$的直接前元，$x\triangleleft y$</p>
+<li>
+<p>立即前元：直接的更小的元素，$x$是$y$的直接前元，$x\triangleleft y$</p>
 <ul>
 <li>$x\prec y$</li>
 <li>$\neg(\exists z\in S)(x\prec z\prec y)$</li>
 </ul>
 </li>
-<li><p>极大元、极小元、最大元、最小元</p>
+<li>
+<p>极大元、极小元、最大元、最小元</p>
 </li>
-<li><p>有限偏序必含极小（大）元</p>
+<li>
+<p>有限偏序必含极小（大）元</p>
 </li>
-<li><p>线性扩充定理：对有限偏序集$（S,\preccurlyeq)$，存在线性序集$(S,\preccurlyeq’)满足x\preccurlyeq y\to x\preccurlyeq’y$</p>
+<li>
+<p>线性扩充定理：对有限偏序集$（S,\preccurlyeq)$，存在线性序集$(S,\preccurlyeq')满足x\preccurlyeq y\to x\preccurlyeq'y$</p>
 <p>一般地，线性扩充不唯一（类似对于哈斯图作拓扑排序）</p>
 </li>
 </ul>
-<h3 id="1-4-Wide-or-Tall-Mirsky’s-theorem-and-Dilworth’s-theorem"><a href="#1-4-Wide-or-Tall-Mirsky’s-theorem-and-Dilworth’s-theorem" class="headerlink" title="1.4 Wide or Tall - Mirsky’s theorem and Dilworth’s theorem"></a>1.4 Wide or Tall - Mirsky’s theorem and Dilworth’s theorem</h3><ul>
-<li><p>链（可比较元素的集合，高）：$\forall x,y\in A, x\preccurlyeq y或者y\preccurlyeq x$，特别地，$\omega(P)&#x3D;max{|A|:A是P上的链}$</p>
+<h3 id="1-4-Wide-or-Tall-Mirsky-s-theorem-and-Dilworth-s-theorem">1.4 Wide or Tall - Mirsky's theorem and Dilworth's theorem</h3>
+<ul>
+<li>
+<p>链（可比较元素的集合，高）：$\forall x,y\in A, x\preccurlyeq y或者y\preccurlyeq x$，特别地，$\omega(P)=max{|A|:A是P上的链}$</p>
 </li>
-<li><p>反链（不可比较元素的集合，宽）：$\forall x\ne y\in A,x\cancel\preccurlyeq y$,也称独立集，特别地，$\alpha(P)&#x3D;max{|A|:A是P上的反链（独立集）}$</p>
+<li>
+<p>反链（不可比较元素的集合，宽）：$\forall x\ne y\in A,x\cancel\preccurlyeq y$,也称独立集，特别地，$\alpha(P)=max{|A|:A是P上的反链（独立集）}$</p>
 </li>
-<li><p>Mirsky’s theorem定理：最长链长度&#x3D;最小反链划分数</p>
-<p>推论：$对于P&#x3D;(S,\preccurlyeq),\alpha(P)\cdot\omega(P)\geq |S|$</p>
+<li>
+<p>Mirsky's theorem定理：最长链长度=最小反链划分数</p>
+<p>推论：$对于P=(S,\preccurlyeq),\alpha(P)\cdot\omega(P)\geq |S|$</p>
 <p>应用：</p>
-<p>Erdös-Szekeres引理：任意含有$n^2+1$个元素的实数序列$（x_1,\cdots,x_{n^2+1})z$中都含有一个长度为$n+1$的单调子序列</p>
+<p>Erdös-Szekeres引理：任意含有$n<sup>2+1$个元素的实数序列$（x_1,\cdots,x_{n</sup>2+1})z$中都含有一个长度为$n+1$的单调子序列</p>
 </li>
-<li><p>Dilworth定理：最长反链长度&#x3D;最小链划分<br>$P为有限集，min{m:\exists\ chains C_1,C_2,\cdots,\ C_m\ with P &#x3D; \bigcup\limits_{i&#x3D;1}^m C_i}&#x3D;max{|A|:A\ is\ an\ anti-chain}$</p>
+<li>
+<p>Dilworth定理：最长反链长度=最小链划分<br>
+$P为有限集，min{m:\exists\ chains C_1,C_2,\cdots,\ C_m\ with P = \bigcup\limits_{i=1}^m C_i}=max{|A|:A\ is\ an\ anti-chain}$</p>
 </li>
 </ul>
-<h2 id="2-Combinatorics"><a href="#2-Combinatorics" class="headerlink" title="2 Combinatorics"></a>2 Combinatorics</h2><h3 id="2-1-Combinatorial-Counting"><a href="#2-1-Combinatorial-Counting" class="headerlink" title="2.1 Combinatorial Counting"></a>2.1 Combinatorial Counting</h3><table>
+<h2 id="2-Combinatorics">2 Combinatorics</h2>
+<h3 id="2-1-Combinatorial-Counting">2.1 Combinatorial Counting</h3>
+<table>
 <thead>
 <tr>
-<th align="center"><strong>balls per bin</strong></th>
-<th align="center"><strong>unrestricted</strong></th>
-<th align="center"><strong>≤1</strong></th>
-<th align="center"><strong>≥1</strong></th>
+<th style="text-align:center"><strong>balls per bin</strong></th>
+<th style="text-align:center"><strong>unrestricted</strong></th>
+<th style="text-align:center"><strong>≤1</strong></th>
+<th style="text-align:center"><strong>≥1</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">$n$ distinct balls <code>&lt;br&gt;</code>$m$ distinct bins</td>
-<td align="center">$m^n$</td>
-<td align="center">$(m)_n$</td>
-<td align="center">$m!{\begin{smallmatrix}n\m\end{smallmatrix}}$</td>
+<tbody>
+<tr>
+<td style="text-align:center">$n$ distinct balls <code>&lt;br&gt;</code>$m$ distinct bins</td>
+<td style="text-align:center">$m^n$</td>
+<td style="text-align:center">$(m)_n$</td>
+<td style="text-align:center">$m!{\begin{smallmatrix}n\m\end{smallmatrix}}$</td>
 </tr>
 <tr>
-<td align="center">$n$ identical balls&#96;&#96;$m$ distinct bins</td>
-<td align="center">$\binom{n+m-1}{m-1}$</td>
-<td align="center">$\binom mn$</td>
-<td align="center">$\binom{n-1}{m-1}$</td>
+<td style="text-align:center">$n$ identical balls``$m$ distinct bins</td>
+<td style="text-align:center">$\binom{n+m-1}{m-1}$</td>
+<td style="text-align:center">$\binom mn$</td>
+<td style="text-align:center">$\binom{n-1}{m-1}$</td>
 </tr>
 <tr>
-<td align="center">$n$ distinct balls&#96;&#96;$m$ identical bin</td>
-<td align="center">$\sum\limits_{k&#x3D;1}^m {\begin{smallmatrix}n\k\end{smallmatrix}}$</td>
-<td align="center">$\begin{cases} 1 &amp; n\leq m\0&amp;n&gt;m\end{cases}$</td>
-<td align="center">${\begin{smallmatrix}n\m\end{smallmatrix}}$</td>
+<td style="text-align:center">$n$ distinct balls``$m$ identical bin</td>
+<td style="text-align:center">$\sum\limits_{k=1}^m {\begin{smallmatrix}n\k\end{smallmatrix}}$</td>
+<td style="text-align:center">$\begin{cases} 1 &amp; n\leq m\0&amp;n&gt;m\end{cases}$</td>
+<td style="text-align:center">${\begin{smallmatrix}n\m\end{smallmatrix}}$</td>
 </tr>
 <tr>
-<td align="center">$n$ identicql balls&#96;&#96;$m$ identical bins</td>
-<td align="center">$\sum\limits_{k&#x3D;1}^mp_k(n)$</td>
-<td align="center">$\begin{cases} 1 &amp; n\leq m\0&amp;n&gt;m\end{cases}$</td>
-<td align="center">$p_m(n)$</td>
+<td style="text-align:center">$n$ identicql balls``$m$ identical bins</td>
+<td style="text-align:center">$\sum\limits_{k=1}^mp_k(n)$</td>
+<td style="text-align:center">$\begin{cases} 1 &amp; n\leq m\0&amp;n&gt;m\end{cases}$</td>
+<td style="text-align:center">$p_m(n)$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p>$(m)_n&#x3D;\dfrac{m!}{(m-n)!}$</p>
+<li>
+<p>$(m)_n=\dfrac{m!}{(m-n)!}$</p>
 </li>
-<li><p>$\binom nk&#x3D;\dfrac{n!}{k!\cdot(n-k)!}$</p>
+<li>
+<p>$\binom nk=\dfrac{n!}{k!\cdot(n-k)!}$</p>
 </li>
-<li><p>$\binom{n-1}{k-1}+\binom{n-1}k&#x3D;\binom nk$</p>
+<li>
+<p>$\binom{n-1}{k-1}+\binom{n-1}k=\binom nk$</p>
 <ul>
-<li>$\sum\limits_{k&#x3D;0}^n\binom km&#x3D;\binom{n+1}{m+1}$</li>
-<li>$\sum\limits_{k&#x3D;0}^n\binom{m+k-1}k&#x3D;\binom{n+m}n$</li>
-<li>$\sum\limits_{i&#x3D;0}^n\binom ni^2&#x3D;\sum\limits_{i&#x3D;0}^n\binom ni\binom n{n-i}&#x3D;\binom{2n}n$</li>
-<li>$\binom{m+n}r&#x3D;\sum\limits_{k&#x3D;0}^r\binom mk\binom n{r-k}$</li>
-<li>$\binom{n_1+\cdots+n_p}m&#x3D;\sum\limits_{k_1+\cdots+k_p}\prod\limits_{i&#x3D;1}^p\binom{n_i}{k_i}$</li>
+<li>$\sum\limits_{k=0}^n\binom km=\binom{n+1}{m+1}$</li>
+<li>$\sum\limits_{k=0}^n\binom{m+k-1}k=\binom{n+m}n$</li>
+<li>$\sum\limits_{i=0}^n\binom ni<sup>2=\sum\limits_{i=0}</sup>n\binom ni\binom n{n-i}=\binom{2n}n$</li>
+<li>$\binom{m+n}r=\sum\limits_{k=0}^r\binom mk\binom n{r-k}$</li>
+<li>$\binom{n_1+\cdots+n_p}m=\sum\limits_{k_1+\cdots+k_p}\prod\limits_{i=1}^p\binom{n_i}{k_i}$</li>
 </ul>
 </li>
-<li><p>Binomial theorem:</p>
-<p>$(1+x)^n&#x3D;\sum\limits_{k&#x3D;0}^n\binom nkx^k$</p>
-<p>$if\ \left |x\right |&gt;\left | y\right |,\ (x+y)^r&#x3D;\sum\limits_{k&#x3D;0}^\infty\binom rk x^{r-k}y^k$</p>
+<li>
+<p>Binomial theorem:</p>
+<p>$(1+x)<sup>n=\sum\limits_{k=0}</sup>n\binom nkx^k$</p>
+<p>$if\ \left |x\right |&gt;\left | y\right |,\ (x+y)<sup>r=\sum\limits_{k=0}</sup>\infty\binom rk x<sup>{r-k}y</sup>k$</p>
 </li>
-<li><p>second Stirling Numbers</p>
+<li>
+<p>second Stirling Numbers</p>
 <ul>
 <li>The number of ways to partition a set of $n$ things into $k$ nonempty subsets</li>
-<li>${\begin{smallmatrix}n\k\end{smallmatrix}}&#x3D;k{\begin{smallmatrix}n-1\k\end{smallmatrix}}+{\begin{smallmatrix}n-1\k-1\end{smallmatrix}}$，specifically, ${\begin{smallmatrix}n\2\end{smallmatrix}}&#x3D;2^{n-1}-1$</li>
+<li>${\begin{smallmatrix}n\k\end{smallmatrix}}=k{\begin{smallmatrix}n-1\k\end{smallmatrix}}+{\begin{smallmatrix}n-1\k-1\end{smallmatrix}}$，specifically, ${\begin{smallmatrix}n\2\end{smallmatrix}}=2^{n-1}-1$</li>
 </ul>
 </li>
-<li><p>Stirling cycle numbers (first Stirling Numbers)</p>
+<li>
+<p>Stirling cycle numbers (first Stirling Numbers)</p>
 <ul>
 <li>The number of ways to partition a set of $n$ things into $k$ nonempty cycles</li>
 <li>$[\begin{smallmatrix}n\k\end{smallmatrix}]\geq {\begin{smallmatrix}n\k\end{smallmatrix}}$</li>
-<li>$[\begin{smallmatrix}n\1\end{smallmatrix}]&#x3D;(n-1)!$</li>
-<li>$\sum\limits_{k&#x3D;0}^n[\begin{smallmatrix}n\k\end{smallmatrix}]&#x3D;n!$</li>
-<li>$[\begin{smallmatrix}n\k\end{smallmatrix}]&#x3D;(n-1)\cdot[\begin{smallmatrix}n-1\k\end{smallmatrix}]+[\begin{smallmatrix}n-1\k-1\end{smallmatrix}]$</li>
+<li>$[\begin{smallmatrix}n\1\end{smallmatrix}]=(n-1)!$</li>
+<li>$\sum\limits_{k=0}^n[\begin{smallmatrix}n\k\end{smallmatrix}]=n!$</li>
+<li>$[\begin{smallmatrix}n\k\end{smallmatrix}]=(n-1)\cdot[\begin{smallmatrix}n-1\k\end{smallmatrix}]+[\begin{smallmatrix}n-1\k-1\end{smallmatrix}]$</li>
 </ul>
 </li>
-<li><p>Partition of a number</p>
+<li>
+<p>Partition of a number</p>
 <ul>
 <li>number of partition the positive integer $n$ into $k$ parts</li>
-<li>$P_k(n)&#x3D;P_{k-1}(n-1)+P_k(n-k)$</li>
-<li>$\sum\limits_{k&#x3D;1}^m P_k(n)&#x3D;P_m(n+m)$</li>
+<li>$P_k(n)=P_{k-1}(n-1)+P_k(n-k)$</li>
+<li>$\sum\limits_{k=1}^m P_k(n)=P_m(n+m)$</li>
 </ul>
 </li>
 </ul>
-<h3 id="2-2-Inclusion-exclusion-principle-and-its-application"><a href="#2-2-Inclusion-exclusion-principle-and-its-application" class="headerlink" title="2.2 Inclusion-exclusion principle and its application"></a>2.2 Inclusion-exclusion principle and its application</h3><p>$$\left|\bigcup\limits_{i&#x3D;1}^nA_i\right|&#x3D;\sum\limits_{k&#x3D;1}^n(-1)^{k-1}\sum\limits_{I\in C({1,2,\cdots,n},k)}\left |\bigcap\limits_{i\in I}A_i\right|$$</p>
-<p>$$&#x3D;\sum\limits_{\emptyset\neq I\subseteq{1,2,\cdots,n}}(-1)^{\left | I \right |-1}\left|\bigcap\limits_{i\in I}A_i\right|$$</p>
-<p>错排公式：没有一个在原来的位置上<br>$D(n)&#x3D;n!-\left | A_1\cup\cdots\cup A_n\right |&#x3D;n!\left (\sum\limits_{k&#x3D;0}^n \dfrac {(-1)^k}{k!}\right )$</p>
+<h3 id="2-2-Inclusion-exclusion-principle-and-its-application">2.2 Inclusion-exclusion principle and its application</h3>
+<p>$$\left|\bigcup\limits_{i=1}<sup>nA_i\right|=\sum\limits_{k=1}</sup>n(-1)^{k-1}\sum\limits_{I\in C({1,2,\cdots,n},k)}\left |\bigcap\limits_{i\in I}A_i\right|$$</p>
+<p>$$=\sum\limits_{\emptyset\neq I\subseteq{1,2,\cdots,n}}(-1)^{\left | I \right |-1}\left|\bigcap\limits_{i\in I}A_i\right|$$</p>
+<p>错排公式：没有一个在原来的位置上<br>
+$D(n)=n!-\left | A_1\cup\cdots\cup A_n\right |=n!\left (\sum\limits_{k=0}^n \dfrac {(-1)^k}{k!}\right )$</p>
 <p>欧拉函数：不超过$n$且与$n$互素的自然数的个数</p>
-<p>$\varphi(n)&#x3D;n\prod\limits_{p_i为n的质因数}\left(1-\dfrac 1p_i\right)$</p>
-<h3 id="2-3-Generating-function"><a href="#2-3-Generating-function" class="headerlink" title="2.3 Generating function"></a>2.3 Generating function</h3><p>Catalan Number</p>
-<p>$C_n&#x3D;\dfrac1{n+1}\binom{2n}n$</p>
-<h3 id="2-4-Recurrence-relations"><a href="#2-4-Recurrence-relations" class="headerlink" title="2.4 Recurrence relations"></a>2.4 Recurrence relations</h3><p>注意首项要带入验算</p>
-<h3 id="2-5-Polya’s-Theory-of-Counting"><a href="#2-5-Polya’s-Theory-of-Counting" class="headerlink" title="2.5 Polya’s Theory of Counting"></a>2.5 Polya’s Theory of Counting</h3><ol>
-<li><strong>Orbits:</strong> $if\ x\in X\ then\ O_x&#x3D;{y\in X:\exists g \in G \ such\ that\ g*x&#x3D;y}$</li>
-<li>**Stabilizer: **$S_x&#x3D;{g:g*x&#x3D;x}$</li>
+<p>$\varphi(n)=n\prod\limits_{p_i为n的质因数}\left(1-\dfrac 1p_i\right)$</p>
+<h3 id="2-3-Generating-function">2.3 Generating function</h3>
+<p>Catalan Number</p>
+<p>$C_n=\dfrac1{n+1}\binom{2n}n$</p>
+<h3 id="2-4-Recurrence-relations">2.4 Recurrence relations</h3>
+<p>注意首项要带入验算</p>
+<h3 id="2-5-Polya-s-Theory-of-Counting">2.5 Polya's Theory of Counting</h3>
+<ol>
+<li><strong>Orbits:</strong> $if\ x\in X\ then\ O_x={y\in X:\exists g \in G \ such\ that\ g*x=y}$</li>
+<li>**Stabilizer: **$S_x={g:g*x=x}$</li>
 <li>**Lemma1: **$The\ orbits\ partition\ X$</li>
-<li>**Lemma2: **$x\in X\ then\left|O_x\right|\left|S_x\right |&#x3D;\left | G\right|$</li>
-<li><strong>Theorem 1:</strong> $\nu_{X,G}&#x3D;\dfrac1{\left |G\right |}\sum\limits_{x\in X}\left| S_x\right |,\nu_{X,G}\ denote\ number\ of\ orbits$</li>
-<li><strong>Theorem 2:</strong> $\nu_{X,G}&#x3D;\dfrac1{\left |G\right |}\sum\limits_{g\in G}\left| Fix\left( g\right )\right |,\ for\ g\in G\ let\ Fix(g)&#x3D;{x\in X:g*x&#x3D;x}$</li>
+<li>**Lemma2: **$x\in X\ then\left|O_x\right|\left|S_x\right |=\left | G\right|$</li>
+<li><strong>Theorem 1:</strong> $\nu_{X,G}=\dfrac1{\left |G\right |}\sum\limits_{x\in X}\left| S_x\right |,\nu_{X,G}\ denote\ number\ of\ orbits$</li>
+<li><strong>Theorem 2:</strong> $\nu_{X,G}=\dfrac1{\left |G\right |}\sum\limits_{g\in G}\left| Fix\left( g\right )\right |,\ for\ g\in G\ let\ Fix(g)={x\in X:g*x=x}$</li>
 </ol>
 <p>本质上：两种数法</p>
 <ol>
 <li>固定颜色的排列，看看它的permutation有几种</li>
 <li>固定operator，看看不变的颜色（stablizer）有几种</li>
 </ol>
-<h3 id="2-6-估值"><a href="#2-6-估值" class="headerlink" title="2.6 估值"></a>2.6 估值</h3><ol>
-<li><p>调和级数估值：$\dfrac12\lfloor\log_2n\rfloor&lt;\sum\limits_{i&#x3D;1}^n\dfrac1i&#x3D;H_n&lt;\log_2n+1,\ \therefore H_n&#x3D;\Theta(\ln n)$</p>
-</li>
-<li><p>阶乘估值（大小为$n$的集合$X$，其上的置换一共有$n!$个）</p>
+<h3 id="2-6-估值">2.6 估值</h3>
 <ol>
-<li>极值点估值：$2^n&lt;\left(\dfrac n2\right)^\dfrac n2&lt;\prod\limits_{i&#x3D;n&#x2F;2}^n\dfrac n2&#x3D;n!&lt;n^n$</li>
-<li>高斯估值（均值不等式）:$n^{\frac n2}&#x3D;\prod\limits_{i&#x3D;1}^n\sqrt n\leq\prod\limits_{i&#x3D;1}^n\sqrt{i(n+1-i)}&#x3D;\left (\sqrt{\prod\limits_{i&#x3D;1}^n i(n+1-i)}&#x3D;\sqrt{n!\cdot n!}&#x3D;n!\right )\leq\prod\limits_{i&#x3D;1}^n\dfrac{n+1}2&#x3D;\left(\dfrac{n+1}2\right)^n$</li>
+<li>
+<p>调和级数估值：$\dfrac12\lfloor\log_2n\rfloor&lt;\sum\limits_{i=1}^n\dfrac1i=H_n&lt;\log_2n+1,\ \therefore H_n=\Theta(\ln n)$</p>
+</li>
+<li>
+<p>阶乘估值（大小为$n$的集合$X$，其上的置换一共有$n!$个）</p>
+<ol>
+<li>极值点估值：$2^n&lt;\left(\dfrac n2\right)^\dfrac n2&lt;\prod\limits_{i=n/2}^n\dfrac n2=n!&lt;n^n$</li>
+<li>高斯估值（均值不等式）:$n^{\frac n2}=\prod\limits_{i=1}^n\sqrt n\leq\prod\limits_{i=1}^n\sqrt{i(n+1-i)}=\left (\sqrt{\prod\limits_{i=1}^n i(n+1-i)}=\sqrt{n!\cdot n!}=n!\right )\leq\prod\limits_{i=1}<sup>n\dfrac{n+1}2=\left(\dfrac{n+1}2\right)</sup>n$</li>
 <li>进一步优化，使用$1+x≤e^x$与归纳，得到$e\left(\dfrac ne\right)^n\leq n\leq en\left(\dfrac ne\right)^n$</li>
 </ol>
-<p>事实上，Stirling公式：$\lim\limits_{n\to \infty}\dfrac{\sqrt{2\pi n}(\frac ne)^n}{n!}&#x3D;1$</p>
+<p>事实上，Stirling公式：$\lim\limits_{n\to \infty}\dfrac{\sqrt{2\pi n}(\frac ne)^n}{n!}=1$</p>
 </li>
-<li><p>二项式系数估值：$\left (\dfrac nk\right)^k\leq\binom nk\leq\sum\limits_{i&#x3D;0}^k\binom ni\leq(\dfrac{en}k)^k$，右边的证明利用二项式定理+赋值$x&#x3D;\dfrac kn$</p>
+<li>
+<p>二项式系数估值：$\left (\dfrac nk\right)^k\leq\binom nk\leq\sum\limits_{i=0}^k\binom ni\leq(\dfrac{en}k)^k$，右边的证明利用二项式定理+赋值$x=\dfrac kn$</p>
 </li>
 </ol>
-<h2 id="3-Graph-theory-图论"><a href="#3-Graph-theory-图论" class="headerlink" title="3 Graph theory 图论"></a>3 Graph theory 图论</h2><h3 id="3-1-Basic-notions-and-hand-shaking-lemma"><a href="#3-1-Basic-notions-and-hand-shaking-lemma" class="headerlink" title="3.1 Basic notions and hand shaking lemma"></a>3.1 Basic notions and hand shaking lemma</h3><ol>
-<li><p>图的最小度$\delta(G)$，最大度$\Delta G$</p>
+<h2 id="3-Graph-theory-图论">3 Graph theory 图论</h2>
+<h3 id="3-1-Basic-notions-and-hand-shaking-lemma">3.1 Basic notions and hand shaking lemma</h3>
+<ol>
+<li>
+<p>图的最小度$\delta(G)$，最大度$\Delta G$</p>
 </li>
-<li><p>子图：边集和点集都是子集</p>
+<li>
+<p>子图：边集和点集都是子集</p>
 <ol>
 <li>导出子图（induced subgraph）：子图中的点集在原图中的边，都是子图的边</li>
 <li>生成子图 （spanning subgraph）：子图和原图的点集相等</li>
 </ol>
 </li>
-<li><p>特殊图</p>
+<li>
+<p>特殊图</p>
 <ol>
-<li>路径图（Path P<del>n</del>)：$V&#x3D;{0,1,\cdots,n}$</li>
+<li>路径图（Path P<sub>n</sub>)：$V={0,1,\cdots,n}$</li>
 </ol>
-<p>$E&#x3D;{(i-1,i):i&#x3D;1,2,\cdots,n}$<br>2. 环（Circle C<del>n</del>）：$V&#x3D;{0,1,\cdots,n}$</p>
-<p>$E&#x3D;{(i,i+1):i&#x3D;1,2,\cdots,n-1}\cup{(1,n)}$<br>3. 二分图（Bipartite graph B<del>n,m</del>）：$V&#x3D;{u_1,\cdots,u_n}\cup{v_1,\cdots,v_m}$</p>
-<p>$E\subseteq{(u_i,v_j):i&#x3D;1,2,\cdots,n;\ j&#x3D;1,2,\cdots,m}$</p>
-<p>   其中$\subseteq$取等号时，为完全二分图（Complete Bipartite graph K<del>n,m</del>）<br>4. 完全图：（Complete graph K<del>n</del>）<br>5. r-正则图（r-regular graph）：所有顶点度数都是常值r的图<br>6. 简单图（Simple Graph）：没有自环（Loop）、重边（Multiedge）<br>7. $\begin{cases}路径(Path)：不允许环，各顶点和边各出现一次\游走(Walk)：允许环，顶点和边可以重复\end{cases}$<br>8. 连通图：任两点存在路径<br>9. 极大连通子图：子图；连通图；极大<br>10. 树；无环连通图</p>
+<p>$E={(i-1,i):i=1,2,\cdots,n}$<br>
+2. 环（Circle C<sub>n</sub>）：$V={0,1,\cdots,n}$</p>
+<p>$E={(i,i+1):i=1,2,\cdots,n-1}\cup{(1,n)}$<br>
+3. 二分图（Bipartite graph B<sub>n,m</sub>）：$V={u_1,\cdots,u_n}\cup{v_1,\cdots,v_m}$</p>
+<p>$E\subseteq{(u_i,v_j):i=1,2,\cdots,n;\ j=1,2,\cdots,m}$</p>
+<p>其中$\subseteq$取等号时，为完全二分图（Complete Bipartite graph K<sub>n,m</sub>）<br>
+4. 完全图：（Complete graph K<sub>n</sub>）<br>
+5. r-正则图（r-regular graph）：所有顶点度数都是常值r的图<br>
+6. 简单图（Simple Graph）：没有自环（Loop）、重边（Multiedge）<br>
+7. $\begin{cases}路径(Path)：不允许环，各顶点和边各出现一次\游走(Walk)：允许环，顶点和边可以重复\end{cases}$<br>
+8. 连通图：任两点存在路径<br>
+9. 极大连通子图：子图；连通图；极大<br>
+10. 树；无环连通图</p>
 </li>
-<li><p>握手定理：$\sum\limits_{v\in V}deg_G(v)&#x3D;2\left | E\right|$奇点有偶数个</p>
+<li>
+<p>握手定理：$\sum\limits_{v\in V}deg_G(v)=2\left | E\right|$奇点有偶数个</p>
 </li>
 </ol>
-<h3 id="3-2-Graph-isomorphism-and-graph-score"><a href="#3-2-Graph-isomorphism-and-graph-score" class="headerlink" title="3.2 Graph isomorphism and graph score"></a>3.2 Graph isomorphism and graph score</h3><ol>
-<li><p>有$n$个顶点且不同构的图有$x$个，则$\dfrac{2^\binom n2}{n!}\leq x\leq2^\binom n2$，所以$x&#x3D;2^{\Theta(\frac{n^2}2)}$</p>
+<h3 id="3-2-Graph-isomorphism-and-graph-score">3.2 Graph isomorphism and graph score</h3>
+<ol>
+<li>
+<p>有$n$个顶点且不同构的图有$x$个，则$\dfrac{2^\binom n2}{n!}\leq x\leq2^\binom n2$，所以$x=2<sup>{\Theta(\frac{n</sup>2}2)}$</p>
 </li>
-<li><p>Graph score: the degree sequence of  G</p>
+<li>
+<p>Graph score: the degree sequence of  G</p>
 <p>Isomorphic graphs $\Rightarrow$ The same scores</p>
 <p>The same scores $\nRightarrow$ Isomorphic graphs</p>
 </li>
-<li><p>Score Theroem：去掉度数最高的点，前最高点数的点度数减一，可以画图性不变</p>
-<p>$D&#x3D;(d_1,d_2,\cdots,d_n)，d_1\leq d_2\leq\cdots\leq d_n$</p>
-<p>$d’&#x3D;\begin{cases}d_i&amp;i&lt;n-d_n\d_i-1&amp;i\geq n-d_n\end{cases}$</p>
-<p>$D与D’可画图性一致$</p>
+<li>
+<p>Score Theroem：去掉度数最高的点，前最高点数的点度数减一，可以画图性不变</p>
+<p>$D=(d_1,d_2,\cdots,d_n)，d_1\leq d_2\leq\cdots\leq d_n$</p>
+<p>$d'=\begin{cases}d_i&amp;i&lt;n-d_n\d_i-1&amp;i\geq n-d_n\end{cases}$</p>
+<p>$D与D'可画图性一致$</p>
 </li>
 </ol>
-<h3 id="3-3-Applications-of-handshake-lemma-Parity-argument"><a href="#3-3-Applications-of-handshake-lemma-Parity-argument" class="headerlink" title="3.3 Applications of handshake lemma: Parity argument"></a>3.3 Applications of handshake lemma: Parity argument</h3><ol>
-<li>Sperner’s Lemma：对任意𝑛维单形体(𝑛-simplex)进行分割并用𝑛 + 1种颜色去着色，则任何合适的单形体分割着色方案下，都必有一个包含所有不同颜色的单元。</li>
+<h3 id="3-3-Applications-of-handshake-lemma-Parity-argument">3.3 Applications of handshake lemma: Parity argument</h3>
+<ol>
+<li>Sperner's Lemma：对任意𝑛维单形体(𝑛-simplex)进行分割并用𝑛 + 1种颜色去着色，则任何合适的单形体分割着色方案下，都必有一个包含所有不同颜色的单元。</li>
 <li>对于3-正则图，包含图上任意边$e$的哈密顿回路必有偶数条</li>
 </ol>
-<h3 id="3-5-Isomorphism-of-trees"><a href="#3-5-Isomorphism-of-trees" class="headerlink" title="3.5 Isomorphism of trees"></a>3.5 Isomorphism of trees</h3><ol>
-<li><p>叶子：度数为1的顶点</p>
+<h3 id="3-5-Isomorphism-of-trees">3.5 Isomorphism of trees</h3>
+<ol>
+<li>
+<p>叶子：度数为1的顶点</p>
 </li>
-<li><p>树生长定义：对于图$G$的叶子节点$v$，图$G$是树$\Leftrightarrow$图$G-v$是树</p>
+<li>
+<p>树生长定义：对于图$G$的叶子节点$v$，图$G$是树$\Leftrightarrow$图$G-v$是树</p>
 </li>
-<li><p>树的等价刻画：</p>
+<li>
+<p>树的等价刻画：</p>
 <ol>
 <li>图$G$是树。</li>
 <li>路径唯一：对任意两点 $ u, v \in V$，存在从$u$到$v$的唯一路径。</li>
 <li>最小连通图：$G$是连通图，且去掉任意一条边后都成为非连通图。</li>
 <li>最大无环图：$G$不含环，但增加任何一条边所得到的图$G + e $（其中$e \in \binom{V}{2} \setminus E $）中含有一个环。</li>
-<li>Euler 方程：$ G $ 是连通图，且 $ |V| &#x3D; |E| + 1 $。</li>
+<li>Euler 方程：$ G $ 是连通图，且 $ |V| = |E| + 1 $。</li>
 </ol>
 </li>
-<li><p>证明顶点数为$n$的不同构树有$n^{n-2}$</p>
+<li>
+<p>证明顶点数为$n$的不同构树有$n^{n-2}$</p>
 <ol>
-<li><p>Score硬算，化简得到</p>
+<li>
+<p>Score硬算，化简得到</p>
 </li>
-<li><p>骨骼标本与V上的函数图一一对应，每棵树对应n<del>2</del>个骨骼标本$\dfrac {n^n}{n^2}&#x3D;n^{n-2}$</p>
+<li>
+<p>骨骼标本与V上的函数图一一对应，每棵树对应n<sub>2</sub>个骨骼标本$\dfrac {n<sup>n}{n</sup>2}=n^{n-2}$</p>
 </li>
-<li><p>Prüfer code（逐个记录目前编号最小的叶子的祖先节点）与树一一对应$n^{n-2}$</p>
+<li>
+<p>Prüfer code（逐个记录目前编号最小的叶子的祖先节点）与树一一对应$n^{n-2}$</p>
 </li>
-<li><p>Determinants：G的拉普拉斯矩阵：$a_{ij}&#x3D;\begin{cases}-1&amp;{i,j}\in E(G)\deg_G(i)&amp;i&#x3D;j\0&amp;otherwise\end{cases}$</p>
-<p>$T(G)&#x3D;T(G-e)+T(G:e)&#x3D;\det Q_{11}’+\det Q_{11}’’&#x3D;\det Q_{11}$</p>
+<li>
+<p>Determinants：G的拉普拉斯矩阵：$a_{ij}=\begin{cases}-1&amp;{i,j}\in E(G)\deg_G(i)&amp;i=j\0&amp;otherwise\end{cases}$</p>
+<p>$T(G)=T(G-e)+T(G:e)=\det Q_{11}'+\det Q_{11}''=\det Q_{11}$</p>
 </li>
 </ol>
 </li>
 </ol>
-<h3 id="3-4-The-number-of-spanning-trees"><a href="#3-4-The-number-of-spanning-trees" class="headerlink" title="3.4 The number of spanning trees"></a>3.4 The number of spanning trees</h3><ol>
-<li><p>树同构</p>
+<h3 id="3-4-The-number-of-spanning-trees">3.4 The number of spanning trees</h3>
 <ol>
-<li>有根树同构$\cong’$，编码（非根叶节点01，每个个节点的编码都是0+所有子树编码+1）后字典序排序即可</li>
-<li>无根树同构$\cong$<ol>
-<li>一些概念<ol>
+<li>
+<p>树同构</p>
+<ol>
+<li>有根树同构$\cong'$，编码（非根叶节点01，每个个节点的编码都是0+所有子树编码+1）后字典序排序即可</li>
+<li>无根树同构$\cong$
+<ol>
+<li>一些概念
+<ol>
 <li>两点距离：最短路径长度$dis_G(u,v)$</li>
 <li>一点偏心率：该点与其他点最大距离$ex_G(v)$</li>
 <li>中心：偏心率最小的顶点集合$C(G)$，对于树而言，该集合大小为1或者2</li>
 </ol>
 </li>
-<li>解法<ol>
+<li>解法
+<ol>
 <li>找到中心</li>
 <li>中心集合大小为1，其为根，转化为有根树</li>
 <li>中心集合大小为2，去掉中心两点的连线，转化为两棵有根树</li>
@@ -770,17 +855,24 @@
 </ol>
 </li>
 </ol>
-<h2 id="4-概率论-The-probabilistic-method"><a href="#4-概率论-The-probabilistic-method" class="headerlink" title="4 概率论 The probabilistic method"></a>4 概率论 The probabilistic method</h2><h3 id="4-1-Probability-a-quick-review"><a href="#4-1-Probability-a-quick-review" class="headerlink" title="4.1 Probability: a quick review"></a>4.1 Probability: a quick review</h3><ol>
-<li><p>$P(E|F)&#x3D;\dfrac{P(E\cap F)}{P(F)}$，若独立，则$P(E|F)&#x3D;P(E)$</p>
+<h2 id="4-概率论-The-probabilistic-method">4 概率论 The probabilistic method</h2>
+<h3 id="4-1-Probability-a-quick-review">4.1 Probability: a quick review</h3>
+<ol>
+<li>
+<p>$P(E|F)=\dfrac{P(E\cap F)}{P(F)}$，若独立，则$P(E|F)=P(E)$</p>
 </li>
-<li><p>全概率公式 Law of total probability: $P(B)&#x3D;\sum P(B|E_i)P(E_i)$</p>
+<li>
+<p>全概率公式 Law of total probability: $P(B)=\sum P(B|E_i)P(E_i)$</p>
 </li>
-<li><p>条件独立 Conditionally Independent: $P(A\cap B|C)&#x3D;P(A|C)\cdot P(B|C)$</p>
+<li>
+<p>条件独立 Conditionally Independent: $P(A\cap B|C)=P(A|C)\cdot P(B|C)$</p>
 </li>
-<li><p>贝叶斯定理 Bayes Rules: $P(B|A)&#x3D;\dfrac{P(AB)}{P(A)}&#x3D;\dfrac{P(A|B)P(B)}{P(A)}$</p>
+<li>
+<p>贝叶斯定理 Bayes Rules: $P(B|A)=\dfrac{P(AB)}{P(A)}=\dfrac{P(A|B)P(B)}{P(A)}$</p>
 </li>
-<li><p>$E(X)+E(Y)&#x3D;E(X+Y)$</p>
-<p>$D(X)(Var(X))&#x3D;E((X-E[X])^2)&#x3D;E[X^2]-E[X]^2$</p>
+<li>
+<p>$E(X)+E(Y)=E(X+Y)$</p>
+<p>$D(X)(Var(X))=E((X-E[X])<sup>2)=E[X</sup>2]-E[X]^2$</p>
 <table>
 <thead>
 <tr>
@@ -790,94 +882,122 @@
 <th>方差</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0-1分布$B(1,p)$</td>
-<td>$P(X&#x3D;k)&#x3D;p^k(1-p)^{1-k},\quad k&#x3D;0,1,\quad 0&lt;p&lt;1$</td>
+<td>$P(X=k)=p<sup>k(1-p)</sup>{1-k},\quad k=0,1,\quad 0&lt;p&lt;1$</td>
 <td>$p$</td>
 <td>$p(1−p)$</td>
 </tr>
 <tr>
 <td>二项分布$B(n,p)$</td>
-<td>$P(X&#x3D;k)&#x3D;C_{n}^{k}p^{k}(1-p)^{n-k},\quad k&#x3D;0,1,2,…,n,\quad 0&lt;p&lt;1 $</td>
+<td>$P(X=k)=C_{n}<sup>{k}p</sup>{k}(1-p)^{n-k},\quad k=0,1,2,...,n,\quad 0&lt;p&lt;1 $</td>
 <td>$np$</td>
 <td>$np(1−p)$</td>
 </tr>
 <tr>
 <td>泊松分布$P(\lambda)$</td>
-<td>$P(X&#x3D;k)&#x3D;\frac{\lambda ^{k}}{k!}e^{-λ},\quad \quad k&#x3D;0,1,2,…,\quad λ&gt;0$</td>
+<td>$P(X=k)=\frac{\lambda <sup>{k}}{k!}e</sup>{-λ},\quad \quad k=0,1,2,...,\quad λ&gt;0$</td>
 <td>$\lambda$</td>
 <td>$\lambda$</td>
 </tr>
 <tr>
 <td>几何分布$G(p)$</td>
-<td>$P(X&#x3D;k)&#x3D;p(1-p)^{k-1}, k&#x3D;1, 2, \cdots, 0&lt;p&lt;1$</td>
+<td>$P(X=k)=p(1-p)^{k-1}, k=1, 2, \cdots, 0&lt;p&lt;1$</td>
 <td>$\frac{1}{p}$</td>
 <td>$\frac{1-p}{p^{2}}$</td>
 </tr>
 <tr>
 <td>指数分布$E(\lambda)$</td>
-<td>$f(x)&#x3D;\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他</td>
+<td>$f(x)=\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他</td>
 <td>$\frac{1}{\lambda}$</td>
 <td>$\frac{1}{\lambda^{2}}$</td>
 </tr>
 <tr>
 <td>正态分布$N(\mu, \sigma^{2})$</td>
-<td>$f(x, y)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$</td>
+<td>$f(x, y)=\frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$</td>
 <td>$\mu$</td>
 <td>$\sigma^{2}$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
-<li><p>概率的估算</p>
+<li>
+<p>概率的估算</p>
 <ol>
-<li>Markov’s Inequality: $X$ is a random variable that assumes only non-negtive values, $P(X\geq a)\leq\dfrac{E[X]}a$</li>
-<li>Chebyshev’s Inequality: $P(\left|X-E[X]\right|\geq a)\leq\dfrac{Var[X]}{a^2}$</li>
-<li>变形：$P(X\geq a)&#x3D;P_{min}(e^{tX}\geq e^{ta})\leq \min\limits_{t&gt;0}\dfrac{E(e^{tX})}{e^{t\cdot a}}$</li>
+<li>Markov's Inequality: $X$ is a random variable that assumes only non-negtive values, $P(X\geq a)\leq\dfrac{E[X]}a$</li>
+<li>Chebyshev's Inequality: $P(\left|X-E[X]\right|\geq a)\leq\dfrac{Var[X]}{a^2}$</li>
+<li>变形：$P(X\geq a)=P_{min}(e^{tX}\geq e^{ta})\leq \min\limits_{t&gt;0}\dfrac{E(e<sup>{tX})}{e</sup>{t\cdot a}}$</li>
 <li>Union bound：并集不等式</li>
 </ol>
 </li>
 </ol>
-<h3 id="4-2-Probabilistic-method"><a href="#4-2-Probabilistic-method" class="headerlink" title="4.2 Probabilistic method"></a>4.2 Probabilistic method</h3><ol>
-<li><p>Ramsey number</p>
+<h3 id="4-2-Probabilistic-method">4.2 Probabilistic method</h3>
+<ol>
+<li>
+<p>Ramsey number</p>
 <p>if $\binom nk2^{-\binom nk+1}&lt;1$, then it is possible to color the edges of $K_n$ with two colors so that it has no single-colored $K_k$ subgraphs</p>
 </li>
-<li><p>Any system consisting of fewer than $2^{k-1}$ sets of size k admits a 2-coloring</p>
+<li>
+<p>Any system consisting of fewer than $2^{k-1}$ sets of size k admits a 2-coloring</p>
 </li>
-<li><p>Theorem. Let $G$ be a graph with an even number, $2n$, of vertices and with $m &gt; 0$ edges. Then the set $V &#x3D; V(G)$ can be divided into two disjoint $n$-element subsets $A$ and $B$ in such a way that more than $\frac{m}{2}$ edges go between $A$ and $B$.</p>
+<li>
+<p>Theorem. Let $G$ be a graph with an even number, $2n$, of vertices and with $m &gt; 0$ edges. Then the set $V = V(G)$ can be divided into two disjoint $n$-element subsets $A$ and $B$ in such a way that more than $\frac{m}{2}$ edges go between $A$ and $B$.</p>
 <p>To find the solution, sampling and testing is efficient.</p>
 </li>
-<li><p>Theorem  [Lovasz Local Lemma]:<br>Let</p>
-<p>$$<br>E_1, E_2, \cdots, En<br>$$</p>
+<li>
+<p>Theorem  [Lovasz Local Lemma]:<br>
+Let</p>
+<p>$$<br>
+E_1, E_2, \cdots, En<br>
+$$</p>
 <p>be a set of events, and assume that the following holds:</p>
 <ol>
-<li><p>For all</p>
-<p>$$<br>i$$,<br>$$</p>
+<li>
+<p>For all</p>
+<p>$$<br>
+i$$,<br>
+$$</p>
 <p>Pr(E_i) \le p$$;</p>
 </li>
-<li><p>The degree of the dependency graph given by</p>
-<p>$$<br>E_1, E_2, \cdots, E_n<br>$$</p>
+<li>
+<p>The degree of the dependency graph given by</p>
+<p>$$<br>
+E_1, E_2, \cdots, E_n<br>
+$$</p>
 <p>is bounded by $d$；</p>
 </li>
-<li><p>$$<br>4dp \le 1$$.<br>$$</p>
+<li>
+<p>$$<br>
+4dp \le 1$$.<br>
+$$</p>
 </li>
 </ol>
 <p>Then</p>
-<p>$$<br>Pr\left(\bigcap_{i&#x3D;1}^n \overline{Ei}\right) &gt; 0<br>$$</p>
+<p>$$<br>
+Pr\left(\bigcap_{i=1}^n \overline{Ei}\right) &gt; 0<br>
+$$</p>
 <p>.</p>
 </li>
 </ol>
-<h2 id="5-Random-Graphs"><a href="#5-Random-Graphs" class="headerlink" title="5 Random Graphs"></a>5 Random Graphs</h2><ol>
-<li><p>$G(n,p)$ model：$\left|V\right|&#x3D;n,P({u,v}\in E)&#x3D;p$</p>
+<h2 id="5-Random-Graphs">5 Random Graphs</h2>
+<ol>
+<li>
+<p>$G(n,p)$ model：$\left|V\right|=n,P({u,v}\in E)=p$</p>
 <p>存在k-独立集的概率最大为$P(\alpha(G)\geq k)\leq\binom nk(1-p)^\binom nk$</p>
 <p>存在k-团集的概率最大为$P(\omega(G)\geq k)\leq\binom nkp^\binom nk$</p>
 </li>
-<li><p>对于任何一个increasing property的概率$P$，$n\to\infty$时，$P\to0$或者$P\to1$</p>
+<li>
+<p>对于任何一个increasing property的概率$P$，$n\to\infty$时，$P\to0$或者$P\to1$</p>
 <p>具体趋于可能收到$p$影响，边界点称为threshold</p>
 </li>
-<li><p>可以用马尔科夫不等式&#x2F;切比雪夫不等式来推导</p>
+<li>
+<p>可以用马尔科夫不等式/切比雪夫不等式来推导</p>
 </li>
 </ol>
-<h2 id="6-Introduction-to-data-science"><a href="#6-Introduction-to-data-science" class="headerlink" title="6 Introduction to data science"></a>6 Introduction to data science</h2><h3 id="6-1-High-dimensional-space"><a href="#6-1-High-dimensional-space" class="headerlink" title="6.1 High-dimensional space"></a>6.1 High-dimensional space</h3><ol>
+<h2 id="6-Introduction-to-data-science">6 Introduction to data science</h2>
+<h3 id="6-1-High-dimensional-space">6.1 High-dimensional space</h3>
+<ol>
 <li>任意两个高维向量是近似正交的</li>
 <li>单位立方体的顶点在单位球外</li>
 <li>几乎所有的点都在赤道（不论哪个点为北极点）</li>
@@ -886,11 +1006,14 @@
 <li>高维高斯分布：体积最多的地方不在零点，在一个半径为$\sqrt d$的环上</li>
 <li>找最近的两个向量-&gt;矩阵降维-&gt;用球状高斯分布生成k个向量，再把原来的向量投影上去，距离相对关系大概率是不变的</li>
 </ol>
-<h3 id="6-2-Best-fit-subspaces-and-Singular-Value-Decomposition"><a href="#6-2-Best-fit-subspaces-and-Singular-Value-Decomposition" class="headerlink" title="6.2 Best-fit subspaces and Singular Value Decomposition"></a>6.2 Best-fit subspaces and Singular Value Decomposition</h3><h4 id="6-2-1-SVD-特征值压缩"><a href="#6-2-1-SVD-特征值压缩" class="headerlink" title="6.2.1 SVD 特征值压缩"></a>6.2.1 SVD 特征值压缩</h4><p>方阵 EVD：通过特征值和特征矩阵，把原矩阵变成$\mathbf{S}&#x3D;U\boldsymbol\Lambda U^{-1}$，</p>
-<p>普通矩阵 SVD：$A&#x3D;\underbrace{U}<em>{m\times m}\underbrace{\Sigma}</em>{m\times n} \underbrace{V^T}_{n\times n}$</p>
-<p>$U$的列是$AA^T$的特征向量，$V$的列是$A^TA$的特征向量，$\Sigma$对角是特征值，其余为0</p>
+<h3 id="6-2-Best-fit-subspaces-and-Singular-Value-Decomposition">6.2 Best-fit subspaces and Singular Value Decomposition</h3>
+<h4 id="6-2-1-SVD-特征值压缩">6.2.1 SVD 特征值压缩</h4>
+<p>方阵 EVD：通过特征值和特征矩阵，把原矩阵变成$\mathbf{S}=U\boldsymbol\Lambda U^{-1}$，</p>
+<p>普通矩阵 SVD：$A=\underbrace{U}<em>{m\times m}\underbrace{\Sigma}</em>{m\times n} \underbrace{V^T}_{n\times n}$</p>
+<p>$U$的列是$AA<sup>T$的特征向量，$V$的列是$A</sup>TA$的特征向量，$\Sigma$对角是特征值，其余为0</p>
 <p>为了压缩矩阵，可以把最小的特征值置零</p>
-<h4 id="6-2-2-投影压缩"><a href="#6-2-2-投影压缩" class="headerlink" title="6.2.2 投影压缩"></a>6.2.2 投影压缩</h4><p>和线形回归类似，目标是让原数据和新数据的协方差尽可能小，但是实现上可以用SVD</p>
+<h4 id="6-2-2-投影压缩">6.2.2 投影压缩</h4>
+<p>和线形回归类似，目标是让原数据和新数据的协方差尽可能小，但是实现上可以用SVD</p>
 <ol>
 <li>中心化数据：将每个特征减去其均值，使数据均值为零</li>
 <li>计算协方差矩阵</li>
@@ -898,144 +1021,192 @@
 <li>选择主成分</li>
 <li>投影数据</li>
 </ol>
-<h3 id="6-3-Introduction-to-Markov-Chain-Monte-Carlo"><a href="#6-3-Introduction-to-Markov-Chain-Monte-Carlo" class="headerlink" title="6.3 Introduction to Markov Chain Monte Carlo"></a>6.3 Introduction to Markov Chain Monte Carlo</h3><ul>
-<li><p>Persistent state (recurrence): If the state ever be reached, the random process will return to it with probability 1.</p>
+<h3 id="6-3-Introduction-to-Markov-Chain-Monte-Carlo">6.3 Introduction to Markov Chain Monte Carlo</h3>
+<ul>
+<li>
+<p>Persistent state (recurrence): If the state ever be reached, the random process will return to it with probability 1.</p>
 </li>
-<li><p>Markov Chain Monte Carlo: $E(f)&#x3D;\sum\limits_xf(x)\cdot p(x)$</p>
+<li>
+<p>Markov Chain Monte Carlo: $E(f)=\sum\limits_xf(x)\cdot p(x)$</p>
 </li>
-<li><p>Metropolis-Hastings Algorithm: 构造指定stationary distribution的Markov Chain</p>
-<p>$\begin{cases}p_{ij}&#x3D;\dfrac 1r\min\left (1,\dfrac {p_j}{p_i}\right )\p_{ii}&#x3D;1-\sum\limits_{i\ne j}p_{ij}\end{cases}$</p>
+<li>
+<p>Metropolis-Hastings Algorithm: 构造指定stationary distribution的Markov Chain</p>
+<p>$\begin{cases}p_{ij}=\dfrac 1r\min\left (1,\dfrac {p_j}{p_i}\right )\p_{ii}=1-\sum\limits_{i\ne j}p_{ij}\end{cases}$</p>
 </li>
 </ul>
 
         </div>
         <div class="post-body-en i18n-en">
-            <h3 id="2-3-生成函数"><a href="#2-3-生成函数" class="headerlink" title="2.3 生成函数"></a>2.3 生成函数</h3><p>卡特兰数</p>
-<p>$C_n&#x3D;\dfrac1{n+1}\binom{2n}n$</p>
-<h3 id="2-4-递推关系"><a href="#2-4-递推关系" class="headerlink" title="2.4 递推关系"></a>2.4 递推关系</h3><p>注意首项要带入验算</p>
-<h3 id="2-5-波利亚计数理论"><a href="#2-5-波利亚计数理论" class="headerlink" title="2.5 波利亚计数理论"></a>2.5 波利亚计数理论</h3><ol>
-<li><strong>轨道：</strong> 若$x\in X$，则$O_x&#x3D;{y\in X:\exists g \in G \text{使得} g*x&#x3D;y}$</li>
-<li><strong>稳定子：</strong> $S_x&#x3D;{g:g*x&#x3D;x}$</li>
+            <h3 id="2-3-生成函数">2.3 生成函数</h3>
+<p>卡特兰数</p>
+<p>$C_n=\dfrac1{n+1}\binom{2n}n$</p>
+<h3 id="2-4-递推关系">2.4 递推关系</h3>
+<p>注意首项要带入验算</p>
+<h3 id="2-5-波利亚计数理论">2.5 波利亚计数理论</h3>
+<ol>
+<li><strong>轨道：</strong> 若$x\in X$，则$O_x={y\in X:\exists g \in G \text{使得} g*x=y}$</li>
+<li><strong>稳定子：</strong> $S_x={g:g*x=x}$</li>
 <li><strong>引理1：</strong> 轨道划分了$X$</li>
-<li><strong>引理2：</strong> 若$x\in X$，则$\left|O_x\right|\left|S_x\right |&#x3D;\left | G\right|$</li>
-<li><strong>定理1：</strong> $\nu_{X,G}&#x3D;\dfrac1{\left |G\right |}\sum\limits_{x\in X}\left| S_x\right |$，其中$\nu_{X,G}$表示轨道的数量</li>
-<li><strong>定理2：</strong> $\nu_{X,G}&#x3D;\dfrac1{\left |G\right |}\sum\limits_{g\in G}\left| Fix\left( g\right )\right |$，对$g\in G$，定义$Fix(g)&#x3D;{x\in X:g*x&#x3D;x}$</li>
+<li><strong>引理2：</strong> 若$x\in X$，则$\left|O_x\right|\left|S_x\right |=\left | G\right|$</li>
+<li><strong>定理1：</strong> $\nu_{X,G}=\dfrac1{\left |G\right |}\sum\limits_{x\in X}\left| S_x\right |$，其中$\nu_{X,G}$表示轨道的数量</li>
+<li><strong>定理2：</strong> $\nu_{X,G}=\dfrac1{\left |G\right |}\sum\limits_{g\in G}\left| Fix\left( g\right )\right |$，对$g\in G$，定义$Fix(g)={x\in X:g*x=x}$</li>
 </ol>
 <p>本质上：两种计数方法</p>
 <ol>
 <li>固定颜色的排列，计算其对应的置换有多少种</li>
 <li>固定算子，计算保持不变的颜色（稳定子）有多少种</li>
 </ol>
-<h3 id="2-6-估值"><a href="#2-6-估值" class="headerlink" title="2.6 估值"></a>2.6 估值</h3><ol>
-<li><p>调和级数估值：$\dfrac12\lfloor\log_2n\rfloor&lt;\sum\limits_{i&#x3D;1}^n\dfrac1i&#x3D;H_n&lt;\log_2n+1$，因此$H_n&#x3D;\Theta(\ln n)$</p>
-</li>
-<li><p>阶乘估值（大小为$n$的集合$X$上的置换共有$n!$个）</p>
+<h3 id="2-6-估值">2.6 估值</h3>
 <ol>
-<li>极值点估值：$2^n&lt;\left(\dfrac n2\right)^\dfrac n2&lt;\prod\limits_{i&#x3D;n&#x2F;2}^n\dfrac n2&#x3D;n!&lt;n^n$</li>
-<li>高斯估值（均值不等式）：$n^{\frac n2}&#x3D;\prod\limits_{i&#x3D;1}^n\sqrt n\leq\prod\limits_{i&#x3D;1}^n\sqrt{i(n+1-i)}&#x3D;\left (\sqrt{\prod\limits_{i&#x3D;1}^n i(n+1-i)}&#x3D;\sqrt{n!\cdot n!}&#x3D;n!\right )\leq\prod\limits_{i&#x3D;1}^n\dfrac{n+1}2&#x3D;\left(\dfrac{n+1}2\right)^n$</li>
+<li>
+<p>调和级数估值：$\dfrac12\lfloor\log_2n\rfloor&lt;\sum\limits_{i=1}^n\dfrac1i=H_n&lt;\log_2n+1$，因此$H_n=\Theta(\ln n)$</p>
+</li>
+<li>
+<p>阶乘估值（大小为$n$的集合$X$上的置换共有$n!$个）</p>
+<ol>
+<li>极值点估值：$2^n&lt;\left(\dfrac n2\right)^\dfrac n2&lt;\prod\limits_{i=n/2}^n\dfrac n2=n!&lt;n^n$</li>
+<li>高斯估值（均值不等式）：$n^{\frac n2}=\prod\limits_{i=1}^n\sqrt n\leq\prod\limits_{i=1}^n\sqrt{i(n+1-i)}=\left (\sqrt{\prod\limits_{i=1}^n i(n+1-i)}=\sqrt{n!\cdot n!}=n!\right )\leq\prod\limits_{i=1}<sup>n\dfrac{n+1}2=\left(\dfrac{n+1}2\right)</sup>n$</li>
 <li>进一步优化，利用$1+x≤e^x$及归纳法，可得$e\left(\dfrac ne\right)^n\leq n\leq en\left(\dfrac ne\right)^n$</li>
 </ol>
-<p>实际上，斯特林公式：$\lim\limits_{n\to \infty}\dfrac{\sqrt{2\pi n}(\frac ne)^n}{n!}&#x3D;1$</p>
+<p>实际上，斯特林公式：$\lim\limits_{n\to \infty}\dfrac{\sqrt{2\pi n}(\frac ne)^n}{n!}=1$</p>
 </li>
-<li><p>二项式系数估值：$\left (\dfrac nk\right)^k\leq\binom nk\leq\sum\limits_{i&#x3D;0}^k\binom ni\leq(\dfrac{en}k)^k$，右侧的证明利用二项式定理并令$x&#x3D;\dfrac kn$</p>
+<li>
+<p>二项式系数估值：$\left (\dfrac nk\right)^k\leq\binom nk\leq\sum\limits_{i=0}^k\binom ni\leq(\dfrac{en}k)^k$，右侧的证明利用二项式定理并令$x=\dfrac kn$</p>
 </li>
 </ol>
-<h2 id="3-图论"><a href="#3-图论" class="headerlink" title="3 图论"></a>3 图论</h2><h3 id="3-1-基本概念与握手引理"><a href="#3-1-基本概念与握手引理" class="headerlink" title="3.1 基本概念与握手引理"></a>3.1 基本概念与握手引理</h3><ol>
-<li><p>图的最小度$\delta(G)$，最大度$\Delta G$</p>
+<h2 id="3-图论">3 图论</h2>
+<h3 id="3-1-基本概念与握手引理">3.1 基本概念与握手引理</h3>
+<ol>
+<li>
+<p>图的最小度$\delta(G)$，最大度$\Delta G$</p>
 </li>
-<li><p>子图：边集和点集均为原图的子集</p>
+<li>
+<p>子图：边集和点集均为原图的子集</p>
 <ol>
 <li>导出子图：子图中的点集在原图中对应的边，均属于子图的边</li>
 <li>生成子图：子图与原图的点集相同</li>
 </ol>
 </li>
-<li><p>特殊图</p>
+<li>
+<p>特殊图</p>
 <ol>
-<li><p>路径图（$Path P_n$）：$V&#x3D;{0,1,\cdots,n}$</p>
-<p>$E&#x3D;{(i-1,i):i&#x3D;1,2,\cdots,n}$</p>
+<li>
+<p>路径图（$Path P_n$）：$V={0,1,\cdots,n}$</p>
+<p>$E={(i-1,i):i=1,2,\cdots,n}$</p>
 </li>
-<li><p>环（$Circle C_n$）：$V&#x3D;{0,1,\cdots,n}$</p>
-<p>$E&#x3D;{(i,i+1):i&#x3D;1,2,\cdots,n-1}\cup{(1,n)}$</p>
+<li>
+<p>环（$Circle C_n$）：$V={0,1,\cdots,n}$</p>
+<p>$E={(i,i+1):i=1,2,\cdots,n-1}\cup{(1,n)}$</p>
 </li>
-<li><p>二分图（$Bipartite graph B_{n,m}$）：$V&#x3D;{u_1,\cdots,u_n}\cup{v_1,\cdots,v_m}$</p>
-<p>$E\subseteq{(u_i,v_j):i&#x3D;1,2,\cdots,n;\ j&#x3D;1,2,\cdots,m}$</p>
+<li>
+<p>二分图（$Bipartite graph B_{n,m}$）：$V={u_1,\cdots,u_n}\cup{v_1,\cdots,v_m}$</p>
+<p>$E\subseteq{(u_i,v_j):i=1,2,\cdots,n;\ j=1,2,\cdots,m}$</p>
 <p>当$\subseteq$取等号时，为完全二分图（$Complete Bipartite graph K_{n,m}$）</p>
 </li>
-<li><p>完全图：$（Complete graph K_n）$</p>
+<li>
+<p>完全图：$（Complete graph K_n）$</p>
 </li>
-<li><p>$r$-正则图（$r-regular graph$）：所有顶点的度数均为常数$r$的图</p>
+<li>
+<p>$r$-正则图（$r-regular graph$）：所有顶点的度数均为常数$r$的图</p>
 </li>
-<li><p>简单图（$Simple Graph$）：没有自环、重边的图</p>
+<li>
+<p>简单图（$Simple Graph$）：没有自环、重边的图</p>
 </li>
-<li><p>$\begin{cases}路径：不允许有环，每个顶点和边仅出现一次\游走：允许有环，顶点和边可重复\end{cases}$</p>
+<li>
+<p>$\begin{cases}路径：不允许有环，每个顶点和边仅出现一次\游走：允许有环，顶点和边可重复\end{cases}$</p>
 </li>
-<li><p>连通图：任意两点之间存在路径</p>
+<li>
+<p>连通图：任意两点之间存在路径</p>
 </li>
-<li><p>极大连通子图：既是子图又是连通图且无法再扩大的图</p>
+<li>
+<p>极大连通子图：既是子图又是连通图且无法再扩大的图</p>
 </li>
-<li><p>树：无环的连通图</p>
+<li>
+<p>树：无环的连通图</p>
 </li>
 </ol>
 </li>
-<li><p>握手定理：$\sum\limits_{v\in V}deg_G(v)&#x3D;2\left | E\right|$，奇点个数为偶数</p>
+<li>
+<p>握手定理：$\sum\limits_{v\in V}deg_G(v)=2\left | E\right|$，奇点个数为偶数</p>
 </li>
 </ol>
-<h3 id="3-2-图同构与图的度序列"><a href="#3-2-图同构与图的度序列" class="headerlink" title="3.2 图同构与图的度序列"></a>3.2 图同构与图的度序列</h3><ol>
-<li><p>有$n$个顶点且两两不同构的图有$x$个，则$\dfrac{2^\binom n2}{n!}\leq x\leq2^\binom n2$，因此$x&#x3D;2^{\Theta(\frac{n^2}2)}$</p>
+<h3 id="3-2-图同构与图的度序列">3.2 图同构与图的度序列</h3>
+<ol>
+<li>
+<p>有$n$个顶点且两两不同构的图有$x$个，则$\dfrac{2^\binom n2}{n!}\leq x\leq2^\binom n2$，因此$x=2<sup>{\Theta(\frac{n</sup>2}2)}$</p>
 </li>
-<li><p>图的度序列：图$G$的度序列</p>
+<li>
+<p>图的度序列：图$G$的度序列</p>
 <p>同构的图$\Rightarrow$度序列相同</p>
-<p>度序列相同$</p>
+<p>度序列相同$<br>
+Rightarrow$图同构</p>
+</li>
+<li>
+<p>度序列定理：去掉度数最高的点，将前最高度数个点度数减1，图的可画性不变</p>
+<p>$D=(d_1,d_2,\cdots,d_n)$，$d_1\leq d_2\leq\cdots\leq d_n$</p>
+<p>$d'=\begin{cases}d_i&amp;i&lt;n-d_n\d_i-1&amp;i\geq n-d_n\end{cases}$</p>
+<p>$D$与$D'$的可画性一致</p>
 </li>
 </ol>
-<p>Rightarrow$图同构<br>3. 度序列定理：去掉度数最高的点，将前最高度数个点度数减1，图的可画性不变</p>
-<p>   $D&#x3D;(d_1,d_2,\cdots,d_n)$，$d_1\leq d_2\leq\cdots\leq d_n$</p>
-<p>   $d’&#x3D;\begin{cases}d_i&amp;i&lt;n-d_n\d_i-1&amp;i\geq n-d_n\end{cases}$</p>
-<p>   $D$与$D’$的可画性一致</p>
-<h3 id="3-3-握手引理的应用：奇偶性论证"><a href="#3-3-握手引理的应用：奇偶性论证" class="headerlink" title="3.3 握手引理的应用：奇偶性论证"></a>3.3 握手引理的应用：奇偶性论证</h3><ol>
+<h3 id="3-3-握手引理的应用：奇偶性论证">3.3 握手引理的应用：奇偶性论证</h3>
+<ol>
 <li>斯佩纳引理：对任意$n$维单形体进行分割并用$n + 1$种颜色着色，则任何合法的单形体分割着色方案下，必然存在一个包含全部不同颜色的单元。</li>
 <li>对于3-正则图，包含图上任意边$e$的哈密顿回路的条数必为偶数</li>
 </ol>
-<h3 id="3-5-树的同构"><a href="#3-5-树的同构" class="headerlink" title="3.5 树的同构"></a>3.5 树的同构</h3><ol>
-<li><p>叶子：度数为1的顶点</p>
+<h3 id="3-5-树的同构">3.5 树的同构</h3>
+<ol>
+<li>
+<p>叶子：度数为1的顶点</p>
 </li>
-<li><p>树的生长定义：对于图$G$的叶子节点$v$，图$G$是树$\Leftrightarrow$图$G-v$是树</p>
+<li>
+<p>树的生长定义：对于图$G$的叶子节点$v$，图$G$是树$\Leftrightarrow$图$G-v$是树</p>
 </li>
-<li><p>树的等价刻画：</p>
+<li>
+<p>树的等价刻画：</p>
 <ol>
 <li>图$G$是树。</li>
 <li>路径唯一：对任意两点$u, v \in V$，存在从$u$到$v$的唯一路径。</li>
 <li>最小连通图：$G$是连通图，且去掉任意一条边后便变为非连通图。</li>
 <li>最大无环图：$G$不含环，但添加任意一条边后得到的图$G + e$（其中$e \in \binom{V}{2} \setminus E $）中会出现一个环。</li>
-<li>欧拉方程：$G$是连通图，且$|V| &#x3D; |E| + 1$。</li>
+<li>欧拉方程：$G$是连通图，且$|V| = |E| + 1$。</li>
 </ol>
 </li>
-<li><p>证明顶点数为$n$的不同构树有$n^{n-2}$个</p>
+<li>
+<p>证明顶点数为$n$的不同构树有$n^{n-2}$个</p>
 <ol>
-<li><p>通过度序列直接计算并化简可得</p>
+<li>
+<p>通过度序列直接计算并化简可得</p>
 </li>
-<li><p>树的骨架标本与$V$上的函数图一一对应，每棵树对应$n^2$个骨架标本，因此数量为$\dfrac {n^n}{n^2}&#x3D;n^{n-2}$</p>
+<li>
+<p>树的骨架标本与$V$上的函数图一一对应，每棵树对应$n^2$个骨架标本，因此数量为$\dfrac {n<sup>n}{n</sup>2}=n^{n-2}$</p>
 </li>
-<li><p>Prüfer编码（依次记录当前编号最小的叶子的父节点）与树一一对应，数量为$n^{n-2}$</p>
+<li>
+<p>Prüfer编码（依次记录当前编号最小的叶子的父节点）与树一一对应，数量为$n^{n-2}$</p>
 </li>
-<li><p>行列式：图$G$的拉普拉斯矩阵：$a_{ij}&#x3D;\begin{cases}-1&amp;{i,j}\in E(G)\deg_G(i)&amp;i&#x3D;j\0&amp;otherwise\end{cases}$</p>
-<p>$T(G)&#x3D;T(G-e)+T(G:e)&#x3D;\det Q_{11}’+\det Q_{11}’’&#x3D;\det Q_{11}$</p>
+<li>
+<p>行列式：图$G$的拉普拉斯矩阵：$a_{ij}=\begin{cases}-1&amp;{i,j}\in E(G)\deg_G(i)&amp;i=j\0&amp;otherwise\end{cases}$</p>
+<p>$T(G)=T(G-e)+T(G:e)=\det Q_{11}'+\det Q_{11}''=\det Q_{11}$</p>
 </li>
 </ol>
 </li>
 </ol>
-<h3 id="3-4-生成树的数量"><a href="#3-4-生成树的数量" class="headerlink" title="3.4 生成树的数量"></a>3.4 生成树的数量</h3><ol>
-<li><p>树同构</p>
+<h3 id="3-4-生成树的数量">3.4 生成树的数量</h3>
 <ol>
-<li>有根树同构$\cong’$，编码（非根叶节点用01表示，每个节点的编码为0+所有子树编码+1）后按字典序排序即可</li>
-<li>无根树同构$\cong$<ol>
-<li>相关概念<ol>
+<li>
+<p>树同构</p>
+<ol>
+<li>有根树同构$\cong'$，编码（非根叶节点用01表示，每个节点的编码为0+所有子树编码+1）后按字典序排序即可</li>
+<li>无根树同构$\cong$
+<ol>
+<li>相关概念
+<ol>
 <li>两点距离：最短路径的长度$dis_G(u,v)$</li>
 <li>一点偏心率：该点与其他点的最大距离$ex_G(v)$</li>
 <li>中心：偏心率最小的顶点集合$C(G)$，对于树而言，该集合大小为1或2</li>
 </ol>
 </li>
-<li>解决方法<ol>
+<li>解决方法
+<ol>
 <li>找到中心</li>
 <li>若中心集合大小为1，将其作为根，转化为有根树</li>
 <li>若中心集合大小为2，去掉连接这两个中心的边，转化为两棵有根树</li>
@@ -1046,17 +1217,24 @@
 </ol>
 </li>
 </ol>
-<h2 id="4-概率论：概率方法"><a href="#4-概率论：概率方法" class="headerlink" title="4 概率论：概率方法"></a>4 概率论：概率方法</h2><h3 id="4-1-概率：简要回顾"><a href="#4-1-概率：简要回顾" class="headerlink" title="4.1 概率：简要回顾"></a>4.1 概率：简要回顾</h3><ol>
-<li><p>$P(E|F)&#x3D;\dfrac{P(E\cap F)}{P(F)}$，若事件$E$与$F$独立，则$P(E|F)&#x3D;P(E)$</p>
+<h2 id="4-概率论：概率方法">4 概率论：概率方法</h2>
+<h3 id="4-1-概率：简要回顾">4.1 概率：简要回顾</h3>
+<ol>
+<li>
+<p>$P(E|F)=\dfrac{P(E\cap F)}{P(F)}$，若事件$E$与$F$独立，则$P(E|F)=P(E)$</p>
 </li>
-<li><p>全概率公式：$P(B)&#x3D;\sum P(B|E_i)P(E_i)$</p>
+<li>
+<p>全概率公式：$P(B)=\sum P(B|E_i)P(E_i)$</p>
 </li>
-<li><p>条件独立：$P(A\cap B|C)&#x3D;P(A|C)\cdot P(B|C)$</p>
+<li>
+<p>条件独立：$P(A\cap B|C)=P(A|C)\cdot P(B|C)$</p>
 </li>
-<li><p>贝叶斯定理：$P(B|A)&#x3D;\dfrac{P(AB)}{P(A)}&#x3D;\dfrac{P(A|B)P(B)}{P(A)}$</p>
+<li>
+<p>贝叶斯定理：$P(B|A)=\dfrac{P(AB)}{P(A)}=\dfrac{P(A|B)P(B)}{P(A)}$</p>
 </li>
-<li><p>$E(X)+E(Y)&#x3D;E(X+Y)$</p>
-<p>$D(X)$（即$Var(X)$）$&#x3D;E((X-E[X])^2)&#x3D;E[X^2]-E[X]^2$</p>
+<li>
+<p>$E(X)+E(Y)=E(X+Y)$</p>
+<p>$D(X)$（即$Var(X)$）$=E((X-E[X])<sup>2)=E[X</sup>2]-E[X]^2$</p>
 <table>
 <thead>
 <tr>
@@ -1066,92 +1244,117 @@
 <th>方差</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0-1分布$B(1,p)$</td>
-<td>$P(X&#x3D;k)&#x3D;p^k(1-p)^{1-k},\quad k&#x3D;0,1,\quad 0&lt;p&lt;1$</td>
+<td>$P(X=k)=p<sup>k(1-p)</sup>{1-k},\quad k=0,1,\quad 0&lt;p&lt;1$</td>
 <td>$p$</td>
 <td>$p(1−p)$</td>
 </tr>
 <tr>
 <td>二项分布$B(n,p)$</td>
-<td>$P(X&#x3D;k)&#x3D;C_{n}^{k}p^{k}(1-p)^{n-k},\quad k&#x3D;0,1,2,…,n,\quad 0&lt;p&lt;1 $</td>
+<td>$P(X=k)=C_{n}<sup>{k}p</sup>{k}(1-p)^{n-k},\quad k=0,1,2,...,n,\quad 0&lt;p&lt;1 $</td>
 <td>$np$</td>
 <td>$np(1−p)$</td>
 </tr>
 <tr>
 <td>泊松分布$P(\lambda)$</td>
-<td>$P(X&#x3D;k)&#x3D;\frac{\lambda ^{k}}{k!}e^{-λ},\quad \quad k&#x3D;0,1,2,…,\quad λ&gt;0$</td>
+<td>$P(X=k)=\frac{\lambda <sup>{k}}{k!}e</sup>{-λ},\quad \quad k=0,1,2,...,\quad λ&gt;0$</td>
 <td>$\lambda$</td>
 <td>$\lambda$</td>
 </tr>
 <tr>
 <td>几何分布$G(p)$</td>
-<td>$P(X&#x3D;k)&#x3D;p(1-p)^{k-1}, k&#x3D;1, 2, \cdots, 0&lt;p&lt;1$</td>
+<td>$P(X=k)=p(1-p)^{k-1}, k=1, 2, \cdots, 0&lt;p&lt;1$</td>
 <td>$\frac{1}{p}$</td>
 <td>$\frac{1-p}{p^{2}}$</td>
 </tr>
 <tr>
 <td>指数分布$E(\lambda)$</td>
-<td>$f(x)&#x3D;\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他</td>
+<td>$f(x)=\left {\begin{matrix} \lambda e^{-\lambda x}, &amp;x&gt;0\ 0, \end{matrix} \right.$其他</td>
 <td>$\frac{1}{\lambda}$</td>
 <td>$\frac{1}{\lambda^{2}}$</td>
 </tr>
 <tr>
 <td>正态分布$N(\mu, \sigma^{2})$</td>
-<td>$f(x, y)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$</td>
+<td>$f(x, y)=\frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>{2}}{2\sigma^{2}}}, -\infty &lt;x&lt;+\infty, -\infty &lt;\mu &lt;+\infty, \sigma &gt;0$</td>
 <td>$\mu$</td>
 <td>$\sigma^{2}$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
-<li><p>概率的估算</p>
+<li>
+<p>概率的估算</p>
 <ol>
 <li>马尔可夫不等式：若$X$是只取非负值的随机变量，则$P(X\geq a)\leq\dfrac{E[X]}a$</li>
 <li>切比雪夫不等式：$P(\left|X-E[X]\right|\geq a)\leq\dfrac{Var[X]}{a^2}$</li>
-<li>变形：$P(X\geq a)&#x3D;P_{min}(e^{tX}\geq e^{ta})\leq \min\limits_{t&gt;0}\dfrac{E(e^{tX})}{e^{t\cdot a}}$</li>
+<li>变形：$P(X\geq a)=P_{min}(e^{tX}\geq e^{ta})\leq \min\limits_{t&gt;0}\dfrac{E(e<sup>{tX})}{e</sup>{t\cdot a}}$</li>
 <li>并集不等式</li>
 </ol>
 </li>
 </ol>
-<h3 id="4-2-概率方法"><a href="#4-2-概率方法" class="headerlink" title="4.2 概率方法"></a>4.2 概率方法</h3><ol>
-<li><p>拉姆齐数</p>
+<h3 id="4-2-概率方法">4.2 概率方法</h3>
+<ol>
+<li>
+<p>拉姆齐数</p>
 <p>若$\binom nk2^{-\binom nk+1}&lt;1$，则可以将$K_n$的边用两种颜色着色，使得不存在单色的$K_k$子图</p>
 </li>
-<li><p>任意由少于$2^{k-1}$个大小为$k$的集合构成的系统都存在一种2-着色方式</p>
+<li>
+<p>任意由少于$2^{k-1}$个大小为$k$的集合构成的系统都存在一种2-着色方式</p>
 </li>
-<li><p>定理：设$G$是一个顶点数为偶数$2n$、边数为$m &gt; 0$的图。则顶点集$V &#x3D; V(G)$可以被划分为两个不相交的$n$元子集$A$和$B$，使得连接$A$和$B$的边数量超过$\frac{m}{2}$。</p>
+<li>
+<p>定理：设$G$是一个顶点数为偶数$2n$、边数为$m &gt; 0$的图。则顶点集$V = V(G)$可以被划分为两个不相交的$n$元子集$A$和$B$，使得连接$A$和$B$的边数量超过$\frac{m}{2}$。</p>
 <p>寻找该解时，采样测试的方法效率较高。</p>
 </li>
-<li><p>定理[洛瓦兹局部引理]：</p>
-<p>$$<br>E_1, E_2, \cdots, En<br>$$</p>
+<li>
+<p>定理[洛瓦兹局部引理]：</p>
+<p>$$<br>
+E_1, E_2, \cdots, En<br>
+$$</p>
 <p>是一组事件，且满足以下条件：</p>
 <ol>
-<li><p>对所有$i$，有</p>
-<p>$$<br>i$$<br>$$</p>
+<li>
+<p>对所有$i$，有</p>
+<p>$$<br>
+i$$<br>
+$$</p>
 <p>$Pr(E_i) \le p$；</p>
 </li>
-<li><p>由$E_1, E_2, \cdots, E_n$构成的依赖图的度数上界为$d$；</p>
+<li>
+<p>由$E_1, E_2, \cdots, E_n$构成的依赖图的度数上界为$d$；</p>
 </li>
-<li><p>$$<br>4dp \le 1$$。<br>$$</p>
+<li>
+<p>$$<br>
+4dp \le 1$$。<br>
+$$</p>
 </li>
 </ol>
 <p>则有</p>
-<p>$$<br>Pr\left(\bigcap_{i&#x3D;1}^n \overline{Ei}\right) &gt; 0<br>$$</p>
+<p>$$<br>
+Pr\left(\bigcap_{i=1}^n \overline{Ei}\right) &gt; 0<br>
+$$</p>
 <p>。</p>
 </li>
 </ol>
-<h2 id="5-随机图"><a href="#5-随机图" class="headerlink" title="5 随机图"></a>5 随机图</h2><ol>
-<li><p>$G(n,p)$模型：$\left|V\right|&#x3D;n$，$P({u,v}\in E)&#x3D;p$</p>
+<h2 id="5-随机图">5 随机图</h2>
+<ol>
+<li>
+<p>$G(n,p)$模型：$\left|V\right|=n$，$P({u,v}\in E)=p$</p>
 <p>存在$k$-独立集的最大概率为$P(\alpha(G)\geq k)\leq\binom nk(1-p)^\binom nk$</p>
 <p>存在$k$-团集的最大概率为$P(\omega(G)\geq k)\leq\binom nkp^\binom nk$</p>
 </li>
-<li><p>对于任意具有递增性质的事件，当$n\to\infty$时，该事件发生的概率要么趋近于0，要么趋近于1。</p>
+<li>
+<p>对于任意具有递增性质的事件，当$n\to\infty$时，该事件发生的概率要么趋近于0，要么趋近于1。</p>
 <p>具体趋近情况可能受$p$的影响，这个临界值称为阈值。</p>
 </li>
-<li><p>可以利用马尔可夫不等式或切比雪夫不等式进行推导。</p>
+<li>
+<p>可以利用马尔可夫不等式或切比雪夫不等式进行推导。</p>
 </li>
 </ol>
-<h2 id="6-数据科学入门"><a href="#6-数据科学入门" class="headerlink" title="6 数据科学入门"></a>6 数据科学入门</h2><h3 id="6-1-高维空间"><a href="#6-1-高维空间" class="headerlink" title="6.1 高维空间"></a>6.1 高维空间</h3><ol>
+<h2 id="6-数据科学入门">6 数据科学入门</h2>
+<h3 id="6-1-高维空间">6.1 高维空间</h3>
+<ol>
 <li>任意两个高维向量近似正交。</li>
 <li>单位立方体的顶点位于单位球外部。</li>
 <li>几乎所有点都分布在赤道上（无论以哪个点为北极点）。</li>
@@ -1160,11 +1363,14 @@
 <li>高维高斯分布：概率密度最大的区域不在零点，而是在半径为$\sqrt d$的环上。</li>
 <li>寻找最近的两个向量→矩阵降维→用球形高斯分布生成$k$个向量，再将原向量投影到这些向量上，此时向量的相对距离关系大概率保持不变。</li>
 </ol>
-<h3 id="6-2-最佳拟合子空间与奇异值分解"><a href="#6-2-最佳拟合子空间与奇异值分解" class="headerlink" title="6.2 最佳拟合子空间与奇异值分解"></a>6.2 最佳拟合子空间与奇异值分解</h3><h4 id="6-2-1-SVD与特征值压缩"><a href="#6-2-1-SVD与特征值压缩" class="headerlink" title="6.2.1 SVD与特征值压缩"></a>6.2.1 SVD与特征值压缩</h4><p>方阵的EVD：通过特征值和特征矩阵，将原矩阵表示为$\mathbf{S}&#x3D;U\boldsymbol\Lambda U^{-1}$；</p>
-<p>普通矩阵的SVD：$A&#x3D;\underbrace{U}<em>{m\times m}\underbrace{\Sigma}</em>{m\times n} \underbrace{V^T}_{n\times n}$</p>
-<p>$U$的列是$AA^T$的特征向量，$V$的列是$A^TA$的特征向量，$\Sigma$的对角元素为特征值，其余位置为0。</p>
+<h3 id="6-2-最佳拟合子空间与奇异值分解">6.2 最佳拟合子空间与奇异值分解</h3>
+<h4 id="6-2-1-SVD与特征值压缩">6.2.1 SVD与特征值压缩</h4>
+<p>方阵的EVD：通过特征值和特征矩阵，将原矩阵表示为$\mathbf{S}=U\boldsymbol\Lambda U^{-1}$；</p>
+<p>普通矩阵的SVD：$A=\underbrace{U}<em>{m\times m}\underbrace{\Sigma}</em>{m\times n} \underbrace{V^T}_{n\times n}$</p>
+<p>$U$的列是$AA<sup>T$的特征向量，$V$的列是$A</sup>TA$的特征向量，$\Sigma$的对角元素为特征值，其余位置为0。</p>
 <p>为了压缩矩阵，可以将最小的特征值置为零。</p>
-<h4 id="6-2-2-投影压缩"><a href="#6-2-2-投影压缩" class="headerlink" title="6.2.2 投影压缩"></a>6.2.2 投影压缩</h4><p>该方法与线性回归类似，目标是使原数据与新数据的协方差尽可能小，实际实现时可借助SVD。</p>
+<h4 id="6-2-2-投影压缩">6.2.2 投影压缩</h4>
+<p>该方法与线性回归类似，目标是使原数据与新数据的协方差尽可能小，实际实现时可借助SVD。</p>
 <ol>
 <li>数据中心化：将每个特征减去其均值，使数据均值为零。</li>
 <li>计算协方差矩阵。</li>
@@ -1172,13 +1378,17 @@
 <li>选择主成分。</li>
 <li>对数据进行投影。</li>
 </ol>
-<h3 id="6-3-马尔可夫链蒙特卡洛方法简介"><a href="#6-3-马尔可夫链蒙特卡洛方法简介" class="headerlink" title="6.3 马尔可夫链蒙特卡洛方法简介"></a>6.3 马尔可夫链蒙特卡洛方法简介</h3><ul>
-<li><p>持久状态（递归）：若随机过程曾到达该状态，则必然以概率1再次返回该状态。</p>
+<h3 id="6-3-马尔可夫链蒙特卡洛方法简介">6.3 马尔可夫链蒙特卡洛方法简介</h3>
+<ul>
+<li>
+<p>持久状态（递归）：若随机过程曾到达该状态，则必然以概率1再次返回该状态。</p>
 </li>
-<li><p>马尔可夫链蒙特卡洛：$E(f)&#x3D;\sum\limits_xf(x)\cdot p(x)$</p>
+<li>
+<p>马尔可夫链蒙特卡洛：$E(f)=\sum\limits_xf(x)\cdot p(x)$</p>
 </li>
-<li><p>梅特罗波利斯-黑斯廷斯算法：构造具有指定平稳分布的马尔可夫链</p>
-<p>$\begin{cases}p_{ij}&#x3D;\dfrac 1r\min\left (1,\dfrac {p_j}{p_i}\right )\p_{ii}&#x3D;1-\sum\limits_{i\ne j}p_{ij}\end{cases}$</p>
+<li>
+<p>梅特罗波利斯-黑斯廷斯算法：构造具有指定平稳分布的马尔可夫链</p>
+<p>$\begin{cases}p_{ij}=\dfrac 1r\min\left (1,\dfrac {p_j}{p_i}\right )\p_{ii}=1-\sum\limits_{i\ne j}p_{ij}\end{cases}$</p>
 </li>
 </ul>
 
@@ -1325,7 +1535,7 @@
                 <li>25/06/20</li>
                 <li>10:17</li>
                 
-                    <li>4.7k</li>
+                    <li>4.6k</li>
                 
                 
                     <li>24</li>
@@ -1369,10 +1579,10 @@
                 <li>25/06/11</li>
                 <li>01:49</li>
                 
-                    <li>3.8k</li>
+                    <li>3.6k</li>
                 
                 
-                    <li>18</li>
+                    <li>16</li>
                 
             </ul>
         </div>
@@ -1450,7 +1660,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">70k</span>
+            <span class="trm-accent-color">69k</span>
             words
         </span>
     </div>
@@ -1477,7 +1687,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="1 Set and ordering"><a rel="nofollow" class="trm-toc-link" href="#1-Set-and-ordering"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">1 Set and ordering</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 Sets, relations and functions"><a rel="nofollow" class="trm-toc-link" href="#1-1-Sets-relations-and-functions"><span class="trm-toc-text">1.1 Sets, relations and functions</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 Paradox &amp; Cardinality"><a rel="nofollow" class="trm-toc-link" href="#1-2-Paradox-Cardinality"><span class="trm-toc-text">1.2 Paradox &amp; Cardinality</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 Orderings 序"><a rel="nofollow" class="trm-toc-link" href="#1-3-Orderings-序"><span class="trm-toc-text">1.3 Orderings 序</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4 Wide or Tall - Mirsky’s theorem and Dilworth’s theorem"><a rel="nofollow" class="trm-toc-link" href="#1-4-Wide-or-Tall-Mirsky’s-theorem-and-Dilworth’s-theorem"><span class="trm-toc-text">1.4 Wide or Tall - Mirsky’s theorem and Dilworth’s theorem</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="2 Combinatorics"><a rel="nofollow" class="trm-toc-link" href="#2-Combinatorics"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">2 Combinatorics</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 Combinatorial Counting"><a rel="nofollow" class="trm-toc-link" href="#2-1-Combinatorial-Counting"><span class="trm-toc-text">2.1 Combinatorial Counting</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 Inclusion-exclusion principle and its application"><a rel="nofollow" class="trm-toc-link" href="#2-2-Inclusion-exclusion-principle-and-its-application"><span class="trm-toc-text">2.2 Inclusion-exclusion principle and its application</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 Generating function"><a rel="nofollow" class="trm-toc-link" href="#2-3-Generating-function"><span class="trm-toc-text">2.3 Generating function</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Recurrence relations"><a rel="nofollow" class="trm-toc-link" href="#2-4-Recurrence-relations"><span class="trm-toc-text">2.4 Recurrence relations</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 Polya’s Theory of Counting"><a rel="nofollow" class="trm-toc-link" href="#2-5-Polya’s-Theory-of-Counting"><span class="trm-toc-text">2.5 Polya’s Theory of Counting</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 估值"><a rel="nofollow" class="trm-toc-link" href="#2-6-估值"><span class="trm-toc-text">2.6 估值</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="3 Graph theory 图论"><a rel="nofollow" class="trm-toc-link" href="#3-Graph-theory-图论"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">3 Graph theory 图论</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 Basic notions and hand shaking lemma"><a rel="nofollow" class="trm-toc-link" href="#3-1-Basic-notions-and-hand-shaking-lemma"><span class="trm-toc-text">3.1 Basic notions and hand shaking lemma</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 Graph isomorphism and graph score"><a rel="nofollow" class="trm-toc-link" href="#3-2-Graph-isomorphism-and-graph-score"><span class="trm-toc-text">3.2 Graph isomorphism and graph score</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 Applications of handshake lemma: Parity argument"><a rel="nofollow" class="trm-toc-link" href="#3-3-Applications-of-handshake-lemma-Parity-argument"><span class="trm-toc-text">3.3 Applications of handshake lemma: Parity argument</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Isomorphism of trees"><a rel="nofollow" class="trm-toc-link" href="#3-5-Isomorphism-of-trees"><span class="trm-toc-text">3.5 Isomorphism of trees</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.4 The number of spanning trees"><a rel="nofollow" class="trm-toc-link" href="#3-4-The-number-of-spanning-trees"><span class="trm-toc-text">3.4 The number of spanning trees</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="4 概率论 The probabilistic method"><a rel="nofollow" class="trm-toc-link" href="#4-概率论-The-probabilistic-method"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">4 概率论 The probabilistic method</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 Probability: a quick review"><a rel="nofollow" class="trm-toc-link" href="#4-1-Probability-a-quick-review"><span class="trm-toc-text">4.1 Probability: a quick review</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 Probabilistic method"><a rel="nofollow" class="trm-toc-link" href="#4-2-Probabilistic-method"><span class="trm-toc-text">4.2 Probabilistic method</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="5 Random Graphs"><a rel="nofollow" class="trm-toc-link" href="#5-Random-Graphs"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">5 Random Graphs</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6 Introduction to data science"><a rel="nofollow" class="trm-toc-link" href="#6-Introduction-to-data-science"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">6 Introduction to data science</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="6.1 High-dimensional space"><a rel="nofollow" class="trm-toc-link" href="#6-1-High-dimensional-space"><span class="trm-toc-text">6.1 High-dimensional space</span></a></li><li class="trm-toc-item trm-toc-level-3" title="6.2 Best-fit subspaces and Singular Value Decomposition"><a rel="nofollow" class="trm-toc-link" href="#6-2-Best-fit-subspaces-and-Singular-Value-Decomposition"><span class="trm-toc-text">6.2 Best-fit subspaces and Singular Value Decomposition</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="6.2.1 SVD 特征值压缩"><a rel="nofollow" class="trm-toc-link" href="#6-2-1-SVD-特征值压缩"><span class="trm-toc-text">6.2.1 SVD 特征值压缩</span></a></li><li class="trm-toc-item trm-toc-level-4" title="6.2.2 投影压缩"><a rel="nofollow" class="trm-toc-link" href="#6-2-2-投影压缩"><span class="trm-toc-text">6.2.2 投影压缩</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="6.3 Introduction to Markov Chain Monte Carlo"><a rel="nofollow" class="trm-toc-link" href="#6-3-Introduction-to-Markov-Chain-Monte-Carlo"><span class="trm-toc-text">6.3 Introduction to Markov Chain Monte Carlo</span></a></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="1 Set and ordering"><a rel="nofollow" class="trm-toc-link" href="#1-Set-and-ordering"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">1 Set and ordering</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="1.1 Sets, relations and functions"><a rel="nofollow" class="trm-toc-link" href="#1-1-Sets-relations-and-functions"><span class="trm-toc-text">1.1 Sets, relations and functions</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.2 Paradox &amp; Cardinality"><a rel="nofollow" class="trm-toc-link" href="#1-2-Paradox-Cardinality"><span class="trm-toc-text">1.2 Paradox &amp; Cardinality</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.3 Orderings 序"><a rel="nofollow" class="trm-toc-link" href="#1-3-Orderings-序"><span class="trm-toc-text">1.3 Orderings 序</span></a></li><li class="trm-toc-item trm-toc-level-3" title="1.4 Wide or Tall - Mirsky&#39;s theorem and Dilworth&#39;s theorem"><a rel="nofollow" class="trm-toc-link" href="#1-4-Wide-or-Tall-Mirsky-s-theorem-and-Dilworth-s-theorem"><span class="trm-toc-text">1.4 Wide or Tall - Mirsky&#39;s theorem and Dilworth&#39;s theorem</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="2 Combinatorics"><a rel="nofollow" class="trm-toc-link" href="#2-Combinatorics"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">2 Combinatorics</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="2.1 Combinatorial Counting"><a rel="nofollow" class="trm-toc-link" href="#2-1-Combinatorial-Counting"><span class="trm-toc-text">2.1 Combinatorial Counting</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.2 Inclusion-exclusion principle and its application"><a rel="nofollow" class="trm-toc-link" href="#2-2-Inclusion-exclusion-principle-and-its-application"><span class="trm-toc-text">2.2 Inclusion-exclusion principle and its application</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.3 Generating function"><a rel="nofollow" class="trm-toc-link" href="#2-3-Generating-function"><span class="trm-toc-text">2.3 Generating function</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.4 Recurrence relations"><a rel="nofollow" class="trm-toc-link" href="#2-4-Recurrence-relations"><span class="trm-toc-text">2.4 Recurrence relations</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.5 Polya&#39;s Theory of Counting"><a rel="nofollow" class="trm-toc-link" href="#2-5-Polya-s-Theory-of-Counting"><span class="trm-toc-text">2.5 Polya&#39;s Theory of Counting</span></a></li><li class="trm-toc-item trm-toc-level-3" title="2.6 估值"><a rel="nofollow" class="trm-toc-link" href="#2-6-估值"><span class="trm-toc-text">2.6 估值</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="3 Graph theory 图论"><a rel="nofollow" class="trm-toc-link" href="#3-Graph-theory-图论"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">3 Graph theory 图论</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="3.1 Basic notions and hand shaking lemma"><a rel="nofollow" class="trm-toc-link" href="#3-1-Basic-notions-and-hand-shaking-lemma"><span class="trm-toc-text">3.1 Basic notions and hand shaking lemma</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.2 Graph isomorphism and graph score"><a rel="nofollow" class="trm-toc-link" href="#3-2-Graph-isomorphism-and-graph-score"><span class="trm-toc-text">3.2 Graph isomorphism and graph score</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.3 Applications of handshake lemma: Parity argument"><a rel="nofollow" class="trm-toc-link" href="#3-3-Applications-of-handshake-lemma-Parity-argument"><span class="trm-toc-text">3.3 Applications of handshake lemma: Parity argument</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.5 Isomorphism of trees"><a rel="nofollow" class="trm-toc-link" href="#3-5-Isomorphism-of-trees"><span class="trm-toc-text">3.5 Isomorphism of trees</span></a></li><li class="trm-toc-item trm-toc-level-3" title="3.4 The number of spanning trees"><a rel="nofollow" class="trm-toc-link" href="#3-4-The-number-of-spanning-trees"><span class="trm-toc-text">3.4 The number of spanning trees</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="4 概率论 The probabilistic method"><a rel="nofollow" class="trm-toc-link" href="#4-概率论-The-probabilistic-method"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">4 概率论 The probabilistic method</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="4.1 Probability: a quick review"><a rel="nofollow" class="trm-toc-link" href="#4-1-Probability-a-quick-review"><span class="trm-toc-text">4.1 Probability: a quick review</span></a></li><li class="trm-toc-item trm-toc-level-3" title="4.2 Probabilistic method"><a rel="nofollow" class="trm-toc-link" href="#4-2-Probabilistic-method"><span class="trm-toc-text">4.2 Probabilistic method</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="5 Random Graphs"><a rel="nofollow" class="trm-toc-link" href="#5-Random-Graphs"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">5 Random Graphs</span></a></li><li class="trm-toc-item trm-toc-level-2" title="6 Introduction to data science"><a rel="nofollow" class="trm-toc-link" href="#6-Introduction-to-data-science"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">6 Introduction to data science</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="6.1 High-dimensional space"><a rel="nofollow" class="trm-toc-link" href="#6-1-High-dimensional-space"><span class="trm-toc-text">6.1 High-dimensional space</span></a></li><li class="trm-toc-item trm-toc-level-3" title="6.2 Best-fit subspaces and Singular Value Decomposition"><a rel="nofollow" class="trm-toc-link" href="#6-2-Best-fit-subspaces-and-Singular-Value-Decomposition"><span class="trm-toc-text">6.2 Best-fit subspaces and Singular Value Decomposition</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-4" title="6.2.1 SVD 特征值压缩"><a rel="nofollow" class="trm-toc-link" href="#6-2-1-SVD-特征值压缩"><span class="trm-toc-text">6.2.1 SVD 特征值压缩</span></a></li><li class="trm-toc-item trm-toc-level-4" title="6.2.2 投影压缩"><a rel="nofollow" class="trm-toc-link" href="#6-2-2-投影压缩"><span class="trm-toc-text">6.2.2 投影压缩</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-3" title="6.3 Introduction to Markov Chain Monte Carlo"><a rel="nofollow" class="trm-toc-link" href="#6-3-Introduction-to-Markov-Chain-Monte-Carlo"><span class="trm-toc-text">6.3 Introduction to Markov Chain Monte Carlo</span></a></li></ol></li></ol>
       </div>
     </div>
 
