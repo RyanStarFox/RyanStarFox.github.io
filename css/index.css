@@ -3965,6 +3965,54 @@ html[data-lang="en"] .post-zh-only-notice {
  * That reads like broken markdown (### → "#标题") instead of real hierarchy.
  * Replace with a small accent bar and keep clear size steps for h3+.
  */
+.trm-publication {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+  text-align: justify !important;
+  text-justify: inter-ideograph;
+}
+.trm-publication p,
+.trm-publication li {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+  text-align: justify !important;
+  text-justify: inter-ideograph;
+}
+.trm-publication h1,
+.trm-publication h2,
+.trm-publication h3,
+.trm-publication h4,
+.trm-publication h5,
+.trm-publication h6,
+.trm-publication pre,
+.trm-publication .highlight,
+.trm-publication figure,
+.trm-publication table,
+.trm-publication .katex-display {
+  text-align: start !important;
+}
+.trm-publication h1,
+.trm-publication h2,
+.trm-publication h3,
+.trm-publication h4,
+.trm-publication h5,
+.trm-publication h6 {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+.trm-publication pre,
+.trm-publication .highlight,
+.trm-publication code {
+  word-break: normal !important;
+  overflow-wrap: anywhere;
+}
+.trm-publication .header-anchor,
+.trm-publication .headerlink {
+  display: none !important;
+}
 .trm-publication h4:before,
 .trm-publication h5:before,
 .trm-publication h6:before {
@@ -4001,6 +4049,25 @@ html[data-lang="en"] .post-zh-only-notice {
 .trm-publication h6 {
   font-size: 1em;
   opacity: 0.92;
+}
+/* Banner / card titles: keep English words intact when wrapping */
+.trm-banner-content .trm-banner-text h1,
+.trm-blog-card .trm-card-descr h5 a,
+.trm-older-publication .trm-op-title {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+/* Theme mobile banner uses nowrap+ellipsis, which cuts English mid-title (e.g. “thing”). */
+@media (max-width: 768px) {
+  .trm-banner .trm-banner-content .trm-banner-text .trm-hsmb-font {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.25;
+  }
 }
 /* GFM task lists: hide bullet so checkbox is the marker */
 .trm-publication,
