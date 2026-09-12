@@ -4069,6 +4069,18 @@ html[data-lang="en"] .post-zh-only-notice {
     line-height: 1.25;
   }
 }
+/* Markdown ==highlight== → <mark> */
+.trm-publication mark {
+  background: color-mix(in srgb, var(--primary, #afb42b) 38%, transparent);
+  color: inherit;
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+:root.dark .trm-publication mark {
+  background: color-mix(in srgb, var(--primary, #afb42b) 45%, transparent);
+}
 /* GFM task lists: hide bullet so checkbox is the marker */
 .trm-publication,
 .trm-card {
