@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
-  <!-- Simplified mortarboard for Academic Pages sidebar icon -->
-  <path d="M12 3.2 2 8.4l10 5.2 8.2-4.26V14h1.7V8.4L12 3.2z"/>
-  <path d="M5.2 12.55v3.4c0 1.55 3.05 2.8 6.8 2.8s6.8-1.25 6.8-2.8v-3.4L12 16.15 5.2 12.55z"/>
-  <rect x="18.35" y="9.5" width="1.55" height="5.2" rx="0.4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- rx≈128 → same corner softness as weixin/zhihu (~12% of side) -->
+  <path
+    fill="#000"
+    fill-rule="evenodd"
+    d="M176 48H848A128 128 0 0 1 976 176V848A128 128 0 0 1 848 976H176A128 128 0 0 1 48 848V176A128 128 0 0 1 176 48Zm324 276L236 484l264 156 220-114v108h68V458L500 324Zm-96 308v104c0 60 264 60 264 0V632L500 712Z"
+  />
 </svg>

@@ -3903,19 +3903,52 @@ html[data-lang="en"] .post-zh-only-notice {
 .trm-label .trm-typed-text {
   margin-left: 0.3em;
 }
-/* Custom SVG social icons (e.g. Academic Pages) — match iconfont size & hover color */
-.trm-social .trm-social-svg {
-  display: inline-block;
+/* Custom SVG social icons — same 24×24 box as iconfont badges */
+.trm-social .trm-social-svg-icon {
+  display: block;
   width: 24px;
   height: 24px;
-  vertical-align: -0.2em;
-  background-color: currentColor;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
+  flex: none;
+  overflow: visible;
+}
+/* 3 + 3 rows; keep every icon in an identical box for alignment */
+.trm-main-card-frame .trm-social {
+  display: grid !important;
+  grid-template-columns: repeat(3, 24px);
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 14px;
+}
+.trm-main-card-frame .trm-social a {
+  margin: 0 !important;
+  width: 24px;
+  height: 24px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  /* Unify rounded-badge optical size to weixin/douban/zhihu (~90% em) */
+  /* RSS glyph sits low-left in the font em box; nudge to optical center */
+}
+.trm-main-card-frame .trm-social a i.iconfont {
+  font-size: 24px !important;
+  line-height: 1 !important;
+  width: 24px;
+  height: 24px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+}
+.trm-main-card-frame .trm-social a i.icon-github {
+  transform: scale(0.9);
+}
+.trm-main-card-frame .trm-social a i.icon-RSS {
+  transform: translate(0.85px, -0.8px) scale(0.96);
+}
+.trm-main-card-frame .trm-social a svg.trm-social-svg-icon {
+  font-size: 24px;
 }
 .trm-lang-switcher {
   display: inline-flex;
