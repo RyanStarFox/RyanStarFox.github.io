@@ -4206,6 +4206,9 @@ html[data-lang="en"] .post-zh-only-notice {
 .trm-website-card--scripts {
   --hub-accent: #690;
 }
+.trm-website-card--triangle {
+  --hub-accent: #c45c26;
+}
 .trm-website-card__icon {
   flex-shrink: 0;
   width: 64px;
