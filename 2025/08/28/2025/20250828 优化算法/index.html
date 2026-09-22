@@ -595,17 +595,17 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <h1 id="Summary-of-Optimization-Algorithms"><a href="#Summary-of-Optimization-Algorithms" class="headerlink" title="Summary of Optimization Algorithms"></a>Summary of Optimization Algorithms</h1><p>Optimization algorithms can be divided into three parts:</p>
+            <p>Optimization algorithms can be divided into three parts:</p>
 <ol>
-<li>Batch processing part</li>
-<li>Update part</li>
-<li>Learning rate adjustment part</li>
+<li>Batch processing</li>
+<li>Update mechanism</li>
+<li>Learning rate adjustment</li>
 </ol>
-<h2 id="1-Batch-Processing-Part"><a href="#1-Batch-Processing-Part" class="headerlink" title="1 Batch Processing Part"></a>1 Batch Processing Part</h2><p><img src="/images/2025/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95_%E6%89%B9%E9%87%8F%E5%B1%82%E9%9D%A2.drawio.svg" alt="Optimization algorithms_batch level.drawio"></p>
-<p><strong>GD</strong>: The original algorithm is gradient descent (GD), which performs backward updates using the average loss of all samples.</p>
+<h2 id="1-Batch-Processing"><a href="#1-Batch-Processing" class="headerlink" title="1 Batch Processing"></a>1 Batch Processing</h2><p><img src="/images/2025/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95_%E6%89%B9%E9%87%8F%E5%B1%82%E9%9D%A2.drawio.svg" alt="Optimization_algorithms_batch_level.drawio"></p>
+<p><strong>GD</strong>: The original algorithm is gradient descent (GD), which performs backward updates based on the average loss of all samples.</p>
 <p>$\mathbf g_t&#x3D;\dfrac1{|I|}\sum\limits_{i\in I}\nabla\mathcal l_i(x_{t-1})$</p>
-<h2 id="2-Update-Part"><a href="#2-Update-Part" class="headerlink" title="2 Update Part"></a>2 Update Part</h2><p><img src="/images/2025/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95_%E6%9B%B4%E6%96%B0%E5%B1%82%E9%9D%A2.drawio.svg" alt="Optimization algorithms_update level.drawio"></p>
-<p>This part mainly adjusts the step size. The relationships and evolution logic between methods are shown in the figure below; specific algorithms are listed as follows:</p>
+<h2 id="2-Update-Mechanism"><a href="#2-Update-Mechanism" class="headerlink" title="2 Update Mechanism"></a>2 Update Mechanism</h2><p><img src="/images/2025/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95_%E6%9B%B4%E6%96%B0%E5%B1%82%E9%9D%A2.drawio.svg" alt="Optimization_algorithms_update_level.drawio"></p>
+<p>This part mainly focuses on adjusting the update step size. The relationships and evolution logic among these methods are shown in the figure below; specific algorithms are listed as follows:</p>
 <p><strong>Momentum:</strong></p>
 <p>$\mathbf v_t&#x3D;\beta\mathbf v_{t-1}+\mathbf g_t$<br>$\mathbf w_t &#x3D; \mathbf w_{t-1}-\eta\mathbf v_t$</p>
 <p><strong>AdaGrad:</strong></p>
@@ -613,20 +613,20 @@
 <p><strong>RMSProp:</strong></p>
 <p>$\mathbf s_t&#x3D;\gamma\mathbf s_{t-1}+(1-\gamma)\mathbf g_t^2$<br>$\mathbf w_t&#x3D;\mathbf w_{t-1}-\dfrac\eta{\sqrt{\mathbf s_t+\epsilon}}\cdot \mathbf g_t$</p>
 <p><strong>Adadelta:</strong></p>
-<p>$\mathbf s_t&#x3D;\gamma\mathbf s_{t-1}+(1-\gamma)\mathbf g_t^2$<br>$\mathbf w_t&#x3D;\mathbf w_{t-1}-\mathbf g’<em>t$<br>$\mathbf g’<em>t&#x3D;\dfrac{\sqrt{\Delta\mathbf x</em>{t-1+}\epsilon}}{\sqrt{\mathbf s_t+\epsilon}}\cdot \mathbf g_t$<br>$\Delta \mathbf x</em>{t}&#x3D;\lambda\Delta\mathbf x_{t-1}+(1-\lambda)\mathbf g’^{2}_{t}$</p>
+<p>$\mathbf s_t&#x3D;\gamma\mathbf s_{t-1}+(1-\gamma)\mathbf g_t^2$<br>$\mathbf w_t&#x3D;\mathbf w_{t-1}-\mathbf g’<em>t$<br>$\mathbf g’<em>t&#x3D;\dfrac{\sqrt{\Delta\mathbf x</em>{t-1}+ \epsilon}}{\sqrt{\mathbf s_t+\epsilon}}\cdot \mathbf g_t$<br>$\Delta \mathbf x</em>{t}&#x3D;\lambda\Delta\mathbf x_{t-1}+(1-\lambda)\mathbf g’^{2}_{t}$</p>
 <p><strong>Adam:</strong></p>
 <p>Estimate momentum and the second moment:<br>$\mathbf v_t&#x3D;\beta_1\mathbf v_{t-1}+(1-\beta_1)\mathbf g_t$<br>$\mathbf s_t&#x3D;\beta_2\mathbf s_{t-1}+(1-\beta_2)\mathbf g_t^2$</p>
-<p>Bias correction:<br>$\hat{\mathbf{v}}_t &#x3D; \dfrac{\mathbf v_t}{1-\beta_1^t}$<br>$\hat{\mathbf{s}}_t &#x3D; \dfrac{\mathbf s_t}{1-\beta_2^t}$<br>Update:<br>$\mathbf g’_t&#x3D;\dfrac{\eta\mathbf {\hat{\mathbf v}_t}}{\sqrt{\hat{\mathbf s}<em>t}+\epsilon}$<br>$\mathbf x_t &#x3D; \mathbf x</em>{t-1}-\mathbf g’_t$</p>
-<h2 id="3-Learning-Rate-Part"><a href="#3-Learning-Rate-Part" class="headerlink" title="3 Learning Rate Part"></a>3 Learning Rate Part</h2><p><img src="/images/2025/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95_%E5%AD%A6%E4%B9%A0%E7%8E%87%E6%96%B9%E9%9D%A2.drawio.svg" alt="Optimization algorithms_learning rate aspect.drawio"></p>
+<p>Apply bias correction:<br>$\hat{\mathbf{v}}_t &#x3D; \dfrac{\mathbf v_t}{1-\beta_1^t}$<br>$\hat{\mathbf{s}}_t &#x3D; \dfrac{\mathbf s_t}{1-\beta_2^t}$<br>Update:<br>$\mathbf g’_t&#x3D;\dfrac{\eta\mathbf {\hat{\mathbf v}_t}}{\sqrt{\hat{\mathbf s}<em>t}+\epsilon}$<br>$\mathbf x_t &#x3D; \mathbf x</em>{t-1}-\mathbf g’_t$</p>
+<h2 id="3-Learning-Rate-Adjustment"><a href="#3-Learning-Rate-Adjustment" class="headerlink" title="3 Learning Rate Adjustment"></a>3 Learning Rate Adjustment</h2><p><img src="/images/2025/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95_%E5%AD%A6%E4%B9%A0%E7%8E%87%E6%96%B9%E9%9D%A2.drawio.svg" alt="Optimization_algorithms_learning_rate_level.drawio"></p>
 <p>The simplest approach is to use a fixed learning rate.</p>
 <ul>
 <li>Reduce the learning rate as the number of iterations increases:<ul>
 <li>Single-factor scheduler: $\eta_{t+1}&#x3D;\eta_t\cdot\alpha$<br>To prevent excessive decay, we usually use: $\eta_{t+1}&#x3D;\max(\eta_{\min},\eta_t\cdot \alpha)$</li>
-<li>Multi-factor scheduler: Let $s&#x3D;{5,10,20}$, and when $t\in s$, $\eta_{t+1}&#x3D;\eta_t\cdot\alpha$</li>
-<li>Cosine scheduler: $\eta_t&#x3D;\eta_T+\dfrac{\eta_0-\eta_T}2(1+\cos(\pi t&#x2F;T))$, and no updates occur after $t&gt;T$.</li>
+<li>Multi-factor scheduler: Let $s&#x3D;{5,10,20}$; when $t\in s$, $\eta_{t+1}&#x3D;\eta_t\cdot\alpha$</li>
+<li>Cosine scheduler: $\eta_t&#x3D;\eta_T+\dfrac{\eta_0-\eta_T}2(1+\cos(\pi t&#x2F;T))$, and the learning rate remains unchanged after $t&gt;T$.</li>
 </ul>
 </li>
-<li>Add a warm-up period:<ul>
+<li>Introduce a warm-up period:<ul>
 <li>Linear increase</li>
 </ul>
 </li>
@@ -921,7 +921,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>

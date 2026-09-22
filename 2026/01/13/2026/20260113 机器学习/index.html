@@ -269,7 +269,7 @@
                             
                             
                                 <span class="i18n-zh">机器学习</span>
-                                <span class="i18n-en">改进为多分类</span>
+                                <span class="i18n-en">Machine Learning</span>
                             
                         </h1>
 
@@ -978,172 +978,406 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <p>改进为多分类</p>
-<p>$P(Y&#x3D;k|X)&#x3D;\dfrac{e^{\beta_{0k}+\beta_{1k}X_1+\beta_{2k}X_2+\cdots\beta_{pk}X_p}}{1+\sum\limits_{i&#x3D;1}^ne^{\beta_{0i}+\beta_{1i}X_1+\beta_{2i}X_2+\cdots\beta_{pi}X_p}}$</p>
-<p>为了防止过拟合，需要加入正则项，也就是参数的平方，因此$J&#x3D;\dfrac 1{2m}\left[\sum\limits_{i&#x3D;1}^m(\hat y-y)^2+\lambda\sum\limits_{j&#x3D;1}^n\theta_j^2 \right]$\</p>
-<p>正则化可以使用各种范数</p>
-<ul>
-<li>LASSO：L1范数，约束较为严格</li>
-<li>Ridge：L2范数，约束较为温和（实际上从贝叶斯视角来看，L2正则化是在相信数据与相信先验知识之间取得平衡）</li>
-<li>Elastic：两者混合，介于两者之间</li>
+            <h2 id="1-Clustering"><a href="#1-Clustering" class="headerlink" title="1 Clustering"></a>1 Clustering</h2><h3 id="1-1-K-means"><a href="#1-1-K-means" class="headerlink" title="1.1 K-means"></a>1.1 K-means</h3><h4 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h4><ol>
+<li>Initialize $\mu_1,\mu_2,\cdots,\mu_k$</li>
+<li>Assign each data point to the nearest $\mu_i$</li>
+<li>Update $\mu_i$ to the mean of the points assigned to it</li>
+<li>Repeat steps 2 and 3 until iteration stops</li>
+</ol>
+<h4 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h4><ol>
+<li>At each step the objective function $J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$ decreases, and $J$ has a lower bound</li>
+<li>However, $J$ is non-convex (because of $r_{ik}$), so it often converges to a local minimum</li>
+</ol>
+<h4 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h4><ul>
+<li>Cannot perform soft classification</li>
+<li>K value must be specified manually</li>
+<li>Sensitive to initialization (sensitive to outliers)</li>
+<li>Uses Euclidean distance, fails in high dimensions</li>
+<li>High computational cost</li>
 </ul>
-<h3 id="3-3-神经网络-Neural-Network-NN"><a href="#3-3-神经网络-Neural-Network-NN" class="headerlink" title="3.3 神经网络&#x2F;Neural Network&#x2F;NN"></a>3.3 神经网络&#x2F;Neural Network&#x2F;NN</h3><p>梯度下降算法</p>
-<p>每一层都是线性函数加上激活（非线性）函数（如tanh、sigmoid、ReLU等）</p>
-<p>同样需要正则化</p>
-<h3 id="3-4-深度神经网络-Deep-Neural-Networks-DNN"><a href="#3-4-深度神经网络-Deep-Neural-Networks-DNN" class="headerlink" title="3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN"></a>3.4 深度神经网络&#x2F;Deep Neural Networks&#x2F;DNN</h3><h4 id="3-4-1-CNN"><a href="#3-4-1-CNN" class="headerlink" title="3.4.1 CNN"></a>3.4.1 CNN</h4><p>加入了卷积层和池化层</p>
-<p>还有一些技巧：正则化、BatchNorm、Dropout</p>
-<h4 id="3-4-2-ResNet"><a href="#3-4-2-ResNet" class="headerlink" title="3.4.2 ResNet"></a>3.4.2 ResNet</h4><p>增加了一些旁路，可以跳过部分模块</p>
-<h4 id="3-4-3-DenseNet"><a href="#3-4-3-DenseNet" class="headerlink" title="3.4.3 DenseNet"></a>3.4.3 DenseNet</h4><p>每两个模块之间都有旁路连接</p>
-<p>可以说是ResNet的升级版</p>
-<h4 id="3-4-4-RNN-Recurrent-NN"><a href="#3-4-4-RNN-Recurrent-NN" class="headerlink" title="3.4.4 RNN&#x2F;Recurrent NN"></a>3.4.4 RNN&#x2F;Recurrent NN</h4><p>上一个输出的词元会作为下一个输入的词元</p>
-<h4 id="3-4-5-Transformer"><a href="#3-4-5-Transformer" class="headerlink" title="3.4.5 Transformer"></a>3.4.5 Transformer</h4><p>ATTENTION IS ALL YOU NEED！</p>
-<p>堪称经典，无需多言</p>
-<p>建议直接阅读相关论文</p>
-<p>大致原理是</p>
-<p>Query、Key、Value</p>
-<h4 id="3-4-6-GNN-Graph-NN"><a href="#3-4-6-GNN-Graph-NN" class="headerlink" title="3.4.6 GNN&#x2F;Graph NN"></a>3.4.6 GNN&#x2F;Graph NN</h4><p>按顺序遍历所有节点，先聚合节点的邻居节点信息，再与节点自身的数据进行聚合</p>
-<p>使用时需要接一个分类器，梯度回传需按照GNN的规则回传若干轮（回传轮数决定了模型的感受野）</p>
-<h4 id="3-4-7-GCN"><a href="#3-4-7-GCN" class="headerlink" title="3.4.7 GCN"></a>3.4.7 GCN</h4><p>在GNN基础上的小改进：把节点自身的聚合视为存在一个自环；聚合时需要进行归一化处理</p>
-<h4 id="3-4-8-支持向量机-SVM"><a href="#3-4-8-支持向量机-SVM" class="headerlink" title="3.4.8 支持向量机&#x2F;SVM"></a>3.4.8 支持向量机&#x2F;SVM</h4><p>其逻辑是将所有数据投影到一个超空间中，再用一个超平面将超空间分为两类，使得所有样本到超平面的最小几何间隔最大化</p>
-<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><h6 id="第一步：模型定义与几何间隔"><a href="#第一步：模型定义与几何间隔" class="headerlink" title="第一步：模型定义与几何间隔"></a>第一步：模型定义与几何间隔</h6><p>假定数据为$D&#x3D;{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)}$，$x_i\in\mathbb R^d,y_i\in{-1,1}$</p>
-<p>线性超平面为$w^\top x+b&#x3D;0$，其中$w$是法向量，$b$是截距</p>
-<p>$x_i$到超平面的几何距离为$\gamma_i$：</p>
+<h3 id="1-2-Hierarchical-Clustering"><a href="#1-2-Hierarchical-Clustering" class="headerlink" title="1.2 Hierarchical Clustering"></a>1.2 Hierarchical Clustering</h3><ol>
+<li>Each point is treated as a cluster</li>
+<li>Merge the two closest clusters</li>
+<li>Repeat until only one cluster remains</li>
+</ol>
+<p>High complexity</p>
+<p>Methods for computing distance:</p>
+<ul>
+<li>Minimum</li>
+<li>Maximum</li>
+<li>Average</li>
+</ul>
+<h3 id="1-3-Adaptive-Learning"><a href="#1-3-Adaptive-Learning" class="headerlink" title="1.3 Adaptive Learning"></a>1.3 Adaptive Learning</h3><p>New data points can be added at any time</p>
+<h4 id="Competitive-Learning"><a href="#Competitive-Learning" class="headerlink" title="Competitive Learning"></a>Competitive Learning</h4><blockquote>
+<p>Teacher fx’s analogy: capitalism</p>
+</blockquote>
+<p>Similar to step-by-step K-means</p>
+<ol>
+<li>Define several clusters</li>
+<li>For each new point, add it to the nearest cluster and update the cluster’s coordinates (using a decaying learning rate)</li>
+<li>Repeat continuously</li>
+</ol>
+<p>But in this way, some clusters may never receive any data points, leading to “starvation”</p>
+<p>If lr&#x3D;1&#x2F;n, where n is the current number of samples in the cluster, then it becomes online k-means</p>
+<h4 id="Frequency-Sensitive-Competitive-Learning-FSCR"><a href="#Frequency-Sensitive-Competitive-Learning-FSCR" class="headerlink" title="Frequency Sensitive Competitive Learning (FSCR)"></a>Frequency Sensitive Competitive Learning (FSCR)</h4><blockquote>
+<p>Teacher fx’s analogy: eating from a communal pot</p>
+</blockquote>
+<p>Penalize frequent winners by adding a penalty coefficient $\alpha$ when comparing distances</p>
+<p>$\varepsilon_t(\theta_j)&#x3D;\alpha_j||x_t-m_j||^2$</p>
+<p>where $\alpha_j&#x3D;\dfrac{u_j}{\sum u_i}$</p>
+<p>But if there are too many initial clusters, problems may arise</p>
+<h4 id="Rival-penalized-competitive-learning-RPCL"><a href="#Rival-penalized-competitive-learning-RPCL" class="headerlink" title="Rival penalized competitive learning (RPCL)"></a>Rival penalized competitive learning (RPCL)</h4><blockquote>
+<p>Teacher fx’s analogy: socialism with Chinese characteristics</p>
+</blockquote>
+<p>For a new point</p>
+<ul>
+<li>The nearest cluster is pulled toward the new point</li>
+<li>The second nearest cluster is pushed away from the new point</li>
+</ul>
+<p>This can also incidentally solve the problem of determining the value of K</p>
+<h3 id="1-4-Probability"><a href="#1-4-Probability" class="headerlink" title="1.4 Probability"></a>1.4 Probability</h3><p>Frequentist vs Bayesian:</p>
+<p>The former, e.g., GMM; the latter, using GMM as an example, would consider that $\theta$ itself also follows some distribution</p>
+<p>The former uses MLE (maximum likelihood estimation), the latter uses full Bayesian learning, with MAP (maximum a posteriori estimation) in between</p>
+<p>The Bayesian school has ways to prevent the slippery slope, e.g., assuming the top-level distribution is uniform, or limiting the number of layers of distributions</p>
+<h4 id="Gaussian-Mixture-Models-GMM"><a href="#Gaussian-Mixture-Models-GMM" class="headerlink" title="Gaussian Mixture Models (GMM)"></a>Gaussian Mixture Models (GMM)</h4><p>Similar to K-Means, but K-Means is hard while this is soft</p>
+<p>Essentially using a superposition of many high-dimensional Gaussian distributions to represent the distribution of sample points</p>
+<p>$\mathcal N(x|\mu_k,\Sigma_k)&#x3D;p(x \mid \mu_k, \Sigma_k) &#x3D; \frac{1}{\sqrt{(2\pi)^d |\Sigma_k|}} \exp\Big(-\frac{1}{2}(x-\mu_k)^T \Sigma_k^{-1} (x-\mu_k)\Big)$</p>
+<p>If Euclidean distance is used, $\Sigma_k$ is taken as $I$; if Mahalanobis distance is used, $\Sigma_k$ uses the covariance matrix</p>
+<p>$L(\theta)&#x3D;\ln p(\mathbf x|\theta) &#x3D; \sum\limits_{n&#x3D;1}^N\ln p(x_n|\theta)&#x3D;\sum\limits_{n&#x3D;1}^N\ln \sum\limits_{k&#x3D;1}^K \pi_k\mathcal N(x_n|\mu_k,\Sigma_k)&#x3D;\sum\limits_{n&#x3D;1}^N\ln \sum\limits_{k&#x3D;1}^K \gamma_{nk}\dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}\geq\sum\limits_{n&#x3D;1}^N\sum\limits_{k&#x3D;1}^K\gamma_{nk}\ln  \dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}&#x3D;Q(\theta),\text{iff }\dfrac{\pi_k\mathcal N(x_n|\mu_k,\Sigma_k)}{\gamma_{nk}}&#x3D;\text{Const}$</p>
+<h4 id="EM-Algorithm-for-Training-GMM"><a href="#EM-Algorithm-for-Training-GMM" class="headerlink" title="EM Algorithm for Training GMM"></a>EM Algorithm for Training GMM</h4><h5 id="Step-0-Initialization"><a href="#Step-0-Initialization" class="headerlink" title="Step 0: Initialization"></a>Step 0: Initialization</h5><ul>
+<li>Choose the number of clusters $K$</li>
+<li>Randomly initialize:<ul>
+<li>Means $\mu_k$</li>
+<li>Covariance matrices $\Sigma_k$</li>
+<li>Mixing coefficients $\pi_k$ (prior probabilities)</li>
+</ul>
+</li>
+</ul>
+<h5 id="Step-1-E-step-Expectation"><a href="#Step-1-E-step-Expectation" class="headerlink" title="Step 1: E-step (Expectation)"></a>Step 1: E-step (Expectation)</h5><ul>
+<li>For each data point $x_n$, compute its probability of belonging to each cluster (responsibility):<br>$\gamma_{nk} &#x3D; P(z_n &#x3D; k \mid x_n) &#x3D; \frac{\pi_k , \mathcal{N}(x_n \mid \mu_k, \Sigma_k)}{\sum_{j&#x3D;1}^{K} \pi_j , \mathcal{N}(x_n \mid \mu_j, \Sigma_j)}$</li>
+<li>Here:<ul>
+<li>$z_n$ &#x3D; the cluster label of data point $x_n$ (hidden variable)</li>
+<li>$\gamma_{nk}$ is the soft assignment</li>
+</ul>
+</li>
+</ul>
+<h5 id="Step-2-M-step-Maximization"><a href="#Step-2-M-step-Maximization" class="headerlink" title="Step 2: M-step (Maximization)"></a>Step 2: M-step (Maximization)</h5><ul>
+<li>Update parameters based on the responsibilities $\gamma_{nk}$ to maximize the likelihood:</li>
+</ul>
+<ol>
+<li>Update means:<br>$\mu_k &#x3D; \frac{\sum_{n&#x3D;1}^{N} \gamma_{nk} x_n}{\sum_{n&#x3D;1}^{N} \gamma_{nk}}$</li>
+<li>Update covariances:<br>$\Sigma_k &#x3D; \frac{\sum_{n&#x3D;1}^{N} \gamma_{nk} (x_n - \mu_k)(x_n - \mu_k)^T}{\sum_{n&#x3D;1}^{N} \gamma_{nk}}$</li>
+<li>Update mixing coefficients:<br>$\pi_k &#x3D; \frac{\sum_{n&#x3D;1}^{N} \gamma_{nk}}{N}$</li>
+</ol>
+<h5 id="Step-3-Iteration"><a href="#Step-3-Iteration" class="headerlink" title="Step 3: Iteration"></a>Step 3: Iteration</h5><ul>
+<li>Repeat <strong>E-step → M-step</strong> until:<ul>
+<li>The log-likelihood converges, or</li>
+<li>The parameter changes are very small</li>
+</ul>
+</li>
+</ul>
+<h5 id="Step-4-Cluster-Assignment-Optional"><a href="#Step-4-Cluster-Assignment-Optional" class="headerlink" title="Step 4: Cluster Assignment (Optional)"></a>Step 4: Cluster Assignment (Optional)</h5><ul>
+<li>Each point belongs to cluster $k^<em>$:<br>$k^</em> &#x3D; \arg\max_k \gamma_{nk}$</li>
+<li>Or you can directly use the probabilities for soft classification.</li>
+</ul>
+<h5 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h5><p>At each iteration:</p>
+<p>$$<br>L(\theta_{new}) \ge Q(\theta_{new}, \theta_{old}) \ge Q(\theta_{old}, \theta_{old}) &#x3D; L(\theta_{old})<br>$$</p>
+<ul>
+<li>The first $\geq$: the Q function is a lower bound of the L function</li>
+<li>The second $\geq$: M-step</li>
+<li>The third $&#x3D;$: E-step, where the Q function equals the L function at the equality condition</li>
+</ul>
+<p>The EM algorithm’s objective function uses KL divergence</p>
+<ul>
+<li>Adjust the probability distribution of z so that the KL divergence between the q distribution and the true posterior distribution is 0</li>
+<li>Minimize the other part after removing the KL divergence</li>
+</ul>
+<p>Use differentiation to update $\mu$, $\Sigma$</p>
+<p>Use the Lagrange multiplier method to update $\pi$ (constrained extremum with sum equal to 0)</p>
+<h4 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h4><ul>
+<li>Can only converge to local optima</li>
+<li>Degenerates to K-means<ul>
+<li>$\gamma_{nk}$ only takes 0 or 1</li>
+<li>$\pi_k$ is evenly divided, all taking $\dfrac1k$</li>
+<li>$\Sigma &#x3D; I$</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-Choosing-an-Appropriate-K"><a href="#1-5-Choosing-an-Appropriate-K" class="headerlink" title="1.5 Choosing an Appropriate K"></a>1.5 Choosing an Appropriate K</h3><p>Core logic:</p>
+<p>Balance minimizing loss and model complexity</p>
+<h4 id="AIC-BIC"><a href="#AIC-BIC" class="headerlink" title="AIC &amp; BIC"></a>AIC &amp; BIC</h4><p>$J &#x3D; L + D$</p>
+<p>where $L$ is the maximum likelihood and $D$ is the model complexity</p>
+<p>In AIC, $D &#x3D; - d_k$, $J &#x3D; \ln P(X_N|\hat \Theta_K)-d_k$</p>
+<p>In BIC, $D &#x3D; -\dfrac12d_k\ln N$, $J &#x3D; \ln P(X_N|\hat \Theta_K)-\dfrac12d_k\ln N$</p>
+<p>where $d_k$ is the number of parameters in the model</p>
+<h4 id="VBEM"><a href="#VBEM" class="headerlink" title="VBEM"></a>VBEM</h4><p>Variational Bayesian EM (VBEM) introduces <strong>Bayesian thinking + variational inference</strong>:</p>
+<ul>
+<li>No longer seeks point estimates of parameters;</li>
+<li>Instead seeks an approximate posterior distribution $q(Z, \theta) \approx p(Z, \theta \mid X)$.</li>
+</ul>
+<p>The objective becomes minimizing the KL divergence:</p>
+<p>$\min_{q(Z,\theta)} D_{KL}(q(Z,\theta) | p(Z,\theta \mid X))$</p>
+<p>Because Bayesian methods have prior probabilities, the prior probabilities of unimportant clusters will tend toward 0, thus allowing the specific value of K to be inferred</p>
+<h2 id="2-Linear-Models-PCA-FA-ICA"><a href="#2-Linear-Models-PCA-FA-ICA" class="headerlink" title="2 Linear Models: PCA, FA, ICA"></a>2 Linear Models: PCA, FA, ICA</h2><h3 id="2-1-Mathematical-Backgrounds"><a href="#2-1-Mathematical-Backgrounds" class="headerlink" title="2.1 Mathematical Backgrounds"></a>2.1 Mathematical Backgrounds</h3><p>Matrix inner product&#x2F;Frobenius norm: $\langle A, B \rangle &#x3D; \mathrm{trace}(A^\top B) &#x3D; \sum_{i&#x3D;1}^m \sum_{j&#x3D;1}^n A_{ij} B_{ij} $</p>
+<p>$l_p$ norm: $||x||_p&#x3D;(|x_1|^p+\cdots+|x_n|^p)^{\frac 1p}$</p>
+<p>P-quadratic norms: For a positive definite matrix P, $||x||_P&#x3D;(x^\top Px)^\frac12&#x3D;||P^\frac12x||_2$</p>
+<h3 id="2-2-Principal-Component-Analysis-PCA"><a href="#2-2-Principal-Component-Analysis-PCA" class="headerlink" title="2.2 Principal Component Analysis (PCA)"></a>2.2 Principal Component Analysis (PCA)</h3><h4 id="2-2-1-Eigenvalue-Decomposition-EVD"><a href="#2-2-1-Eigenvalue-Decomposition-EVD" class="headerlink" title="2.2.1 Eigenvalue Decomposition (EVD)"></a>2.2.1 Eigenvalue Decomposition (EVD)</h4><p>Prerequisite knowledge: Eigenvalue decomposition (EVD): For a square matrix $A$, $A&#x3D;Q\Lambda Q^{-1}$</p>
+<p>$Av_i&#x3D;\lambda_i v_i$</p>
+<p>Let $Q &#x3D; \begin{bmatrix}v_1\v_2\\vdots\v_n\end{bmatrix},\Lambda &#x3D; \begin{bmatrix}\lambda_1\&amp;\lambda_2\&amp;&amp;\ddots\&amp;&amp;&amp;\lambda_n\end{bmatrix}$</p>
+<p>$\therefore AQ&#x3D;\Lambda Q&#x3D;Q\Lambda$</p>
+<p>$\therefore A &#x3D; Q\Lambda Q^{-1}$</p>
+<h4 id="2-2-2-Singular-Value-Decomposition-SVD"><a href="#2-2-2-Singular-Value-Decomposition-SVD" class="headerlink" title="2.2.2 Singular Value Decomposition (SVD)"></a>2.2.2 Singular Value Decomposition (SVD)</h4><p>Based on this, derive singular value decomposition (SVD). For a matrix $A$, $A&#x3D;U\Sigma V^\top$, which also follows the logic of rotation-scaling-rotation</p>
+<p>$A^\top Av_i&#x3D;\lambda_i v_i$</p>
+<p>Compute the magnitude: $||Av_i||^2&#x3D;(Av_i)^\top(Av_i)&#x3D;v_i^\top A^\top Av_i&#x3D;v_i^\top \lambda_i v_i&#x3D;\lambda_i v_i^\top v_i&#x3D;\lambda_i$</p>
+<p>$\sigma_i&#x3D;\sqrt{\lambda_i}$, $u_i&#x3D;\dfrac{Av_i}{\sigma_i}$</p>
+<p>It is easy to prove that the $u_i$ are mutually orthogonal</p>
+<p>$\therefore A\begin{bmatrix}v_1&amp;v_2&amp;\cdots&amp;v_n\end{bmatrix}&#x3D;\begin{bmatrix}u_1&amp;u_2&amp;\cdots u_n\end{bmatrix}\begin{bmatrix}\sigma_1\&amp;\sigma_2\&amp;&amp;\ddots\&amp;&amp;&amp;\sigma_n\end{bmatrix}$</p>
+<p>$\therefore AV&#x3D;U\Sigma$</p>
+<p>$\therefore A &#x3D; U\Sigma V^{-1}&#x3D;U\Sigma V^\top$</p>
+<h4 id="2-2-3-Hebbian-Learning"><a href="#2-2-3-Hebbian-Learning" class="headerlink" title="2.2.3 Hebbian Learning"></a>2.2.3 Hebbian Learning</h4><p>Hebbian Learning</p>
+<p>If the input $x_i$ of neuron $i$ and the output $y_j$ of neuron $j$ are frequently highly activated at the same time, then the connection weight $w_{ij}$ between them will be strengthened.</p>
+<p>With input $\mathbf{x}$ and output $y &#x3D; \mathbf{w}^T\mathbf{x}$, then:</p>
+<p>$\Delta \mathbf{w} &#x3D; \eta y \mathbf{x} &#x3D; \eta (\mathbf{w}^T\mathbf{x})\mathbf{x}$</p>
+<p>But it is unstable, and the weights will grow indefinitely.</p>
+<p>Using Oja’s Rule adds a normalization term (penalty term)</p>
+<p>$\Delta \mathbf{w} &#x3D; \eta (y \mathbf{x} - y^2 \mathbf{w})$</p>
+<p>Actually it is $\mathbf w_\text{temp}&#x3D;\mathbf w+\eta y \mathbf x$, $\mathbf w_\text{new}&#x3D;\dfrac{\mathbf w_\text{temp}}{||w_\text{temp}||}\underbrace{\approx}_{Taylor\ expansion} \mathbf w+\eta(y\mathbf x-y^2\mathbf x)$</p>
+<h3 id="2-3-FA"><a href="#2-3-FA" class="headerlink" title="2.3 FA"></a>2.3 FA</h3><p>$𝒙 &#x3D; Ay + 𝝁 + 𝒆_t$</p>
+<p><strong>x</strong>: The observed data vector (high-dimensional).</p>
+<p><strong>y</strong>: The latent factor vector, $p(y)&#x3D;G(y∣0,I)$.</p>
+<p><strong>A</strong>: The factor loading matrix, similar to the coefficients in linear regression, describing how the factors y affect the observed variables x.</p>
+<p><strong>μ</strong>: The mean vector of the observed data.</p>
+<p><strong>e</strong>: The uniqueness error vector (or noise), $p(e)&#x3D;G(e∣0,\Psi)$.</p>
+<p>e and y are independent</p>
+<p>FA has rotational indeterminacy</p>
+<p>The EM algorithm can be used</p>
+<h3 id="2-4-Model-selection-for-PCA-FA"><a href="#2-4-Model-selection-for-PCA-FA" class="headerlink" title="2.4 Model selection for PCA&#x2F;FA"></a>2.4 Model selection for PCA&#x2F;FA</h3><h4 id="2-4-1-Dimensionality-Reduction"><a href="#2-4-1-Dimensionality-Reduction" class="headerlink" title="2.4.1 Dimensionality Reduction"></a>2.4.1 Dimensionality Reduction</h4><p>Use a matrix $W$ to project $X$ onto $Y$, where $X &#x3D; U\Lambda U^\top$, $U&#x3D;(W_{n\times m},V)_{n\times n}$</p>
+<p>The amount of information retained is $1-\dfrac{\dfrac1N\sum\limits_{t&#x3D;1}^N||x_t-\hat x_t||}{\dfrac1N\sum\limits_{t&#x3D;1}^N||x_t||} &#x3D; \dfrac{\sum\limits_{i&#x3D;1}^m \lambda_i}{\sum\limits_{i&#x3D;1}^n \lambda_i}$</p>
+<h3 id="2-4-2-Determining-the-Appropriate-Number-of-Features"><a href="#2-4-2-Determining-the-Appropriate-Number-of-Features" class="headerlink" title="2.4.2 Determining the Appropriate Number of Features"></a>2.4.2 Determining the Appropriate Number of Features</h3><p>AIL&#x2F;BIL&#x2F;VBEM can also be used</p>
+<h3 id="2-5-ICA"><a href="#2-5-ICA" class="headerlink" title="2.5 ICA"></a>2.5 ICA</h3><p>Independence and uncorrelatedness are not equivalent, but in Gaussian distributions, the two are equivalent</p>
+<p>Natural measure of statistical dependence:</p>
+<p>$I(x;y)&#x3D;\sum\limits_y\sum\limits_x p(x,y)\log\left(\dfrac{p(x,y)}{p(x)p(y)}\right)$</p>
+<p>$I(x;y)&#x3D;\int\limits_y\int\limits_x p(x,y)\log\left(\dfrac{p(x,y)}{p(x)p(y)}\right)\text d x\text d y$</p>
+<p>ICA can only separate non-Gaussian independent components</p>
+<p>Drawbacks of ICA: cannot recover the original amplitude and order</p>
+<p>Cannot recover amplitude: $x&#x3D;As&#x3D;\sum\limits_{i&#x3D;1}^n as_i&#x3D;\sum\limits_{i&#x3D;1}^n (a \lambda_i^{-1})\cdot(\lambda_i s_i)$</p>
+<p>Cannot recover order: For a permutation matrix P, $x&#x3D;As&#x3D;(AP^{-1})\cdot(Ps)$</p>
+<h4 id="2-5-1-Measuring-Non-Gaussianity"><a href="#2-5-1-Measuring-Non-Gaussianity" class="headerlink" title="2.5.1 Measuring Non-Gaussianity"></a>2.5.1 Measuring Non-Gaussianity</h4><h5 id="Kurtosis-Kurtosis-or-the-fourth-order-cumulant"><a href="#Kurtosis-Kurtosis-or-the-fourth-order-cumulant" class="headerlink" title="Kurtosis: Kurtosis or the fourth order cumulant"></a>Kurtosis: Kurtosis or the fourth order cumulant</h5><p>$\text{kurt}(y)&#x3D;E[y^4]-3E[y^2]^2$</p>
+<p>&lt;0 means subgaussian</p>
+<p>&gt;0 means super-gaussian</p>
+<p>But it is very sensitive to outliers</p>
+<h5 id="Negentropy-—-theoretically-the-most-perfect-measure"><a href="#Negentropy-—-theoretically-the-most-perfect-measure" class="headerlink" title="Negentropy — theoretically the most perfect measure"></a>Negentropy — theoretically the most perfect measure</h5><p>Given the same variance, a Gaussian variable has the maximum entropy</p>
+<p>Negentropy is defined as $J(y)&#x3D;H(y_\text{gauss})-H(y)$</p>
+<p>The larger, the more Gaussian</p>
+<p>Very difficult to compute</p>
+<h5 id="Mutual-Information"><a href="#Mutual-Information" class="headerlink" title="Mutual Information"></a>Mutual Information</h5><p>$I(y_1,\cdots,y_n)&#x3D;\sum\limits_i^n H(y_i)-H(y)&#x3D;C-\sum\limits_i^n J(y_i)$</p>
+<p>Actually it is the KL divergence between $p(y_1,\cdots,y_n)$ and $p(y_1)\cdots p(y_n)$</p>
+<h5 id="FastICA"><a href="#FastICA" class="headerlink" title="FastICA"></a>FastICA</h5><p>Killed the game</p>
+<h3 id="2-6-Noisy-ICA-IFA"><a href="#2-6-Noisy-ICA-IFA" class="headerlink" title="2.6 Noisy ICA&#x2F;IFA"></a>2.6 Noisy ICA&#x2F;IFA</h3><p>Also uses GMM, treating classification as a combination of multiple Gaussian distributions</p>
+<p>The difference from GMM is that GMM’s hidden state has only one layer (which Gaussian distribution it belongs to)</p>
+<p>$\gamma_1$, $\gamma_2$, etc. are independent components obtained through ICA separation (represented as vectors, i.e., mixing vectors)</p>
+<p>But after we have this vector representation of independent components, we still have not actually separated the original data into different groups</p>
+<p>Therefore we use GMM</p>
+<p>For each independent component, turn it into a sum of several Gaussian distributions</p>
+<p>But Noisy ICA’s hidden state has two layers (which GMM the data belongs to, and which $y_i$ the GMM belongs to, both are soft distributions)</p>
+<p>GMM is $x&#x3D;y$, with no coefficient $\Lambda$, and no error $e$</p>
+<p>In ICA, $x&#x3D;\Lambda y+e$, with coefficient $\Lambda$ ensuring that data belonging to different signals is multiplied by a different coefficient, while also adding an error term fghgg</p>
+<hr>
+<p>The teacher has a very good board work</p>
+<pre><code class="language-mermaid">flowchart LR
+data--&gt;|&quot;p(y|x)&quot;|y
+y--&gt;|Ay+e|data
+</code></pre>
+<ul>
+<li>y~Gaussian→PCA&#x2F;FA, x~G</li>
+<li>y~Non-G→ICA&#x2F;NFA, x~GMM</li>
+<li>Nonlinear f(y)→VAE, x~Non-G</li>
+</ul>
+<p>Tradeoff:</p>
+<ul>
+<li>model<ul>
+<li>powerful</li>
+<li>flexible</li>
+<li>complex</li>
+</ul>
+</li>
+<li>computation<ul>
+<li>easy</li>
+<li>simple</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Supervised-Learning"><a href="#3-Supervised-Learning" class="headerlink" title="3 Supervised Learning"></a>3 Supervised Learning</h2><h3 id="3-1-Linear-Regression"><a href="#3-1-Linear-Regression" class="headerlink" title="3.1 Linear Regression"></a>3.1 Linear Regression</h3><p>Minimize the mean squared error $\min\limits |x-\hat x|^2$</p>
+<h3 id="3-2-Logistic-Regression"><a href="#3-2-Logistic-Regression" class="headerlink" title="3.2 Logistic Regression"></a>3.2 Logistic Regression</h3><p>It’s just sigmoid</p>
+<p>$p(x)&#x3D;P(Y&#x3D;1|x)&#x3D;\dfrac{e^{\beta_0+\beta_1X}}{1+e^{\beta_0+\beta_1X}}&#x3D;\dfrac{1}{1+e^{-(\beta_0+\beta_1X)}}$</p>
+<p>Extended to multiple variables:</p>
+<p>$p(X)&#x3D;P(Y&#x3D;1|X)&#x3D;\dfrac{e^{\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p}}{1+e^{\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p}}&#x3D;\dfrac{1}{1+e^{-(\beta_0+\beta_1X_1+\beta_2X_2+\cdots\beta_pX_p)}}$</p>
+<p>Extended to multi-class classification</p>
+<p>$P(Y&#x3D;k|X)&#x3D;\dfrac{e^{\beta_{0k}+\beta_{1k}X_1+\beta_{2k}X_2+\cdots\beta_{pk}X_p}}{1+\sum\limits_{i&#x3D;1}^ne^{\beta_{0i}+\beta_{1i}X_1+\beta_{2i}X_2+\cdots\beta_{pi}X_p}}$</p>
+<p>To prevent overfitting, a regularization term, i.e., the square of the parameters, needs to be added, so $J&#x3D;\dfrac 1{2m}\left[\sum\limits_{i&#x3D;1}^m(\hat y-y)^2+\lambda\sum\limits_{j&#x3D;1}^n\theta_j^2 \right]$</p>
+<p>Regularization can use various norms</p>
+<ul>
+<li>LASSO: L1 norm, relatively strict</li>
+<li>Ridge: L2 norm, relatively mild (in fact, from a Bayesian perspective, L2 regularization is balancing between trusting the data and trusting prior common sense)</li>
+<li>Elastic: a mixture of both, in between</li>
+</ul>
+<h3 id="3-3-Neural-Networks-NN"><a href="#3-3-Neural-Networks-NN" class="headerlink" title="3.3 Neural Networks&#x2F;NN"></a>3.3 Neural Networks&#x2F;NN</h3><p>Gradient descent algorithm</p>
+<p>Each layer is a linear function + Activation (nonlinear) function (tanh, sigmoid, ReLU, etc.)</p>
+<p>Regularization is also needed</p>
+<h3 id="3-4-Deep-Neural-Networks-DNN"><a href="#3-4-Deep-Neural-Networks-DNN" class="headerlink" title="3.4 Deep Neural Networks&#x2F;DNN"></a>3.4 Deep Neural Networks&#x2F;DNN</h3><h4 id="3-4-1-CNN"><a href="#3-4-1-CNN" class="headerlink" title="3.4.1 CNN"></a>3.4.1 CNN</h4><p>Added convolutional layers and pooling layers</p>
+<p>There are also some tricks — regularization, BatchNorm, Dropout</p>
+<h4 id="3-4-2-ResNet"><a href="#3-4-2-ResNet" class="headerlink" title="3.4.2 ResNet"></a>3.4.2 ResNet</h4><p>Added some bypass connections that skip some blocks</p>
+<h4 id="3-4-3-DenseNet"><a href="#3-4-3-DenseNet" class="headerlink" title="3.4.3 DenseNet"></a>3.4.3 DenseNet</h4><p>There are bypass connections between every two blocks</p>
+<p>A super upgrade of ResNet</p>
+<h4 id="3-4-4-RNN-Recurrent-NN"><a href="#3-4-4-RNN-Recurrent-NN" class="headerlink" title="3.4.4 RNN&#x2F;Recurrent NN"></a>3.4.4 RNN&#x2F;Recurrent NN</h4><p>The token output from the previous step serves as the token input to the next step</p>
+<h4 id="3-4-5-Transformer"><a href="#3-4-5-Transformer" class="headerlink" title="3.4.5 Transformer"></a>3.4.5 Transformer</h4><p>ATTENTION IS ALL YOU NEED!</p>
+<p>Great, no need for more words</p>
+<p>Go read the paper yourself</p>
+<p>Roughly it’s</p>
+<p>Query, Key, Value</p>
+<h4 id="3-4-6-GNN-Graph-NN"><a href="#3-4-6-GNN-Graph-NN" class="headerlink" title="3.4.6 GNN&#x2F;Graph NN"></a>3.4.6 GNN&#x2F;Graph NN</h4><p>Traverse all nodes in order, first aggregate the neighboring nodes of a node, then aggregate with the node’s own data</p>
+<p>When using it, attach a classifier, and backpropagate gradients according to GNN rules for several rounds (the number of rounds determines the receptive field)</p>
+<h4 id="3-4-7-GCN"><a href="#3-4-7-GCN" class="headerlink" title="3.4.7 GCN"></a>3.4.7 GCN</h4><p>A small improvement on GNN: treat aggregating the node itself as having a self-loop; normalize during aggregation</p>
+<h4 id="3-4-8-Support-Vector-Machine-SVM"><a href="#3-4-8-Support-Vector-Machine-SVM" class="headerlink" title="3.4.8 Support Vector Machine&#x2F;SVM"></a>3.4.8 Support Vector Machine&#x2F;SVM</h4><p>The logic is to project all data into a hyperspace, then use a hyperplane to divide the hyperspace into two classes, maximizing the minimum geometric margin of all samples to the hyperplane</p>
+<h5 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h5><h6 id="Step-1-Model-Definition-and-Geometric-Margin"><a href="#Step-1-Model-Definition-and-Geometric-Margin" class="headerlink" title="Step 1: Model Definition and Geometric Margin"></a>Step 1: Model Definition and Geometric Margin</h6><p>Assume the data is $D&#x3D;{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)}$, $x_i\in\mathbb R^d,y_i\in{-1,1}$</p>
+<p>The linear hyperplane is $w^\top x+b&#x3D;0$, where $w$ is the normal vector and $b$ is the intercept</p>
+<p>The geometric distance from $x_i$ to the hyperplane is $\gamma_i$</p>
 <p>$\gamma_i&#x3D;\dfrac{|w^\top x_i+b|}{||w||}&#x3D;\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
-<h6 id="第二步：目标函数拟定"><a href="#第二步：目标函数拟定" class="headerlink" title="第二步：目标函数拟定"></a>第二步：目标函数拟定</h6><p>目标函数为$\max\limits_{w,b}\min\limits_{i}\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
-<p>由于等比缩放$w$和$b$不会改变超平面，为了方便计算，令距离最近的点满足$y_i(w^\top x_i+b)&#x3D;1$</p>
-<p>此时目标函数变为$\max_\limits{w,b}\dfrac1{||w||}$，也就是$\min\limits_{w,b}\dfrac12||w||^2$，约束条件为$1-y_i(w^\top x_i+b)\leq 0$</p>
-<h6 id="第三步：拉格朗日对偶化"><a href="#第三步：拉格朗日对偶化" class="headerlink" title="第三步：拉格朗日对偶化"></a>第三步：拉格朗日对偶化</h6><p>引入拉格朗日乘子$\alpha_i\geq0$</p>
+<h6 id="Step-2-Formulating-the-Objective-Function"><a href="#Step-2-Formulating-the-Objective-Function" class="headerlink" title="Step 2: Formulating the Objective Function"></a>Step 2: Formulating the Objective Function</h6><p>The objective function is $\max\limits_{w,b}\min\limits_{i}\dfrac{y_i(w^\top x_i+b)}{||w||}$</p>
+<p>Scaling $w$ and $b$ proportionally does not change the hyperplane. For computational convenience, let the nearest points satisfy $y_i(w^\top x_i+b)&#x3D;1$</p>
+<p>At this point the objective function is $\max_\limits{w,b}\dfrac1{||w||}$, i.e., $\min\limits_{w,b}\dfrac12||w||^2$, s.t. $1-y_i(w^\top x_i+b)\leq 0$</p>
+<h6 id="Step-3-Lagrangian-Dualization"><a href="#Step-3-Lagrangian-Dualization" class="headerlink" title="Step 3: Lagrangian Dualization"></a>Step 3: Lagrangian Dualization</h6><p>Introduce Lagrange multipliers $\alpha_i\geq0$</p>
 <p>$L(w,b,\alpha)&#x3D;\dfrac12||w||^2+\sum\limits_{i&#x3D;1}^n\alpha_i[1-y_i(w^\top x_i+b)]$</p>
-<p>求极小值：</p>
+<p>Find the minimum:</p>
 <ol>
 <li>$\dfrac{\partial L}{\partial w}&#x3D;w-\sum\limits_{i&#x3D;1}^n\alpha_iy_ix_i&#x3D;0\Rightarrow w &#x3D; \sum\limits_{i&#x3D;1}^n\alpha_iy_ix_i$</li>
 <li>$\dfrac{\partial L}{\partial b}&#x3D;-\sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0\Rightarrow \sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0$</li>
 </ol>
-<p>代入后可得到对偶问题：</p>
-<p>$\max\limits_\alpha\sum\limits_{i&#x3D;1}^n \alpha_i-\dfrac12\sum\limits_{i&#x3D;1}^n\sum\limits_{j&#x3D;1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，约束条件为$\sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0$，$\alpha_i\geq 0$</p>
-<h6 id="第四步：KKT条件与支持向量"><a href="#第四步：KKT条件与支持向量" class="headerlink" title="第四步：KKT条件与支持向量"></a>第四步：KKT条件与支持向量</h6><p>通过数值优化算法计算出$\alpha^*$</p>
-<p>代入后可算出$w^*$</p>
-<p>对于所有$\alpha_s&gt;0$的情况，应满足$y_s(w^\top x_s+b)&#x3D;1$，进而算出$b^<em>$。理论上算出的$b^</em>$值应该相等，但由于浮点误差，通常取平均值</p>
-<h5 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h5><h6 id="实现软约束"><a href="#实现软约束" class="headerlink" title="实现软约束"></a>实现软约束</h6><p>新的约束条件为：$y_i(w^\top x_i+b)\geq 1-\xi_i$</p>
-<p>新的损失函数为：$\min\limits_{w,b}\dfrac12||w||^2+C\sum\limits_{i&#x3D;1}^N\xi_i$</p>
-<h6 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h6><p>$L(\alpha)&#x3D;\max\limits_\alpha\sum\limits_{i&#x3D;1}^n \alpha_i-\dfrac12\sum\limits_{i&#x3D;1}^n\sum\limits_{j&#x3D;1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$，此处只需将$(x_i^\top x_j)$替换为$\mathbf K(x_i,x_j)$即可</p>
-<p>常用的核函数有多项式核、RBF核（高斯核）</p>
-<p>核函数需要满足Mercer条件，也就是需要是一个合法的内积，具备非负性、正定性</p>
-<h3 id="3-5-深度生成模型"><a href="#3-5-深度生成模型" class="headerlink" title="3.5 深度生成模型"></a>3.5 深度生成模型</h3><h4 id="VAE-变分自编码器"><a href="#VAE-变分自编码器" class="headerlink" title="VAE&#x2F;变分自编码器"></a>VAE&#x2F;变分自编码器</h4><pre><code class="language-mermaid">flowchart LR
-	A[&quot;数据&quot;]--&gt;|编码器|B[&quot;隐变量&quot;]--&gt;|解码器|C[&quot;数据&quot;]
+<p>Substituting gives the dual problem:</p>
+<p>$\max\limits_\alpha\sum\limits_{i&#x3D;1}^n \alpha_i-\dfrac12\sum\limits_{i&#x3D;1}^n\sum\limits_{j&#x3D;1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$, s.t.$\sum\limits_{i&#x3D;1}^n \alpha_iy_i&#x3D;0$, $\alpha_i\geq 0$</p>
+<h6 id="Step-4-KKT-Conditions-and-Support-Vectors"><a href="#Step-4-KKT-Conditions-and-Support-Vectors" class="headerlink" title="Step 4: KKT Conditions and Support Vectors"></a>Step 4: KKT Conditions and Support Vectors</h6><p>Compute $\alpha^*$ through numerical optimization algorithms</p>
+<p>Substitute in to compute $w^*$</p>
+<p>For all $a_s&gt;0$, we should have $y_s(w^\top x_s+b)&#x3D;1$, and compute $b^*$. Theoretically the computed values should all be equal, but due to floating-point errors, the average is generally taken</p>
+<h5 id="Upgrades"><a href="#Upgrades" class="headerlink" title="Upgrades"></a>Upgrades</h5><h6 id="Implementing-Soft-Constraints"><a href="#Implementing-Soft-Constraints" class="headerlink" title="Implementing Soft Constraints"></a>Implementing Soft Constraints</h6><p>New constraint condition: $y_i(w^\top x_i+b)\geq 1-\xi_i$</p>
+<p>New loss function: $\min\limits_{w,b}\dfrac12||w||^2+C\sum\limits_{i&#x3D;1}^N\xi_i$</p>
+<h6 id="Kernel-Functions"><a href="#Kernel-Functions" class="headerlink" title="Kernel Functions"></a>Kernel Functions</h6><p>$L(\alpha)&#x3D;\max\limits_\alpha\sum\limits_{i&#x3D;1}^n \alpha_i-\dfrac12\sum\limits_{i&#x3D;1}^n\sum\limits_{j&#x3D;1}^n\alpha_i\alpha_jy_iy_j(x_i^\top x_j)$, here simply replace $(x_i^\top x_j)$ with $\mathbf K(x_i,x_j)$</p>
+<p>Common ones include polynomial kernels and RBF kernels (Gaussian kernels)</p>
+<p>Requirements for kernel functions: Mercer’s Condition, i.e., it must be a valid inner product, meaning it must satisfy non-negativity, positive definiteness, and non-negativity</p>
+<h3 id="3-5-Deep-Generative-Models"><a href="#3-5-Deep-Generative-Models" class="headerlink" title="3.5 Deep Generative Models"></a>3.5 Deep Generative Models</h3><h4 id="VAE-Variational-AutoEncoder"><a href="#VAE-Variational-AutoEncoder" class="headerlink" title="VAE&#x2F;Variational AutoEncoder"></a>VAE&#x2F;Variational AutoEncoder</h4><pre><code class="language-mermaid">flowchart LR
+	A[&quot;Data&quot;]--&gt;|encoder|B[&quot;Latent variable&quot;]--&gt;|decoder|C[&quot;Data&quot;]
 </code></pre>
-<p>实际上它与FA非常类似，$X&#x3D;f(z;\theta)+\epsilon$</p>
-<p>其中$f$使用了复杂的模型（解码器），由于数学上直接计算$z$过于复杂，因此使用模型来快速计算（编码器）</p>
-<p>流程如下：</p>
+<p>Actually very similar to FA, $X&#x3D;f(z;\theta)+\epsilon$</p>
+<p>f uses a complex model (decoder). Mathematically, computing z is too complex, so a model (encoder) is used to compute it quickly</p>
+<p>Procedure:</p>
 <ol>
-<li><strong>群体编码（Encoder）</strong>：将猫、狗、鸟等不同类别的数据输入同一个编码器。模型不再为每张图片赋予孤立的坐标，而是将它们映射为隐空间中各具特征的<strong>高斯分布区</strong>（由各自的均值$\mu$和标准差$\sigma$定义）。</li>
-<li><strong>随机采样（Sampling）</strong>：训练时，从这些分布中抽取隐变量$z$。通过<strong>重参数化技巧</strong>，确保猫对应的$z$落在“猫区”，鸟的$z$落在“鸟区”。</li>
-<li><strong>协同解码（Decoder）</strong>：同一个解码器学习如何根据$z$所在的区域，还原出对应的物种图像。</li>
-<li><strong>双重约束（Loss）</strong>：<ul>
-<li><strong>重构项</strong>：让模型能够准确区分物种特征（猫还原为猫，不会变成狗）。</li>
-<li><strong>KL散度项</strong>：就像引力一样，将猫、狗、鸟的分布全部拉向原点，迫使它们<strong>紧凑排列</strong>。</li>
+<li><strong>Population Encoding (Encoder)</strong>: Input different data such as cats, dogs, and birds into the same encoder. The model no longer assigns isolated coordinates to each image, but maps them into <strong>Gaussian distribution regions</strong> with their own characteristics in latent space (defined by their respective μ and σ).</li>
+<li><strong>Random Sampling (Sampling)</strong>: During training, sample latent variables z from these distributions. Through <strong>reparameterization</strong>, ensure that the z of cats falls in the “cat region” and the z of birds falls in the “bird region”.</li>
+<li><strong>Collaborative Decoding (Decoder)</strong>: The same decoder learns how to “translate” the corresponding species based on the region where z is located.</li>
+<li><strong>Dual Constraints (Loss)</strong>:<ul>
+<li><strong>Reconstruction term</strong>: Make the model distinguish species features (a cat should be restored as a cat, not turned into a dog).</li>
+<li><strong>KL divergence term</strong>: Like gravity, pull the distributions of cats, dogs, and birds all toward the origin, forcing them to be <strong>compactly arranged</strong>.</li>
 </ul>
 </li>
 </ol>
-<p><strong>最终效果</strong>：在同一个隐空间中，猫、狗、鸟形成了既相互独立（便于区分）又彼此邻接（可实现连续过渡）的<strong>聚类结构</strong>，使得模型只需在原点附近采样，就能生成各类具有物种特征的新样本。</p>
-<p>关于“重参数化”：由于随机采样无法回传梯度，因此改为$z&#x3D;\mu+\sigma\odot\epsilon$，其中$\epsilon\sim N(0,I)$，属于噪声，不参与反向传播</p>
-<p>升级版本：CVAE，将隐变量$z$和标签一起输入解码器，便于人工控制输出（如输出类别、输出方向等）</p>
-<h4 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h4><p>核心思想是“左右互搏”</p>
-<p>训练一个生成器和判别器，两者相互竞争、共同进步</p>
-<h4 id="Diffusion"><a href="#Diffusion" class="headerlink" title="Diffusion"></a>Diffusion</h4><p>先通过不断加噪将图像彻底“破坏”为随机像素，再训练模型学习如何逐步逆转这一过程，从纯噪声中“还原”出结构完整的数据。</p>
-<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><table>
+<p><strong>Final effect</strong>: Within the same latent space, cats, dogs, and birds form a <strong>clustering structure</strong> that is both mutually independent (easy to distinguish) and adjacent to each other (continuously transitionable), so that the model only needs to sample near the origin to generate various new samples with species characteristics.</p>
+<p>Explaining “reparameterization”: because random sampling cannot backpropagate gradients, it is changed to $z&#x3D;\mu+\sigma\odot\epsilon$, where $\epsilon\sim N(0,I)$ is noise and does not participate in backpropagation</p>
+<p>Upgrade: CVAE, input the latent variable z together with a tag into the decoder, making it convenient to manually control the output (the type of output, the direction of output, etc.)</p>
+<h4 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h4><p>Core idea: mutual combat</p>
+<p>Train a generator and a discriminator, spiraling upward in progress</p>
+<h4 id="Diffusion"><a href="#Diffusion" class="headerlink" title="Diffusion"></a>Diffusion</h4><p>First continuously add noise to completely “destroy” the image into random pixels, then train a model to learn how to reverse this process step by step, “restoring” structured data from pure noise.</p>
+<h4 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h4><table>
 <thead>
 <tr>
-<th><strong>模型</strong></th>
-<th><strong>核心逻辑（一句话比喻）</strong></th>
-<th><strong>最大优点</strong></th>
-<th><strong>最大缺点</strong></th>
+<th><strong>Model</strong></th>
+<th><strong>Core Logic (One-sentence metaphor)</strong></th>
+<th><strong>Biggest Advantage</strong></th>
+<th><strong>Biggest Disadvantage</strong></th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>VAE</strong></td>
-<td><strong>压缩包</strong>：把照片压缩得很小，再解压还原。</td>
-<td>稳定可靠、不易崩溃。</td>
-<td>画质模糊，像蒙了一层雾。</td>
+<td><strong>Compression package</strong>: Compress a photo very small, then decompress it back.</td>
+<td>Obedient, stable, does not collapse.</td>
+<td>Blurry image quality, like looking through fog.</td>
 </tr>
 <tr>
 <td><strong>GAN</strong></td>
-<td><strong>造假币</strong>：造假者与警察互相博弈，最终造假技术大幅提升。</td>
-<td>画质最清晰、生成速度快。</td>
-<td>难以训练、容易收敛到局部最优。</td>
+<td><strong>Counterfeiting money</strong>: The counterfeiter and the police fight, and as they fight, the counterfeiting technique becomes amazing.</td>
+<td>Clearest image quality, fast speed.</td>
+<td>Bad temper, extremely difficult to train, prone to overthinking.</td>
 </tr>
 <tr>
 <td><strong>Diffusion</strong></td>
-<td><strong>变魔术</strong>：把照片磨成灰，再练习将灰尘变回照片。</td>
-<td>画质最优、创意性强。</td>
-<td>生成速度慢，需逐步迭代，耗时久。</td>
+<td><strong>Magic trick</strong>: Grind a photo into dust, then practice turning the dust back into a photo.</td>
+<td>Most beautiful image quality, most creative.</td>
+<td>Slow, must transform step by step, very time-consuming.</td>
 </tr>
 </tbody></table>
-<p>变分下界：通过最大化概率，利用对数似然来实现</p>
-<h2 id="4-因果性"><a href="#4-因果性" class="headerlink" title="4 因果性"></a>4 因果性</h2><h3 id="4-1-表示方法"><a href="#4-1-表示方法" class="headerlink" title="4.1 表示方法"></a>4.1 表示方法</h3><h4 id="4-1-1-结构因果模型-SCM"><a href="#4-1-1-结构因果模型-SCM" class="headerlink" title="4.1.1 结构因果模型&#x2F;SCM"></a>4.1.1 结构因果模型&#x2F;SCM</h4><p>处理组取值为{0,1}两种</p>
-<p>结果变量：Y<del>1</del>、Y<del>0</del></p>
-<p>需要计算的个体因果效应（ICE）为$Y<del>1</del>-Y<del>0</del>$</p>
-<p>但一般的实验组和对照组只能计算出$Y<del>1</del>$或$Y<del>0</del>$中的一个</p>
-<p>解决方法：随机试验、利用倾向性得分降维、逆概率加权</p>
-<h4 id="4-1-2-结构方程模型-SEM"><a href="#4-1-2-结构方程模型-SEM" class="headerlink" title="4.1.2 结构方程模型&#x2F;SEM"></a>4.1.2 结构方程模型&#x2F;SEM</h4><p>多元回归分析与因子分析的结合体</p>
-<h4 id="4-1-3-有向无环图-DAG"><a href="#4-1-3-有向无环图-DAG" class="headerlink" title="4.1.3 有向无环图&#x2F;DAG"></a>4.1.3 有向无环图&#x2F;DAG</h4><p>用有向无环图来表示因果关系</p>
-<h4 id="4-1-4-函数因果模型-FCM"><a href="#4-1-4-函数因果模型-FCM" class="headerlink" title="4.1.4 函数因果模型&#x2F;FCM"></a>4.1.4 函数因果模型&#x2F;FCM</h4><p>将$p(y|x)$转化为$p(y|do(x))$</p>
-<h3 id="4-2-发现因果的算法"><a href="#4-2-发现因果的算法" class="headerlink" title="4.2 发现因果的算法"></a>4.2 发现因果的算法</h3><h4 id="4-2-1-PC算法"><a href="#4-2-1-PC算法" class="headerlink" title="4.2.1 PC算法"></a>4.2.1 PC算法</h4><ol>
-<li><strong>初始化</strong>：算法最初假设所有变量之间存在关联，画出<strong>全连接的无向图</strong>（骨架图）。</li>
-<li><strong>骨架修剪（基于独立性检验）</strong>：算法会逐一检查每一对变量。如果在给定某些变量集合$S$的条件下，发现$X$和$Y$相互独立（满足<strong>d分离</strong>条件），则<strong>删除</strong>$X$和$Y$之间的连线。<ul>
-<li>算法先检查0阶独立（无条件独立），再检查1阶独立（给定1个变量时独立），依此类推，直到无法再删除边为止。</li>
+<p>Variational lower bound: maximize probability, implemented using log-likelihood</p>
+<h2 id="4-Causality"><a href="#4-Causality" class="headerlink" title="4 Causality"></a>4 Causality</h2><h3 id="4-1-Representation-Methods"><a href="#4-1-Representation-Methods" class="headerlink" title="4.1 Representation Methods"></a>4.1 Representation Methods</h3><h4 id="4-1-1-Structural-Causal-Model-SCM"><a href="#4-1-1-Structural-Causal-Model-SCM" class="headerlink" title="4.1.1 Structural Causal Model&#x2F;SCM"></a>4.1.1 Structural Causal Model&#x2F;SCM</h4><p>Treatment &#x3D; {0,1} two possibilities</p>
+<p>Outcomes: Y<del>1</del>,Y<del>0</del></p>
+<p>Need to compute Individual causal effect (ICE) &#x3D; Y<del>1</del>-Y<del>0</del></p>
+<p>But in general, for the experimental group and the control group, only one of Y<del>1</del> and Y<del>0</del> can be computed</p>
+<p>Solutions: randomized trials, using propensity scores for dimensionality reduction, inverse probability weighting</p>
+<h4 id="4-1-2-Structural-Equation-Models-SEM"><a href="#4-1-2-Structural-Equation-Models-SEM" class="headerlink" title="4.1.2 Structural Equation Models&#x2F;SEM"></a>4.1.2 Structural Equation Models&#x2F;SEM</h4><p>A “fusion” of multiple regression analysis and factor analysis</p>
+<h4 id="4-1-3-Directed-Acyclic-Graph-DAG"><a href="#4-1-3-Directed-Acyclic-Graph-DAG" class="headerlink" title="4.1.3 Directed Acyclic Graph&#x2F;DAG"></a>4.1.3 Directed Acyclic Graph&#x2F;DAG</h4><p>Use a directed acyclic graph to represent causality</p>
+<h4 id="4-1-4-Functional-Causal-Model-FCM"><a href="#4-1-4-Functional-Causal-Model-FCM" class="headerlink" title="4.1.4 Functional Causal Model&#x2F;FCM"></a>4.1.4 Functional Causal Model&#x2F;FCM</h4><p>Changes p(y|x) into p(y|do(x))</p>
+<h3 id="4-2-Causal-Discovery-Algorithms"><a href="#4-2-Causal-Discovery-Algorithms" class="headerlink" title="4.2 Causal Discovery Algorithms"></a>4.2 Causal Discovery Algorithms</h3><h4 id="4-2-1-PC-Algorithm"><a href="#4-2-1-PC-Algorithm" class="headerlink" title="4.2.1 PC Algorithm"></a>4.2.1 PC Algorithm</h4><ol>
+<li><strong>Initialization:</strong> At the beginning, the algorithm assumes that all variables are related and draws a <strong>fully connected undirected graph</strong> (Skeleton).</li>
+<li><strong>Skeleton pruning (based on independence tests):</strong> The algorithm checks each pair of variables one by one. If, given some set of variables S, X and Y are found to be independent (i.e., satisfying <strong>d-separation</strong>), then the edge between X and Y is <strong>deleted</strong>.<ul>
+<li>It first checks 0-order independence (unconditional independence), then 1st-order (independent given 1 variable), and so on, until no more edges can be deleted.</li>
 </ul>
 </li>
-<li><strong>确定方向</strong>：剩余的连线代表“确实存在因果关系”的骨架，算法随后利用逻辑规则（如<strong>v型结构</strong>识别）来确定箭头的指向。</li>
+<li><strong>Determining directions:</strong> The remaining edges form the skeleton of “confirmed causal relationships,” and the algorithm then uses logical rules (such as <strong>v-structure</strong> identification) to determine the direction of the arrows.</li>
 </ol>
-<p>该算法通常输出的是等价类图（马尔可夫等价类），而非确定的DAG，并非所有边的方向都能被判定</p>
-<h4 id="4-2-2-LiNGAM"><a href="#4-2-2-LiNGAM" class="headerlink" title="4.2.2 LiNGAM"></a>4.2.2 LiNGAM</h4><p>LiNGAM模型之所以能比传统SEM识别出更多因果关系方向，是因为它引入了更强的假设：</p>
+<p>Generally, the output is an equivalence class graph (Markov equivalence class), not a DAG, and not all directions can be determined</p>
+<h4 id="4-2-2-LiNGAM"><a href="#4-2-2-LiNGAM" class="headerlink" title="4.2.2 LiNGAM"></a>4.2.2 LiNGAM</h4><p>The reason the LiNGAM model can identify more directions than traditional SEM is that it introduces stronger assumptions:</p>
 <ol>
-<li><strong>线性</strong>：变量之间的关系是线性的，即$X_i&#x3D;∑β_{ij}X_j+e_i$。</li>
-<li><strong>非高斯</strong>：干扰项（误差项）$e$必须服从<strong>非高斯分布</strong>（如均匀分布、拉普拉斯分布等）。这是该模型最核心的创新点。</li>
-<li><strong>无环</strong>：因果结构图中不存在环路（即它是一个DAG）。</li>
+<li><strong>Linear:</strong> The relationships between variables are linear, i.e., Xi&#x3D;∑βijXj+ei.</li>
+<li><strong>Non-Gaussian:</strong> The disturbance terms (error terms) e must follow a <strong>non-Gaussian distribution</strong> (such as uniform distribution, Laplace distribution, etc.). This is the most critical innovation of the model.</li>
+<li><strong>Acyclic:</strong> There are no cycles in the causal structure graph (i.e., it is a DAG).</li>
 </ol>
-<h3 id="4-3-量化因果强弱的算法"><a href="#4-3-量化因果强弱的算法" class="headerlink" title="4.3 量化因果强弱的算法"></a>4.3 量化因果强弱的算法</h3><h4 id="4-2-2-do演算"><a href="#4-2-2-do演算" class="headerlink" title="4.2.2 do演算"></a>4.2.2 do演算</h4><p>do演算由三条基本规则组成。推导过程中，我们会对因果图进行微小的“修改”：</p>
+<h3 id="4-3-Algorithms-for-Quantifying-Causal-Strength"><a href="#4-3-Algorithms-for-Quantifying-Causal-Strength" class="headerlink" title="4.3 Algorithms for Quantifying Causal Strength"></a>4.3 Algorithms for Quantifying Causal Strength</h3><h4 id="4-2-2-do-calculus"><a href="#4-2-2-do-calculus" class="headerlink" title="4.2.2 do-calculus"></a>4.2.2 do-calculus</h4><p>Do-calculus consists of three basic rules. During the derivation, we perform small “surgeries” on the causal graph:</p>
 <ul>
-<li><strong>规则1：观察的插入&#x2F;删除（针对无关信息）</strong>：如果在图中，$Z$对$Y$的信息流已被阻断，那么在给定$X$的条件下，$Z$对预测$Y$没有用处。<ul>
-<li><strong>数学表示</strong>：$P(y∣do(x),z,w)&#x3D;P(y∣do(x),w)$</li>
+<li><strong>Rule 1: Insertion&#x2F;deletion of observations (for irrelevant information)</strong> If in the graph the information flow from Z to Y is blocked, then given X, Z is useless for predicting Y.<ul>
+<li><strong>Mathematical representation:</strong> P(y∣do(x),z,w)&#x3D;P(y∣do(x),w)</li>
 </ul>
 </li>
-<li><strong>规则2：行动与观察的交换（针对后门路径）</strong>：如果你已经控制（条件化于）了足够的变量$Z$，使得$X$到$Y$之间不存在混杂因素影响，那么“强制干预$X$”的效果等同于“观察到$X$”。这就是所谓的<strong>后门准则</strong>。<ul>
-<li><strong>数学表示</strong>：$P(y∣do(x),do(z),w)&#x3D;P(y∣x,do(z),w)$</li>
+<li><strong>Rule 2: Exchange of action and observation (for backdoor paths)</strong> If you have already controlled (Condition on) enough variables Z so that there is no confounding factor between X and Y, then the effect of “forcibly intervening on X” is equivalent to “observing X”. This is the so-called <strong>backdoor criterion</strong>.<ul>
+<li><strong>Mathematical representation:</strong> P(y∣do(x),do(z),w)&#x3D;P(y∣x,do(z),w)</li>
 </ul>
 </li>
-<li><strong>规则3：行动的插入&#x2F;删除（针对无因果关系）</strong>：如果$X$到$Y$之间根本不存在因果路径，那么强行改变$X$对$Y$的分布完全没有影响。<ul>
-<li><strong>数学表示</strong>：$P(y∣do(x),w)&#x3D;P(y∣w)$</li>
+<li><strong>Rule 3: Insertion&#x2F;deletion of actions (for no causal relationship)</strong> If there is no causal path from X to Y at all, then forcibly changing X has no effect on the distribution of Y.<ul>
+<li><strong>Mathematical representation:</strong> P(y∣do(x),w)&#x3D;P(y∣w)</li>
 </ul>
 </li>
 </ul>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="基础元素导数"><a href="#基础元素导数" class="headerlink" title="基础元素导数"></a>基础元素导数</h3><table>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><h3 id="Derivatives-of-Basic-Elements"><a href="#Derivatives-of-Basic-Elements" class="headerlink" title="Derivatives of Basic Elements"></a>Derivatives of Basic Elements</h3><table>
 <thead>
 <tr>
-<th align="center"><strong>表达式（导数形式）</strong></th>
-<th><strong>结果</strong></th>
+<th align="center"><strong>Expression (derivative form)</strong></th>
+<th><strong>Result</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">$[\dfrac{\partial \mathbf{x}}{\partial y}]_i$（向量对标量）</td>
+<td align="center">$[\dfrac{\partial \mathbf{x}}{\partial y}]_i$ (vector with respect to scalar)</td>
 <td>$\dfrac{\partial x_i}{\partial y}$</td>
 </tr>
 <tr>
-<td align="center">$[\dfrac{\partial x}{\partial \mathbf{y}}]_i$（标量对向量）</td>
+<td align="center">$[\dfrac{\partial x}{\partial \mathbf{y}}]_i$ (scalar with respect to vector)</td>
 <td>$\dfrac{\partial x}{\partial y_i}$</td>
 </tr>
 <tr>
-<td align="center">$[\dfrac{\partial \mathbf{x}}{\partial \mathbf{y}}]_{ij}$（向量对向量 - Jacobian矩阵）</td>
+<td align="center">$[\dfrac{\partial \mathbf{x}}{\partial \mathbf{y}}]_{ij}$ (vector with respect to vector - Jacobian)</td>
 <td>$\dfrac{\partial x_i}{\partial y_j}$</td>
 </tr>
 </tbody></table>
-<h3 id="向量线性形式求导"><a href="#向量线性形式求导" class="headerlink" title="向量线性形式求导"></a>向量线性形式求导</h3><p>| <strong>表达式（导数形式）</strong>                                        | <strong>结果</strong>                     |<br>| :————————————————————: |: —————————-: |<br>| $\dfrac{\partial (\mathbf{a}^\top \mathbf{x})}{\partial \mathbf{x}} &#x3D; \dfrac{\partial (\mathbf{x}^\top \mathbf{a})}{\partial \mathbf{x}}$ | $\mathbf{a}$                 |<br>| $\dfrac{\partial (\mathbf{x}^\top \mathbf{x})}{\partial \mathbf{x}}$ | $2\mathbf{x}$                |</p>
-<h3 id="矩阵双线性形式求导"><a href="#矩阵双线性形式求导" class="headerlink" title="矩阵双线性形式求导"></a>矩阵双线性形式求导</h3><table>
+<h3 id="Derivatives-of-Vector-Linear-Forms"><a href="#Derivatives-of-Vector-Linear-Forms" class="headerlink" title="Derivatives of Vector Linear Forms"></a>Derivatives of Vector Linear Forms</h3><p>| <strong>Expression (derivative form)</strong>                                        | <strong>Result</strong>                                                     |<br>| :————————————————————: |: ————————————————————: |<br>| $\dfrac{\partial (\mathbf{a}^\top \mathbf{x})}{\partial \mathbf{x}} &#x3D; \dfrac{\partial (\mathbf{x}^\top \mathbf{a})}{\partial \mathbf{x}}$ | $\mathbf{a}$                                                 |<br>| $\dfrac{\partial (\mathbf{x}^\top \mathbf{x})}{\partial \mathbf{x}}$ | $2\mathbf{x}$                                                |</p>
+<h3 id="Derivatives-of-Matrix-Bilinear-Forms"><a href="#Derivatives-of-Matrix-Bilinear-Forms" class="headerlink" title="Derivatives of Matrix Bilinear Forms"></a>Derivatives of Matrix Bilinear Forms</h3><table>
 <thead>
 <tr>
-<th align="center"><strong>表达式（导数形式）</strong></th>
-<th><strong>结果</strong></th>
+<th align="center"><strong>Expression (derivative form)</strong></th>
+<th><strong>Result</strong></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -1160,14 +1394,14 @@
 </tr>
 <tr>
 <td align="center">$\dfrac{\partial \mathbf a^\top \mathbf X \mathbf a}{\partial \mathbf a}&#x3D;\dfrac{\partial \mathbf a^\top \mathbf X^\top \mathbf a}{\partial \mathbf a}$</td>
-<td>$\mathbf X+\mathbf  X^\top$</td>
+<td>$\mathbf X+\mathbf  X^\top a$</td>
 </tr>
 </tbody></table>
-<h3 id="迹函数求导"><a href="#迹函数求导" class="headerlink" title="迹函数求导"></a>迹函数求导</h3><table>
+<h3 id="Derivatives-of-Trace-Functions"><a href="#Derivatives-of-Trace-Functions" class="headerlink" title="Derivatives of Trace Functions"></a>Derivatives of Trace Functions</h3><table>
 <thead>
 <tr>
-<th align="center"><strong>表达式（导数形式）</strong></th>
-<th><strong>结果</strong></th>
+<th align="center"><strong>Expression (derivative form)</strong></th>
+<th><strong>Result</strong></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -1187,11 +1421,11 @@
 <td>$-(\mathbf X^{-1}\mathbf A\mathbf X^{-1})^\top$</td>
 </tr>
 </tbody></table>
-<h3 id="行列式与矩阵求导"><a href="#行列式与矩阵求导" class="headerlink" title="行列式与矩阵求导"></a>行列式与矩阵求导</h3><table>
+<h3 id="Derivatives-of-Determinants-and-Matrices"><a href="#Derivatives-of-Determinants-and-Matrices" class="headerlink" title="Derivatives of Determinants and Matrices"></a>Derivatives of Determinants and Matrices</h3><table>
 <thead>
 <tr>
-<th align="center"><strong>表达式（导数形式）</strong></th>
-<th><strong>结果</strong></th>
+<th align="center"><strong>Expression (derivative form)</strong></th>
+<th><strong>Result</strong></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -1203,7 +1437,7 @@
 <td>$(\mathbf{X}^{-1})^\top$</td>
 </tr>
 <tr>
-<td align="center">$\dfrac{\partial \mathbf{Y}^{-1}}{\partial x}$（矩阵逆对标量）</td>
+<td align="center">$\dfrac{\partial \mathbf{Y}^{-1}}{\partial x}$ (matrix inverse with respect to scalar)</td>
 <td>$-\mathbf{Y}^{-1} \dfrac{\partial \mathbf{Y}}{\partial x} \mathbf{Y}^{-1}$</td>
 </tr>
 <tr>
@@ -1211,9 +1445,9 @@
 <td>$-\mathbf X^{-1}\partial \mathbf X\mathbf X^{-1}$</td>
 </tr>
 </tbody></table>
-<h3 id="其它公式"><a href="#其它公式" class="headerlink" title="其它公式"></a>其它公式</h3><ol>
-<li>马氏距离：$D_M(x)&#x3D;\sqrt{(x-\mu)^TS^{-1}(x-\mu)}$</li>
-<li>协方差矩阵：$S&#x3D;\dfrac1{N-1}\sum\limits_{i&#x3D;1}^N(x_i-\bar x)(x_i-\bar x)^T$</li>
+<h3 id="Other-Formulas"><a href="#Other-Formulas" class="headerlink" title="Other Formulas"></a>Other Formulas</h3><ol>
+<li>Mahalanobis distance: $D_M(x)&#x3D;\sqrt{(x-\mu)^TS^{-1}(x-\mu)}$</li>
+<li>Covariance matrix: $S&#x3D;\dfrac1{N-1}\sum\limits_{i&#x3D;1}^N(x_i-\bar x)(x_i-\bar x)^T$</li>
 </ol>
 
         </div>
@@ -1441,7 +1675,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>

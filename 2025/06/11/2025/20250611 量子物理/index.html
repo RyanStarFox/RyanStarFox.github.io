@@ -269,7 +269,7 @@
                             
                             
                                 <span class="i18n-zh">量子物理整理</span>
-                                <span class="i18n-en">Quantum Mechanics Notes</span>
+                                <span class="i18n-en">Quantum Physics Notes</span>
                             
                         </h1>
 
@@ -889,11 +889,137 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <h3 id="1-3-2-Uncertainty-Relations"><a href="#1-3-2-Uncertainty-Relations" class="headerlink" title="1.3.2 Uncertainty Relations"></a>1.3.2 Uncertainty Relations</h3><p>$\Delta x\cdot\Delta p_x\geq\dfrac{\hbar}2$</p>
+            <h2 id="Chapter-1-Foundations-of-Quantum-Physics"><a href="#Chapter-1-Foundations-of-Quantum-Physics" class="headerlink" title="Chapter 1: Foundations of Quantum Physics"></a>Chapter 1: Foundations of Quantum Physics</h2><h3 id="1-1-Light-Quanta-Bohr-Atom"><a href="#1-1-Light-Quanta-Bohr-Atom" class="headerlink" title="1.1 Light Quanta, Bohr Atom"></a>1.1 Light Quanta, Bohr Atom</h3><h4 id="1-1-1-Blackbody-Radiation-and-Planck’s-Quantum-Hypothesis"><a href="#1-1-1-Blackbody-Radiation-and-Planck’s-Quantum-Hypothesis" class="headerlink" title="1.1.1 Blackbody Radiation and Planck’s Quantum Hypothesis"></a>1.1.1 Blackbody Radiation and Planck’s Quantum Hypothesis</h4><h5 id="Kirchhoff’s-Law-of-Radiation"><a href="#Kirchhoff’s-Law-of-Radiation" class="headerlink" title="Kirchhoff’s Law of Radiation"></a>Kirchhoff’s Law of Radiation</h5><p>Monochromatic radiant exitance $M(\lambda,T)&#x3D;\dfrac{dE_\lambda}{d\lambda}(w&#x2F;m^3)$: the radiant energy emitted per unit time per unit area of an object’s surface, within a unit wavelength interval near wavelength $\lambda$</p>
+<p>Total radiant exitance $M(T)&#x3D;\int_0^{+\infty}M(\lambda,T)d\lambda$</p>
+<p>While an object emits radiant energy into its surroundings, it also absorbs radiant energy from surrounding objects. When radiation is incident on an opaque object from the outside, part is absorbed, part is reflected (and part is transmitted)</p>
+<p>Monochromatic absorptance $\alpha(\lambda,T)$: the absorptance within the wavelength range $\lambda\sim\lambda+d\lambda$</p>
+<p>An object whose absorptance equals 1 at any temperature is called an (absolute) blackbody</p>
+<p>$\dfrac{M_1(\lambda,T)}{\alpha_1(\lambda,T)}&#x3D;\dfrac{M_2(\lambda,T)}{\alpha_2(\lambda,T)}&#x3D;\cdots&#x3D;M_0(\lambda,T)$, where $M_0(\lambda,T)$ is the monochromatic radiant exitance of a blackbody</p>
+<p>A cavity with a small hole is regarded as a model of an absolute blackbody</p>
+<p>Basic laws of blackbody radiation:</p>
+<ol>
+<li>Stefan-Boltzmann law: &#x3D;&#x3D;$M_0(T)&#x3D;\sigma T^4$&#x3D;&#x3D;, total radiant exitance $M_0(T)$</li>
+<li>Wien displacement law: &#x3D;&#x3D;$\lambda_mT&#x3D;b$&#x3D;&#x3D;, peak wavelength $\lambda_m$ of the monochromatic radiant exitance</li>
+</ol>
+<h5 id="Planck’s-Energy-Quantum-Hypothesis"><a href="#Planck’s-Energy-Quantum-Hypothesis" class="headerlink" title="Planck’s Energy Quantum Hypothesis"></a>Planck’s Energy Quantum Hypothesis</h5><p>Planck’s formula: &#x3D;&#x3D;$M_0(\lambda,T)&#x3D;2\pi hc^2\lambda^{-5}\dfrac1{e^{hc&#x2F;k_BT\lambda}-1}$&#x3D;&#x3D;</p>
+<ul>
+<li><p>Approximation for short wavelengths &#x2F; low temperatures:</p>
+<p>Wien’s formula: $M_0(\lambda,T)&#x3D;2\pi hc^2\lambda^{-5}e^{-hc&#x2F;k_BT\lambda}$</p>
+</li>
+<li><p>Approximation for long wavelengths &#x2F; high temperatures:</p>
+<p>Rayleigh-Jeans formula: $M_0(\lambda,T)&#x3D;2\pi k_Bc\lambda^{-4}T$</p>
+</li>
+</ul>
+<p>Planck’s assumption: $the energy values of a harmonic oscillator can only be integer multiples of some minimum energy \epsilon &#x3D; h\nu$</p>
+<h4 id="1-1-2-Wave-Particle-Duality-of-Light"><a href="#1-1-2-Wave-Particle-Duality-of-Light" class="headerlink" title="1.1.2 Wave-Particle Duality of Light"></a>1.1.2 Wave-Particle Duality of Light</h4><ol>
+<li><p>Photoelectric effect</p>
+<ol>
+<li><p>When the potential difference is large enough, the photocurrent saturates, and the saturation current is proportional to the incident light intensity</p>
+</li>
+<li><p>Stopping voltage $U_0$, $U&#x3D;-U_0$, photocurrent is 0. The maximum initial velocity $v_m$ of photoelectrons escaping from the surface satisfies: $\dfrac12mv_m^2&#x3D;eU_0$. The maximum initial kinetic energy is independent of the incident light intensity</p>
+</li>
+<li><p>Threshold frequency</p>
+<p>The stopping potential difference has a linear relationship with the incident light frequency, and the slope is independent of the metal type</p>
+</li>
+<li><p>Relaxation time</p>
+<p>Nearly instantaneous</p>
+</li>
+</ol>
+</li>
+<li><p>Einstein’s photoelectric equation</p>
+<ol>
+<li>Light intensity: $nh\nu$</li>
+<li>Stopping voltage: $\dfrac12mv^2&#x3D;h\nu-A&#x3D;eU_c,\ A: work function$</li>
+<li>Threshold frequency: $v_0&#x3D;\dfrac Ah$</li>
+</ol>
+</li>
+<li><p>Compton scattering</p>
+<p>&#x3D;&#x3D;$\Delta\lambda&#x3D;\lambda-\lambda_0&#x3D;\dfrac h{m_ec}(1-\cos\theta)$&#x3D;&#x3D;</p>
+</li>
+</ol>
+<h4 id="1-1-3-Bohr’s-Atomic-Theory"><a href="#1-1-3-Bohr’s-Atomic-Theory" class="headerlink" title="1.1.3 Bohr’s Atomic Theory"></a>1.1.3 Bohr’s Atomic Theory</h4><p>The hydrogen atom spectrum comes from electron transitions, so it is not a continuous spectrum</p>
+<p>Rydberg formula: $\tilde{\nu}&#x3D;\dfrac1\lambda&#x3D;R_H(\dfrac1{m^2}-\dfrac1{n^2})$, $R_H&#x3D;1.0967758\times10^7 m^{-1}$, unit is $1&#x2F;m$</p>
+<p>Bohr’s postulates:</p>
+<ol>
+<li>Stationary state condition: an electron moves in a circular orbit around the nucleus without radiating energy, in a stable state called a <strong>stationary state</strong>, and the corresponding energy is called an <strong>energy level</strong></li>
+<li>Frequency condition: transition energy $h\nu&#x3D;E_n-E_m$</li>
+<li>Angular momentum quantization condition: &#x3D;&#x3D;$mv_nr_n&#x3D;n\hbar&#x3D;n\dfrac h{2\pi}$;$\dfrac {e^2}{4\pi\varepsilon_0 r^2}&#x3D;m\dfrac{v^2}r$&#x3D;&#x3D;</li>
+</ol>
+<p>&#x3D;&#x3D;$E_1&#x3D;-13.6eV$&#x3D;&#x3D; unit is eV</p>
+<h3 id="1-2-Matter-Waves"><a href="#1-2-Matter-Waves" class="headerlink" title="1.2 Matter Waves"></a>1.2 Matter Waves</h3><h4 id="1-2-1-Matter-Waves"><a href="#1-2-1-Matter-Waves" class="headerlink" title="1.2.1 Matter Waves"></a>1.2.1 Matter Waves</h4><p>Material particles possess wave nature</p>
+<p>$E&#x3D;h\nu&#x3D;\hbar\omega$</p>
+<p>$\vec p&#x3D;\dfrac h\lambda\vec n&#x3D;\hbar k\vec n$</p>
+<h3 id="1-3-1-4-Wave-Function-and-Superposition-Principle-Schrodinger-Equation"><a href="#1-3-1-4-Wave-Function-and-Superposition-Principle-Schrodinger-Equation" class="headerlink" title="1.3 &amp; 1.4 Wave Function and Superposition Principle &amp; Schrödinger Equation"></a>1.3 &amp; 1.4 Wave Function and Superposition Principle &amp; Schrödinger Equation</h3><h4 id="1-4-1-Wave-Function"><a href="#1-4-1-Wave-Function" class="headerlink" title="1.4.1 Wave Function"></a>1.4.1 Wave Function</h4><p>The wave function is described by a plane wave:</p>
+<ol>
+<li>&#x3D;&#x3D;Free particle: $\Psi(x,t)&#x3D;Ae^{i(kx-\omega t)}&#x3D;Ae^{\frac i\hbar(px-Et)}$&#x3D;&#x3D;</li>
+<li>Particle in a potential field: $\Phi(\vec r,t)$</li>
+</ol>
+<p>Fringe spacing $\Delta\propto\lambda,\lambda&#x3D;\dfrac h{mv}$</p>
+<p>Properties: single-valued, finite (the integral of the modulus squared over all space is 0), continuous</p>
+<p>$\int_{-\infty}^{\infty} x^n e^{-\alpha x^2} dx &#x3D; 0 \quad \text{（n is odd）}$</p>
+<p>$\int_{-\infty}^{\infty} x^{2k} e^{-\alpha x^2} dx &#x3D; \frac{(2k - 1)!!}{(2\alpha)^k} \sqrt{\frac{\pi}{\alpha}}$</p>
+<p>&#x3D;&#x3D;In particular, $\int_{-\infty}^\infty x^{2k}e^{-x^2}dx&#x3D;(2k-1)!!\sqrt{\pi}$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;Even more particularly, $\int_{-\infty}^\infty e^{-x^2}dx&#x3D;\sqrt{\pi}$&#x3D;&#x3D;</p>
+<h4 id="1-4-2-Applications-of-the-Wave-Function"><a href="#1-4-2-Applications-of-the-Wave-Function" class="headerlink" title="1.4.2 Applications of the Wave Function"></a>1.4.2 Applications of the Wave Function</h4><ol>
+<li>An electron revolving around the nucleus forms a circular standing wave: $2\pi r&#x3D;n\lambda;\lambda&#x3D;\dfrac h{mv}\Rightarrow L&#x3D;mvr&#x3D;n\hbar$</li>
+<li>One-dimensional infinite square well standing wave: $L&#x3D;n\dfrac \lambda 2\Rightarrow p &#x3D; \dfrac h\lambda&#x3D;n\dfrac h{2L};E_n&#x3D;\dfrac{p^2}{2m}&#x3D;n^2\dfrac{h^2}{8mL^2}$</li>
+</ol>
+<h4 id="1-4-3-Statistical-Interpretation-of-the-Wave-Function"><a href="#1-4-3-Statistical-Interpretation-of-the-Wave-Function" class="headerlink" title="1.4.3 Statistical Interpretation of the Wave Function"></a>1.4.3 Statistical Interpretation of the Wave Function</h4><ol>
+<li><p>Brightness: the magnitude of the de Broglie wave intensity $\left |\Psi\right |^2&#x3D;\Psi\Psi^*&#x3D;\begin{cases}maximum, &amp;bright fringes\0, minimum, &amp;dark fringes\end{cases}$</p>
+<p>The physical meaning of brightness is probability density</p>
+</li>
+<li><p>Conditions satisfied by the wave function</p>
+<ol>
+<li><p>Single-valued: there cannot be multiple wave function values (probability densities) at any place</p>
+</li>
+<li><p>Finite: $\int\limits_\Omega\left | \Psi(\vec r,t)\right |^2dV&#x3D;1（\Omega is all space）$</p>
+<p>(but some isolated singular points tending to infinity are not excluded</p>
+</li>
+<li><p>Continuous: the second derivative exists</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="1-3-1-Schrodinger-Equation"><a href="#1-3-1-Schrodinger-Equation" class="headerlink" title="1.3.1 Schrödinger Equation"></a>1.3.1 Schrödinger Equation</h4><ol>
+<li><p>Schrödinger equation for a free particle</p>
+<p>&#x3D;&#x3D;$i\hbar \dfrac{\partial}{\partial t}\Psi(x,t)&#x3D;-\dfrac{\hbar^2}{2m}\dfrac{\partial}{\partial x    ^2}\Psi(x,t)$&#x3D;&#x3D;</p>
+<ol>
+<li><p>Generalized to a potential field $U(x,t)$</p>
+<p>&#x3D;&#x3D;$i\hbar \dfrac{\partial}{\partial t}\Psi(x,t)&#x3D;\left[-\dfrac{\hbar^2}{2m}\dfrac{\partial}{\partial x    ^2}+U(x,t)\right]\Psi(x,t)$&#x3D;&#x3D;</p>
+</li>
+<li><p>Generalized to the three-dimensional case</p>
+<p>$\nabla^2&#x3D;\dfrac{\partial^2}{\partial x^2}+\dfrac{\partial^2}{\partial y^2}+\dfrac{\partial^2}{\partial z^2}$</p>
+<p>&#x3D;&#x3D;$\hat H&#x3D;-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r,t)$&#x3D;&#x3D;</p>
+<p>$i\hbar\dfrac{\partial}{\partial t}\Psi(\vec r,t)&#x3D;\hat H\Psi(\vec r, t)$</p>
+</li>
+</ol>
+</li>
+<li><p>Time-independent Schrödinger equation (the probability of the particle appearing in space is stable and unchanging)</p>
+<p>If $\dfrac{\partial\hat H}{\partial t}&#x3D;0$ or $U$ is independent of time, then the Schrödinger equation can be separated into variables</p>
+<ol>
+<li><p>Separation of variables</p>
+<ol>
+<li>&#x3D;&#x3D;$i\hbar\dfrac{dT(t)}{dt}&#x3D;ET(t)$&#x3D;&#x3D;</li>
+<li>&#x3D;&#x3D;$\hat H\Phi(\vec r)&#x3D;E\Phi(\vec r)$&#x3D;&#x3D;</li>
+</ol>
+</li>
+<li><p>Oscillation factor</p>
+<p>The solution of separated equation 1 is $T(t)&#x3D;Ce^{-\frac ihEt}$</p>
+</li>
+<li><p>The time-independent Schrödinger equation (energy eigenvalue equation) is equation 2</p>
+<p>&#x3D;&#x3D;$\left(-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r)\right)\Phi(\vec r)&#x3D;E\Phi(\vec r)$&#x3D;&#x3D;</p>
+<p>General solution: $\Psi(x,t)&#x3D;\sum\limits_{n&#x3D;1}^{\infty}c_ne^{-\frac{iE_nt}\hbar}\Phi_n(x)$</p>
+</li>
+</ol>
+<p>Stationary state: a state in which energy takes a specific value, a particular solution of the Schrödinger equation</p>
+<p>&#x3D;&#x3D;To determine whether it is a stationary state: whether $\left | \Psi(x,t)\right |^2&#x3D;\Psi(x,t)^*\cdot\Psi(x,t)$ is related to $t$; if not, it is a stationary state&#x3D;&#x3D;</p>
+</li>
+</ol>
+<h4 id="1-3-2-Uncertainty-Relation"><a href="#1-3-2-Uncertainty-Relation" class="headerlink" title="1.3.2 Uncertainty Relation"></a>1.3.2 Uncertainty Relation</h4><p>$\Delta x\cdot\Delta p_x\geq\dfrac{\hbar}2$</p>
 <p>$\Delta y\cdot\Delta p_y\geq\dfrac{\hbar}2$</p>
 <p>$\Delta z\cdot\Delta p_z\geq\dfrac{\hbar}2$</p>
 <p>$\Delta E\cdot \Delta t\geq \dfrac \hbar 2$</p>
-<h3 id="1-3-3-Probability-Current-Density-Vector"><a href="#1-3-3-Probability-Current-Density-Vector" class="headerlink" title="1.3.3 Probability Current Density Vector"></a>1.3.3 Probability Current Density Vector</h3><p>&#x3D;&#x3D;$i\hbar(\Psi^<em>\Psi)&#x3D;\dfrac{\hbar^2}{2m}\nabla\cdot[\Psi\nabla\Psi^</em>-\Psi^*\nabla\Psi]$&#x3D;&#x3D;</p>
+<h4 id="1-3-3-Probability-Current-Density-Vector"><a href="#1-3-3-Probability-Current-Density-Vector" class="headerlink" title="1.3.3 Probability Current Density Vector"></a>1.3.3 Probability Current Density Vector</h4><p>&#x3D;&#x3D;$i\hbar(\Psi^<em>\Psi)&#x3D;\dfrac{\hbar^2}{2m}\nabla\cdot[\Psi\nabla\Psi^</em>-\Psi^*\nabla\Psi]$&#x3D;&#x3D;</p>
 <p>Probability density: $\rho&#x3D;\Psi^*\Psi$</p>
 <p>Probability current density vector: &#x3D;&#x3D;$\vec J&#x3D;\dfrac{i\hbar}{2m}[\Psi\nabla\Psi^<em>-\Psi^</em>\nabla\Psi]$&#x3D;&#x3D;</p>
 <p>Probability conservation equation:</p>
@@ -901,49 +1027,49 @@
 
 Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\vec S$
 </code></pre>
-<p>Left side: The increment of the total probability (or number of particles) of finding the particle within the closed region $\tau$ per unit time.</p>
-<p>Right side: The probability (or number of particles) flowing into $\tau$ through the closed surface $S$ per unit time (the negative sign before the surface integral indicates inflow).</p>
-<h3 id="1-3-3-Superposition-State"><a href="#1-3-3-Superposition-State" class="headerlink" title="1.3.3 Superposition State"></a>1.3.3 Superposition State</h3><ol>
-<li><p>If $\Psi_1,\Psi_2,\cdots,\Psi_n$ are possible states of a particle, the particle can also exist in their linear superposition state $\Psi&#x3D;\sum\limits_{i&#x3D;1}^nc_i\Psi_i$.</p>
+<p>Left side: the increment per unit time of the total probability (or number of particles) of finding the particle in the closed region $\tau$</p>
+<p>Right side: the probability (or number of particles) flowing into $\tau$ per unit time through the closed surface $S$ of $\tau$ (the negative sign in front of the surface integral)</p>
+<h4 id="1-3-3-Superposition-States"><a href="#1-3-3-Superposition-States" class="headerlink" title="1.3.3 Superposition States"></a>1.3.3 Superposition States</h4><ol>
+<li><p>If $\Psi_1,\Psi_2,\cdots,\Psi_n$ are possible states of a particle, then the particle can also be in their linear superposition state $\Psi&#x3D;\sum\limits_{i&#x3D;1}^nc_i\Psi_i$</p>
 </li>
-<li><p>When the particle is in state $\Psi$, it partially occupies each state. The probability of being in state $\Psi_k$ is $\left|c_k\right|^2$, and $\sum\limits_{k&#x3D;1}^n\left|c_k\right|^2&#x3D;1$.</p>
+<li><p>When in the $\Psi state, it is partly in each state, and the probability of being in the \Psi_k state is \left|c_k\right|^2$, and $\sum\limits_{k&#x3D;1}^n\left|c_k\right|^2&#x3D;1$</p>
 <p>Conditions:</p>
 <ol>
-<li>$\Psi_1,\cdots,\Psi_n$ are orthonormal.</li>
-<li>$\Psi$ satisfies the normalization condition $\int\Psi^*\Psi_ldx&#x3D;\delta_{kl}&#x3D;\begin{cases}1&amp;k&#x3D;l\0&amp;k\neq l\end{cases}$.</li>
+<li>$\Psi_1,\cdots,\Psi_n$ are orthonormal</li>
+<li>$\Psi$ satisfies the normalization condition $\int\Psi^*\Psi_ldx&#x3D;\delta_{kl}&#x3D;\begin{cases}1&amp;k&#x3D;l\0&amp;k\neq l\end{cases}$</li>
 </ol>
 </li>
 </ol>
-<h3 id="1-4-4-Particle-in-an-Infinite-Potential-Well"><a href="#1-4-4-Particle-in-an-Infinite-Potential-Well" class="headerlink" title="1.4.4 Particle in an Infinite Potential Well"></a>1.4.4 Particle in an Infinite Potential Well</h3><p>&#x3D;&#x3D;$\Phi(x)&#x3D;\begin{cases}\sqrt{\dfrac{2}{a}}\sin\dfrac{n\pi}ax &amp;0&lt;x&lt;a\text{ (inside the well)}\-0&amp;x\leq0,x\geq a\text{ (outside the well)}\end{cases}$&#x3D;&#x3D;</p>
+<h4 id="1-4-4-Particle-in-an-Infinite-Square-Well"><a href="#1-4-4-Particle-in-an-Infinite-Square-Well" class="headerlink" title="1.4.4 Particle in an Infinite Square Well"></a>1.4.4 Particle in an Infinite Square Well</h4><p>&#x3D;&#x3D;$\Phi(x)&#x3D;\begin{cases}\sqrt{\dfrac{2}{a}}\sin\dfrac{n\pi}ax &amp;0&lt;x&lt;a&amp;inside the well\0&amp;x\leq0,x\geq a&amp;outside the well\end{cases}$&#x3D;&#x3D;</p>
 <p>Properties:</p>
 <ol>
-<li>Orthogonality: $\int\limits_{-\infty}^{+\infty}\Phi^*<em>m(x)\Phi_n(x)dx&#x3D;\delta</em>{mn}&#x3D;\begin{cases}1&amp;m&#x3D;n\0&amp;m\ne n\end{cases}$.</li>
-<li>The coefficients of each eigenfunction are determined from the initial state.</li>
-<li>The ground state corresponds to $E_1$, and the $n$-th excited state corresponds to $E_{n+1}$. &#x3D;&#x3D;$E_n&#x3D;\dfrac{n^2\pi^2\hbar^2}{2ma^2}$&#x3D;&#x3D;.</li>
-<li>Boundary conditions: The function and its first derivative are continuous.</li>
+<li>Orthogonality: $\int\limits_{-\infty}^{+\infty}\Phi^*<em>m(x)\Phi_n(x)dx&#x3D;\delta</em>{mn}&#x3D;\begin{cases}1&amp;m&#x3D;n\0&amp;m\ne n\end{cases}$</li>
+<li>Determine the coefficient of each eigenwave function from the initial state</li>
+<li>The ground state is $E_1$, the nth excited state is $E_{n+1}$, &#x3D;&#x3D;$E_n&#x3D;\dfrac{n^2\pi^2\hbar^2}{2ma^2}$&#x3D;&#x3D;</li>
+<li>Boundary conditions: the function is continuous and its first derivative is continuous</li>
 </ol>
-<h2 id="1-5-Physical-Quantities-and-Operators"><a href="#1-5-Physical-Quantities-and-Operators" class="headerlink" title="1.5 Physical Quantities and Operators"></a>1.5 Physical Quantities and Operators</h2><ol>
-<li><p>Position operator: $\hat x\rightleftharpoons x$.</p>
+<h3 id="1-5-Physical-Quantities-and-Operators"><a href="#1-5-Physical-Quantities-and-Operators" class="headerlink" title="1.5 Physical Quantities and Operators"></a>1.5 Physical Quantities and Operators</h3><ol>
+<li><p>Position operator: $\hat x\rightleftharpoons x$</p>
 </li>
-<li><p>Momentum operator: $\hat p \rightleftharpoons -i\hbar\nabla$.</p>
+<li><p>Momentum operator: $\hat p \rightleftharpoons -i\hbar\nabla$</p>
 </li>
-<li><p>Total energy operator: $\hat H\rightleftharpoons-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r)$.</p>
+<li><p>Total energy operator: $\hat H\rightleftharpoons-\dfrac{\hbar^2}{2m}\nabla^2+U(\vec r)$</p>
 </li>
-<li><p>Let the operator be $\hat A$; the &#x3D;&#x3D;average value of the corresponding physical quantity is $\int_{-\infty}^\infty \Psi^*\hat A\Psi dx$&#x3D;&#x3D;.</p>
+<li><p>Let the operator be $\hat A$, then the &#x3D;&#x3D;average value of the following physical quantities is $\int_{-\infty}^\infty \Psi^*\hat A\Psi dx$&#x3D;&#x3D;</p>
 <table>
 <thead>
 <tr>
-<th>Physical Quantity</th>
-<th>Representation in coordinate space ($x$-representation)</th>
-<th>Representation in momentum space ($p$-representation)</th>
-<th>Description</th>
+<th>Physical quantity</th>
+<th>Coordinate-space representation ($x$ representation)</th>
+<th>Momentum-space representation ($p$ representation)</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Position operator $\hat{x}$</td>
 <td>$\hat{x} &#x3D; x$</td>
 <td>$\hat{x} &#x3D; i\hbar \frac{d}{dp}$</td>
-<td>Multiplication and derivatives are Fourier pairs</td>
+<td>Multiplication&#x2F;derivative are Fourier pairs</td>
 </tr>
 <tr>
 <td>Momentum operator $\hat{p}$</td>
@@ -961,7 +1087,7 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
 <td>Potential energy operator $\hat{U}(x)$</td>
 <td>&#x3D;&#x3D;$\hat{U}(x) &#x3D; U(x)$&#x3D;&#x3D;</td>
 <td>$\hat{U}(x) &#x3D; U(i\hbar \frac{d}{dp})$</td>
-<td>Non-translation-invariant potentials become differential operators</td>
+<td>A non-translation-invariant potential becomes a differential operator</td>
 </tr>
 <tr>
 <td>Hamiltonian $\hat{H}$</td>
@@ -973,37 +1099,37 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
 <td>Torque $\hat{L}_z$</td>
 <td>$\hat{L}_z &#x3D; -i\hbar \left( x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x} \right)$</td>
 <td>$\hat{L}_z &#x3D; -i\hbar \left( p_x \frac{\partial}{\partial p_y} - p_y \frac{\partial}{\partial p_x} \right)$</td>
-<td>Planar angular momentum (z-component)</td>
+<td>Planar angular momentum (z component)</td>
 </tr>
 <tr>
 <td>Total angular momentum $\hat{\vec{L}}$</td>
 <td>$\hat{\vec{L}} &#x3D; -i\hbar \vec{r} \times \nabla$</td>
 <td>$\hat{\vec{L}} &#x3D; -i\hbar \vec{p} \times \nabla_p$</td>
-<td>3D angular momentum vector</td>
+<td>Three-dimensional angular momentum vector</td>
 </tr>
 <tr>
-<td>Square of angular momentum $\hat{L}^2$</td>
+<td>Angular momentum squared $\hat{L}^2$</td>
 <td>$\hat{L}^2 &#x3D; -\hbar^2 \left( \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \phi^2} \right)$</td>
-<td>Same as left (identical structure in polar coordinates of $p$-space)</td>
+<td>Same as left (same structure in $p$-space polar coordinates)</td>
 <td>Spherical coordinate form, common in central potential problems</td>
 </tr>
 <tr>
 <td>$\hat{L}_x$</td>
 <td>$-i\hbar (y \dfrac \partial{\partial z} - z \dfrac{\partial}{\partial y})$</td>
 <td>Same form</td>
-<td>Angular momentum x-component</td>
+<td>Angular momentum x component</td>
 </tr>
 <tr>
 <td>$\hat{L}_y$</td>
 <td>$-i\hbar (z \dfrac\partial{\partial x} - x \dfrac\partial{\partial z})$</td>
 <td>Same form</td>
-<td>Angular momentum y-component</td>
+<td>Angular momentum y component</td>
 </tr>
 <tr>
 <td>$\hat{L}_z$</td>
 <td>$-i\hbar (x \dfrac\partial{\partial y} - y \dfrac\partial{\partial x})$</td>
 <td>Same form</td>
-<td>Angular momentum z-component</td>
+<td>Angular momentum z component</td>
 </tr>
 <tr>
 <td>Spin $\hat{S}_x$</td>
@@ -1024,52 +1150,124 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
 <td>Pauli matrix $\sigma_z$</td>
 </tr>
 <tr>
-<td>Number operator $\hat{N}$</td>
+<td>Particle number operator $\hat{N}$</td>
 <td>$\hat{N} &#x3D; \hat{a}^\dagger \hat{a}$</td>
 <td>Same as left</td>
-<td>Commonly used in harmonic oscillators&#x2F;quantum field theory</td>
+<td>Usually used in harmonic oscillators&#x2F;quantum field theory</td>
 </tr>
 </tbody></table>
 </li>
-<li><p>Operator operation rules:</p>
+<li><p>Operator operation rules</p>
 <ol>
-<li><p>Linear operators.</p>
+<li><p>Linear operator</p>
 </li>
-<li><p>Sum of operators: $(\hat A+\hat B)\psi&#x3D;\hat A\psi+\hat B\psi$.</p>
+<li><p>Sum of operators: $(\hat A+\hat B)\psi&#x3D;\hat A\psi+\hat B\psi$</p>
 </li>
-<li><p>Product of operators: $(\hat A\hat B)\phi&#x3D;\hat A(\hat B\phi)$. </p>
+<li><p>Product of operators: $(\hat A\hat B)\phi&#x3D;\hat A(\hat B\phi)$</p>
 </li>
-<li><p>$\left[\hat A\hat B-\hat B\hat A\right ]&#x3D;\hat A\hat B-\hat B\hat A$ is the commutator of operators $\hat A$ and $\hat B$; if it equals 0, the two operators commute.</p>
+<li><p>$\left[\hat A\hat B-\hat B\hat A\right ]&#x3D;\hat A\hat B-\hat B\hat A is the commutator of operators \hat A and \hat B; if it is 0, then the two commute$</p>
 </li>
-<li><p>Eigenvalue equation of an operator (similar to eigenvalues of a matrix): $\hat A\varphi&#x3D;\lambda\phi$.</p>
+<li><p>Eigenvalue equation of an operator (similar to the eigenvalues of a matrix) $\hat A\varphi&#x3D;\lambda\phi$</p>
 </li>
-<li><p>Complex conjugate of an operator: Replace all complex quantities with their conjugates.</p>
+<li><p>Complex conjugate of an operator: replace all complex quantities with their complex conjugates</p>
 </li>
-<li><p>Hermitian operators (the conjugate transpose of a Hermitian operator equals itself).</p>
-<p> For any two wave functions $\psi$ and $\varphi$, if $\int\psi^<em>\hat F\varphi d\tau&#x3D;\int(\hat F\psi)^</em>\varphi d\tau$, where $d\tau\equiv dxdydz$.</p>
-<p> Common Hermitian operators: position operator, momentum operator, energy operator.</p>
-<p> All mechanical quantity operators in quantum mechanics are Hermitian.</p>
+<li><p>Hermitian operator (the conjugate transpose of a Hermitian operator equals itself)</p>
+<p>If for any two wave functions $\psi$ and $\varphi$, $\int\psi^<em>\hat F\varphi d\tau&#x3D;\int(\hat F\psi)^</em>\varphi d\tau,d\tau\equiv dxdydz$</p>
+<p>Common Hermitian operators: position operator, momentum operator, energy operator</p>
+<p>All mechanical quantity operators in quantum mechanics are Hermitian</p>
 </li>
 </ol>
 </li>
-<li><p>Hermitian operators:</p>
+<li><p>Hermitian operators</p>
 <ol>
-<li><p>Realness: Their eigenvalues are real numbers.</p>
+<li><p>Realness: eigenvalues are real</p>
 </li>
-<li><p>Orthogonality: Any two eigenfunctions are orthogonal.</p>
-<p>Orthogonality of functions: $\int\psi^*_1(\vec r)\psi_2(\vec r)d\tau&#x3D;0$.</p>
+<li><p>Orthogonality: any two eigenfunctions are always orthogonal</p>
+<p>Orthogonality of functions: $\int\psi^*_1(\vec r)\psi_2(\vec r)d\tau&#x3D;0$</p>
 </li>
 <li><p>Completeness:</p>
 </li>
-<li><p>That is, for any square-integrable function $\psi$, it can be expressed as $\psi(\vec r)&#x3D;\sum\limits_nc_n\psi_n(\vec r)$, which can also be called a generalized Fourier expansion.</p>
+<li><p>That is, for any square-integrable function $\psi$, it can be expressed as $\psi(\vec r)&#x3D;\sum\limits_nc_n\psi_n(\vec r)$, which can also be called a generalized Fourier expansion</p>
 </li>
 </ol>
 </li>
 </ol>
-<h2 id="1-6-Measurement-Values-in-Mechanics-Measurement-and-Quantum-State-Collapse"><a href="#1-6-Measurement-Values-in-Mechanics-Measurement-and-Quantum-State-Collapse" class="headerlink" title="1.6 Measurement Values in Mechanics, Measurement, and Quantum State Collapse"></a>1.6 Measurement Values in Mechanics, Measurement, and Quantum State Collapse</h2><ol>
-<li>When a particle is in an eigenstate $\psi _n$, the measurement value is definite and equals the eigenvalue $\lambda_n$.</li>
-<li>If the system’s state $\psi(\vec{r})&#x3D;\sum\limits_n c_n \psi_{n}(\vec{r})$ is not an eigenstate of $F$, the measurement value of its mechanical quantity is not definite: The measurement value may be any eigenvalue $\lambda_{n}(n&#x3D;1,2,…)$ corresponding to an eigenstate $\psi_{n}$, and the corresponding probability distribution is $|c_n|^2$.<br>$c_{n}&#x3D;\int \psi_{n}^{*}(\vec{r}) \psi(\vec{r}) d\tau$.<br>$c_{n}$ represents the</li>
+<h3 id="1-6-Measured-Values-of-Mechanical-Quantities-Measurement-and-Collapse-of-Quantum-States"><a href="#1-6-Measured-Values-of-Mechanical-Quantities-Measurement-and-Collapse-of-Quantum-States" class="headerlink" title="1.6 Measured Values of Mechanical Quantities, Measurement, and Collapse of Quantum States"></a>1.6 Measured Values of Mechanical Quantities, Measurement, and Collapse of Quantum States</h3><ol>
+<li>When a particle is in an eigenstate $\psi _n$, the measured value is definite and is the eigenvalue $\lambda_n$</li>
+<li>If the system $\psi(\vec{r})&#x3D;\sum\limits_n c_n \psi_{n}(\vec{r})$ is not in an eigenstate of F, the measured value of its mechanical quantity is not definite: the measured value may be the eigenvalue $\lambda_{n}(n&#x3D;1,2,…)$ corresponding to any eigenstate $\psi_{n}$, and the corresponding probability distribution is $|c_n|^2$.<br>$c_{n}&#x3D;\int \psi_{n}^{*}(\vec{r}) \psi(\vec{r}) d\tau$<br>$c_{n}$ represents the “degree of similarity” between the two states → the probability that the measurement collapses to the eigenstate $\psi_{n}$</li>
+<li>After the first measurement, the quantum state collapses to some $\psi_n$; at the second measurement, the state of the system is $\psi_n$</li>
+<li>The deviation of a physical quantity is the root-mean-square deviation, that is, $\Delta x &#x3D; &lt;x^2&gt;-<x>^2$</li>
 </ol>
+<h3 id="1-7-Conditions-for-Different-Mechanical-Quantities-to-Be-Determined-Simultaneously"><a href="#1-7-Conditions-for-Different-Mechanical-Quantities-to-Be-Determined-Simultaneously" class="headerlink" title="1.7 Conditions for Different Mechanical Quantities to Be Determined Simultaneously"></a>1.7 Conditions for Different Mechanical Quantities to Be Determined Simultaneously</h3><p>&#x3D;&#x3D;The necessary and sufficient condition for two mechanical quantities to be determined simultaneously (that is, to have common eigenstates) is that their operators commute.&#x3D;&#x3D;</p>
+<p>Angular momentum operators do not commute with each other</p>
+<p>The angular momentum squared operator corresponds to its components</p>
+<p>Angular momentum operators correspond to coordinate operators</p>
+<p>&#x3D;&#x3D;Eigenvalues of the angular momentum operator: $l&#x3D;0,1,2,\cdots,m&#x3D;l,l-1,\cdots,-l+1,-l$, and the corresponding eigenfunction (wave function) is $\Psi_m(\varphi)&#x3D;\dfrac1{\sqrt{2\pi}}e^{im\varphi}$&#x3D;&#x3D;</p>
+<p>Spherical harmonics $Y_{lm}$ are common eigenfunctions of $\hat L^2$ and $\hat L_z$</p>
+<p>$\hat L^2 Y_{lm}(\theta,\varphi)&#x3D;l(l+1)\hbar^2Y_{lm}(\theta,\varphi)$</p>
+<p>$\hat L_zY_{lm}(\theta,\varphi)&#x3D;m\hbar Y_{lm}(\theta,\varphi)$</p>
+<p>Magnitude of angular momentum: &#x3D;&#x3D;$\sqrt{l(l+1)}\hbar$&#x3D;&#x3D;</p>
+<p>$l&#x3D;0,1,\cdots,n-1;m&#x3D;-l,-l+1,\cdots,l-1,l$</p>
+<p>Harmonic oscillator energy is quantized &#x3D;&#x3D;$E_n&#x3D;(n+\dfrac12)\hbar\omega$&#x3D;&#x3D;</p>
+<p>Wave function $\Psi_n(x)&#x3D;\left(\dfrac{\alpha}{2^n\sqrt\pi n!}\right)^{1&#x2F;2}H_n(\alpha x)e^{-\dfrac12\alpha^2x^2},\alpha&#x3D;\sqrt{\dfrac{m\omega}{\hbar}}$</p>
+<p>$H_n(\xi)&#x3D;(-1)^ne^{\xi}\dfrac{d^n}{d\xi^n}(e^{-\xi^2})$</p>
+<p>$H_0(\xi)&#x3D;1,H_1(\xi)&#x3D;2\xi,H_2(\xi)&#x3D;4\xi^2-2,H_3(\xi)&#x3D;8\xi^3-12\xi$</p>
+<p>n even: even parity, n odd: odd parity</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Range</th>
+<th>Description</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Principal quantum number (n)</td>
+<td>$n &#x3D; 1, 2, 3, …$</td>
+<td>Energy magnitude</td>
+<td>$E_n &#x3D; -13.6 \dfrac1{ n^2} eV$</td>
+</tr>
+<tr>
+<td>Orbital angular quantum number (l)</td>
+<td>$l &#x3D; 0, 1, 2, …, (n-1)$</td>
+<td>Magnitude of angular momentum</td>
+<td>$L &#x3D; \sqrt{l(l+1)} ħ$</td>
+</tr>
+<tr>
+<td>Orbital magnetic quantum number (ml)</td>
+<td>$m_l &#x3D; 0, ±1, ±2, …, ±l$</td>
+<td>z component of L</td>
+<td>$L_z &#x3D; m_l ħ$</td>
+</tr>
+<tr>
+<td>Spin magnetic quantum number (ms)</td>
+<td>$m_s &#x3D; ±1&#x2F;2$</td>
+<td>z component of S</td>
+<td>$S_z &#x3D; m_s ħ&#x3D;\pm\dfrac12\hbar$</td>
+</tr>
+</tbody></table>
+<h3 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h3><h3 id="2-1-Finite-Square-Well"><a href="#2-1-Finite-Square-Well" class="headerlink" title="2.1 Finite Square Well"></a>2.1 Finite Square Well</h3><h3 id="2-2-Rectangular-Potential-Barrier"><a href="#2-2-Rectangular-Potential-Barrier" class="headerlink" title="2.2 Rectangular Potential Barrier"></a>2.2 Rectangular Potential Barrier</h3><p>$\begin{cases}\varPsi_1&#x3D;Ae^{ikx}+A’e^{-ikx}&amp;k&lt;0\\varPsi_2&#x3D;Be^{k’x}+B’e^{-k’x}&amp;0&lt;x&lt;a\\varPsi_3&#x3D;Ce^{ikx}&amp;x&gt;a\end{cases}$</p>
+<p>Reflection coefficient: $R&#x3D;\dfrac{\left |A’\right |^2}{\left | A \right |^2}$</p>
+<p>Transmission coefficient: $T&#x3D;\dfrac{\left |C\right |^2}{\left | A \right |^2}$</p>
+<p>R+T&#x3D;1</p>
+<h3 id="2-3-Hydrogen-Atom"><a href="#2-3-Hydrogen-Atom" class="headerlink" title="2.3 Hydrogen Atom"></a>2.3 Hydrogen Atom</h3><p>Hydrogen-like atom: $E_n&#x3D;-\dfrac{m_eZ^2e^4}{2(4\pi\epsilon_0)^2\hbar^2n^2}$</p>
+<p>$\varPsi(r,\theta,\varphi)&#x3D;R_{nl}(\theta,\varphi)Y_{lm}(\theta,\varphi)$, the former is radial, the latter is angular (spherical harmonics)</p>
+<h3 id="2-4-Two-State-System"><a href="#2-4-Two-State-System" class="headerlink" title="2.4 Two-State System"></a>2.4 Two-State System</h3><p>The state space is two-dimensional, so the Hamiltonian operator becomes a Hamiltonian matrix, and the matrix form of the Schrödinger equation becomes:</p>
+<p>$i\hbar\dfrac{\partial}{\partial t}\begin{pmatrix}C_1\C_2\end{pmatrix}&#x3D;\begin{pmatrix}H_{11}&amp;H_{12}\H_{21}&amp;H_{22}\end{pmatrix}\begin{pmatrix}C_1\C_2\end{pmatrix}$</p>
+<p>Choosing basis vectors so that $\hat H$ is an eigenstate, we have</p>
+<p>$\begin{pmatrix}H_{11}&amp;H_{12}\H_{21}&amp;H_{22}\end{pmatrix}&#x3D;\begin{pmatrix}E_I&amp;0\0&amp;E_{II}\end{pmatrix}$, and further obtain $i\hbar\dfrac{\partial}{\partial t}\begin{pmatrix}C_I\C_{II}\end{pmatrix}&#x3D;\begin{pmatrix}E_I&amp;0\0&amp;E_{II}\end{pmatrix}\begin{pmatrix}C_I\C_{II}\end{pmatrix}$</p>
+<h2 id="Common-Commutation-Relations"><a href="#Common-Commutation-Relations" class="headerlink" title="Common Commutation Relations"></a>Common Commutation Relations</h2><p>$[\hat{A} \hat{B}, \hat{C}] &#x3D; \hat{A} [\hat{B}, \hat{C}] + [\hat{A}, \hat{C}] \hat{B}$</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat y]&#x3D;0$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat p_x,\hat p_y]&#x3D;0$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat p_x]&#x3D;i\hbar$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat L_y]&#x3D;i\hbar z$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[\hat x,\hat L_z]&#x3D;-i\hbar y$&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;$[x,\hat p_y]&#x3D;[x,\hat p_z]&#x3D;0$&#x3D;&#x3D;</p>
+<p>$\left[\hat{L_x},\hat{L_y}\right]&#x3D;i\hbar\hat{L_z}$</p>
+<p>$\left[\hat{L}^2,\hat{L_x}\right]&#x3D;0$</p>
+<p>$[\hat H,\hat L_z]&#x3D;0$</p>
+<p>$[\hat H,\hat p]&#x3D;0$</p>
 
         </div>
     
@@ -1228,13 +1426,13 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/" class="trm-cover-frame trm-anima-link">
+        <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-cover-frame trm-anima-link">
             
             
                 
 
 
-  <img alt="cover" class="no-fancybox" src="/images/notes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.png">
+  <img alt="cover" class="no-fancybox" src="/images/notes/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.png">
 
 
             
@@ -1247,9 +1445,9 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
                 </a>
             </div>
             <h5>
-                <a href="/2025/06/08/2025/20250608%20%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7/" class="trm-anima-link">
+                <a href="/2025/06/08/2025/202506%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="trm-anima-link">
                     
-                        <span class="i18n-zh">算法与复杂性整理</span><span class="i18n-en">Algorithms and Complexity Notes</span>
+                        <span class="i18n-zh">马克思主义基本原理</span><span class="i18n-en">Basic Principles of Marxism</span>
                     
                 </a>
             </h5>
@@ -1258,10 +1456,10 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
                 <li>25/06/08</li>
                 <li>00:00</li>
                 
-                    <li>3.8k</li>
+                    <li>13.4k</li>
                 
                 
-                    <li>15</li>
+                    <li>45</li>
                 
             </ul>
         </div>
@@ -1339,7 +1537,7 @@ Integral form: $\frac{d}{dt}\int_\tau\rho(\vec r,t)d\tau=-\oint_S \vec J\cdot d\
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>

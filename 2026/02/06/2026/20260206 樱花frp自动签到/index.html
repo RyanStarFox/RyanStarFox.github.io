@@ -269,7 +269,7 @@
                             
                             
                                 <span class="i18n-zh">樱花frp自动签到</span>
-                                <span class="i18n-en">SakuraFRP automatic sign-in</span>
+                                <span class="i18n-en">SakuraFRP Automatic Check-in</span>
                             
                         </h1>
 
@@ -521,16 +521,16 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <h1 id="SakuraFRP-Automatic-Sign-in"><a href="#SakuraFRP-Automatic-Sign-in" class="headerlink" title="SakuraFRP Automatic Sign-in"></a>SakuraFRP Automatic Sign-in</h1><p>I have long been using the frp internal network penetration service, but since I didn’t want to manually sign in, I found a repository <a target="_blank" rel="noopener" href="https://github.com/dutou520/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a> online to achieve automatic sign-in.</p>
-<p>Recently, SakuraFRP changed from a nine-grid image captcha to a slider captcha, so I added functionality to support slider captchas on top of the original code.</p>
-<p>Cracking a slider captcha involves two parts:</p>
+            <p>I have been using the FRP internal network penetration service for a while, but since I didn’t want to manually check in, I found a repository <a target="_blank" rel="noopener" href="https://github.com/dutou520/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a> online to achieve automatic check-in.</p>
+<p>Recently, SakuraFRP changed its verification method from a nine-grid image selection to a slider captcha, so a feature compatible with slider captchas was added to the original project.</p>
+<p>Cracking slider captchas involves two parts:</p>
 <ul>
 <li>Finding the correct position</li>
-<li>Simulating human-like movements</li>
+<li>Simulating human actions</li>
 </ul>
-<p>For the first part, I initially considered using a vision model, but such models cannot achieve pixel-level accuracy, nor can they simulate real-time human eye tracking to verify if the moving position matches expectations. So I gave up on that idea and instead used the <a target="_blank" rel="noopener" href="https://github.com/chenwei-zhao/captcha-recognizer">captcha-recognizer</a> library, which worked successfully ✅.</p>
-<p>For the second part, I also tried to write code via vibe-coding, but the results were unsatisfactory — the captcha kept showing “The captcha was eaten by a monster” (lol). In the end, I turned to the <a target="_blank" rel="noopener" href="https://github.com/asweigart/pyautogui">pyautogui</a> library, which worked perfectly ✅.</p>
-<p>So it’s clear that we shouldn’t blindly rely on vibe-coding; combining well-maintained third-party libraries with vibe-coding is the right approach!</p>
+<p>For the first part, I initially intended to use a vision model, but such models cannot achieve pixel-level accuracy nor simulate how human eyes continuously verify whether the moving position matches the expected one, so I abandoned this idea. Instead, I used the <a target="_blank" rel="noopener" href="https://github.com/chenwei-zhao/captcha-recognizer">captcha-recognizer</a> library, and it worked successfully ✅</p>
+<p>For the second part, I also tried to write code via vibe-coding, but the results were unsatisfactory—the captcha kept showing “The captcha was eaten by a monster” (lol). In the end, I used the <a target="_blank" rel="noopener" href="https://github.com/asweigart/pyautogui">pyautogui</a> library, and it worked successfully ✅</p>
+<p>So, don’t blindly trust vibe-coding; a combination of well-developed third-party libraries and vibe-coding is the right approach!</p>
 <p>The final result: <a target="_blank" rel="noopener" href="https://github.com/RyanStarFox/SakuraFRP_Auto_AI_check">SakuraFRP_Auto_AI_check</a></p>
 
         </div>
@@ -667,7 +667,7 @@
             <h5>
                 <a href="/2026/07/05/2026/20260705%20AntiRecommend/" class="trm-anima-link">
                     
-                        <span class="i18n-zh">对抗推荐，做回自己——反视频推荐脚本「AntiRecommend」</span><span class="i18n-en">Against Recommendations, Be Yourself</span>
+                        <span class="i18n-zh">对抗推荐，做回自己——反视频推荐脚本「AntiRecommend」</span><span class="i18n-en">Fight against recommendations, stay true to yourself — the anti-video recommendation script \&#34;AntiRecommend\&#34;</span>
                     
                 </a>
             </h5>
@@ -750,7 +750,7 @@
             <h5>
                 <a href="/2025/12/08/2025/20251208%20%E6%82%B2%E6%83%A8%E4%B8%96%E7%95%8C/" class="trm-anima-link">
                     
-                        <span class="i18n-zh">《悲惨世界》 Repo</span><span class="i18n-en">Les Misérables Review</span>
+                        <span class="i18n-zh">《悲惨世界》 Repo</span><span class="i18n-en">Les Misérables 40th Anniversary Concert Review</span>
                     
                 </a>
             </h5>
@@ -840,7 +840,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>

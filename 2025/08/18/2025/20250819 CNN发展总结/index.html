@@ -659,26 +659,104 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <h1 id="Summary-of-CNN-Development"><a href="#Summary-of-CNN-Development" class="headerlink" title="Summary of CNN Development"></a>Summary of CNN Development</h1><p>I am currently studying the d2l course by Mu Li, and I will summarize the logic behind several landmark CNNs and the overall development trajectory they follow.</p>
-<h2 id="1-LeNet"><a href="#1-LeNet" class="headerlink" title="1 LeNet"></a>1 LeNet</h2><p>LeNet is one of the earliest convolutional neural networks, introducing components such as convolutional layers and pooling layers. Its architecture is as follows:</p>
+            <p>I’m currently taking D2L course taught by Mu Li, and I’d like to summarize the logic behind several iconic CNNs and the overall development trajectory they follow.</p>
+<h2 id="1-LeNet"><a href="#1-LeNet" class="headerlink" title="1 LeNet"></a>1 LeNet</h2><p>LeNet is one of the earliest convolutional neural networks, introducing concepts such as convolutional layers and pooling layers. Its architecture is as follows:</p>
 <p><img src="/images/2025/LeNet.drawio.svg" alt="LeNet.drawio"></p>
 <p>At that time, the pooling layer and activation functions used were AveragePool and Sigmoid&#x2F;Tanh, rather than ReLU and MaxPooling which proved to perform better in later practice.</p>
 <p><img src="/images/2025/AlexNet.drawio.svg" alt="AlexNet.drawio"></p>
-<h2 id="2-AlexNet"><a href="#2-AlexNet" class="headerlink" title="2 AlexNet"></a>2 AlexNet</h2><p>Similar in concept to LeNet, AlexNet achieved excellent results in the ImageNet competition, demonstrating that deeper and larger models can deliver very good performance.</p>
+<h2 id="2-AlexNet"><a href="#2-AlexNet" class="headerlink" title="2 AlexNet"></a>2 AlexNet</h2><p>Similar in concept to LeNet, AlexNet achieved impressive results in the ImageNet competition, demonstrating that deeper and larger models can deliver excellent performance.</p>
 <ol>
-<li>A greater number of model layers</li>
+<li>A greater number of layers in the model</li>
 <li>A large number of convolutional channels and larger convolutional windows</li>
 <li>The activation function was changed from Sigmoid&#x2F;Tanh to ReLU</li>
 <li>Dropout was applied to fully connected layers to control model complexity</li>
 <li>A large amount of augmented data was used: flipping, cropping, color variation</li>
 </ol>
 <p>Its architecture is as follows:</p>
-<h2 id="3-Network-with-Blocks-VGG"><a href="#3-Network-with-Blocks-VGG" class="headerlink" title="3 Network with Blocks (VGG)"></a>3 Network with Blocks (VGG)</h2><p>From the implementation of AlexNet, we can draw two conclusions:</p>
+<h2 id="3-Networks-with-Blocks-VGG"><a href="#3-Networks-with-Blocks-VGG" class="headerlink" title="3 Networks with Blocks (VGG)"></a>3 Networks with Blocks (VGG)</h2><p>From the implementation of AlexNet, we can draw two conclusions:</p>
 <ol>
-<li>Deeper and larger neural networks can indeed achieve better performance.</li>
-<li>Many combinations of layers (such as convolutional layers + pooling layers) appear repeatedly.</li>
+<li>Deeper and larger neural networks indeed yield better results.</li>
+<li>Many combinations of layers (such as convolutional layers + pooling layers) repeat frequently.</li>
 </ol>
-<p>Therefore, to facilitate the modular construction of larger networks, we can define a series of</p>
+<p>Therefore, to facilitate the modular construction of larger networks, we can define a series of “layers” as a “block”, and use “blocks” as one of the basic units to build networks.</p>
+<p><img src="/images/2025/VGG.drawio.svg" alt="VGG.drawio"></p>
+<h2 id="4-Network-in-Network-NiN"><a href="#4-Network-in-Network-NiN" class="headerlink" title="4 Network-in-Network (NiN)"></a>4 Network-in-Network (NiN)</h2><p>VGG scaled up neural networks to an extremely large size, but this also exposed the problem of high memory&#x2F;video memory consumption—especially the first fully connected layer after the convolutional layers. Due to the large input and output dimensions, the number of parameters was also massive.</p>
+<p>To address the issue of storage consumption, the NiN network uses NiN blocks and GAP layers.</p>
+<ul>
+<li>The NiN block uses 1×1 convolutional layers, which act as fully connected layers in the channel dimension. This not only reduces the number of parameters but also mitigates overfitting.</li>
+<li>The Global Average Pooling (GAP) layer is used to replace fully connected layers, further reducing the number of stored parameters.</li>
+</ul>
+<p><img src="/images/2025/NiN.drawio.svg" alt="NiN.drawio"></p>
+<h2 id="5-Networks-with-Parallel-Connections-GoogLeNet"><a href="#5-Networks-with-Parallel-Connections-GoogLeNet" class="headerlink" title="5 Networks with Parallel Connections (GoogLeNet)"></a>5 Networks with Parallel Connections (GoogLeNet)</h2><p>With NiN, we gained tools to control the total number of parameters in a network. Thus, we could build deeper and more complex networks.</p>
+<p>The idea behind GoogLeNet is quite intuitive:</p>
+<ul>
+<li>After building a sufficiently powerful linear network, we can also construct parallel sub-networks with branches.</li>
+<li>When unsure which set of convolutional parameters to choose, we can simply use all of them.</li>
+</ul>
+<p>GoogLeNet also drew inspiration from the NiN network:</p>
+<ul>
+<li>It uses 1×1 convolutional networks to reduce the number of channels.</li>
+<li>It uses GAP layers to replace fully connected layers.</li>
+<li>It concatenates outputs along the depth dimension to integrate parallel outputs.</li>
+</ul>
+<p>First, an Inception block is defined:</p>
+<p><img src="/images/2025/Inception.drawio.svg" alt="Inception.drawio"></p>
+<p>The white-background parts are only used to adjust the depth; the dark purple-background parts are the actual feature extraction layers.</p>
+<p>Based on this, GoogLeNet can be constructed:</p>
+<p>#<img src="/images/2025/GoogLeNet.drawio.svg" alt="GoogLeNet.drawio"></p>
+<h2 id="6-Residual-Network-ResNet"><a href="#6-Residual-Network-ResNet" class="headerlink" title="6 Residual Network (ResNet)"></a>6 Residual Network (ResNet)</h2><ul>
+<li>Ultra-deep neural networks face two major challenges:<ol>
+<li>A massive number of parameters, leading to high computational and storage costs.</li>
+<li>Increasing depth causes gradient vanishing&#x2F;exploding, making training difficult.</li>
+</ol>
+</li>
+</ul>
+<p>The first problem has been addressed in previous models, and ResNet solves the second one.</p>
+<p>The core idea of ResNet is as follows:</p>
+<ol>
+<li>A more complex network should include the original simpler network, ensuring its performance is at least no worse than that of the shallower network.</li>
+<li>A residual function $F(x) &#x3D; f(x) - x$ is introduced, rewriting the learning objective as: $f(x) &#x3D; F(x) + x$.</li>
+</ol>
+<p>The role of the residual function can be summarized into two main points:</p>
+<ol>
+<li>Ensuring “performance is no worse than that of a shallower network”<ul>
+<li>When $F(x) &#x3D; 0$, the network output degrades to an identity mapping $y &#x3D; x$.</li>
+<li>The network can start learning around the identity mapping, making training easier.</li>
+<li>If $F(x)$ performs poorly, it receives no gradient and remains near 0.</li>
+</ul>
+</li>
+<li>Advantages in gradient propagation<ul>
+<li>During forward propagation, the identity mapping provides a direct shortcut.</li>
+<li>During backpropagation, gradients can travel back along this $+x$ shortcut without attenuation, alleviating the gradient vanishing problem.</li>
+</ul>
+</li>
+</ol>
+<p>The biggest challenge in ResNet is that the shapes of the shortcut paths differ when adding them together.</p>
+<ol>
+<li>Different numbers of channels<ul>
+<li>A 1×1 convolutional layer is used to adjust the number of channels.</li>
+</ul>
+</li>
+<li>Different dimensions<ul>
+<li>A convolutional layer with a kernel size of 1 and a non-unity stride is used to adjust the dimensions.</li>
+</ul>
+</li>
+</ol>
+<p>The diagram of the basic ResNet structure is as follows:</p>
+<p><img src="/images/2025/ResNet.drawio.svg" alt="ResNet.drawio"></p>
+<h2 id="7-Densely-Connected-Network-DenseNet"><a href="#7-Densely-Connected-Network-DenseNet" class="headerlink" title="7 Densely Connected Network (DenseNet)"></a>7 Densely Connected Network (DenseNet)</h2><p>DenseNet builds upon the ideas of ResNet and develops them further.</p>
+<p>If ResNet is a first-order approximation of a Taylor expansion, then DenseNet is a higher-order approximation. DenseNet incorporates the outputs of many previous layers into the current layer.</p>
+<p>DenseNet consists mainly of two types of blocks:</p>
+<ul>
+<li>Dense block<ul>
+<li>It has numerous bypass connections. To integrate so many outputs, DenseNet, like GoogLeNet, concatenates the results along the channel dimension.</li>
+</ul>
+</li>
+<li>Transition block<ul>
+<li>After a dense block, the number of channels becomes very large. Therefore, a 1×1 convolutional layer is used to reduce the number of channels, and an average pooling layer is used to decrease the spatial dimensions.</li>
+</ul>
+</li>
+</ul>
 
         </div>
     
@@ -879,7 +957,7 @@
             <h5>
                 <a href="/2025/08/03/2025/20250803%20%E5%8D%97%E4%BA%AC%E7%85%A7%E7%9B%B8%E9%A6%86/" class="trm-anima-link">
                     
-                        <span class="i18n-zh">影评：《南京照相馆》：按下快门，扣下扳机</span><span class="i18n-en">Movie Review: Dead to Rights</span>
+                        <span class="i18n-zh">影评：《南京照相馆》：按下快门，扣下扳机</span><span class="i18n-en">Movie Review: *Nanjing Photo Studio*: Pressing the Shutter, Pulling the Trigger</span>
                     
                 </a>
             </h5>
@@ -969,7 +1047,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>

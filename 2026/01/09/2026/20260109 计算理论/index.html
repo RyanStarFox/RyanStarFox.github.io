@@ -935,7 +935,7 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <h1 id="Theory-of-Computation"><a href="#Theory-of-Computation" class="headerlink" title="Theory of Computation"></a>Theory of Computation</h1><h2 id="1-Finite-Automata-and-Regular-Languages"><a href="#1-Finite-Automata-and-Regular-Languages" class="headerlink" title="1 Finite Automata and Regular Languages"></a>1 Finite Automata and Regular Languages</h2><table>
+            <h2 id="1-Finite-Automata-and-Regular-Languages"><a href="#1-Finite-Automata-and-Regular-Languages" class="headerlink" title="1 Finite Automata and Regular Languages"></a>1 Finite Automata and Regular Languages</h2><table>
 <thead>
 <tr>
 <th align="center">Machine</th>
@@ -946,15 +946,15 @@
 <tbody><tr>
 <td align="center">DFA</td>
 <td align="center">Regular</td>
-<td align="center">Regular Grammer</td>
+<td align="center">Regular Grammar</td>
 </tr>
 <tr>
 <td align="center">NFA</td>
 <td align="center">Regular</td>
-<td align="center">Regular Grammer</td>
+<td align="center">Regular Grammar</td>
 </tr>
 </tbody></table>
-<h3 id="1-1-Deterministic-Finite-Automata-DFA"><a href="#1-1-Deterministic-Finite-Automata-DFA" class="headerlink" title="1.1 Deterministic Finite Automata (DFA)"></a>1.1 Deterministic Finite Automata (DFA)</h3><p>Definition: 5-tuple $(Q,\Sigma,\delta,q_0,F)$</p>
+<h3 id="1-1-Deterministic-Finite-Automata-DFA"><a href="#1-1-Deterministic-Finite-Automata-DFA" class="headerlink" title="1.1 Deterministic Finite Automata (DFA)"></a>1.1 Deterministic Finite Automata (DFA)</h3><p>Definition: a five-tuple $(Q,\Sigma,\delta,q_0,F)$</p>
 <ol>
 <li>(Q) is a finite set called the <strong>states</strong></li>
 <li>(\Sigma) is a finite set called the <strong>alphabet</strong></li>
@@ -962,17 +962,17 @@
 <li>(q_0 \in Q) is the <strong>start state</strong></li>
 <li>(F \subseteq Q) is the set of <strong>accept states</strong></li>
 </ol>
-<p>Note that in point 3, every element in (Q) must have such a function defined with every element in $\Sigma$.</p>
-<h3 id="1-2-Nondeterministic-Finite-Automata-NFA"><a href="#1-2-Nondeterministic-Finite-Automata-NFA" class="headerlink" title="1.2 Nondeterministic Finite Automata (NFA)"></a>1.2 Nondeterministic Finite Automata (NFA)</h3><p>Also a 5-tuple $(Q,\Sigma,\delta,q_0,F)$, but point 3 is different:</p>
+<p>Note the third item: for any element in (Q), there must be such a function with any element in $\Sigma$.</p>
+<h3 id="1-2-Nondeterministic-Finite-Automata-NFA"><a href="#1-2-Nondeterministic-Finite-Automata-NFA" class="headerlink" title="1.2 Nondeterministic Finite Automata (NFA)"></a>1.2 Nondeterministic Finite Automata (NFA)</h3><p>Also a five-tuple $(Q,\Sigma,\delta,q_0,F)$, but the third item is a bit different.</p>
 <ol>
 <li>(Q) is a finite set called the <strong>states</strong>,</li>
 <li>(\Sigma) is a finite set called the <strong>alphabet</strong>,</li>
-<li>(\delta: Q \times \Sigma_\epsilon \to \mathcal{P}(Q)) is the <strong>transition function</strong>, where (\Sigma_\epsilon &#x3D; \Sigma \cup {\epsilon}),</li>
+<li>(\delta: Q \times \Sigma_\epsilon \to \mathcal{P}(Q)) is the <strong>transition function</strong>, where  (\Sigma_\epsilon &#x3D; \Sigma \cup {\epsilon}),</li>
 <li>(q_0 \in Q) is the <strong>start state</strong>,</li>
 <li>(F \subseteq Q) is the set of <strong>accept states</strong>.</li>
 </ol>
 <h3 id="1-3-DFA-NFA"><a href="#1-3-DFA-NFA" class="headerlink" title="1.3 DFA &amp; NFA"></a>1.3 DFA &amp; NFA</h3><p>For any NFA, there exists an equivalent DFA.</p>
-<p>Use the set of NFA nodes as the nodes of the DFA.</p>
+<p>Just use the set of NFA states as the DFA states.</p>
 <p>$(Q,\Sigma,\delta,q_0,F)\to(P(Q),\Sigma,\delta’,E(q_0),F’)$</p>
 <ol>
 <li><p>$Q\to P(Q)$ take the power set</p>
@@ -991,10 +991,10 @@ return E(q)
 <li><p>$F’&#x3D;{R\in Q’|R\cap F\ne\varnothing}$</p>
 </li>
 </ol>
-<h3 id="1-4-Regular"><a href="#1-4-Regular" class="headerlink" title="1.4 Regular"></a>1.4 Regular</h3><p>A language is called regular if some finite automata recognizes it.</p>
-<p>Operations that are closed:</p>
+<h3 id="1-4-Regular"><a href="#1-4-Regular" class="headerlink" title="1.4 Regular"></a>1.4 Regular</h3><p>A language is called regular if some finite automaton recognizes it.</p>
+<p>Operations under which it is closed:</p>
 <ul>
-<li><strong>Union</strong>：$A\cup B&#x3D;{x|x\in A\vee x\in B}$</li>
+<li><strong>Union</strong>: $A\cup B&#x3D;{x|x\in A\vee x\in B}$</li>
 <li><strong>Concatenation</strong>: $A\circ B&#x3D;{xy|x\in A\wedge y\in B}$</li>
 <li><strong>Kleene Star</strong>: $A^*&#x3D;{x_1x_2\cdots x_k|k\geq 0 \wedge x_i\in A}$</li>
 <li><strong>Complement</strong>: $\bar A&#x3D;{x|x\notin A}$</li>
@@ -1003,26 +1003,26 @@ return E(q)
 <p>$(01)^<em>\epsilon&#x3D;(01)^</em>$</p>
 <p>$(01)^*\varnothing&#x3D;\varnothing$</p>
 <p>** $\varnothing^\ast&#x3D;{\epsilon}$**</p>
-<h3 id="1-5-Pumping-Lemma"><a href="#1-5-Pumping-Lemma" class="headerlink" title="1.5 Pumping Lemma"></a>1.5 Pumping Lemma</h3><p>To prove a language is not regular: pumping lemma<br>For every infinite regular language $L$, there exists a constant $p \ge 1$ (pumping length), such that<br>for any string $s \in L$ with $|s| \ge p$, $s$ can be written as $s &#x3D; xyz$, satisfying:</p>
+<h3 id="1-5-Pumping-Lemma"><a href="#1-5-Pumping-Lemma" class="headerlink" title="1.5 Pumping Lemma"></a>1.5 Pumping Lemma</h3><p>To prove a language is not regular: pumping lemma.<br>For every infinite regular language $L$, there exists a constant $p \ge 1$ (the pumping length) such that<br>for any string $s \in L$ with $|s| \ge p$, it can be written as $s &#x3D; xyz$, satisfying:</p>
 <ol>
-<li>$|xy| \le p $ (within the first p characters, x and y are contained)</li>
-<li>$|y| \ge 1$ (y is at least non-empty)</li>
+<li>$|xy| \le p $ (x and y are contained within the first p characters)</li>
+<li>$|y| \ge 1$ (y is non-empty)</li>
 <li>For all $i \ge 0$, $xy^i z \in L$</li>
 </ol>
 <p>To prove a language is regular: construct a DFA or NFA.</p>
-<p>Satisfying the pumping lemma is a necessary but not sufficient condition for regular languages.</p>
+<p>Satisfying the pumping lemma is a necessary but not sufficient condition for being a regular language.</p>
 <p>The proof of the pumping lemma uses the pigeonhole principle.</p>
-<p>It is only a necessary condition, not sufficient. Counterexamples that satisfy the Pumping Lemma but are not regular:</p>
+<p>It is only a necessary condition, not sufficient. Counterexamples that satisfy the Pumping Lemma but are not regular languages:</p>
 <ol>
 <li>$L&#x3D;{a^nb^nc^n}\cup{a^ib^jc^k|i,j,k\text{ not all equal}}$</li>
 <li>$L&#x3D;{a^ib^jc^j|i\geq1,j\geq0}\cup{b^ic^j|i,j\geq0}$</li>
-<li>$L&#x3D;{a^ib^jc^k|i&#x3D;0\ \text{or}\ j&#x3D;k}$</li>
+<li>$L&#x3D;{a^ib^jc^k|i&#x3D;0\or j&#x3D;k}$</li>
 </ol>
-<h3 id="1-6-Three-Questions"><a href="#1-6-Three-Questions" class="headerlink" title="1.6 Three Questions"></a>1.6 Three Questions</h3><h4 id="Q1-Acceptance-w-in-L-A"><a href="#Q1-Acceptance-w-in-L-A" class="headerlink" title="Q1: Acceptance: $w\in L(A)$?"></a>Q1: Acceptance: $w\in L(A)$?</h4><p>Decidable. Just simulate the computation.</p>
-<h4 id="Q2-Emptiness-L-A-varnothing"><a href="#Q2-Emptiness-L-A-varnothing" class="headerlink" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"></a>Q2: Emptiness: $L(A)&#x3D;\varnothing$?</h4><p>Decidable. Check whether all possible paths can reach an accept state.</p>
+<h3 id="1-6-Three-Questions"><a href="#1-6-Three-Questions" class="headerlink" title="1.6 Three Questions"></a>1.6 Three Questions</h3><h4 id="Q1-Acceptance-w-in-L-A"><a href="#Q1-Acceptance-w-in-L-A" class="headerlink" title="Q1: Acceptance: $w\in L(A)$?"></a>Q1: Acceptance: $w\in L(A)$?</h4><p>Decidable; just run through it.</p>
+<h4 id="Q2-Emptiness-L-A-varnothing"><a href="#Q2-Emptiness-L-A-varnothing" class="headerlink" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"></a>Q2: Emptiness: $L(A)&#x3D;\varnothing$?</h4><p>Decidable; just check whether any possible path can be traversed.</p>
 <h4 id="Q3-Equality-L-A-L-B"><a href="#Q3-Equality-L-A-L-B" class="headerlink" title="Q3: Equality: $L(A)&#x3D;L(B)$?"></a>Q3: Equality: $L(A)&#x3D;L(B)$?</h4><p>Decidable.</p>
 <p>$\Leftrightarrow L(A)\oplus L(B)&#x3D;\varnothing$</p>
-<h2 id="2-Context-Free-Languages"><a href="#2-Context-Free-Languages" class="headerlink" title="2 Context Free Languages"></a>2 Context Free Languages</h2><h3 id="2-1-Definition"><a href="#2-1-Definition" class="headerlink" title="2.1 Definition"></a>2.1 Definition</h3><p>Definition: 4-tuple $(V,\Sigma,R,S)$</p>
+<h2 id="2-Context-Free-Languages"><a href="#2-Context-Free-Languages" class="headerlink" title="2 Context Free Languages"></a>2 Context Free Languages</h2><h3 id="2-1-Definition"><a href="#2-1-Definition" class="headerlink" title="2.1 Definition"></a>2.1 Definition</h3><p>Definition: a four-tuple $(V,\Sigma,R,S)$</p>
 <ol>
 <li>$V$ is a finite set called the variables,</li>
 <li>$\Sigma$ is a finite set, disjoint from V, called the terminals,</li>
@@ -1030,9 +1030,9 @@ return E(q)
 <li>$S\in V$ is the start variable.</li>
 </ol>
 <h3 id="2-2-Ambiguity"><a href="#2-2-Ambiguity" class="headerlink" title="2.2 Ambiguity"></a>2.2 Ambiguity</h3><ol>
-<li>Specify precedence: Leftmost Derivation, expand the leftmost variable first.</li>
+<li>Specify precedence: Leftmost Derivation, expand the left side first.</li>
 </ol>
-<p>But this still cannot resolve ambiguity. The remaining ambiguity is called genuine ambiguity.</p>
+<p>But this still cannot resolve ambiguity; what remains is called true ambiguity.</p>
 <p>In fact:</p>
 <ol>
 <li>There is no algorithm to remove the ambiguity of a CFG.</li>
@@ -1040,16 +1040,16 @@ return E(q)
 </ol>
 <h3 id="2-3-Chomsky-Normal-Form"><a href="#2-3-Chomsky-Normal-Form" class="headerlink" title="2.3 Chomsky Normal Form"></a>2.3 Chomsky Normal Form</h3><p>Definition:</p>
 <ol>
-<li>Only allows $A\to BC$ or $A\to a$, where $a$ is a terminal, and $B$, $C$ are variables other than the start variable.</li>
-<li>Allows $S\to\epsilon$, where $S$ is the start variable.</li>
+<li>Only $A\to BC$ or $A\to a$ is allowed, where $a$ is a terminal, and $B, C$ are variables that are not the start variable.</li>
+<li>$S\to\epsilon$ is allowed, where $S$ is the start symbol.</li>
 </ol>
 <p>Theorems:</p>
 <ol>
-<li>Every CFG can be converted to Chomsky Normal Form.</li>
-<li>$\forall G\in\text{CFG},w\in L(G),w\ne\epsilon$ can be derived from the start symbol in exactly $2|w|-1$ steps.</li>
+<li>All CFGs can be expressed in Chomsky normal form.</li>
+<li>$\forall G\in\text{CFG},w\in L(G),w\ne\epsilon$ can be derived from the start state in exactly $2|w|-1$ steps</li>
 </ol>
-<h3 id="2-4-Pushdown-Automata-PDA"><a href="#2-4-Pushdown-Automata-PDA" class="headerlink" title="2.4 Pushdown Automata (PDA)"></a>2.4 Pushdown Automata (PDA)</h3><p>The machine corresponding to CFG is the Pushdown Automaton.</p>
-<p>Definition: 6-tuple $(Q,\Sigma,\Gamma,\delta,q_0,F)$</p>
+<h3 id="2-4-Pushdown-Automata-PDA"><a href="#2-4-Pushdown-Automata-PDA" class="headerlink" title="2.4 Pushdown Automata (PDA)"></a>2.4 Pushdown Automata (PDA)</h3><p>The machine corresponding to a CFG is a Pushdown automaton.</p>
+<p>The definition is a six-tuple $(Q,\Sigma,\Gamma,\delta,q_0,F)$</p>
 <ol>
 <li>$Q$ is a finite set of states,</li>
 <li>$\Sigma$ is a finite set of input alphabet,</li>
@@ -1058,22 +1058,22 @@ return E(q)
 <li>$q_0 ∈Q$ is the start state,</li>
 <li>$F ⊆Q$ is the set of accept states.</li>
 </ol>
-<p>Essentially, it’s a process of pushing and popping from a stack.</p>
-<p>There needs to be a bottom-of-stack symbol that gets pushed first to mark the stack bottom.</p>
-<h3 id="2-5-CFG-Equivalent-to-PDA"><a href="#2-5-CFG-Equivalent-to-PDA" class="headerlink" title="2.5 CFG Equivalent to PDA"></a>2.5 CFG Equivalent to PDA</h3><ul>
-<li><p>Given a CFG, construct a PDA: draw the state transition diagram.</p>
+<p>It is essentially the process of pushing and popping the stack.</p>
+<p>There needs to be a start symbol, pushed onto the stack first, to represent the bottom of the stack.</p>
+<h3 id="2-5-CFG-is-equivalent-to-PDA"><a href="#2-5-CFG-is-equivalent-to-PDA" class="headerlink" title="2.5 CFG is equivalent to PDA"></a>2.5 CFG is equivalent to PDA</h3><ul>
+<li><p>Given a CFG, construct a PDA: just draw the state transition diagram.</p>
 </li>
 <li><p>Given a PDA, construct a CFG:</p>
 <ul>
 <li><p>Simplify the PDA</p>
 <ul>
 <li>Only one accept state</li>
-<li>The stack is empty upon acceptance</li>
-<li>Each transition either pushes one symbol or pops one symbol (not both)</li>
+<li>The stack is empty after the accept state</li>
+<li>Each transition only pushes or pops once</li>
 </ul>
 </li>
 <li><p>Construct the CFG by cases</p>
-<p>Given $(Q, Σ, Γ, δ, q_0, q_{accept})$. We construct CFL $G$.<br>with variables set ${A_{pq} | p, q ∈ Q}$, start variable $A_{q_0,q_{accept}}$. The rules are as follows:</p>
+<p>Give $(Q, Σ, Γ, δ, q_0, q_{accept})$. We construct CFL $G$.<br>with variables set ${A_{pq} | p, q ∈ Q}$, start variable $A_{q_0,q_{accept}}$. The rules are as followings:</p>
 <ol>
 <li>For each $p, q, r, s ∈ Q$, $u ∈ \Gamma$, and $a, b ∈ \Sigma_ε$, if<br>$(r, u) ∈ δ(p, a, ε)$ and $(q, ε) ∈ δ(s, b, u)$, put the rule<br>$A_{pq} → a A_{rs} b$ in $G$.</li>
 <li>For each $p, q, r ∈ Q$, put the rule $A_{pq} → A_{pr} A_{rq}$ in $G$.</li>
@@ -1093,60 +1093,60 @@ return E(q)
 <li><p>Closed under Kleene Star</p>
 <p>$N_1^*&#x3D;(V_1\cup{S},\Sigma_1,R_1\cup{S\to \epsilon,S\to SS_1},S)$</p>
 </li>
-<li><p>The intersection of a CFL and a regular language is a CFL.</p>
+<li><p>The intersection of a CFL and an RL is a CFL.</p>
 </li>
-<li><p>The intersection of two CFLs is not necessarily a CFL.</p>
+<li><p>The intersection of a CFL and a CFL is not necessarily a CFL.</p>
 </li>
-<li><p>Not closed under complement.</p>
+<li><p>Not closed under complement either.</p>
 </li>
 </ol>
-<h3 id="2-7-Pumping-Lemma"><a href="#2-7-Pumping-Lemma" class="headerlink" title="2.7 Pumping Lemma"></a>2.7 Pumping Lemma</h3><p>Similar to the pumping lemma for regular languages, used to prove a language is not context-free.</p>
-<p>For every infinite CFL $L$, there exists a constant $p \ge 1$ (called the “pumping length”), such that</p>
-<p>for any string $s \in L$ with length $≥ p$, $s$ can be written as $s &#x3D; uvwxy$, satisfying:</p>
+<h3 id="2-7-Pumping-Lemma"><a href="#2-7-Pumping-Lemma" class="headerlink" title="2.7 Pumping Lemma"></a>2.7 Pumping Lemma</h3><p>Similar to the pumping lemma for RLs, used to prove a language is not a CFL.</p>
+<p>For every infinite CFL $L$, there exists a constant $p \ge 1$ (called the “pumping length”) such that</p>
+<p>for any string $s \in L$ of length $≥ p$, it can be written as: $s &#x3D; uvwxy$, satisfying:</p>
 <ol>
-<li>$|vwx| \le p $ (the “middle section is not too long”)</li>
-<li>$|vx| \ge 1$ (at least one of $v$ and $x$ is non-empty)</li>
-<li>For all $i \ge 0$, $uv^i w x^i y \in L$ (repeating $v$ and $x$ $i$ times still gives a string in $L$)</li>
+<li>$|vwx| \le p $ (“the middle section is not long”)</li>
+<li>$|vx| \ge 1$ (“at least one of v and x is non-empty”)</li>
+<li>For all $i \ge 0$, $uv^i w x^i y \in L$ (repeat the strings $v$ and $x$ $i$ times, and the resulting string is still in $L$)</li>
 </ol>
 <p>The proof uses the pigeonhole principle.</p>
-<p>There are also counterexamples:</p>
-<p>$L&#x3D;{a^ib^jc^kd^l|i&#x3D;0\ \text{or}\ j&#x3D;k&#x3D;l}$</p>
-<h3 id="2-8-Three-Questions"><a href="#2-8-Three-Questions" class="headerlink" title="2.8 Three Questions"></a>2.8 Three Questions</h3><h4 id="Q1-Acceptance-w-in-L-A-1"><a href="#Q1-Acceptance-w-in-L-A-1" class="headerlink" title="Q1: Acceptance: $w\in L(A)$?"></a>Q1: Acceptance: $w\in L(A)$?</h4><p>Decidable. Convert to Chomsky Normal Form, then it can definitely be parsed in finitely many steps.</p>
-<h4 id="Q2-Emptiness-L-A-varnothing-1"><a href="#Q2-Emptiness-L-A-varnothing-1" class="headerlink" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"></a>Q2: Emptiness: $L(A)&#x3D;\varnothing$?</h4><p>Decidable. Repeatedly expand the set of “generative variables”.</p>
+<p>It also has counterexamples:</p>
+<p>$L&#x3D;{a^ib^jc^kd^l|a&#x3D;0\or j&#x3D;k&#x3D;l}$</p>
+<h3 id="2-8-Three-Questions"><a href="#2-8-Three-Questions" class="headerlink" title="2.8 Three Questions"></a>2.8 Three Questions</h3><h4 id="Q1-Acceptance-w-in-L-A-1"><a href="#Q1-Acceptance-w-in-L-A-1" class="headerlink" title="Q1: Acceptance: $w\in L(A)$?"></a>Q1: Acceptance: $w\in L(A)$?</h4><p>Decidable; convert to Chomsky normal form, and it will necessarily be recognized in a finite number of steps.</p>
+<h4 id="Q2-Emptiness-L-A-varnothing-1"><a href="#Q2-Emptiness-L-A-varnothing-1" class="headerlink" title="Q2: Emptiness: $L(A)&#x3D;\varnothing$?"></a>Q2: Emptiness: $L(A)&#x3D;\varnothing$?</h4><p>Decidable; keep expanding all “generatable variables”.</p>
 <h4 id="Q3-Equality-L-A-L-B-1"><a href="#Q3-Equality-L-A-L-B-1" class="headerlink" title="Q3: Equality: $L(A)&#x3D;L(B)$?"></a>Q3: Equality: $L(A)&#x3D;L(B)$?</h4><p>Undecidable.</p>
-<h3 id="2-9-DPDA-DCFL"><a href="#2-9-DPDA-DCFL" class="headerlink" title="2.9 DPDA &amp; DCFL"></a>2.9 DPDA &amp; DCFL</h3><p>Deterministic PDA and deterministic CFL.</p>
-<p>The relationship between DCFL and CFL is analogous to the relationship between DFA and NFA.</p>
+<h3 id="2-9-DPDA-DCFL"><a href="#2-9-DPDA-DCFL" class="headerlink" title="2.9 DPDA &amp; DCFL"></a>2.9 DPDA &amp; DCFL</h3><p>These are deterministic PDA and deterministic CFL.</p>
+<p>The relationship between DCFL and CFL is similar to that between DFA and NFA.</p>
 <p>But DCFL and CFL are not equivalent.</p>
 <p>DCFL is closed under complement.</p>
-<p>DCFLs are unambiguous.</p>
-<p>Can be written as LR(k) grammars (tested using the DK-test).</p>
-<h2 id="3-Turing-Machine"><a href="#3-Turing-Machine" class="headerlink" title="3 Turing Machine"></a>3 Turing Machine</h2><h3 id="3-1-Definition"><a href="#3-1-Definition" class="headerlink" title="3.1 Definition"></a>3.1 Definition</h3><p>7-tuple $(Q,\Sigma,\Gamma,\delta,q_0,q_\text{accept},q_\text{reject})$, where $Q,\Sigma,\Gamma$ are all finite and</p>
+<p>It has no ambiguity.</p>
+<p>It can be written as an LR(k) grammar (detected using the DK-test).</p>
+<h2 id="3-Turing-Machine"><a href="#3-Turing-Machine" class="headerlink" title="3 Turing Machine"></a>3 Turing Machine</h2><h3 id="3-1-Definition"><a href="#3-1-Definition" class="headerlink" title="3.1 Definition"></a>3.1 Definition</h3><p>A 7-tuple, $(Q,\Sigma,\Gamma,\delta,q_0,q_\text{accept},q_\text{reject})$, where $Q,\Sigma,\Gamma$ are all finite and</p>
 <ol>
 <li>$Q$ is a set of states,</li>
 <li>$\Sigma$ is the input alphabet not containing the blank symbol $\sqcup$,</li>
 <li>$\Gamma$ is the tape alphabet, where $\sqcup∈\Gamma$ and $\Sigma \subseteq\Gamma$,</li>
-<li>$\delta: Q×\Gamma →Q×\Gamma ×{L,R}$ is the transition function, (L, R means to move left&#x2F;right after current step)</li>
+<li>$\delta: Q×\Gamma →Q×\Gamma ×{L,R}$ is the transition function, (L, R means to move left&#x2F;right after the current step)</li>
 <li>$q_0 \in Q$ is the start state,</li>
 <li>$q_\text{accept} \in Q$ is the accept state, and</li>
 <li>$q_\text{reject}\in Q$ is the reject state, where $q_\text{reject}\ne q_\text{accept}$.</li>
 </ol>
-<p>There are three ways to halt:</p>
+<p>There are three kinds of halting states:</p>
 <ol>
 <li>accept</li>
 <li>reject</li>
 <li>Non-halting</li>
 </ol>
 <h3 id="3-2-Variants-of-Turing-Machine"><a href="#3-2-Variants-of-Turing-Machine" class="headerlink" title="3.2 Variants of Turing Machine"></a>3.2 Variants of Turing Machine</h3><h4 id="Multitape-Turing-Machines"><a href="#Multitape-Turing-Machines" class="headerlink" title="Multitape Turing Machines"></a>Multitape Turing Machines</h4><p>$δ: Q×\Gamma^k →Q×\Gamma^k ×{L,R,S}^k$</p>
-<p>Multitape Turing machines are equivalent to single-tape Turing machines.</p>
+<p>A multitape Turing machine is equivalent to a single-tape Turing machine.</p>
 <h4 id="Non-deterministic-Turing-Machine"><a href="#Non-deterministic-Turing-Machine" class="headerlink" title="Non-deterministic Turing Machine"></a>Non-deterministic Turing Machine</h4><p>$\delta:Q\times \Gamma\to\mathcal P(Q\times \Gamma\times{L,R})$</p>
-<p>Equivalent to deterministic Turing machines.</p>
+<p>Equivalent to a deterministic Turing machine.</p>
 <ul>
-<li>A deterministic Turing machine corresponds to a breadth-first traversal of the non-deterministic machine’s computation tree.</li>
-<li>Depth-first traversal is not used because it might get stuck in infinite loops.</li>
+<li>A deterministic Turing machine is equivalent to breadth-first traversal of the non-deterministic Turing machine’s tree.</li>
+<li>Depth-first traversal cannot be used because there may be infinite loops.</li>
 </ul>
-<h4 id="Enumerator"><a href="#Enumerator" class="headerlink" title="Enumerator"></a>Enumerator</h4><p>A machine that prints out all the strings it accepts.</p>
+<h4 id="Enumerator"><a href="#Enumerator" class="headerlink" title="Enumerator"></a>Enumerator</h4><p>A machine that prints out all of its acceptable results.</p>
 <p>Also equivalent to a Turing machine.</p>
-<h2 id="4-Decidability"><a href="#4-Decidability" class="headerlink" title="4 Decidability"></a>4 Decidability</h2><p>Summary:</p>
+<h2 id="4-Decidability"><a href="#4-Decidability" class="headerlink" title="4 Decidability"></a>4 Decidability</h2><p>Summary</p>
 <ul>
 <li>Decidable:<ul>
 <li>$A_\text{DFA}&#x3D;{\langle B,w\rangle|B\text{ is a DFA that accepts input string }w}$</li>
@@ -1155,21 +1155,21 @@ return E(q)
 <li>$E_\text{DFA}&#x3D;{\langle A\rangle|A\text{ is a DFA and }L(A)&#x3D;\varnothing}$</li>
 <li>$EQ_\text{DFA}&#x3D;{\langle A,B\rangle|A\text{ and }B\text{ are DFAs and }L(A)&#x3D;L(B)}$</li>
 <li>$A_\text{CFG}&#x3D;{\langle G,w\rangle|G \text{ is a CFG that generates }w}$</li>
-<li>$E_\text{CFG}&#x3D;{\langle G\rangle|G\text{ is a CFG and }L(G)&#x3D;\varnothing}$</li>
+<li>$E_\text{CFG}&#x3D;{\langle G\rangle|G\text{ is a CFG and  }L(G)&#x3D;\varnothing}$</li>
 <li>$A_\text{LBA}&#x3D;{\langle M,w\rangle|M\text{ is an LBA that accepts }w}$</li>
 </ul>
 </li>
-<li>Recognizable:<ul>
-<li>$A_\text{TM}&#x3D;{\langle M,w\rangle|M\text{ is a TM and }M\text{ accepts }w}$</li>
+<li>Recognizable<ul>
+<li>$A_\text{TM}&#x3D;{\langle M,w\rangle|M\text{ is a TM and }M\text{ accepts } m}$</li>
 <li>$HALT_\text{TM}&#x3D;{\langle M,w\rangle|M \text{ is a TM and }M\text{ halts on input } w}$</li>
 </ul>
 </li>
-<li>co-Recognizable:<ul>
+<li>co-Recognizable<ul>
 <li>$E_\text{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and }L(M)&#x3D;\varnothing}$</li>
 <li>$EQ_\text{CFG}&#x3D;{\langle G,H\rangle|G \text{ and } H\text{ are CFGs and }L(G)&#x3D;L(H)}$</li>
 </ul>
 </li>
-<li>Not Recognizable nor co-Recognizable:<ul>
+<li>not Recognizable and co-Recognizable<ul>
 <li>$EQ_\text{TM}&#x3D;{\langle A,B\rangle|A\text{ and }B\text{ are TMs and }L(A)&#x3D;L(B)}$</li>
 <li>$REGULAR_\text{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and }L(M)\text{ is a regular language}}$</li>
 <li>$E_\text{LBA}&#x3D;{\langle M\rangle|M\text{ is an LBA and }L(M)&#x3D;\varnothing}$</li>
@@ -1178,109 +1178,109 @@ return E(q)
 </li>
 </ul>
 <p>$\text{Decidable}&#x3D;\text{Recognizable}\cap \text{co-Recognizable}$</p>
-<p>$?$ → $\exists$ → $\forall$</p>
-<p>Consecutive $\exists$ &#x2F; $\forall$ quantifiers can be treated as a single $\exists$ &#x2F; $\forall$.</p>
-<p>The more $\forall$ quantifiers, the higher the complexity.</p>
+<p>？→ $\exists$ → $\forall$</p>
+<p>Consecutive multiple $\exists$ &#x2F; $\forall$ are treated as a single $\exists$ &#x2F; $\forall$.</p>
+<p>The more $\forall$, the greater the complexity.</p>
 <p>$A_\text{TM} &#x3D; {⟨M,w⟩|M\text{ is a TM and }M\text{ accepts }w}$ is undecidable but recognizable.</p>
-<p>${\overline{A_\text{TM}}} &#x3D; {⟨M,w⟩|M\text{ is a TM and }M\text{ rejects }w}$ is unrecognizable, called co-turing recognizable.</p>
-<p>For the proof of (1), construct $D$, where $D(\langle M\rangle)&#x3D;\begin{cases}\text{accept if }M\text{ does not accept }\langle M\rangle,\\text{reject if }M\text{ accepts }\langle M\rangle,\end{cases}$</p>
-<p>Then $D\langle D\rangle$ gives a contradiction.</p>
-<p>For the proof of (2), discuss the cases where $L$ and $\bar L$ are accepted by $A_\text{TM}$ and $\overline{ A_\text{TM}}$, respectively.</p>
-<h2 id="5-Reducibility"><a href="#5-Reducibility" class="headerlink" title="5 Reducibility"></a>5 Reducibility</h2><p>Use reduction to prove undecidability.</p>
-<h3 id="Undecidable-Problems-for-Language-Theory"><a href="#Undecidable-Problems-for-Language-Theory" class="headerlink" title="Undecidable Problems for Language Theory"></a>Undecidable Problems for Language Theory</h3><h4 id="HALT-text-TM"><a href="#HALT-text-TM" class="headerlink" title="$HALT_\text{TM}$"></a>$HALT_\text{TM}$</h4><p>$HALT_\text{TM} &#x3D; {\langle M,w\rangle|M\text{ is a TM and } M\text{halts on input } w}$ is undecidable.</p>
-<p>Reduce it directly from $A_\text{TM}$.</p>
+<p>${\overline{A_\text{TM}}} &#x3D; {⟨M,w⟩|M\text{ is a TM and }M\text{ rejects }w}$ is unrecognizable, called co-Turing recognizable.</p>
+<p>For the proof of 1, we can construct $D$, $D(\langle M\rangle)&#x3D;\begin{cases}\text{accept if }M\text{ does not accept }\langle M\rangle,\\text{reject if }M\text{ accepts }\langle M\rangle,\end{cases}$</p>
+<p>Then $D\langle D\rangle$ is a paradox.</p>
+<p>For the proof of 2, just discuss the cases where $L$ and $\bar L$ are accepted in $A_\text{TM}$ and $\overline{ A_\text{TM}}$.</p>
+<h2 id="5-Reducibility"><a href="#5-Reducibility" class="headerlink" title="5 Reducibility"></a>5 Reducibility</h2><p>Use reduction to prove problems.</p>
+<h3 id="Undecidable-Problems-for-Language-Theory"><a href="#Undecidable-Problems-for-Language-Theory" class="headerlink" title="Undecidable Problems for Language Theory"></a>Undecidable Problems for Language Theory</h3><h4 id="HALT-text-TM"><a href="#HALT-text-TM" class="headerlink" title="$HALT_\text{TM}$"></a>$HALT_\text{TM}$</h4><p>$HALT_\text{TM} &#x3D; {\langle M,w\rangle|M\text{ is a TM and } M\text{ halts on input } w}$ is undecidable.</p>
+<p>Just reduce it directly to $A_\text{TM}$.</p>
 <h4 id="E-text-TM"><a href="#E-text-TM" class="headerlink" title="$E_\text{TM}$"></a>$E_\text{TM}$</h4><p>$E_{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and }L(M)&#x3D;\varnothing }$ is undecidable.</p>
-<p>Construct an auxiliary $A’<em>\text{TM}$ that takes $A</em>\text{TM}(M,w)$ as a parameter, and takes $x$ as input.</p>
-<p>It accepts when $A_\text{TM}(M,w)$ accepts, rejects when $A_\text{TM}(M,w)$ rejects.</p>
-<p>Thus the output is independent of $x$; the accepted language is either $\Sigma^*$ or $\varnothing$.</p>
+<p>Construct an $A’<em>\text{TM}$ with parameter $A</em>\text{TM}(M,w)$ and input $x$.</p>
+<p>Accept when $A_\text{TM}(M,w)$ accepts, reject when it rejects.</p>
+<p>So the output is independent of $x$, and what is accepted is either the universal set or the empty set.</p>
 <p>Since $A_\text{TM}$ is undecidable, $E_\text{TM}$ is also undecidable.</p>
 <h4 id="Regular-text-TM"><a href="#Regular-text-TM" class="headerlink" title="$Regular_\text{TM}$"></a>$Regular_\text{TM}$</h4><p>$Regular_\text{TM}&#x3D;{\langle M\rangle|M\text{ is a TM and } L(M)\in RL}$ is undecidable.</p>
-<p>Construct $S_{m,w}(x)$:</p>
-<p>If $x&#x3D;0^n1^n$, accept.</p>
-<p>If $x\ne 0^n1^n$, return $A_\text{TM}(M,w)$.</p>
+<p>Construct an $S_{m,w}(x)$.</p>
+<p>If $x&#x3D;0^n1^n$ accept.</p>
+<p>If $x\ne 0^n1^n$ return $A_\text{TM}(M,w)$.</p>
 <p>$\therefore L(S)&#x3D;\begin{cases}\Sigma^* &amp; \langle M,w\rangle\in A_\text{TM}\{0^n1^n}&amp;\langle M,w\rangle\notin A_\text{TM}\end{cases}$</p>
 <p>$\therefore \langle M,w\rangle\in A_\text{TM}\Leftrightarrow S\in Regular_\text{TM}$</p>
-<p>Therefore it is undecidable.</p>
+<p>So it is undecidable.</p>
 <h4 id="EQ-text-TM"><a href="#EQ-text-TM" class="headerlink" title="$EQ_\text{TM}$"></a>$EQ_\text{TM}$</h4><p>$EQ_\text{TM} &#x3D; {\langle M_1,M_2\rangle|M_1\text{ and }M_2\text{ are TMs and } L(M_1)&#x3D;L(M_2)}$</p>
-<p>Take the special case where $M_2$ is an empty machine, reducing to $E_\text{TM}$.</p>
-<h3 id="Reductions-via-Computation-Histories"><a href="#Reductions-via-Computation-Histories" class="headerlink" title="Reductions via Computation Histories"></a>Reductions via Computation Histories</h3><p>Define a computation history $C_1,\cdots, C_l$. Depending on whether the last state is an accept or reject state, it is called an accepting or rejecting computation history.</p>
-<p>Linear Bounded Automata: a Turing machine whose head can only move within the input region.</p>
+<p>Take a special case, let $M_2$ be empty, and reduce to $E_\text{TM}$.</p>
+<h3 id="Reductions-via-computation-histories"><a href="#Reductions-via-computation-histories" class="headerlink" title="Reductions via computation histories"></a>Reductions via computation histories</h3><p>Define a computation history $C_1,\cdots, C_l$; based on whether the last state is accept or reject, define it as an accepting&#x2F;rejecting computation history.</p>
+<p>Linear Bounded Automata: a Turing machine, but the head can only move within the range of the input.</p>
 <p>$A_\text{LBA}$ is decidable.</p>
-<p>Although an LBA has infinitely many possible configurations, once the input is fixed, the number of configurations is finite, so it is decidable.</p>
-<h4 id="E-text-LBA"><a href="#E-text-LBA" class="headerlink" title="$E_\text{LBA}$"></a>$E_\text{LBA}$</h4><p>$E_{LBA}$ is undecidable, also proven by reducing from $A_\text{TM}$.</p>
-<p>Construct $B_{m,w}$ such that $\langle M,w\rangle\in A_\text{TM}\Leftrightarrow L(B_{m,w})\ne \varnothing$.</p>
-<p>Define $B_{m,w}(x) &#x3D; B_\text{accept} \iff x \text{ is an accepting history of }M\text{ on }w$.</p>
-<p>Intuitively, since an LBA cannot simulate $A_\text{TM}$ in finite space, we unfold the computation of $A_\text{TM}$ as the input to $B_{m,w}$, so it fits within the bounded space.</p>
-<h4 id="ALL-text-CFG"><a href="#ALL-text-CFG" class="headerlink" title="$ALL_\text{CFG}$"></a>$ALL_\text{CFG}$</h4><p>$ALL_\text{CFG} &#x3D; {\langle G\rangle|G \text{ is a CFG and }L(G)&#x3D;\Sigma^*}$ is undecidable.</p>
-<p>$ALL_\text{CFG}\text{ is undecidable}\iff \overline{ALL_\text{CFG}} \text{ is undecidable}$.</p>
-<p>We prove $A_\text{TM}\leq \overline{ALL_\text{CFG}}$.</p>
+<p>Although the LBA itself has infinitely many states, once the input is given, the states of the LBA are finite, so it is decidable.</p>
+<h4 id="E-text-LBA"><a href="#E-text-LBA" class="headerlink" title="$E_\text{LBA}$"></a>$E_\text{LBA}$</h4><p>$E_{LBA}$ is undecidable, also reduced through $A_\text{TM}$.</p>
+<p>Construct $B_{m,w}$, s.t. $\langle M,w\rangle\in A_\text{TM}\Leftrightarrow L(B_{m,w})\ne \varnothing$</p>
+<p>Define $B_{m,w}(x) &#x3D; B_\text{accept} \iff x \text{ is an accepting history of }M\text{ on }w$</p>
+<p>Intuitively, because the LBA cannot simulate $A_\text{TM}$ in finite space, we directly unfold the computation process of $A_\text{TM}$ as the input of $B_\text{TM}$, so that it can fit.</p>
+<h4 id="ALL-text-CFG"><a href="#ALL-text-CFG" class="headerlink" title="$ALL_\text{CFG}$"></a>$ALL_\text{CFG}$</h4><p>$ALL_\text{CFG} &#x3D; {\langle G\rangle|G \text{ is an CFG and }L(G)&#x3D;\Sigma^*}$  is undecidable.</p>
+<p>$ALL_\text{CFG}\text{ is undecidable}\iff \overline{ALL_\text{CFG}} \text{ is undecidable}$</p>
+<p>Next we prove $A_\text{TM}\leq \overline{ALL_\text{CFG}}$</p>
 <p><strong>Format of an accepting computation history H:</strong> H&#x3D;#C1#C2#…#Cℓ#.</p>
-<p>G needs to generate all strings that do NOT match the format of H. There are three categories of strings that fail to be a valid history:</p>
+<p>G needs to generate all strings that do not match the characteristics of H. The reasons these strings do not match H fall into three categories:</p>
 <ol>
 <li>Invalid start C1: The string does not begin with the starting configuration C1 of M on w.</li>
-<li>Invalid end Cℓ: The string does not end with an accepting configuration of M.</li>
-<li>Invalid transition Ci⊬Ci+1: The string contains at least one pair of <strong>adjacent configurations Ci#Ci+1 that does not satisfy the transition rule of M.</strong></li>
+<li>Invalid end Cℓ: The string does not end with the accepting configuration of M.</li>
+<li>Illegal transition Ci\⊢Ci+1: The string contains at least one pair of <strong>adjacent configurations Ci#Ci+1 that do not satisfy the transition rules of M</strong>.</li>
 </ol>
-<p>The language L(G) recognized by G is the union of languages recognizing these three types of errors. The first two are easy to implement with a CFG; the third is the crucial one.</p>
-<p>This can be done by constructing a suitable PDA, but the stack poses some issues.</p>
-<p>Encode odd-indexed configurations Ci in their original order, and even-indexed configurations in reverse order.</p>
-<h3 id="Mapping-Reducibility"><a href="#Mapping-Reducibility" class="headerlink" title="Mapping Reducibility"></a>Mapping Reducibility</h3><p>Definition of a function: $\Sigma^<em>\to\Sigma^</em>$. For a Turing machine $M$, for every input $w$, when it halts, what’s on the tape is $f(w)$.</p>
-<p>Define mapping reducibility $A\leq_m B$: $\exists$ a computable function $f,\forall w\in\Sigma^*,w\in A\iff f(w)\in B$.</p>
+<p>The language L(G) recognized by G is the union of the languages recognizing these three types of errors. The first two types are easy to implement with a CFG; the third is the key.</p>
+<p>This can be achieved by constructing a suitable PDA, but there will be a problem with the stack.</p>
+<p>Let the odd-position C<del>i</del> keep the forward encoding, and the even positions keep the reverse encoding.</p>
+<h3 id="Mapping-Reducibility"><a href="#Mapping-Reducibility" class="headerlink" title="Mapping Reducibility"></a>Mapping Reducibility</h3><p>Definition of a function: $\Sigma^<em>\to\Sigma^</em>$. For a Turing machine $M$, for every input $w$, when it halts, what is on the tape is $f(w)$.</p>
+<p>Define mapping reducibility $A\leq_m B$: $\exists$ a computable function $f,\forall w\in\Sigma^*,w\in A\iff f(w)\in B$</p>
 <p>$A\leq_m B\iff\bar A\leq_m\bar B$:</p>
 <ol>
 <li>$B$ decidable $\to$ $A$ decidable</li>
 <li>$A$ undecidable $\to$ $B$ undecidable</li>
-<li>$B$ turing-recognizable $\to$ $A$ turing-recognizable</li>
-<li>$A$ not turing-recognizable $\to$ $B$ not turing-recognizable</li>
+<li>$B$ Turing-recognizable $\to$ $A$ Turing-recognizable</li>
+<li>$A$ not Turing-recognizable $\to$ $B$ not Turing-recognizable</li>
 </ol>
-<p><strong>Powerful Weapon: Rice’s Theorem</strong></p>
+<p><strong>Powerful weapon: Rice’s Theorem</strong></p>
 <p>Any non-trivial property of the language recognized by a Turing machine is undecidable.</p>
-<p>Two core prerequisites:</p>
+<p>Two core premises:</p>
 <ul>
-<li><strong>It is a property of the Language</strong>: The property depends only on which strings the Turing machine accepts, i.e., if $L(M_1)&#x3D;L(M_2)$, then either both or neither have the property.</li>
-<li><strong>It is Non-trivial</strong>: The property is neither “always true” nor “always false”.</li>
+<li><strong>It is a property of the language (Property of Language)</strong>: This property depends only on which strings the Turing machine accepts, that is, if L(M1)&#x3D;L(M2), then they must either both have or both lack the property.</li>
+<li><strong>It is non-trivial (Non-trivial)</strong>: This property is neither “always true” nor “always false”.</li>
 </ul>
-<p>Proof sketch:</p>
+<p>Proof idea:</p>
 <ul>
-<li><p>Definitions:</p>
+<li><p>Definition</p>
 <ul>
-<li>Suppose we have a property $p$ of languages, with $P_\text{TM}(x)&#x3D;{x|x\text{ is a language satisfying property }p}$. Let $Q\in P_\text{TM}$, and $\varnothing\notin P_\text{TM}$ (if $\varnothing\in P_\text{TM}$, then prove the complement language is undecidable instead). Let $M_q$ be a Turing machine recognizing $Q$.</li>
-<li>Suppose $P_\text{TM}$ is decidable, with decider $R$.</li>
+<li>I now have a property $p$ of languages, satisfying $P_\text{TM}(x)&#x3D;{x|x\text{ is a language satisfying }p}$, let $Q\in P_\text{TM}$, $\varnothing\notin P_\text{TM}$ (if it belongs, then prove that its complement language is undecidable), and the Turing machine corresponding to $Q$ is $M_q$.</li>
+<li>If $P_\text{TM}$ is decidable, let its decider be $R$.</li>
 </ul>
 </li>
-<li><p>Now reduce $P_\text{TM}$ to $A_\text{TM}$:</p>
+<li><p>Now begin reducing $P_\text{TM}$ to $A_\text{TM}$:</p>
 <ul>
-<li><p>To test $A(M,w)$, construct an auxiliary TM $M_w$, where $M_w(x)$ is defined as:</p>
+<li><p>When testing $A(M,w)$, construct an auxiliary TM $M_w$, where $M_w(x)$ is defined as:</p>
 <p>Run $M(w)$,</p>
 <ol>
-<li>If it accepts, then run $M_q(x)$. If $M_q$ accepts, then $M_w$ accepts; if $M_q$ rejects, then $M_w$ rejects.</li>
-<li>If it rejects or loops, then $M_w$ rejects.</li>
+<li>If it accepts, then run $M_q(x)$; if $M_q$ accepts then $M_w$ accepts, and if $M_q$ does not accept then $M_w$ does not accept.</li>
+<li>If it does not accept or loops, then $M_w$ does not accept.</li>
 </ol>
 </li>
 </ul>
 </li>
-<li><p>In this way, we can construct a decider $S$ for $A_\text{TM}$ using $R$:</p>
+<li><p>In this way, we can construct a decider $S$ for $A_\text{TM}$ through $R$.</p>
 <ul>
 <li>If $R(M_w)$ accepts, then $M_w$ accepts.</li>
-<li>If $R(M_w)$ rejects, then $M_w$ rejects.</li>
+<li>If $R(M_w)$ does not accept, then $M_w$ does not accept.</li>
 </ul>
 </li>
 </ul>
-<h2 id="6-Godel-Encoding"><a href="#6-Godel-Encoding" class="headerlink" title="6 Godel Encoding"></a>6 Godel Encoding</h2><p>Construct an injective mapping from programs to natural numbers.</p>
-<h2 id="7-Time-Complexity"><a href="#7-Time-Complexity" class="headerlink" title="7 Time Complexity"></a>7 Time Complexity</h2><p>A language recognizable by a Turing machine within $o(n\log n)$ time is regular.</p>
-<p>Anything a multitape Turing machine can do in $O(t(n))$ time, a single-tape Turing machine can do in $O(t^2(n))$ time.</p>
-<p>Anything a non-deterministic Turing machine can do in $O(t(n))$ time, a deterministic Turing machine can do in $2^{O(t(n))}$ time.</p>
-<h3 id="P-Class"><a href="#P-Class" class="headerlink" title="P Class"></a>P Class</h3><p>P is the class of problems decidable in polynomial time on a deterministic single-tape Turing machine.</p>
-<p>Encoding of the input: must be proportional to the logarithm of the input length (hence rejects unary encoding).</p>
+<h2 id="6-Godel-Encoding"><a href="#6-Godel-Encoding" class="headerlink" title="6 Godel Encoding"></a>6 Godel Encoding</h2><p>Construct an injection from programs to natural numbers.</p>
+<h2 id="7-Time-Complexity"><a href="#7-Time-Complexity" class="headerlink" title="7 Time Complexity"></a>7 Time Complexity</h2><p>What a Turing machine can recognize within $o(n\log n)$ is a regular language.</p>
+<p>What a multitape Turing machine can do in $O(t(n))$, a single-tape Turing machine can also do in $O(t(n^2))$.</p>
+<p>What a non-deterministic Turing machine can do in $O(t(n))$, a deterministic Turing machine can also do in $2^{O(t(n))}$.</p>
+<h3 id="P-Problems"><a href="#P-Problems" class="headerlink" title="P Problems"></a>P Problems</h3><p>P problems are problems that can be decided in polynomial time on a deterministic single-tape Turing machine.</p>
+<p>Encoding of text: must be proportional to the logarithm of the text length (therefore rejecting unary).</p>
 <ul>
-<li>$PATH &#x3D; {\langle G,s,t\rangle|G\text{ is a directed graph that has a directed path from }s\text{ to }t}$</li>
+<li>$PATH &#x3D; {\langle G,s,t\rangle|G\text{ is a directed graph that has a directed path from }s\text{ and }t}$</li>
 <li>$RELPRIME&#x3D;{\langle x,y\rangle|x\text{ and }y\text{ are relatively prime}}$</li>
 <li>CFL</li>
 </ul>
-<h3 id="NP-Class"><a href="#NP-Class" class="headerlink" title="NP Class"></a>NP Class</h3><p>NP problems are those acceptable in polynomial time.</p>
-<p>NP is the class of problems decidable in polynomial time on a non-deterministic single-tape Turing machine &#x2F; problems verifiable in polynomial time on a deterministic single-tape Turing machine.</p>
+<h3 id="NP-Problems"><a href="#NP-Problems" class="headerlink" title="NP Problems"></a>NP Problems</h3><p>NP problems are those acceptable in polynomial time.</p>
+<p>NP problems are problems that can be decided in polynomial time on a non-deterministic single-tape Turing machine &#x2F; problems that can be verified in polynomial time on a deterministic single-tape Turing machine.</p>
 <ul>
-<li>$HAMPATH&#x3D;{\langle G,s,t\rangle|G\text{ is a directed graph with a hamiltonian path from }s\text{ to }t}$</li>
+<li>$HAMPATH&#x3D;{\langle G,s,t\rangle|G\text{ is a directed graph with a hamilton path from }s\text{ to }t}$</li>
 </ul>
 <h3 id="NPC-Problems"><a href="#NPC-Problems" class="headerlink" title="NPC Problems"></a>NPC Problems</h3><ul>
 <li>SAT</li>
@@ -1288,9 +1288,9 @@ return E(q)
 <li>CLIQUE</li>
 <li>Vertex Cover</li>
 </ul>
-<h3 id="Reductions"><a href="#Reductions" class="headerlink" title="Reductions"></a>Reductions</h3><p>A reduces to B &#x3D; A≤B &#x3D; A’s difficulty is at most B’s.</p>
+<h3 id="Reduction"><a href="#Reduction" class="headerlink" title="Reduction"></a>Reduction</h3><p>A reduces to B &#x3D; A≤B &#x3D; A is at most as hard as B</p>
 <pre><code class="language-mermaid">graph TD
-    %% 1. Structure Definition
+    %% 1. Structure definition
     SAT[SAT] --&gt; 3SAT[3SAT]
     3SAT--&gt;SUBSET-SUM[SUBSET-SUM]
   
@@ -1304,60 +1304,60 @@ return E(q)
     DHAMP --&gt; HAMP[Undirected HAMPATH]
     HAMP --&gt; TSP[TSP]
 
-    %% 2. Style Definition
+    %% 2. Style definition
     classDef logic fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
     classDef graphNode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
     classDef pathNode fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
 
-    %% 3. Apply Styles
+    %% 3. Apply styles
     class SAT,3SAT logic;
     class CLIQUE,VC graphNode;
     class DHAMP,HAMP,TSP pathNode;
 </code></pre>
-<h2 id="8-Space-Complexity"><a href="#8-Space-Complexity" class="headerlink" title="8 Space Complexity"></a>8 Space Complexity</h2><p>Definitions:</p>
+<h2 id="8-Space-Complexity"><a href="#8-Space-Complexity" class="headerlink" title="8 Space Complexity"></a>8 Space Complexity</h2><p>Definition:</p>
 <p>Space(N): space complexity on a DTM.</p>
 <p>NSpace(N): space complexity on an NTM.</p>
-<p>We consider deciders rather than verifiers.</p>
-<p>In terms of space complexity, PSPACE &#x3D; NPSPACE.</p>
-<p>In fact, NPSPACE(f(n)) $\subseteq$ SPACE(f²(n)).</p>
-<p>P $\subseteq$ PSPACE.</p>
-<p>NP $\subseteq$ NPSPACE $&#x3D;$ PSPACE $\subseteq$ EXPTIME.</p>
-<p>NPSPACE &#x3D; co-NPSPACE.</p>
-<p>Reductions in PSPACE are still polynomial-time reductions.</p>
-<p>PSPACE-complete: TQBF.</p>
+<p>What is considered is the decider, not the verifier.</p>
+<p>In terms of space complexity, PSPACE&#x3D;NPSPACE.</p>
+<p>In fact NPSPACE(f(n))$\subseteq$SPACE(f^2^(n))</p>
+<p>P $\subseteq$ PSPACE</p>
+<p>NP $\subseteq$ NPSPACE $&#x3D;$ PSPACE $\subseteq$ EXPTIME</p>
+<p>NPSPACE&#x3D;co-NPSPACE</p>
+<p>Reduction on PSPACE is still reduction in polynomial time.</p>
+<p>PSPACE-complete: TQBF</p>
 <p>LSPACE: the input tape (read-only) is linear, but the work tape (read-write) is $O(\log n)$.</p>
-<p>NL $\subseteq$ P, L &#x3D; co-NL, but it’s not known whether L &#x3D; NL (believed not).</p>
-<p>PATH $\in$ NLC.</p>
-<p>NL-Complete reductions are log-space reducibility, not polynomial-time reducibility.</p>
-<p>During the reduction, the output of A (which is the input to B) might be polynomial in size — the solution: read one character at a time; to get the next character, recompute the entire output.</p>
-<h2 id="9-Intractability"><a href="#9-Intractability" class="headerlink" title="9 Intractability"></a>9 Intractability</h2><h3 id="Hierarchy-Theorems"><a href="#Hierarchy-Theorems" class="headerlink" title="Hierarchy Theorems"></a>Hierarchy Theorems</h3><h4 id="Space-Constructibility"><a href="#Space-Constructibility" class="headerlink" title="Space Constructibility"></a>Space Constructibility</h4><p>To determine whether an algorithm runs in $O(f(n))$ time&#x2F;space, the complexity of computing the algorithm’s complexity measure itself must also be $O(f(n))$.</p>
-<p>If $f(n)$ is $o(n)$, then use the read-only work-tape logic (similar to LSPACE).</p>
-<h4 id="Space-Hierarchy-Theorem"><a href="#Space-Hierarchy-Theorem" class="headerlink" title="Space Hierarchy Theorem"></a>Space Hierarchy Theorem</h4><p>For any <strong>space-constructible function</strong> $f(n)$, there exists a language (i.e., a problem) A such that:</p>
+<p>NL$\subseteq$P, L&#x3D;co-NL, but it is not clear whether L and NL are equal (leaning toward not equal).</p>
+<p>PATH$\in$NLC</p>
+<p>The reducibility for NL-Complete is log-space reducibility, not polynomial time reducible.</p>
+<p>During the reduction process, the output of A and the input of B may be polynomial space—the solution is to read only one character at a time, and recompute each time the next character is needed.</p>
+<h2 id="9-Intractability"><a href="#9-Intractability" class="headerlink" title="9 Intractability"></a>9 Intractability</h2><h3 id="Hierarchy-Theorems"><a href="#Hierarchy-Theorems" class="headerlink" title="Hierarchy Theorems"></a>Hierarchy Theorems</h3><h4 id="Space-constructible"><a href="#Space-constructible" class="headerlink" title="Space constructible"></a>Space constructible</h4><p>To determine whether an algorithm is $O(f(n))$, the complexity of the algorithm that computes the algorithm’s complexity itself must also be $O(f(n))$.</p>
+<p>If $f(n)$ is $o(n)$, then use the logic of the work tape and read-only tape (similar to LSPACE).</p>
+<h4 id="Space-hierarchy-theorem"><a href="#Space-hierarchy-theorem" class="headerlink" title="Space hierarchy theorem"></a>Space hierarchy theorem</h4><p>For any <strong>space-constructible function</strong> $f(n)$, there must exist a language (i.e., a problem) A such that it:</p>
 <ul>
-<li>It can be solved in $O(f(n))$ space.</li>
-<li>It <strong>cannot</strong> be solved in $o(f(n))$ space (i.e., no space smaller than $f(n)$ by more than a constant factor suffices).</li>
+<li>Can be solved using $O(f(n))$ space.</li>
+<li><strong>Cannot</strong> be solved using $o(f(n))$ space (i.e., any space growing strictly slower than $f(n)$ will not work).</li>
 </ul>
-<p>Similarly, there is a time hierarchy theorem.</p>
-<h3 id="Relativization"><a href="#Relativization" class="headerlink" title="Relativization"></a>Relativization</h3><p>Assuming an oracle that can solve a certain class of problems in $O(1)$, how the complexity of various problems changes.</p>
-<h3 id="Circuit-Complexity"><a href="#Circuit-Complexity" class="headerlink" title="Circuit Complexity"></a>Circuit Complexity</h3><p>Circuit complexity.</p>
-<p>Time complexity $O(t(n))$ corresponds to circuit complexity $O(t^2(n))$.</p>
+<p>Similarly, there is also a time hierarchy theorem.</p>
+<h3 id="Relativization"><a href="#Relativization" class="headerlink" title="Relativization"></a>Relativization</h3><p>Assume there is an oracle, and consider the complexity of various different problems when it can solve a certain class of problems in $O(1)$.</p>
+<h3 id="Circuit"><a href="#Circuit" class="headerlink" title="Circuit"></a>Circuit</h3><p>Circuit complexity.</p>
+<p>Time complexity $O(t(n))$, circuit complexity $O(t^2(n))$.</p>
 <h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><table>
 <thead>
 <tr>
 <th><strong>Relation</strong></th>
 <th><strong>Status</strong></th>
-<th><strong>Related Theorem&#x2F;Basis</strong></th>
+<th><strong>Related theorem&#x2F;basis</strong></th>
 </tr>
 </thead>
 <tbody><tr>
 <td>$P \stackrel{?}{&#x3D;} NP$</td>
 <td><strong>Widely believed $\neq$</strong></td>
-<td>Not yet proven</td>
+<td>Not yet proved</td>
 </tr>
 <tr>
 <td>$NP \stackrel{?}{&#x3D;} coNP$</td>
 <td><strong>Widely believed $\neq$</strong></td>
-<td>Not yet proven (holds if $P&#x3D;NP$)</td>
+<td>Not yet proved (if $P&#x3D;NP$ then it holds)</td>
 </tr>
 <tr>
 <td>$P &#x3D; coP$</td>
@@ -1367,17 +1367,17 @@ return E(q)
 <tr>
 <td>$L \stackrel{?}{&#x3D;} NL$</td>
 <td><strong>Widely believed $\neq$</strong></td>
-<td>Not yet proven</td>
+<td>Not yet proved</td>
 </tr>
 <tr>
 <td>$NL &#x3D; coNL$</td>
 <td><strong>Definitely equal</strong></td>
-<td><strong>Immerman–Szelepcsényi Theorem</strong></td>
+<td><strong>Immerman–Szelepcsényi theorem</strong></td>
 </tr>
 <tr>
 <td>$PSPACE &#x3D; NPSPACE$</td>
 <td><strong>Definitely equal</strong></td>
-<td><strong>Savitch’s Theorem</strong></td>
+<td><strong>Savitch’s theorem</strong></td>
 </tr>
 <tr>
 <td>$PSPACE&#x3D;coPSPACE$</td>
@@ -1525,7 +1525,7 @@ return E(q)
             <h5>
                 <a href="/2026/01/13/2026/20260113%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="trm-anima-link">
                     
-                        <span class="i18n-zh">机器学习</span><span class="i18n-en">改进为多分类</span>
+                        <span class="i18n-zh">机器学习</span><span class="i18n-en">Machine Learning</span>
                     
                 </a>
             </h5>
@@ -1659,7 +1659,7 @@ return E(q)
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>

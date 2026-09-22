@@ -986,104 +986,104 @@
 
         </div>
         <div class="post-body-en i18n-en">
-            <h1 id="Cryptography"><a href="#Cryptography" class="headerlink" title="Cryptography"></a>Cryptography</h1><p><img src="/images/2026/%E5%AF%86%E7%A0%81%E5%AD%A6%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.png" alt="Cryptography mind map"></p>
-<h2 id="Classical-Cryptography"><a href="#Classical-Cryptography" class="headerlink" title="Classical Cryptography"></a>Classical Cryptography</h2><h3 id="Substitution"><a href="#Substitution" class="headerlink" title="Substitution"></a>Substitution</h3><ul>
-<li><p>Shift Cipher (Caesar cipher is a special case with k&#x3D;3)</p>
-<p>The key space has only 25 elements.</p>
+            <p><img src="/images/2026/%E5%AF%86%E7%A0%81%E5%AD%A6%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.png" alt="Cryptography Mind Map"></p>
+<h2 id="Classical-Ciphers"><a href="#Classical-Ciphers" class="headerlink" title="Classical Ciphers"></a>Classical Ciphers</h2><h3 id="Substitution"><a href="#Substitution" class="headerlink" title="Substitution"></a>Substitution</h3><ul>
+<li><p>Shift cipher (the Caesar cipher is the special case with k&#x3D;3)</p>
+<p>Key space has only 25 elements</p>
 </li>
-<li><p>Monoalphabetic Substitution Cipher</p>
-<p>The key space has 26! elements, large enough.</p>
-<p>But it can be broken via statistical analysis.</p>
+<li><p>Monoalphabetic substitution cipher</p>
+<p>Key space has 26! possibilities, which is large enough</p>
+<p>But it can be broken through statistical analysis</p>
 <ul>
-<li><p>Affine Cipher: a type of monoalphabetic substitution cipher</p>
-<p>$e(x)&#x3D;ax+b\pmod{26},a,b\in Z_{26}$</p>
+<li><p>Affine cipher: a type of monoalphabetic substitution cipher</p>
+<p>$e(x)&#x3D;ax+b(mod 26),a,b\in Z_{26}$</p>
 </li>
 </ul>
 </li>
-<li><p>Polyalphabetic Substitution Cipher: encrypts multiple characters at a time, hiding statistical frequencies.</p>
+<li><p>Polyalphabetic substitution cipher, encrypts multiple characters at a time, masking statistical frequencies</p>
 <ul>
-<li>Playfair Cipher: two letters → two letters<ul>
-<li>First arrange into a 5×5 matrix.</li>
-<li>If the two letters in a pair are in the same row, replace each with the letter to its right in that row.</li>
-<li>If the two letters are in the same column, replace each with the letter below it in that column.</li>
-<li>If they are neither in the same row nor the same column, replace them with the two letters at the opposite corners of the rectangle.</li>
+<li>Playfair cipher: two letters → two letters<ul>
+<li>First arrange into a 5×5 matrix</li>
+<li>If the two letters in a group are in the same row, each letter is replaced by the letter to its right in that row;</li>
+<li>If the two letters in a group are in the same column, each letter is replaced by the letter below it in that column;</li>
+<li>If the letters are in neither the same row nor the same column, they are replaced by the two letters at the opposite corners</li>
 </ul>
 </li>
-<li>Hill Cipher: m consecutive plaintext letters are replaced by m ciphertext letters by multiplying with a key matrix.</li>
-<li>Vigenere Cipher:<ul>
-<li>The key determines the order of alphabets; the i-th letter indicates using the i-th alphabet.</li>
-<li>Use alphabets sequentially, cycling through the key.</li>
+<li>Hill cipher: m consecutive letters are replaced by m ciphertext letters, multiplied by the key matrix</li>
+<li>Vigenère Cipher:<ul>
+<li>The key determines the order of alphabets; the i-th letter indicates using the i-th alphabet</li>
+<li>Alphabets are used in sequence, with the key used cyclically</li>
 </ul>
 </li>
-<li>OTP (One Time Pad): unconditionally secure.<ul>
-<li>Key length equals plaintext length.</li>
-<li>Ciphertext is malleable (can be modified).</li>
+<li>OTP (One Time Pad): absolutely secure<ul>
+<li>Key length is the same as the plaintext</li>
+<li>Ciphertext is malleable (can be modified)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="Permutation"><a href="#Permutation" class="headerlink" title="Permutation"></a>Permutation</h3><ul>
-<li>Rail Fence Cipher: write horizontally, read vertically.</li>
-<li>Transposition technique: write plaintext into a matrix block, then scramble the column order.</li>
+<li>Rail fence cipher: write horizontally, read vertically</li>
+<li>Transposition technique: plaintext is written as a matrix block, but the column order is scrambled</li>
 </ul>
-<h3 id="Product-Ciphers"><a href="#Product-Ciphers" class="headerlink" title="Product Ciphers"></a>Product Ciphers</h3><p>Composition of ciphers.</p>
+<h3 id="Product-Cipher"><a href="#Product-Cipher" class="headerlink" title="Product Cipher"></a>Product Cipher</h3><p>Composition of ciphers</p>
 <h2 id="Symmetric-Ciphers"><a href="#Symmetric-Ciphers" class="headerlink" title="Symmetric Ciphers"></a>Symmetric Ciphers</h2><h3 id="Feistel-Cipher"><a href="#Feistel-Cipher" class="headerlink" title="Feistel Cipher"></a>Feistel Cipher</h3><p>Each round of encryption:</p>
 <p>$E_k(L,R) &#x3D; \left(R,L\oplus F(R,K)\right)$</p>
 <p>$E_k^{-1}(L,R) &#x3D; \left(R\oplus F(L,K),L\right)$</p>
-<p>Encryption and decryption are the same, except the keys are used in reverse order.</p>
-<h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><p>DES uses the Feistel structure. Its round function F and key schedule are as follows:</p>
+<p>Encryption and decryption are the same, except the keys are used in reverse order</p>
+<h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><p>The DES cipher uses the Feistel structure, and its round function F and key schedule are as follows:</p>
 <h4 id="Round-Function"><a href="#Round-Function" class="headerlink" title="Round Function"></a>Round Function</h4><p>$F(L,K)&#x3D; P( S( E(L) \oplus K ) )$</p>
-<p>where $S$ is a fixed public substitution and $P$ is a fixed public permutation.</p>
-<h4 id="Key-Schedule"><a href="#Key-Schedule" class="headerlink" title="Key Schedule"></a>Key Schedule</h4><h3 id="Triple-DES"><a href="#Triple-DES" class="headerlink" title="Triple DES"></a>Triple DES</h3><p>2DES can be broken with $2^{56}$ operations (Merkle-Hellman attack), so 3DES is used, requiring $2^{112}$ operations to break.</p>
-<p>3DES is generally used as $E_{k_1}\circ D_{k_2}\circ E_{k_1}$.</p>
-<p>When $k_1&#x3D;k_2$, it degenerates to DES.</p>
-<h4 id="Merkle-Hellman-Attack"><a href="#Merkle-Hellman-Attack" class="headerlink" title="Merkle-Hellman Attack:"></a>Merkle-Hellman Attack:</h4><h5 id="1-Preparation-Phase-Offline-Precomputation"><a href="#1-Preparation-Phase-Offline-Precomputation" class="headerlink" title="1. Preparation Phase (Offline Precomputation)"></a>1. Preparation Phase (Offline Precomputation)</h5><p>You are right; this step does not require knowing the real key.</p>
+<p>where $S$ is a fixed, public substitution and $P$ is a fixed, public permutation</p>
+<h4 id="Key-Schedule"><a href="#Key-Schedule" class="headerlink" title="Key Schedule"></a>Key Schedule</h4><h3 id="Triple-DES"><a href="#Triple-DES" class="headerlink" title="Triple DES"></a>Triple DES</h3><p>2DES can be broken with 2^56^ (Merkle-Hellman attack), so 3DES is used, requiring 2^112^ to break</p>
+<p>3DES generally uses $E_{k_1}\circ D_{k_2}\circ E_{k_1}$</p>
+<p>When $k_1&#x3D;k_2$, it degenerates to DES</p>
+<h4 id="Merkle-Hellman-Attack"><a href="#Merkle-Hellman-Attack" class="headerlink" title="Merkle-Hellman Attack:"></a>Merkle-Hellman Attack:</h4><h5 id="1-Preparation-Phase-Offline-Precomputation"><a href="#1-Preparation-Phase-Offline-Precomputation" class="headerlink" title="1. Preparation Phase (Offline Precomputation)"></a>1. Preparation Phase (Offline Precomputation)</h5><p>You’re right, this step doesn’t require knowing the real key.</p>
 <ul>
-<li>The attacker sets an intermediate value A &#x3D; 0.</li>
-<li>For all possible DES keys k (there are $2^{56}$), compute what plaintext P would encrypt to 0.</li>
-<li><strong>Result:</strong> A table of $2^{56}$ pairs $(P_i,K_{1,i})$ such that $E_{K_{1,i}}(P_i)&#x3D;0$.</li>
+<li>The attacker sets the intermediate value A&#x3D;0.</li>
+<li>For all possible DES keys k (2^56^ total), compute what plaintext P encrypts to 0.</li>
+<li><strong>Result:</strong> A table is obtained containing 2^56^ pairs (Pi,K1,i) satisfying EK1,i(Pi)&#x3D;0.</li>
 </ul>
-<h5 id="2-Sampling-Phase-Data-Collection"><a href="#2-Sampling-Phase-Data-Collection" class="headerlink" title="2. Sampling Phase (Data Collection)"></a>2. Sampling Phase (Data Collection)</h5><ul>
-<li>This is what the lecture notes call “cost: $2^{56}$ chosen plaintexts.”</li>
-<li>The attacker obtains $2^{56}$ real plaintext-ciphertext pairs (P, C).</li>
-<li><strong>Logic:</strong> By probability, among these $2^{56}$ pairs, there is <strong>very likely</strong> a plaintext $P^*$ such that under the real key $K_1$, the intermediate value A happens to be 0.</li>
+<h5 id="2-Sampling-Phase-Obtaining-Data"><a href="#2-Sampling-Phase-Obtaining-Data" class="headerlink" title="2. Sampling Phase (Obtaining Data)"></a>2. Sampling Phase (Obtaining Data)</h5><ul>
+<li>This is what the courseware calls “cost: 2^56^ chosen plaintexts.”</li>
+<li>The attacker obtains 2^56^ real plaintext-ciphertext pairs (P,C).</li>
+<li><strong>Logic:</strong> By probability, among these 2^56^ pairs, there is <strong>with extremely high probability</strong> a plaintext P∗ such that under the <strong>real key</strong> K1, the intermediate value A is exactly 0.</li>
 </ul>
-<h5 id="3-Cracking-Phase-Online-Matching"><a href="#3-Cracking-Phase-Online-Matching" class="headerlink" title="3. Cracking Phase (Online Matching)"></a>3. Cracking Phase (Online Matching)</h5><p>This is the “do a 2DES” part, but the key point is <strong>matching</strong>:</p>
+<h5 id="3-Cracking-Phase-Online-Matching"><a href="#3-Cracking-Phase-Online-Matching" class="headerlink" title="3. Cracking Phase (Online Matching)"></a>3. Cracking Phase (Online Matching)</h5><p>This is the “do a 2DES” part you mentioned, but the key point is <strong>matching</strong>:</p>
 <ol>
-<li><strong>Work backward from the ciphertext side:</strong> Since we assume A &#x3D; 0, the remaining two layers of encryption $(K_2,K_3)$ become a <strong>2DES</strong> process: $C&#x3D;E_{K_3}(D_{K_2}(0))$.<ul>
-<li><em>Note: The lecture notes may simplify here by assuming $K_2&#x3D;K_3$ or some two-encryption structure; the computational complexity is about $2^{56}$ to $2^{112}$.</em></li>
+<li><strong>Work backward from the ciphertext end:</strong> Since we assumed A&#x3D;0, the remaining two layers of encryption (K2,K3) become a <strong>2DES</strong> process: C&#x3D;EK3(DK2(0)).<ul>
+<li><em>Note: Here the courseware may assume K2&#x3D;K3 or some double encryption structure for simplification; the computational complexity is roughly between 2^56^ and 2^112^.</em></li>
 </ul>
 </li>
-<li><strong>Find a match:</strong> Once you compute a possible $(K_2,K_3)$ from the ciphertext side, you already have the specific plaintext $P^*$ that makes A &#x3D; 0.</li>
-<li><strong>Final confirmation:</strong> Look up $P^*$ in the big table from step 1 to find the corresponding $K_1$.</li>
+<li><strong>Find the match:</strong> After computing a set of possible (K2,K3) from the ciphertext end, you already have that specific plaintext P∗ that “makes A&#x3D;0.”</li>
+<li><strong>Final lock-in:</strong> Look up in the big table from step 1 to find which K1 corresponds to this P∗</li>
 </ol>
-<h3 id="Further-Developments"><a href="#Further-Developments" class="headerlink" title="Further Developments"></a>Further Developments</h3><p>IDEA, AES, SM4.</p>
-<h2 id="Common-Cipher-Modes"><a href="#Common-Cipher-Modes" class="headerlink" title="Common Cipher Modes"></a>Common Cipher Modes</h2><h3 id="Electronic-Codebook-Mode-ECB-Mode"><a href="#Electronic-Codebook-Mode-ECB-Mode" class="headerlink" title="Electronic Codebook Mode (ECB Mode)"></a>Electronic Codebook Mode (ECB Mode)</h3><p>Each plaintext block is encrypted independently with the same key, one block at a time.</p>
-<p>An n-bit plaintext block maps uniquely to an n-bit ciphertext block.</p>
-<p>Easy to attack because identical n-bit plaintext blocks produce identical n-bit ciphertext blocks.</p>
-<h3 id="Cipher-Block-Chaining-Mode-CBC-Mode"><a href="#Cipher-Block-Chaining-Mode-CBC-Mode" class="headerlink" title="Cipher Block Chaining Mode (CBC Mode)"></a>Cipher Block Chaining Mode (CBC Mode)</h3><p>Divide the message into blocks and link them through encryption. The previously encrypted ciphertext block is combined with the current plaintext block.</p>
-<p>Requires an initialization vector IV.</p>
-<p>Encryption:</p>
+<h3 id="Further-Developments"><a href="#Further-Developments" class="headerlink" title="Further Developments"></a>Further Developments</h3><p>IDEA, AES, SM4</p>
+<h2 id="Common-Cipher-Modes"><a href="#Common-Cipher-Modes" class="headerlink" title="Common Cipher Modes"></a>Common Cipher Modes</h2><h3 id="Electronic-Codebook-Mode-ECB-Mode"><a href="#Electronic-Codebook-Mode-ECB-Mode" class="headerlink" title="Electronic Codebook Mode (ECB Mode)"></a>Electronic Codebook Mode (ECB Mode)</h3><p>Each plaintext block is encrypted separately with the same key, one at a time</p>
+<p>Each n-bit plaintext corresponds to a unique n-bit ciphertext</p>
+<p>Easily attacked, because the same n-bit plaintext corresponds to the same n-bit ciphertext</p>
+<h3 id="Cipher-Block-Chaining-Mode-CBC-Mode"><a href="#Cipher-Block-Chaining-Mode-CBC-Mode" class="headerlink" title="Cipher Block Chaining Mode (CBC Mode)"></a>Cipher Block Chaining Mode (CBC Mode)</h3><p>The message is divided into many blocks and chained through encryption. The already-encrypted ciphertext block is chained with the current plaintext block.</p>
+<p>An initialization vector IV is required</p>
+<p>During encryption:</p>
 <p>$C_{i}&#x3D;E_k(P_{i}\oplus C_{i-1}),C_{-1}&#x3D;\text{IV}$</p>
-<p>Decryption:</p>
+<p>During decryption:</p>
 <p>$P_{i}&#x3D; D_K(C_{i}) \oplus C_{i-1},C_{-1}&#x3D;\text{IV}$</p>
 <ul>
 <li><strong>Advantages</strong><ul>
-<li>Each ciphertext block depends on all previous blocks.</li>
-<li>Modifying any block affects all subsequent ciphertext blocks.</li>
-<li>Requires an initialization vector (IV must be randomly chosen).</li>
+<li>Each ciphertext block depends on all previous blocks</li>
+<li>Changing any block affects all subsequent ciphertext blocks</li>
+<li>Requires an initialization vector (IV must be randomly chosen)</li>
 </ul>
 </li>
 <li><strong>Disadvantages</strong><ul>
-<li>If an attacker obtains the IV, they can flip certain bits in the decrypted plaintext by pre-flipping bits in the IV.</li>
+<li>If the attacker obtains the IV, they can pre-modify certain bits in the IV, causing certain bits in the receiver’s plaintext to be flipped</li>
 <li>$P_1[i] &#x3D; \text{IV}[i] ⊕ E_k^{-1}(C_1[i])$</li>
-<li><strong>Countermeasure:</strong> Protect the IV with ECB before sending the message.</li>
-<li>Vulnerable to chosen-ciphertext attacks.</li>
+<li><strong>Solution</strong>: <strong>Use ECB to protect the IV</strong> before sending the message</li>
+<li>Vulnerable to chosen ciphertext attacks</li>
 </ul>
 </li>
 </ul>
-<h3 id="Cipher-Feedback-Mode-CFB"><a href="#Cipher-Feedback-Mode-CFB" class="headerlink" title="Cipher Feedback Mode (CFB)"></a>Cipher Feedback Mode (CFB)</h3><p>Similar to CBC.</p>
+<h3 id="Cipher-Feedback-Mode-CFB"><a href="#Cipher-Feedback-Mode-CFB" class="headerlink" title="Cipher Feedback Mode (CFB)"></a>Cipher Feedback Mode (CFB)</h3><p>Similar to CBC</p>
 <p>Encryption:</p>
 <p>$C_i&#x3D; P_i \oplus E_K(C_{i-1}), C_{-1}&#x3D;\text{IV}$</p>
 <p>Decryption:</p>
@@ -1096,103 +1096,102 @@
 <p>$O_i&#x3D;E_K(O_{i-1}),O_0&#x3D;\text{IV}$</p>
 <p><strong>Advantages</strong></p>
 <ul>
-<li>Bit errors during transmission do not propagate.</li>
-<li>The keystream blocks can be precomputed, allowing stream encryption without pauses.</li>
+<li>During transmission, bit errors do not propagate</li>
+<li>Blocks can be precomputed, no pause needed during stream encryption</li>
 </ul>
 <p><strong>Disadvantages</strong></p>
 <ul>
-<li>Weaker against message stream tampering than CFB: if the ciphertext is flipped, the decrypted plaintext is also flipped. It can be seen as a variant of one-time pad (Vernam cipher), so the same key stream and IV must never be reused.</li>
-<li>The sender and receiver must stay synchronized.</li>
+<li>Weaker than CFB against message stream tampering attacks: if the ciphertext is inverted, the decrypted plaintext is also inverted; it can be seen as a variant of the one-time pad (Vernam cipher), so the same key stream and IV must never be reused</li>
+<li>Sender and receiver must stay synchronized</li>
 </ul>
-<h3 id="Counter-Mode-CTR"><a href="#Counter-Mode-CTR" class="headerlink" title="Counter Mode (CTR)"></a>Counter Mode (CTR)</h3><p>Similar to OFB.</p>
-<p>For each plaintext block, a distinct key block and counter value must be used (like OTP, never reuse).</p>
-<p>Can be processed in parallel.</p>
+<h3 id="Counter-Mode-CTR"><a href="#Counter-Mode-CTR" class="headerlink" title="Counter Mode (CTR)"></a>Counter Mode (CTR)</h3><p>Similar to OFB</p>
+<p>For each plaintext, a different block key and counter value must be used (similar to OTP, never reuse)</p>
+<p>Can be processed in parallel</p>
 <p>$C_i&#x3D; P_i \oplus O_i$</p>
 <p>$O_i &#x3D; E_K(\text{Counter++})$</p>
 <p><strong>Advantages</strong></p>
 <ul>
 <li>Efficient<ul>
-<li>Multiple plaintext&#x2F;ciphertext blocks can be processed in parallel.</li>
-<li>Counter blocks can be precomputed.</li>
-<li>Good for bursty high-speed links.</li>
+<li>Multiple plaintext&#x2F;ciphertext blocks can be processed in parallel</li>
+<li>Can be precomputed</li>
+<li>Good for bursty high speed links</li>
 </ul>
 </li>
-<li>Random access: the i-th ciphertext block can be accessed randomly without needing the previous i-1 ciphertext blocks (compare with CBC).</li>
-<li>Provably secure: it is CPA-secure.<ul>
-<li>Prerequisite: use a true random number generator to determine the counter’s starting value, and never reuse it.</li>
+<li>Random access: the i-th ciphertext block can be accessed randomly without knowing the previous i-1 ciphertext blocks (compare: CBC)</li>
+<li>Provably secure: CPA-secure<ul>
+<li>Prerequisite: a true random number generator is used to generate the counter’s starting value, and it is never reused</li>
 </ul>
 </li>
 </ul>
 <p><strong>Disadvantages</strong></p>
 <ul>
-<li>Keys and counter values must never be reused.</li>
+<li>Key and counter values must never be reused</li>
 </ul>
 <h3 id="Random-Numbers"><a href="#Random-Numbers" class="headerlink" title="Random Numbers"></a>Random Numbers</h3><h4 id="Randomness-Tests"><a href="#Randomness-Tests" class="headerlink" title="Randomness Tests"></a>Randomness Tests</h4><ul>
-<li>Test Characteristics<ul>
-<li>Uniformity: the number of 0s and 1s should be approximately equal in frequency and count.</li>
-<li>Scalability: tests can apply to subsequences.</li>
-<li>Consistency: tests apply to all initial values.</li>
+<li>Test characteristics<ul>
+<li>Uniformity: the probability and quantity of 0s or 1s appearing are roughly equal</li>
+<li>Scalability: tests can be applied to subsequences</li>
+<li>Consistency: tests target all initial values</li>
 </ul>
 </li>
-<li>NIST SP800-22 provides 15 test methods.<ul>
-<li>Frequency test (most basic): the numbers of 0s&#x2F;1s should be close to the expectations for a true random sequence.</li>
-<li>Maurer’s universal statistical test: test whether the data can be significantly compressed without loss of information.</li>
+<li>NIST SP800-22 provides 15 test methods<ul>
+<li>Frequency test (most basic): the number of 0s&#x2F;1s is roughly equal to the expectation of a truly random sequence</li>
+<li>Maurer’s universal statistical test: tests whether data can be significantly compressed without information loss</li>
 </ul>
 </li>
-<li>Unpredictability<ul>
-<li>Forward unpredictability: without the seed, one cannot predict the next bit from existing bits.</li>
-<li>Backward unpredictability: one cannot derive the seed from the sequence.</li>
+<li>Degree of unpredictability<ul>
+<li>Forward unpredictability: without knowing the seed, the next bit cannot be predicted from existing bits</li>
+<li>Backward unpredictability: the seed value cannot be derived from the sequence</li>
 </ul>
 </li>
 </ul>
-<h4 id="Pseudorandom-Number-Generators"><a href="#Pseudorandom-Number-Generators" class="headerlink" title="Pseudorandom Number Generators:"></a>Pseudorandom Number Generators:</h4><ul>
-<li>Formal definition:<ul>
-<li>Any polynomial-time algorithm cannot distinguish the sequence produced by $G(s)$ from a truly random sequence of equal length with non-negligible probability.</li>
+<h4 id="Pseudorandom-Number-Generator"><a href="#Pseudorandom-Number-Generator" class="headerlink" title="Pseudorandom Number Generator:"></a>Pseudorandom Number Generator:</h4><ul>
+<li>Formal definition:</li>
+<li>Any polynomial-time algorithm cannot distinguish the sequence produced by 𝐺(𝑠) from a truly random sequence of equal length with non-negligible probability.</li>
+<li>Proof: If an attacker cannot distinguish PRG output from a truly random sequence, then they also cannot distinguish ciphertext encrypted with a PRG from ciphertext encrypted with OTP.</li>
 </ul>
-</li>
-<li>Rationale: if an attacker cannot distinguish a PRG output from a truly random sequence, then they also cannot distinguish ciphertext encrypted with a PRG from ciphertext encrypted with OTP.</li>
-</ul>
-<h2 id="Symmetric-Encryption-Security-Theory"><a href="#Symmetric-Encryption-Security-Theory" class="headerlink" title="Symmetric Encryption Security Theory"></a>Symmetric Encryption Security Theory</h2><p>Theorem: In a perfectly secure cryptosystem, the size of the plaintext space</p>
-<p>$|M|$ must be less than or equal to the size of the key space $|K|$, i.e., $|K| \ge |M|$.</p>
-<p>Perfectly secure, but impractical.</p>
-<p>New security definitions</p>
+<h2 id="Symmetric-Secrecy-Techniques"><a href="#Symmetric-Secrecy-Techniques" class="headerlink" title="Symmetric Secrecy Techniques"></a>Symmetric Secrecy Techniques</h2><p>Theorem: In a perfectly secret system, the size of the plaintext space</p>
+<p>$|M|$ must be less than or equal to the size of the key space $|K|$, i.e., $|𝐾| ≥ |𝑀|$</p>
+<p>Perfectly secret, but impractical</p>
+<p>New definitions of security</p>
 <ul>
-<li>Strict security definitions (first principle of modern cryptography): attacker capabilities and attacker success: security models.</li>
-<li>Reasonable assumptions (second principle of modern cryptography): often mathematical hard problems.</li>
-<li>Rigorous security proofs (third principle of modern cryptography): rigorous reasoning processes.</li>
+<li>Rigorous security definition (the first principle of modern cryptography): attacker capabilities and attacker success: security model</li>
+<li>Reasonable assumptions (the second principle of modern cryptography): often mathematical hard problems</li>
+<li>Rigorous security proof (the third principle of modern cryptography): rigorous reasoning process</li>
 </ul>
 <p>Some definitions</p>
 <ul>
-<li>Efficient algorithm: an algorithm that runs in polynomial time.</li>
-<li>Negligible quantity: for every polynomial $p$, there exists $N$ such that for all $n &gt; N$, $f(n) &lt; \dfrac{1}{p(n)}$.<ul>
-<li>Closed under addition and multiplication.</li>
+<li>Efficient algorithm: an algorithm that can be executed in polynomial time</li>
+<li>Negligible quantity: for any polynomial $p$, there exists $N$ such that for all $n &gt; N$, $f(n)&lt;\dfrac1{p(n)}$<ul>
+<li>Closed under addition and multiplication</li>
 </ul>
 </li>
 </ul>
-<p>Computational security: no polynomial-time attacker can achieve success with non-negligible probability.</p>
-<p>IND-CPA vs IND-CCA: the former only allows the adversary to obtain decryptions of the challenge ciphertext; the latter allows the adversary to obtain decryptions of any ciphertext except the challenge ciphertext.</p>
+<p>Computational security: no polynomial-time attacker can achieve an attack with non-negligible probability</p>
+<p>IND-CPA vs IND-CCA: the former can only obtain the decryption result of the challenge ciphertext, while the latter can obtain the result of any ciphertext except the challenge ciphertext</p>
 <h2 id="Hash-Functions"><a href="#Hash-Functions" class="headerlink" title="Hash Functions"></a>Hash Functions</h2><p>$h &#x3D; H(M)$, where $M$ is a variable-length message and $h$ is a fixed-length hash value.</p>
 <ul>
-<li><strong>Preimage resistance (one-wayness):</strong> Given any hash value $h$, it is computationally infeasible to find $x$ such that $H(x) &#x3D; h$.</li>
-<li><strong>Weak collision resistance:</strong> Given any message x, it is computationally infeasible to find a y ≠ x such that $H(y) &#x3D; H(x)$.</li>
-<li><strong>Strong collision resistance:</strong> It is computationally infeasible to find any pair (x, y) such that $H(x) &#x3D; H(y)$.</li>
+<li><strong>One-wayness</strong>: given any hash value $h$, finding $x$ such that $H(x)&#x3D;h$ is computationally infeasible;</li>
+<li><strong>Weak collision resistance</strong>: given any message x, finding y ≠ x such that H(y)&#x3D; H(x) is computationally infeasible</li>
+<li><strong>Strong collision resistance</strong>: finding any pair (x,y) such that H(x)&#x3D;H(y) is computationally infeasible</li>
 </ul>
-<h3 id="Merkle-Damgard-Structure"><a href="#Merkle-Damgard-Structure" class="headerlink" title="Merkle-Damgård Structure"></a>Merkle-Damgård Structure</h3><p>It is actually similar to the CBC mode, except the compression function f is different, making the hash non-invertible.</p>
-<p>Length extension attack: given $HASH(message)$, one can compute $HASH(Message | Append)$ without knowing the message.</p>
-<p>Birthday attack: for a hash function with output length m, the value $2^{\frac{m}{2}}$ determines the hash’s resistance to brute-force collision search, because once the number of messages exceeds this value, there is about a 50% probability of finding a collision.</p>
+<h3 id="Merkle-Damgard-Structure"><a href="#Merkle-Damgard-Structure" class="headerlink" title="Merkle-Damgård Structure"></a>Merkle-Damgård Structure</h3><p>Actually quite similar to CBC mode, except the f function used is different, making the cipher irreversible</p>
+<p>Length extension attack: knowing HASH(message), one can also compute the value of HASH(Message||Append)</p>
+<p>Birthday attack: for a Hash function with output length m, the value $2^{\frac m2}$ determines the Hash function’s resistance to brute-force attacks, because beyond this value there is a 50% chance of finding a collision</p>
 <h3 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h3><ul>
-<li><p><strong>Step 1:</strong> Append padding bits (a single 1 followed by zeros).</p>
-<p>Append padding bits to the message so that the data length satisfies</p>
-<p>$$<br>\text{length}\equiv 448 \pmod{512}<br>$$</p>
+<li><p><strong>Step 1</strong>: Add padding bits (a single 1 and several 0s)</p>
+<p>Append appropriate padding bits at the end of the message so that the data bit length satisfies</p>
+<p>$$<br>\text {length}\equiv  448 (\mod 512)<br>$$</p>
 </li>
-<li><p><strong>Step 2:</strong> Append length.</p>
-<p>Represent the original message length in binary (number of bits) using 64 bits. If the length exceeds $2^{64}$ bits, only the least significant 64 bits are used, i.e., mod $2^{64}$.</p>
-<p>Now we have L 512-bit blocks: $Y_0,Y_1,\cdots,Y_{L-1}$. Their total length is $L\times 512$ bits. Let $N&#x3D;L\times16$, and let $M[0\cdots N-1]$ denote the message representation in words.</p>
+<li><p><strong>Step 2</strong>: Append length</p>
 </li>
-<li><p><strong>Step 3:</strong> Initialize MD buffer.</p>
-<p>A 128-bit MD buffer stores the intermediate and final hash results. It can be represented as four 32-bit registers (A, B, C, D). The registers are initialized with the following hexadecimal values, stored in little-endian format.</p>
+<li><p>The original message length (number of binary bits), represented in 64 bits. If the length exceeds 2^64^ bits, only the lowest 64 bits are taken, i.e., mod 2^64^.</p>
+<p>At this point, we have obtained $L$ 512-bit data blocks: $Y_0,Y_1,\cdots,Y_{L-1}$. Their length is $L\times 512$ bits. Let $N&#x3D;L\times16$, and let $M[0\cdots N-1]$ denote the message representation in words.</p>
 </li>
-<li><p><strong>Step 4:</strong> Process message blocks (Compress function).</p>
+<li><p><strong>Step 3</strong>: Initialize MD buffer</p>
+<p>A 128-bit MD buffer is used to hold the intermediate and final hash results. It can be represented as 4 32-bit registers (A,B,C,D). The registers are initialized to the following hexadecimal values. Stored in little-endian format.</p>
+</li>
+<li><p><strong>Step 4</strong>: Process message blocks (Compress function)</p>
 <pre><code class="language-text">A_old = A
 B_old = B
 C_old = C
@@ -1205,270 +1204,270 @@ B = A_prime
 C = B_old
 D = C_old
 </code></pre>
-<p>where T[i] is a set of <strong>64 predefined constants</strong> in MD5, generated from the sine function.</p>
-<p>ROL is a left rotation, and s is the number of bits to rotate, both fixed in advance.</p>
-<p>F is used in the first round; the second, third, and fourth rounds use the functions G, H, and I respectively. Each round has 16 steps.</p>
+<p>where T[i] is a set of <strong>64 constants</strong> predefined in MD5, generated by the sine function</p>
+<p>ROL is left rotation, s is the number of bits to rotate left, fixed in advance</p>
+<p>F is used in the first round; the second, third, and fourth rounds use the H, G, I functions respectively, with 16 steps per round</p>
 <p>$F(B,C,D) &#x3D; (B \land C) \lor (\neg B \land D)$</p>
 <p>$G(B,C,D) &#x3D; (B \land D) \lor (C \land \neg D)$</p>
 <p>$H(B,C,D) &#x3D; B \oplus C \oplus D$</p>
 <p>$I(B,C,D) &#x3D; C \oplus (B \lor \neg D)$</p>
 </li>
-<li><p><strong>Step 5:</strong> Repeat step 4 until the end.</p>
-<p>$\text{Compress}(H_{i-1},H_i)$, where $H_0&#x3D;{A,B,C,D}$.</p>
+<li><p><strong>Step 5</strong>: Repeat step 4 until finished.</p>
+<p>$\text{Compress}(H_{i-1},H_i)$, where $H_0&#x3D;{A,B,C,D}$</p>
 </li>
 </ul>
-<p>Note: In step 4, the order of words is also shuffled.</p>
+<p>Note: In step 4, the order is also scrambled</p>
 <ul>
-<li>In each round, X[0…15] is used exactly once.</li>
-<li>Round 1 keeps the initial order.</li>
-<li>Round 2: $\rho_2(i) \equiv (1+5i) \pmod{16}$</li>
-<li>Round 3: $\rho_3(i) \equiv (5+3i) \pmod{16}$</li>
-<li>Round 4: $\rho_4(i) \equiv 7i \pmod{16}$</li>
+<li>In each round, X[0…15] is used exactly once</li>
+<li>Round 1 maintains the initial order</li>
+<li>Round 2 $\rho_2(i) \equiv (1+5i) (mod 16)$</li>
+<li>Round 3 $\rho_3(i) \equiv (5+3i) (mod 16)$</li>
+<li>Round 4 $\rho_4(i) \equiv 7i (mod 16)$</li>
 </ul>
-<h3 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h3><p>Extended from 64 to 80 steps (the number of word blocks becomes 5 groups, with 4 rounds).</p>
-<p>X[0…15] is expanded into a message schedule (16 → 80 words).</p>
-<h3 id="SHA-3"><a href="#SHA-3" class="headerlink" title="SHA-3"></a>SHA-3</h3><p>Keccak algorithm, based on the sponge function.</p>
-<h2 id="Message-Authentication-Codes-MAC"><a href="#Message-Authentication-Codes-MAC" class="headerlink" title="Message Authentication Codes (MAC)"></a>Message Authentication Codes (MAC)</h2><ul>
-<li>Similar to encryption functions but not invertible.</li>
-<li>Provides authentication (message integrity), but not digital signatures (does not prove who sent the message).</li>
+<h3 id="SHA-1"><a href="#SHA-1" class="headerlink" title="SHA-1"></a>SHA-1</h3><p>Expanded from 64 to 80 (number of groups becomes 5, 4 rounds)</p>
+<p>X[0…15] becomes message expansion (16→80)</p>
+<h3 id="SHA-3"><a href="#SHA-3" class="headerlink" title="SHA-3"></a>SHA-3</h3><p>Keccak algorithm, with a sponge function</p>
+<h2 id="Message-Authentication-Code-MAC"><a href="#Message-Authentication-Code-MAC" class="headerlink" title="Message Authentication Code (MAC)"></a>Message Authentication Code (MAC)</h2><ul>
+<li>Similar to an encryption function, but irreversible</li>
+<li>Provides authentication (the message is intact), but does not provide digital signatures (who sent the message)</li>
 </ul>
 <h3 id="DAC"><a href="#DAC" class="headerlink" title="DAC"></a>DAC</h3><ul>
-<li>DES MAC (CBC-MAC): outputs only the last ciphertext block of CBC.</li>
+<li>DES MAC (CBC-MAC), only outputs the last data block of CBC</li>
 </ul>
 <h3 id="CMAC"><a href="#CMAC" class="headerlink" title="CMAC"></a>CMAC</h3><ul>
-<li><p>Message authentication: $M | C_k(M)$.</p>
+<li><p>Message authentication: M||C<del>k</del>(M)</p>
 </li>
-<li><p>Message encryption and authentication: $E_{k2}(M | C_{k1}(M))$ or $E_{k2}(M) | C_{k1}(E_{k2}(M))$.</p>
+<li><p>Message encryption and authentication: E<del>k2</del>(M||C<del>k1</del>(M)) or E<del>k2</del>(M)||C<del>k1</del>(E<del>k2</del>(M))</p>
 </li>
-<li><p>Master key K: the original key provided by the user (e.g., an AES-128 key).</p>
-<p>Subkey K1: derived from K, used for processing the last complete block.</p>
-<p>Subkey K2: derived from K, used for processing the last incomplete block.</p>
+<li><p>Master key K: the original key provided by the user (e.g., AES-128 key).</p>
+<p>Subkey K1: derived from K, used to process the last complete block.</p>
+<p>Subkey K2: derived from K, used to process the last incomplete block</p>
 </li>
 </ul>
-<p>Uses AES + CBC mode.</p>
-<h3 id="HMAC"><a href="#HMAC" class="headerlink" title="HMAC"></a>HMAC</h3><p>Simplified: Hash(key + Hash(key + message)).</p>
+<p>Uses AES+CBC mode</p>
+<h3 id="HMAC"><a href="#HMAC" class="headerlink" title="HMAC"></a>HMAC</h3><p>Simply put: Hash(key + Hash(key + message))</p>
 <p>Actually:</p>
 <p>$$<br>\text{HMAC}_K(M) &#x3D; \text{Hash}[(K^+ \oplus \text{opad}) \Vert \text{Hash}[(K^+ \oplus \text{ipad}) \Vert M]]<br>$$</p>
-<h3 id="Authenticated-Encryption-Construction"><a href="#Authenticated-Encryption-Construction" class="headerlink" title="Authenticated Encryption Construction"></a>Authenticated Encryption Construction</h3><ul>
-<li>HtE &#x2F; Hash-then-Encrypt &#x2F; $E_k(M | H(M))$</li>
-<li>MtE &#x2F; MAC-then-Encrypt &#x2F; $E_k(M | MAC(M))$</li>
-<li>E&amp;M &#x2F; Encrypt-and-MAC &#x2F; $E_k(M) | MAC(M)$</li>
-<li>EtM &#x2F; Encrypt-then-MAC &#x2F; $E_k(M) | MAC(E_k(M))$</li>
+<h3 id="Authenticated-Encryption-Approaches"><a href="#Authenticated-Encryption-Approaches" class="headerlink" title="Authenticated Encryption Approaches"></a>Authenticated Encryption Approaches</h3><ul>
+<li>HtE&#x2F;Hash then Encrypt&#x2F;E<del>k</del>(M||H(M))</li>
+<li>MtE&#x2F;Mac then Encrypt&#x2F;E<del>k</del>(M||MAC(M))</li>
+<li>E&amp;M&#x2F;Encrypt and Mac&#x2F;E<del>k</del>(M)||MAC(M)</li>
+<li>EtM&#x2F;Encrypt then Mac&#x2F;E<del>k</del>(M)||MAC(E<del>k</del>(M))</li>
 </ul>
-<h3 id="Authenticated-Encryption-Modes"><a href="#Authenticated-Encryption-Modes" class="headerlink" title="Authenticated Encryption Modes"></a>Authenticated Encryption Modes</h3><p>CCM: $\text{Result} &#x3D; \underbrace{\text{CTR}<em>K(M)}</em>{\text{ciphertext } C} \parallel \underbrace{(\text{MAC}<em>K(M) \oplus S_0)}</em>{\text{encrypted tag } T’}$, where $S_0&#x3D;E_K(\text{Nonce} \parallel \text{Counter}_0)$.</p>
-<p>GCM mode.</p>
-<h2 id="Public-Key-Cryptography-Algorithms"><a href="#Public-Key-Cryptography-Algorithms" class="headerlink" title="Public-Key Cryptography Algorithms"></a>Public-Key Cryptography Algorithms</h2><h3 id="Number-Theory"><a href="#Number-Theory" class="headerlink" title="Number Theory"></a>Number Theory</h3><h4 id="Prime-Numbers"><a href="#Prime-Numbers" class="headerlink" title="Prime Numbers"></a>Prime Numbers</h4><ol>
-<li>There are infinitely many primes.</li>
-<li>$\pi(x)$ denotes the number of primes not exceeding x. We have:<ol>
+<h3 id="Authenticated-Encryption-Modes"><a href="#Authenticated-Encryption-Modes" class="headerlink" title="Authenticated Encryption Modes"></a>Authenticated Encryption Modes</h3><p>CCM: $\text{Result} &#x3D; \underbrace{\text{CTR}<em>K(M)}</em>{\text{ciphertext } C} \parallel \underbrace{(\text{MAC}<em>K(M) \oplus S_0)}</em>{\text{encrypted tag } T’}$, where $S_0&#x3D;E_K(\text{Nonce} \parallel\text{Counter}_0)$</p>
+<p>GCM mode</p>
+<h2 id="Public-Key-Cryptographic-Algorithms"><a href="#Public-Key-Cryptographic-Algorithms" class="headerlink" title="Public-Key Cryptographic Algorithms"></a>Public-Key Cryptographic Algorithms</h2><h3 id="Number-Theory"><a href="#Number-Theory" class="headerlink" title="Number Theory"></a>Number Theory</h3><h4 id="Prime-Numbers"><a href="#Prime-Numbers" class="headerlink" title="Prime Numbers"></a>Prime Numbers</h4><ol>
+<li>The number of primes is infinite</li>
+<li>$\pi(x)$ represents the number of primes not exceeding $x$, and we have<ol>
 <li>$\lim\limits_{x\to\infty}\dfrac{\pi(x)}x&#x3D;0$</li>
 <li>$\lim\limits_{x\to\infty}\dfrac{\pi(x)}{\frac x{\log x}} &#x3D; 1$</li>
 </ol>
 </li>
-<li>There are infinitely many twin primes.</li>
+<li>There are infinitely many twin primes</li>
 </ol>
 <h4 id="Congruence-and-Divisibility"><a href="#Congruence-and-Divisibility" class="headerlink" title="Congruence and Divisibility"></a>Congruence and Divisibility</h4><ol>
-<li><p>Euclidean algorithm for computing the greatest common divisor; it can also be used to find the inverse modulo an integer, in which case it is called the extended Euclidean algorithm.</p>
+<li><p>Finding the greatest common divisor: Euclidean algorithm; it can also be used to find the modular inverse, in which case it is called the extended Euclidean algorithm</p>
 </li>
-<li><p>Unique prime factorization of integers.</p>
+<li><p>Unique factorization of integers</p>
 </li>
-<li><p>Equivalence classes and residue systems.</p>
-<p>Partition the set of integers $Z$ into m equivalence classes: $[0],[1],\cdots,[m-1]$.</p>
+<li><p>Equivalence classes and residue systems</p>
+<p>Partition the set of integers $Z$ into $m$ equivalence classes: $[0],[1],\cdots,[m-1]$</p>
 <ul>
-<li><strong>Complete residue system modulo m:</strong> $a_i\in[i]\to{a_0,a_1,\cdots,a_{m-1}}$.</li>
-<li><strong>Least nonnegative complete residue system modulo m</strong> ($Z_m$): ${0,1,\cdots,m-1}$.</li>
-<li><strong>Reduced residue system modulo m:</strong> remove from the complete residue system those numbers that are not coprime to m; the remaining set.</li>
+<li><strong>Complete residue system</strong> modulo $m$: $a_i\in[i]\to{a_0,a_1,\cdots,a_{m-1}}$</li>
+<li><strong>Least non-negative complete residue system</strong> modulo $m$ ($Z_m$): ${0,1,\cdots,m-1}$</li>
+<li><strong>Reduced residue system</strong> modulo $m$: remove from the complete residue system modulo $m$ those numbers that are not coprime to $m$; the remainder is the reduced residue system</li>
 </ul>
 </li>
 <li><p>Euler’s theorem</p>
-<p>If $(a,n)&#x3D;1$, then $a^{\phi(n)}\equiv 1\pmod{n}$.</p>
-<p>In particular, if $n&#x3D;pq$ with p and q primes, then $a^{\phi(pq)+1}\equiv a^{(p-1)(q-1)+1}\equiv a\pmod{n}$; even if $(n,a)\ne1$, the identity still holds.</p>
+<p>If $(a,n)&#x3D;1$, then $a^{\phi(n)}\equiv 1(\mod n)$</p>
+<p>In particular, if $n&#x3D;pq$ with $p$, $q$ prime, then $a^{\phi(pq)+1}\equiv a^{(p-1)(q-1)+1}\equiv a(\mod n)$, and even if $(n,a)\ne1$, the equation still holds</p>
 </li>
 <li><p>Fermat’s little theorem</p>
-<p>If p is prime, a is a positive integer, and $p\nmid a$, then $a^{p-1}\equiv 1\pmod{p}$.</p>
+<p>If $p$ is prime, $a$ is a positive integer, and $p\nmid a$, then $a^{p-1}\equiv 1(\mod p)$</p>
 </li>
-<li><p>Primality testing: a negative result is always correct; a positive result has a very small probability of being wrong. After running many tests, the probability of a false positive becomes very small.</p>
-<p>The Miller-Rabin probabilistic algorithm is commonly used.</p>
+<li><p>Primality testing: a negative conclusion is always correct; a positive conclusion has an extremely low probability of error, and after multiple executions the error probability of a positive conclusion is greatly reduced</p>
+<p>Commonly uses the Miller-Rabin probabilistic algorithm</p>
 </li>
-<li><p>Chinese Remainder Theorem.</p>
+<li><p>Chinese Remainder Theorem</p>
 </li>
 </ol>
 <h4 id="Order-and-Primitive-Roots"><a href="#Order-and-Primitive-Roots" class="headerlink" title="Order and Primitive Roots"></a>Order and Primitive Roots</h4><ul>
 <li>Order<ul>
-<li>If $(a,m)&#x3D;1$, the smallest period k such that powers of a become congruent to 1 modulo m is called the order of a modulo m.</li>
-<li>$k\mid\phi(m)$, but $k&#x3D;\phi(m)$ does not always hold.</li>
+<li>If $(a,m)&#x3D;1$, the smallest period $k$ such that the powers of $a$ modulo $m$ cycle congruently is called the order of $a$ modulo $m$</li>
+<li>$k\mid\Phi(m)$, but $k&#x3D;\Phi(m)$ does not necessarily hold</li>
 </ul>
 </li>
 <li>Primitive root<ul>
-<li>If the order of a modulo m is $\phi(m)$, then a is called a primitive root modulo m.</li>
-<li>m has a primitive root if and only if m is of the form $2,4,2^np^l,p^l$, and the number of primitive roots is $\phi(\phi(m))$.</li>
+<li>If the order of $a$ modulo $m$ is $\Phi(m)$, then $a$ is called a primitive root modulo $m$</li>
+<li>The necessary and sufficient condition for $m$ to have a primitive root is that $m$ has the form $2,4,2^np^l,p^l$, and the number of primitive roots is $\Phi(\Phi(m))$</li>
 </ul>
 </li>
 </ul>
-<h4 id="Discrete-Logarithm-Problem"><a href="#Discrete-Logarithm-Problem" class="headerlink" title="Discrete Logarithm Problem"></a>Discrete Logarithm Problem</h4><p>$y\equiv g^x\pmod{m}$, then $x&#x3D;\log_g y\pmod{m}$.</p>
-<p>Given x, g, m, computing y is easy, but given y, g, m, computing x is very hard.</p>
+<h4 id="Discrete-Logarithm-Problem"><a href="#Discrete-Logarithm-Problem" class="headerlink" title="Discrete Logarithm Problem"></a>Discrete Logarithm Problem</h4><p>$y\equiv g^x(\mod m)$, then $x&#x3D;\log_gy(\mod m)$</p>
+<p>Computing y from x,g,m is easy, but computing x from y,g,m is very hard</p>
 <h4 id="Some-Abstract-Algebra"><a href="#Some-Abstract-Algebra" class="headerlink" title="Some Abstract Algebra"></a>Some Abstract Algebra</h4><ul>
-<li><p>Group: closure, associativity, identity, inverse.</p>
+<li><p>Group: closure, associativity, identity element, inverse element</p>
 <ul>
-<li>Abelian group: group + commutativity.</li>
-<li>Finite group: group + finite number of elements.</li>
-<li>Cyclic group: all elements can be generated by repeated multiplication of a generator.</li>
+<li>Abelian group: group + commutativity</li>
+<li>Finite group: group + finite number of elements</li>
+<li>Cyclic group: all elements can be obtained by repeated multiplication of a generator</li>
 </ul>
 </li>
-<li><p>Ring: a set R with addition (+) and multiplication (×):</p>
+<li><p>Ring: a set R with addition (+) and multiplication (×) defined:</p>
 <ol>
-<li>(R, $+$) must be an abelian group (identity is 0).</li>
-<li>(R, $\times$) is associative (no requirement for identity or commutativity).</li>
-<li>Distributive law: a(b+c)&#x3D;ab+ac.</li>
+<li>(R, $+$) must be an abelian group (identity element is 0).</li>
+<li>(R, $\times$) satisfies associativity (does not require an identity element, nor commutativity).</li>
+<li>Distributive law: a(b+c)&#x3D;ab+ac</li>
 </ol>
 <ul>
-<li><p>Commutative ring: multiplication is commutative (ab&#x3D;ba).</p>
+<li><p>Commutative ring: satisfies multiplicative commutativity (ab&#x3D;ba)</p>
 </li>
-<li><p>Ring with unit: there exists a multiplicative identity (usually denoted 1).</p>
+<li><p>Ring with identity: has a multiplicative identity (usually denoted 1).</p>
 </li>
-<li><p>Integral Domain:</p>
+<li><p>Integral domain:</p>
 <ul>
-<li>A commutative ring.</li>
+<li>Is a commutative ring.</li>
 <li>Has multiplicative identity 1.</li>
-<li>No zero divisors: if ab&#x3D;0, then a&#x3D;0 or b&#x3D;0.</li>
+<li>Has no zero divisors: i.e., if ab&#x3D;0, then a&#x3D;0 or b&#x3D;0.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Field: integral domain + every nonzero element has a multiplicative inverse.</p>
+<li><p>Field: integral domain + every element has a multiplicative inverse</p>
 <ul>
-<li>Finite field: the set has finitely many elements.</li>
+<li>Finite field: finite number of elements in the set</li>
 </ul>
 </li>
 </ul>
 <p>$$<br>\text{Group} \xrightarrow{\text{+multiplication, distributivity}} \text{Ring} \xrightarrow{\text{+commutativity, identity}} \text{Commutative Ring} \xrightarrow{\text{+no zero divisors}} \text{Integral Domain} \xrightarrow{\text{+nonzero elements have inverses}} \text{Field}<br>$$</p>
-<h3 id="Public-Key-System-Definition-and-RSA"><a href="#Public-Key-System-Definition-and-RSA" class="headerlink" title="Public-Key System Definition and RSA"></a>Public-Key System Definition and RSA</h3><p>Using only symmetric encryption, without a trusted third party and with mutual distrust, two parties can achieve key exchange via Merkle Puzzles.</p>
-<p>However, communication efficiency is low.</p>
-<p>Non-symmetric algorithms—public-key algorithms—were needed.</p>
-<p>A one-way function was sought—discrete logarithm was found.</p>
-<h4 id="Non-symmetric-Algorithms"><a href="#Non-symmetric-Algorithms" class="headerlink" title="Non-symmetric Algorithms"></a>Non-symmetric Algorithms</h4><ol>
-<li><p>MH scheme (knapsack problem): essentially subset-sum—was broken.</p>
+<h3 id="Public-Key-System-Definition-and-RSA"><a href="#Public-Key-System-Definition-and-RSA" class="headerlink" title="Public-Key System Definition and RSA"></a>Public-Key System Definition and RSA</h3><p>Using only symmetric encryption, without a trusted third party, and with both parties distrusting each other, to achieve key exchange between both parties — Merkle Puzzle</p>
+<p>But communication efficiency is low</p>
+<p>Afterward, an asymmetric algorithm is needed — a public-key algorithm</p>
+<p>Need to find a one-way function — found the discrete logarithm</p>
+<h4 id="Asymmetric-Algorithms"><a href="#Asymmetric-Algorithms" class="headerlink" title="Asymmetric Algorithms"></a>Asymmetric Algorithms</h4><ol>
+<li><p>MH scheme knapsack problem: essentially a subset sum — broken</p>
 </li>
-<li><p>RSA algorithm—modular exponentiation with large numbers, based on integer factorization.</p>
+<li><p>RSA algorithm — modular exponentiation with large numbers, based on integer factorization</p>
 <ol>
 <li>Choose primes: randomly select two distinct large primes p and q.</li>
-<li>Compute modulus: n &#x3D; p×q. The length of n (e.g., 2048 bits) determines the encryption strength.</li>
-<li>Compute Euler’s totient: compute ϕ(n) &#x3D; (p−1)(q−1). ϕ(n) is the number of positive integers not exceeding n that are coprime to n.</li>
-<li>Choose public exponent e: choose an integer e satisfying 1 &lt; e &lt; ϕ(n) and gcd(ϕ(n), e) &#x3D; 1 (i.e., e is coprime to ϕ(n)).</li>
-<li>Compute private exponent d: compute d such that d ≡ e^−1^ (mod ϕ(n)). This step usually uses the extended Euclidean algorithm to find the inverse.</li>
+<li>Compute modulus: compute n&#x3D;p×q. The length of this n (e.g., 2048 bits) determines the encryption strength.</li>
+<li>Compute Euler’s totient: compute ϕ(n)&#x3D;(p−1)(q−1). ϕ(n) represents the number of positive integers not exceeding n that are coprime to n.</li>
+<li>Choose public exponent e: choose an integer e satisfying 1&lt;e&lt;ϕ(n) and gcd(ϕ(n),e)&#x3D;1 (i.e., e is coprime to ϕ(n)).</li>
+<li>Compute private exponent d: compute d such that d≡e^−1^(modϕ(n)). This step typically uses the extended Euclidean algorithm mentioned in the image to find the inverse.</li>
 </ol>
-<p>Result:</p>
+<p>Results:</p>
 <ul>
-<li>Public parameters: modulus n and public key e.</li>
-<li>Secret parameters: primes p, q and private key d.</li>
+<li>Public parameters: large modulus n and public key e.</li>
+<li>Secret parameters: large primes p,q and private key d.</li>
 </ul>
-<p>Encryption&#x2F;Decryption:</p>
+<p>Encryption and decryption:</p>
 <ul>
-<li>Encryption: $C\equiv M^e\pmod{n}$</li>
-<li>Decryption: $M\equiv C^d\pmod{n}$</li>
+<li>Encryption: $C\equiv M^e\mod n$</li>
+<li>Decryption: $M\equiv C^d\mod n$</li>
 </ul>
 <p>Attacks:</p>
 <ul>
-<li>p and q too close.</li>
-<li>Common modulus attack: using the same n.</li>
-<li>Small e attack.</li>
-<li>Timing attack.</li>
+<li>p,q too close</li>
+<li>Common modulus attack: using the same n</li>
+<li>Small e attack</li>
+<li>Timing attack</li>
 </ul>
 </li>
-<li><p>Diffie-Hellman key agreement, based on discrete logarithm.</p>
-<p>It essentially means sending your own key encrypted with the other party’s public key.</p>
-<p>Vulnerable to man-in-the-middle attacks.</p>
+<li><p>Diffie-Hellman key agreement, based on discrete logarithm</p>
+<p>Simply put, directly encrypt your own key with the other party’s public key and send it to them</p>
+<p>Vulnerable to man-in-the-middle attacks</p>
 </li>
-<li><p>ElGamal encryption algorithm.</p>
-<p>System parameters: p, g.</p>
-<p>Alice chooses private key $x_A\in F_p^*$ and computes public key $y_A\equiv g^{X_A}\pmod{p}$.</p>
-<p>Bob sends a message to Alice; the ciphertext is $C&#x3D;(C_1,C_2)$. Bob randomly chooses $k\in F_p^*$:</p>
-<p>$C_1 \equiv g^k\pmod{p}$  $C_2\equiv y_A^k\cdot M$</p>
-<p>Alice decrypts: $M&#x3D;\dfrac{C_2}{C_1^{x_A}}$.</p>
+<li><p>ElGamal encryption algorithm</p>
+<p>System parameters $p,g$</p>
+<p>Alice chooses private key$x_A\in F_p^*$, computes public key$y_A\equiv g^{X_A}\mod p$</p>
+<p>Bob sends a message to Alice, ciphertext$C&#x3D;(C_1,C_2)$, randomly chooses$k\in F_p^*$</p>
+<p>$C_1 \equiv g^k\mod p$    $C_2\equiv y_A^k\cdot M$</p>
+<p>Alice’s decryption process: $M&#x3D;\dfrac{C_2}{C_1^{x_A}}$</p>
 <ul>
-<li>Not resistant to CPA&#x2F;CCA attacks? (In practice, resistant variants are used.)</li>
+<li>Not resistant to CPA&#x2F;CCA attacks (in practice, a resistant version is used)</li>
 </ul>
 </li>
 </ol>
-<h4 id="Security-Models-for-Public-Key-Encryption"><a href="#Security-Models-for-Public-Key-Encryption" class="headerlink" title="Security Models for Public-Key Encryption"></a>Security Models for Public-Key Encryption</h4><h5 id="Chosen-Plaintext-Attack-CPA-Security-Model"><a href="#Chosen-Plaintext-Attack-CPA-Security-Model" class="headerlink" title="Chosen Plaintext Attack (CPA) Security Model"></a>Chosen Plaintext Attack (CPA) Security Model</h5><ol>
-<li>C sends public key $p_k$ to A.</li>
-<li>A sends $m_0,m_1$ to C.</li>
-<li>C randomly encrypts one of $m_0,m_1$ and sends it to A; A must determine which message corresponds to the challenge ciphertext.</li>
+<h4 id="Public-Key-Encryption-Security-Models"><a href="#Public-Key-Encryption-Security-Models" class="headerlink" title="Public-Key Encryption Security Models"></a>Public-Key Encryption Security Models</h4><h5 id="Chosen-Plaintext-Attack-CPA-Security-Model"><a href="#Chosen-Plaintext-Attack-CPA-Security-Model" class="headerlink" title="Chosen Plaintext Attack (CPA) Security Model"></a>Chosen Plaintext Attack (CPA) Security Model</h5><ol>
+<li>C sends public key$p_k$ to A</li>
+<li>A sends$m_0,m_1$ to C</li>
+<li>C randomly encrypts one of $m_0,m_1$ and sends it to A, asking A to recover the private key</li>
 </ol>
 <h5 id="Chosen-Ciphertext-Attack-CCA-Security-Model"><a href="#Chosen-Ciphertext-Attack-CCA-Security-Model" class="headerlink" title="Chosen Ciphertext Attack (CCA) Security Model"></a>Chosen Ciphertext Attack (CCA) Security Model</h5><ol>
-<li>A has access to $Dec_{sk}()$.</li>
-<li>C sends public key $p_k$ to A.</li>
-<li>A sends $m_0,m_1$ to C.</li>
-<li>C randomly encrypts one of $m_0,m_1$ and sends it to A.</li>
-<li>A has access to $Dec_{sk}()$ (except for the challenge ciphertext) and must determine the message.</li>
+<li>A accesses$Dec_{sk}()$</li>
+<li>C sends public key$p_k$ to A</li>
+<li>A sends$m_0,m_1$ to C</li>
+<li>C randomly encrypts one of $m_0,m_1$ and sends it to A,</li>
+<li>A accesses$Dec_{sk}()$, asking A to recover the private key</li>
 </ol>
-<p>A decryption oracle is added, allowing immediate access to the plaintext for any ciphertext.</p>
-<h3 id="Elliptic-Curves"><a href="#Elliptic-Curves" class="headerlink" title="Elliptic Curves"></a>Elliptic Curves</h3><p>$E_p(a,b)(x,y):y^2&#x3D;x^3+ax+b$ with $4a^3+27b^2\ne 0$, plus the point at infinity.</p>
-<p>It can be shown that $E(x, y)$ together with the defined addition forms an additive group.</p>
-<p>Let $L$ be the line through $P$ and $Q$. $L$ intersects $E$ at a third point $R’$. $P+Q$ is defined as $R &#x3D; -R’$. The geometric meaning is:</p>
+<p>A Decoder is added, which can obtain the plaintext result corresponding to a ciphertext at any time</p>
+<h3 id="Elliptic-Curves"><a href="#Elliptic-Curves" class="headerlink" title="Elliptic Curves"></a>Elliptic Curves</h3><p>$E_p(a,b)(x,y):y^2&#x3D;x^3+ax+b$ with $4a^3+27b^2\ne 0$, plus the point at infinity</p>
+<p>It can be proven that $E(x, y)$ together with the defined addition forms an “additive group”</p>
+<p>For the line $L$ through two points $P,Q$, $L$ intersects $E$ at point $R’$, and $P+Q$ is defined as $R &#x3D; -R’$. Its geometric meaning is:</p>
 <ul>
-<li>If $x_1 \ne x_2$, $P+Q&#x3D;R$: the reflection across the x-axis of the intersection of the line through P and Q with E.</li>
-<li>If $x_1&#x3D;x_2$ and $y_1&#x3D;-y_2$, $P+Q&#x3D;O$: the point at infinity.</li>
-<li>If $x_1&#x3D;x_2$ and $y_1&#x3D;y_2$, $P+Q&#x3D;2P$: the reflection across the x-axis of the intersection of the tangent to E at P with E.</li>
+<li>If $x_1≠ x_2$, $P+Q&#x3D;R$: it is the reflection across the x-axis of the intersection point of the line $L$ through $P$ and $Q$ with $E$</li>
+<li>If $x_1&#x3D;x_2$, $y_1&#x3D;-y_2$, $P+Q&#x3D;O$: i.e., the point at infinity</li>
+<li>If $x_1&#x3D; x_2$, $y_1&#x3D; y_2$, $P+Q&#x3D;2P$: it is the reflection across the x-axis of the intersection point of the tangent line to $E$ at $P$ with $E$</li>
 </ul>
-<p>It is a cyclic Abelian group, so a discrete logarithm problem can be defined on it, and this problem is hard, so it can be used for encryption.</p>
-<p>Similarly, DH and ElGamal can be defined (but over an additive group rather than a multiplicative group).</p>
-<p>The explicit addition formula: $x_3&#x3D;\lambda^2-x_1-x_2;y_3&#x3D;\lambda(x_1-x_3)-y_1$.</p>
-<h4 id="SM2"><a href="#SM2" class="headerlink" title="SM2"></a>SM2</h4><p>Notation:</p>
+<p>It is a cyclic Abelian group, so the discrete logarithm problem can be defined on it, and it is hard, so it can be used for encryption</p>
+<p>Similarly, DH and ElGamal can be defined (except they are defined on an additive group rather than a multiplicative group)</p>
+<p>The specific addition algorithm: $x_3&#x3D;\lambda^2-x_1-x_2;y_3&#x3D;\lambda(x_1-x_3)-y_1$</p>
+<h4 id="SM2"><a href="#SM2" class="headerlink" title="SM2"></a>SM2</h4><p>Notation conventions:</p>
 <ul>
-<li>KDF(input): derive a random number of specified length from the input.</li>
-<li>H(input): compute the hash function value of the input.</li>
-<li>All exponentiation operations are performed on the elliptic curve group.</li>
+<li>KDF(input): represents computing a random number of a given length from the input</li>
+<li>H(input): represents computing a hash function value from the input</li>
+<li>All exponentiation operations are performed on the elliptic curve group</li>
 </ul>
-<p>Computation:</p>
+<p>Computation method:</p>
 <ul>
 <li>Key generation<ul>
-<li>Choose private key $x$, compute public key $g^x$.</li>
+<li>Choose private key$x$, compute public key$g^x$</li>
 </ul>
 </li>
 <li>Encryption algorithm<ul>
-<li>Choose a random number $k$, compute $C_1&#x3D;g^k$.</li>
-<li>Compute $C_2&#x3D; \text{KDF}((g^x)^k)\oplus M$.</li>
-<li>Compute $C_3&#x3D; \text H(C_2,M)$.</li>
-<li>Ciphertext: $C&#x3D;C1 | C2 | C3$.</li>
+<li>Choose random number$k$, compute$C_1&#x3D;g^k$</li>
+<li>Compute$C_2&#x3D; \text{KDF}((g^x)^k)\oplus M$</li>
+<li>Compute$C_3&#x3D; \text H(C_2,M)$</li>
+<li>Ciphertext$C&#x3D;C1 ||C2||C3$</li>
 </ul>
 </li>
 <li>Decryption algorithm<ul>
-<li>Compute $M&#x3D;C_2\oplus \text{KDF}((C_1)^x)$.</li>
-<li>Verify whether $C_3&#x3D; \text H(C_2,M)$ holds.</li>
-<li>If it holds, output $M$ as the decryption result.</li>
-<li>Otherwise, report an error and exit.</li>
+<li>Compute$M&#x3D;C_2\oplus \text{KDF}((C_1)^x)$</li>
+<li>Verify whether$C_3&#x3D; \text H(C_2,M)$ holds</li>
+<li>If it holds, output$M$ as the decryption result</li>
+<li>Otherwise, report an error and exit</li>
 </ul>
 </li>
 </ul>
-<h2 id="Digital-Signatures"><a href="#Digital-Signatures" class="headerlink" title="Digital Signatures"></a>Digital Signatures</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><h4 id="Direct-Digital-Signatures"><a href="#Direct-Digital-Signatures" class="headerlink" title="Direct Digital Signatures"></a>Direct Digital Signatures</h4><h4 id="Indirect-Digital-Signatures"><a href="#Indirect-Digital-Signatures" class="headerlink" title="Indirect Digital Signatures"></a>Indirect Digital Signatures</h4><p>Signing a hash function.</p>
-<h3 id="RSA-Signature-Scheme"><a href="#RSA-Signature-Scheme" class="headerlink" title="RSA Signature Scheme"></a>RSA Signature Scheme</h3><p>PKCS#1 v1.5: hash first, then sign.</p>
-<p>Padding is required to prevent chosen-ciphertext attacks.</p>
-<h3 id="DSS-Signature-Scheme"><a href="#DSS-Signature-Scheme" class="headerlink" title="DSS Signature Scheme"></a>DSS Signature Scheme</h3><h3 id="ECC-Signature-Scheme"><a href="#ECC-Signature-Scheme" class="headerlink" title="ECC Signature Scheme"></a>ECC Signature Scheme</h3><p>ECDSA: DSA signature on elliptic curves.</p>
-<h3 id="How-to-Manage-Public-Keys"><a href="#How-to-Manage-Public-Keys" class="headerlink" title="How to Manage Public Keys"></a>How to Manage Public Keys</h3><h4 id="Simplest"><a href="#Simplest" class="headerlink" title="Simplest"></a>Simplest</h4><p>Vulnerable to man-in-the-middle attacks.</p>
-<h4 id="Publicly-Accessible-Directory"><a href="#Publicly-Accessible-Directory" class="headerlink" title="Publicly Accessible Directory"></a>Publicly Accessible Directory</h4><p>If an attacker obtains the directory administrator’s private key, they can impersonate any communicating party.</p>
-<h4 id="Public-Key-Authority"><a href="#Public-Key-Authority" class="headerlink" title="Public-Key Authority"></a>Public-Key Authority</h4><p>The authority is vulnerable to DoS attacks.</p>
-<h4 id="Public-Key-Certificates"><a href="#Public-Key-Certificates" class="headerlink" title="Public-Key Certificates"></a>Public-Key Certificates</h4><p>Similar to credit cards, they have a validity period.</p>
-<h2 id="Identity-Authentication-Protocols"><a href="#Identity-Authentication-Protocols" class="headerlink" title="Identity Authentication Protocols"></a>Identity Authentication Protocols</h2><h3 id="Password-Authentication"><a href="#Password-Authentication" class="headerlink" title="Password Authentication"></a>Password Authentication</h3><p>Essentially entering a password.</p>
+<h2 id="Digital-Signatures"><a href="#Digital-Signatures" class="headerlink" title="Digital Signatures"></a>Digital Signatures</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><h4 id="Direct-Digital-Signature"><a href="#Direct-Digital-Signature" class="headerlink" title="Direct Digital Signature"></a>Direct Digital Signature</h4><h4 id="Indirect-Digital-Signature"><a href="#Indirect-Digital-Signature" class="headerlink" title="Indirect Digital Signature"></a>Indirect Digital Signature</h4><p>Sign the hash function</p>
+<h3 id="RSA-Signature-Scheme"><a href="#RSA-Signature-Scheme" class="headerlink" title="RSA Signature Scheme"></a>RSA Signature Scheme</h3><p>PKCSA1: hash first, then sign</p>
+<p>Padding is required to prevent chosen ciphertext attacks</p>
+<h3 id="DSS-Signature-Scheme"><a href="#DSS-Signature-Scheme" class="headerlink" title="DSS Signature Scheme"></a>DSS Signature Scheme</h3><h3 id="ECC-Signature-Scheme"><a href="#ECC-Signature-Scheme" class="headerlink" title="ECC Signature Scheme"></a>ECC Signature Scheme</h3><p>ECDSA: DSA signature on elliptic curves</p>
+<h3 id="How-to-Manage-Public-Keys"><a href="#How-to-Manage-Public-Keys" class="headerlink" title="How to Manage Public Keys"></a>How to Manage Public Keys</h3><h4 id="The-Simplest"><a href="#The-Simplest" class="headerlink" title="The Simplest"></a>The Simplest</h4><p>Vulnerable to man-in-the-middle attacks</p>
+<h4 id="Publicly-Accessible-Directory"><a href="#Publicly-Accessible-Directory" class="headerlink" title="Publicly Accessible Directory"></a>Publicly Accessible Directory</h4><p>Once an attacker obtains the directory administrator’s private key, they can forge any communicating party</p>
+<h4 id="Public-Key-Authorization"><a href="#Public-Key-Authorization" class="headerlink" title="Public-Key Authorization"></a>Public-Key Authorization</h4><p>The administrator is vulnerable to DDoS attacks</p>
+<h4 id="Public-Key-Certificates"><a href="#Public-Key-Certificates" class="headerlink" title="Public-Key Certificates"></a>Public-Key Certificates</h4><p>Similar to credit cards, with a certain validity period</p>
+<h2 id="Identity-Authentication-Protocols"><a href="#Identity-Authentication-Protocols" class="headerlink" title="Identity Authentication Protocols"></a>Identity Authentication Protocols</h2><h3 id="Password-Authentication"><a href="#Password-Authentication" class="headerlink" title="Password Authentication"></a>Password Authentication</h3><p>Equivalent to entering a password</p>
 <ul>
-<li>Online dictionary attack: exhaustively try all possible passwords (starting from common ones).</li>
-<li>Offline dictionary attack: obtain all $H(p_w)$, enumerate $p_w$.</li>
-<li>Offline dictionary attack with preprocessing: precompute hash values for all possible passwords.</li>
+<li>Online dictionary attack: exhaustively try all possible passwords (starting from common passwords)</li>
+<li>Offline dictionary attack: obtain all H(p<del>w</del>), enumerate p<del>w</del></li>
+<li>Offline dictionary attack with preprocessing: precompute the Hash values corresponding to all possible passwords</li>
 </ul>
-<p>Increasing difficulty:</p>
+<p>To increase cracking difficulty:</p>
 <ul>
-<li>Add a public salt.</li>
-<li>Add a secret salt.</li>
-<li>Use a slow hash function.</li>
-<li>Use a memory-hard hash function.</li>
+<li>Add public salt</li>
+<li>Add secret salt</li>
+<li>Use slow Hash functions</li>
+<li>Use Hash functions with high storage cost</li>
 </ul>
-<h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><p>Introduce an authentication server and a ticket-granting server. The former only gives users tickets to access the ticket-granting server; the latter only gives users tickets to access other applications.</p>
-<h2 id="X-509-Authentication"><a href="#X-509-Authentication" class="headerlink" title="X.509 Authentication"></a>X.509 Authentication</h2><p>Digital identity card.</p>
-<p>Chain-issued&#x2F;chain of trust.</p>
-<p>Self-signed certificate—dangerous.</p>
-<p>Certificate revocation:</p>
+<h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><p>Introduces an authentication server and a ticket server; the former only gives users tickets to access the ticket server, and the latter only gives users tickets to access other applications</p>
+<h2 id="X-509-Authentication"><a href="#X-509-Authentication" class="headerlink" title="X.509 Authentication"></a>X.509 Authentication</h2><p>Digital identity card</p>
+<p>Chain-based issuance&#x2F;trust</p>
+<p>Self-signed certificates — dangerous</p>
+<p>Certificate revocation</p>
 <ul>
-<li>Certificate Revocation List (CRL).</li>
-<li>Online Certificate Status Protocol (OCSP): allows verifying validity with an OCSP server.</li>
+<li>Certificate Revocation List</li>
+<li>Online Certificate Status Protocol (OCSP): can verify with an OCSP server whether it is valid</li>
 </ul>
 
         </div>
@@ -1739,7 +1738,7 @@ D = C_old
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">73k</span>
+            <span class="trm-accent-color">83k</span>
             words
         </span>
     </div>
