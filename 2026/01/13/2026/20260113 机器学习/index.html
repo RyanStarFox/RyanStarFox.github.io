@@ -16,12 +16,12 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="机器学习1 聚类1.1 K-means流程 初始化$\mu_1,\mu_2,\cdots,\mu_k$ 把每个数据点分配给最近的$\mu_i$ 把$\mu_i$更新为所分配的点的均值 重复2，3直至迭代停止  收敛性 每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且">
+<meta name="description" content="1 聚类1.1 K-means流程 初始化 把每个数据点分配给最近的 把 更新为所分配的点的均值 重复2，3直至迭代停止 收敛性 每一步目标函数 都会减小，且J有下界 但是J非凸（因为 ），往往收敛到局部最小值 问题 不能软分类 K值手动指定 初始值敏感（对极端值敏感） 使用欧几里得距离，高维失效">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习">
 <meta property="og:url" content="https://blog.ryanstarfox.top/2026/01/13/2026/20260113%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="RyanStarFox&#39;s Blog">
-<meta property="og:description" content="机器学习1 聚类1.1 K-means流程 初始化$\mu_1,\mu_2,\cdots,\mu_k$ 把每个数据点分配给最近的$\mu_i$ 把$\mu_i$更新为所分配的点的均值 重复2，3直至迭代停止  收敛性 每一步目标函数$J&#x3D;\sum\limits_{i&#x3D;1}^n\sum\limits_{k&#x3D;1}^Kr_{ik}||x_i-\mu_k||^2$都会减小，且">
+<meta property="og:description" content="1 聚类1.1 K-means流程 初始化 把每个数据点分配给最近的 把 更新为所分配的点的均值 重复2，3直至迭代停止 收敛性 每一步目标函数 都会减小，且J有下界 但是J非凸（因为 ），往往收敛到局部最小值 问题 不能软分类 K值手动指定 初始值敏感（对极端值敏感） 使用欧几里得距离，高维失效">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-01-13T04:37:00.000Z">
 <meta property="article:modified_time" content="2026-01-13T04:37:00.000Z">
@@ -109,6 +109,7 @@
 </script><script>window.SITE_LANG_CONFIG = {"typed_text_zh":[],"typed_text_prefix_zh":"享受","typed_text_en":[],"typed_text_prefix_en":"Enjoy"};</script>
 <link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
 <link rel="stylesheet" href="/css/site-lang.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="RyanStarFox's Blog" type="application/atom+xml">
+  <link rel="canonical" href="https://blog.ryanstarfox.top/2026/01/13/2026/20260113%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
 </head>
 
 <body>
@@ -506,7 +507,7 @@
     <article id="article-container" class="trm-publication">
     
         <div class="post-body-zh i18n-zh">
-            <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="1-聚类"><a href="#1-聚类" class="headerlink" title="1 聚类"></a>1 聚类</h2><h3 id="1-1-K-means"><a href="#1-1-K-means" class="headerlink" title="1.1 K-means"></a>1.1 K-means</h3><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
+            <h2 id="1-聚类"><a href="#1-聚类" class="headerlink" title="1 聚类"></a>1 聚类</h2><h3 id="1-1-K-means"><a href="#1-1-K-means" class="headerlink" title="1.1 K-means"></a>1.1 K-means</h3><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
 <li>初始化$\mu_1,\mu_2,\cdots,\mu_k$</li>
 <li>把每个数据点分配给最近的$\mu_i$</li>
 <li>把$\mu_i$更新为所分配的点的均值</li>
@@ -1440,7 +1441,7 @@
         </span>
         <span class="i18n-en">
             Site total
-            <span class="trm-accent-color">69k</span>
+            <span class="trm-accent-color">73k</span>
             words
         </span>
     </div>
