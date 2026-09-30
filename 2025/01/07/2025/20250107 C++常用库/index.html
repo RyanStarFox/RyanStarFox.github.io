@@ -312,7 +312,7 @@
         <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
     </div>
     <h5 class="trm-name trm-mb-15">
-        RyanStarFox
+        小言
     </h5>
     
         <div class="trm-label">
@@ -770,7 +770,7 @@ file &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;
 </li>
 </ol>
 <h3 id="sstream"><a href="#sstream" class="headerlink" title="sstream"></a>sstream</h3><ol>
-<li><p>isstream</p>
+<li><p>istream</p>
 <pre><code class="language-cpp"># include &lt;iostream&gt;
 # include &lt;sstream&gt;
 using namespace std;
@@ -785,7 +785,7 @@ int main(){
 }
 </code></pre>
 </li>
-<li><p>osstream</p>
+<li><p>ostream</p>
 <pre><code class="language-cpp">std::ostringstream oss;
 oss &lt;&lt; 42 &lt;&lt; &quot; &quot; &lt;&lt; 3.14 &lt;&lt; &quot; &quot; &lt;&lt; &quot;hello&quot;;
 std::string result = oss.str();  // Get the output string
@@ -1063,8 +1063,8 @@ int main() {
 try{
     cout &lt;&lt; a.at(6);
 }
-catch (const out_of_range e){
-cerr &lt;&lt; &quot;a: &quot; &lt;&lt; e.what() &lt;&lt; endl;
+catch (const out_of_range&amp; e){
+    cerr &lt;&lt; &quot;Error: &quot; &lt;&lt; e.what() &lt;&lt; endl;
 }
 </code></pre>
 
@@ -1281,7 +1281,7 @@ cerr &lt;&lt; &quot;a: &quot; &lt;&lt; e.what() &lt;&lt; endl;
         <div class="trm-footer-item">
             <span>© 2025 - 2026</span>
             <span class="footer-separator"data-separator=" · "></span>
-            <span class="trm-accent-color">RyanStarFox</span>
+            <span class="trm-accent-color">小言</span>
         </div>
     
 

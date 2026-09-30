@@ -312,7 +312,7 @@
         <img alt="Avatar" class="trm-avatar" src="/metadata/avatar.png">
     </div>
     <h5 class="trm-name trm-mb-15">
-        RyanStarFox
+        小言
     </h5>
     
         <div class="trm-label">
@@ -765,7 +765,7 @@
 </li>
 <li><p>Associativity law:</p>
 <p>$(P\wedge Q)\wedge R&#x3D;P\wedge(Q\wedge R)$</p>
-<p>$(P\vee Q)\vee R&#x3D;P\wedge(Q\vee R)$</p>
+<p>$(P\vee Q)\vee R&#x3D;P\vee(Q\vee R)$</p>
 <p>$(P\leftrightarrow Q)\leftrightarrow R&#x3D;P\leftrightarrow(Q\leftrightarrow R)$</p>
 <p>$(P\to Q)\to R\neq P\to(Q\to R)$</p>
 </li>
@@ -794,7 +794,7 @@
 <li><p>De Morgan’s laws:</p>
 <p>$\neg (P\vee Q)&#x3D;\neg P\wedge\neg Q$</p>
 <p>$\neg (P\wedge Q)&#x3D;\neg P\vee\neg Q$</p>
-<p>$\neg(P\leftrightarrow Q)&#x3D;\neg P\leftrightarrow Q&#x3D;P\leftrightarrow\neg Q&#x3D;(\neg P\wedge Q)\vee(P\wedge\neq Q)$</p>
+<p>$\neg(P\leftrightarrow Q)&#x3D;\neg P\leftrightarrow Q&#x3D;P\leftrightarrow\neg Q&#x3D;(\neg P\wedge Q)\vee(P\wedge\neg Q)$</p>
 <p>$\neg(P\to Q)&#x3D;P\wedge\neg Q$</p>
 </li>
 <li><p>Identity law:</p>
@@ -846,8 +846,8 @@
 <p>$(A^<em>)^</em>&#x3D;A,(A^-)^-&#x3D;A$</p>
 <p>$\neg A &#x3D; A^{*-}$</p>
 <p>$A&#x3D;B \Leftrightarrow A^<em>&#x3D;B^</em>$</p>
-<p>$A\to B$ and $B^<em>\to A^</em>$ are both tautologies or not.</p>
-<p>$A$ and $A^-$ have the same tautology property; $\neg A$ and $A^*$ have the same tautology property.</p>
+<p>$A\to B$ and $B^<em>\to A^</em>$ have the same truth value.</p>
+<p>$A$ and $A^-$ have the same truth value; $\neg A$ and $A^*$ have the same truth value.</p>
 </li>
 <li><p>Disjunctive normal form has the form $A_1\vee A_2\vee\cdots\vee A_n$.</p>
 <p>Conjunctive normal form has the form $A_1\wedge A_2\wedge\cdots\wedge A_n$.</p>
@@ -883,11 +883,14 @@
 <ul>
 <li>Initial symbols:<ul>
 <li>$A,B,C\cdots$ represent propositions.</li>
-<li>$\wedge$, $\vee$, $\neg$ represent connectives.</li>
-<li>Parentheses $()$.</li>
-<li>$\vdash$ placed before a formula indicates it is a tautology.</li>
+<li>$\wedge$, $\vee$, $</li>
 </ul>
 </li>
+</ul>
+</li>
+</ol>
+<p>eg$ represent connectives.<br>     - Parentheses $()$.<br>     - $\vdash$ placed before a formula indicates it is a tautology.</p>
+<ul>
 <li>Formation rules:<ul>
 <li>Symbol $\pi$ is a well-formed formula, where $\pi$ takes values $A,B,\cdots$.</li>
 <li>If $A$ and $B$ are well-formed formulas, then $(A\vee B)$ is a well-formed formula.</li>
@@ -915,7 +918,7 @@
 </ul>
 </li>
 </ul>
-</li>
+<ol start="3">
 <li><p>If all valid theorems can be derived from the system, it is called a complete system.</p>
 </li>
 <li><p>Inference methods:</p>
@@ -938,7 +941,7 @@
 <p>$(\forall x)(p\to Q(x))&#x3D;p\to(\forall x)Q(x)$</p>
 <p>$(\exists x)(p\to Q(x))&#x3D;p\to(\exists x)Q(x)$</p>
 <p>$(\forall x)(P(x)\wedge Q(x))&#x3D;(\forall x)P(x)\wedge (\forall x)Q(x)$</p>
-<p>$(\exists x)(P(x)\vee Q(X))&#x3D;(\exists x)P(x)\vee(\exists x)Q(x)$</p>
+<p>$(\exists x)(P(x)\vee Q(x))&#x3D;(\exists x)P(x)\vee(\exists x)Q(x)$</p>
 <p>$(\forall x)(\forall y)(P(x)\vee Q(y))&#x3D;(\forall x)P(x)\vee(\forall x)Q(x)$</p>
 <p>$(\exists x)(\exists y)(P(x)\wedge Q(y))&#x3D;(\exists x)P(x)\wedge(\exists x)Q(x)$</p>
 </li>
@@ -961,8 +964,8 @@
 <li>$(\forall x)(P(x)\to Q(x))\Rightarrow(\exists x)P(x)\to(\exists x)Q(x)$</li>
 <li>$(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow(\forall x)P(x)\leftrightarrow(\forall x)Q(x)$</li>
 <li>$(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow(\exists x)P(x)\leftrightarrow(\exists x)Q(x)$</li>
-<li>$(\forall x)(P(x)\to Q(x))\wedge(\forall x)(Q(x)\to R(X))\Rightarrow(\forall x)(P(x)\to R(X))$</li>
-<li>$(\forall x)(P(X)\to Q(X))\wedge P(a)\Rightarrow Q(a)$</li>
+<li>$(\forall x)(P(x)\to Q(x))\wedge(\forall x)(Q(x)\to R(x))\Rightarrow(\forall x)(P(x)\to R(x))$</li>
+<li>$(\forall x)(P(x)\to Q(x))\wedge P(a)\Rightarrow Q(a)$</li>
 <li>$(\forall x)(\forall y)P(x,y)\Rightarrow (\exists x)(\forall y)P(x,y)$</li>
 <li>$(\exists x)(\forall y)P(x,y)\Rightarrow(\forall y)(\exists x)P(x,y)$</li>
 </ol>
@@ -1182,7 +1185,7 @@
         <div class="trm-footer-item">
             <span>© 2025 - 2026</span>
             <span class="footer-separator"data-separator=" · "></span>
-            <span class="trm-accent-color">RyanStarFox</span>
+            <span class="trm-accent-color">小言</span>
         </div>
     
 
